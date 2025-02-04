@@ -1,7 +1,7 @@
 # 实用 IPv6（第三部分）
 
 - 原文链接：[Pragmatic IPv6 (Part 3)](https://freebsdfoundation.org/wp-content/uploads/2022/11/sato_IPv6_part3.pdf)
-- 作者：**佐藤広生 **
+- 作者：**佐藤広生**
 
 上期专栏介绍了 IPv6 的典型部署示例，适用于只有一台上行路由器的小型网络，例如家庭网络。但其中没有涉及某些复杂的配置（比如 DHCPv6/PPPoE），因为在此之前我们需要先掌握一些 IPv6 的技术知识。在深入讨论这些复杂情况之前，让我们先通过配置你的 FreeBSD 设备来进一步了解 IPv6。本专栏将重点讨论以下两个主题：当你的 ISP 无法提供 IPv6 互联网访问时该如何处理，以及如何在 FreeBSD 基础系统中配置必备的 IPv6 实用工具。
 
