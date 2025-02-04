@@ -134,6 +134,6 @@
 * [PAM 小窍门](2022-0910/pam.md)
 * [SSH 小窍门](2022-0910/ssh.md)
 * [实用 IPv6（第三部分）](2022-0910/ipv6.md)
-* [书评：*Understanding Software Dynamics*（理解软件动态）—— Richard L. Sites 著](2022-0910/book.md)
+* [书评：*Understanding Software Dynamics*（深入理解软件性能——一种动态视角）—— Richard L. Sites 著](2022-0910/book.md)
 * [访谈：保障 FreeBSD 安全性](2022-0910/anquan.md)
 * [MCH 2022 会议报告](2022-0910/mch.md)
