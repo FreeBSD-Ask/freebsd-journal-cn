@@ -1,4 +1,4 @@
-![EUG`8QRL A$A1_MNWLWIX`I](https://github.com/user-attachments/assets/a7bbed57-92cb-4a38-962c-52c06881f0f8)# CARP 介绍
+# CARP 介绍
 
 - 原文地址：[Introduction to CARP](https://freebsdfoundation.org/wp-content/uploads/2022/11/zaborski_CARP.pdf)
 - 作者：**MARIUSZ ZABORSKI**
