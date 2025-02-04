@@ -1,4 +1,4 @@
-# CARP 介绍
+# CARP 简介
 
 - 原文地址：[Introduction to CARP](https://freebsdfoundation.org/wp-content/uploads/2022/11/zaborski_CARP.pdf)
 - 作者：**MARIUSZ ZABORSKI**
