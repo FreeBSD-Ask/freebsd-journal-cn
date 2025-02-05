@@ -38,7 +38,7 @@
 
 进一步的计划仍在进行中。我通常在工作处于早期阶段时，将其分享在 [https://github.com/glebius/FreeBSD](https://github.com/glebius/FreeBSD)，在更成熟时将其发布到 [https://reviews.FreeBSD.org](https://reviews.FreeBSD.org)。欢迎在那里或通过电子邮件发表评论。
 
---
+---
 
 **TOM JONES** 希望基于 FreeBSD 的项目能获得应有的关注。他住在苏格兰东北部，提供 FreeBSD 咨询服务。
 
