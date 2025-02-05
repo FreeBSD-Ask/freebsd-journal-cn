@@ -113,7 +113,7 @@
 * [虚拟实验室——BSD 编程研讨会](2023-0102/lab.md)
 * [ZFS 简介](2023-0102/zfs2.md)
 * [会议报告：落基山庆祝女性计算机科学家](2023-0102/women.md)
-* [进行中/征稿：数据包批处理](2023-0102/batch.md)
+* [WPT/CFT：数据包批处理](2023-0102/batch.md)
 * [基金会与 FreeBSD 桌面](2023-0102/desktop.md)
 
 ## 2022-1112 可观测性和衡量标准
@@ -137,3 +137,14 @@
 * [书评：*Understanding Software Dynamics*（深入理解软件性能——一种动态视角）—— Richard L. Sites 著](2022-0910/book.md)
 * [访谈：保障 FreeBSD 安全性](2022-0910/anquan.md)
 * [MCH 2022 会议报告](2022-0910/mch.md)
+
+## 2022-0708 科研、系统与 FreeBSD
+
+* [在 FreeBSD 上构建 Loom 框架](2022-0708/loom.md)
+* [教授本科生 Unix 课程](2022-0708/unix.md)
+* [FreeBSD 入门研讨会](2022-0708/bsd.md)
+* [实用 IPv6（第二部分）](2022-0708/ipv6.md)
+* [在 2022 年及以后推广 FreeBSD](2022-0708/2022.md)
+* [WPT/CFT：Socket 缓冲区](2022-0708/socket.md)
+* [FreeBSD 开发者峰会报告](2022-0708/huiyi.md)
+* [支持 Electromagnetic Field 2022](2022-0708/ele.md)
