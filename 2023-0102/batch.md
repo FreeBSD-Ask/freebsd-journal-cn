@@ -1,4 +1,4 @@
-# 进行中/征稿：数据包批处理
+# WPT/CFT：数据包批处理
 
 - 原文链接：[Packet Batching](https://freebsdfoundation.org/wp-content/uploads/2023/02/Jones_WIP.pdf)
 - 作者：**TOM JONES** & **JOHN BALDWIN**
