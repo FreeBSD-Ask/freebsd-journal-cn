@@ -56,7 +56,7 @@ HPTS 系统还会自动调优 FreeBSD 的系统定时器，首先设置最小值
 
 使用 HPTS 进行 Pacing 控制的 TCP 协议栈有一些特定的责任，以便与 HPTS 协作，实现所需的 Pacing 速率，包括：
 
-- 一旦启动了 Pacing 定时器，协议栈必须禁止任何发送或其他对`tcp_output()`的调用，直到 Pacing 定时器到期。协议栈可以查看`t_flags2`字段中的`TF2_HPTS_CALLS`标志。当 HPTS 调用`tcp_output()`函数时，该标志将被设置，协议栈应在其`tcp_output()`函数内进行清除。
+- 待启动了 Pacing 定时器，协议栈必须禁止任何发送或其他对`tcp_output()`的调用，直到 Pacing 定时器到期。协议栈可以查看`t_flags2`字段中的`TF2_HPTS_CALLS`标志。当 HPTS 调用`tcp_output()`函数时，该标志将被设置，协议栈应在其`tcp_output()`函数内进行清除。
 - 在 Pacing 定时器到期后，HPTS 的调用中，协议栈需要验证它的空闲时间。HPTS 可能会比预期稍晚调用协议栈，甚至可能提前调用协议栈（尽管这种情况非常罕见）。协议栈需要将晚到或早到的时间纳入下一个 Pacing 超时计算中，之后再发送数据。
 - 如果协议栈决定使用 FreeBSD 定时器系统，它还必须阻止定时器调用发送数据。RACK 和 BBR 协议栈不会使用 FreeBSD 定时器系统进行超时，而是直接使用 HPTS。
 - 如果协议栈从 LRO 队列中排队数据包，则 HPTS 可能会调用输入函数，而不是`tcp_output()`。如果发生这种情况，则不会再调用`tcp_output()`，因为假设协议栈会在需要时调用其输出函数。

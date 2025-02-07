@@ -15,7 +15,7 @@ FreeBSD 的 OpenPAM，就像原始 Solaris 的 PAM 一样，只处理认证和�
 
 ## PAM 配置
 
-在 `/etc/pam.d` 中为 FreeBSD 基础系统配置 PAM，而在 `/usr/local/etc/pam.d` 中为各个软件包配置 PAM。每个守护进程都有自己的配置文件，其文件名与程序名称相同，用于定义 PAM 策略。比如，你可以去看看 `sshd(8)` 的配置文件 `/etc/pam.d/sshd`，你会看到很多类似这样的行。
+在 `/etc/pam.d` 中为 FreeBSD 基本系统配置 PAM，而在 `/usr/local/etc/pam.d` 中为各个软件包配置 PAM。每个守护进程都有自己的配置文件，其文件名与程序名称相同，用于定义 PAM 策略。比如，你可以去看看 `sshd(8)` 的配置文件 `/etc/pam.d/sshd`，你会看到很多类似这样的行。
 
 ```sh
 auth sufficient pam_opie.so no_warn no_fake_prompts

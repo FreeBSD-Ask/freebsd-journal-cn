@@ -42,13 +42,13 @@ Firecracker 有意地极简化，不去实现 ACPI，当 FreeBSD 无法确定有
 因此，FreeBSD 现在有了一个新的内核选参数：如果你需要与 Linux 的 MPTable 处理具有错误兼容性，可以在内核配置中添加选项 `MPTABLE_LINUX_BUG_COMPAT`。有了这个参数，FreeBSD 成功地在 Firecracker 中进一步引导。
 
 ## 串行控制台
-Firecracker 提供的一些模拟设备之一（与 Virtio 块和网络设备等虚拟化设备相对）是串行端口。实际上，在常见的配置中，当你启动 Firecracker 时，Firecracker 进程的标准输入和输出会成为虚拟机的串行端口输入和输出，使其看起来像是虚拟机操作系统只是在你的 Shell 内部运行的另一个进程（从某种意义上讲，确实如此）。至少，这是它应该工作的方式。
+Firecracker 提供的一些模拟设备之一（与 Virtio 块和网络设备等虚拟化设备相对）是串口。实际上，在常见的配置中，当你启动 Firecracker 时，Firecracker 进程的标准输入和输出会成为虚拟机的串口输入和输出，使其看起来像是虚拟机操作系统只是在你的 Shell 内部运行的另一个进程（从某种意义上讲，确实如此）。至少，这是它应该工作的方式。
 
 在将 FreeBSD 引导到 Firecracker 内的过程中，我能够启动一个已将根磁盘编译到内核映像中的 FreeBSD 内核——虚拟磁盘驱动程序尚未工作——并读取了内核的所有控制台输出。然而，在所有内核控制台输出之后，FreeBSD 进入了引导过程的用户区域，我得到了 16 个字符的控制台输出，然后就停止了。
 
 有趣的是，我在 10 多年前就见过这个相同的问题，当时是我首次在 EC2 实例上使 FreeBSD 工作。QEMU 中的一个错误导致串口在传输 FIFO 清空时不发送中断；FreeBSD 向串口写入 16 字节，然后不再写入，因为它正在等待从未到达的中断。现代的 EC2 实例运行在亚马逊的“Nitro”平台上，但在早期，它们使用了 Xen，并且使用了 QEMU 的代码来模拟设备。不知何故，在 QEMU 中修复了这个错误十年后，完全相同的错误出现在了 Firecracker 中；但幸运的是，我（当时）加入 FreeBSD 内核的解决方法——`hw.broken_txfifo="1"`——仍然可用，添加了这个加载器可调整值后（由于 Firecracker 直接加载内核，而不经过引导加载器，这意味着将该值编译为内核的环境变量）修复了控制台输出。
 
-然后我发现控制台输入也是无效的：FreeBSD 对我在控制台中键入的任何内容都没有响应。事实上，在我跟踪 Firecracker 进程时，我发现 Firecracker 甚至没有从控制台读取——因为 Firecracker 认为模拟串口上的接收 FIFO 已满。结果证明这是 Firecracker 的另一个错误：在初始化串口时，FreeBSD 用垃圾填充接收 FIFO 以测量其大小，然后通过写入 FIFO 控制寄存器来刷新 FIFO。Firecracker 没有实现 FIFO 控制寄存器，因此 FIFO 保持满状态，并且合理地不尝试读取任何更多的字符放入其中。在这里，我向 FreeBSD 添加了另一个解决方法：如果在我们尝试通过 FIFO 控制寄存器刷新 FIFO 后，LSR_RXRDY 仍然被断言（也就是说，如果 FIFO 没有按要求清空），那么我们现在会继续逐个读取和丢弃字符，直到 FIFO 清空。有了这个解决方法，Firecracker 现在可以认识到 FreeBSD 已准备好从串行端口读取更多输入，我有了一个可工作的双向串行控制台。
+然后我发现控制台输入也是无效的：FreeBSD 对我在控制台中键入的任何内容都没有响应。事实上，在我跟踪 Firecracker 进程时，我发现 Firecracker 甚至没有从控制台读取——因为 Firecracker 认为模拟串口上的接收 FIFO 已满。结果证明这是 Firecracker 的另一个错误：在初始化串口时，FreeBSD 用垃圾填充接收 FIFO 以测量其大小，然后通过写入 FIFO 控制寄存器来刷新 FIFO。Firecracker 没有实现 FIFO 控制寄存器，因此 FIFO 保持满状态，并且合理地不尝试读取任何更多的字符放入其中。在这里，我向 FreeBSD 添加了另一个解决方法：如果在我们尝试通过 FIFO 控制寄存器刷新 FIFO 后，LSR_RXRDY 仍然被断言（也就是说，如果 FIFO 没有按要求清空），那么我们现在会继续逐个读取和丢弃字符，直到 FIFO 清空。有了这个解决方法，Firecracker 现在可以认识到 FreeBSD 已准备好从串口读取更多输入，我有了一个可工作的双向串行控制台。
 
 ## Virtio 设备
 虽然没有磁盘或网络的系统对某些用途可能是有用的，但在我们能够在 FreeBSD 中做很多事情之前，我们需要这些设备。Firecracker 支持 Virtio 块和网络设备，并将它们以 mmio（内存映射 I/O）设备的形式暴露给虚拟机。使这些在 FreeBSD 中工作的第一步：在 Firecracker 内核配置中添加 `device virtio_mmio`。

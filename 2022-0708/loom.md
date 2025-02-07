@@ -65,7 +65,7 @@ Loom 是一个功能完善的插桩与转换框架。它能够对函数和函数
 
 ## 了解更多关于 Loom 的信息  
 
-如需了解 Loom 的更多信息并关注其未来发展，您可以访问项目页面：[github.com/cadets/loom](https://github.com/cadets/loom)。  
+如需了解 Loom 的更多信息并关注其未来发展，你可以访问项目页面：[github.com/cadets/loom](https://github.com/cadets/loom)。  
 
 ## 致谢  
 

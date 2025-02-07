@@ -92,7 +92,7 @@ make
 make DESTDIR=$ROOTFS install
 ```
 
-然后，您就可以通过修改
+然后，你就可以通过修改
 
 ```sh
 -   if (1 == 1)

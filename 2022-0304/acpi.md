@@ -14,7 +14,7 @@ ARM64 是一种被广泛应用于各种产品的单一架构——它既可用�
 
 不过，早已有成熟的解决方案存在。x86 体系所使用的接口被引入并扩展到了 ARM64，包括启动过程、EFI、SMBIOS 和 ACPI。在符合这些标准并使用合适固件的服务器级设备上，现在可以直接使用安装镜像来安装 FreeBSD、其他操作系统或虚拟机管理程序（hypervisor）。  
 
-那么，小型嵌入式平台呢？幸运的是，它们同样可以以类似的方式利用这一成熟生态系统。当然，这需要一定的前提——硬件不能过于偏离标准，并且固件需要满足严格的要求。这些规范被归纳在一系列标准中，即 [BSA](https://developer.arm.com/documentation/den0094/latest)（ARM 基础系统架构）和 [BBR](https://developer.arm.com/documentation/den0044/latest)（ARM 基础启动要求）。最终的结果是，现在已经有一些 ARM64 平台可以通过单一固件镜像和 ACPI 描述成功引导 FreeBSD、Windows 和多个 Linux 发行版。
+那么，小型嵌入式平台呢？幸运的是，它们同样可以以类似的方式利用这一成熟生态系统。当然，这需要一定的前提——硬件不能过于偏离标准，并且固件需要满足严格的要求。这些规范被归纳在一系列标准中，即 [BSA](https://developer.arm.com/documentation/den0094/latest)（ARM 基本系统架构）和 [BBR](https://developer.arm.com/documentation/den0044/latest)（ARM 基础启动要求）。最终的结果是，现在已经有一些 ARM64 平台可以通过单一固件镜像和 ACPI 描述成功引导 FreeBSD、Windows 和多个 Linux 发行版。
 
 这些设备有何特殊之处？与传统服务器（通常拥有大量 CPU、DRAM 和 PCIe 根复合体）相比，嵌入式领域的 SoC 还支持连接到其内部总线的各种控制器。因此，这些控制器不会在 PCIe 枚举过程中被自动发现，而是需要采用不同的处理方式。硬件描述必须明确引用这些接口，并包含能够被操作系统解析和解释的平台数据。最近，FreeBSD 内核的能力得到了扩展，新增了一些特性，使其能够从 ACPI 表中获取这些信息。  
 
@@ -35,7 +35,7 @@ ACPI 规范定义了多种[专用表](https://uefi.org/specs/ACPI/6.4/05_ACPI_So
 - **通用定时器描述表 (GTDT)**  
 - **多 APIC 描述表 (MADT)**  
 - **处理器属性拓扑表 (PPTT)**  
-- **串行端口控制台重定向表 (SPCR)**  
+- **串口控制台重定向表 (SPCR)**  
 - **PCI Express 内存映射配置空间基地址描述表 (MCFG)**  
 - **差异化系统描述表 (DSDT)**  
 

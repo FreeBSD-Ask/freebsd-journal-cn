@@ -117,7 +117,7 @@ showmount -e myfiler
 mount -t nfs -o nfsv4 myfiler:/fileshare /media
 ```
 
-如果您希望每次系统启动时都挂载此共享，可以将其添加到 /etc/fstab，如下所示：
+如果你希望每次系统启动时都挂载此共享，可以将其添加到 /etc/fstab，如下所示：
 
 ```sh
 myfiler:/fileshare /media nfs rw,tcp,noatime,nfsv4 0 0
@@ -125,7 +125,7 @@ myfiler:/fileshare /media nfs rw,tcp,noatime,nfsv4 0 0
 
 严格来说选项 `noatime` 和 `rw` 不是必须的，因为我们之前已经从 ZFS 方面处理了这些，但必须有 `nfsv4` ，以便系统知道它正在使用 NFS 版本 4。
 
-此时，您应该能够挂载共享，并查看其中的文件，并确保文件的用户和组 ID 是正确的。
+此时，你应该能够挂载共享，并查看其中的文件，并确保文件的用户和组 ID 是正确的。
 
 在 Ubuntu Linux 系统上，我们首先需要安装 NFS 服务器组件，因为它们不是基本系统的一部分：
 
@@ -133,13 +133,13 @@ myfiler:/fileshare /media nfs rw,tcp,noatime,nfsv4 0 0
 apt install nfs-common
 ```
 
-使用您特定发行版的包管理工具，之后的设置应该是相同的。事实证明，这就是所需的所有内容。在命令行上挂载共享可以通过以下命令完成：
+使用你特定发行版的包管理工具，之后的设置应该是相同的。事实证明，这就是所需的所有内容。在命令行上挂载共享可以通过以下命令完成：
 
 ```sh
 mount -t nfs -onfsvers=4 myfiler:/fileshare /media
 ```
 
-当然，挂载可以发生在任何其他已存在的本地目录，而不仅仅是 `/media`。我之所以使用它，是因为它已经存在并且通常是空的。挂载在现有目录上会隐藏其内容，直到下一次卸载 NFS 共享。确保不要在系统运行所需的任何重要目录上进行挂载。无论您选择哪个目录，如果您还希望每次 Linux 系统启动时都挂载该共享，请将以下行添加到 `/etc/fstab`：
+当然，挂载可以发生在任何其他已存在的本地目录，而不仅仅是 `/media`。我之所以使用它，是因为它已经存在并且通常是空的。挂载在现有目录上会隐藏其内容，直到下一次卸载 NFS 共享。确保不要在系统运行所需的任何重要目录上进行挂载。无论你选择哪个目录，如果你还希望每次 Linux 系统启动时都挂载该共享，请将以下行添加到 `/etc/fstab`：
 
 ```sh
 myfiler:/fileshare /media nfs rw,nfsvers=4 0 0

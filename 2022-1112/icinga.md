@@ -112,7 +112,7 @@ monitor# chown -R icinga:icinga /usr/local/etc/icinga2
 
 ## 设置 Nginx   
 
-Icinga 的 Web 界面（被恰当地命名为 Icingaweb2，因为它是版本 2）是一个 PHP 应用程序，用于通过浏览器管理主机和服务。任何失败的检查事件也会在其中显示，您可以在一个中心位置确认问题或定义停机时间。  要配置 PHP fastCGI 进程管理器（php-fpm）来处理来自 Web 服务器的请求，请启用位于 `/usr/local/etc/php-fpm.d/www.conf` 文件中的以下选项：
+Icinga 的 Web 界面（被恰当地命名为 Icingaweb2，因为它是版本 2）是一个 PHP 应用程序，用于通过浏览器管理主机和服务。任何失败的检查事件也会在其中显示，你可以在一个中心位置确认问题或定义停机时间。  要配置 PHP fastCGI 进程管理器（php-fpm）来处理来自 Web 服务器的请求，请启用位于 `/usr/local/etc/php-fpm.d/www.conf` 文件中的以下选项：
 
 ```sh
 monitor# cd /usr/local/etc/php-fpm.d
@@ -175,7 +175,7 @@ monitor# icinga2 node setup --master --zone "my-zone" \
 
 在这里，我们为我们的中央主机 `monitor.example.com` 生成证书，并指示 Icinga 不在 `/usr/local/etc/icinga2` 中填充 `conf.d` 子目录。我们应自己创建这些文件。
 
-区域（zone）和 `cn` 的命名可以根据您的本地需求来选择。防火墙的 5665 端口应该是开放的，以便可以联系客户端并发送检查结果。接下来，我们切换到目录 `/usr/local/etc/icinga2` 并创建一些文件和目录：
+区域（zone）和 `cn` 的命名可以根据你的本地需求来选择。防火墙的 5665 端口应该是开放的，以便可以联系客户端并发送检查结果。接下来，我们切换到目录 `/usr/local/etc/icinga2` 并创建一些文件和目录：
 
 ```sh
 monitor# cd /usr/local/etc/icinga2
@@ -355,11 +355,11 @@ monitor# icingacli setup token create --config=/usr/local/etc/icingaweb2
 monitor# chown -R www:www /usr/local/etc/icingaweb2
 ```
 
-令牌现在可以从浏览器中读取，当粘贴到网页表单中后，可以进行 Icingaweb2 的其余设置步骤。填写我们创建的数据库用户等详细信息，以及管理员用户和密码等其他信息。最后，Icingaweb2 登录界面将呈现，您可以从这个中央位置访问所有被监控的主机和服务。
+令牌现在可以从浏览器中读取，当粘贴到网页表单中后，可以进行 Icingaweb2 的其余设置步骤。填写我们创建的数据库用户等详细信息，以及管理员用户和密码等其他信息。最后，Icingaweb2 登录界面将呈现，你可以从这个中央位置访问所有被监控的主机和服务。
 
 ## 添加新主机端点
 
-在对 Icinga 功能初步了解后，您可能会想知道如何添加更多对象进行监控。我们将通过一个新主机来演示这一过程，并展示将其纳入监控所需的所有步骤。
+在对 Icinga 功能初步了解后，你可能会想知道如何添加更多对象进行监控。我们将通过一个新主机来演示这一过程，并展示将其纳入监控所需的所有步骤。
 
 在一个新安装的主机（这里使用 FreeBSD）上，名为 `client.example.org`，安装 icinga2 包。
 
@@ -397,7 +397,7 @@ monitor# icinga2 pki sign-csr \
  --cert /var/lib/icinga2/certs/client.example.org.crt"
 ```
 
-当我们在本文开头运行 "icinga2 node setup --master" 生成主证书以签署其他证书时，系统在 /var/lib/icinga2/certs/ 目录下创建了一个名为 monitor.example.org.crt 的文件。将此文件以安全的方式传输到客户端是必要的，以便验证服务器证书。根据您对客户端及其连接的用户的信任程度，以及客户端与服务器之间的网络（或媒介），有多种方法可以实现这一操作。
+当我们在本文开头运行 "icinga2 node setup --master" 生成主证书以签署其他证书时，系统在 /var/lib/icinga2/certs/ 目录下创建了一个名为 monitor.example.org.crt 的文件。将此文件以安全的方式传输到客户端是必要的，以便验证服务器证书。根据你对客户端及其连接的用户的信任程度，以及客户端与服务器之间的网络（或媒介），有多种方法可以实现这一操作。
 
 ```sh
 monitor# scp /var/lib/icinga2/certs/monitor.example.org.crt \
@@ -468,7 +468,7 @@ parent = "my-zone" // 建立区域层次结构
 }
 ```
 
-在 zone 对象中，我们只需要定义端点的名称，引用我们之前在文件中定义的主机。父级区域是我们在创建监控证书时生成的区域。Icinga 配置中应该已经有它的条目。作为端点属性的日志持续时间条目指示端点在与父级的连接丢失时，如何存储所有检查结果的回放日志。一旦连接恢复，客户端将回放日志，并将所有数据发送给父级。由于父级负责调度所有要在监控系统上运行的检查，将其设置为零是可以的。
+在 zone 对象中，我们只需要定义端点的名称，引用我们之前在文件中定义的主机。父级区域是我们在创建监控证书时生成的区域。Icinga 配置中应该已经有它的条目。作为端点属性的日志持续时间条目指示端点在与父级的连接丢失时，如何存储所有检查结果的回放日志。待连接恢复，客户端将回放日志，并将所有数据发送给父级。由于父级负责调度所有要在监控系统上运行的检查，将其设置为零是可以的。
 
 我们已经完成了两个主机上的配置文件工作。剩下的唯一任务就是在客户端和服务器上启动 icinga2 服务，以便读取我们所做的配置更改。
 
