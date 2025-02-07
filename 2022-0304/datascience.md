@@ -17,7 +17,7 @@
 
 ![](https://github.com/user-attachments/assets/3c8406d5-1c7e-450d-a0fb-45fc3a40f4d5)
 
-**图2. 在 FreeBSD 上执行的定制数据科学管道**
+**图 2. 在 FreeBSD 上执行的定制数据科学管道**
 
 下一阶段由 Jupyter Notebook 中的统计软件控制。每次实验都会产生数百万条记录，占用数 GB 的内存，这就要求使用以内存数据库形式的 Pandas DataFrame 对象来进行数据分析。整个数据处理流程则以一组 GNU Make 任务定义的形式描述。
 
