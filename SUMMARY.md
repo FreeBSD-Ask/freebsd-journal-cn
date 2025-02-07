@@ -163,5 +163,5 @@
 * [FreeBSD/ARM64 上的数据科学](2022-0304/datascience.md)
 * [Pinebook Pro 上的 FreeBSD](2022-0304/pinebook.md)
 * [嵌入式控制器的 ACPI 支持](2022-0304/acpi.md)
-* [WPT/CFT：mkjail](2022-0304/mkjail.md)
+* [WPT/CFT：Lumina 桌面征集开发人员](2022-0304/mkjail.md)
 * [实用 Ports：如何设置 Apple 时间机器](2022-0304/apple.md)
