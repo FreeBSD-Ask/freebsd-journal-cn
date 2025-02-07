@@ -125,4 +125,4 @@ wlroots-0.14.1_2
 
 ---
 
-**JESPER SCHMITZ MOURIDSEN** 是一名自学成才的系统管理员和开发者，目前担任系统管理员，主要从事 OpenStack 相关工作。他是 FreeBSD `ports` 的提交者，主要关注 `LXQt`，并且是 `rtsx(4)` 的合著者。工作之外，他喜欢骑自行车，是一名骑行爱好者。
+**JESPER SCHMITZ MOURIDSEN** 是一名自学成才的系统管理员和开发者，目前担任系统管理员，主要从事 OpenStack 相关工作。他是 FreeBSD `ports` 的提交者，主要关注 `LXQt`，并且是 `rtsx(4)` 的合著者。工作之余，他喜欢骑自行车，是一名骑行爱好者。
