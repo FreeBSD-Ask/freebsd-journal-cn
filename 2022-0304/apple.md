@@ -1,4 +1,4 @@
-# 实用 Ports：如何设置 Apple时间机器
+# 实用 Port：如何设置 Apple时间机器
 
 - 原文链接：[How to Set Up an Apple时间机器](https://freebsdfoundation.org/wp-content/uploads/2022/04/Practical-Ports.pdf)
 - 作者：**BENEDICT REUSCHLING**
