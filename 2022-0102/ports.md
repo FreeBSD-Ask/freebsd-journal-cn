@@ -177,7 +177,7 @@ ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/xpdf.svg
 
 很好。由于我们现在要安装两个新文件，我们需要将它们添加到打包列表（pkg-plist）中。这个列表可以通过 `make makeplist` 重新生成，但这次我们手动添加。以下是补丁：
 
-```sh
+```c
 diff --git a/graphics/xpdf4/pkg-plist b/graphics/xpdf4/pkg-plist
 index e6cd3e15dd75..7eee2ae85bc6 100644
 --- a/graphics/xpdf4/pkg-plist
@@ -202,7 +202,7 @@ $ portedit bump-revision -i Makefile
 ```
 因此，我们应该在 diff 中看到以下内容：
 
-```sh
+```c
 diff --git a/graphics/xpdf4/Makefile b/graphics/xpdf4/Makefile
 index bd81dd1a16be..36bd84d97e7e 100644
 --- a/graphics/xpdf4/Makefile
