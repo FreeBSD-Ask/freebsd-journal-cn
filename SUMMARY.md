@@ -164,4 +164,14 @@
 * [Pinebook Pro 上的 FreeBSD](2022-0304/pinebook.md)
 * [嵌入式控制器的 ACPI 支持](2022-0304/acpi.md)
 * [WPT/CFT：Lumina 桌面征集开发人员](2022-0304/mkjail.md)
-* [实用 Ports：如何设置 Apple 时间机器](2022-0304/apple.md)
+* [实用 Port：如何设置 Apple 时间机器](2022-0304/apple.md)
+
+## 2022-0102 软件与系统管理
+
+* [为 FreeBSD Ports 做贡献](2022-0102/ports.md)
+* [使用 Git 贡献到 FreeBSD Ports](2022-0102/git.md)
+* [CBSD：第一部分——生产环境](2022-0102/cbsd.md)
+* [将 OpenBSD 的 pf syncookie 代码移植到 FreeBSD 的 pf](2022-0102/pf.md)
+* [WPT/CFT: mkjail](2022-0102/mkjail.md)
+* [《编程智慧:编程鬼才的经验和思考》（*The Kollected Kode Vicious*）书评](2022-0102/book.md)
+* [会议报告：EuroBSDCon 2021 我的第一次 EuroBSDCon：一位新组织者的视角](2022-0102/con.md)
