@@ -32,7 +32,7 @@ EuroBSDCon 在[都柏林大学学院（UCD）的 O'Reilly Hall](https://www.ucd.
 
 某一时刻，Franco Fichtner 到了，准备做相同的技术检查。[OPNSense](https://opnsense.org/) 是我为客户选择路由器/防火墙解决方案时的首选之一，和他直接交流真的很愉快。
 
-当教程继续进行时，参与者们回到各自的课程。我们回到酒店稍作休息，再次复习了我的演讲内容，还写了我回家后要发布的 “[我解决了问题](https://it-notes.dragas.net/2024/10/03/i-solve-problems-eurobsdcon/http://)” 博客文章。
+当教程继续进行时，参与者们回到各自的课程。我们回到酒店稍作休息，再次复习了我的演讲内容，还写了我回家后要发布的“[我解决了问题](https://it-notes.dragas.net/2024/10/03/i-solve-problems-eurobsdcon/http://)”博客文章。
 
 ## 星期六：会议正式开始
 
@@ -52,7 +52,7 @@ Tom 充满感情地演讲，充满了激情、能力和自豪感。他的演讲�
 ## 与人见面并分享经验
 我有机会见到的人之一——我通过社交互动和他在 [BSD Now 播客](https://www.bsdnow.tv/) 中的角色已经认识了他——就是 Jason Tubnor。Jason 性格友好，充满活力，他问我是否愿意接受 [简短的采访](https://www.bsdnow.tv/579)，内容涉及这次活动、我、BSD Cafe 以及我的演讲。我很高兴接受了采访，我们在午餐休息期间进行了采访。楼上有一个设备齐全的房间，完美地布置好用于这个目的。BSD 风格的组织——总是高效的。
 
-午餐休息时，我还与 Benedict Reuschling 会面并聊了聊。我非常感谢 Benedict（以及 Jason 和其他演讲者）为 [BSD Now 播客](https://www.bsdnow.tv/) 所做的贡献，还要感谢他一年前让我认识了 Jim Maurer，使我能够为 [FreeBSD Journal](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/make-your-own-vpn-freebsd-wireguard-ipv6-and-ad-blocking-included/) 撰写了我的第一篇文章。依然在基金会的范围内，我与 Ed Maste 进行了愉快的交谈。说实话，我是一个比较腼腆的人，感觉自己可能会“打扰”别人，只是简单地接近他们。比如，我没能和 Colin Percival、Allan Jude、Dan Langille 以及其他一些人——包括伟大的 Jon “Maddog” Hall 交流。我下次一定会补上！
+午餐休息时，我还与 Benedict Reuschling 会面并聊了聊。我非常感谢 Benedict（以及 Jason 和其他演讲者）为 [BSD Now 播客](https://www.bsdnow.tv/) 所做的贡献，还要感谢他一年前让我认识了 Jim Maurer，使我能够为 [FreeBSD Journal](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/make-your-own-vpn-freebsd-wireguard-ipv6-and-ad-blocking-included/) 撰写了我的第一篇文章。依然在基金会的范围内，我与 Ed Maste 进行了愉快的交谈。说实话，我是一个比较腼腆的人，感觉自己可能会“打扰”别人，只是简单地接近他们。比如，我没能和 Colin Percival、Allan Jude、Dan Langille 以及其他一些人——包括伟大的 Jon“Maddog”Hall 交流。我下次一定会补上！
 
 午餐在大厅供应。传递着各种菜肴的小份量，每种甜点也都非常好吃。在休息期间，能够结识并与许多人交流——太多了，无法一一列举。我担心自己会忘记某些人，那样会很遗憾，因为参加这次活动的每一个人，无论如何，都与 IT、开源和 BSD 世界有所关联——这些人我很想与他们聊上好几个小时，而不仅仅是几分钟。
 
@@ -99,7 +99,7 @@ Patrick McEvoy，一如既往地高效和专业，帮我戴上了麦克风，站
 
 星期天早上，活动开始得晚了半个小时。醒来时的惊讶是：我几乎没声音了。过去几天说了太多话，加上都柏林的气候——和意大利的完全不同——这两者可能都有很大影响。这进一步限制了我与许多我想见的人互动。
 
-星期天的主题演讲由 Kent Inge Fagerland Simonsen 主讲：《我们的软件可持续吗？》 由于我对 IT 中的可持续性概念相当敏感，这个话题让我非常感兴趣。我坚信优化（无论是硬件还是软件）至关重要，特别是在中长期来看。如果我们让硬件变得更节能、更强大，但软件却膨胀到会抵消甚至加剧整体情况，那就没有意义了。
+星期天的主题演讲由 Kent Inge Fagerland Simonsen 主讲：《我们的软件可持续吗？》由于我对 IT 中的可持续性概念相当敏感，这个话题让我非常感兴趣。我坚信优化（无论是硬件还是软件）至关重要，特别是在中长期来看。如果我们让硬件变得更节能、更强大，但软件却膨胀到会抵消甚至加剧整体情况，那就没有意义了。
 
 不幸的是，我没能参加，因为系统管理员没有固定的工作时间。那晚，两台物理服务器决定同时发生故障。由于这些服务器非常重要，而星期天又是会议的第二天，我决定在离开酒店之前先修复它们，稍晚些时候再到会议现场。好在 zfs-send、zfs-receive 和 DNS 更新处理起来不成问题。我等待数据传输，确保一切正常。用户没有察觉到任何问题，这让努力变得值得。FreeBSD、bhyve 和 jails 再次帮助最小化了问题和停机时间。
 
@@ -116,7 +116,7 @@ Patrick McEvoy，一如既往地高效和专业，帮我戴上了麦克风，站
 
 接着，我选择了 Michael Dexter 的讲座：《FreeBSD 和 Windows 环境》。[Michael 一直在从事 OpenZFS、jails 和 bhyve](https://callfortesting.org/) 的工作——这三者是我工作中不可或缺的工具——他的演讲一如既往地精彩、信息丰富且极具启发性。他让我又有了迁移一些 Windows 服务器从 Linux/KVM 到 bhyve 的理由，而迁移后的结果非常好。在 Michael 演讲结束时，Patrick McEvoy 来到我面前，告诉我他非常喜欢我的演讲。这对我意义重大，Patrick 是我非常尊敬的人，他的评价对我非常重要。
 
-不幸的是，祸不单行。当我准备去听 Dan Langille 的讲座，《用 FreeBSD jail 做傻事》 时，我收到了大量的服务器警报，不得不赶紧出去解决问题。幸运的是，WiFi 信号非常好，我成功介入了处理问题，但还是错过了这场讲座。我在下一场讲座中途重新自由了，觉得不太合适直接插入。所以，我利用这个时间与 Deb 和 Kim 讨论我的推广想法。人们往往不知道 FreeBSD 能为他们做什么，这也是我通过分享我的故事和博客文章，尽力向大家展示 BSD 并非“无法驯服的怪物”，而是我们的朋友。
+不幸的是，祸不单行。当我准备去听 Dan Langille 的讲座，《用 FreeBSD jail 做傻事》时，我收到了大量的服务器警报，不得不赶紧出去解决问题。幸运的是，WiFi 信号非常好，我成功介入了处理问题，但还是错过了这场讲座。我在下一场讲座中途重新自由了，觉得不太合适直接插入。所以，我利用这个时间与 Deb 和 Kim 讨论我的推广想法。人们往往不知道 FreeBSD 能为他们做什么，这也是我通过分享我的故事和博客文章，尽力向大家展示 BSD 并非“无法驯服的怪物”，而是我们的朋友。
 
 ## 闭幕式
 

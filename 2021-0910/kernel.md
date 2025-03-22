@@ -5,7 +5,7 @@
 
 我经常看到的一个问题是类似于“如何开始操作系统内核开发？”这样的问题。这个问题很难普遍回答，但有一个更简单的方面是，“如何为自己设置一个（高效的）构建和测试内核更改的环境？”换句话说，虽然提交第一个内核补丁是一个重要的里程碑，但一个频繁的贡献者可能会处理多个不同的补丁，测试补丁（可能是从其他开发者那里获得的），通过二分查找找出回归的原因，或者调试内核崩溃。拥有一个能够最小化等待时间，避免不断调整配置选项或 shell 脚本的工作流程非常重要。
 
-FreeBSD 是个庞大且历史悠久的项目（比一些开发者还要老），它的目标是支持各种硬件平台（从掌中宝般的小型系统到拥有 TB 级内存的大型多核服务器）。因此，它没有一种适用于所有任务的通用方法。然而，快速的编辑-编译-测试循环的好处是普遍适用的；本文旨在介绍一些技巧，可以减少许多内核开发任务的摩擦。
+FreeBSD 是个庞大且历史悠久的项目（比一些开发者还要老），它的目标是支持各种硬件平台（从掌中宝般的小型系统到拥有 TB 级内存的大型多核服务器）。因此，它没有一种适用于所有任务的通用方法。然而，快速的编辑 - 编译 - 测试循环的好处是普遍适用的；本文旨在介绍一些技巧，可以减少许多内核开发任务的摩擦。
 
 以下步骤假设你使用的是 FreeBSD 主机和兼容 POSIX 的 shell（例如 /bin/sh）。虽然当前项目没有提供许多用于构建、启动和测试内核更改的现成脚本，但这里的一些建议可以融入到你的开发环境中，或者集成到由多个开发者共享的 CI 系统中。
 
@@ -207,7 +207,7 @@ stress2 是一个由 Peter Holm 维护的大型压力测试套件。它包含数
 # echo stress2 | make test
 ```
 
-stress2 套件至少需要几GB的 RAM 和一个大磁盘。完成这些测试可能需要几天时间，但它是测试内核系统性更改的绝佳方式。各个单独的测试位于 `misc` 子目录下，可以直接运行。
+stress2 套件至少需要几 GB 的 RAM 和一个大磁盘。完成这些测试可能需要几天时间，但它是测试内核系统性更改的绝佳方式。各个单独的测试位于 `misc` 子目录下，可以直接运行。
 
 ## syzkaller
 
@@ -215,7 +215,7 @@ stress2 套件至少需要几GB的 RAM 和一个大磁盘。完成这些测试�
 
 syzkaller 的详细概述出现在之前的 [FreeBSD Journal 文章](https://freebsdfoundation.org/wp-content/uploads/2021/01/Kernel-Fuzzing.pdf)中。设置一个 syzkaller 实例是一个相对复杂的任务。可以参考 [syzkaller 仓库](https://github.com/google/syzkaller/tree/master/docs/freebsd#readme) 中的文档，了解如何设置一个 FreeBSD 主机来运行 syzkaller（它通过 QEMU 或 bhyve 虚拟机执行模糊测试）。
 
-一种自动化许多设置步骤的替代方法是使用 Bastille 模板。[Bastille](https://bastillebsd.org/) 是一个在 FreeBSD 上部署和管理 jail 系统的工具；Bastille [模板](https://github.com/markjdb/bastille-syzkaller) 允许在运行中的 jail 中运行代码并修改配置。运行 syzkaller 的 Bastille 模板已经可用。要使用它，首先安装 Bastille 并基于 FreeBSD 13.0 创建一个精简的、基于 VNET 的 jail ：
+一种自动化许多设置步骤的替代方法是使用 Bastille 模板。[Bastille](https://bastillebsd.org/) 是一个在 FreeBSD 上部署和管理 jail 系统的工具；Bastille [模板](https://github.com/markjdb/bastille-syzkaller) 允许在运行中的 jail 中运行代码并修改配置。运行 syzkaller 的 Bastille 模板已经可用。要使用它，首先安装 Bastille 并基于 FreeBSD 13.0 创建一个精简的、基于 VNET 的 jail：
 
 ```sh
 # pkg install bastille

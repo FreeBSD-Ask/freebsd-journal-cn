@@ -7,7 +7,7 @@ FreeBSD 13.0 版本为用户提供了新功能，并优化了新贡献的工作�
 
 ## 工具的变革
 
-在过去两年中，FreeBSD 项目的变化并非全部以补丁的形式出现。一些最大的变化体现在用于贡献代码的工具上。第一个重大变化是，FreeBSD 已经从 Subversion 转向 Git，用于存储源代码、文档和 Ports 。Git 在软件行业中被广泛使用，对于新贡献者来说，比 Subversion 更加熟悉。Git 的分布式特性也更容易促成非提交者的贡献。FreeBSD 多年来一直提供 Subversion 仓库的 Git 镜像，许多开发者已经使用 Git 来管理进行中的补丁。现在，Git 镜像已经成为官方仓库，所有更改现在直接推送到 Git 而不是 Subversion。FreeBSD 13.0 是第一个仅通过 Git 而非 Subversion 提供源代码的版本。该过程的第一阶段专注于将项目现有的工作流程和工具（如 Phabricator 和 Bugzilla）适配到新的 Git 仓库。下一阶段将使我们能够探索更多工具，如提交前测试和持续集成。
+在过去两年中，FreeBSD 项目的变化并非全部以补丁的形式出现。一些最大的变化体现在用于贡献代码的工具上。第一个重大变化是，FreeBSD 已经从 Subversion 转向 Git，用于存储源代码、文档和 Ports。Git 在软件行业中被广泛使用，对于新贡献者来说，比 Subversion 更加熟悉。Git 的分布式特性也更容易促成非提交者的贡献。FreeBSD 多年来一直提供 Subversion 仓库的 Git 镜像，许多开发者已经使用 Git 来管理进行中的补丁。现在，Git 镜像已经成为官方仓库，所有更改现在直接推送到 Git 而不是 Subversion。FreeBSD 13.0 是第一个仅通过 Git 而非 Subversion 提供源代码的版本。该过程的第一阶段专注于将项目现有的工作流程和工具（如 Phabricator 和 Bugzilla）适配到新的 Git 仓库。下一阶段将使我们能够探索更多工具，如提交前测试和持续集成。
 
 第二个重大变化是采用 AsciiDoc 作为 FreeBSD 文档和网站的源格式。FreeBSD 的文档包括三个主要部分：手册页、书籍和文章（如 FreeBSD 手册）以及项目网站。书籍和文章以前使用一种名为 DocBook 的 SGML 标记语言编写，网站则直接用 HTML 编写。虽然 DocBook 语言非常有表现力，支持诸如调用、脚注和索引等多种功能，但它是个冗长的格式。自从 DocBook 最初设计以来，轻量级的标记语言如 MarkDown 已经变得流行。AsciiDoc 是一种与 MarkDown 相似的轻量级标记语言，同时保留了 DocBook 的表现力。FreeBSD 文档团队最近已将所有书籍、文章和网站转换为 AsciiDoc 格式。这提供了一种更简单、易于阅读的格式，能使新贡献者更容易参与文档编写。
 
@@ -37,7 +37,7 @@ FreeBSD 13.0 的内核包含对内核加密框架的若干改进，该框架用�
 
 ## 虚拟化
 
-FreeBSD 13.0 在作为客户机和主机的虚拟化方面都有若干改进。内核中的 VirtIO 设备驱动程序现在支持 VirtIO 规范的第 1 版。这提高了与提供 VirtIO 设备的虚拟化管理程序、模拟器和仿真模型的兼容性。bhyve(8) 虚拟化管理程序包括若干变化，包括改进的 VNC 支持（包括与 macOS 中内建的 “Screen Sharing” VNC 客户端的兼容性）、VirtIO 9p 文件系统共享，以及对虚拟机快照的初步支持。
+FreeBSD 13.0 在作为客户机和主机的虚拟化方面都有若干改进。内核中的 VirtIO 设备驱动程序现在支持 VirtIO 规范的第 1 版。这提高了与提供 VirtIO 设备的虚拟化管理程序、模拟器和仿真模型的兼容性。bhyve(8) 虚拟化管理程序包括若干变化，包括改进的 VNC 支持（包括与 macOS 中内建的“Screen Sharing”VNC 客户端的兼容性）、VirtIO 9p 文件系统共享，以及对虚拟机快照的初步支持。
 
 ## 结论
 

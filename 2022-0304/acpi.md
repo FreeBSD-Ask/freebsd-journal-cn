@@ -49,7 +49,7 @@ ACPI 规范定义了多种[专用表](https://uefi.org/specs/ACPI/6.4/05_ACPI_So
 
 ARM64 SoC 依照标准由 ACPI 表格描述。例如，GTDT 列出了定时器和看门狗，MADT 则包含中断控制器（目前仅支持 GICv2 和 GICv3）。进一步来看嵌入式控制器，控制台由 SPCR（可选 DBG2 表）描述——推荐使用 **ARM SBSA UART (PL011)** 或兼容 **16550** 的 UART，不过近年来 ARM 生态中的更多 UART 类型也已被纳入支持[列表](https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/acpi-debug-port-table#table-3-debug-port-types-and-subtypes)。
 
-PCIe 控制器的描述更为复杂，必须包含在 MCFG 和 DSDT/SSDT 表中。对于 **ARM64**，唯一允许的类型是完全兼容标准 **ECAM (Enhanced Configuration Access Mechanism)** 的通用 PCIe 控制器，该类型受 **[pci_host_generic_acpi](https://cgit.freebsd.org/src/tree/sys/dev/pci/pci_host_generic_acpi.c)** 驱动程序支持。建议新设计在芯片中保留未经修改的标准 **ECAM** 实现，但对于现有产品，往往无法满足这一要求。因此，在 FreeBSD 的 **pci_host_generic_acpi** 驱动中，已允许通过[配置空间访问 quirks](https://cgit.freebsd.org/src/commit/?id=2de4c7f6d08798fb6269582907155703d1ab5ef4) 来处理对标准的偏离。 另一种解决方案是通过 **SMCCC (Secure Monitor Call Calling Convention)** 接口，支持从固件执行低级例程。目前，该机制已在[树莓派 4](https://github.com/ARM-software/arm-trusted-firmware/commit/ab061eb732dcd2ee711b6960c37c4b25c44f3f9d) 上可用，但 FreeBSD 仍未实现该选项。
+PCIe 控制器的描述更为复杂，必须包含在 MCFG 和 DSDT/SSDT 表中。对于 **ARM64**，唯一允许的类型是完全兼容标准 **ECAM (Enhanced Configuration Access Mechanism)** 的通用 PCIe 控制器，该类型受 **[pci_host_generic_acpi](https://cgit.freebsd.org/src/tree/sys/dev/pci/pci_host_generic_acpi.c)** 驱动程序支持。建议新设计在芯片中保留未经修改的标准 **ECAM** 实现，但对于现有产品，往往无法满足这一要求。因此，在 FreeBSD 的 **pci_host_generic_acpi** 驱动中，已允许通过[配置空间访问 quirks](https://cgit.freebsd.org/src/commit/?id=2de4c7f6d08798fb6269582907155703d1ab5ef4) 来处理对标准的偏离。另一种解决方案是通过 **SMCCC (Secure Monitor Call Calling Convention)** 接口，支持从固件执行低级例程。目前，该机制已在[树莓派 4](https://github.com/ARM-software/arm-trusted-firmware/commit/ab061eb732dcd2ee711b6960c37c4b25c44f3f9d) 上可用，但 FreeBSD 仍未实现该选项。
 
 ## 处理嵌入式控制器  
 
@@ -122,7 +122,7 @@ Device(AHC0) {
 2. [ACPI](https://cgit.freebsd.org/src/tree/sys/dev/sdhci/sdhci_xenon_acpi.c) 适配代码  
 3. [simplebus](https://cgit.freebsd.org/src/tree/sys/dev/sdhci/sdhci_xenon_fdt.c) 适配代码（适用于 **Device Tree**）  
 
-除了 `DRIVER_MODULE`/`DEFINE_CLASS_1` 宏 的不同使用方式，simplebus 适配代码还额外解析了电源管理 (regulators)和卡检测 GPIO 引脚 (card detect GPIO pins)，而 **ACPI** 方式下这些信息则由固件预先设定。
+除了 `DRIVER_MODULE`/`DEFINE_CLASS_1` 宏 的不同使用方式，simplebus 适配代码还额外解析了电源管理 (regulators) 和卡检测 GPIO 引脚 (card detect GPIO pins)，而 **ACPI** 方式下这些信息则由固件预先设定。
 
 ```c
 &ap_sdhci0 {
@@ -134,7 +134,7 @@ Device(AHC0) {
     dma-coherent;
     bus-width = <8>;
     /*
-     * 在 HS 模式下不稳定 —— PHY 需要“进一步校准”，因此添加 “slow-mode”，并禁用 SDR104、SDR50 和 DDR50 模式。
+     * 在 HS 模式下不稳定 —— PHY 需要“进一步校准”，因此添加“slow-mode”，并禁用 SDR104、SDR50 和 DDR50 模式。
     */
     marvell,xenon-phy-slow-mode;
     no-1-8-v;
@@ -190,7 +190,7 @@ Device (MMC0)
 
 ## 结论  
 
-随着 FreeBSD 内核的最新改进，嵌入式产品中使用的 ARM64 SoC 现在可以同时通过 ACPI 和设备树（DT） 以类似的方式获得支持。对于 ACPI 而言，自定义控制器的分层表示也被证明足够灵活，能够适用于大多数类型的设备和子系统。例如，一些复杂的网络控制器和通用 MDIO 层的实现都已经验证了这一点。  
+随着 FreeBSD 内核的最新改进，嵌入式产品中使用的 ARM64 SoC 现在可以同时通过 ACPI 和设备树（DT）以类似的方式获得支持。对于 ACPI 而言，自定义控制器的分层表示也被证明足够灵活，能够适用于大多数类型的设备和子系统。例如，一些复杂的网络控制器和通用 MDIO 层的实现都已经验证了这一点。  
 
 FreeBSD 现在可以无限制地继续沿着这条路径发展，尤其是其总线架构允许以干净且优雅的方式进行扩展，就像 **SD/MMC 控制器** 示例所展示的那样。  
 

@@ -32,7 +32,7 @@ pkg install bpytop
 
 ![](https://github.com/user-attachments/assets/ad1f20ef-3ed6-499c-a772-45c4d1e3f1d5)
 
-好吧，Dilbert 的 Topper 会说：“这没什么……” 所以我开始在 freshports.org 上搜索其他类似 top 的工具。果不其然，几乎每个字母都以某种方式加在 top 前面。从 sysutils/atop，尽管手册页声称它是 Linux 的资源监视器，但它在 FreeBSD 上运行得非常好，到 databases/mtop 或 mytop 查看 MySQL 进程，再到 pgtop（用于 Postgres），有很多选择。我唯一缺少的是 stop——停止一个进程。怎么了，“程序应该做好一件事，并把它做好”呢？也许我在这方面有些老派！
+好吧，Dilbert 的 Topper 会说：“这没什么……”所以我开始在 freshports.org 上搜索其他类似 top 的工具。果不其然，几乎每个字母都以某种方式加在 top 前面。从 sysutils/atop，尽管手册页声称它是 Linux 的资源监视器，但它在 FreeBSD 上运行得非常好，到 databases/mtop 或 mytop 查看 MySQL 进程，再到 pgtop（用于 Postgres），有很多选择。我唯一缺少的是 stop——停止一个进程。怎么了，“程序应该做好一件事，并把它做好”呢？也许我在这方面有些老派！
 
 网络管理员可能会看看 dns/dnstop，用来捕获并查看流经的 DNS 流量。比 bpytop 更简单的视图，但它有你需要的一切。或者试试 net-mgmt/bandwhich，找出你的带宽一天都流向了哪里。
 

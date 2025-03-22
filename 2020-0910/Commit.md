@@ -123,8 +123,8 @@ Security  | 与安全问题相关的外部参考，例如 CVE 编号
 Sponsored by  | 资助此更改的组织或事件
 Differential Revision  | FreeBSD Phabricator 实例中代码审查的完整链接
 
-“ID” 表示一个 FreeBSD 用户 ID 或一个名字和电子邮件地址。多个 ID 可以作为逗号分隔的列表呈现，或者通过在后续行中重复元数据标签来表示。
+“ID”表示一个 FreeBSD 用户 ID 或一个名字和电子邮件地址。多个 ID 可以作为逗号分隔的列表呈现，或者通过在后续行中重复元数据标签来表示。
 
 ---
 
-**ED MASTE** 管理着 FreeBSD 基金会的项目开发工作。他还是选举产生的 FreeBSD 核心团队的成员。除了 FreeBSD，他还为多个其他开源项目做出了贡献，包括 LLVM、ELF 工具链、QEMU 和 Open vSwitch。他与妻子 Anna 以及儿子 Pieter 和 Daniel 一起住在加拿大的基奇纳-滑铁卢。
+**ED MASTE** 管理着 FreeBSD 基金会的项目开发工作。他还是选举产生的 FreeBSD 核心团队的成员。除了 FreeBSD，他还为多个其他开源项目做出了贡献，包括 LLVM、ELF 工具链、QEMU 和 Open vSwitch。他与妻子 Anna 以及儿子 Pieter 和 Daniel 一起住在加拿大的基奇纳 - 滑铁卢。

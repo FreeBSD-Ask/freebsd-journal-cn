@@ -73,4 +73,4 @@ Wifibox 附带了大量的文档，因此我推荐读者进一步研究。我还
 
 ---
 
-**Gábor Páli** 是位多年来始终愉快且忠诚的 FreeBSD 用户，他也曾在文档编写和 Ports开发方面获得过乐趣。他与妻子一起住在美丽的匈牙利城市埃斯泰尔戈姆（Esztergom）的边缘。他支持在行业中推广函数式编程，现如今他为 Apache CouchDB 做贡献，编写 Erlang 和 Scala 代码。
+**Gábor Páli** 是位多年来始终愉快且忠诚的 FreeBSD 用户，他也曾在文档编写和 Ports 开发方面获得过乐趣。他与妻子一起住在美丽的匈牙利城市埃斯泰尔戈姆（Esztergom）的边缘。他支持在行业中推广函数式编程，现如今他为 Apache CouchDB 做贡献，编写 Erlang 和 Scala 代码。

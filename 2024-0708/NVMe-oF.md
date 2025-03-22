@@ -23,7 +23,7 @@ FreeBSD 15 支持通过主机内核驱动程序访问远程命名空间，以及
 
 ## 主机
 
-FreeBSD 中的 Fabrics 主机内置了新的 [nvmecontrol(8)](https://man.freebsd.org/nvmecontrol/8) 命令和内核驱动程序 [nvmf(4)](https://man.freebsd.org/nvmf/4) 。内核驱动程序将远程控制器暴露为类似于 PCIe NVMe 控制器的新总线设备 nvmeX 。远程命名空间通过磁盘设备 [nda(4)](https://man.freebsd.org/nda/4) 以 CAM 暴露。与 PCIe 的驱动程序 [nvme(4)](https://man.freebsd.org/nvme/4)不同，Fabrics 主机驱动程序不支持磁盘驱动程序 [nvd(4)](https://man.freebsd.org/nvd/4)。所有新的 nvmecontrol(8) 命令都使用从主机 UUID 生成的主机 NQN，除非显式指定主机 NQN。
+FreeBSD 中的 Fabrics 主机内置了新的 [nvmecontrol(8)](https://man.freebsd.org/nvmecontrol/8) 命令和内核驱动程序 [nvmf(4)](https://man.freebsd.org/nvmf/4) 。内核驱动程序将远程控制器暴露为类似于 PCIe NVMe 控制器的新总线设备 nvmeX。远程命名空间通过磁盘设备 [nda(4)](https://man.freebsd.org/nda/4) 以 CAM 暴露。与 PCIe 的驱动程序 [nvme(4)](https://man.freebsd.org/nvme/4)不同，Fabrics 主机驱动程序不支持磁盘驱动程序 [nvd(4)](https://man.freebsd.org/nvd/4)。所有新的 nvmecontrol(8) 命令都使用从主机 UUID 生成的主机 NQN，除非显式指定主机 NQN。
 
 
 ### 发现服务

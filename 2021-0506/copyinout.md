@@ -410,7 +410,7 @@ copyinout 框架的初步实现表明，生成拷贝函数可以提高系统调�
 
 [1] CTSRD. CheriBSD. FreeBSD 适配 CHERI-MIPS、CHERI-RISC-V 和 Arm Morello. https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/cheribsd.html.
 
-[2] Konrad Witaszczyk. 跨地址空间的能力感知内存拷贝. 哥本哈根大学，2019年.
+[2] Konrad Witaszczyk. 跨地址空间的能力感知内存拷贝。哥本哈根大学，2019 年。
 
 [3] The FreeBSD Project. FreeBSD-EN-18:12.mem. https://www.freebsd.org/security/advisories/FreeBSD-EN-18:12.mem.asc.
 
@@ -418,20 +418,20 @@ copyinout 框架的初步实现表明，生成拷贝函数可以提高系统调�
 
 [5] The MITRE Corporation. CVE-2010-4082. https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4082.
 
-[6] Mateusz Jurczyk. 使用 x86 仿真和污点追踪检测内核内存泄漏. https://googleprojectzero.blogspot.com/2018/06/detecting-kernel-memory-disclosure.html.
+[6] Mateusz Jurczyk. 使用 x86 仿真和污点追踪检测内核内存泄漏。https://googleprojectzero.blogspot.com/2018/06/detecting-kernel-memory-disclosure.html.
 
-[7] Alexander Popov. 引入 STACKLEAK 功能并为其添加测试. https://lwn.net/Articles/735584/.
+[7] Alexander Popov. 引入 STACKLEAK 功能并为其添加测试。https://lwn.net/Articles/735584/.
 
-[8] Kees Cook. mm: 强化用户拷贝. https://lwn.net/Articles/693745/.
+[8] Kees Cook. mm: 强化用户拷贝。https://lwn.net/Articles/693745/.
 
-[9] Thomas Barabosch, Maxime Villard. KLEAK: 实用的内核内存泄漏检测. https://www.netbsd.org/gallery/presentations/maxv/kleak.pdf.
+[9] Thomas Barabosch, Maxime Villard. KLEAK: 实用的内核内存泄漏检测。https://www.netbsd.org/gallery/presentations/maxv/kleak.pdf.
 
-[10] The FreeBSD Project. FreeBSD 架构手册，第5章。SYSINIT 框架. https://docs.freebsd.org/en/books/arch-handbook/sysinit/.
+[10] The FreeBSD Project. FreeBSD 架构手册，第 5 章。SYSINIT 框架。https://docs.freebsd.org/en/books/arch-handbook/sysinit/.
 
-[11] Robert N. M. Watson 等人. 能力硬件增强 RISC 指令：CHERI 指令集架构（第8版）。技术报告 UCAM-CL-TR-951，剑桥大学计算机实验室，2020年.
+[11] Robert N. M. Watson 等人。能力硬件增强 RISC 指令：CHERI 指令集架构（第 8 版）。技术报告 UCAM-CL-TR-951，剑桥大学计算机实验室，2020 年。
 
-[12] Robert N. M. Watson 等人. CHERI简介。技术报告 UCAM-CL-TR-941，剑桥大学计算机实验室，2019年.
+[12] Robert N. M. Watson 等人。CHERI 简介。技术报告 UCAM-CL-TR-941，剑桥大学计算机实验室，2019 年。
 
 ---
 
-**KONRAD WITASZCZYK** 是剑桥大学的研究员，参与 CHERI 项目。他毕业于雅盖隆大学，取得理论计算机科学学士学位，取得哥本哈根大学计算机科学硕士学位，并在 Fudo Security 工作了近7年，致力于 FreeBSD 及其与安全相关的技术。目前，Konrad 住在波兰华沙。
+**KONRAD WITASZCZYK** 是剑桥大学的研究员，参与 CHERI 项目。他毕业于雅盖隆大学，取得理论计算机科学学士学位，取得哥本哈根大学计算机科学硕士学位，并在 Fudo Security 工作了近 7 年，致力于 FreeBSD 及其与安全相关的技术。目前，Konrad 住在波兰华沙。

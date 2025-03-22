@@ -9,7 +9,7 @@
 
 所以，如果我们要构建镜像，我们需要创建分区，再把 U-Boot 和 FreeBSD 安装到 SD 卡上。
 
-构建 U-Boot 相对直接。虽然有许多 U-Boot 的移植版本用于各种板子，但 ARTYZ7 并没有现成的移植版本。我已经创建了一个移植版本，你能在[这里](http://www.chrisbowman.com/crb/ArtyZ7/u-boot_ports/patches.html)找到。虽然我还没有把它纳入 FreeBSD 的 ports 中，但你可以直接将其放入最新的 ports 目录 `/usr/ports/sysutils` 下。 [FreeBSD 手册第 4.5 章](https://docs.freebsd.org/en/books/handbook/ports/#ports-using)提供了非常详细的安装和构建 ports 的说明。你将该 port 添加到你的 ports 中后，在 `sysinstall/u-boot-artyz7` 目录下简单地运行 `make`，应该就能自动下载构建 U-Boot。运行 `make install` 后，文件 `boot.bin` 和 `U-boot.img` 应该会出现在目录 `/usr/local/share/U-boot/U-boot-artyz7` 下。注意：我以前可以使用较大的 “`-j`” 值来让 `make` 使用多个核心进行构建，但在最新的 ports（2024Q3）中，似乎无法正常工作。
+构建 U-Boot 相对直接。虽然有许多 U-Boot 的移植版本用于各种板子，但 ARTYZ7 并没有现成的移植版本。我已经创建了一个移植版本，你能在[这里](http://www.chrisbowman.com/crb/ArtyZ7/u-boot_ports/patches.html)找到。虽然我还没有把它纳入 FreeBSD 的 ports 中，但你可以直接将其放入最新的 ports 目录 `/usr/ports/sysutils` 下。 [FreeBSD 手册第 4.5 章](https://docs.freebsd.org/en/books/handbook/ports/#ports-using)提供了非常详细的安装和构建 ports 的说明。你将该 port 添加到你的 ports 中后，在 `sysinstall/u-boot-artyz7` 目录下简单地运行 `make`，应该就能自动下载构建 U-Boot。运行 `make install` 后，文件 `boot.bin` 和 `U-boot.img` 应该会出现在目录 `/usr/local/share/U-boot/U-boot-artyz7` 下。注意：我以前可以使用较大的“`-j`”值来让 `make` 使用多个核心进行构建，但在最新的 ports（2024Q3）中，似乎无法正常工作。
 
 从源代码构建也在 FreeBSD 手册中有很好的文档。在[第 26.6 章：从源代码更新 FreeBSD](https://docs.freebsd.org/en/books/handbook/cutting-edge/#makeworld) 中，你将找到有关下载 FreeBSD 源代码和从中构建的详细信息。如果你已经在 `/usr/src` 安装了 FreeBSD 源代码，你可以直接进入该目录并运行以下命令：
 

@@ -2,7 +2,7 @@
 
 - 原文：[AArch64: Bringing a New FreeBSD Architecture to Tier-1](https://freebsdfoundation.org/wp-content/uploads/2023/06/maste.pdf)
 - 作者：ED MASTE
-- 译者：ykla 【】为译者注
+- 译者：ykla【】为译者注
 
 FreeBSD 起源于 386BSD，而且在最初仅支持一种 CPU 架构，即英特尔 80386。对第二种架构 DEC Alpha【是由迪吉多公司开发的 64 位 RISC 指令集架构微处理器】的支持在 FreeBSD 3.2 中被加入的，接着是对 64 位 x86（amd64）的支持。支持等级的概念尚未完全确定，但 amd64 在 2003 年被提升为一级支持状态。64 位的 ARM 架构 AArch64（也称为 arm64）在 2021 年获得了一级支持的地位。我们将探讨这意味着什么，以及我们是如何实现这一步的。
 
@@ -127,4 +127,4 @@ Pine A64 LTS
 
 ---
 
-**ED MASTE** 是 FreeBSD 基金会的高级技术总监，负责管理基金会的技术路线图、开发团队和赞助项目。他还是当期选举产生的 FreeBSD 核心团队成员。除了 FreeBSD，他还为许多其他开源项目做出了贡献，包括 LLVM、ELF Tool Chain、QEMU 和 Open vSwitch。他与妻子 Anna 和孩子们一起生活在加拿大的基奇纳-滑铁卢地区。
+**ED MASTE** 是 FreeBSD 基金会的高级技术总监，负责管理基金会的技术路线图、开发团队和赞助项目。他还是当期选举产生的 FreeBSD 核心团队成员。除了 FreeBSD，他还为许多其他开源项目做出了贡献，包括 LLVM、ELF Tool Chain、QEMU 和 Open vSwitch。他与妻子 Anna 和孩子们一起生活在加拿大的基奇纳 - 滑铁卢地区。

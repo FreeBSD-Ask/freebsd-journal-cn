@@ -1,10 +1,10 @@
 # FreeBSD 和早期的 Unix 社区
 
-- 原文: [FreeBSD and the Early Unix Communities](https://freebsdfoundation.org/wp-content/uploads/2023/06/losh_early_unix.pdf)
+- 原文：[FreeBSD and the Early Unix Communities](https://freebsdfoundation.org/wp-content/uploads/2023/06/losh_early_unix.pdf)
 
 - 作者：WARNER LOSH
 
-- 译者：basebyte 【】为译者注
+- 译者：basebyte【】为译者注
 
 FeeBSD 是一个相互协作、相互帮助的社区，它使用户相互帮助，在一个共同的开放平台上开发出优秀的产品。我们可以追溯到 20 世纪 70 年代中期充满活力的 Unix 用户社区。然而，如果没有这些互惠互利的早期社区，我们就不会有 FreeBSD 的故事，甚至也不会有今天的 Unix 故事。
 
@@ -32,7 +32,7 @@ AT&T 的法律部门善于保护 Unix 的名称和权利，但却不善于处理
 
 ![losh_early_unix-3](https://github.com/basebyte/freebsd-journal-cn/assets/75151114/3bdee864-5ce1-4406-be2e-8333d587c8ce)
 
-接下来，他们不喜欢 Unix News 这个名字，因为它侵犯了他们的 Unix 商标，所以他们强迫使通讯杂志改名为 “login：The Unix Newsletter”。将名称改为副标题似乎是一场没有必要的斗争。
+接下来，他们不喜欢 Unix News 这个名字，因为它侵犯了他们的 Unix 商标，所以他们强迫使通讯杂志改名为“login：The Unix Newsletter”。将名称改为副标题似乎是一场没有必要的斗争。
 
 几年内，英国、澳大利亚和欧洲也出现了其他 Unix 通讯杂志。每份通讯杂志都包含这一法律免责声明。保密协议在 Unix 的早期讨论中产生了很大影响，限制了在早期阶段发布 Unix 的许多酷炫特性，尽管大部分方法和概念已在《CACM》杂志的文章中发表。正如你所想象的，这让人们感到不快。
 

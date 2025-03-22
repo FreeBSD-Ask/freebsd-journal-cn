@@ -74,7 +74,7 @@ PR 应该以某种用户可见的方式上改进项目。
 
 如果你还没有 GitHub 账户，请创建之。此[链接](https://github.com/join)将指导你完成创建新 GitHub 账户的过程。由于许多人已因其他原因而拥有 GitHub 账户，我们将跳过具体的详情讨论。
 
-下一步是将 FreeBSD 的存储库 fork（复刻）到你的账户中。使用 GitHub 的网页是创建分支，进行解释的最简方法——因为此操作你仅需执行一次。 对分支的更改不会干涉 FreeBSD 存储库。用户可以通过单击“Fork”按钮（如图 1 所示）来复刻存储库。你需要点击突出显示的菜单项“Create a new fork（创建新复刻）”。 将打开类似于图 2 的界面。在这里，点击绿色的按钮“Create Fork（创建复刻）”。
+下一步是将 FreeBSD 的存储库 fork（复刻）到你的账户中。使用 GitHub 的网页是创建分支，进行解释的最简方法——因为此操作你仅需执行一次。对分支的更改不会干涉 FreeBSD 存储库。用户可以通过单击“Fork”按钮（如图 1 所示）来复刻存储库。你需要点击突出显示的菜单项“Create a new fork（创建新复刻）”。将打开类似于图 2 的界面。在这里，点击绿色的按钮“Create Fork（创建复刻）”。
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2024/07/Figure1_witharrows.jpg)
 
@@ -167,7 +167,7 @@ To github.com:user/freebsd-src.git
 
 ## 回复反馈
 
-若收到反馈，通常需要更改代码。请执行建议的更改。通常这意味着你将不得不编辑你的某些部分更改（无论是提交消息还是提交本身）。 GitLab 有一个关于使用 git rebase 机制的好[教程](https://docs.gitlab.com/ee/topics/git/git_rebase.html)。
+若收到反馈，通常需要更改代码。请执行建议的更改。通常这意味着你将不得不编辑你的某些部分更改（无论是提交消息还是提交本身）。GitLab 有一个关于使用 git rebase 机制的好[教程](https://docs.gitlab.com/ee/topics/git/git_rebase.html)。
 
 在你进行了更改以后，你将需要将更改推送回你的分支，以便 PR 更新并重新反馈：
 

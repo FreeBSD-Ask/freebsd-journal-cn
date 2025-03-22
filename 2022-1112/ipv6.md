@@ -53,7 +53,7 @@ ether a4:ba:db:e0:ae:33
 inet6 fe80::a6ba:dbff:fee0:ae33%vlan100 prefixlen 64 scopeid 0x6
 ```
 
-IID 看起来类似于 MAC 地址，但并不相同。这被称为“修改后的 EUI64 格式接口标识符”，是从 48 位的 MAC 地址生成的。生成算法4 非常简单。让我们逐个字节地比较 IID 和 MAC 地址5：
+IID 看起来类似于 MAC 地址，但并不相同。这被称为“修改后的 EUI64 格式接口标识符”，是从 48 位的 MAC 地址生成的。生成算法 4 非常简单。让我们逐个字节地比较 IID 和 MAC 地址 5：
 
 ![](https://github.com/user-attachments/assets/c374576a-5804-4c30-8cc4-93816a94f2d3)
 
@@ -270,7 +270,7 @@ ff02::1:ff02:7b%vlan84 scopeid 0x7 mode exclude
 
 1. 全球范围单播地址（Global-scope Unicast Address）。这是一个可路由的地址，由你的 ISP 分配的前缀和你分配的或通过 SLAAC² 或 DHCPv6 自动分配的 IID（接口标识符）组成。  
 2. 链路本地地址（Link-Local-scope Address）。前缀始终为 fe80::/64。该地址仅在链路上唯一，不可路由。  
-3. L3 代表 OSI 参考模型中的第三层（Layer 3）。这是 ISO/IEC 7498 中定义的通信协议的经典抽象。用于互联网的 TCP/IP 协议套件并没有完全遵循这一抽象模型。然而，第1层、第2层和第3层对于理解以太网、IP 和 UDP/TCP 的层次结构仍然很有帮助。  
+3. L3 代表 OSI 参考模型中的第三层（Layer 3）。这是 ISO/IEC 7498 中定义的通信协议的经典抽象。用于互联网的 TCP/IP 协议套件并没有完全遵循这一抽象模型。然而，第 1 层、第 2 层和第 3 层对于理解以太网、IP 和 UDP/TCP 的层次结构仍然很有帮助。  
 4. 该算法在 RFC 4291 中进行了说明。  
 5. 一个八位字节（octet）意味着 8 位长的数据。  
 6. 最低有效位（Least Significant Bit）。二进制值中的最低位。  

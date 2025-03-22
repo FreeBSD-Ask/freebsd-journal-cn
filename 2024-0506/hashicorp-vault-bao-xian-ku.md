@@ -352,7 +352,7 @@ $ vault kv get -mount=kv -format=yaml blackadder
 
 让我们来看看第一种情况，即在部署时解密密钥。这实际上扩展了自动化工具的模板化能力，并依赖于能够在推送新的和更新的密钥之后触发服务重启。
 
-我们有 4 种方式来使用 Vault ：
+我们有 4 种方式来使用 Vault：
 
 * [Ansible](https://www.ansible.com/) 和类似工具可以将秘密存储在 Vault 中，并且只在部署时使用查找功能解密它们
 * 框架脚本 `rc.d` 可在启动使用 [app roles](https://developer.hashicorp.com/vault/docs/auth/approle) 时提取它们的凭据，让本地 root 用户拥有仅允许发出小单间令牌的委派令牌。守护进程本身仅可检索自己的凭据
@@ -361,7 +361,7 @@ $ vault kv get -mount=kv -format=yaml blackadder
 
 ### Ansible
 
-有许多 ansible 插件，令人困惑的是，ansible 自带模块 “vault” 与 Hashicorp Vault 并不兼容。
+有许多 ansible 插件，令人困惑的是，ansible 自带模块“vault”与 Hashicorp Vault 并不兼容。
 
 安装插件，并使用典型的 lookup 功能：
 
@@ -437,7 +437,7 @@ Vault 还提供了代理模式，可以为你处理大部分凭据管理工作�
 
 ## 关停 Vault
 
-在通常情况下， Vault 会保持长达数月之久的开启状态，除非进行补丁和升级。在发生安全事件时，只需中止运行 Vault 守护程序的服务器，或者执行命令 `seal`。这会关停 Vault ，并卸载主密钥。
+在通常情况下，Vault 会保持长达数月之久的开启状态，除非进行补丁和升级。在发生安全事件时，只需中止运行 Vault 守护程序的服务器，或者执行命令 `seal`。这会关停 Vault，并卸载主密钥。
 
 ```
 $ vault operator seal

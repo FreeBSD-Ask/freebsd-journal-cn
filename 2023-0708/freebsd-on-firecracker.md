@@ -92,7 +92,7 @@ FreeBSD 在 Firecracker 下引导——并且非常迅速地完成。包括未�
 
 ![GLD 8~GA{A 3W SW(H)9$Q](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/e4c4c53e-51a7-4021-8e57-71bb93fc5c73)
 
-仍然有工作要做：除了提交上述提到的补丁，并将 PVH 引导模式支持合并到 Firecracker “main” 中，还有大量的“清理”工作要做。由于 PVH 引导模式的历史起源于 Xen，用于 PVH 引导的代码仍与 Xen 支持混合在一起；将它们分开将显著使问题简化。同样，目前无法在没有 PCI 或 ACPI 支持的情况下构建 FreeBSD arm64 内核；查找错误的依赖项并删除它们将允许更小的 FreeBSD/Firecracker 内核（并从引导时间中节省几微秒——我们花费了 25 微秒来检查是否需要为 Intel GPU 保留内存）。
+仍然有工作要做：除了提交上述提到的补丁，并将 PVH 引导模式支持合并到 Firecracker“main”中，还有大量的“清理”工作要做。由于 PVH 引导模式的历史起源于 Xen，用于 PVH 引导的代码仍与 Xen 支持混合在一起；将它们分开将显著使问题简化。同样，目前无法在没有 PCI 或 ACPI 支持的情况下构建 FreeBSD arm64 内核；查找错误的依赖项并删除它们将允许更小的 FreeBSD/Firecracker 内核（并从引导时间中节省几微秒——我们花费了 25 微秒来检查是否需要为 Intel GPU 保留内存）。
 
 更具雄心的是，如果 Firecracker 能够被移植到运行在 FreeBSD 上，那将是很棒的事情——在某种程度上，虚拟机就是虚拟机，虽然 Firecracker 是为了使用 Linux KVM 而编写的，但没有根本性的理由阻止它使用 FreeBSD 的 bhyve 虚拟化器的内核部分。
 

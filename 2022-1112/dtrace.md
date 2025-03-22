@@ -33,7 +33,7 @@ FreeBSD 自带的一些示例 **provider** 包括：
 
 **DTrace 探测点** 由 **provider:module:function:name** **四元组** 指定。其中的每个字段可以使用通配符匹配多个值，或留空表示“匹配所有”。  
 
-下面是一个简单的 DTrace **监视脚本（snooper script）**，用于检测 **用户正在运行的程序**。 我们在执行时使用 `-x quiet` 选项，以避免 DTrace 输出额外的信息。
+下面是一个简单的 DTrace **监视脚本（snooper script）**，用于检测 **用户正在运行的程序**。我们在执行时使用 `-x quiet` 选项，以避免 DTrace 输出额外的信息。
 
 ```sh
 # dtrace -x quiet -n 'proc:::exec { printf(“user = %u, gid = %u: %s\n”, uid, gid,
@@ -79,7 +79,7 @@ dtrace: description 'syscall:::entry ' matched 1148 probes
 execname                                              pid            count
 ```
 
-我们的最后一个示例涉及**堆栈追踪**。DTrace 允许用户使用 **`stack()`** 和 **`ustack()`** 例程分别收集**内核**和**用户空间**的堆栈追踪。此外，DTrace 还可以通过**语言特定的堆栈展开器**进行扩展。例如，**`jstack()`** 操作可以为用户提供 Java 程序的可读**回溯信息**。 在我们的示例中，我们将重点关注 **`stack()`**：
+我们的最后一个示例涉及**堆栈追踪**。DTrace 允许用户使用 **`stack()`** 和 **`ustack()`** 例程分别收集**内核**和**用户空间**的堆栈追踪。此外，DTrace 还可以通过**语言特定的堆栈展开器**进行扩展。例如，**`jstack()`** 操作可以为用户提供 Java 程序的可读**回溯信息**。在我们的示例中，我们将重点关注 **`stack()`**：
 
 ```c
 # dtrace -x quiet -n 'io:::start { @[stack()] = count(); }'
@@ -127,7 +127,7 @@ execname                                              pid            count
 
 ## 新进展
 ### dwatch
-新工具 **dwatch** 由 **Devin Teske（dteske@freebsd.org）** 开发，并在 **FreeBSD 11.2** 中上游合并。 **dwatch** 使得 DTrace 在常见使用场景下比 `dtrace` 命令行工具更易用。 回到我们之前的**进程监视**示例，用户只需运行：
+新工具 **dwatch** 由 **Devin Teske（dteske@freebsd.org）** 开发，并在 **FreeBSD 11.2** 中上游合并。 **dwatch** 使得 DTrace 在常见使用场景下比 `dtrace` 命令行工具更易用。回到我们之前的**进程监视**示例，用户只需运行：
 
 ```sh
 # dwatch execve

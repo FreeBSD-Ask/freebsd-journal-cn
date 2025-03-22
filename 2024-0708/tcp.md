@@ -1,7 +1,7 @@
 # TCP LRO 简介
 
 - 原文链接：[Introduction to TCP Large Receive Offload](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/introduction-to-tcp-large-receive-offload/)
-- 作者： Randall Stewart、Michael Tüxen
+- 作者：Randall Stewart、Michael Tüxen
 
 TCP 大型接收卸载（TCP Large Receive Offload，TCP LRO）是一种特定于协议的方法，用于降低接收 TCP 段（TCP segment）时所需的 CPU 资源。它也是实现特定的，本篇文章介绍了它在 FreeBSD 内核中的实现。在任何给定时刻，TCP 通常用于单向通信，尽管 TCP 提供了双向通道。例如，当使用 TCP 作为传输协议的应用协议是请求/响应类型（如 HTTP）时，即是这种情况。
 
@@ -86,9 +86,9 @@ TCP LRO 的初步实现由 Andrew Gallatin 完成于 2006 年，特定于 mxge(4
 
 如果使用类似 TCP RACK 和 TCP BBR 的替代 TCP 栈，则会使用高精度定时器系统（HPTS）。如果仅使用 FreeBSD 基础 TCP 栈，则不会使用此系统。
 
-如果 FreeBSD 内核中没有加载 HPTS，当触发 flush 操作时，发生的情况是：TCP LRO 将合并一个 `struct lro_entry` 条目的数据包链，将所有单个 TCP 段的用户数据连接成一个大的 TCP 段。当然，这只有在没有间隙和重叠的情况下才有效。如果发生间隙和重叠，TCP LRO 可能只能合并较小的部分。 ACK 数据的信息也会被合并，生成的这个大 TCP 段将被注入到接口层。这将减少需要处理的数据包数量，但也会导致丧失关于每个 TCP 段接收时间的信息，以及任何 IP 层 ECN 标志。根据拥塞控制和丢包恢复的情况，这可能会带来负面影响。
+如果 FreeBSD 内核中没有加载 HPTS，当触发 flush 操作时，发生的情况是：TCP LRO 将合并一个 `struct lro_entry` 条目的数据包链，将所有单个 TCP 段的用户数据连接成一个大的 TCP 段。当然，这只有在没有间隙和重叠的情况下才有效。如果发生间隙和重叠，TCP LRO 可能只能合并较小的部分。ACK 数据的信息也会被合并，生成的这个大 TCP 段将被注入到接口层。这将减少需要处理的数据包数量，但也会导致丧失关于每个 TCP 段接收时间的信息，以及任何 IP 层 ECN 标志。根据拥塞控制和丢包恢复的情况，这可能会带来负面影响。
 
-如果加载了 HPTS 系统，flush 操作会触发查找 TCP 端点。这些信息用于确定 TCP 端点所使用的 TCP 栈是否支持 mbuf 队列。若不支持，则会执行与 FreeBSD 基础栈相同的处理。如果 TCP 栈支持 mbuf 队列，但不支持压缩 ACK，则条目的数据包链会被复制到 TCP 端点，并且可能会触发 TCP 端点处理该数据包链。这就是 TCP BBR 栈使用时的处理方式，它支持 mbuf 队列但不支持压缩 ACK 。如果使用的是 TCP RACK 栈，它也支持压缩 ACK ，可以将多个已连续接收的 ACK 存储在一个特殊的数据结构中，从而以更节省内存的方式传递它们。请注意，当使用 mbuf 队列和压缩 ACK 时，单个数据包接收时的信息会被保留并传递到 TCP 端点。
+如果加载了 HPTS 系统，flush 操作会触发查找 TCP 端点。这些信息用于确定 TCP 端点所使用的 TCP 栈是否支持 mbuf 队列。若不支持，则会执行与 FreeBSD 基础栈相同的处理。如果 TCP 栈支持 mbuf 队列，但不支持压缩 ACK，则条目的数据包链会被复制到 TCP 端点，并且可能会触发 TCP 端点处理该数据包链。这就是 TCP BBR 栈使用时的处理方式，它支持 mbuf 队列但不支持压缩 ACK。如果使用的是 TCP RACK 栈，它也支持压缩 ACK，可以将多个已连续接收的 ACK 存储在一个特殊的数据结构中，从而以更节省内存的方式传递它们。请注意，当使用 mbuf 队列和压缩 ACK 时，单个数据包接收时的信息会被保留并传递到 TCP 端点。
 
 ## 未来发展
 

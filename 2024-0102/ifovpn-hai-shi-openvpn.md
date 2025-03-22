@@ -1,11 +1,11 @@
 # if\_ovpn 还是 OpenVPN
 
 - 原文链接：[if_ovpn or OpenVPN](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/if_ovpn-or-openvpn/)
-- 作者： Kristof Provost
+- 作者：Kristof Provost
 
 今天①，你将了解② OpenVPN 的 DCO（数据通道卸载）功能。
 
-OpenVPN 最初由 James Yonan 开发，首次发布于 2001 年 5 月 13 日。它支持许多常见平台（如 FreeBSD、OpenBSD、Dragonfly、AIX 等）以及一些较为罕见的平台（如 macOS、Linux、Windows）（**译者注：原文如此**）。它支持点对点和客户端-服务器模型，并可基于预共享密钥、证书和用户名/密码进行认证。
+OpenVPN 最初由 James Yonan 开发，首次发布于 2001 年 5 月 13 日。它支持许多常见平台（如 FreeBSD、OpenBSD、Dragonfly、AIX 等）以及一些较为罕见的平台（如 macOS、Linux、Windows）（**译者注：原文如此**）。它支持点对点和客户端 - 服务器模型，并可基于预共享密钥、证书和用户名/密码进行认证。
 
 正如你所期望的，所有存在 20 余年的项目都会在各种的使用场景下不断增长许多功能。
 
@@ -73,7 +73,7 @@ OpenVPN 项目认为，引入 DCO 是一次极好的机会：能删除一些遗�
 
 OpenVPN 能通过 UDP 和 TCP 运行。虽然 UDP 是层 3 VPN 协议的优选，但某些用户需要通过 TCP 运行它以便穿越防火墙。
 
-FreeBSD 内核提供了一项方便的 UDP 套接字过滤功能，但 TCP 没有类似的功能 ，因此 FreeBSD 的 `if_ovpn` 当前仅支持 UDP，不支持 TCP。
+FreeBSD 内核提供了一项方便的 UDP 套接字过滤功能，但 TCP 没有类似的功能，因此 FreeBSD 的 `if_ovpn` 当前仅支持 UDP，不支持 TCP。
 
 Linux 的 DCO 驱动开发者则更加激进，选择实现了对 TCP 的支持。开发者虽然面临重重挑战，但最终还是成功地完成了这一任务，现在他的经验大为增加。
 
@@ -158,7 +158,7 @@ OpenVPN 会通过 OVPN_NEW_KEY 命令安装新密钥。每个密钥都有一个 
 | DCO AES-NI      | 751.2 Mbit/s |
 | DCO QAT         | 1,064.8 Mbit/s |
 
-“if_tun” 是旧的 OpenVPN 方法，无 DCO。值得注意的是，它在用户空间使用了 AES-NI 指令，而 "DCO Software" 设置则没有。尽管有明显的作弊行为，DCO 仍然略快。在公平的条件下（即 DCO 确实使用 AES-NI 指令），差距更是显而易见，DCO 的速度是原来的三倍多。
+“if_tun”是旧的 OpenVPN 方法，无 DCO。值得注意的是，它在用户空间使用了 AES-NI 指令，而 "DCO Software" 设置则没有。尽管有明显的作弊行为，DCO 仍然略快。在公平的条件下（即 DCO 确实使用 AES-NI 指令），差距更是显而易见，DCO 的速度是原来的三倍多。
 
 对于英特尔来说，还有好消息：他们的 QuickAssist 卸载引擎比 AES-NI 更快，使得 OpenVPN 的速度是以前的五倍。
 

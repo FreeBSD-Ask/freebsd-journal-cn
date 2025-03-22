@@ -39,7 +39,7 @@ md0
 
 这将一个预构建的 FreeBSD 发行版安装到 `/tmp/foo`，然后使用 `makefs` 生成了一个文件系统镜像 `fs.img`。可以用命令 `mdconfig(8)` 挂载该镜像，创建一个由该文件支持的字符设备。`/tmp/foo` 中文件的属性（如模式位和时间戳）在生成的镜像中会得到保留。
 
-与此相比，传统的 FreeBSD “live” 安装过程可能会像这样：
+与此相比，传统的 FreeBSD“live”安装过程可能会像这样：
 
 ```sh
 # truncate -s 50g fs.img

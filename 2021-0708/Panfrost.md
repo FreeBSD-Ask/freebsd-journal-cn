@@ -123,7 +123,7 @@ DRM 于 2001 年以“drm-kmod”端口的形式出现在 FreeBSD 中，以支�
 
 一个新项目 drm-next 于 2017 年左右启动，旨在支持未修改的 DRM。随着上游频繁更新，支持 drm2（一个移植版本的图形驱动程序）变得越来越困难，因为每次驱动程序更新时都需要通过驱动程序并将 Linux-KPI 转换为 FreeBSD-KPI。
 
-DRM 是在 Linux 内核环境中开发的，因此它使用 Linux 内核 API。为了在 FreeBSD 中“按原样”使用 DRM 代码，我们必须将其调用转换为本地 FreeBSD 原语/API。在这个新的 “drm-next” 项目中，通过使用 LinuxKPI 框架来完成。LinuxKPI 最初是由 Mellanox Inc. 和其他公司为存储设备和网络适配器驱动程序开发的，但现在也需要用于从 Linux 导入图形驱动程序。由于许可问题，它们不能成为 FreeBSD 内核的一部分（只能作为模块）。
+DRM 是在 Linux 内核环境中开发的，因此它使用 Linux 内核 API。为了在 FreeBSD 中“按原样”使用 DRM 代码，我们必须将其调用转换为本地 FreeBSD 原语/API。在这个新的“drm-next”项目中，通过使用 LinuxKPI 框架来完成。LinuxKPI 最初是由 Mellanox Inc. 和其他公司为存储设备和网络适配器驱动程序开发的，但现在也需要用于从 Linux 导入图形驱动程序。由于许可问题，它们不能成为 FreeBSD 内核的一部分（只能作为模块）。
 
 LKPI 使得将 Linux DRM 驱动程序带到 FreeBSD 变得更容易，修改最小，并能够保持与 Linux 上游的同步。2018 年晚些时候，drm1 和 drm2 被从内核移到端口树，作为 drm-legacy-kmod 端口；而 drm-next 端口则采用了原始名称“drm-kmod”。
 

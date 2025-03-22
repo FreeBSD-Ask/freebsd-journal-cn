@@ -5,7 +5,7 @@
 
 ## 什么是 rdist？
 
-引用手册的话说，“rdist is a program to maintain identical copies of files over multiple hosts（rdist 是一款在多个主机上维护相同文件副本的程序）” rdist 是一款可用于多种用途的通用工具，比如通过网络实现文件的同步——类似于 rsync 和 unison；亦可作为分布式配置管理工具：如 cfengine、ansible、puppet、salt 等其他配置管理工具。
+引用手册的话说，“rdist is a program to maintain identical copies of files over multiple hosts（rdist 是一款在多个主机上维护相同文件副本的程序）”rdist 是一款可用于多种用途的通用工具，比如通过网络实现文件的同步——类似于 rsync 和 unison；亦可作为分布式配置管理工具：如 cfengine、ansible、puppet、salt 等其他配置管理工具。
 
 ## 为什么要使用 rdist？
 
@@ -27,13 +27,13 @@ rdist 是同类软件中最早出现的（也早于 rsync）。rsync 是一款�
 
 如同 make（1）通过解析其 Makefile 来构建程序一样，rdist 解析其 Distfile——来获得要分发的文件和目录以及要在分发后执行哪些任务。最初，rdist 使用不安全的 rcmd（3）接口进行网络通信。rcmd（）会连接到远程 rshd（8）。当连接建立时，它会生成 rdistd（8）远程文件分发服务器，在远程服务器上执行分发功能。这类似于 ssh 的 sftp：ssh 为 sftp 提供了远程功能。
 
-伯克利的 “r” 命令（如 rsh）是不安全的。如今的 rdist 传输可基于 ssh 实现，而不用 rsh。使用 ssh 可以使用 ssh 密钥和 GSSAPI（kerberos）进行身份验证。与 ansible 不同，在 ansible 中的连接是使用你自己的账户进行的，并通过“become”进行提权；而 rdist 必须登录到目标服务器上的 root。为了便于实现这一点，可将 sshd_config 中的 PermitRootLogin 设置为 prohibit-password，从而强制使用 ssh 密钥和 Kerberos 凭据。
+伯克利的“r”命令（如 rsh）是不安全的。如今的 rdist 传输可基于 ssh 实现，而不用 rsh。使用 ssh 可以使用 ssh 密钥和 GSSAPI（kerberos）进行身份验证。与 ansible 不同，在 ansible 中的连接是使用你自己的账户进行的，并通过“become”进行提权；而 rdist 必须登录到目标服务器上的 root。为了便于实现这一点，可将 sshd_config 中的 PermitRootLogin 设置为 prohibit-password，从而强制使用 ssh 密钥和 Kerberos 凭据。
 
 rdist 本身不进行身份验证。它依赖于传输机制进行身份验证。与 ansible 相比，它还依赖于 ssh 传输机制进行身份验证，并依赖于 su(1)、sudo(1)（或 ksu(1)）进行提权。
 
 rdist 可用于管理服务账户中的应用程序文件，如 mysql、oracle 和其他应用程序账户。用所需的账户名替换 root 即可。
 
-rdistd(8) 必须位于目标服务器的用户搜索路径($PATH)。
+rdistd(8) 必须位于目标服务器的用户搜索路径 ($PATH)。
 
 rdist 协商协议版本：systuils/rdist6（软件包、Port）使用 RDIST 第六版本协议，而 sysutils/rdist7（alpha 版本）使用 RDIST 第七版本协议。
 
@@ -120,7 +120,7 @@ special “chown root:wheel /etc/ipf.conf; chmod 0400 /etc/ipf,conf” ;
 
 命令列表涉及的关键字有 `install`、`except`、`special` 和 `cmdspecial`。
 
-|关键字|说明|
+|关键字 | 说明|
 | -------------- | ------------------------------------------ |
 | install        | 指定目标文件的安装位置。                      |
 | notify         | 列出复制操作完成后要通知的电子邮件地址。       |

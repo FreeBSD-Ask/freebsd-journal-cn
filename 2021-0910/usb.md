@@ -440,10 +440,10 @@ main( void )
 
 * USB 2.0 规范 — https://www.usb.org/document-library/usb-20-specification
 
-* 《FreeBSD 设备驱动程序：勇敢者指南》 by Joseph Kong
+* 《FreeBSD 设备驱动程序：勇敢者指南》by Joseph Kong
 * Openrazer 源代码 — https://github.com/openrazer/openrazer
 * Roland 的主页 — 从用户空间设置 Razer ornata chroma 颜色 (https://rsmith.home.xs4all.nl/hardware/setting-the-razer-ornata-chroma-color-fromuserspace.html)
 
 ---
 
-**MARIUSZ ZABORSKI** 目前在 4Prime 担任安全专家。自 2015 年以来，他一直是 FreeBSD 的提交者。 他主要的兴趣领域是操作系统安全和低级编程。他曾在 Fudo Security 工作，领导团队开发 IT 基础设施中最先进的 PAM 解决方案。2018 年，Mariusz 组织了波兰 BSD 用户组。在空闲时间，他喜欢在 https://oshogbo.vexillium.org 撰写博客。
+**MARIUSZ ZABORSKI** 目前在 4Prime 担任安全专家。自 2015 年以来，他一直是 FreeBSD 的提交者。他主要的兴趣领域是操作系统安全和低级编程。他曾在 Fudo Security 工作，领导团队开发 IT 基础设施中最先进的 PAM 解决方案。2018 年，Mariusz 组织了波兰 BSD 用户组。在空闲时间，他喜欢在 https://oshogbo.vexillium.org 撰写博客。

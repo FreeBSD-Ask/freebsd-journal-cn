@@ -187,7 +187,7 @@ storage DEGRADED 0 0 0
 errors: No known data errors
 ```
 
-“OFFLINE” 表示管理员使用以下命令将 `da1` 离线：  
+“OFFLINE”表示管理员使用以下命令将 `da1` 离线：  
 
 ```sh
 # zpool offline storage da1

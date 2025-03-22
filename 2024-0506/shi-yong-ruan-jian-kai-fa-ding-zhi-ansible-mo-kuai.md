@@ -336,4 +336,4 @@ fatal: [localhost]: FAILED! => {“changed”: false, “msg”: “Invalid Oper
 
 ---
 
-**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档贡献者，也是文档工程团队的成员。他曾担任两届 FreeBSD 核心团队成员。他在德国达姆施塔特应用技术大学管理一个大数据集群，并且教授 “Unix 开发者”课程。Benedict 也是每周播出的 [bsdnow.tv](https://bsdnow.tv/) 播客的主持人之一。
+**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档贡献者，也是文档工程团队的成员。他曾担任两届 FreeBSD 核心团队成员。他在德国达姆施塔特应用技术大学管理一个大数据集群，并且教授“Unix 开发者”课程。Benedict 也是每周播出的 [bsdnow.tv](https://bsdnow.tv/) 播客的主持人之一。

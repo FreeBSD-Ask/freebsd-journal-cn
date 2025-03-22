@@ -195,7 +195,7 @@ vim /etc/jail.conf
 devfs_ruleset=666;
 ```
 
-重新启动网关jail  
+重新启动网关 jail  
 
 ```sh
 service jail restart gateway

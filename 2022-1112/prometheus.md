@@ -93,7 +93,7 @@ Prometheus 提供了一个基于 Web 的界面，用于查询和显示由系统�
 
 ![](https://github.com/user-attachments/assets/0d77ca60-52bb-4dbf-952e-135285312cde)
 
-你会看到一系列以下划线分隔的已导出指标。每 10 秒刷新此页面，你会看到 node_exporter 收集的最新数据。既然已经在浏览器中，我们还可以检查 Prometheus 的状态。URL 形式类似，但端口号为 9090（末尾没有 /metrics），用于访问 Prometheus 的 Web 界面。进入 **Status** 下拉菜单，选择 **Targets**，即可查看 prometheus.yml 配置的所有主机。在本示例中，我提取了一些针对我们大数据集群（bdc）的配置片段。当然，你可以使用自己的标签，而 “mistwood” 这台主机名称也可以替换为其他名称。
+你会看到一系列以下划线分隔的已导出指标。每 10 秒刷新此页面，你会看到 node_exporter 收集的最新数据。既然已经在浏览器中，我们还可以检查 Prometheus 的状态。URL 形式类似，但端口号为 9090（末尾没有 /metrics），用于访问 Prometheus 的 Web 界面。进入 **Status** 下拉菜单，选择 **Targets**，即可查看 prometheus.yml 配置的所有主机。在本示例中，我提取了一些针对我们大数据集群（bdc）的配置片段。当然，你可以使用自己的标签，而“mistwood”这台主机名称也可以替换为其他名称。
 
 ![](https://github.com/user-attachments/assets/7bf0b685-f11e-4f1b-a3ab-64a0bbb47ad5)
 

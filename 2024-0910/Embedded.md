@@ -1,7 +1,7 @@
 # 嵌入式 FreeBSD：探索 bhyve
 
 - 原文链接：[Embedded FreeBSD: Digression into bhyve](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/embedded-freebsd-digression-into-bhyve/)
-- 作者： Christopher R. Bowman
+- 作者：Christopher R. Bowman
 
 在之前的两篇文章中，我们讨论了我一直在实验的 [Digilent Arty Z7-20](https://digilent.com/shop/arty-z7-zynq-7000-soc-development-board/) 开发板。我觉得这是一块很有趣的开发板，因为它不仅可以切换主要引脚与外界进行接口，而且你还可以将自己的电路集成到开发板中，并将其与处理器进行接口。然而，要做到这一点，你需要使用 Xilinx/AMD 的软件来配置和编程芯片。Xilinx 将这个工具套件称为 [Vivado](https://www.xilinx.com/products/design-tools/vivado.html#editions)，你可以从他们的网站上 [免费下载](https://www.xilinx.com/products/design-tools/vivado/vivado-ml.html) 一个适用于 Zynq 芯片的版本。
 

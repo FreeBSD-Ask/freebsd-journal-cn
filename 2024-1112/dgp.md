@@ -130,7 +130,7 @@ err = setsockopt(sd, IPPROTO_TCP, TCP_RACK_PROFILE, &profileno, slen);
 
 上面的代码片段将在与 `sd` 相关的套接字上启用 DGP。
 
-如果无法访问源代码，另一种机制是使用 `sysctl` 将所有使用 RACK 堆栈的 TCP 连接的默认配置文件设置为值 ‘1’。可以按如下方式操作：
+如果无法访问源代码，另一种机制是使用 `sysctl` 将所有使用 RACK 堆栈的 TCP 连接的默认配置文件设置为值‘1’。可以按如下方式操作：
 
 ```sh
 sysctl net.inet.tcp.rack.misc.defprofile = 1

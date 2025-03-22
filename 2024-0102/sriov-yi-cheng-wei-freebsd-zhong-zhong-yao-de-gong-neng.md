@@ -39,7 +39,7 @@ X710-DA2 拥有两个物理的 SFP+ 光纤端口。在 SR-IOV 术语中，这些
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig3.jpg)
 
-在第一张图中，我们看到 PCIe 插槽从左到右编号为 4、5 和 6。如果你仔细观察，会看到插槽 4 有前缀 “PCH”，而 5 和 6 则有前缀 “CPU”。第二张图则更详细地显示了这些插槽的连接方式。插槽 5 和 6 直连到 LGA1200 插座上的 CPU，而插槽 4 连接到[平台控制器集线器](https://en.wikipedia.org/wiki/Platform_Controller_Hub)。根据你设备中的具体组件，这可能会决定哪些插槽能够使 SR-IOV 按预期工作。直到后续配置 FreeBSD 时，你才会知道哪个插槽适合，一般来说，尤其是对于较旧的主板，CPU 插槽是个可靠的选择。如果后续步骤中发现 SR-IOV 无法正常工作，可以尝试换成 PCIe 插槽。主板文档有时并不详尽，所以试验和错误有时是最快速的方式，能帮助你找出哪个插槽能正常工作。
+在第一张图中，我们看到 PCIe 插槽从左到右编号为 4、5 和 6。如果你仔细观察，会看到插槽 4 有前缀“PCH”，而 5 和 6 则有前缀“CPU”。第二张图则更详细地显示了这些插槽的连接方式。插槽 5 和 6 直连到 LGA1200 插座上的 CPU，而插槽 4 连接到[平台控制器集线器](https://en.wikipedia.org/wiki/Platform_Controller_Hub)。根据你设备中的具体组件，这可能会决定哪些插槽能够使 SR-IOV 按预期工作。直到后续配置 FreeBSD 时，你才会知道哪个插槽适合，一般来说，尤其是对于较旧的主板，CPU 插槽是个可靠的选择。如果后续步骤中发现 SR-IOV 无法正常工作，可以尝试换成 PCIe 插槽。主板文档有时并不详尽，所以试验和错误有时是最快速的方式，能帮助你找出哪个插槽能正常工作。
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig5.jpg)
 
@@ -70,7 +70,7 @@ ixl0: PCI Express Bus: Speed 2.5GT/s Width x8
 ixl0: SR-IOV ready ixl0: netmap queues/slots: TX 4/1024, RX 4/1024
 ```
 
-在第三行，我们看到了一些 SR-IOV 的信息。“PF-ID[0]” 与 ixl0 相关，并且这个 PF 能支持 64 个 VF。而在第十行，我们可以看到明确确认：这个 PCIe 设备已是“SR-IOV 就绪”（SR-IOV ready）。之所以名称是“ixl”，是因为这张网卡使用了 [ixl(4)](https://man.freebsd.org/cgi/man.cgi?query=ixl) Intel Ethernet 700 系列驱动。
+在第三行，我们看到了一些 SR-IOV 的信息。“PF-ID[0]”与 ixl0 相关，并且这个 PF 能支持 64 个 VF。而在第十行，我们可以看到明确确认：这个 PCIe 设备已是“SR-IOV 就绪”（SR-IOV ready）。之所以名称是“ixl”，是因为这张网卡使用了 [ixl(4)](https://man.freebsd.org/cgi/man.cgi?query=ixl) Intel Ethernet 700 系列驱动。
 
 除了检查硬件状态外，无需其他配置。某些网卡（比如前面提到的 Mellanox）需要你配置网卡的固件，而其他网卡（比如前面提到的 Chelsio）则需要在 `/boot/loader.conf` 中进行驱动配置。但 X710-DA2 并不需要这些配置，尽管你可能需要检查并更新卡的固件版本（如有必要）。
 
@@ -90,7 +90,7 @@ ifconfig_ixl0=”inet 10.0.1.201 netmask 255.255.255.0” defaultrouter=”10.0.
 
 ### 指示 PF 创建 VF
 
-在 FreeBSD 中，是通过 [iovctl(8)](https://man.freebsd.org/cgi/man.cgi?query=iovctl) 实现 PF 和 VF 的管理的，`iovctl` 是操作系统的基础工具之一。要创建 VF，我们需要在 `/etc/iov/` 目录下创建一个文件，指定我们需要的配置。我们将采用一个简单的策略:创建一个 VF 分配给 jail，另一个 VF 分配给 bhyve 虚拟机。可以参考手册页 [iovctl.conf(5)](https://man.freebsd.org/iovctl.conf) 了解最重要的参数。
+在 FreeBSD 中，是通过 [iovctl(8)](https://man.freebsd.org/cgi/man.cgi?query=iovctl) 实现 PF 和 VF 的管理的，`iovctl` 是操作系统的基础工具之一。要创建 VF，我们需要在 `/etc/iov/` 目录下创建一个文件，指定我们需要的配置。我们将采用一个简单的策略：创建一个 VF 分配给 jail，另一个 VF 分配给 bhyve 虚拟机。可以参考手册页 [iovctl.conf(5)](https://man.freebsd.org/iovctl.conf) 了解最重要的参数。
 
 ```INI
 OPTIONS
@@ -234,7 +234,7 @@ iovctl_files=”/etc/iov/ixl0.conf”
 
 本节假设你对 FreeBSD Jail 有基本的了解。因此，从头开始设置 Jail 的流程不在本文范围内。有关如何设置 Jail 的更多信息，请参阅 FreeBSD 手册中的章节 [Jail 与容器](https://docs.freebsd.org/en/books/handbook/jails/) 。
 
-我不使用什么 Jail 管理软件，而是靠基本操作系统自带的工具。如果你使用过像 [Bastille](https://bastillebsd.org/) 这样的管理工具，配置文件的位置和方式可能会有所不同，但原理是一样的。在此例中，我们使用一个名为 “desk” 的 Jail。
+我不使用什么 Jail 管理软件，而是靠基本操作系统自带的工具。如果你使用过像 [Bastille](https://bastillebsd.org/) 这样的管理工具，配置文件的位置和方式可能会有所不同，但原理是一样的。在此例中，我们使用一个名为“desk”的 Jail。
 
 ```sh
 exec.start += “/bin/sh /etc/rc”;

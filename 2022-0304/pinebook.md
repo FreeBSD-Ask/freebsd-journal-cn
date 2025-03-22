@@ -26,7 +26,7 @@ Pinebook Pro 是一款基于 Rockchip rk3399 的 ARM64 笔记本电脑。由于�
 
 ## 可以运行哪些软件？
 
-我已经测试了 sway 和 hikari / wayland 以及 X11 与几个桌面环境。在此过程中，我发现 openbox 与图形堆栈存在问题：它在窗口边框内并不能正确地渲染任何内容。幸运的是，xfwm4 没有这个问题。因此，LXQt 必须将默认的 openbox 替换为 xfwm4。LibreOffice 运行良好。Electron 相关的软件在 FreeBSD 上仅支持 amd64，所以你可能会错过一些基于 Electron 的应用，例如 vscode-oss。Sway 必须回退到 14.1 版本，否则会出现 “Cannot use DRM dumb buffers with non-primary DRM FD.” 错误。我怀疑这是因为系统中存在两个显卡条目，即 /dev/dri/card0 和 /dev/dri/card1，而只有 card1 拥有渲染设备，不过我并没有进一步深入研究。为此，我选择将 sway 和 wlroots 回退到在 Pinebook Pro 上最后一个已知可用的版本。
+我已经测试了 sway 和 hikari / wayland 以及 X11 与几个桌面环境。在此过程中，我发现 openbox 与图形堆栈存在问题：它在窗口边框内并不能正确地渲染任何内容。幸运的是，xfwm4 没有这个问题。因此，LXQt 必须将默认的 openbox 替换为 xfwm4。LibreOffice 运行良好。Electron 相关的软件在 FreeBSD 上仅支持 amd64，所以你可能会错过一些基于 Electron 的应用，例如 vscode-oss。Sway 必须回退到 14.1 版本，否则会出现“Cannot use DRM dumb buffers with non-primary DRM FD.”错误。我怀疑这是因为系统中存在两个显卡条目，即 /dev/dri/card0 和 /dev/dri/card1，而只有 card1 拥有渲染设备，不过我并没有进一步深入研究。为此，我选择将 sway 和 wlroots 回退到在 Pinebook Pro 上最后一个已知可用的版本。
 
 在 arm64 平台上，Firefox 以及其他一些应用程序经常崩溃，除非通过 `proccontrol -m aslr -s disable firefox` 禁用 ASLR（地址空间布局随机化）后再启动。另外，为了在 Firefox 中测试 webgl，你可能需要在 `about:config` 中将 `webgl.force-enabled` 设置为 true。由于 webcamd 运行良好并支持内置摄像头，我在 Nextcloud Talk 中使用 Firefox 测试了一个 WebRTC 通话，效果也很不错。通话中的屏幕共享也能正常工作，不过一次只能共享一个窗口。Vlc 对 `screen:///` 捕获的支持也不理想，所以全屏捕获目前存在一些问题。我还在 YouTube 上观看了全屏视频，未发现任何卡顿。需要注意的是，由于这项工作基于 14-CURRENT，默认的软件包仓库并非每季度构建一次——因此部分软件包可能偶尔构建失败，从而缺失。
 
@@ -106,7 +106,7 @@ make DESTDIR=$ROOTFS install
 
 ## Port 和修改后的软件包  
 
-如前所述，我将 `sway`、`wlroots` 和 `hikari` 还原到了较早的版本。同时，我对 `libdrm` 进行了修改，以便通过此[补丁](https://gist.github.com/jsm222/7df208cc5a72918a70cfbef8ee15b51b)检测 `panfrost`。`Hikari` 还需要一个小补丁来修复其参数解析[问题](https://hub.darcs.net/raichoo/hikari/issue/20)。 此外，`mesa-dri` 和 `mesa-libs` 也经过修改，以便编译 `panfrost` 驱动程序，并启用 `gles1` 和 `gles2`，即按照 Ruslan Bukin 在其文章中描述的方式进行编译。  
+如前所述，我将 `sway`、`wlroots` 和 `hikari` 还原到了较早的版本。同时，我对 `libdrm` 进行了修改，以便通过此[补丁](https://gist.github.com/jsm222/7df208cc5a72918a70cfbef8ee15b51b)检测 `panfrost`。`Hikari` 还需要一个小补丁来修复其参数解析[问题](https://hub.darcs.net/raichoo/hikari/issue/20)。此外，`mesa-dri` 和 `mesa-libs` 也经过修改，以便编译 `panfrost` 驱动程序，并启用 `gles1` 和 `gles2`，即按照 Ruslan Bukin 在其文章中描述的方式进行编译。  
 
 这些软件包均已预编译，可直接下载。同时，如果你更倾向于从源码构建，我也提供了 `ports` 树的补丁。你可以利用 `pkg lock` 功能，防止 `pkg` 命令重新安装这些修改后的软件包。只需运行 `pkg lock`。在我的系统上，我锁定了以下软件包：
 

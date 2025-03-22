@@ -73,7 +73,7 @@ auth sufficient pam_opie.so no_warn no_fake_prompts
 ```
 这条规则是 sufficient 类型的规则。如果该模块成功，认证请求就被允许，并且规则处理会立即停止。  
 
-该模块是 **pam_opie.so**。根据手册页 **pam_opie(8)**，我们知道它支持 OPIE。 你可能需要做一些进一步的研究，以了解 OPIE 是指“一切中的一次性密码”。这条规则声明，如果有人使用 OPIE 进行认证，他们会立即获得访问权限。
+该模块是 **pam_opie.so**。根据手册页 **pam_opie(8)**，我们知道它支持 OPIE。你可能需要做一些进一步的研究，以了解 OPIE 是指“一切中的一次性密码”。这条规则声明，如果有人使用 OPIE 进行认证，他们会立即获得访问权限。
 
 ```sh
 auth requisite pam_opieaccess.so no_warn allow_local

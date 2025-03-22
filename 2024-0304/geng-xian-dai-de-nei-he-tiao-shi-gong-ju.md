@@ -256,7 +256,7 @@ frame #12: 0xffffffff810556a3 kernel.debug`amd64_syscall [inlined] syscallenter(
 
 打印信息并在堆栈中移动是内核崩溃转储调试所需的大部分操作。gdb 的启动消息很不错，会展示内核消息缓冲区的最后部分，类似于从本地控制台输出的内容。
 
-lldb 目前还没有类似的启动命令。不过，通过查看“Panic!”信息，我们可以找到提取该信息的方法。“Panic!” 使用了一个名为 `msgbuf` 的宏，通过 `struct msgbuf` 打印内核消息缓冲区。
+lldb 目前还没有类似的启动命令。不过，通过查看“Panic!”信息，我们可以找到提取该信息的方法。“Panic!”使用了一个名为 `msgbuf` 的宏，通过 `struct msgbuf` 打印内核消息缓冲区。
 
 通过查阅 FreeBSD 的源代码，我们可以找到类似的代码来完成此操作：
 
@@ -322,7 +322,7 @@ hello esteemed FreeBSD Journal readers!
 
 提示符 `>>>` 表明我们已进入 Lua 解释器。
 
-在 “Panic!” 一书中，我们了解到 SunOS/Solaris 调试器 adb 有一个方便易懂的宏，用于查找和打印消息缓冲区：
+在“Panic!”一书中，我们了解到 SunOS/Solaris 调试器 adb 有一个方便易懂的宏，用于查找和打印消息缓冲区：
 
 ```sh
 msgbuf/”magic”16t”size”16t”bufx”16t”bufr”n4X

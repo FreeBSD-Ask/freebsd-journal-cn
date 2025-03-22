@@ -67,7 +67,7 @@ FreeBSD 的 DTrace 支持使用了紧凑 C 类型格式（CTF），该格式提�
 
 ## 诊断工具
 
-Valgrind 是一套用于内存访问、内存泄漏调试以及检查程序行为其他方面的工具。FreeBSD 对 Valgrind 的支持已经在主 Valgrind 树之外维护了近二十年，已修补的 Valgrind 可以从 Ports 和软件包集合中获得。多年来，许多不同的开发者维护并更新了 FreeBSD 的 Valgrind  Port ；最近，Paul Floyd 更新了它到最新发布的版本 3.17.0，并正在努力将 FreeBSD 的更改提交到上游。
+Valgrind 是一套用于内存访问、内存泄漏调试以及检查程序行为其他方面的工具。FreeBSD 对 Valgrind 的支持已经在主 Valgrind 树之外维护了近二十年，已修补的 Valgrind 可以从 Ports 和软件包集合中获得。多年来，许多不同的开发者维护并更新了 FreeBSD 的 Valgrind  Port；最近，Paul Floyd 更新了它到最新发布的版本 3.17.0，并正在努力将 FreeBSD 的更改提交到上游。
 
 Clang 包括对各种 sanitizers 的内建支持，这些工具提供调试和诊断信息。AddressSanitizer 检测内存错误，如越界访问或使用后释放，可以通过命令行标志 `-fsanitize=address` 使用（使用基本系统中的 Clang）。一个相关的工具，MemorySanitizer，检测未初始化变量的读取。ThreadSanitizer 检测数据竞争，UndefinedBehaviourSanitizer 捕获运行时的未定义 C 行为（如有符号整数溢出）。其他 sanitizers 也存在，但需要更多的工作才能在 FreeBSD 上启用。
 

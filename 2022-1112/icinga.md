@@ -112,7 +112,7 @@ monitor# chown -R icinga:icinga /usr/local/etc/icinga2
 
 ## 设置 Nginx   
 
-Icinga 的 Web 界面（被恰当地命名为 Icingaweb2，因为它是版本 2）是一个 PHP 应用程序，用于通过浏览器管理主机和服务。任何失败的检查事件也会在其中显示，你可以在一个中心位置确认问题或定义停机时间。  要配置 PHP fastCGI 进程管理器（php-fpm）来处理来自 Web 服务器的请求，请启用位于 `/usr/local/etc/php-fpm.d/www.conf` 文件中的以下选项：
+Icinga 的 Web 界面（被恰当地命名为 Icingaweb2，因为它是版本 2）是一个 PHP 应用程序，用于通过浏览器管理主机和服务。任何失败的检查事件也会在其中显示，你可以在一个中心位置确认问题或定义停机时间。要配置 PHP fastCGI 进程管理器（php-fpm）来处理来自 Web 服务器的请求，请启用位于 `/usr/local/etc/php-fpm.d/www.conf` 文件中的以下选项：
 
 ```sh
 monitor# cd /usr/local/etc/php-fpm.d

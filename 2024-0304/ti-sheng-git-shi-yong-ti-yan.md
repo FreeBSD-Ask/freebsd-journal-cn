@@ -17,7 +17,7 @@ FreeBSD 14 弃用了工具 `portsnap`——许多人曾用它来下载和更新 
 
 ## 加速克隆
 
-首先，在 FreeBSD 上安装 git ，请运行 `pkg install git`。由于我们还没有 ports，况且现在也没有 `portsnap` 了。可能会在那些无法访问 FreeBSD 镜像站的系统上，造成先有鸡，还是先有蛋的悖论。在你的局域网中，poudriere 机器可能是解决方案，或者在不同的机器上下载文件，复制二进制文件，然后用 `pkg install ./<软件包名>` 进行安装。
+首先，在 FreeBSD 上安装 git，请运行 `pkg install git`。由于我们还没有 ports，况且现在也没有 `portsnap` 了。可能会在那些无法访问 FreeBSD 镜像站的系统上，造成先有鸡，还是先有蛋的悖论。在你的局域网中，poudriere 机器可能是解决方案，或者在不同的机器上下载文件，复制二进制文件，然后用 `pkg install ./<软件包名>` 进行安装。
 
 请注意，`git port` 本身包含了丰富的可选配置参数。由于我们刚开始，可以暂时无视这些选项，并在经验丰富时重新审视它们。如果你发现某些有用的东西，请考虑写成博客或为 FreeBSD 杂志写篇文章。毕竟，独木难支。
 
@@ -158,7 +158,7 @@ git config --global user.name Benedict Reuschling
         name = Benedict Reuschling
 ```
 
-你可以看到，像用户（电子邮件在其中，你最好也设置一下）这样的条目有括号中的类别。其他的是 commit，diff 和 branch 。
+你可以看到，像用户（电子邮件在其中，你最好也设置一下）这样的条目有括号中的类别。其他的是 commit，diff 和 branch。
 
 ### 更改提交行为
 

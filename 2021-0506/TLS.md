@@ -11,7 +11,7 @@ RFC2203 于 1997 年 9 月发布，提供了一种机制，通过使用 GSSAPI �
 
 ## 实现
 
-虽然我将其称为 NFS over TLS，但更准确的说法是 Sun RPC over TLS，因为实现是在内核的 RPC（krpc）中完成的，并且对 NFS 层几乎是透明的。OpenSSL 的库提供了 TLS 和 X.509 证书在用户空间中的全面实现。然而，NFS 是在内核中实现的，将所有 NFS RPC 消息传递到用户地址空间以便由 OpenSSL 库处理似乎不切实际。幸运的是，FreeBSD 13 的内核添加了内核 TLS（KTLS）[TLS Offload in the Kernel，John Baldwin，FreeBSD Journal，2020年5月/6月 https://issue.freebsdfoundation.org/publication/?m=33057&i=667002&p=12&ver=html5]，它在内核中的网络栈内高效地处理 TLS 应用数据记录，包括加密/解密。
+虽然我将其称为 NFS over TLS，但更准确的说法是 Sun RPC over TLS，因为实现是在内核的 RPC（krpc）中完成的，并且对 NFS 层几乎是透明的。OpenSSL 的库提供了 TLS 和 X.509 证书在用户空间中的全面实现。然而，NFS 是在内核中实现的，将所有 NFS RPC 消息传递到用户地址空间以便由 OpenSSL 库处理似乎不切实际。幸运的是，FreeBSD 13 的内核添加了内核 TLS（KTLS）[TLS Offload in the Kernel，John Baldwin，FreeBSD Journal，2020 年 5 月/6 月 https://issue.freebsdfoundation.org/publication/?m=33057&i=667002&p=12&ver=html5]，它在内核中的网络栈内高效地处理 TLS 应用数据记录，包括加密/解密。
 
 这为在 TLS 应用数据记录中封装/加密 RPC 消息并在接收端解密/解封装这些 RPC 消息提供了基本机制。然而，它并不处理非应用数据记录，例如用于 TLS 握手的记录。为了处理非应用数据记录，分别在用户空间实现了 rpc.tlsclntd(8) 和 rpc.tlsservd(8) 用于客户端和服务器。这些守护进程通过自定义的 RPC 从内核接收上行调用，使用 AF_LOCAL 套接字上的 krpc，以类似 gssd(8) 守护进程为 Kerberized NFS 所做的方式来工作。为了处理这些上行调用，守护进程执行 OpenSSL 库调用，承担处理非应用数据记录的重任，包括处理 TLS 握手。守护进程还使用自定义系统调用向内核中的 krpc 注册，以及处理需要将文件描述符与内核中已经存在的套接字关联的特殊情况。
 

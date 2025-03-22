@@ -78,7 +78,7 @@ Nomad 有一个插件结构允许它扩展支持新的容器技术。Esteban Bar
 
 管理器将工作负载调度到使用插件与 pot 交互的客户端。
 
-图片:**体系结构概述和不同服务的文件。**
+图片：**体系结构概述和不同服务的文件。**
 
 ![R%(G0Z M53 6`KY9Y2 M(70](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/21b66fef-1c8f-4172-908b-7d5c3efd6593)
 
@@ -147,15 +147,15 @@ minipot 初始化后，并且所有服务正在运行，我们就可以使用下
 
 上述任务段落说明了 nomad 调度任务所需的所有细节。
 
-任务“nginx-minipot” (第 1 行)有一个组名“group1” (4),它有一个任务叫做“www1” (9)。
+任务“nginx-minipot” (第 1 行) 有一个组名“group1” (4),它有一个任务叫做“www1” (9)。
 
-任务“www1”是一个 pot 容器(10),注册镜像是 potluck(23),pot 镜像是 nginx(24)，版本是 1.1.13 (25)。规定任务是基于 pot 驱动，管理器将在 pot 支持的客户端调度这个任务。在我们的例子中，服务器和客户端都是相同的机器。
+任务“www1”是一个 pot 容器 (10),注册镜像是 potluck(23),pot 镜像是 nginx(24)，版本是 1.1.13 (25)。规定任务是基于 pot 驱动，管理器将在 pot 支持的客户端调度这个任务。在我们的例子中，服务器和客户端都是相同的机器。
 
-与通常使用的使用 rc 脚本引导的 Jail 相比，我们将直接执行 nginx(26),不需要任何额外的服务。变量参数(27)是重要的，允许 nomad 服务恰当地遵循容器生命周期并捕捉日志。Pot 将负责初始化网络和任何需要的事情。
+与通常使用的使用 rc 脚本引导的 Jail 相比，我们将直接执行 nginx(26),不需要任何额外的服务。变量参数 (27) 是重要的，允许 nomad 服务恰当地遵循容器生命周期并捕捉日志。Pot 将负责初始化网络和任何需要的事情。
 
-port_map 段(28)和网络段(6)告诉 nginx 在 jail 中监听 80 端口，但 nomad 客户端将使用另一端口(“http”),被 nomad 服务器动态指派。
+port_map 段 (28) 和网络段 (6) 告诉 nginx 在 jail 中监听 80 端口，但 nomad 客户端将使用另一端口 (“http”),被 nomad 服务器动态指派。
 
-服务段(11)提供 nomad 服务将注册服务到 consul 的信息。在我们的例子中，任务“www1”实现了服务“hello-web” (11)，它将使用 nomad 服务器分配的端口“http”(14)注册到 consul。对于 IP 地址，nomad 服务器将使用在调度期间定义的 nomad 客户端 IP 地址。
+服务段 (11) 提供 nomad 服务将注册服务到 consul 的信息。在我们的例子中，任务“www1”实现了服务“hello-web” (11)，它将使用 nomad 服务器分配的端口“http”(14) 注册到 consul。对于 IP 地址，nomad 服务器将使用在调度期间定义的 nomad 客户端 IP 地址。
 
 在我们的例子中，任务还配置了一个 tcp 健康检查，consul 将每 5 秒钟运行一次该检查，以确定实例的健康状况。
 
@@ -186,7 +186,7 @@ $ curl “[2003:f1:c709:de00:faac:65ff:fe86:9458]:22854”
 
 “Allocation”是 nomad 用来标识容器（任务的实例）的名字。
 
-IPv6 地址是 nomad 客户端地址.
+IPv6 地址是 nomad 客户端地址。
 
 22854 端口是 nomad 选择的端口，用于将 nomad 客户端引导到容器的 80 端口。
 
@@ -204,7 +204,7 @@ $ sudo pot show
 
 ### 检查 consul
 
-通过命令行,我们可以看到 consul 目录中的服务清单（consul 目录服务），但没有详细。但是，我们能通过访问 web UI 来检查“hello-web”服务的状态：
+通过命令行，我们可以看到 consul 目录中的服务清单（consul 目录服务），但没有详细。但是，我们能通过访问 web UI 来检查“hello-web”服务的状态：
 
 ```
 localhost:8500
@@ -254,9 +254,9 @@ $ nomad run nginx.job
 
 - 我们可以验证入口的循环分布
 
-- 跟踪一个容器的日志(**$ nomad alloc logs -f allocation1**)
+- 跟踪一个容器的日志 (**$ nomad alloc logs -f allocation1**)
 
-- 跟踪其它容器的日志(**$ nomad alloc logs -f allocation2**)
+- 跟踪其它容器的日志 (**$ nomad alloc logs -f allocation2**)
 
 - 在入口执行 curl(**$ curl -H Host:hello-web.minipot http://127.0.0.1:8080**)
 
@@ -279,7 +279,7 @@ Minipot 是一个有用的单节点安装的作为学习或本地测试的平台
 
 - 3 或 5 个不同的 consul 服务器
 - 3 或 5 个不同的 nomad 服务器
-- 2 入口代理服务器(HA 配置)
+- 2 入口代理服务器 (HA 配置)
 
 几个 nomad 客户端服务器（取决于预期的工作负载和可靠性需求，如过度供应因素）
 

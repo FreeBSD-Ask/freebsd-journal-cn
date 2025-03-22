@@ -470,7 +470,7 @@ builder# alias wsmake=’__MAKE_CONF=/ws/src/make.conf SRC_ENV_CONF=/ws/src/src-
 
 builder# cd ${WSDIR}/src/${WS}
 builder# cd /ws/src/dev
-builder# wsmake kernel-toolchain （仅需一次)
+builder# wsmake kernel-toolchain（仅需一次)
 builder# wsmake buildkernel
 ```
 

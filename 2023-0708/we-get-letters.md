@@ -58,4 +58,4 @@ Crackypants 先生
 
 ---
 
-MICHAEL W LUCAS（<https://mwl.io>）已经写了五十多本书，并在最近添加了一个播客。如果你正在寻求虚拟化帮助，你可能会发现他的书《FreeBSD Mastery: Jails》很有用。如果你想要更多的愤怒，可以查看他的专栏合集《致 ed（1）的信》。将你的问题发送到letters@freebsdjournal.com，他可能会回答。如果他认为它们足够有趣的话。
+MICHAEL W LUCAS（<https://mwl.io>）已经写了五十多本书，并在最近添加了一个播客。如果你正在寻求虚拟化帮助，你可能会发现他的书《FreeBSD Mastery: Jails》很有用。如果你想要更多的愤怒，可以查看他的专栏合集《致 ed（1）的信》。将你的问题发送到 letters@freebsdjournal.com，他可能会回答。如果他认为它们足够有趣的话。

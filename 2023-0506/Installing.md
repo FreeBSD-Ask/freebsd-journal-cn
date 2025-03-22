@@ -153,7 +153,7 @@ $ sudo dd if=kcopy-ah-floppy of=/dev/da0 bs=30b
 
 ## 安装软件
 
-光盘存档中附带了大量的第三方软件，可供 FreeBSD 使用。其中包括 ports ，已经修改以在 FreeBSD 上工作的软件，以及预编译的 port 包和其他一些附加软件。
+光盘存档中附带了大量的第三方软件，可供 FreeBSD 使用。其中包括 ports，已经修改以在 FreeBSD 上工作的软件，以及预编译的 port 包和其他一些附加软件。
 
 我使用 ports 构建了 top，这样我可以让 386 处于一些有趣的闲置状态。
 

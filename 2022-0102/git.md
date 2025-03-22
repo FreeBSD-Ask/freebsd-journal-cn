@@ -73,7 +73,7 @@ PORTSDIR=/usr/home/ashish/freebsd/ports
 export PORTSDIR=/usr/home/ashish/freebsd/ports
 ```
 
-如果你计划使用多个 Ports ，像 `sysutils/direnv` 这样的工具对于根据当前目录加载或卸载环境变量非常有用。
+如果你计划使用多个 Ports，像 `sysutils/direnv` 这样的工具对于根据当前目录加载或卸载环境变量非常有用。
 
 ## 保持更新
 
@@ -123,7 +123,7 @@ git config pull.ff only
 
 ## 创建本地分支
 
-现在我们可以保持本地仓库副本与 `git.freebsd.org/ports.git` 上的仓库同步了，让我们开始进行更改。Git 在使用本地分支时真正展现了它的优势，本地分支提供了一种干净且高效的方式来组织进行中的工作。首先，创建一个新的特性分支来处理新的 Nyxt  Port 。
+现在我们可以保持本地仓库副本与 `git.freebsd.org/ports.git` 上的仓库同步了，让我们开始进行更改。Git 在使用本地分支时真正展现了它的优势，本地分支提供了一种干净且高效的方式来组织进行中的工作。首先，创建一个新的特性分支来处理新的 Nyxt  Port。
 
 ```sh
 git branch nyxt
@@ -224,13 +224,13 @@ git commit --amend
 pkg install portlint portfmt
 ```
 
-要使用 portlint 检查你的 Port ，在 `~/freebsd/ports/www/nyxt` 目录下运行：
+要使用 portlint 检查你的 Port，在 `~/freebsd/ports/www/nyxt` 目录下运行：
 
 ```sh
 portlint -AC
 ```
 
-要使用 portclippy 检查你的 Port （来自 portfmt 包），也在 `~/freebsd/ports/www/nyxt` 目录下运行：
+要使用 portclippy 检查你的 Port（来自 portfmt 包），也在 `~/freebsd/ports/www/nyxt` 目录下运行：
 
 ```sh
 portclippy Makefile
@@ -244,19 +244,19 @@ portfmt -D Makefile
 
 ## 使用 Poudriere 进行测试
 
-《Porter 手册》第3.4节描述了测试 Port 的步骤。它还将读者引导至第10章，其中包括有关设置 poudriere 的指南，poudriere 是 FreeBSD 的批量软件包构建器和 Port 测试工具。该章节介绍了使用 poudriere 测试的优点。“运行 poudriere testport 时会自动执行各种测试。强烈建议每个 Port 贡献者都安装并使用它来测试他们的 Port 。”《Porter’s Handbook》中的这一章节描述了几种不同的方式来为 poudriere 设置 Ports 。到达该部分时，可以告诉 poudriere 使用我们现有的 Ports ，方法是
+《Porter 手册》第 3.4 节描述了测试 Port 的步骤。它还将读者引导至第 10 章，其中包括有关设置 poudriere 的指南，poudriere 是 FreeBSD 的批量软件包构建器和 Port 测试工具。该章节介绍了使用 poudriere 测试的优点。“运行 poudriere testport 时会自动执行各种测试。强烈建议每个 Port 贡献者都安装并使用它来测试他们的 Port。”《Porter’s Handbook》中的这一章节描述了几种不同的方式来为 poudriere 设置 Ports。到达该部分时，可以告诉 poudriere 使用我们现有的 Ports，方法是
 
 ```sh
 poudriere ports -c -m null -M ~/freebsd/ports
 ```
 
-`-m` 选项告诉 poudriere 使用 null 方法，即使用位于 `-M` 参数指定位置的现有 Ports 。使用 null 方法意味着我们将手动管理该树，包括保持其最新状态以及在测试时检出适当的分支。设置好 poudriere 后，你可以测试你的 Port 。如果你创建了一个名为 `13amd64` 的 jail，你可以在该 jail 中测试新 Port ，方法是
+`-m` 选项告诉 poudriere 使用 null 方法，即使用位于 `-M` 参数指定位置的现有 Ports。使用 null 方法意味着我们将手动管理该树，包括保持其最新状态以及在测试时检出适当的分支。设置好 poudriere 后，你可以测试你的 Port。如果你创建了一个名为 `13amd64` 的 jail，你可以在该 jail 中测试新 Port，方法是
 
 ```sh
 poudriere testport -j 13amd64 www/nyxt
 ```
 
-理想情况下，你应该在各种一级平台上测试你的 Port （当前为 12i386、12amd64、13amd64 和 13arm64）。在构建新 Port 后，poudriere 可以构建一个包，并保持 jail 运行，且包已经安装。
+理想情况下，你应该在各种一级平台上测试你的 Port（当前为 12i386、12amd64、13amd64 和 13arm64）。在构建新 Port 后，poudriere 可以构建一个包，并保持 jail 运行，且包已经安装。
 
 ```sh
 poudriere bulk -i -j 13amd64 <category>/<port>
@@ -568,7 +568,7 @@ arc diff --update <revision>
 
 要创建新的 Bugzilla 错误报告，请访问 https://bugs.freebsd.org 并点击页面顶部的 New 链接。如果你没有登录到 FreeBSD Bugzilla 实例，系统会提示你进行登录。如果你没有 FreeBSD Bugzilla 账户，可以使用登录页面上的链接创建一个新账户。
 
-在这里，选择 Ports & Packages 链接，因为我们正在创建一个新 Port ，并选择 Individual Port(s) 作为组件。对于特定 Port 的错误，错误的主题行可以是提交的主题，前缀加上 [NEW PORT]，例如：[NEW PORT] www/nyxt: New port for the Nyxt browser。如果该 Port 不是新 Port ，类别/ Port 前缀会自动将错误分配给该 Port 的维护者。在描述中，你可以添加其余的提交信息以及任何对其他阅读错误的人有帮助的信息。如果你创建了 Phabricator 审核，可以将其添加到 See also 中。
+在这里，选择 Ports & Packages 链接，因为我们正在创建一个新 Port，并选择 Individual Port(s) 作为组件。对于特定 Port 的错误，错误的主题行可以是提交的主题，前缀加上 [NEW PORT]，例如：[NEW PORT] www/nyxt: New port for the Nyxt browser。如果该 Port 不是新 Port，类别/ Port 前缀会自动将错误分配给该 Port 的维护者。在描述中，你可以添加其余的提交信息以及任何对其他阅读错误的人有帮助的信息。如果你创建了 Phabricator 审核，可以将其添加到 See also 中。
 
 当你的新 Port 被接受并推送到 git.freebsd.org/ports.git 后，你作为该 Port 维护者的新工作开始了。有关 Port 维护者责任的大纲，请参考《The challenge for port maintainers》一文。为了跟上上游进展，portscout 是一个有用的服务，能够在有新版本发布时提醒你，以便你可以提交 Port 更新。如果上游使用 GitHub，你还可以通过关注 Watch 和 Custom 链接，检查项目页面上的 Releases 以获取新版本的提醒。当更新 Port 时，如果更改简单（例如仅 DISTVERSION/distinfo 更改），可能不需要提交 Phabricator 审核。在 Git 特性分支上，你可以使用 git format-patch main 创建一个补丁，并将其附加到新的 Bugzilla 错误报告中。使用 Git 后，我们在对贡献者进行署名时有了更多灵活性。当你以这种方式提交补丁，并且一个提交者将其推送到 git.freebsd.org/ports.git 时，git log 会为你的工作提供信用。即使你提交了传统的 diff，提交者也可以选择将你设为作者。
 
