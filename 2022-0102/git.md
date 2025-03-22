@@ -54,6 +54,7 @@ https://git.freebsd.org/ports.git ~/freebsd/ports
 ```sh
 zfs create zroot/usr/home/ashish/ports/distfiles
 ```
+
 与 ports 文件本身不同，软件分发文件通常已经压缩，因此可以关闭 `zroot/usr/home/ashish/freebsd/ports/distfiles` 数据集的 ZFS 压缩。
 
 ```sh
@@ -67,6 +68,7 @@ zfs set compression=off zroot/usr/home/ashish/freebsd/ports/distfiles
 PORTSDIR=/usr/home/ashish/freebsd/ports
 .endif
 ```
+
 另一种方法是设置 `PORTSDIR` 环境变量。例如，如果你的 shell 是 zsh，你可以将以下行添加到 `~/.zshrc` 文件中。
 
 ```sh
@@ -417,6 +419,7 @@ infinitely extensible in Lisp.
 
 WWW: https://nyxt.atlas.engineer/
 ```
+
 有关撰写优质 FreeBSD 提交信息的更深入讨论，请参阅 2020 年 11 月的《期刊》文章。现在，运行 `git log --oneline` 将在我们的 nyxt 分支中显示一个单一的提交。
 
 ```sh
@@ -537,13 +540,14 @@ arc install-certificate https://reviews.freebsd.org
 ```sh
 arc set-config default https://reviews.freebsd.org/
 ```
+
 要提交你的审核，从 nyxt 分支运行
 
 ```sh
 arc diff --create main
 ```
 
-这将创建一个新的审核，包含 nyxt 分支中的所有提交。在这个例子中，我们将提交合并成了一个单一的提交，因此修订将以该单一提交创建。当你的编辑器打开时，你将有机会编辑修订中的各个字段。顶部一行将是你的提交日志的主题，如 ` www/nyxt: New port for
+这将创建一个新的审核，包含 nyxt 分支中的所有提交。在这个例子中，我们将提交合并成了一个单一的提交，因此修订将以该单一提交创建。当你的编辑器打开时，你将有机会编辑修订中的各个字段。顶部一行将是你的提交日志的主题，如 `www/nyxt: New port for
 the Nyxt browser`，摘要将包含其余的提交日志内容。在测试计划下，你可以列出你为测试 Port 所做的工作。例如，如果你为每个受支持版本在 tier 1 架构上执行了 `poudriere testport`，你可以写道：
 
 ```sh

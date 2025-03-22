@@ -12,6 +12,7 @@
 在本文中，我将尝试为你理清通往 FreeBSD 桌面的道路。  
 
 ## 硬件  
+
 ![](https://github.com/user-attachments/assets/bbe6d8e2-844f-4b1b-9215-726255727c9c)
 
 硬件是最重要的部分。真的。我已经不止一次犯过这个错误。我买了 FreeBSD 不支持的硬件。我当时非常想要一款“最强”的 Intel X3000 显卡，它搭载在 Intel G965 主板上。我还想把它与当时非常强大的 Intel Core 2 Quad Q6600 处理器搭配使用。不幸的是，FreeBSD 并不支持那款显卡。它支持所有其他 Intel 显卡，如 GMA 950 和 GMA 3000，但唯独不支持 X3000。这个决定让我不得不进入 Ubuntu Linux 的世界大约一年，而你可能也能想象，那并不是一段愉快的时光。  

@@ -10,6 +10,6 @@ Mike 的愿景和奉献精神对塑造我们今天所知道并使用的 FreeBSD 
 
 无需送花，Mike 的亲属更倾向于将其捐给基金会，以资助日后的 FreeBSD 项目。
 
-## 有关 Mike 的文章：
+## 有关 Mike 的文章
 
 [BSD 老将：Michael J. Karels 逝世，享年 68 岁](https://www.heise.de/news/BSD-Urgestein-Michael-J-Karels-mit-68-Jahren-gestorben-9751528.html)

@@ -1,9 +1,9 @@
 # 让我们来试试 ChatGPT
 
- - 原文：[Practical Ports: Let’s Talk, GPT](https://freebsdfoundation.org/wp-content/uploads/2023/05/GPT_Practical_ports.pdf)
- - 作者：Benedict Reuschling
- - 译者：冰
- - 校对整理：ykla【】部分为 ykla 注
+- 原文：[Practical Ports: Let’s Talk, GPT](https://freebsdfoundation.org/wp-content/uploads/2023/05/GPT_Practical_ports.pdf)
+- 作者：Benedict Reuschling
+- 译者：冰
+- 校对整理：ykla【】部分为 ykla 注
 
 你现在可能已经听说了：在人工智能（AI）领域有一个新的、有争议的明星，叫做 ChatGPT。关于他的文章已经撰写了很多，既有如何通过它来做某些被认为是杂事的任务来改善人们的生活，也有它如何通过让机器人获胜来毁灭我们所有人。范围很广，关于我们是否应该对人工智能进行监管，目前还没有定论。既然这是实用的软件，我将实际看看类似聊天的工具能做些什么。
 
@@ -87,6 +87,7 @@ setup_partitions() {
 }
 
 ```
+
 ***ChatGPT***：你可以通过传递两个参数来调用这个函数：一个 SSD 阵列和所需的交换空间大小。例如，如果你有两个固态硬盘（`/dev/sda` 和 `/dev/sdb`），你希望它们每个都有 4GB 的交换空间，你可以这样调用这个函数：
 
 ```sh
@@ -349,6 +350,7 @@ SWAP_SIZE=”4g”
 
 setup_partitions “$HDD $SSD” “$SWAP_SIZE”
 ```
+
 ***ChatGPT***：这些优化应该能使代码的效率略微提高，但请记住，对性能的影响可能可以忽略不计，这取决于磁盘的大小和正在创建的分区的数量。
 
 这些当然是我没有考虑过的一些优化。当通过这样的人工智能运行你的代码时，我建议你以开放的心态对待它，把你的程序员的自负留在登录提示中。人无完人，人工智能可能会提出一些理论上不正确的建议，或者让你担心失去工作，因为到目前为止你写的那些可怕的代码可能会传到你老板的耳朵里。但是，既然这只是你和人工智能之间的事，有什么能阻止你实施一些建议，看看它们是否真的能改善事情？

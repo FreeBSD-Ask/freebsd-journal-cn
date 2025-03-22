@@ -354,10 +354,10 @@ $ vault kv get -mount=kv -format=yaml blackadder
 
 我们有 4 种方式来使用 Vault：
 
-* [Ansible](https://www.ansible.com/) 和类似工具可以将秘密存储在 Vault 中，并且只在部署时使用查找功能解密它们
-* 框架脚本 `rc.d` 可在启动使用 [app roles](https://developer.hashicorp.com/vault/docs/auth/approle) 时提取它们的凭据，让本地 root 用户拥有仅允许发出小单间令牌的委派令牌。守护进程本身仅可检索自己的凭据
-* Vault 可以发行绑定时间和 IP 的动态凭据（过期后会被吊销），适用于守护进程、定时任务和批处理脚本的时间限制
-* 我们还可以在运行时使用 Vault 代理来模板化文件
+- [Ansible](https://www.ansible.com/) 和类似工具可以将秘密存储在 Vault 中，并且只在部署时使用查找功能解密它们
+- 框架脚本 `rc.d` 可在启动使用 [app roles](https://developer.hashicorp.com/vault/docs/auth/approle) 时提取它们的凭据，让本地 root 用户拥有仅允许发出小单间令牌的委派令牌。守护进程本身仅可检索自己的凭据
+- Vault 可以发行绑定时间和 IP 的动态凭据（过期后会被吊销），适用于守护进程、定时任务和批处理脚本的时间限制
+- 我们还可以在运行时使用 Vault 代理来模板化文件
 
 ### Ansible
 

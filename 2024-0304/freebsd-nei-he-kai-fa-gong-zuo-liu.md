@@ -172,6 +172,7 @@ WITHOUT_REPRODUCIBLE_BUILD=”YES”
    ```
 
    1. 将整个工作区导出到内部网络。
+
       ```sh
       builder# cat /etc/exports
       /ws/ws -ro -mapall=root -network 192.168.200.0/24
@@ -360,10 +361,12 @@ builder# vm console vm0
 第一次启动虚拟机时，检验以下内容：
 
 - 虚拟机的主机名是由 DHCP 服务器分配的。登录提示中可以看到主机名和 tty。
+
   ```sh
   FreeBSD/amd64 (vm0) (ttyu0)
   login:
   ```
+
 - 虚拟机的 uart0 是控制台，uart1 用于远程调试。
 
   ```sh
@@ -488,6 +491,7 @@ builder# wsmake buildkernel
    ```
 
 2. 如果在构建机上使用 gdb 进行源代码级调试，还需要将内核安装到构建机的 sysroot 中。使用与虚拟机中相同的 `INSTKERNNAME` 和 `KERNCONF`。
+
    ```sh
    builder# cd /ws/src/dev
    builder# wsmake installkernel DESTDIR=/ws/sysroot
@@ -547,6 +551,7 @@ vm0# sysctl debug.kdb.current=gdb
    ```
 
 3. 手动：从物理机进入。如果虚拟机卡住且无响应，可以向虚拟机注入一个 NMI。
+
    ```sh
    builder# bhyvectl --vm=vm0 --inject-nmi
    ```

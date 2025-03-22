@@ -47,11 +47,13 @@
 $ grep -i icon /usr/local/share/applications/xpdf.desktop
 Icon=xpdf
 ```
+
 图标的名称是 xpdf。让我们看看是否能在 `/usr/local/share/icons` 中找到这样一个图标。
 
 ```sh
 $ find /usr/local/share/icons -name '*xpdf*'
 ```
+
 我们使用 `find(1)` 一行命令的输出为空，说明 Xpdf 图标并没有安装。此时，我们可能需要查看一下 ports 树。
 
 ## 开发补丁
@@ -61,6 +63,7 @@ $ find /usr/local/share/icons -name '*xpdf*'
 ```sh
 $ git clone https://git.FreeBSD.org/ports.git ~/ports
 ```
+
 现在让我们查看 Xpdf 的 port。我们如何在所有 ports 中找到它呢？有几种不同的方法。
 
 最简单的方法是使用 pkg(8) 来查询这个软件包的来源。
@@ -200,6 +203,7 @@ index e6cd3e15dd75..7eee2ae85bc6 100644
 ```sh
 $ portedit bump-revision -i Makefile
 ```
+
 因此，我们应该在 diff 中看到以下内容：
 
 ```c

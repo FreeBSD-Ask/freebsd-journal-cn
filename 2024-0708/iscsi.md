@@ -170,13 +170,13 @@ tgtChapSecret   = “topspassw0rd”;
 
 每个属性的含义如下：
 
-* `fblock0`：这是一个人类可读的标识符，与东西无涉，仅用于将以下配置项分组。
-* `targetaddress`：存储目标的网络地址。也可以是一个完全合格的域名。
-* `targetname`：这将与在 `ctl.conf` 文件中定义的相应目标名称对齐。
-* `initiatorname`：定义发起方的 IQN。
-* `authmethod`：在 FreeBSD 中可以简单地定义为 CHAP。如果 `ChapName` 和 `ChapSecret` 以 `tgt` 为前缀，则会假定使用相互身份验证。
-* `chapiname/chapsecret`：如前所述，在 `ctl.conf` 文件中定义的身份验证。
-* `tgtChap[Name,Secret]`：目标需要完成身份验证握手的身份验证。
+- `fblock0`：这是一个人类可读的标识符，与东西无涉，仅用于将以下配置项分组。
+- `targetaddress`：存储目标的网络地址。也可以是一个完全合格的域名。
+- `targetname`：这将与在 `ctl.conf` 文件中定义的相应目标名称对齐。
+- `initiatorname`：定义发起方的 IQN。
+- `authmethod`：在 FreeBSD 中可以简单地定义为 CHAP。如果 `ChapName` 和 `ChapSecret` 以 `tgt` 为前缀，则会假定使用相互身份验证。
+- `chapiname/chapsecret`：如前所述，在 `ctl.conf` 文件中定义的身份验证。
+- `tgtChap[Name,Secret]`：目标需要完成身份验证握手的身份验证。
 
 要启用使用，只需执行以下命令：
 
@@ -197,9 +197,9 @@ iqn.2012-06.org.example.iscsi:target1 [2001:db8:1::a]  Connected: da0
 
 在此，我们来看一下 `iscsictl` 命令中最常用的简单参数：
 
-* `L` 列出已挂载到发起方的目标及其连接状态。
-* `Aa` 附加在 `iscsi.conf` 文件中定义的所有目标。
-* `Ra` 移除所有已连接到发起方的目标。
+- `L` 列出已挂载到发起方的目标及其连接状态。
+- `Aa` 附加在 `iscsi.conf` 文件中定义的所有目标。
+- `Ra` 移除所有已连接到发起方的目标。
 
 接下来，执行以下操作：
 

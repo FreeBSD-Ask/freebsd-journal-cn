@@ -22,11 +22,13 @@ TSLOG 框架跟踪通过 TSLOG 选项编译到内核中的事件。当没有该�
 **图 1 和图 2 显示了 Colin 和其他人如何使用 TSLOG 来找到启动过程中慢的时间段。图 1 显示了大约 2017 年我们所处的位置，图 2 显示了过去 5 年他们已经从启动过程中去除的时间，大部分的艰苦工作发生在最近。**
 
 ## BootTrace
+
 TSLOG 是发现内核在启动过程中花费时间的一个好方法。在 2022 年初，Mitchell Horne 开始将 NetApp 的一个框架 BootTrace 上游化。BootTrace 让我们能够执行与 TSLOG 相同的跟踪，但它有几个主要增强功能，提供了更广泛的覆盖。BootTrace 提供了增强的能力来跟踪用户空间进程，让我们能够覆盖 rc 子系统，还可以跟踪关闭过程。
 
 关闭过程很难通过 TSLOG 跟踪，因为完成时主机已经关闭。在某些方面，关机（或重启）与开机同样重要，关闭系统所花费的时间有助于系统一致性，但在关机过程中主机实际上并没有在执行任何工作。BootTrace 绕过了这个限制，提供了一个很好的视图，让我们能够了解系统如何启动和停止。
 
 ## 如何贡献
+
 现在，我们拥有大量工具来查看 FreeBSD 启动和关机过程的性能，但开发者只能查看他们能够访问的系统和应用工作负载。
 
 Colin 专注于在 Amazon Web Services 上运行 FreeBSD。还有许多其他云服务提供商，每个提供商都有可能在某些方面可以进行调整，以便从 FreeBSD 系统中获得更快的启动和关机时间。
@@ -36,11 +38,13 @@ Colin 专注于在 Amazon Web Services 上运行 FreeBSD。还有许多其他云
 TSLOG 带来了 FreeBSD 启动过程的显著改进。自 Colin 在 2017 年开始以来，FreeBSD 启动时间从 11.1-RELEASE 时的约 30 秒，减少到了 2022 年 3 月在 14-CURRENT 上的约 9 秒。这些改进中有些表现为秒级的提升，但更多的是以 100 毫秒为单位的减少，表现在各个子系统初始化时的时间缩短。虽然还有一段距离才能让 FreeBSD 启动时间接近 Linux，它可以在 EC2 上以约 1 秒的时间启动，但达到这一目标的途径是通过现在已有的启动性能分析工具进行测试，并向项目开发者指出需要改进的地方。
 
 ## 使用 TSLOG 跟踪启动时间
+
 如果你有构建和使用自定义 FreeBSD 内核的经验，运行 TSLOG 是相对简单的。你需要构建一个带有 'options TSLOG' 的自定义内核，然后运行 Colin 在 freebsd-boot-profiling 仓库中提供的脚本 <https://docs.freebsd.org/en/books/handbook/kernelconfig/>。这些步骤的最新版本应该可以在 Boot Time FreeBSD wiki 页面找到 <https://wiki.freebsd.org/BootTime>。
 
 有了 Colin 脚本生成的 FlameChart，你可以开始进行更加困难的过程——识别启动过程中那些耗时过长的环节。根据当前的信息，rtsold 在我的系统中占用了大量的用户空间启动时间。这个守护进程对进行 IPv6 自动配置非常重要，但如果你使用 DHCP6 进行网络配置，它也可能是提高系统启动性能的一个良好起点。
 
 ## 使用 BootTrace 跟踪启动和关机时间
+
 从 FreeBSD 14-CURRENT 开始，NetApp 的 BootTrace 框架已经集成到 FreeBSD 内核中。BootTrace 是内核的一部分，但默认是禁用的。BootTrace 允许跟踪启动、运行时和关机事件，并将它们存储在三个独立的日志中。在 2022 年 3 月的 FreeBSD 14-CURRENT 系统中，你可以通过在 `/boot/loader.conf` 中设置 sysctl `kern.boottrace.enabled` 为 `1` 来启用跟踪。启用后，系统会通过 sysctl `kern.bootrace.log`  输出启动和运行时日志。
 
 ![](https://github.com/user-attachments/assets/3ab0d7fa-b8e5-4121-affc-c6a6a03f6325)

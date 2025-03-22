@@ -37,6 +37,7 @@ ifconfig_vlan100_alias1="inet6 fe80::ffff:2:35/64"
 ## 自动配置的 LLA
 
 请记住，当指定 `ifconfig_IF_ipv6` 时，会发生以下情况：
+
 - 移除 `IFDISABLED` 标志，且
 - 基于接口的 L2 地址自动配置一个 LLA。
 
@@ -106,6 +107,7 @@ vlan84 : flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
 请注意，如果你已经有一个 SLAAC 地址并启用了 `use_tempaddr` 变量，则需要首先删除 SLAAC 地址。
 
 该扩展在某种程度上是有用的，但当前 FreeBSD 实现存在以下问题：
+
 - 你无法按接口基础控制临时地址的生成。当启用时，所有接受路由通告（Router Advertisement）的接口都会有一个临时地址。
 - 地址生成算法基于 RFC 4941 中的旧规范，而不是 RFC 8981。
 
@@ -262,6 +264,7 @@ ff02::1:ff02:7b%vlan84 scopeid 0x7 mode exclude
 通过这种方式，IPv6 为每个特定的目的使用不同的地址。与 IPv4 不同，并非所有地址都会出现在 ifconfig 命令的输出中。组播地址可以通过 ifmcstat 命令查看。此外，作者想强调的是，接口上的 LLA 对于 NDP 至关重要。没有 LLA，IPv6 的工作将会受到影响。实际上，IFDISABLED 标志用于禁用接口上的 IPv6 通信，这意味着在内核中禁用了所有的 NDP 流量。它仅阻止 NDP 流量，但有效地禁用了 IPv6。
 
 ## 总结  
+
 本列介绍了 IPv6 中多个地址的工作原理。对于使用 TCP 或 UDP 的通信，你无需了解这些细节。然而，从系统管理员的角度来看，理解已配置的地址非常重要。在某些情况下，你可能希望配置额外的访问控制列表或数据包过滤规则，因为箱子上的 LLA 是另一个可以访问的地址。另一方面，阻止通过 LLA 的通信可能会破坏 NDP。
 
 在下一列中，将介绍几个有用的配置技巧，这些技巧基于我们到目前为止了解的知识，并包括一些遗漏的部分，如 IPv6 上的 DNS 和 DHCPv6。

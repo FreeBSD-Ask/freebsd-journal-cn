@@ -123,6 +123,7 @@ FreeBSD 13.0 添加了一个新的测试工具：tools/tools/crypto/cryptocheck.
 ## 文档
 
 现有的 crypto(9) 手册页已更新并拆分为多个页面。  
+
 - **crypto_session(9)** 描述了会话参数结构及创建和管理对称会话的 API。  
 - **crypto_request(9)** 描述了对称加密请求结构及相关 API。  
 - **crypto_buffer(9)** 描述了加密缓冲区光标以及其它操作加密请求数据缓冲区的 API。  
@@ -134,6 +135,7 @@ FreeBSD 13.0 添加了一个新的测试工具：tools/tools/crypto/cryptocheck.
 ## 后续变更
 
 以上在 FreeBSD 13.0 中的一系列变更均由我编写，并大部分作为一次提交合并进来。从那时起，OCF 又被其他开发者进一步扩展：  
+
 - Alan Somers 添加了一种新的加密数据缓冲区类型，该类型包含一个虚拟内存页面列表。这允许使用 unmapped I/O 与 GELI 搭配，从而通过消除页表和 TLB 维护操作提高性能。得益于围绕加密数据缓冲区所做的抽象，Alan 的变更仅直接影响了少数加密驱动。大多数驱动在使用新缓冲区类型时无需做任何修改。  
 - 我增加了对单独输出缓冲区和单独 AAD 缓冲区的支持，作为新的会话功能标志。这些改进通过消除数据拷贝和分配临时 I/O 向量（struct iovec 数组）的需求，从而提高了内核 TLS 的性能。由于这些请求作为可选功能添加，只有希望支持内核 TLS 的驱动需要更新以支持这些功能。  
 - Semihalf 的 Marcin Wojtas 添加了另一项会话功能，用于支持非 AEAD 密码中 IPsec 的扩展序列号（ESN）。此外，还增加了对其他 AEAD 密码的支持。FreeBSD 13.0 包括了 AES-CCM（由 OpenZFS 使用），而 ChaCha20-Poly1305（用于 TLS 和 WireGuard）则在 FreeBSD 13.1 中发布。  

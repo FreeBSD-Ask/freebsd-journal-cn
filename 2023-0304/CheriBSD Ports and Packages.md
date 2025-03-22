@@ -1,10 +1,10 @@
 
 # CheriBSD port 和软件包——用于 Arm Morello 和 CHERI-RISC-V CheriBSD 的纯能力第三方软件
 
- - 原文：[CheriBSD Ports and Packages](https://freebsdfoundation.org/wp-content/uploads/2023/05/CheriBSD_ports.pdf)
- - 作者：Konrad Witaszczyk
- - 译者：冰
- - 校对整理：ykla
+- 原文：[CheriBSD Ports and Packages](https://freebsdfoundation.org/wp-content/uploads/2023/05/CheriBSD_ports.pdf)
+- 作者：Konrad Witaszczyk
+- 译者：冰
+- 校对整理：ykla
 
 CHERI 是一个硬件/软件/语义学联合设计项目，旨在提高现有和未来硬件 - 软件堆栈实现的安全性。来自谷歌和微软的最新研究表明，他们产品中大约 70% 的漏洞与内存安全问题有关。CHERI 不仅使我们能够阻止大多数这类漏洞被利用，而且还能对软件进行分离，从而限制目前软件维护者不知道的可成功利用的漏洞的影响（例如，第三方软件依赖中的后门）。
 
@@ -99,7 +99,7 @@ pkg+http://pkg.CheriBSD.org/${ABI}
 pkg+http://pkg.CheriBSD.org/CheriBSD:20220828:aarch64c
 ```
 
-和被 pkg64 扩展为： 
+和被 pkg64 扩展为：
 
 ```
 pkg+http://pkg.CheriBSD.org/CheriBSD:20220828:aarch64
@@ -181,23 +181,23 @@ $ ./cheribuild.py run-user-shell-riscv64-purecap
 
 除了 CHERI/CheriBSD 专有的针对 FreeBSD ports 系列软件的补丁之外，我们还引入了额外的 make(1) 变量，以允许根据它们所使用的 ABI 来修改 port 的构建配置，并允许构建具有混合 ABI 编译时依赖性的 CheriABI 包：
 
- - `USE_PACKAGE_DEPENDS_REMOTE`；
+- `USE_PACKAGE_DEPENDS_REMOTE`；
 
 当启用 `USE_PACKAGE_DEPENDS{,_ONLY}` 时，如果本地软件包不存在，则会尝试从远程仓库安装一个软件包，而不是从头开始构建 port。
 
- - `USE_PACKAGE_64_DEPENDS_ONLY`；
+- `USE_PACKAGE_64_DEPENDS_ONLY`；
 
 安装标有 `USE_PKG64` 的依赖项时，使用它们的 pkg64 替代混合 ABI 包，而不是从头开始构建它们。
 
- - `USE_PKG64`；
+- `USE_PKG64`；
 
-当设置了 USE_ PACKAGE_ 64_ DEPENDS_ ONLY 时，对一个不能为 CheriABI 构建的 port 使用混合 ABI 包，而另一个正在为 CheriABI 构建的 port 则需要它。
+当设置了 USE_PACKAGE_ 64_DEPENDS_ ONLY 时，对一个不能为 CheriABI 构建的 port 使用混合 ABI 包，而另一个正在为 CheriABI 构建的 port 则需要它。
 
- - `OPTIONS_{DEFINE,DEFAULT,EXCLUDE}_${ABI}`；
+- `OPTIONS_{DEFINE,DEFAULT,EXCLUDE}_${ABI}`；
 
 专门针对 ${ABI} 的选项列表。
 
- - `BROKEN_${ABI}`.
+- `BROKEN_${ABI}`.
 
 如果设置了这个选项，则认为某个 port 对于 ${ABI} 来说是被破坏的。
 
@@ -244,7 +244,7 @@ $ pkg64 install cheri-desktop-hybrid-extras
 ![图 1](../2023-0304/2.2.png)
 
 **图 2：运行 CheriBSD 的 Arm Morello 开发板**
- 
+
 ![图 1](../2023-0304/2.3.png)
 
 **图 3：内存安全的 Morello 桌面环境（CheriBSD, KDE Plasma, Wayland）【注 3】**
@@ -255,19 +255,19 @@ CheriBSD 发布的版本和软件包已经被技术普及计划（TAP）的参�
 
 基于 CheriBSD 22.05 和 22.12 版本，TAP，以及 CheriBSD 用户的经验，我们正在计划下一步工作，以增加 CHERI 内存安全软件包的数量。目前，我们正在考虑：
 
- - CheriABI Python.
+- CheriABI Python.
 
 正如在缺少跨 ABI 支持的部分所提到的，多个构建系统都使用 Python。让 Python 兼容 CheriABI，我们不仅可以为 CheriABI 建立更多的软件包，而且还可以在基于 Python 的应用程序中实现有趣的研究空间。
 
- - Cross-ABI support in Poudriere.
+- Cross-ABI support in Poudriere.
 
 我们希望利用混合 ABI 包来构建 Poudriere 的 CheriABI 包。目前，我们使用混合 ABI 构建工具构建 CheriABI 包，方法是在 ports 目录中执行 `make package`，并将生成的软件包转移到用 Poudriere 创建的包库中。这项功能将使我们能够轻松地重建和部署软件包库。
 
- - 上传补丁；
+- 上传补丁；
 
 我们希望尽量减少必须在 CheriBSD ports 中维护的补丁数量，而将其提交给上游软件库。这包括在 port 中进行的修改，以更好地支持 FreeBSD ports 中的自定义本地基本路径。
 
- - CHERI-RISC-V 软件包。
+- CHERI-RISC-V 软件包。
 
 目前，CheriBSD 只为 Arm Morello 提供软件包。由于大多数应用的补丁并不是专门用于 Morello 的，所以我们应该也能为 CHERI-RISC-V 建立大量的软件包。这将使研究人员也能针对大型代码库评估 CHERI-RISC-V 架构。
 
@@ -319,5 +319,5 @@ CheriBSD 是一个成熟的研究型操作系统，可以用来制作使用 CHER
 28. Digital Security by Design. Funded Projects. https://www.dsbd.tech/whos-involved/funded-projects/
 
  -----
- 
+
 KONRAD WITASZCZYK 是剑桥大学的研究助理和博士生，从事 CHERI 项目。他拥有亚捷隆大学大学的理论计算机科学学士学位和哥本哈根大学的计算机科学硕士学位，自 2013 年以来一直在研究 FreeBSD 及其安全相关机制，包括在 Fudo Security 工作。作为他的博士论文的一部分，他正在研究 CheriBSD 内核的分区策略，因此也在研究 FreeBSD 内核的分区策略。

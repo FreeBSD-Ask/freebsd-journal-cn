@@ -25,6 +25,7 @@ VPP 可以用于许多用途，其中最常见且最容易配置的是作为某�
 ```sh
 host # pkg install vpp iperf3
 ```
+
 为了为我们的网络创建三个节点，我们将利用 FreeBSD 最强大的功能之一——VNET jail。VNET jail 为我们提供了完全隔离的网络堆栈实例，它们的操作方式类似于 Linux 的网络命名空间（Network Namespaces）。为了创建一个 VNET，我们需要在创建 jail 时添加`vnet`选项，并传递它将使用的接口。
 
 最后，我们将使用`epair`接口连接我们的节点。`epair`接口提供了以太网电缆两端的功能——如果你熟悉 Linux 上的`veth`接口，它们提供了类似的功能。

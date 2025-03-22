@@ -23,7 +23,7 @@ Icinga 是流行的 Nagios 主机和服务监控软件的继任者。其目标�
 monitor# pkg update
 ```
 
-## 设置 PostgreSQL 
+## 设置 PostgreSQL
 
 在安装所需的软件包（包括 PostgreSQL 作为后台数据库和 nginx 作为 web 服务器来托管 Icingaweb2 监控界面）之前，我们首先创建一个 ZFS 数据集用于存储 postgres 数据库，这样当软件包解压时，它会被填充。如果你不使用 ZFS，使用常规目录也完全可以。
 
@@ -69,6 +69,7 @@ monitor# chown -R postgres:postgres /var/db/postgres
 monitor# su postgres
 postgres@monitor$ initdb -D /var/db/postgres/data -E UTF8"
 ```
+
 成功初始化数据库集群后，使用 `pg_ctl` 启动服务器：
 
 ```sh
@@ -110,7 +111,7 @@ monitor# chown -R icinga:icinga /usr/local/etc/icinga2
 
 这部分设置完成后，我们将继续进行 Web 服务器的配置。尽管这里使用的是 nginx，但也可以使用其他 Web 服务器，如 Apache2。Icinga 文档中也有相关的配置步骤。  
 
-## 设置 Nginx   
+## 设置 Nginx
 
 Icinga 的 Web 界面（被恰当地命名为 Icingaweb2，因为它是版本 2）是一个 PHP 应用程序，用于通过浏览器管理主机和服务。任何失败的检查事件也会在其中显示，你可以在一个中心位置确认问题或定义停机时间。要配置 PHP fastCGI 进程管理器（php-fpm）来处理来自 Web 服务器的请求，请启用位于 `/usr/local/etc/php-fpm.d/www.conf` 文件中的以下选项：
 
@@ -160,7 +161,7 @@ monitor# sed -i "" s,;date.timezone =,date.timezone = Europe/Berlin, php.ini
 
 我们在这里将常规的 `sed` 分隔符 `/` 替换为逗号，以避免与地区和城市之间的分隔符混淆。看，我在我的教程中也偷偷加入了一些 `sed` 技巧，稍后感谢我吧...哦，顺便说一下，基本上，这就是提供 icingaweb2 给终端用户所需的一切。接下来，我们将把注意力集中在 Icinga 配置上。
 
-## Icinga 监控设置 
+## Icinga 监控设置
 
 
 Icinga 使用多种方式来监控系统，并且对不同的监控环境和需求非常灵活。例如，一个主机可能不是一直可用（例如流动用户）或没有与中央监控主机的直接连接。在后者的情况下，卫星系统可以通过不同的网络或子网将监控数据和检查结果转发到中央实例。在我们这里使用的设置中，中央实例（称为主节点）控制对受监控系统的检查执行。通过主节点和客户端之间交换证书来建立信任。一个区域（zone）定义了监控发生的地理位置（如欧洲、非洲等），或者在我们的监控上下文中有意义的某种逻辑分组。例如，一个整个工厂、办公室、服务器机房、机架等可以各自形成自己的区域。当然，DNS 区域也是可以的，任何对整体监控或基于某些共同标准进行监控的内容都是可行的。
@@ -265,6 +266,7 @@ vars.cluster_zone = host.name
 assign where host.vars.agent_endpoint
 }
 ```
+
 除了运行集群区域检查命令（我们不需要了解太多关于它的细节就可以使用它）之外，我们还可以通过定义 `display_name` 来查看 Icingaweb2 界面中如何显示不同的检查描述。通过这种方式，我们可以一目了然地看到被监控系统的名称，并且前缀是字符串 "cluster-health"。
 
 内部的 Icinga 数据库（IDO）也可能会出现故障，因此监控它也是很有必要的（记住要监控观察者）。尽管较新的 Icinga 版本已经完全摒弃了 IDO，取而代之的是一个独立的数据库，但小型安装仍然完全可以使用 IDO。基于 PostgreSQL 的 IDO 检查定义如下（同样在 `services.conf` 中）：
@@ -389,6 +391,7 @@ monitor# icinga2 pki new-cert --cn client.example.org \
  --key /var/lib/icinga2/certs/client.example.org.key \
  --csr /var/lib/icinga2/certs/client.example.org.csr"
 ```
+
 以 .csr 结尾的文件是证书签名请求，它现在与之前生成的主密钥结合使用，以创建一个新的签名客户端证书（example.org.crt）。
 
 ```sh

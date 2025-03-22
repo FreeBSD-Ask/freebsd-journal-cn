@@ -97,7 +97,7 @@ Device(AHC0) {
 
 **FreeBSD** 的 **XHCI** 和 **AHCI** 驱动程序需要在 **DSDT/SSDT** 中使用完全标准化的描述。**列表 1** 展示了 **XHCI** 控制器的一个示例，它包含引用 **唯一 ID** 的对象，以及 **缓存一致性信息** 和 **内存/中断资源**。所有 **非标准** 配置（例如 **寄存器映射、时钟管理** 或 **电源管理** 处理）都必须由 **固件** 预先配置并实现。  
 
-## 自定义 ACPI 描述 
+## 自定义 ACPI 描述
 
 如果某个控制器需要由其专用驱动程序处理的自定义绑定，该如何实现？  
 
@@ -105,15 +105,15 @@ Device(AHC0) {
 
 借助 **FreeBSD** 的总线层级体系（参见 **图 2**），开发者[设计并实现了](https://cgit.freebsd.org/src/commit/?id=3f9a00e3b577)一种新的通用方案，支持在不依赖具体描述方式的情况下获取控制器特定的数据。此外，还引入了以下辅助函数：  
 
-- [`device_get_property`](https://www.freebsd.org/cgi/man.cgi?query=device_get_property&apropos=0&sektion=9&manpath=FreeBSD+14.0-current&arch=default&format=html) 
-- `device_has_property` 
+- [`device_get_property`](https://www.freebsd.org/cgi/man.cgi?query=device_get_property&apropos=0&sektion=9&manpath=FreeBSD+14.0-current&arch=default&format=html)
+- `device_has_property`
 
 这些函数允许子设备驱动以相同方式访问父总线提供的设备特定数据，无论系统是以 **ACPI** 还是 **DT** 启动，都能执行相同的代码路径。该方案后来[进一步扩展](https://cgit.freebsd.org/src/commit/?id=b344de4d0d16)，以涵盖 **ACPI** 和 **DT** 体系下的多种属性类型。  
 
 
 该方案的一个典型应用是 **SD/MMC** 子系统，其中包括：  
 
-- [通用代码](https://cgit.freebsd.org/src/commit/?id=8a8166e5bcfb) 
+- [通用代码](https://cgit.freebsd.org/src/commit/?id=8a8166e5bcfb)
 - 适用于 Marvell Xenon 控制器的驱动  
 
 其中，Marvell Xenon 驱动被拆分为三个文件：  

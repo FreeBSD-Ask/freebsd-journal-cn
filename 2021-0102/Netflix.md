@@ -113,10 +113,10 @@ Open Connect CDN 的主力是 Open Connect Appliances，简称 OCA。这些设�
 
 NUMA 使得 CPU 访问本地资源（例如内存）变得更加便宜，而访问连接到其他节点的资源则变得更加昂贵。因此，内存和 I/O 本地化会影响性能。为了充分利用 NUMA 提供的更高计算密度，Netflix 必须找到一种方法，将尽可能多的磁盘到 CPU 到网络的流量保持在本地节点，并最小化会影响性能的 NUMA 总线传输。为此，Netflix 进行了多项增强，目前这些增强正在逐步合并到上游，包括：
 
-* 为通过 sendfile(9) 发送的文件分配 NUMA 本地内存
-* 为内核 TLS 加密缓冲区分配 NUMA 本地内存
-* 将连接引导到绑定到本地域的 TCP Pacers 和 kTLS 工作线程
-* 通过对监听套接字 `SO_REUSEPORT_LB` 的修改，将传入连接引导到绑定到本地域的 Nginx 工作线程
+- 为通过 sendfile(9) 发送的文件分配 NUMA 本地内存
+- 为内核 TLS 加密缓冲区分配 NUMA 本地内存
+- 将连接引导到绑定到本地域的 TCP Pacers 和 kTLS 工作线程
+- 通过对监听套接字 `SO_REUSEPORT_LB` 的修改，将传入连接引导到绑定到本地域的 Nginx 工作线程
 
 在测试中，这些增强将 Xeon 性能从 105Gb/s 提高到 191Gb/s，同时将 NUMA 布局利用率从 40% 降低到 13%。对于 AMD EPYC，性能从 68Gb/s 增加到 194Gb/s。
 

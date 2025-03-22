@@ -129,7 +129,7 @@ poudriere# ccache -s
 
 在完成了一些编译之后。现在让我们回到 poudriere…
 
-## 配置 Poudriere 
+## 配置 Poudriere
 
 我们已经提到 poudriere 将为构成软件的每个单独 port 运行 jail。为此，poudriere 需要知道软件应该在哪个架构和哪个 FreeBSD 版本上编译。版本之间存在细微差异，但 poudriere 可以在它们互不干扰的情况下并排编译不同版本。这些 jail 互相独立。此外，你可以通过这种方式在功能强大的 amd64 服务器上为你的树莓派编译软件。
 

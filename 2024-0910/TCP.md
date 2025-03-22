@@ -113,7 +113,7 @@ HPTS 为 TCP 堆栈提供了一种新颖的服务，使其能够实现流量控�
 
 ## 参考文献
 
-1. Mohit Aron, Peter Druschel: _Soft Timers: Efficient Microsecond Software Timer Support for Network Processing_. In: ACM Transactions on Computer Systems, Vol. 18, No. 3, August 2000, pp 197-228. [https://dl.acm.org/doi/pdf/10.1145/319344.319167](https://dl.acm.org/doi/pdf/10.1145/319344.319167).
+1. Mohit Aron, Peter Druschel: *Soft Timers: Efficient Microsecond Software Timer Support for Network Processing*. In: ACM Transactions on Computer Systems, Vol. 18, No. 3, August 2000, pp 197-228. [https://dl.acm.org/doi/pdf/10.1145/319344.319167](https://dl.acm.org/doi/pdf/10.1145/319344.319167).
 
 ---
 

@@ -54,24 +54,24 @@ CheriBSD 既是一个正在积极开发的研究成果，也是为数十个甚�
 
 **CHERI 时间线**
 
- - 2010.10—开始了第一个 CHERI 项目。
- - 2012.5—在 CHERI-MIPS CPU 上运行 CheriBSD。
- - 2012.11—在 CheriBSD 上演示了隔离的自定义应用程序。
- - 2013.10—将开发工作迁移到 git 版本控制系统。
- - 2014.1—使用 CHERI LLVM 编译 CheriBSD。
- - 2014.11—在 CheriBSD 上隔离了 tcpdump（每个解码器一个隔离环境）。
- - 2015.5—CheriBSD 引入了压缩的能力（128 位而不是 256 位）。
- - 2015.9—CheriABI 纯能力进程环境开始运行。
- - 2016.1—开始将 FreeBSD 上的 RISC-V 支持合并到 CheriBSD 中。
- - 2019 年 4 月—CheriABI 论文获得 ASPLOS 2019 最佳论文奖。
- - 2019 年 9 月—Morello CPU、SoC 和开发板宣布发布。
- - 2020 年 8 月—CheriBSD 移植到 CHERI-RISC-V。
- - 2021 年 6 月—纯能力内核（RISC-V）。
- - 2022 年 1 月—首批正式的 Morello 开发板发货。CheriBSD 协助进行验证。
- - 2022 年 5 月—CheriBSD 22.05 版本发布，面向 Morello 开发板用户。这是一个初步支持版本，重点是安装程序和基本包基础设施。软件包集包括基本工具，包括 Morello LLVM 编译器。
- - 2022 年 12 月—CheriBSD 22.12 版本发布，包括基于库的隔离，ZFS 支持，内置 GPU 的 DRM 支持以及基本 GUI 环境，其中除了 Web 浏览器之外的所有程序都是纯能力程序。
+- 2010.10—开始了第一个 CHERI 项目。
+- 2012.5—在 CHERI-MIPS CPU 上运行 CheriBSD。
+- 2012.11—在 CheriBSD 上演示了隔离的自定义应用程序。
+- 2013.10—将开发工作迁移到 git 版本控制系统。
+- 2014.1—使用 CHERI LLVM 编译 CheriBSD。
+- 2014.11—在 CheriBSD 上隔离了 tcpdump（每个解码器一个隔离环境）。
+- 2015.5—CheriBSD 引入了压缩的能力（128 位而不是 256 位）。
+- 2015.9—CheriABI 纯能力进程环境开始运行。
+- 2016.1—开始将 FreeBSD 上的 RISC-V 支持合并到 CheriBSD 中。
+- 2019 年 4 月—CheriABI 论文获得 ASPLOS 2019 最佳论文奖。
+- 2019 年 9 月—Morello CPU、SoC 和开发板宣布发布。
+- 2020 年 8 月—CheriBSD 移植到 CHERI-RISC-V。
+- 2021 年 6 月—纯能力内核（RISC-V）。
+- 2022 年 1 月—首批正式的 Morello 开发板发货。CheriBSD 协助进行验证。
+- 2022 年 5 月—CheriBSD 22.05 版本发布，面向 Morello 开发板用户。这是一个初步支持版本，重点是安装程序和基本包基础设施。软件包集包括基本工具，包括 Morello LLVM 编译器。
+- 2022 年 12 月—CheriBSD 22.12 版本发布，包括基于库的隔离，ZFS 支持，内置 GPU 的 DRM 支持以及基本 GUI 环境，其中除了 Web 浏览器之外的所有程序都是纯能力程序。
 
-## 对 FreeBSD 的好处：
+## 对 FreeBSD 的好处
 
 **这表明有超过 1800 次提交到 FreeBSD 源代码库中带有"Sponsored by:"标识，表明这些提交很可能是通过对 CHERI 的工作进行资助而完成的。**
 

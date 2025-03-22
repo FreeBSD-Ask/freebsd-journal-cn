@@ -164,6 +164,7 @@ a8163e165c5b (upstream/master) HEAD@{1}: checkout: moving from b6fb97efb682994f5
 Bisecting: 1722 revisions left to test after this (roughly 11 steps)
 [c427b3158fd8225f6afc09e7e6f62326f9e4de7e] Fixup r361997 by balancing parens.
 ```
+
 然后，你需要构建/安装该修订版。如果它是好的，你可以输入 `git bisect good`，否则输入 `git bisect bad`。每一步你都会看到类似于上述的消息。当你完成时，将坏的修订版报告给开发者（或者自己修复 bug 并发送补丁）。`git bisect reset` 会结束该过程，并将你返回到最初的位置（通常是 `main` 的最新提交）。同样，`git-bisect` 手册（如上链接）是当事情出错或遇到不寻常的情况时的一个很好的资源。
 
 ### 3.2 文档和 Ports 考虑事项
@@ -231,6 +232,7 @@ index 7378268867ef..cfc3f4342531 100644
 #include <termcap.h>
 #include <signal.h>
 ```
+
 ```sh
 % # these look good, make the commit...
 % git commit ls.c

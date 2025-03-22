@@ -7,9 +7,9 @@ FreeBSD 项目在 [https://reviews.freebsd.org](https://reviews.freebsd.org) 使
 
 然而，arc 在 FreeBSD 开发中存在一些使用上的局限性，使其显得不太顺手：  
 
-* Arcanist 使用其自带的提交日志模板，该模板的格式与 FreeBSD 现有模板不匹配，且不易修改。  
+- Arcanist 使用其自带的提交日志模板，该模板的格式与 FreeBSD 现有模板不匹配，且不易修改。  
 
-* Arcanist 假设开发分支中的所有提交都会作为单个 Differential 修订版本上传进行审查。在包含多个提交的功能分支上工作时，通常逐个审查每个提交更加高效。  
+- Arcanist 假设开发分支中的所有提交都会作为单个 Differential 修订版本上传进行审查。在包含多个提交的功能分支上工作时，通常逐个审查每个提交更加高效。  
 
 尽管可以通过一定的方法规避这些限制（例如，使用 `--head` 选项可以将单个提交作为独立的审查上传），但这些方法比较繁琐。  
 
@@ -154,6 +154,7 @@ d98f930cd833 crypto: Test all of the AES-CCM KAT vectors.
 Does this look OK? [y/N] y
 ...
 ```
+
 如果希望为分支上的每个提交单独创建审查，而不将它们链接在一起，可以分别对每个提交单独运行 `git arc create` 命令。此外，也可以在 Phabricator 的 Web 界面中调整审查之间的关系。  
 
 ## 检查审查状态  

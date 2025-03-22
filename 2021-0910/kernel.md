@@ -142,6 +142,7 @@ kern.module_path=/boot/kernel
  -l bootrom,/usr/local/share/uefi-firmware/BHYVE_UEFI.fd \
  myvm
 ```
+
 在这里，`-G :1234` 参数指示 bhyve(8) 在端口 1234 上监听来自调试器的连接。启动虚拟机时，bhyve(8) 可以选择暂停，等待连接后再启动内核；这对于调试内核启动过程中的早期问题非常有用。要启用此功能，可以指定 `-G w:1234`。
 
 当虚拟机正在运行（或等待连接）时，可以使用 `kgdb` 程序（与 gdb 软件包一起安装）通过端口 1234 连接到客户机：

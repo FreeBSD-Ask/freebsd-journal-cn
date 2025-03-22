@@ -24,21 +24,21 @@ BBLog 由内核参数 `TCP_BLACKBOX`（在所有 64 位平台上默认启用）�
 
 所有 FreeBSD TCP 栈都最少支持以下事件类型：
 
-* `TCP_LOG_IN`——在收到 TCP 段时生成。
-* `TCP_LOG_OUT`——在发送 TCP 段时生成。
-* `TCP_RTO`——在计时器到期时生成。
-* `TCP_LOG_PRU`——当 PRU 事件调用到栈时生成。
+- `TCP_LOG_IN`——在收到 TCP 段时生成。
+- `TCP_LOG_OUT`——在发送 TCP 段时生成。
+- `TCP_RTO`——在计时器到期时生成。
+- `TCP_LOG_PRU`——当 PRU 事件调用到栈时生成。
 
 TCP RACK 和 BBR 栈生成许多其他日志；`netinet/tcp_log_buf.h` 中目前定义了 72 种事件类型。这些日志记录了多种条件，且 TCP BBR 和 RACK 栈在调试时还支持详细模式。这些详细选项可通过特定栈的 `sysctl` 变量 `net.inet.tcp.rack.misc.verbose` 和 `net.inet.tcp.bbr.bb_verbose` 进行设置。
 
 每个 TCP 端点可以处于以下 BBLog 状态之一：
 
-* `TCP_LOG_STATE_OFF (0)`——BBLog 已禁用。
-* `TCP_LOG_STATE_TAIL (1)`——仅记录连接上的最后一些事件。每个连接分配有限数量（默认 5000 个）日志条目。当到达最后一个条目时，将重新使用第一个条目并覆盖其内容。
-* `TCP_LOG_STATE_HEAD (2)`——仅记录连接上处理的最初一些事件，直到达到上限。
-* `TCP_LOG_STATE_HEAD_AUTO (3)`——记录连接上处理的最初事件，当达到上限时，将数据输出到日志转储系统以供收集。
-* `TCP_LOG_STATE_CONTINUAL (4)`——记录所有事件，当达到最大收集事件数时，将数据发送到日志转储系统并开始分配新事件。
-* `TCP_LOG_STATE_TAIL_AUTO (5)`——记录连接尾部的所有事件，当达到上限时，将数据发送到日志转储系统。
+- `TCP_LOG_STATE_OFF (0)`——BBLog 已禁用。
+- `TCP_LOG_STATE_TAIL (1)`——仅记录连接上的最后一些事件。每个连接分配有限数量（默认 5000 个）日志条目。当到达最后一个条目时，将重新使用第一个条目并覆盖其内容。
+- `TCP_LOG_STATE_HEAD (2)`——仅记录连接上处理的最初一些事件，直到达到上限。
+- `TCP_LOG_STATE_HEAD_AUTO (3)`——记录连接上处理的最初事件，当达到上限时，将数据输出到日志转储系统以供收集。
+- `TCP_LOG_STATE_CONTINUAL (4)`——记录所有事件，当达到最大收集事件数时，将数据发送到日志转储系统并开始分配新事件。
+- `TCP_LOG_STATE_TAIL_AUTO (5)`——记录连接尾部的所有事件，当达到上限时，将数据发送到日志转储系统。
 
 注意，对于一般调试，通常使用 BBLog 状态 `TCP_LOG_STATE_CONTINUAL`。但在某些特定情况下（如调试系统崩溃），优先使用 BBLog 状态 `TCP_LOG_STATE_TAIL`，以便在崩溃转储中记录最后的 BBLog 事件。
 
@@ -99,12 +99,12 @@ net.inet.tcp.bb.tp.number: 0
 
 以下是用于控制单个连接上的 BBLog 的 `IPPROTO_TCP` 级别套接字选项：
 
-* `TCP_LOG`——此选项设置连接上的 BBLog 状态。所有对此套接字选项的使用都会覆盖之前的设置。
-* `TCP_LOGID`——此选项传递一个字符串，用于命名由 `tcplog_dumper` 生成的文件。该字符串作为与连接关联的“ID”。注意，多个连接可以使用相同的“ID”字符串，这是可能的，因为 `tcplog_dumper` 在生成的文件名中也包含 IP 地址和端口信息。
-* `TCP_LOGBUF`——此套接字选项可用于从当前连接的日志缓冲区读取数据。通常不使用该选项，而是通过 `/dev/tcp_log` 使用通用工具（如 `tcplog_dumper`）读取和存储 BBLog。不过，它提供了一种可选方案，让用户进程能够收集多个日志。
-* `TCP_LOGDUMP`——此套接字选项指示 BBLog 系统将连接队列中的任何记录转储到 `/dev/tcp_log`。如果未提供转储原因或 ID，则日志文件中的“reason”字段将使用当前日志类型的系统默认值。
-* `TCP_LOGDUMPID`——此套接字选项类似于 `TCP_LOGDUMP`，让 BBLog 系统把所有记录转储到 `/dev/tcp_log`，但额外指定了用户给定的“原因”，该原因会包含在 BBLog 的“原因”字段中。
-* `TCP_LOG_TAG`——此选项将一个额外的“标签”以字符串形式与该连接的所有 BBLog 记录关联。
+- `TCP_LOG`——此选项设置连接上的 BBLog 状态。所有对此套接字选项的使用都会覆盖之前的设置。
+- `TCP_LOGID`——此选项传递一个字符串，用于命名由 `tcplog_dumper` 生成的文件。该字符串作为与连接关联的“ID”。注意，多个连接可以使用相同的“ID”字符串，这是可能的，因为 `tcplog_dumper` 在生成的文件名中也包含 IP 地址和端口信息。
+- `TCP_LOGBUF`——此套接字选项可用于从当前连接的日志缓冲区读取数据。通常不使用该选项，而是通过 `/dev/tcp_log` 使用通用工具（如 `tcplog_dumper`）读取和存储 BBLog。不过，它提供了一种可选方案，让用户进程能够收集多个日志。
+- `TCP_LOGDUMP`——此套接字选项指示 BBLog 系统将连接队列中的任何记录转储到 `/dev/tcp_log`。如果未提供转储原因或 ID，则日志文件中的“reason”字段将使用当前日志类型的系统默认值。
+- `TCP_LOGDUMPID`——此套接字选项类似于 `TCP_LOGDUMP`，让 BBLog 系统把所有记录转储到 `/dev/tcp_log`，但额外指定了用户给定的“原因”，该原因会包含在 BBLog 的“原因”字段中。
+- `TCP_LOG_TAG`——此选项将一个额外的“标签”以字符串形式与该连接的所有 BBLog 记录关联。
 
 例如，如果可以访问使用 TCP 连接的程序的源代码，则可以使用套接字选项 `TCP_LOG` 将连接的 BBLog 状态设置为 `TCP_LOG_STATE_CONTINUAL`：
 
@@ -148,8 +148,8 @@ tcplog_dumper -d
 
 默认情况下，`tcplog_dumper` 会将 BBLog 收集到目录 `/var/log/tcplog_dumps` 中。它还支持其他几个选项，包括：
 
-* `-J`——此选项会使 `tcplog_dumper` 输出到 `xz` 压缩的文件。
-* `-D directory path`——将收集的文件存储在指定的目录路径中，而非默认目录。此路径也可以通过 `rc.conf` 变量 `tcplog_dumper_basedir` 控制。
+- `-J`——此选项会使 `tcplog_dumper` 输出到 `xz` 压缩的文件。
+- `-D directory path`——将收集的文件存储在指定的目录路径中，而非默认目录。此路径也可以通过 `rc.conf` 变量 `tcplog_dumper_basedir` 控制。
 
 `tcplog_dumper` 会输出文件格式 pcapng（pcap next generation）。pcapng 可存储元信息以及数据包信息。对于事件 `TCP_LOG_IN` 和 `TCP_LOG_OUT`，`tcplog_dumper` 从事件中生成一个 IP 头（因此，除了源和目标 IP 地址外，IP 头中的其他字段可能与实际传输的不同），使用事件中的 TCP 头（即与网络上传输的段相同），并添加一个具有正确长度的虚拟负载。对于每个 TCP 连接，`tcplog_dumper` 会创建一系列文件，每个文件大约包含 5000 个 BBLog 事件，按序号命名为 .0、.1、.2 等。以下是单个 TCP 连接的一系列 7 个文件的示例：
 

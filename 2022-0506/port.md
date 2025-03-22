@@ -22,6 +22,7 @@
 
 
 ## 实现解决方案  
+
 以下是我在 FreeBSD 系统上设置 NFSv4 服务器的笔记。首先，我去了 `/etc/rc.conf` 文件并添加了以下行：
 
 ```sh
@@ -79,6 +80,7 @@ service nfsd start
 service mountd start
 service nfsuserd start
 ```
+
 这些服务中的一些应该在 NFS 服务器启动时自动启动，但请仔细检查每个服务的状态输出，以确保它们正在运行。可以使用以下命令来帮助确定共享无法挂载的原因：
 
 - `sockstat -4l`

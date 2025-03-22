@@ -115,7 +115,7 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 
 然后，使用安装提示（箭头键导航，空格键选择），可以手动编辑 Port。此过程可以对 Poudriere 管理的每个 Port 执行。
 
-## 第六步：使用 Poudriere 管理 Port 
+## 第六步：使用 Poudriere 管理 Port
 
 ![](https://github.com/user-attachments/assets/2b628cac-88f3-4019-9d9b-53a411bf6767)
 

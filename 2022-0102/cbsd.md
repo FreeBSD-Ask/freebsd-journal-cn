@@ -67,7 +67,7 @@ ip4_addr="DHCP"
 ...
 ```
 
-启动：` cbsd jcreate jconf=<文件路径>`
+启动：`cbsd jcreate jconf=<文件路径>`
 
 此外，也可以直接通过命令行参数指定选项，而无需使用配置文件：
 

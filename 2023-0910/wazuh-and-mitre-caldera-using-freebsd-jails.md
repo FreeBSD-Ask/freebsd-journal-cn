@@ -227,6 +227,7 @@ available data encoders=base64, plain-text
 ![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/b79764a5-9fdd-4958-b280-bd8ebf284c46)
 
 添加（潜在的链接按钮）并在不同的代理上运行一些模拟测试。以下四个测试将在 wazuh-manager 中生成警报：
+
 1) Cron – 用引用的文件替换 crontab（T1053.003）
 2) 使用 `root` GID 在 FreeBSD 中创建一个新用户（T1136.001）
 3) 在 FreeBSD 系统上创建一个用户帐户（T1136.001）

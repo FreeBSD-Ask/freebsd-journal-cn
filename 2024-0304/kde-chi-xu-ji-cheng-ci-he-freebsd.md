@@ -1,4 +1,4 @@
-# FreeBSD 与 KDE 持续集成（CI） 
+# FreeBSD 与 KDE 持续集成（CI）
 
 - 原文链接：[KDE CI and FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/development-workflow-and-ci/kde-ci-and-freebsd/)
 - 作者：Ben Cooksley
@@ -14,7 +14,7 @@
 
 由于构建应用程序所需的全部依赖项链时间较长，因此无法每次重新构建全部内容，这就需要共享构建产物。经过快速评估，选择了 rsync，它使系统运作良好。
 
-### 引入 FreeBSD 
+### 引入 FreeBSD
 
 到 2017 年，CI 系统需要支持新的平台，于是系统中加入了 FreeBSD。FreeBSD 的早期支持较为简单，在 Linux CI 工作节点上采用虚拟机运行。每台虚拟机单独配置，包含构建 KDE 软件所需的所有依赖项。
 

@@ -13,7 +13,7 @@
 
 我在 jail 中运行 Zabbix，未遇到过什么大问题。这个基于 PHP 的解决方案需要一款数据库来存储指标。可以使用 Postgres、MySQL/MariaDB、SQLite，甚至是 IBM 和 Oracle 的商业 DB2 数据库服务器。监控本身通过 SNMP/IPMI、SSH 和简单的 ping 来检查可用性。对于主动监控（收集实时机器指标），需要在主机上安装代理。Zabbix 还提供了监控整个子网的功能，可检测新主机，在它们出现时自动将其添加到监控中。还可以为特定的主机和特定情况（例如磁盘已满）设置触发器，可以通过 Web 界面配置这些触发器。可以通过电子邮件、Jabber、SMS 和自定义脚本操作发送相关事件的警报。
 
-## 安装设置 Zabbix 
+## 安装设置 Zabbix
 
 接下来，让我们看看如何安装这个监控解决方案。我从新的 FreeBSD 14.0 jail 开始，这个 jail 连接到我正在监控的网络，并且从 Web 或者单独的 Poudriere 服务器下载所需的包。请注意，我将 Port 默认的 MySQL 配置改为 PostgreSQL，可以通过在 `net-mgmt/zabbix64-server` 目录下运行 `make config` 来进行更改。
 
@@ -85,7 +85,7 @@ psql> exit
 
 至此，数据库设置完成。接下来，我们配置 Zabbix。
 
-### 配置 Zabbix 
+### 配置 Zabbix
 
 Zabbix 需要知道用哪款数据库来存储监控指标、监控哪些机器以及其他大量的配置信息。Zabbix 的主要配置文件位于 `/usr/local/etc/zabbix64/zabbix_server.conf`，它是一个简单的 `键=值` 格式文件。文件中的注释介绍了每个配置项的作用，大多数配置项是被注释掉的。在完成必要的修改后，我的配置文件如下所示：
 
@@ -109,7 +109,7 @@ StatsAllowedIP=127.0.0.1
 
 这就是 Zabbix 服务器配置文件的基本设置。我使用的是代理监控方式来监控客户端和服务器本身。如果你使用 SNMP，可能还需要其他配置项。详细信息可查阅 Zabbix 的文档。
 
-### 配置 Zabbix Agent 
+### 配置 Zabbix Agent
 
 代理程序名为 Zabbix Agentd（经典的 Unix 守护进程），应该在服务器 jail 启动时运行它。可以通过命令 `sysrc` 在 `/etc/rc.conf` 添加启动项，如下所示：
 
@@ -229,6 +229,7 @@ zabbix_agentd start
 ```ini
 If “opcache” is enabled in the PHP 7.3 configuration, Zabbix frontend may show a blank screen when loaded for the first time. This is a registered PHP bug. To work around this, please set the “opcache.optimization_level” parameter to 0x7FFFBFDF in the PHP configuration (/usr/local/etc/php.ini file). https://www.zabbix.com/documentation/current/en/manual/installation/known_issues
 ```
+
 ```ini
 如果在 PHP 7.3 配置中启用了 “opcache”，Zabbix 前端可能在首次加载时显示空白页面。这是一个已知的 PHP 错误。为了解决这个问题，请将参数 “opcache.optimization_level” 设置为 0x7FFFBFDF，并将其添加到 PHP 配置中（`/usr/local/etc/php.ini` 文件）。 https://www.zabbix.com/documentation/current/en/manual/installation/known_issues
 ```

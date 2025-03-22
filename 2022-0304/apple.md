@@ -129,6 +129,7 @@ valid users = @timemachinists
 ```sh
 /usr/local/etc/avahi/services/afp.service 
 ```
+
 并添加如下内容：
 
 ```xml
@@ -150,6 +151,7 @@ valid users = @timemachinists
 # service avahi_daemon enable
 # service netatalk enable
 ```
+
 如果你在想，dbus 是在安装软件包时作为依赖项引入的。它需要与其他服务一起运行：avahi 用于网络发现，netatalk 因为时间机器仅支持 Apple 文件协议（AFP）。
 
 让我们立即启动这些服务，接着进行客户端配置。
@@ -173,6 +175,7 @@ valid users = @timemachinists
 ```sh
 $ sudo defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes 1
 ```
+
 接下来，前往 Finder，按 CMD-K（或从菜单中选择“前往”，然后选择“连接到服务器...”），并输入以下内容：
 
 ```sh

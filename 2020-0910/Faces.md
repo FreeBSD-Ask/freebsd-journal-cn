@@ -7,7 +7,7 @@
 
 在本期聚焦的是 Rainer Hurling，他在 8 月获得了 Ports 权限；以及 Gordon Bergling，他在 6 月获得了文档权限。
 
-## 请简要介绍一下自己、背景和兴趣爱好。
+## 请简要介绍一下自己、背景和兴趣爱好
 
 ![](https://github.com/user-attachments/assets/da323975-9d52-4d2f-8f53-f051eb6b6d91)
 

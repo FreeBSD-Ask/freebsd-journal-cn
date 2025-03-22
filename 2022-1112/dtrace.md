@@ -14,12 +14,14 @@ DTrace 是 FreeBSD 内置的软件跟踪框架，允许用户实时检查和修�
 在 FreeBSD 中，**provider** 默认作为内核模块（kernel module）运行，并负责实现特定操作系统组件的跟踪功能。它们提供 **DTrace probes（探测点）**，即操作系统代码中的命名位置，可通过 **D** 语言编写的可脚本化例程进行动态跟踪。  
 
 FreeBSD 自带的一些示例 **provider** 包括：  
+
 - **函数边界跟踪提供者（fbt.ko）**：负责对 **内核函数** 的入口和退出点进行跟踪。  
 - **性能分析提供者（profile.ko）**：提供基于脚本指定的固定时间间隔触发的探测点。  
 - **PID 提供者（fasttrap.ko）**：类似于 fbt，但适用于 **用户进程及其链接的库**。  
 - **其他多种 provider**。  
 
 虽然深入了解 DTrace 并非理解本文的必要前提，但希望深入学习 DTrace 的读者可以参考以下资料：  
+
 1. **用户指南**  
 2. **DTrace 规范**  
 3. **FreeBSD 手册页面**³  
@@ -126,7 +128,9 @@ execname                                              pid            count
 
 
 ## 新进展
+
 ### dwatch
+
 新工具 **dwatch** 由 **Devin Teske（dteske@freebsd.org）** 开发，并在 **FreeBSD 11.2** 中上游合并。 **dwatch** 使得 DTrace 在常见使用场景下比 `dtrace` 命令行工具更易用。回到我们之前的**进程监视**示例，用户只需运行：
 
 ```sh
@@ -154,11 +158,13 @@ bin:/usr/sbin:/usr/bin /etc/rc.d/sendmail onestop
 此外，**dwatch** 支持基于 **jail**、用户组、进程等多种条件进行过滤，即便是经验丰富的 **DTrace** 用户也值得学习这款工具。演讲 *All along the dwatch tower* 介绍了 **dwatch** 并详细讲解了其功能。此外，**FreeBSD** 的 **dwatch(1)** 手册页也提供了许多优秀的示例，适合感兴趣的用户尝试。
 
 ## CTFv3  
+
 **紧凑 C 类型格式（CTF）** 是一种用于在 **FreeBSD ELF** 二进制文件中编码 **C** 类型信息的格式。它使 **DTrace** 能够了解目标二进制文件（进程或内核）的 **C** 类型布局，以便用户编写的脚本可以引用和探索这些类型。  
 
 过去，由于 **CTFv2** 的实现方式，**DTrace** 在单个二进制文件中最多仅支持 **2^15** 种 **C** 类型。这一限制导致了 **FreeBSD** 中许多与 **DTrace** 相关的错误报告。今年 **3 月**，**Mark Johnston（markj@freebsd.org）** 提交了相关更改，使 **DTrace** 切换为 **CTFv3**，这不仅提高了 **DTrace** 可处理的 **C** 类型数量，同时还扩展了 **CTF** 的其他多个限制。
 
 ## kinst —— 用于指令级跟踪的全新 DTrace 提供程序  
+
 在 **2022 年 Google 夏季编程大赛（GSoC）** 中，**Christos Margiolis（christos@freebsd.org）** 在 **Mark Johnston（markj@freebsd.org）** 的指导下成功完成了一项项目，并将 **指令级跟踪（Instruction-level Tracing）** 功能合并到 **FreeBSD**。实现该功能的提供程序被称为 **kinst**。
 
 **kinst** 复用了 **fbt** 机制的部分内容，并扩展了它，使其能够对 **内核函数的任意位置** 进行插桩（Instrumentation），而不仅仅是入口和出口点。对于熟悉 **内核开发** 的读者而言，**kinst** 在分析某些分支的调用栈时所带来的潜力不言而喻。因此，**kinst** 可以帮助更快地发现和修复 **FreeBSD** 中的 **bug** 及 **性能问题**。
@@ -197,7 +203,7 @@ slowpath_noirq:
 }
 ```
 
-可以立即注意到有两个慢路径：`slowpath_unlocked` 和 `slowpath_noirq`。在这两个慢路径中，分别调用了 `spinlock_exit()` 或 `thread_lock_flags_()`，而 ` _mtx_release_lock_quick()` 则只是在 amd64 上执行原子比较和交换指令。为了使用 `kinst` 来识别最终进入慢路径的调用堆栈，我们首先需要以某种方式反汇编该函数。一种可能的方法是在 **FreeBSD** 中使用 **kgdb**（通过 `pkg install gdb` 安装）：
+可以立即注意到有两个慢路径：`slowpath_unlocked` 和 `slowpath_noirq`。在这两个慢路径中，分别调用了 `spinlock_exit()` 或 `thread_lock_flags_()`，而 `_mtx_release_lock_quick()` 则只是在 amd64 上执行原子比较和交换指令。为了使用 `kinst` 来识别最终进入慢路径的调用堆栈，我们首先需要以某种方式反汇编该函数。一种可能的方法是在 **FreeBSD** 中使用 **kgdb**（通过 `pkg install gdb` 安装）：
 
 ```c
 # kgdb
@@ -243,9 +249,11 @@ probename] = count(); }'
 ## 正在进行的工作
 
 ### DTrace 和 eBPF – 比较
+
 Mateusz Piotrowski (0mp@FreeBSD.org) 一直在研究 FreeBSD 上 DTrace 的性能分析，以及它与 Linux 上 eBPF 的比较。今年，他在 EuroBSDcon 2022 上展示了部分结果。这项工作可能会得出有趣的结果，可以作为进一步优化 DTrace 的基础。这将使在性能关键的系统上启用插桩变得更少干扰。
 
 ### HyperTrace
+
 HyperTrace 是建立在 DTrace 之上的一个框架，允许用户使用 D 编程语言应用类似 DTrace 的追踪技术来追踪虚拟机。它源自英国剑桥大学的 CADETS 项目。作为一个简单的例子，我们来看一下最初的 snooper 脚本，并扩展它以使用 HyperTrace：
 
 ```c

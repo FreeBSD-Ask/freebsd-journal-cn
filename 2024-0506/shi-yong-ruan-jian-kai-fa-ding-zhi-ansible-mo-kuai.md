@@ -113,9 +113,9 @@ ok: [localhost] => {
 
 模块功能：Ansiballz 构建了一个压缩文件，内容包括：
 
-* 模块文件
-* 模块导入的 `ansible/module_utils` 文件
-* 模块参数的模板代码
+- 模块文件
+- 模块导入的 `ansible/module_utils` 文件
+- 模块参数的模板代码
 
 压缩文件经过 Base64 编码，并被封装成一个小的 Python 脚本用于解码。接着，Ansible 会将其复制到目标节点的临时目录。当执行时，Ansible 模块脚本会解压文件并将其自身放置到临时目录中。然后它会设置 `PYTHONPATH` 来查找压缩文件中的 Python 模块，并以特殊名称导入 Ansible 模块。Python 会认为它正在执行一个常规的脚本，而不是在导入模块。这能让 Ansible 在目标主机上通过同一个 Python 实例运行包装脚本和模块代码。
 
@@ -330,9 +330,9 @@ fatal: [localhost]: FAILED! => {“changed”: false, “msg”: “Invalid Oper
 
 掌握了这些基础，开始编写自定义模块就变得容易了。请记住，这些模块会在不同的操作系统上运行。请添加额外的检查来确定某些命令的可用性，或者直接让模块在某些环境下拒绝运行。尽可能提高兼容性，以增加模块的兼容性和实用性。目前能用的 BSD 特定模块并不多。为什么不尝试添加一个 bhyve 模块，或者一个管理启动环境、pf 防火墙或 `rc.conf` 条目的模块呢？对于有 Ansible 和 Python 背景的勇敢开发者来说，机会仍然很多。
 
-### 参考文献：
+### 参考文献
 
-* [Ansible 模块架构](https://docs.ansible.com/ansible/latest/dev_guide/developing_program_flow_modules.html#ansiballz)
+- [Ansible 模块架构](https://docs.ansible.com/ansible/latest/dev_guide/developing_program_flow_modules.html#ansiballz)
 
 ---
 

@@ -10,16 +10,16 @@
 
 在设置服务器之前，选择设置专用设备还是运行 FreeBSD 的虚拟机。
 
-* 专用服务器将更加可靠，但需要一个完全专用于运行服务器的设备。如果需要一个全天候可靠的服务器，这个方式非常合适。
-* 在虚拟机上运行服务器能让用户在没有专用设备的情况下运行服务器，并且可以更好地控制服务器的运行时间。
+- 专用服务器将更加可靠，但需要一个完全专用于运行服务器的设备。如果需要一个全天候可靠的服务器，这个方式非常合适。
+- 在虚拟机上运行服务器能让用户在没有专用设备的情况下运行服务器，并且可以更好地控制服务器的运行时间。
 
 如果设备或虚拟机已经在运行 FreeBSD，请继续下一步。否则，可以参考基金会的指南来设置 FreeBSD：
 
-* 使用 VirtualBox 安装 FreeBSD
-* 将 FreeBSD 作为主操作系统
-* 为树莓派安装 FreeBSD
+- 使用 VirtualBox 安装 FreeBSD
+- 将 FreeBSD 作为主操作系统
+- 为树莓派安装 FreeBSD
 
-## 第二步：使用 Ports 
+## 第二步：使用 Ports
 
 本节中的所有命令应以 root 身份运行；使用命令“su”也可以。要将压缩快照下载到 `/var/db/portsnap`：
 
@@ -39,7 +39,7 @@
 # portsnap fetch update
 ```
 
-## 第三步：Port minecraft-server 
+## 第三步：Port minecraft-server
 
 ![](https://github.com/user-attachments/assets/487d6fbc-4cb4-4d88-9f06-4560ba5582f4)
 

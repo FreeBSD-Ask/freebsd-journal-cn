@@ -290,6 +290,7 @@ error = uiomove(sc->buf + uio->uio_offset, todo, uio);
       return (error);
 }
 ```
+
 **清单 7：使用 softc 结构体的模块加载和卸载**
 
 ```c

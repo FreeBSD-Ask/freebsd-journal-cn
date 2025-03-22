@@ -17,9 +17,9 @@
 
 首先，我们需要了解驱动程序使用的协议。对于 Razer 驱动程序，有两种方式可以做到这一点：
 
-* 查看 openrazer（一个非官方的 Razer 设备 Linux 驱动集）
+- 查看 openrazer（一个非官方的 Razer 设备 Linux 驱动集）
 
-* 从 Windows 驱动中嗅探 USB 协议
+- 从 Windows 驱动中嗅探 USB 协议
 
 在本文中，我们将结合这两种方法。当我们最初研究这个问题时，openrazer 并不支持 Razer Ornata V2，因此我们必须从 USB 协议转储中推测出一些部分。最近，openrazer 已经添加了对该键盘的支持，但在编写驱动程序时，可能只能在官方的 Windows 驱动程序中找到部分内容，而无法在其他地方获得。为了教育目的，我们将假设 openrazer 不支持此键盘。
 
@@ -43,6 +43,7 @@ struct razer_report {
  unsigned char reserved; /*0x0*/
 };
 ```
+
 ## 嗅探 Windows 驱动程序
 
 要嗅探 Windows USB 驱动程序，我们可以使用工具 usbpcap（https://desowin.org/usbpcap/）。它是一款命令行工具，非常易于使用（在清单 2 中，我们提供了一个示例）。当我们运行该命令工具时，它会显示可用的设备；接下来，它会询问我们选择要嗅探的设备以及保存 pcap 文件的位置。生成的 pcap 文件可以使用 Wireshark 轻松查看。
@@ -438,11 +439,11 @@ main( void )
 
 ## 参考文献
 
-* USB 2.0 规范 — https://www.usb.org/document-library/usb-20-specification
+- USB 2.0 规范 — https://www.usb.org/document-library/usb-20-specification
 
-* 《FreeBSD 设备驱动程序：勇敢者指南》by Joseph Kong
-* Openrazer 源代码 — https://github.com/openrazer/openrazer
-* Roland 的主页 — 从用户空间设置 Razer ornata chroma 颜色 (https://rsmith.home.xs4all.nl/hardware/setting-the-razer-ornata-chroma-color-fromuserspace.html)
+- 《FreeBSD 设备驱动程序：勇敢者指南》by Joseph Kong
+- Openrazer 源代码 — https://github.com/openrazer/openrazer
+- Roland 的主页 — 从用户空间设置 Razer ornata chroma 颜色 (https://rsmith.home.xs4all.nl/hardware/setting-the-razer-ornata-chroma-color-fromuserspace.html)
 
 ---
 

@@ -95,10 +95,10 @@ OCI 镜像规范还支持多架构镜像，它们只是清单的列表：
 
 早先，我使用 pkgbase 创建了一个“最精简”镜像，包含 FreeBSD-runtime、SSL 证书和 pkg。这个镜像约为 80MB，足以支持简单的 shell 脚本，并且能够安装其他软件包。与类似的 Linux 镜像相比，这个镜像效果相当好，尽管它还无法与基于 busybox 的 alpine 镜像相媲美：后者的大小仅为 7.5MB。此后，我制作了一个小型的镜像家族，部分受 distroless 项目的启发：
 
-* “static”：仅包含 SSL 证书和时区数据。可以作为静态链接应用程序的基础。
-* “base”：在“static”基础上，增加了一些共享库，以支持大量的动态链接应用程序。
-* “minimal”：在“base”基础上，增加了 FreeBSD-runtime 包和包管理功能。
-* “small”：在“minimal”基础上，增加了 FreeBSD-utilities，能支持更多基于 shell 的应用程序。
+- “static”：仅包含 SSL 证书和时区数据。可以作为静态链接应用程序的基础。
+- “base”：在“static”基础上，增加了一些共享库，以支持大量的动态链接应用程序。
+- “minimal”：在“base”基础上，增加了 FreeBSD-runtime 包和包管理功能。
+- “small”：在“minimal”基础上，增加了 FreeBSD-utilities，能支持更多基于 shell 的应用程序。
 
 为了支持多种 FreeBSD 版本，我将版本号嵌入镜像名称中，例如，“freebsd13.2-minimal:latest”包括来自最新版本的 releng/13.2 分支的包，而“freebsd13-minimal:latest”则是从 stable/13 构建的。我为 amd64 和 arm64 架构构建了所有这些镜像，容器引擎可自动从清单列表中选择正确的镜像。
 

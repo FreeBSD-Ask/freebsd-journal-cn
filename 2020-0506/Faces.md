@@ -5,7 +5,7 @@
 
 本专栏旨在聚焦那些最近获得提交权限的贡献者，并将他们介绍给 FreeBSD 社区。在本期中，我们聚焦的是 Nick O'Brien，他在 3 月份获得了他的 src 权限；以及 Richard Scheffenegger，他在 4 月份获得了他的 src 权限。
 
-## 请简要介绍一下自己、你的背景和兴趣。
+## 请简要介绍一下自己、你的背景和兴趣
 
 ![](https://github.com/user-attachments/assets/1665a636-a98d-46ed-a9bb-bc868dc600bc)
 

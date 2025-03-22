@@ -25,6 +25,7 @@ GitHub 代码库地址：
 [https://github.com/freebsd/freebsd.git](https://github.com/freebsd/freebsd.git)  
 
 新的正式代码库地址：  
+
 - HTTPS 方式：[https://git.freebsd.org/src.git](https://git.freebsd.org/src.git)  
 - SSH 方式：`ssh://anonssh@git.freebsd.org/src.git`  
 
@@ -117,12 +118,14 @@ HEAD is now at 08b8197a742a hook gpiokeys.4 to the build
 如果你读过上一节，可能会想："这些奇怪的版本号，我该怎么用它们进行二分查找？" 那么这一节正适合你。当然，如果你没想过这个问题，但仍然想学习如何二分查找，这一节同样适合你。  
 
 幸运的是，Git 提供了 `git bisect` 命令来完成这个任务。以下是 `git bisect` 的基本使用步骤。如需更详细的介绍，可以参考以下链接：  
+
 - [A Beginner’s Guide to Git Bisect: The Process of Elimination](https://www.metaltoad.com/blog/beginners-guide-git-bisect-process-elimination)  
 - [Git 官方文档：git-bisect](https://git-scm.com/docs/git-bisect)  
 
 Git 的 `man` 手册对 `git bisect` 可能遇到的问题有很好的描述，例如：如何处理无法编译的版本、如何使用不同于 `good` 和 `bad` 的标记等，这些内容本文不会涵盖。  
 
 使用 `git bisect start` 命令可以开始二分查找过程。接下来，你需要指定一个范围：
+
 - `git bisect good XXXXXX` 告诉 Git 某个版本是正常的（即没有问题）。  
 - `git bisect bad XXXXX` 告诉 Git 某个版本是有问题的（通常 `bad` 版本是 `HEAD`，即当前检出的最新版本）。  
 
@@ -179,6 +182,7 @@ cgit 镜像地址目前为：
 ### 保持本地更改  
 
 保持本地更改（尤其是一些简单修改）最简单的方法是使用 `git stash`。最基本的用法是：  
+
 - 使用 `git stash` 记录更改（将其推送到 stash 栈）。  
 - 许多人会在更新树之前使用 `git stash` 保存更改，然后使用 `git stash apply` 重新应用它们。  
 - `git stash list` 可以查看 stash 栈中的更改。  

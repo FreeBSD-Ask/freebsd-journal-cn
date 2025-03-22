@@ -49,7 +49,9 @@ EuroBSDCon 在[都柏林大学学院（UCD）的 O'Reilly Hall](https://www.ucd.
 Tom 充满感情地演讲，充满了激情、能力和自豪感。他的演讲内容全面而有价值，我相信每个人都非常欣赏他的发言。演讲结束后，大家热烈鼓掌，随后为讲者们发放了礼物：一条奇妙的绿色美利奴羊毛围巾，上面刻有 [Ogham](https://ogh.am/?text=EuroBSDCon) 字样。选择要参加的演讲是最困难的部分。每场演讲都很有趣，但三条并行的讲座轨道让我不得不做出艰难的选择。幸运的是，我知道演讲视频会在事后提供。
 
 我参加了 Franco Fichtner 的演讲：《在 FreeBSD 上玩转工具——定制防火墙发行版的脚本编写》。对于我这种经常使用 OPNSense 的人来说，这个演讲非常有趣。理解他们的一些设计决策让我眼界大开，也帮助我更好地理解了项目的方向。
+
 ## 与人见面并分享经验
+
 我有机会见到的人之一——我通过社交互动和他在 [BSD Now 播客](https://www.bsdnow.tv/) 中的角色已经认识了他——就是 Jason Tubnor。Jason 性格友好，充满活力，他问我是否愿意接受 [简短的采访](https://www.bsdnow.tv/579)，内容涉及这次活动、我、BSD Cafe 以及我的演讲。我很高兴接受了采访，我们在午餐休息期间进行了采访。楼上有一个设备齐全的房间，完美地布置好用于这个目的。BSD 风格的组织——总是高效的。
 
 午餐休息时，我还与 Benedict Reuschling 会面并聊了聊。我非常感谢 Benedict（以及 Jason 和其他演讲者）为 [BSD Now 播客](https://www.bsdnow.tv/) 所做的贡献，还要感谢他一年前让我认识了 Jim Maurer，使我能够为 [FreeBSD Journal](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/make-your-own-vpn-freebsd-wireguard-ipv6-and-ad-blocking-included/) 撰写了我的第一篇文章。依然在基金会的范围内，我与 Ed Maste 进行了愉快的交谈。说实话，我是一个比较腼腆的人，感觉自己可能会“打扰”别人，只是简单地接近他们。比如，我没能和 Colin Percival、Allan Jude、Dan Langille 以及其他一些人——包括伟大的 Jon“Maddog”Hall 交流。我下次一定会补上！

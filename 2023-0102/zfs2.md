@@ -44,6 +44,7 @@ zfs_enable=”YES”
 # ls
 # touch testfile
 ```
+
 可以用命令 `ls` 查看新文件：
 
 ```sh
@@ -193,7 +194,7 @@ errors: No known data errors
 # zpool offline storage da1
 ```
 
-现在关闭计算机并更换` da1`。启动计算机后，将 `da1` 重新加入池中：  
+现在关闭计算机并更换`da1`。启动计算机后，将 `da1` 重新加入池中：  
 
 ```sh
 # zpool replace storage da1
@@ -249,6 +250,7 @@ errors: No known data errors
 ## ZFS 管理  
 
 ZFS 有两个主要的管理工具：  
+
 - `zpool` 工具控制池的操作，允许添加、移除、替换和管理磁盘。  
 - `zfs` 工具用于创建、销毁和管理数据集，包括文件系统和卷。  
 

@@ -10,6 +10,7 @@
 上期专栏中的部署场景假设你的 ISP 提供 IPv6 服务。在这种情况下，你的 ISP 与家庭网络之间的路由器会拥有一个 IPv6 全球单播地址（GUA¹）。你只需配置一个或多个 IPv6 地址，并将 IPv6 默认路由地址指向该路由器即可。
 
 那么，如果你无法获得 IPv6 服务该怎么办？虽然提供 IPv6 服务给终端用户的 ISP 数量在不断增加，但截至 2022 年，大多数 ISP 的 IPv6 服务仍然属于可选项，并非其主要服务之一。获得 IPv6 互联网访问的一种方法是使用隧道连接。图 1 展示了“隧道传输”的工作原理：  
+
 - 网络 A 是一个拥有 IPv6 互联网访问的 IPv6 网络；  
 - 网络 B 是一个孤立的 IPv6 网络。  
 
@@ -36,6 +37,7 @@ Hurricane Electric 是一家总部位于加利福尼亚的互联网服务提供�
 ### 网络参数
 
 在“Tunnel Details”（隧道详情）页面上，会显示四个 IP 地址，分别为“Server IPv4 Address”（服务器 IPv4 地址）、“Server IPv6 Address”（服务器 IPv6 地址）、“Client IPv4 Address”（客户端 IPv4 地址）和“Client IPv6 Address”（客户端 IPv6 地址）。  
+
 - **Server IPv4 Address** 是 HE 那边端点的地址；  
 - **Server IPv6 Address** 则是你网络中应使用的 IPv6 默认路由器地址；  
 - **Client IPv6 Address** 是你端点的地址。
@@ -74,6 +76,7 @@ Hurricane Electric 是一家总部位于加利福尼亚的互联网服务提供�
 # ifconfig bge0 inet6 ROUTED-IPV6-PREFIX/64
 # sysctl net.inet6.ip6.forwarding=1
 ```
+
 同样地，一个具有相同传输协议的 IPv6 数据包由三部分组成，不同之处在于第一部分。
 
 如果我们将 IPv6 数据包视为 IPv4 数据包的数据，那么我们就可以通过 IPv4 网络传输 IPv6 数据包。在发送端，一台路由器构建一个包含 IPv6 数据包的 IPv4 数据包；而在接收端，另一台路由器提取出其中的 IPv6 数据包。当使用 gif(4) 接口时，这一过程就发生在 HE 的路由器和你的路由器之间。实际上，将 IPv6 数据包封装到 IPv4 数据包中，是通过在 IPv6 数据包前面加上一个 IPv4 头来完成的，如图 3 所示，因为传输层的头部几乎都是相同的。
@@ -128,6 +131,7 @@ round-trip min/avg/max/std-dev = 0.081/1.917/4.765/1.970 ms
 在配置了默认路由器和 LAN 上的路由器地址后，你就可以配置 LAN 上的主机了。你可以参考上一期专栏，了解可以采取的选项。建议在 bge0 上运行 **rtadvd(8)** 以启用自动配置。
 
 ## 在 `/etc/rc.conf` 中配置
+
 待确认 IPv6 隧道可以正常工作，你应该将手动输入的配置添加到 `/etc/rc.conf`。
 
 ```sh
@@ -153,13 +157,16 @@ ifconfig_bge0="inet6 ROUTED-IPV6-PREFIX/64"
 就是这样！现在，你可以在你的 LAN 内搭建支持 IPv6 的互联网服务器了，因为配置的 IPv6 地址可以从 IPv6 互联网访问。  
 
 关于 **ipv6_defaultrouter**，还有一点需要补充说明。虽然上述示例使用 **IPV6-SERVER**，但它也可以是 HE 端的 LLA（链路本地地址），你可以通过 **ping** 查看，或者将其设置为 `-interface gif0`。  
+
 - **不推荐使用 HE 端的 LLA**，因为当 HE 更换设备时，该地址可能会发生变化。建议仅在手动配置并在自己控制范围内的情况下，才将 LLA 用于静态路由。  
 - **推荐的方式是 `-interface gif0`**，这样可以简化配置。由于 **gif0** 被配置为点对点接口，因此可以直接使用本地的接口名称来指定到 HE 端路由器的路由。这样，即使 **IPV6-SERVER** 地址发生变化，你的配置仍然有效。  
 
 ## 在基本工具中使用 IPv6  
+
 本专栏的另一个主题是 FreeBSD 基本系统中的软件 IPv6 配置示例。获得 IPv6 互联网访问权限后，我们可以让软件开始使用 IPv6。  
 
 ### 一般规则与注意事项  
+
 从用户的角度来看，IPv6 最显著的区别是地址的表示法。除此之外，TCP 和 UDP 的工作方式与 IPv4 基本相同。因此，你可以先尝试将配置文件中的 IPv4 地址替换为 IPv6 地址。  
 
 第一期专栏以 **OpenSSH** 为示例，让我们看看需要做哪些更改。  
@@ -245,7 +252,8 @@ nameserver fe80::ffff:1:35%bge0
 
 作为一种变通方法，你需要在 `nameserver` 行中使用 IPv4 地址或 IPv6 GUA⁷。  
 
-### NFS 与 /etc/exports 
+### NFS 与 /etc/exports
+
 `/etc/exports` 文件使用原始 IPv6 地址格式，并支持 `network` 关键字的前缀长度表示法。示例如下：
 
 ```sh
@@ -256,6 +264,7 @@ nameserver fe80::ffff:1:35%bge0
 请注意，NFS 并不完全支持 LLA，因为 RPC 库在处理 IPv6 地址时不会包含 zone ID。尽管第二行可以被指定，并且其语法是正确的，但实际上并不起作用⁸。IPv6 GUA 则可以正常工作。因此，目前应避免在 NFS 中使用 LLA，该问题预计会在 FreeBSD 14 中得到修复。  
 
 ### Sendmail  
+
 Sendmail 也使用原始 IPv6 地址格式，并支持为每个地址指定地址族关键字。示例如下：
 
 ```sh
@@ -282,6 +291,7 @@ FEATURE(‘msp’, ‘[127.0.0.1]’)dnl
 在这个配置文件中，sendmail 采用了一种修改后的方括号格式，因为 sendmail 需要对 IPv4 也使用方括号格式。如果要使用 IPv6，则必须使用 `[IPv6:raw-ipv6-address]` 这种格式。  
 
 ### Syslogd  
+
 上一节已经介绍了命令行选项。在配置文件 **/etc/syslog.conf** 中，可以使用原始 IPv6 地址格式来指定远程主机。以下是一个示例，它用于从运行 ISC BIND 的 jail 环境接收日志：
 
 ```sh
@@ -304,7 +314,7 @@ FreeBSD 提供了一整套丰富的网络实验工具。在用户态程序的 IP
 
 ---
 
-## 附注 
+## 附注
 
 1. **GUA** 代表 **Global Unicast Address**（全局单播地址），可在 IPv6 互联网中路由。  
 2. 记住，IPv6 GUA 由 **前缀（prefix）** 和 **IID（Interface IDentifier，接口标识符）** 组成，IID 通常为 64 位。如果你的前缀是 48 位，你可以使用 16 位的子网编号，在 **LAN** 内创建 **65,536** 个子网；如果前缀是 64 位，你只能创建一个子网。  

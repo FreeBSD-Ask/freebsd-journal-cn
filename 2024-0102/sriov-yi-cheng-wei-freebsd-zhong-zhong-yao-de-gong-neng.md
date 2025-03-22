@@ -76,7 +76,7 @@ ixl0: SR-IOV ready ixl0: netmap queues/slots: TX 4/1024, RX 4/1024
 
 至此，我们可以从硬件设置转到 FreeBSD 配置的部分。
 
-##  在 FreeBSD 中配置 SR-IOV 
+## 在 FreeBSD 中配置 SR-IOV
 
 ### 使用 PF（物理功能）
 

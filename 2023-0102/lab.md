@@ -95,6 +95,7 @@ gateway {
 ```sh
 chroot /lab/gateway adduser
 ```
+
 为 jail 设置 root 密码：
 
 ```sh
@@ -162,7 +163,7 @@ jail -vr gateway
 ```
 vim /etc/devfs.rules
 ```
- 
+
 在 `devfs.rules` 中添加以下行：  
 
 ```sh
@@ -304,6 +305,7 @@ sysrc ifconfig_vlan2_name=labnet
 sysrc ifconfig_labnet=up
 service netif restart
 ```
+
 销毁并重新创建网关：
 
 ```sh

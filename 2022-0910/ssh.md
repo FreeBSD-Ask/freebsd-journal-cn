@@ -27,6 +27,7 @@ AllowUsers abc*
 Match User monitoring
  AuthenticationMethods publickey
 ```
+
 其他用户仍然使用全局设置，但待出现 monitoring 用户，针对该情况的 AuthenticationMethods 设置就会被覆盖。match 语句的其他匹配条件包括 Group、Host、LocalAddress、LocalPort、RDomain（路由域）和 Address。在这里要小心，不要轻易信任用户声称来自的某个网络，因为这些信息可能会被伪造或重新路由。尽量选择匹配条件越少越好，以避免处理时间过长或者匹配过多项，从而失去匹配的目的。请注意，并非 sshd_config 中的所有关键字都可以在 match 语句中进行更改，但很多是可以的。完整的列表可参见 sshd_config(5)。祝你匹配愉快！
 
 ## 断开挂起的 SSH 会话  

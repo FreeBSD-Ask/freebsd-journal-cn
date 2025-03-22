@@ -69,7 +69,7 @@ OpenVPN 项目认为，引入 DCO 是一次极好的机会：能删除一些遗�
 
 对于那些跟踪代码的朋友，相关处理代码在[这里](https://cgit.freebsd.org/src/tree/sys/net/if_ovpn.c?id=da69782bf06645f38852a8b23af#n1483)。
 
-## UDP 
+## UDP
 
 OpenVPN 能通过 UDP 和 TCP 运行。虽然 UDP 是层 3 VPN 协议的优选，但某些用户需要通过 TCP 运行它以便穿越防火墙。
 

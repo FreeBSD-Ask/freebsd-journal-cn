@@ -13,11 +13,11 @@ VPN 是一种基础工具，用于安全地连接到自己的服务器和设备�
 
 无论出于何种原因，解决方案从未匮乏。我一直在设置管理 VPN，以便服务器/客户端使用安全通道相互通信。最近，我[已在所有设备上启用 IPv6 连接](https://my-notes.dragas.net/posts/2023/the-urgency-of-transitioning-to-ipv6/)（包括桌面/服务器和移动设备），并且我需要快速创建一个节点，将一些网络聚合在一起，并让它们通过 IPv6 连接到外部网络。我使用着、并将要介绍的工具有：
 
-* **VPS** – 在本例中，我使用了基本的 Hetzner Cloud VPS，但所有提供 IPv6 连接的服务商都可以——如果你的确需要 IPv6。
-* **[FreeBSD](https://www.freebsd.org/)** – 一款多功能、稳定和安全的操作系统。
-* **[WireGuard](https://www.wireguard.com/)** – 轻量级、安全，并且不会占用太多带宽，所以在移动设备上也比较省电。当没有流量时，它完全不会传输/接收任何数据。在所有主要桌面和服务器操作系统以及 Android 和 iOS 设备上支持良好。
-* **[Unbound](https://nlnetlabs.nl/projects/unbound/about/)** – 可以直接向根 DNS 服务器发起查询，而非转发器。它还允许插入拦截列表，产生类似 Pi-Hole 的效果（即广告拦截）。
-* **[SpamHaus](https://www.spamhaus.org/)** 列表 – 立即阻断与黑名单用户的连接。
+- **VPS** – 在本例中，我使用了基本的 Hetzner Cloud VPS，但所有提供 IPv6 连接的服务商都可以——如果你的确需要 IPv6。
+- **[FreeBSD](https://www.freebsd.org/)** – 一款多功能、稳定和安全的操作系统。
+- **[WireGuard](https://www.wireguard.com/)** – 轻量级、安全，并且不会占用太多带宽，所以在移动设备上也比较省电。当没有流量时，它完全不会传输/接收任何数据。在所有主要桌面和服务器操作系统以及 Android 和 iOS 设备上支持良好。
+- **[Unbound](https://nlnetlabs.nl/projects/unbound/about/)** – 可以直接向根 DNS 服务器发起查询，而非转发器。它还允许插入拦截列表，产生类似 Pi-Hole 的效果（即广告拦截）。
+- **[SpamHaus](https://www.spamhaus.org/)** 列表 – 立即阻断与黑名单用户的连接。
 
 ### 步骤 1：激活 VPS 并安装 FreeBSD
 
@@ -97,7 +97,7 @@ wg
 
 对于 Spamhaus 列表，继续创建 FreeBSD 脚本。
 
-### 创建脚本 `/usr/local/sbin/spamhaus.sh`：
+### 创建脚本 `/usr/local/sbin/spamhaus.sh`
 
 ```sh
 #!/bin/sh
@@ -180,7 +180,7 @@ pkg install unbound
 
 不久前，我找到了一个脚本并稍作修改。我记不清楚原始作者是谁了，所以我只在这里贴出来脚本。
 
-### 创建更新 Unbound 广告拦截的脚本 `/usr/local/sbin/unbound-adhosts.sh`：
+### 创建更新 Unbound 广告拦截的脚本 `/usr/local/sbin/unbound-adhosts.sh`
 
 ```sh
 #!/bin/sh

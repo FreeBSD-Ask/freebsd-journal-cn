@@ -21,18 +21,21 @@
 这个过程持续了大约 1 微秒。
 
 ## 早期调试
+
 FreeBSD 具有出色的调试功能，但如果内核在调试器初始化或串行控制台设置之前崩溃，你就无法获得太多帮助。在这种情况下，Firecracker 进程退出，告诉我 FreeBSD 系统发生了三重错误，但这就是我所知道的一切。
 
 然而，事实证明，有鉴于一些创意，这已经足够让我开始。如果 FreeBSD 内核执行达到 hlt 指令，Firecracker 进程将继续运行，但使用主机 CPU 时间的 0%（因为它正在虚拟化已停止的 CPU）。因此，我可以通过插入 hlt 指令来区分“FreeBSD 在此点之前崩溃”和“FreeBSD 在此点之后崩溃”——如果 Firecracker 退出，我就能知道它在达到该指令之前崩溃了。因此开始了一个被我称之为“内核二分法”的过程——与其对提交列表进行二分查找以找到引入错误的提交（如 git bisect 中那样），我会通过内核启动代码进行二分搜索，以找到导致 FreeBSD 崩溃的代码行。
 
 ## Xen 超级调用
+
 在这个过程中我发现的第一件事是 Xen 超级调用。PVH 引导模式起源于 Xen/PVH 引导模式，而 FreeBSD 的 PVH 入口点实际上是专门用于在 Xen 下引导的入口点——代码对此进行了相当合理的假设，即它确实在 Xen 内部运行，因此可以进行 Xen 超级调用。当然，提供 Firecracker 所使用的内核功能的 KVM（不是 Xen）并不提供这些超级调用；尝试使用其中任何一个都会导致虚拟机崩溃。作为一个原始的解决方法，我仅注释掉了所有 Xen 超级调用；稍后，我添加了代码，通过检查 CPUID 中的 Xen 签名，在进行调用之前检查 Xen 超级调用，例如将调试输出写入 Xen 调试控制台。
 
 然而，有一个 Xen 超级调用提供了必要的功能：检索物理内存映射。（当然，在超级调用器内部，“物理”内存实际上只是虚拟物理内存。它一直这样下去。）在这里，我们受到的启发是，Xen/PVH 事后被宣布为 PVH 引导模式的版本 0：从版本 1 开始，通过 PVH start_info 页传递了指向内存映射的指针（当虚拟 CPU 开始执行时，会提供该指针的寄存器）。我必须编写代码，以利用 PVH 版本 1 的内存映射，而不是依赖于 Xen 超级调用来获得相同的信息，但这并不难。
 
 另一个相关问题涉及 Xen 和 Firecracker 如何在内存中排列结构：在内存中，Xen 首先加载内核，然后将 start_info 页放在末尾，而 Firecracker 则将 start_info 页放在固定的低地址，然后在加载内核之后。这本来没问题，但 FreeBSD 的 PVH 代码——考虑到 Xen——假定 start_info 页之后的内存会被用作临时空间。在 Firecracker 下，这很快就意味着覆盖了初始内核堆栈——这并不是一个理想的结果！通过对 FreeBSD 的 PVH 代码进行更改，将临时空间分配给由超级调用器初始化的所有内存区域，就解决了这个问题。
 
-## ACPI——或者没有！
+## ACPI——或者没有
+
 在 x86 平台上，FreeBSD 通常使用 ACPI 来了解（并在某些情况下控制）其运行的硬件。FreeBSD 除了通过 ACPI 发现我们可能通常视为“设备”的东西，如磁盘、网络适配器等，还了解一些基本的东西——如 CPU 和中断控制器。
 
 Firecracker 有意地极简化，不去实现 ACPI，当 FreeBSD 无法确定有多少个 CPU 或者如何找到它们的中断控制器时，会感到不安。幸运的是，FreeBSD 支持历史悠久的 Intel 多处理器规范，通过“MPTable”结构提供了这些关键信息；尽管它不是 GENERIC 内核配置的一部分，但在 Firecracker 中运行时，我们会使用一个经过精简的内核配置，因此很容易添加 device mptable 以利用 Firecracker 提供的信息。
@@ -42,6 +45,7 @@ Firecracker 有意地极简化，不去实现 ACPI，当 FreeBSD 无法确定有
 因此，FreeBSD 现在有了一个新的内核选参数：如果你需要与 Linux 的 MPTable 处理具有错误兼容性，可以在内核配置中添加选项 `MPTABLE_LINUX_BUG_COMPAT`。有了这个参数，FreeBSD 成功地在 Firecracker 中进一步引导。
 
 ## 串行控制台
+
 Firecracker 提供的一些模拟设备之一（与 Virtio 块和网络设备等虚拟化设备相对）是串口。实际上，在常见的配置中，当你启动 Firecracker 时，Firecracker 进程的标准输入和输出会成为虚拟机的串口输入和输出，使其看起来像是虚拟机操作系统只是在你的 Shell 内部运行的另一个进程（从某种意义上讲，确实如此）。至少，这是它应该工作的方式。
 
 在将 FreeBSD 引导到 Firecracker 内的过程中，我能够启动一个已将根磁盘编译到内核映像中的 FreeBSD 内核——虚拟磁盘驱动程序尚未工作——并读取了内核的所有控制台输出。然而，在所有内核控制台输出之后，FreeBSD 进入了引导过程的用户区域，我得到了 16 个字符的控制台输出，然后就停止了。
@@ -51,6 +55,7 @@ Firecracker 提供的一些模拟设备之一（与 Virtio 块和网络设备等
 然后我发现控制台输入也是无效的：FreeBSD 对我在控制台中键入的任何内容都没有响应。事实上，在我跟踪 Firecracker 进程时，我发现 Firecracker 甚至没有从控制台读取——因为 Firecracker 认为模拟串口上的接收 FIFO 已满。结果证明这是 Firecracker 的另一个错误：在初始化串口时，FreeBSD 用垃圾填充接收 FIFO 以测量其大小，然后通过写入 FIFO 控制寄存器来刷新 FIFO。Firecracker 没有实现 FIFO 控制寄存器，因此 FIFO 保持满状态，并且合理地不尝试读取任何更多的字符放入其中。在这里，我向 FreeBSD 添加了另一个解决方法：如果在我们尝试通过 FIFO 控制寄存器刷新 FIFO 后，LSR_RXRDY 仍然被断言（也就是说，如果 FIFO 没有按要求清空），那么我们现在会继续逐个读取和丢弃字符，直到 FIFO 清空。有了这个解决方法，Firecracker 现在可以认识到 FreeBSD 已准备好从串口读取更多输入，我有了一个可工作的双向串行控制台。
 
 ## Virtio 设备
+
 虽然没有磁盘或网络的系统对某些用途可能是有用的，但在我们能够在 FreeBSD 中做很多事情之前，我们需要这些设备。Firecracker 支持 Virtio 块和网络设备，并将它们以 mmio（内存映射 I/O）设备的形式暴露给虚拟机。使这些在 FreeBSD 中工作的第一步：在 Firecracker 内核配置中添加 `device virtio_mmio`。
 
 接下来，我们需要告诉 FreeBSD 如何找到虚拟化的设备。FreeBSD 希望通过 FDT（扁平化设备树）发现 mmio 设备，这是一种在嵌入式系统上常用的机制；但是，Firecracker 通过内核命令行传递设备参数，比如 `virtio_mmio.device=4K@0x1001e000:5`，来传递设备参数。在 FreeBSD 中使这些工作的第二步：编写用于解析这些指令并创建 virtio_mmio 设备节点的代码。（我们创建了设备节点后，FreeBSD 的常规设备探测过程就会启动，内核将自动确定 Virtio 设备的类型并连接适当的驱动程序。）
@@ -64,6 +69,7 @@ Firecracker 提供的一些模拟设备之一（与 Virtio 块和网络设备等
 这可能是使 FreeBSD 在 Firecracker 中运行的最困难的部分，但经过多次尝试，我认为我终于做对了：我修改了 FreeBSD 的 Virtio 块驱动以使用 busdma，现在非对齐的请求会“弹回”（即通过临时缓冲区进行复制），以符合 Firecracker Virtio 实现的限制。
 
 ## 显露出的可优化项目
+
 我在让 FreeBSD 在 Firecracker 中运行起来后，很快就明显的看到有一些可改进的空间。我注意到的第一件事是，尽管我正在测试的虚拟机中有 128 MB 的内存，但系统几乎无法使用，进程经常被杀死，因为系统的内存用完了。top(1) 工具显示，几乎一半的系统内存处于“已绑定”状态，这对我来说似乎很奇怪；因此我进一步调查发现 busdma 为反弹页面保留了 32 MB 的内存。显然，这远远超过所需的量——考虑到 Firecracker 的限制以及反弹页面通常不会连续分配，每个磁盘 I/O 最多应使用单个 4 kB 的反弹页面——通过对 busdma 的补丁，我能将这个内存消耗减少到 512 kB，限制其对仅支持少量 I/O 段的设备的反弹页面保留。
 
 系统变得更加稳定之后，我开始关注引导过程。如果你观看系统引导并且消息突然在滚动过程中停顿，那么在那一点可能发生了减缓引导过程的情况。简单地观察引导过程——以及关机过程——揭示了几个改进：
@@ -96,7 +102,7 @@ FreeBSD 在 Firecracker 下引导——并且非常迅速地完成。包括未�
 
 更具雄心的是，如果 Firecracker 能够被移植到运行在 FreeBSD 上，那将是很棒的事情——在某种程度上，虚拟机就是虚拟机，虽然 Firecracker 是为了使用 Linux KVM 而编写的，但没有根本性的理由阻止它使用 FreeBSD 的 bhyve 虚拟化器的内核部分。
 
-任何想要在 Firecracker 中尝试 FreeBSD 的人都可以使用 amd64 FIRECRACKER 内核配置构建 FreeBSD 14.0 内核，并从 Firecracker 项目中 checkout [feature/pvh](https://github.com/firecracker-microvm/firecracker/tree/feature/pvh) 分支；或者如果该分支不存在，这意味着代码已合并到[ Firecracker main 中](https://github.com/firecracker-microvm/firecracker)。
+任何想要在 Firecracker 中尝试 FreeBSD 的人都可以使用 amd64 FIRECRACKER 内核配置构建 FreeBSD 14.0 内核，并从 Firecracker 项目中 checkout [feature/pvh](https://github.com/firecracker-microvm/firecracker/tree/feature/pvh) 分支；或者如果该分支不存在，这意味着代码已合并到[Firecracker main 中](https://github.com/firecracker-microvm/firecracker)。
 
 如果你在 Firecracker 上尝试 FreeBSD——尤其是如果你最终在生产环境中使用它。请告诉我！我开始这个项目主要是出于兴趣，但如果它最终变得有用，我会很高兴听到这件事的。
 

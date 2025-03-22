@@ -117,6 +117,7 @@ security.jail.children.max: 999999
 security.jail.children.cur: 0
 security.jail.children.max: 0
 ```
+
 这表示不允许创建子 jail。显然，在这种条件下，尝试创建新 jail 的测试用例将会失败。为了解决这个问题，Kyua 通过添加另一个隐式参数来提供帮助，该参数允许最大数量的子 jail，这个数量是父 jail 最大限制减去 1。虽然可以通过测试用例中的 `execenv_jail_params` 元数据属性来配置这一点，但这似乎是一项繁琐且重复的工作。
 
 以下公式阐明了 Kyua 如何创建临时 jails 以及如何通过元数据属性修改这一过程：
@@ -124,6 +125,7 @@ security.jail.children.max: 0
 ```sh
 jail -qc name=<name> children.max=<parent_max-1> <test case defined params> persist
 ```
+
 临时 jail 的名称来源于测试程序路径和测试用例名称。例如，测试用例 `/usr/tests/sys/kern/unix_dgram:basic` 将使用名为 `kyua_usr_tests_sys_kern_unix_dgram_basic` 的临时 jail。
 
 ## kldload 问题
@@ -153,6 +155,7 @@ unprivileged_user = tests
 ```sh
 # kyua -v execenvs=host test
 ```
+
 如果系统在构建时没有启用 jail 支持，则仅会提供默认的主机执行环境。因此，任何需要 jail 执行环境的测试都将被跳过。
 
 ## 入门示例

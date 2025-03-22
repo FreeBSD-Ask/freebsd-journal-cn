@@ -17,9 +17,9 @@ rdist 是同类软件中最早出现的（也早于 rsync）。rsync 是一款�
 
 有这么多可选，为什么还要用 rdist 呢？
 
-* rdist 比后续出现的配置分发应用程序（如 ansible 等）较为轻量化。
-* rdist 容易集成到 shell 脚本和 Makefile 中。
-* rsync 无法像 rdist 一样并行分发到多个主机。rsync 也不能使用配置文件来同步文件。但这些 rdist 都可以做到。rsync 和 rdist 被设计用于不同的目的，rsync 用于备份和文件克隆，而 rdist 更适合用作配置管理工具。
+- rdist 比后续出现的配置分发应用程序（如 ansible 等）较为轻量化。
+- rdist 容易集成到 shell 脚本和 Makefile 中。
+- rsync 无法像 rdist 一样并行分发到多个主机。rsync 也不能使用配置文件来同步文件。但这些 rdist 都可以做到。rsync 和 rdist 被设计用于不同的目的，rsync 用于备份和文件克隆，而 rdist 更适合用作配置管理工具。
 
 另一方面，为什么会有人想用别的工具呢？与诸如 cfengine 和 ansible 之类的工具相比，rdist 更轻量化——其配置远程节点的能力仅限于分发文件和执行简单的分发后任务。而较为重量级的工具可以用来执行分发前的任务：这个问题通过简单的 shell 脚本和 Makefile 就能解决。以我自己为例，我使用了一款名为 ipfmeta 的配置工具来管理我的 ipfilter 防火墙规则，该工具使用 Makefile 从规则文件和对象文件中生成防火墙配置文件。而 Makefile 使用 rdist 把生成的文件分发到 rdist 的 Distfile 中定义的远程防火墙中。Distfile 与 rdist 的关系有点类似于 Makefile 和 make。与 rsync 不同，rdist 根据其 Distfile 中的具体规则来分发文件。
 
@@ -198,9 +198,9 @@ rsync -aHW --delete /t/tmp /home/cy/freebsd/rdist
 
 ## 参考文献
 
-* [FreeBSD 14.0-RELEASE 和 Port 的 44bsd-rdist 手册页](https://man.freebsd.org/cgi/man.cgi?query=44bsd-rdist&sektion=1&apropos=0&manpath=FreeBSD+14.0-RELEASE+and+Ports)
-* [Magnicomp 的 rdist 重新设计 PDF](https://www.magnicomp.com/download/rdist/overhaul.pdf)
-* [UMB 计算机科学课程的 rdist 项目 PDF](https://www.cs.umb.edu/~ckelly/teaching/common/project/linux/sys_admin/p7_rdist.pdf)
+- [FreeBSD 14.0-RELEASE 和 Port 的 44bsd-rdist 手册页](https://man.freebsd.org/cgi/man.cgi?query=44bsd-rdist&sektion=1&apropos=0&manpath=FreeBSD+14.0-RELEASE+and+Ports)
+- [Magnicomp 的 rdist 重新设计 PDF](https://www.magnicomp.com/download/rdist/overhaul.pdf)
+- [UMB 计算机科学课程的 rdist 项目 PDF](https://www.cs.umb.edu/~ckelly/teaching/common/project/linux/sys_admin/p7_rdist.pdf)
 
 ---
 

@@ -203,13 +203,13 @@ my_mouse_detach( device_t dev )
 
 例如，真正的 FreeBSD 鼠标驱动已从传统的 ums(4) 中的 ~1200 行代码减少到基于新 HID KPI 的 ~330 行代码。此外，它增加了 ums(4) 中缺失的 I2C 和绝对坐标支持，以及用于解决 FreeBSD 在 x86 上缺少 GPIO 中断支持所带来的问题的漂移抑制代码。这种简化使得作者和 Greg V 能够创建一系列基于 hidmap 的驱动程序，这些驱动程序捆绑在 FreeBSD 13+ 中，包括：
 
-* hms - HID 鼠标驱动
-* cons - 消费者页面，亦称为多媒体键驱动
-* hsctrl - 系统控制页面（电源/休眠键）驱动
-* hpen - 通用 / 与 MS Windows 兼容的 HID 手写板驱动
-* hgame - 游戏控制器和摇杆驱动
-* xb360gp - Xbox360 兼容游戏控制器驱动
-* ps4dshock - 索尼 DualShock 4 游戏手柄驱动
+- hms - HID 鼠标驱动
+- cons - 消费者页面，亦称为多媒体键驱动
+- hsctrl - 系统控制页面（电源/休眠键）驱动
+- hpen - 通用 / 与 MS Windows 兼容的 HID 手写板驱动
+- hgame - 游戏控制器和摇杆驱动
+- xb360gp - Xbox360 兼容游戏控制器驱动
+- ps4dshock - 索尼 DualShock 4 游戏手柄驱动
 
 还有一些不是基于 hidmap 的驱动程序，如 hkbd(4) 和 hmt(4)。它们是现有 USB-HID 驱动程序（如 ukbd(4) 和 wmt(4)）移植到新基础设施上的结果。它们为 I2C 键盘和 I2C 多点触控触摸板/触摸屏提供支持。
 
@@ -225,10 +225,10 @@ Hidquirk(4) - 主要从现有 USB-HID 驱动程序复制的怪癖模块。
 
 FreeBSD 的 HID 子系统仍在开发中，但已被许多人使用。最近的工作增加了对广泛使用的硬件的支持，例如 I2C 触摸板和触摸屏、USB 键盘上的多媒体键、许多虚拟机中使用的绝对鼠标等。这改善了我们在一些领域的用户体验，特别是我们在其他操作系统（包括其他 BSD 系统）中落后的地方。但仍有许多任务留在待办事项列表中，例如：
 
-* 实现 usrhid，一个用户空间的传输驱动程序，可以为连接到用户空间控制总线的每个设备创建内核 hid 设备。现有的 Linux uhid 协议可以作为起点。它定义了一个 API，用于从内核到用户空间以及反向提供 I/O 事件。
-* 将 bthidd(8) 转换为使用 usrhid，从而整合内核和用户空间之间的 HID 支持。
-* 完成 evdev-aware 的 WIP moused https://github.com/wulf7/moused，并用它替换我们内核和基础系统中的 moused(8)。这是必要的，因为新的 hms 和 hmt 驱动程序不支持我们的传统 sys/mouse.h 接口。
-* 默认启用 usbhid(4)，并开始弃用 ums(4)、ukbd(4) 以及其他旧版 USB-HID 驱动程序，同时弃用内核和基础系统中的所有 mouse(4)/sysmouse(4) 内容。
+- 实现 usrhid，一个用户空间的传输驱动程序，可以为连接到用户空间控制总线的每个设备创建内核 hid 设备。现有的 Linux uhid 协议可以作为起点。它定义了一个 API，用于从内核到用户空间以及反向提供 I/O 事件。
+- 将 bthidd(8) 转换为使用 usrhid，从而整合内核和用户空间之间的 HID 支持。
+- 完成 evdev-aware 的 WIP moused https://github.com/wulf7/moused，并用它替换我们内核和基础系统中的 moused(8)。这是必要的，因为新的 hms 和 hmt 驱动程序不支持我们的传统 sys/mouse.h 接口。
+- 默认启用 usbhid(4)，并开始弃用 ums(4)、ukbd(4) 以及其他旧版 USB-HID 驱动程序，同时弃用内核和基础系统中的所有 mouse(4)/sysmouse(4) 内容。
 
 ---
 

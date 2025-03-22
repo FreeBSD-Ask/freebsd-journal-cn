@@ -137,10 +137,10 @@ directory mask = 0700
 
 ## 参考文献和来源
 
-* [Samba 文档](https://www.samba.org/samba/docs/current/man-html/vfs_fruit.8.html)
-* [Reddit 帖子](https://www.reddit.com/r/homelab/comments/83vkaz/howto_make_time_machine_backups_on_a_samba/)
-* [FreeBSD 论坛帖子](https://forums.freebsd.org/threads/samba-functions-but-unable-to-use-it-as-a-macos-time-machine-destination.79896/#post-655905)
-* [Dan Langille 的博客](https://dan.langille.org/2023/09/28/creating-a-time-capsule-instance-using-samba-freebsd-and-zfs/)
+- [Samba 文档](https://www.samba.org/samba/docs/current/man-html/vfs_fruit.8.html)
+- [Reddit 帖子](https://www.reddit.com/r/homelab/comments/83vkaz/howto_make_time_machine_backups_on_a_samba/)
+- [FreeBSD 论坛帖子](https://forums.freebsd.org/threads/samba-functions-but-unable-to-use-it-as-a-macos-time-machine-destination.79896/#post-655905)
+- [Dan Langille 的博客](https://dan.langille.org/2023/09/28/creating-a-time-capsule-instance-using-samba-freebsd-and-zfs/)
 
 ---
 
