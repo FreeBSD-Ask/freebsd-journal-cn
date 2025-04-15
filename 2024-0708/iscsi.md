@@ -36,7 +36,7 @@ zfs create -o volmode=dev -V 50G tank/wblock0
 
 接下来，创建一个仅允许 root 读/写的文件 `/etc/ctl.conf`。此文件包含密钥，因此必须确保其他用户和组没有读/写该文件的权限。下面是我们将添加的内容，用于提供发起方的存储位置：
 
-```json
+```ini
 auth-group ag0 {
     chap-mutual “inituser1” “secretpassw0rd” “targetuser1” “topspassw0rd”
 initiator-portal [2001:db8:1::1]
@@ -79,7 +79,7 @@ target iqn.2012-06.org.example.iscsi:target2 {
 
 我们来分解一下这个文件，理解每个组件的作用及原因：
 
-```json
+```ini
 auth-group ag0 {
     chap-mutual “inituser1” “secretpassw0rd” “targetuser1” “topspassw0rd”
 initiator-portal [2001:db8:1::1]
@@ -91,7 +91,7 @@ initiator-portal [2001:db8:1::1]
 
 这种身份验证可能足够用于发起方和目标方位于同一物理网络的情况，但不应将其作为唯一的安全控制手段。此类身份验证应被视为确保仅分配正确存储给发起方的方法。配置松散的 iSCSI 目标可能会使错误的存储可用，可能会造成数据、分区表或其他元数据被覆盖，因此，限制访问特定目标数据集至关重要。
 
-```json
+```ini
 portal-group pg0        {
     discovery-auth-group no-authentication
     listen [2001:db8:1::a]
@@ -100,7 +100,7 @@ portal-group pg0        {
 
 门户组设置了提供给发起方的目标环境。在这里，我们定义了一个门户组，允许发起方通过 `2001:db8:1::a` 连接到目标方，这样它们可以在无需先进行身份验证的情况下发现包括此门户组的目标数据集。通常在受控环境中，可以这样做，以确保发起方能够找到它们需要连接的目标，但在更加敌对和不受信任的环境中，这种做法则是不理想的。
 
-```json
+```ini
 target iqn.2012-06.org.example.iscsi:target1 {
     alias “Target for FreeBSD”
     auth-group ag0
@@ -136,14 +136,14 @@ service ctld start
 
 为了验证存储是否已出现，你可以检查守护进程是否在监听：
 
-```json
+```sh
 # netstat -na | grep 3260
 tcp6    0      0 2001:db8:1::a.3260     *.*     
 ```
 
 然后，使用 CAM 目标层控制实用程序验证 LUN 是否已出现：
 
-```json
+```sh
 # ctladm lunlist
 (7:1:0/0):<FREEBSD CTLDISK 0001> Fixed Direct Access SPC-5 SCSI device
 (7:1:1/1):<FREEBSD CTLDISK 0001> Fixed Direct Access SPC-5 SCSI device
@@ -155,7 +155,7 @@ LUN Backend     Size (Blocks)   BS Serial Number     Device ID
 
 接下来，配置你的 FreeBSD 发起方。你需要创建配置文件 `/etc/iscsi.conf`。由于此文件包含机密信息，因此也需要显式设置为仅 root 可读写：
 
-```json
+```ini
 fblock0         {
 targetaddress   = [2001:db8:1::a];
 targetname      = iqn.2012-06.org.example.iscsi:target1;
