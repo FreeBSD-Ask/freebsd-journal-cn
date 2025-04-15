@@ -86,13 +86,13 @@ Kyua 可以通过配置实现测试用例的并行运行。默认情况下，`pa
 
 目前，Kyua 仅支持一种额外的执行环境——jail 环境。虽然可以为单个测试用例配置该环境，但以下示例展示了如何将 `execenv` 元数据属性应用于测试程序中的所有测试用例：
 
-```json
+```ini
 atf_test_program{name=”test_program”, execenv=”jail”}
 ```
 
 此配置使 Kyua 为 `test_program` 中的每个测试用例提供一个临时的 jail 来执行。如果某个测试用例声明了清理例程，该例程也将在相同的 jail 中执行。Kyua 使用 [`jail(8)`](https://man.freebsd.org/cgi/man.cgi?query=jail&sektion=8) 创建这些 jail，测试用例可以通过一个名为 `execenv_jail_params` 的新元数据属性传递额外的参数：
 
-```json
+```ini
 atf_test_program{name=”test_program”, execenv=”jail”, execenv_jail_params=”vnet allow.raw_sockets”}
 ```
 

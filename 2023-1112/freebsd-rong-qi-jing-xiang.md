@@ -38,7 +38,7 @@ fdb4ee0a131a70df2aae5c022b677c5afbacb5ec19aa24480f9b9f5e8f30fd18
 
 此捆绑包中的所有元数据文件都是 JSON 格式，如此处所描述。顶层的 `index.json` 文件通过其哈希链接到清单（manifest）：
 
-```json
+```ini
 $ cat index.json | jq
 {
   "schemaVersion": 2,
@@ -58,7 +58,7 @@ $ cat index.json | jq
 
 OCI 镜像规范还支持多架构镜像，它们只是清单的列表：
 
-```json
+```ini
 {
   "schemaVersion": 2,
   "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",

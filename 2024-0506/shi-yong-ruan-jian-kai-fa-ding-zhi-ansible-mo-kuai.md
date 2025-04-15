@@ -69,7 +69,7 @@ ansible-playbook touch.yml
 
 当文件 `/tmp/BSD.txt` 不存在时，playbook 输出如下：
 
-```json
+```ini
 PLAY [localhost] *****************************************
 
 TASK [Run our custom touch module] ***********************
@@ -87,7 +87,7 @@ ok: [localhost] => {
 
 当文件 `/tmp/BSD.txt` 存在（来自之前的运行）时，输出如下：
 
-```json
+```ini
 PLAY [localhost] *****************************************
 
 TASK [Run our custom touch module] ***********************
@@ -161,7 +161,7 @@ ansible-playbook hello.yml
 
 输出如下：
 
-```json
+```ini
 PLAY [localhost] *****************************************
 
 TASK [Testing the Python module] *************************
@@ -248,7 +248,7 @@ tasks:
 
 playbook 执行的相关输出如下：
 
-```json
+```ini
 ok: [localhost] => {
     “result”: {
         “changed”: false,
@@ -321,7 +321,7 @@ main()
 
 这将得到如下预期的输出：
 
-```json
+```ini
 TASK [Testing the calc module] **********************************************
 fatal: [localhost]: FAILED! => {“changed”: false, “msg”: “Invalid Operation”}
 ```

@@ -132,7 +132,7 @@ IOVCTL OPTIONS
 
 我们将使用参数 `mac-addr` 为每个 VF 设置特定的 MAC 地址。在此例中，把 MAC 地址设置为随意生成的，但我将演示如何在配置文件中设置 PF 参数、默认的 VF 参数以及特定于单个 VF 的参数。
 
-```json
+```ini
 PF {
        device : “ixl0”
        num_vfs : 2
@@ -319,7 +319,7 @@ vmm_load="YES"
         该参数控制是否将 VF 保留为 bhyve(8) 虚拟机的 PCI 直通设备。如果设置为 true，VF 将被保留为 PCI 直通设备，并且无法从物理机操作系统访问。此参数的默认值为 false。
 ```
 
-```json
+```ini
 PF {
         device : “ixl0”
         num_vfs : 2
