@@ -1,4 +1,4 @@
-# 我不是来自约克郡的，我保证！
+# 我不是来自约克郡的，我保证
 
 - 原文：[I’m Not from Yorkshire,I Promise!](https://freebsdfoundation.org/wp-content/uploads/2023/06/kamp_yorkshire.pdf)
 - 作者：POUL HENNING-KAMP

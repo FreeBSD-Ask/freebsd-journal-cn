@@ -39,12 +39,12 @@ TrueOS 于 2020 年关闭了，这给我们带来了压力，需要维系我们�
 
 其中一些工具包括：
 
-* **NetworkMgr**：一款用于以太网和 WiFi 的图形化软件，模仿 Linux 的 NetworkManager。通过简单点击替代命令行的混乱。
-* **Update Station**：一款图形化软件，用于软件和操作系统升级，升级前会创建 Boot Environment 的备份。安全第一！
-* **Software Station**：一款图形化软件，利用 pkg 安装软件。点击、选择、完成。
-* **ghostbsd-build**：用于构建 GhostBSD，包括 Joe Maloney 的 ZFS reroot hack，用于在内存中的读写 ZFS 池实时会话。对于演示和安装来说，速度非常快。
-* **Backup Station**：由 Mike Jurbala 于 2022 年 9 月引入，它是一款图形化软件，使用 pybectl，这是一款与 bectl 接口的内部 Python 模块，用于管理 Boot Environments。简化系统快照操作。
-* **GBI 和 pc-sysinstall**：GhostBSD 的图形安装器最近在界面中去除了 UFS，转而利用 ZFS 的优势。ZFS 的强大优势超越了旧的方式。
+- **NetworkMgr**：一款用于以太网和 WiFi 的图形化软件，模仿 Linux 的 NetworkManager。通过简单点击替代命令行的混乱。
+- **Update Station**：一款图形化软件，用于软件和操作系统升级，升级前会创建 Boot Environment 的备份。安全第一！
+- **Software Station**：一款图形化软件，利用 pkg 安装软件。点击、选择、完成。
+- **ghostbsd-build**：用于构建 GhostBSD，包括 Joe Maloney 的 ZFS reroot hack，用于在内存中的读写 ZFS 池实时会话。对于演示和安装来说，速度非常快。
+- **Backup Station**：由 Mike Jurbala 于 2022 年 9 月引入，它是一款图形化软件，使用 pybectl，这是一款与 bectl 接口的内部 Python 模块，用于管理 Boot Environments。简化系统快照操作。
+- **GBI 和 pc-sysinstall**：GhostBSD 的图形安装器最近在界面中去除了 UFS，转而利用 ZFS 的优势。ZFS 的强大优势超越了旧的方式。
 
 ## GhostBSD 未来展望
 

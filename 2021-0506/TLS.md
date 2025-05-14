@@ -107,6 +107,7 @@ rpc.tlsservd 还有一个命令行选项，指定守护进程要求客户端 IP 
   # openssl req -new -key certkey.pem -addext "subjectAltName=otherName:1.3.6.1.4.1.2238.1.1.1;UTF8:rmacklem@uoguelph.ca" -out req.pem
   # openssl ca -in req.pem -out cert.pem
   ```
+
 - 将 cert.pem 和 certkey.pem 以某种安全的方式复制到笔记本电脑的 /etc/rpc.tlsclntd 目录中。
 - 启用客户端守护进程，使用该证书。
   - 编辑 /etc/rc.conf 并添加：
@@ -127,6 +128,7 @@ rpc.tlsservd 还有一个命令行选项，指定守护进程要求客户端 IP 
     ```sh
     # service tlsclntd onestart
     ```
+
 - 待笔记本电脑连接到互联网，就可以以 su/root 身份执行挂载：
 
   ```sh
