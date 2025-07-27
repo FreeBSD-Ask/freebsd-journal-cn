@@ -103,7 +103,7 @@ not found! value = %x\n", value);
      }
 #endif
    axi_mm_ssd_sysctl_init(sc);
-   device_printf(dev, "ssd attached\n";
+   device_printf(dev, "ssd attached\n");
 
    return (0);
 
