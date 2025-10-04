@@ -9,6 +9,7 @@
 * [CHERIoT](2025-789/embedded.md)
 * [FreeBSD、Home Assistant 与 rtl_433](2025-789/freebsd-home-assistant-and-rtl_433.md)
 * [撰写有效的 Bug 报告](2025-789/writing-effective-bug-reports.md)
+* [实现量子安全网站](2025-789/implementing-a-quantum-safe-website.md)
 
 ## 2025-456 网络
 
