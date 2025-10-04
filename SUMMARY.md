@@ -8,6 +8,7 @@
 * [开启 FreeBSD 开发之路 —— 专访 Igor Ostapenko](2025-789/interview-with-igor-ostapenko.md)
 * [CHERIoT](2025-789/embedded.md)
 * [FreeBSD、Home Assistant 与 rtl_433](2025-789/freebsd-home-assistant-and-rtl_433.md)
+* [撰写有效的 Bug 报告](2025-789/writing-effective-bug-reports.md)
 
 ## 2025-456 网络
 
