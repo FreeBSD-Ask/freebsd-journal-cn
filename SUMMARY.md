@@ -11,6 +11,7 @@
 * [撰写有效的 Bug 报告](2025-789/writing-effective-bug-reports.md)
 * [实现量子安全网站](2025-789/implementing-a-quantum-safe-website.md)
 * [FreeBSD WiFi 开发第二部分：驱动开发](2025-789/freebsd-wifi-development-part-2-working-on-a-driver.md)
+* [嵌入式 FreeBSD：回顾与展望](2025-789/embedded-freebsd-looking-back-and-forward.md)
 
 ## 2025-456 网络
 
