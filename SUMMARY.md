@@ -6,6 +6,7 @@
 ## 2025-789 嵌入式
 
 * [开启 FreeBSD 开发之路 —— 专访 Igor Ostapenko](2025-789/interview-with-igor-ostapenko.md)
+* [CHERIoT](2025-789/embedded.md)
 
 ## 2025-456 网络
 
