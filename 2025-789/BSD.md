@@ -15,7 +15,7 @@
 
 会议的前两天（6 月 11–12 日）是 [FreeBSD DevSummit](https://wiki.freebsd.org/DevSummit/202506)。
 
-第一天的亮点是核心团队发起的关于 FreeBSD 项目中 **AI 使用** 的公开讨论，休息时间也在继续。核心团队主要关注 AI 生成代码的许可问题。而我坚持认为应该 **坚决反对 AI 的任何使用**，主要基于伦理和质量方面的担忧。许可问题在我看来只是次要的。比如：我们是否要主动参与可能让世界变得更糟的事？如果放宽 AI 政策，会吸引什么样的人加入项目？这会怎样影响项目的长期质量？我们真的 *需要* AI 及其带来的复杂性吗？如果没有许可问题，那用 AI 就没问题吗？还有很多类似的疑问。好在不少人（有些人犹豫着）支持了我的观点。
+第一天的亮点是核心团队发起的关于 FreeBSD 项目中 **AI 使用** 的公开讨论，休息时间也在继续。核心团队主要关注 AI 生成代码的许可问题。而我坚持认为应该 **坚决反对 AI 的任何使用**，主要基于伦理和质量方面的担忧。许可问题在我看来只是次要的。比如：我们是否要主动参与可能让世界变得更糟的事？如果放宽 AI 政策，会吸引什么样的人加入项目？这会怎样影响项目的长期质量？我们真的 **需要** AI 及其带来的复杂性吗？如果没有许可问题，那用 AI 就没问题吗？还有很多类似的疑问。好在不少人（有些人犹豫着）支持了我的观点。
 
 我还与 Mark Johnston（markj@）、Joseph Mingrone（jrm@）、Bojan 以及 Charlie Li（vishwin@）进行了技术和非技术讨论。意外的是，Charlie 也对 FreeBSD 音频/音乐制作感兴趣，还用它做 DJ 表演。
 
@@ -30,11 +30,11 @@ BSDCan 正式会议于 6 月 13–14 日举行。开幕主题演讲由著名计�
 这两天我听了许多讲座，其中印象深刻的有：
 
 * [ShengYi Hung：《ABI stability in FreeBSD》](https://www.bsdcan.org/2025/timetable/timetable-ABI-stability-in.html)，展示了一个检测 CTF 数据差异的实验性工具，用于发现 ABI 变化。之后我们（包括我、Mark Johnston、John Baldwin、Warner Losh 和讲者本人）展开了关于工具局限性及如何在实际应用中的讨论。
-* [Marshall Kirk McKusick：《A History of the BSD Daemon》](https://www.bsdcan.org/2025/timetable/timetable-A-History-of.html)，以及即将出版的《The Design and Implementation of the FreeBSD Operating System》第三版更新。我一向喜欢 Kirk 的演讲风格。
+* [Marshall Kirk McKusick：《A History of the BSD Daemon》](https://www.bsdcan.org/2025/timetable/timetable-A-History-of.html)，以及即将出版的《FreeBSD 操作系统设计与实现》（*The Design and Implementation of the FreeBSD Operating System*）第三版更新。我一向喜欢 Kirk 的演讲风格。
 * [Bojan Novković：《Hardware-accelerated program tracing on FreeBSD》](https://www.bsdcan.org/2025/timetable/timetable-Hardware-accelerated-program-tracing.html)，介绍了他在 hwt(8) 框架上的最新工作。
 * [Zhuo Ying Jiang Li：《Improvements to FreeBSD KASAN》](https://www.bsdcan.org/2025/timetable/timetable-Improvements-to-FreeBSD.html)，讲解了 FreeBSD 内核地址消毒器 (KASAN) 的改进工作，这是她参与 CheriBSD 的一部分。
 
-我没能参加但本想听的讲座包括：
+我没能参加但本想听的讲座有：
 
 * [John Baldwin：《ELF Nightmares: GOTs, PLTs, and Relocations Oh My》](https://www.bsdcan.org/2025/timetable/timetable-ELF-Nightmares-GOTs,.html)
 * [Andrew Hewus Fresh：《The state of 3D-printing from OpenBSD》](https://www.bsdcan.org/2025/timetable/timetable-The-state-of.html)
@@ -49,4 +49,6 @@ BSDCan 正式会议于 6 月 13–14 日举行。开幕主题演讲由著名计�
 
 一如既往，会议是弥补编程孤独性的绝佳机会，让我们能见到每天通过邮件交流的幕后人。除了完成工作和交换技术想法，我更享受那些意外发生的、深入的交流，包括与此前未曾见过的人。
 
-**Christos Margiolis** 是来自希腊的独立开发者和 FreeBSD src committer。
+---
+
+**Christos Margiolis** 是来自希腊的独立开发者和 FreeBSD src 提交者。
