@@ -10,6 +10,7 @@
 * [FreeBSD、Home Assistant 与 rtl_433](2025-789/freebsd-home-assistant-and-rtl_433.md)
 * [撰写有效的 Bug 报告](2025-789/writing-effective-bug-reports.md)
 * [实现量子安全网站](2025-789/implementing-a-quantum-safe-website.md)
+* [FreeBSD WiFi 开发第二部分：驱动开发](2025-789/freebsd-wifi-development-part-2-working-on-a-driver.md)
 
 ## 2025-456 网络
 
@@ -17,7 +18,7 @@
 * [使安装程序易于使用](2025-456/Usability.md)
 * [Overlord：让部署 Jail 像编程一样快](2025-456/Code.md)
 * [Netgraph 大众教程](2025-456/Us.md)
-* [FreeBSD WiFi 开发：第一部分——尝试 WiFi](2025-456/Development.md)
+* [FreeBSD WiFi 开发第一部分——尝试 WiFi](2025-456/Development.md)
 * [嵌入式 FreeBSD：自定义硬件](2025-456/Hardware.md)
 * [TCP/IP 探险记：静态 Pacing](2025-456/Pacing.md)
 
