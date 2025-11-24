@@ -53,7 +53,7 @@ Netgraph 的强大之处在于这些组件之间的连接方式。例如，你�
 
 尽管 Netgraph 功能强大，但创建和管理节点的语法可能有些繁琐。它的精确性要求你明确指定某些事项，而这些在仅使用 ifconfig(8) 时是自动处理的。我编写了 ngbuddy（Netgraph Buddy）工具，用于自动化混合 VM 与 jail 环境下的配置，并确保这些更改在系统启动时持久生效。
 
-在接下来的示例中，我们将从一个全新的 FreeBSD 14 安装开始，创建并使用一个“公共”的以太网连接桥接网络和一个"私有"的主机专用桥接网络，这类似于流行的虚拟机管理工具中的默认网络设置。我们还将使用 vm-bhyve（它在 2022 年 7 月添加了对 Netgraph 的支持）来进一步简化虚拟机管理。
+在接下来的示例中，我们将从一个全新的 FreeBSD 14 安装开始，创建并使用一个“公共”的以太网连接桥接网络和一个 "私有" 的主机专用桥接网络，这类似于流行的虚拟机管理工具中的默认网络设置。我们还将使用 vm-bhyve（它在 2022 年 7 月添加了对 Netgraph 的支持）来进一步简化虚拟机管理。
 
 ## 设置基础虚拟网络
 
@@ -173,7 +173,7 @@ graph netgraph {
 
 这段文本可以直接用 `dot(1)` 命令（来自 `graphics/graphviz` Port）转化为 SVG 或 PNG 图像。下面是一个简单 Netgraph 配置的清理后输出示例。
 
-<img width="803" height="414" alt="XC~VCKFVVK75F_$)8W(4C61" src="https://github.com/user-attachments/assets/669531f9-ef7f-4a77-bec6-5f321be7412a" />
+<img width="803" height="414" alt=" XC~VCKFVVK75F_$)8W(4C61 " src=" https://github.com/user-attachments/assets/669531f9-ef7f-4a77-bec6-5f321be7412a " />
 
 
 虽然这个输出已经很不错，ngbuddy 还包含一个我编写的辅助脚本 `ngbuddy-mmd.awk`，可以将上述输出转换为更美观、更清晰的 mermaid-js 可视化图形。我们公司的文档系统支持 mermaid-js，因此借助一些 API 魔法，我总能在文档数据库中保持所有主机 Netgraph 拓扑图的实时更新。

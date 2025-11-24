@@ -5,7 +5,7 @@
 
 ### 如何在 FreeBSD 中使用支持 SR-IOV 的设备设置硬件驱动虚拟化
 
-我最喜欢的硬件功能之一是被称为[单根输入/输出虚拟化（SR-IOV）](https://en.wikipedia.org/wiki/Single-root_input/output_virtualization)的技术。它让单一物理设备在操作系统中看起来如同多个类似的设备。FreeBSD 在实现 SR-IOV 功能方面的做法，是我[更倾向于在服务器上使用 FreeBSD 的原因之一](https://markmcb.com/freebsd/vs_linux/)。
+我最喜欢的硬件功能之一是被称为 [单根输入/输出虚拟化（SR-IOV）](https://en.wikipedia.org/wiki/Single-root_input/output_virtualization) 的技术。它让单一物理设备在操作系统中看起来如同多个类似的设备。FreeBSD 在实现 SR-IOV 功能方面的做法，是我 [更倾向于在服务器上使用 FreeBSD 的原因之一](https://markmcb.com/freebsd/vs_linux/)。
 
 ## SR-IOV 网络概述
 
@@ -39,7 +39,7 @@ X710-DA2 拥有两个物理的 SFP+ 光纤端口。在 SR-IOV 术语中，这些
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig3.jpg)
 
-在第一张图中，我们看到 PCIe 插槽从左到右编号为 4、5 和 6。如果你仔细观察，会看到插槽 4 有前缀“PCH”，而 5 和 6 则有前缀“CPU”。第二张图则更详细地显示了这些插槽的连接方式。插槽 5 和 6 直连到 LGA1200 插座上的 CPU，而插槽 4 连接到[平台控制器集线器](https://en.wikipedia.org/wiki/Platform_Controller_Hub)。根据你设备中的具体组件，这可能会决定哪些插槽能够使 SR-IOV 按预期工作。直到后续配置 FreeBSD 时，你才会知道哪个插槽适合，一般来说，尤其是对于较旧的主板，CPU 插槽是个可靠的选择。如果后续步骤中发现 SR-IOV 无法正常工作，可以尝试换成 PCIe 插槽。主板文档有时并不详尽，所以试验和错误有时是最快速的方式，能帮助你找出哪个插槽能正常工作。
+在第一张图中，我们看到 PCIe 插槽从左到右编号为 4、5 和 6。如果你仔细观察，会看到插槽 4 有前缀“PCH”，而 5 和 6 则有前缀“CPU”。第二张图则更详细地显示了这些插槽的连接方式。插槽 5 和 6 直连到 LGA1200 插座上的 CPU，而插槽 4 连接到 [平台控制器集线器](https://en.wikipedia.org/wiki/Platform_Controller_Hub)。根据你设备中的具体组件，这可能会决定哪些插槽能够使 SR-IOV 按预期工作。直到后续配置 FreeBSD 时，你才会知道哪个插槽适合，一般来说，尤其是对于较旧的主板，CPU 插槽是个可靠的选择。如果后续步骤中发现 SR-IOV 无法正常工作，可以尝试换成 PCIe 插槽。主板文档有时并不详尽，所以试验和错误有时是最快速的方式，能帮助你找出哪个插槽能正常工作。
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig5.jpg)
 
@@ -70,7 +70,7 @@ ixl0: PCI Express Bus: Speed 2.5GT/s Width x8
 ixl0: SR-IOV ready ixl0: netmap queues/slots: TX 4/1024, RX 4/1024
 ```
 
-在第三行，我们看到了一些 SR-IOV 的信息。“PF-ID[0]”与 ixl0 相关，并且这个 PF 能支持 64 个 VF。而在第十行，我们可以看到明确确认：这个 PCIe 设备已是“SR-IOV 就绪”（SR-IOV ready）。之所以名称是“ixl”，是因为这张网卡使用了 [ixl(4)](https://man.freebsd.org/cgi/man.cgi?query=ixl) Intel Ethernet 700 系列驱动。
+在第三行，我们看到了一些 SR-IOV 的信息。“PF-ID [0]”与 ixl0 相关，并且这个 PF 能支持 64 个 VF。而在第十行，我们可以看到明确确认：这个 PCIe 设备已是“SR-IOV 就绪”（SR-IOV ready）。之所以名称是“ixl”，是因为这张网卡使用了 [ixl(4)](https://man.freebsd.org/cgi/man.cgi?query=ixl) Intel Ethernet 700 系列驱动。
 
 除了检查硬件状态外，无需其他配置。某些网卡（比如前面提到的 Mellanox）需要你配置网卡的固件，而其他网卡（比如前面提到的 Chelsio）则需要在 `/boot/loader.conf` 中进行驱动配置。但 X710-DA2 并不需要这些配置，尽管你可能需要检查并更新卡的固件版本（如有必要）。
 
@@ -430,7 +430,7 @@ bhyve -c 1 -m 4G -AHP
 
 ### bhyve PCI 直通是在开发中的功能
 
-虽然在 Jail 中使用 VF 配合 vnet 非常稳定，但在 14.0-RELEASE 版本的 bhyve PCI 直通功能仍在开发中。仅使用 bhyve 配合直通功能表现良好。然而，我发现如果同时在使用 VF 和 Jail 时，某些硬件组合和设备数量可能会导致意外的行为。随着每次版本发布，都会有改进。如果你遇到极端情况，请务必[提交 bug](https://bugs.freebsd.org/)。
+虽然在 Jail 中使用 VF 配合 vnet 非常稳定，但在 14.0-RELEASE 版本的 bhyve PCI 直通功能仍在开发中。仅使用 bhyve 配合直通功能表现良好。然而，我发现如果同时在使用 VF 和 Jail 时，某些硬件组合和设备数量可能会导致意外的行为。随着每次版本发布，都会有改进。如果你遇到极端情况，请务必 [提交 bug](https://bugs.freebsd.org/)。
 
 ### FreeBSD SR-IOV 总结
 

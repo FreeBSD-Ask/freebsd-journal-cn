@@ -64,7 +64,7 @@ sysctl net.inet.tcp.functions_default=rack
 net.inet.tcp.functions_default=rack
 ```
 
-当通过 listener 创建 TCP 端点时，TCP 栈要么继承自 listener，要么基于默认的 TCP 栈，这取决于 `net.inet.tcp.functions_inherit_listen_socket_stack` 的值是非零还是`0`。该变量的默认值为 `1`。
+当通过 listener 创建 TCP 端点时，TCP 栈要么继承自 listener，要么基于默认的 TCP 栈，这取决于 `net.inet.tcp.functions_inherit_listen_socket_stack` 的值是非零还是 `0`。该变量的默认值为 `1`。
 
 也可以使用命令行工具 `tcpsso(8)` 来改变单个 TCP 连接的 TCP 栈，如该工具的手册页所述。
 

@@ -6,7 +6,7 @@ Mike 的愿景和奉献精神对塑造我们今天所知道并使用的 FreeBSD 
 
 我们向 Mike 的家人、朋友和所有认识他的人表示慰问。我们将深切怀念他。
 
-请参阅[其亲属准备的待办事项](https://www.gearty-delmore.com/obituaries/michael-mike-karels)，了解他不可思议的一生。
+请参阅 [其亲属准备的待办事项](https://www.gearty-delmore.com/obituaries/michael-mike-karels)，了解他不可思议的一生。
 
 无需送花，Mike 的亲属更倾向于将其捐给基金会，以资助日后的 FreeBSD 项目。
 

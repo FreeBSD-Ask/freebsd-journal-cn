@@ -14,7 +14,7 @@
 
 ## FreeBSD 项目标准
 
-FreeBSD 项目对 FreeBSD 系统的各方面均有详细的标准。这些标准在 [FreeBSD 开发者手册](https://docs.freebsd.org/en/books/developers-handbook/)和 [FreeBSD 提交者指南](https://docs.freebsd.org/en/articles/committers-guide/)中有所说明。代码规范在 FreeBSD 手册页中有所描述。根据惯例，手册页被分为多个部分。出于历史原因，所有风格手册页都在第 9 部分。对手册页的引用通常呈现为页面名称，后跟其部分编号在括号中，例如 style(9)、cat(1)。这些文档可以在所有的 FreeBSD 系统上使用 man 命令获取，亦可在线浏览。
+FreeBSD 项目对 FreeBSD 系统的各方面均有详细的标准。这些标准在 [FreeBSD 开发者手册](https://docs.freebsd.org/en/books/developers-handbook/) 和 [FreeBSD 提交者指南](https://docs.freebsd.org/en/articles/committers-guide/) 中有所说明。代码规范在 FreeBSD 手册页中有所描述。根据惯例，手册页被分为多个部分。出于历史原因，所有风格手册页都在第 9 部分。对手册页的引用通常呈现为页面名称，后跟其部分编号在括号中，例如 style(9)、cat(1)。这些文档可以在所有的 FreeBSD 系统上使用 man 命令获取，亦可在线浏览。
 
 FreeBSD 项目致力于创建文档齐全的集成系统，涉及控制机器的内核以及常见 Unix 工具于用户空间之实现。提交应写得清晰，且包含相关评论（comment）。当行为发生变化，应同步更新相关手册页。例如，当你向命令添加了参数时，也应同时将其添加到手册页上。当库中添加新功能时，应同事把这些功能添加新的 man 页。最后，FreeBSD 项目认为源代码控制系统中的元数据也是系统的一部分，因此提交信息也应符合 FreeBSD 项目的标准。
 
@@ -72,7 +72,7 @@ PR 应该以某种用户可见的方式上改进项目。
 
 ## 为接受 RP 做准备
 
-如果你还没有 GitHub 账户，请创建之。此[链接](https://github.com/join)将指导你完成创建新 GitHub 账户的过程。由于许多人已因其他原因而拥有 GitHub 账户，我们将跳过具体的详情讨论。
+如果你还没有 GitHub 账户，请创建之。此 [链接](https://github.com/join) 将指导你完成创建新 GitHub 账户的过程。由于许多人已因其他原因而拥有 GitHub 账户，我们将跳过具体的详情讨论。
 
 下一步是将 FreeBSD 的存储库 fork（复刻）到你的账户中。使用 GitHub 的网页是创建分支，进行解释的最简方法——因为此操作你仅需执行一次。对分支的更改不会干涉 FreeBSD 存储库。用户可以通过单击“Fork”按钮（如图 1 所示）来复刻存储库。你需要点击突出显示的菜单项“Create a new fork（创建新复刻）”。将打开类似于图 2 的界面。在这里，点击绿色的按钮“Create Fork（创建复刻）”。
 
@@ -124,7 +124,7 @@ PR 工作流通常需要一个分支。我们假设你已经按照类似以下�
 % git config –global user.email “pbell@example.com”
 ```
 
-此外，请阅读我们关于[提交日志信息](https://docs.freebsd.org/en/articles/committers-guide/#commit-log-message)的建议，并在创建提交时遵循它。
+此外，请阅读我们关于 [提交日志信息](https://docs.freebsd.org/en/articles/committers-guide/#commit-log-message) 的建议，并在创建提交时遵循它。
 
 大多数通过 PR 方式提交的更改都很小，所以我们将继续提交它们。但是，如果你有较大的更改，请在提交之前阅读下面的评估标准，以获得更顺畅的流程。
 
@@ -167,7 +167,7 @@ To github.com:user/freebsd-src.git
 
 ## 回复反馈
 
-若收到反馈，通常需要更改代码。请执行建议的更改。通常这意味着你将不得不编辑你的某些部分更改（无论是提交消息还是提交本身）。GitLab 有一个关于使用 git rebase 机制的好[教程](https://docs.gitlab.com/ee/topics/git/git_rebase.html)。
+若收到反馈，通常需要更改代码。请执行建议的更改。通常这意味着你将不得不编辑你的某些部分更改（无论是提交消息还是提交本身）。GitLab 有一个关于使用 git rebase 机制的好 [教程](https://docs.gitlab.com/ee/topics/git/git_rebase.html)。
 
 在你进行了更改以后，你将需要将更改推送回你的分支，以便 PR 更新并重新反馈：
 

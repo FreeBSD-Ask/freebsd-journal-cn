@@ -11,7 +11,7 @@
 
 ## FreeBSD 中的内存复制函数
 
-FreeBSD 包含两个主要函数，用于在地址空间之间复制内存：copyin() 和 copyout()（见**清单** 1）。这两个函数接受三个参数：源地址、目标地址和要复制的字节数。copyin() 将 len 字节从用户空间地址 udaddr 复制到内核空间地址 kaddr。copyout() 方向相反，将 len 字节从内核空间地址 kaddr 复制到用户空间地址 udaddr。这些函数在成功时返回 0，如果传递了无效地址，则返回 EFAULT。
+FreeBSD 包含两个主要函数，用于在地址空间之间复制内存：copyin() 和 copyout()（见 **清单** 1）。这两个函数接受三个参数：源地址、目标地址和要复制的字节数。copyin() 将 len 字节从用户空间地址 udaddr 复制到内核空间地址 kaddr。copyout() 方向相反，将 len 字节从内核空间地址 kaddr 复制到用户空间地址 udaddr。这些函数在成功时返回 0，如果传递了无效地址，则返回 EFAULT。
 
 ```c
 int copyin(const void * __restrict udaddr, void * _Nonnull __restrict kaddr, size_t len);
@@ -36,9 +36,9 @@ FreeBSD 支持多种 ABI。具体而言：
 
 ## 系统调用处理程序
 
-每当用户空间程序发出系统调用时，内核会调用一个特定的系统调用处理程序，并将已复制的系统调用参数传入。对于每个支持的 ABI，内核保持一个 sysentvec 结构对象（见**清单** 2），描述 ABI 特定的属性和在程序执行时内核将使用的函数。该结构包括包含系统调用处理程序函数指针的 sv_table 数组，这些指针存储在由相应的系统调用编号指定的位置，以及指向一个架构特定函数的 sv_fetch_syscall_args 函数指针，该函数用于复制系统调用参数。
+每当用户空间程序发出系统调用时，内核会调用一个特定的系统调用处理程序，并将已复制的系统调用参数传入。对于每个支持的 ABI，内核保持一个 sysentvec 结构对象（见 **清单** 2），描述 ABI 特定的属性和在程序执行时内核将使用的函数。该结构包括包含系统调用处理程序函数指针的 sv_table 数组，这些指针存储在由相应的系统调用编号指定的位置，以及指向一个架构特定函数的 sv_fetch_syscall_args 函数指针，该函数用于复制系统调用参数。
 
-作为示例，我们来考虑 jail(2) 系统调用。这个系统调用有一个参数：指向 jail 结构对象的指针（见**清单** 3）。jail 结构包含描述 jail 的参数（见**清单** 4）。一旦用户空间程序执行 jail 系统调用并进入特权模式，内核将调用 jail 系统调用处理程序——sys_jail() 函数（见**清单** 5），并将已经复制进来的 jail 系统调用参数——jail_args 结构对象传入。系统调用处理程序复制一个 jail 结构，并调用实现 jail 系统调用逻辑的 kern_jail 内核例程。
+作为示例，我们来考虑 jail(2) 系统调用。这个系统调用有一个参数：指向 jail 结构对象的指针（见 **清单** 3）。jail 结构包含描述 jail 的参数（见 **清单** 4）。一旦用户空间程序执行 jail 系统调用并进入特权模式，内核将调用 jail 系统调用处理程序——sys_jail() 函数（见 **清单** 5），并将已经复制进来的 jail 系统调用参数——jail_args 结构对象传入。系统调用处理程序复制一个 jail 结构，并调用实现 jail 系统调用逻辑的 kern_jail 内核例程。
 
 ```c
 struct sysentvec {
@@ -98,9 +98,9 @@ sys_jail(struct thread *td, struct jail_args *uap)
 
 ## 兼容层
 
-兼容层为非本地 ABI 提供系统调用实现。特别地，32 位 ABI 被实现为 freebsd32 兼容层。让我们考虑 32 位 ABI 下相同的 jail 系统调用。32 位版本的 jail 参数结构称为 freebsd32_jail_args（见**清单** 6），它包括指向 32 位版本的 jail 结构（称为 jail32，见**清单** 7）的指针。jail 和 jail32 结构之间的唯一区别是架构无关的字段类型。每个指针都被替换为 32 位无符号整数。由于指针在 32 位架构中是 32 位无符号整数，这一变化保证了为 64 位内核编译的 jail32 结构与为 32 位内核编译的 jail 结构具有相同的布局。
+兼容层为非本地 ABI 提供系统调用实现。特别地，32 位 ABI 被实现为 freebsd32 兼容层。让我们考虑 32 位 ABI 下相同的 jail 系统调用。32 位版本的 jail 参数结构称为 freebsd32_jail_args（见 **清单** 6），它包括指向 32 位版本的 jail 结构（称为 jail32，见 **清单** 7）的指针。jail 和 jail32 结构之间的唯一区别是架构无关的字段类型。每个指针都被替换为 32 位无符号整数。由于指针在 32 位架构中是 32 位无符号整数，这一变化保证了为 64 位内核编译的 jail32 结构与为 32 位内核编译的 jail 结构具有相同的布局。
 
-32 位 ABI 的 jail 系统调用处理程序实现为 freebsd32_jail 函数（见**清单** 8）。该函数复制一个 32 位的 jail 对象，使用宏（见**清单** 9）为其本地 ABI 版本翻译每个字段，并调用与本地 ABI 情况下相同的 kern_jail 内核例程。这意味着本地 ABI 和 32 位 ABI 在 jail 系统调用处理程序中的唯一区别是将用户空间的 jail 对象转换为可以被内核使用的本地 ABI 版本。
+32 位 ABI 的 jail 系统调用处理程序实现为 freebsd32_jail 函数（见 **清单** 8）。该函数复制一个 32 位的 jail 对象，使用宏（见 **清单** 9）为其本地 ABI 版本翻译每个字段，并调用与本地 ABI 情况下相同的 kern_jail 内核例程。这意味着本地 ABI 和 32 位 ABI 在 jail 系统调用处理程序中的唯一区别是将用户空间的 jail 对象转换为可以被内核使用的本地 ABI 版本。
 
 ```c
 struct freebsd32_jail_args {
@@ -170,7 +170,7 @@ freebsd32_jail(struct thread *td, struct freebsd32_jail_args *uap)
 
 前面描述的内核内存泄漏和代码重复问题是由于 copy 函数缺乏类型意识引起的。如果 copyin() 和 copyout() 函数能理解存储在复制缓冲区中的底层对象的结构，它们就能复制对象的字段并在用户进程 ABI 与内核 ABI 不同的情况下进行转换。
 
-为了解决这些问题，我们引入了 copyinout API。对于每个在用户空间和内核空间之间复制的类型 foo，我们引入了类型感知的 copy 函数变体（见**清单** 10），它们会复制类型 foo 的每个字段，并根据源 ABI 转换为目标 ABI，例如，将 32 位指针转换为 64 位指针，适用于 64 位架构上的 32 位进程。此外，copy 函数还可以根据 CPU 型号执行额外的操作，例如，针对 CHERI CPU 编译的内核可以创建 CHERI 能力来为字段设置边界或权限。与原始 copy 函数不同，类型感知的 copy 函数只需要两个参数：源地址和目标地址。copyin_foo() 将存储在 uaddr 用户空间地址的对象复制到存储在 kaddr 内核空间地址的对象。copyout_foo() 以相反的方式工作，将存储在 kaddr 内核空间地址的对象复制到存储在 uaddr 用户空间地址的对象。例如，前面描述的 jail 结构可以使用以下函数调用进行复制：
+为了解决这些问题，我们引入了 copyinout API。对于每个在用户空间和内核空间之间复制的类型 foo，我们引入了类型感知的 copy 函数变体（见 **清单** 10），它们会复制类型 foo 的每个字段，并根据源 ABI 转换为目标 ABI，例如，将 32 位指针转换为 64 位指针，适用于 64 位架构上的 32 位进程。此外，copy 函数还可以根据 CPU 型号执行额外的操作，例如，针对 CHERI CPU 编译的内核可以创建 CHERI 能力来为字段设置边界或权限。与原始 copy 函数不同，类型感知的 copy 函数只需要两个参数：源地址和目标地址。copyin_foo() 将存储在 uaddr 用户空间地址的对象复制到存储在 kaddr 内核空间地址的对象。copyout_foo() 以相反的方式工作，将存储在 kaddr 内核空间地址的对象复制到存储在 uaddr 用户空间地址的对象。例如，前面描述的 jail 结构可以使用以下函数调用进行复制：
 
 ```c
 copyin_jail(uap->jail, &j);
@@ -207,7 +207,7 @@ int copyout_foo(const struct foo *kaddr, const void *uaddr);
 - `__uaddr_unbounded` 用于存储指向具有未知字节数的缓冲区的指针的字段；
 - `__uaddr_str` 用于存储指向字符串的指针的字段，因此可以通过 `strlen()` 来计算其边界。
 
-字段注解可以用于生成利用安全相关机制的 copy 函数，例如构建 CHERI 能力。通过集成 copyinout 框架，内核开发者只需为**清单** 11 中定义的类型 foo 添加适当的注解并运行代码生成工具，就可以生成新的 copy 函数。在这种情况下，生成的 copy 函数复制字段 `len` 并翻译存储在指针数组中的指针。此外，在 CheriBSD 中，它们构建了带有边界的能力数组，边界值设置为存储在字段 `len` 中的值，作为字段翻译的一部分。
+字段注解可以用于生成利用安全相关机制的 copy 函数，例如构建 CHERI 能力。通过集成 copyinout 框架，内核开发者只需为 **清单** 11 中定义的类型 foo 添加适当的注解并运行代码生成工具，就可以生成新的 copy 函数。在这种情况下，生成的 copy 函数复制字段 `len` 并翻译存储在指针数组中的指针。此外，在 CheriBSD 中，它们构建了带有边界的能力数组，边界值设置为存储在字段 `len` 中的值，作为字段翻译的一部分。
 
 ```c
 struct foo {
@@ -225,7 +225,7 @@ __uaddr_array(len) int * __capability array;
 
 **清单** 11. 类型 foo 在 copyinout 变更前后的定义。
 
-为了为不同的 ABIs 提供单独的 copy 函数，copyinout 框架实现了 copyinout 表，该表包含特定类型的 copyin() 和 copyout() 函数指针（见**清单** 12），作为 sysentvec 结构的一部分（见**清单** 13，与**清单** 2 对比）。每个 ABI 分配自己的 copyinout 表，并通过 SYSINIT 框架使用 Linker Set 技术动态填充条目 [10]。这些 ABIs 的 SYSINIT() 和 SYSUNINIT() 宏调用与生成的 copy 函数一起由代码生成工具生成。这允许生成用于内核模块中的 copy 函数，并在模块加载和卸载时注册和注销。通过 copyinout 表，copyinout API 可以定义为内核中的宏，这些宏会强制转换指针并调用与当前正在运行的线程 ABI 对应的 copyinout 表中的函数（见**清单** 14）。特定函数的 copyinout 表条目索引是一个全局变量，在 SYSINIT() 调用过程中初始化。例如，类型 foo 及其生成的函数具有一个关联变量 `copyinout_foo_idx`，该变量可以通过 `COPYIN_CALL()` 和 `COPYOUT_CALL()` 宏间接使用，以确定函数地址并进行函数调用（见**清单** 15）
+为了为不同的 ABIs 提供单独的 copy 函数，copyinout 框架实现了 copyinout 表，该表包含特定类型的 copyin() 和 copyout() 函数指针（见 **清单** 12），作为 sysentvec 结构的一部分（见 **清单** 13，与 **清单** 2 对比）。每个 ABI 分配自己的 copyinout 表，并通过 SYSINIT 框架使用 Linker Set 技术动态填充条目 [10]。这些 ABIs 的 SYSINIT() 和 SYSUNINIT() 宏调用与生成的 copy 函数一起由代码生成工具生成。这允许生成用于内核模块中的 copy 函数，并在模块加载和卸载时注册和注销。通过 copyinout 表，copyinout API 可以定义为内核中的宏，这些宏会强制转换指针并调用与当前正在运行的线程 ABI 对应的 copyinout 表中的函数（见 **清单** 14）。特定函数的 copyinout 表条目索引是一个全局变量，在 SYSINIT() 调用过程中初始化。例如，类型 foo 及其生成的函数具有一个关联变量 `copyinout_foo_idx`，该变量可以通过 `COPYIN_CALL()` 和 `COPYOUT_CALL()` 宏间接使用，以确定函数地址并进行函数调用（见 **清单** 15）
 
 ```c
 typedef int copyin_t(const void * __capability uaddr, void * __capability kaddr);
@@ -279,7 +279,7 @@ struct sysentvec {
 
 **清单** 15. 类型 foo 的 copyinout API 函数调用宏。
 
-copyinout 框架的主要部分是一个用 C++ 编写的代码生成工具，使用 libclang 库进行代码分析。它遍历包含所有应生成 copy 函数的类型定义的头文件输入 Clang AST 树，并打印 copy 函数的原型、定义或实现（见**清单** 16）。AST 树可以通过以下命令生成：
+copyinout 框架的主要部分是一个用 C++ 编写的代码生成工具，使用 libclang 库进行代码分析。它遍历包含所有应生成 copy 函数的类型定义的头文件输入 Clang AST 树，并打印 copy 函数的原型、定义或实现（见 **清单** 16）。AST 树可以通过以下命令生成：
 
 ```sh
 clang -Xclang -ast-dump -fsyntax-only -c header-file
@@ -287,7 +287,7 @@ clang -Xclang -ast-dump -fsyntax-only -c header-file
 
 copyinout 框架包含一个辅助脚本，该脚本为输入的基础源代码树生成 AST 树，运行 copyinout 工具，并将生成的函数放入基础源代码树中。这个脚本可以被添加到 FreeBSD 构建系统中，以实现代码生成的自动化。
 
-目前，函数实现可以为任何架构（通用）生成 C 语言代码，或者为 MIPS 和 CHERI-MIPS 架构生成汇编语言代码。例如，**清单** 17 展示了由 copyinout 工具为类型 foo（见**清单** 11）和原生 ABI（一个混合的 CheriBSD 内核）生成的汇编语言版本的 copyin() 函数。
+目前，函数实现可以为任何架构（通用）生成 C 语言代码，或者为 MIPS 和 CHERI-MIPS 架构生成汇编语言代码。例如，**清单** 17 展示了由 copyinout 工具为类型 foo（见 **清单** 11）和原生 ABI（一个混合的 CheriBSD 内核）生成的汇编语言版本的 copyin() 函数。
 
 ```sh
 $ ./copyinout

@@ -43,7 +43,7 @@ CHERI 保护内存访问的方式，类似于 Capsicum 保护文件系统访问�
 
 最早期的 CHERI 操作系统是一款很小的微内核，但绝大多数工作都是在 FreeBSD 上完成的。CheriABI（面向 FreeBSD 的 CHERI 用户态 ABI）在 FreeBSD 的一个友好分支（[CheriBSD](https://cheribsd.org/)）上展示了一项完全内存安全的用户态与内核，该分支的目标是在 16.x 发布前将这些变更上游合入。CHERI 基础架构目前正作为 RISC-V 的一部分进行标准化，而 FreeBSD 16 预计将对所有即将推出、实现该指令集的应用级 CHERI 内核提供一等公民级支持。
 
-FreeBSD 对 CHERI 项目至关重要。CHERI 是一项长期的软硬件协同设计项目，需要同时修改栈中的硬件与软件部分，以探索各种理念在何处、如何实现最佳。这要求一款便于修改的生产级操作系统。FreeBSD 清晰的结构和定义良好的抽象使这一切变得容易。我们后来在把 Linux 运行在 CHERI 上的工作中看到，相比之下，适配 FreeBSD 的工作量低得多；如果一开始就以 Linux 为目标，项目大概没有足够的软件工程师来完成同样的事情。其宽松许可也便于向其他操作系统的厂商展示各类硬件特性的使用方式。FreeBSD 还是 LLVM 的早期采用者，在易于修改性和许可方面同样具有优势。使用经过修改的 LLVM 编译整个 FreeBSD 基本系统非常容易，从而让测试新的 CPU 特性变得轻而易举。Brooks Davis 在 2023 年 5/6 月的 FreeBSD 期刊上撰写了一篇更长的[文章](https://freebsdfoundation.org/wp-content/uploads/2023/06/davis_cambridge.pdf)，介绍了 FreeBSD 对 CHERI 研究的益处。
+FreeBSD 对 CHERI 项目至关重要。CHERI 是一项长期的软硬件协同设计项目，需要同时修改栈中的硬件与软件部分，以探索各种理念在何处、如何实现最佳。这要求一款便于修改的生产级操作系统。FreeBSD 清晰的结构和定义良好的抽象使这一切变得容易。我们后来在把 Linux 运行在 CHERI 上的工作中看到，相比之下，适配 FreeBSD 的工作量低得多；如果一开始就以 Linux 为目标，项目大概没有足够的软件工程师来完成同样的事情。其宽松许可也便于向其他操作系统的厂商展示各类硬件特性的使用方式。FreeBSD 还是 LLVM 的早期采用者，在易于修改性和许可方面同样具有优势。使用经过修改的 LLVM 编译整个 FreeBSD 基本系统非常容易，从而让测试新的 CPU 特性变得轻而易举。Brooks Davis 在 2023 年 5/6 月的 FreeBSD 期刊上撰写了一篇更长的 [文章](https://freebsdfoundation.org/wp-content/uploads/2023/06/davis_cambridge.pdf)，介绍了 FreeBSD 对 CHERI 研究的益处。
 
 
 ## 缩减 CHERI

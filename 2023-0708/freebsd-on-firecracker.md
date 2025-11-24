@@ -102,7 +102,7 @@ FreeBSD 在 Firecracker 下引导——并且非常迅速地完成。包括未�
 
 更具雄心的是，如果 Firecracker 能够被移植到运行在 FreeBSD 上，那将是很棒的事情——在某种程度上，虚拟机就是虚拟机，虽然 Firecracker 是为了使用 Linux KVM 而编写的，但没有根本性的理由阻止它使用 FreeBSD 的 bhyve 虚拟化器的内核部分。
 
-任何想要在 Firecracker 中尝试 FreeBSD 的人都可以使用 amd64 FIRECRACKER 内核配置构建 FreeBSD 14.0 内核，并从 Firecracker 项目中 checkout [feature/pvh](https://github.com/firecracker-microvm/firecracker/tree/feature/pvh) 分支；或者如果该分支不存在，这意味着代码已合并到[Firecracker main 中](https://github.com/firecracker-microvm/firecracker)。
+任何想要在 Firecracker 中尝试 FreeBSD 的人都可以使用 amd64 FIRECRACKER 内核配置构建 FreeBSD 14.0 内核，并从 Firecracker 项目中 checkout [feature/pvh](https://github.com/firecracker-microvm/firecracker/tree/feature/pvh) 分支；或者如果该分支不存在，这意味着代码已合并到 [Firecracker main 中](https://github.com/firecracker-microvm/firecracker)。
 
 如果你在 Firecracker 上尝试 FreeBSD——尤其是如果你最终在生产环境中使用它。请告诉我！我开始这个项目主要是出于兴趣，但如果它最终变得有用，我会很高兴听到这件事的。
 

@@ -89,7 +89,7 @@ desktop$ rsync -azO --del --no-o --no-g ~/work/ws/dev root@builder:/ws/src/
 builder# kldload -n filemon
 builder# sysrc kld_list+=”filemon”
 
-builder# mkdir -p $WSDIR/src $WSDIR/obj $WSDIR/sysroot
+builder# mkdir -p $WSDIR/src $ WSDIR/obj $WSDIR/sysroot
 builder# mkdir -p /ws/src /ws/obj /ws/sysroot
 
 builder# cat $WSDIR/src/src-env.conf

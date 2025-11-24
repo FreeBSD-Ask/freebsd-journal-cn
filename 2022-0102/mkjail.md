@@ -19,7 +19,7 @@ mkjail 使用一个小的配置文件来描述将要创建的 jail 的 zfs 数�
 
 mkjail 在更新和升级 jail 时表现出色，将这些操作转化为单个命令。因为 mkjail 只运行胖 jail，所以在执行更新和升级时，不会出现与精简 jail 相关的管理问题。
 
-mkjail[1] 最初由 Mark Felder 开发，由 BSDCan 的 Dan Lagille 上传到 GitHub，并得到了 Andrew Fyfe 的贡献。该项目在 GitHub 上进行开发（https://github.com/mkjail/mkjail），并且仍然非常年轻——源代码树导入到 GitHub 可以追溯到 2021 年中。
+mkjail [1] 最初由 Mark Felder 开发，由 BSDCan 的 Dan Lagille 上传到 GitHub，并得到了 Andrew Fyfe 的贡献。该项目在 GitHub 上进行开发（https://github.com/mkjail/mkjail），并且仍然非常年轻——源代码树导入到 GitHub 可以追溯到 2021 年中。
 
 mkjail 旨在成为一个小工具，用于增强和简化 jail 的创建、更新和升级。它是通过几个小型 shell 脚本编写的，足够小，可以集成到 FreeBSD 的基本系统中。
 

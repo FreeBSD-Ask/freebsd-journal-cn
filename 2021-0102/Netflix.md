@@ -43,7 +43,7 @@ Netflix 于 2011 年启动了 Open Connect 项目，以应对 Netflix 流媒体�
 
 Netflix 有一个开放对等互联政策，这意味着它们会与任何同意计划条款的 ISP（互联网服务提供商）进行对等互联。开放对等互联通过本地化流量来改善互联网用户体验。它还具有降低传输成本的优势，对 Netflix、ISP 以及整个互联网都有益。
 
-除了在 Netflix 数据中心和互联网交换点（IXP）安装 OCAs，Netflix 还免费提供 OCA 给符合条件的 ISP，让其直接在 ISP 的网络中安装。这进一步提高了本地化程度，并减少了上游流量¹。有趣的是，这些 OCA 虽然由 Netflix 拥有，但由 ISP 使用，这引发了一些许可方面的考量，最初促使 Open Connect 工程师选择 FreeBSD，因为其宽松的许可证²。
+除了在 Netflix 数据中心和互联网交换点（IXP）安装 OCAs，Netflix 还免费提供 OCA 给符合条件的 ISP，让其直接在 ISP 的网络中安装。这进一步提高了本地化程度，并减少了上游流量 ¹。有趣的是，这些 OCA 虽然由 Netflix 拥有，但由 ISP 使用，这引发了一些许可方面的考量，最初促使 Open Connect 工程师选择 FreeBSD，因为其宽松的许可证 ²。
 
 1 详情请见 <https://openconnect.netflix.com/Open-Connect-Overview.pdf>。  
 2 <https://www.nginx.com/blog/why-netflix-chose-nginx-as-the-heart-of-its-cdn/>  

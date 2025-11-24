@@ -33,7 +33,7 @@
 
 当然，你也可以自己构建硬件，并很容易通过 FPGA 引脚连接。我很好奇，如果你能自己设计，你会做什么？
 
-还有一个我原本打算研究但没提到的方向：在 FreeBSD 上运行 Vivado。如果你看过我的一些代码仓库，可能会注意到 FreeBSD 下运行 Vivado 有一些实验性支持。不过看来有人已经先我一步了：Michał Kruszewski 写了一篇详细的[博文](https://m-kru.github.io/posts/freebsd-vivado-chroot/freebsd-vivado-chroot.html)。对我来说，这已经够用了，我能在 FreeBSD 上构建和模拟电路。但还不行的是直接从 FreeBSD 主机加载比特流，以及使用 Vivado Logic Analyzer。这两点在我的 bhyve Linux 实例里也不行，不过也许等 FreeBSD 15.0 发布时，我会尝试直通实验。
+还有一个我原本打算研究但没提到的方向：在 FreeBSD 上运行 Vivado。如果你看过我的一些代码仓库，可能会注意到 FreeBSD 下运行 Vivado 有一些实验性支持。不过看来有人已经先我一步了：Michał Kruszewski 写了一篇详细的 [博文](https://m-kru.github.io/posts/freebsd-vivado-chroot/freebsd-vivado-chroot.html)。对我来说，这已经够用了，我能在 FreeBSD 上构建和模拟电路。但还不行的是直接从 FreeBSD 主机加载比特流，以及使用 Vivado Logic Analyzer。这两点在我的 bhyve Linux 实例里也不行，不过也许等 FreeBSD 15.0 发布时，我会尝试直通实验。
 
 希望你觉得这些专栏有用。我很欢迎你的意见或反馈。你可以通过 [articles@ChrisBowman.com](mailto:articles@ChrisBowman.com) 联系我。
 

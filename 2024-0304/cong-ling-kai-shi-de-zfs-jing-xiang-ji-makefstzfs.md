@@ -124,9 +124,9 @@ $ sudo bhyveload -c stdio -d zfs.img test
 vdev_uberblock_load(vdev, spa->spa_uberblock);
 ```
 
-ZFS 磁盘规范的第 1 章详细说明了 `vdev` 标签和 uberblock。简而言之，`vdev` 包含一个元数据块，即 `vdev` 标签，标签中包含说明 `vdev` 所属池的元数据，以及多个“uberblock”副本，uberblock 指向 `vdev` 元数据树的根。因此，为了让 `userboot.so` 找到我的池，我编写了[代码](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/zfs/vdev.c?h=release/14.0.0#n163)，将 `vdev` 标签添加到输出的镜像文件中。
+ZFS 磁盘规范的第 1 章详细说明了 `vdev` 标签和 uberblock。简而言之，`vdev` 包含一个元数据块，即 `vdev` 标签，标签中包含说明 `vdev` 所属池的元数据，以及多个“uberblock”副本，uberblock 指向 `vdev` 元数据树的根。因此，为了让 `userboot.so` 找到我的池，我编写了 [代码](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/zfs/vdev.c?h=release/14.0.0#n163)，将 `vdev` 标签添加到输出的镜像文件中。
 
-此时，`makefs` 已经开始使用 ZFS 特定的数据结构，如 `vdev_label_t` 和 `uberblock_t`。为了避免重复引导加载程序中使用的定义，`makefs` 与其共享了一个[大型头文件](https://cgit.freebsd.org/src/tree/sys/cddl/boot/zfs/zfsimpl.h?h=release/14.0.0#n947)，其中包含许多有用的磁盘数据结构定义。
+此时，`makefs` 已经开始使用 ZFS 特定的数据结构，如 `vdev_label_t` 和 `uberblock_t`。为了避免重复引导加载程序中使用的定义，`makefs` 与其共享了一个 [大型头文件](https://cgit.freebsd.org/src/tree/sys/cddl/boot/zfs/zfsimpl.h?h=release/14.0.0#n947)，其中包含许多有用的磁盘数据结构定义。
 
 ## 对象集与 MOS
 
@@ -152,17 +152,17 @@ MOS（元对象集）是池的根对象集。uberblock 包含指向 MOS 的指�
 
 ZFS 数据集有名称，并且组织成树形结构。根数据集的名称通常与池的名称相同（例如，“zroot”），子数据集的名称则以父数据集的名称为前缀。虽然我为 `makefs` 编写的 ZFS 支持的初始原型将所有文件自动放在根数据集中，但这不足以创建根文件系统位于 ZFS 上的虚拟机镜像：`bsdinstall` 和其他 FreeBSD 安装程序会自动创建多个子数据集。比如，`zroot/var` 这样的数据集不会被挂载，只是存在用来提供设置，供子数据集继承，如 `zroot/var/log`。我的目标是让 `makefs` 能够创建一个数据集树，符合 `bsdinstall` 提供的布局。
 
-发布镜像构建脚本[演示](https://cgit.freebsd.org/src/tree/release/tools/vmimage.subr?h=release/14.0.0#n190)了如何创建多个数据集的语法。每个数据集由一个参数 `-o fs` 描述，该参数包含数据集名称和一个以分号分隔的属性列表。如 `zfsprops(8)` 手册页中所述，目前只支持少量属性。
+发布镜像构建脚本 [演示](https://cgit.freebsd.org/src/tree/release/tools/vmimage.subr?h=release/14.0.0#n190) 了如何创建多个数据集的语法。每个数据集由一个参数 `-o fs` 描述，该参数包含数据集名称和一个以分号分隔的属性列表。如 `zfsprops(8)` 手册页中所述，目前只支持少量属性。
 
-当 `makefs -t zfs` 初始化各种结构后，它会开始[处理](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/zfs/fs.c?h=release/14.0.0#n1048)输入的目录树。每个输入文件由一个 `fsnode` 结构表示，这些结构被组织成一个表示文件树的树形结构。首先，`makefs` 确定哪个 `fsnode` 对应于每个挂载的数据集的根。然后，它遍历 `fsnode` 树，为每个文件分配一个 dnode；这发生在数据集的上下文中，数据集决定了从哪个对象集中分配 dnode。
+当 `makefs -t zfs` 初始化各种结构后，它会开始 [处理](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/zfs/fs.c?h=release/14.0.0#n1048) 输入的目录树。每个输入文件由一个 `fsnode` 结构表示，这些结构被组织成一个表示文件树的树形结构。首先，`makefs` 确定哪个 `fsnode` 对应于每个挂载的数据集的根。然后，它遍历 `fsnode` 树，为每个文件分配一个 dnode；这发生在数据集的上下文中，数据集决定了从哪个对象集中分配 dnode。
 
-要[复制常规文件](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/zfs/fs.c?h=release/14.0.0#n548)，`makefs` 从当前对象集中分配一个 dnode，并通过一个循环从输出文件中分配空间块，并将输入文件的数据复制到这些分配的块中。ZFS 支持从 4KB 到 128KB 的 2 的幂大小的块，因此较小的文件不会造成过多的内部碎片。所有在镜像中分配的块都通过位图进行追踪，位图由 [vdev_space_alloc()](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/zfs/vdev.c?h=release/14.0.0#n235) 函数更新。
+要 [复制常规文件](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/zfs/fs.c?h=release/14.0.0#n548)，`makefs` 从当前对象集中分配一个 dnode，并通过一个循环从输出文件中分配空间块，并将输入文件的数据复制到这些分配的块中。ZFS 支持从 4KB 到 128KB 的 2 的幂大小的块，因此较小的文件不会造成过多的内部碎片。所有在镜像中分配的块都通过位图进行追踪，位图由 [vdev_space_alloc()](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/zfs/vdev.c?h=release/14.0.0#n235) 函数更新。
 
 位图追踪的已分配空间必须记录在输出镜像中；ZFS 使用一个中央数据结构——“空间映射”来追踪 vdev 中当前已分配的区域。`makefs` 使用位图作为所有块分配的内部表示，并用它来生成空间映射，这是生成镜像的最后步骤之一，待所有块分配完成。
 
 ## 结论
 
-为 `makefs` 添加 ZFS 支持花费了相当多的精力，但最终实现了一个我认为对许多 FreeBSD 用户有用的功能，同时避免了大量的维护负担。`makefs` 中约有 2600 行与 ZFS 相关的代码（总共有 15,000 行），这相对较少。还有一个[回归测试套件](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/tests/makefs_zfs_tests.sh?h=release/14.0.0)，提供了相当充分的测试覆盖。
+为 `makefs` 添加 ZFS 支持花费了相当多的精力，但最终实现了一个我认为对许多 FreeBSD 用户有用的功能，同时避免了大量的维护负担。`makefs` 中约有 2600 行与 ZFS 相关的代码（总共有 15,000 行），这相对较少。还有一个 [回归测试套件](https://cgit.freebsd.org/src/tree/usr.sbin/makefs/tests/makefs_zfs_tests.sh?h=release/14.0.0)，提供了相当充分的测试覆盖。
 
 在这 2600 行中，有 100 多行是 `assert()` 调用，用于验证不变性。在开发过程中，这些断言非常有用，因为很多代码是以不完整的方式编写的，最初仅为了让引导加载程序工作，后来才逐步完善；这些断言帮助文档化了各种函数的限制，并帮助我在添加更多功能时捕捉了许多错误。
 

@@ -9,9 +9,9 @@
 
 [AppJail Director](https://github.com/DtxdF/director) 是一款基于 AppJail 的多 jail 环境管理工具，使用简单的 YAML 配置文件定义如何配置组成应用程序的一个或多个 jail。有了 Director 文件，你只需一条命令 **appjail-director up** 即可创建并启动你的应用程序。
 
-Director 是 AppJail "一切皆代码"理念的首次实践。它将 jail 组织成项目，让你以声明式方式创建含有一个或多个 jail 的项目；当你修改了该配置文件或相关文件（例如 Makejail 文件），Director 会检测到变更，并毫不犹豫地销毁并重新创建 jail。听起来有点激进，但用 *The Ephemeral Concept*（流变的概念）来解释最为恰当：
+Director 是 AppJail "一切皆代码" 理念的首次实践。它将 jail 组织成项目，让你以声明式方式创建含有一个或多个 jail 的项目；当你修改了该配置文件或相关文件（例如 Makejail 文件），Director 会检测到变更，并毫不犹豫地销毁并重新创建 jail。听起来有点激进，但用 *The Ephemeral Concept*（流变的概念）来解释最为恰当：
 
-Director 将每个 jail 视为"流变"的。这并不意味着 jail 停止或系统重启后数据会丢失，而是意味着 Director 认为销毁 jail 是安全的，因为你已经明确区分了应持久保存的数据和被视为流变的数据。
+Director 将每个 jail 视为 "流变" 的。这并不意味着 jail 停止或系统重启后数据会丢失，而是意味着 Director 认为销毁 jail 是安全的，因为你已经明确区分了应持久保存的数据和被视为流变的数据。
 
 更多细节见 **appjail-ephemeral(7)** 手册页，原则和上述相同。
 
@@ -21,7 +21,7 @@ AppJail 和 Director 极大简化了我的工作，但有一个问题二者都�
 
 [Overlord](https://github.com/DtxdF/overlord) 是一个面向 GitOps 的快速分布式 FreeBSD jail 编排器。你只需定义一个文件说明集群上运行的服务，部署就能在几秒到几分钟内完成。
 
-幸好 Overlord 诞生时，AppJail 和 Director 已经相当成熟，重用这两个经过充分测试的工具并与 Overlord 结合，是个明智的选择。继承 Director "一切皆代码"的哲学，使得 Overlord 易于使用。另一个设计决策是 Overlord 采用全异步架构。大型服务的部署可能耗时较长，但即使部署很快，声明式发送指令并让 Overlord 处理工作也是更优的体验。本文后续会详细介绍上述内容的诸多细节。
+幸好 Overlord 诞生时，AppJail 和 Director 已经相当成熟，重用这两个经过充分测试的工具并与 Overlord 结合，是个明智的选择。继承 Director "一切皆代码" 的哲学，使得 Overlord 易于使用。另一个设计决策是 Overlord 采用全异步架构。大型服务的部署可能耗时较长，但即使部署很快，声明式发送指令并让 Overlord 处理工作也是更优的体验。本文后续会详细介绍上述内容的诸多细节。
 
 ## 架构
 
@@ -32,7 +32,7 @@ Overlord 架构被描述为一种树形链式架构。每个运行 API 服务器
 该架构同时抽象了项目的部署方式。想要部署项目的用户无需了解每个链的具体终端节点，只需知道第一个链（也称根链，root chain）即可。这是因为每条链都会被标记一个任意的字符串标签，用户只需在部署文件中指定根链的终端地址、访问令牌和标签即可。虽然标签本质上是主观的，但它们可以表达需求。例如，我们可以用字符串 vm-only 标记那些具备部署虚拟机能力的服务器，用 db-only 标记数据库服务器，实际上标签是完全任意的。
 
 
-<img width="535" height="125" alt="Y__T6KJ`DC9R @T5A89{9ON" src="https://github.com/user-attachments/assets/ccbf707e-3e4c-4ed5-a076-daa22943b3e4" />
+<img width="535" height="125" alt=" Y__T6KJ`DC9R @T5A89{9ON " src=" https://github.com/user-attachments/assets/ccbf707e-3e4c-4ed5-a076-daa22943b3e4 " />
 
 
 假设只有 charlie 和 delta 拥有 **db-only** 标签。要将项目部署到带有指定标签的 API 服务器，客户端必须向 main 发起 HTTP 请求，指定链为 **alpha.charlie** 和 **alpha.charlie.delta**。这个过程是透明进行的，无需用户干预。
@@ -271,7 +271,7 @@ projects:
 
 Overlord 能够借助出色的 [vm-bhyve](https://github.com/churchers/vm-bhyve) 项目部署虚拟机。虚拟机可以隔离很多 jail 无法做到的部分，尽管这样会带来一定的开销，但根据你的使用场景，这种开销可能并不是问题。
 
-这个部署过程如下：会创建一个 director 文件（由 Overlord 内部完成），该文件用于进一步创建一个 jail，代表一个必须安装了 [vm-bhyve](https://github.com/churchers/vm-bhyve) 的环境，且需要配置使用 FreeBSD 支持的防火墙，以及配置虚拟机使用的桥接网络。听起来很复杂，但有一个 [Makejail](https://github.com/DtxdF/vm-makejail) 专门完成这些工作，可以查看该项目了解细节。上述 Makejail 会创建一个安装了 [vm-bhyve-devel](https://freshports.org/sysutils/vm-bhyve-devel) 的环境，配置 pf(4) 防火墙，并创建一个带有分配的 IPv4（192.168.8.1/24）的桥接，因此我们必须给虚拟机分配一个该网段内的 IPv4 地址。pf(4) 并未配置进一步隔离连接，因此虚拟机内的应用程序可以"逃逸"访问其他服务，这是否理想取决于应用的具体需求。
+这个部署过程如下：会创建一个 director 文件（由 Overlord 内部完成），该文件用于进一步创建一个 jail，代表一个必须安装了 [vm-bhyve](https://github.com/churchers/vm-bhyve) 的环境，且需要配置使用 FreeBSD 支持的防火墙，以及配置虚拟机使用的桥接网络。听起来很复杂，但有一个 [Makejail](https://github.com/DtxdF/vm-makejail) 专门完成这些工作，可以查看该项目了解细节。上述 Makejail 会创建一个安装了 [vm-bhyve-devel](https://freshports.org/sysutils/vm-bhyve-devel) 的环境，配置 pf(4) 防火墙，并创建一个带有分配的 IPv4（192.168.8.1/24）的桥接，因此我们必须给虚拟机分配一个该网段内的 IPv4 地址。pf(4) 并未配置进一步隔离连接，因此虚拟机内的应用程序可以 "逃逸" 访问其他服务，这是否理想取决于应用的具体需求。
 
 vm.yml:
 
@@ -654,6 +654,7 @@ This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '100.124.236.28' (ED25519) to the list of known hosts.
 root@vmtest:~ #
+
 ```
 
 ## 服务发现
@@ -1554,7 +1555,7 @@ UUID: e463b1d5-13eb-4f04-9b0a-caf4339a8058
 
 ## 横向自动扩展
 
-即使在拥有数百台服务器的情况下，部署项目也变得非常容易。然而，这种方式的问题在于资源的浪费，因为客户端很可能只使用了集群资源的不到 5%；或者相反，你可能将项目部署在少数几台你认为"够用"的服务器上，直到某一时刻你发现资源根本不够用，更糟糕的是，这些服务器还可能因各种原因随时宕机。这正是 Overlord 的自动扩展机制能够解决的问题。
+即使在拥有数百台服务器的情况下，部署项目也变得非常容易。然而，这种方式的问题在于资源的浪费，因为客户端很可能只使用了集群资源的不到 5%；或者相反，你可能将项目部署在少数几台你认为 "够用" 的服务器上，直到某一时刻你发现资源根本不够用，更糟糕的是，这些服务器还可能因各种原因随时宕机。这正是 Overlord 的自动扩展机制能够解决的问题。
 
 hello-http.yml:
 
@@ -2050,7 +2051,7 @@ datacenter: http://127.0.0.1:8888
 
 Overlord 能为你做的事情远不止本文件所展示的内容，更多示例请参见 [Wiki](https://github.com/DtxdF/overlord/wiki)。
 
-Overlord 是一个较新的项目，仍有很大的改进空间，未来也将加入更多功能以提升可用性。如果你愿意支持该项目，请[考虑捐款](https://www.patreon.com/AppJail)。
+Overlord 是一个较新的项目，仍有很大的改进空间，未来也将加入更多功能以提升可用性。如果你愿意支持该项目，请 [考虑捐款](https://www.patreon.com/AppJail)。
 
 ---
 

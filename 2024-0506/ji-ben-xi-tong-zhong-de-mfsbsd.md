@@ -6,7 +6,7 @@
 
 mfsBSD 是一款基于 FreeBSD 的内存操作系统。
 
-mfsBSD 的不同之处在于，它是完全运行于内存的 FreeBSD 实例——因此叫做 mfs（memory file system，内存文件系统）。所以，这意味着当我们在使用 mfsBSD 时，不会对现有的磁盘设备造成任何干扰。例如，我们可以将其用于本地服务器和云服务器的故障排除①。在邮件列表中搜索 mfsBSD，看看人们是如何解决各种问题的，实乃一大趣事。我个人最喜欢的应用场景是在仅有单个磁盘的设备中安装 FreeBSD，如果因某种原因无法使用 FreeBSD 安装介质，我就会：先制作 mfsBSD 镜像、将这个镜像安装到磁盘设备上、启动 mfsBSD、最后运行 bsdinstall。示例如下：
+mfsBSD 的不同之处在于，它是完全运行于内存的 FreeBSD 实例——因此叫做 mfs（memory file system，内存文件系统）。所以，这意味着当我们在使用 mfsBSD 时，不会对现有的磁盘设备造成任何干扰。例如，我们可以将其用于本地服务器和云服务器的故障排除 ①。在邮件列表中搜索 mfsBSD，看看人们是如何解决各种问题的，实乃一大趣事。我个人最喜欢的应用场景是在仅有单个磁盘的设备中安装 FreeBSD，如果因某种原因无法使用 FreeBSD 安装介质，我就会：先制作 mfsBSD 镜像、将这个镜像安装到磁盘设备上、启动 mfsBSD、最后运行 bsdinstall。示例如下：
 
  首先，构建 mfsBSD：
 
@@ -39,7 +39,7 @@ mfsBSD 能够把整个 FreeBSD 系统都加载到内存。加载完成后，就�
 
 ## mfsBSD 简史
 
-mfsBSD 的作者是 Martin Matuška（`mm@FreeBSD.org`）。回顾 mfsBSD 存储库的提交日志，他首次提交于 2007 年 11 月 11 日，大约是在 FreeBSD 7.0 BETA 的发布同期。“这个项目[mfsBSD]基于 Depenguinator 项目的想法”，Depenguinator 是 Colin Percival 在 2003 年创建的项目，旨在为仅提供 Linux 发行版的专用服务器远程安装 FreeBSD③。Matuška 想开发 FreeBSD 6.x Depenguinator 的功能实现，这就是 mfsBSD 的起源。
+mfsBSD 的作者是 Martin Matuška（`mm@FreeBSD.org`）。回顾 mfsBSD 存储库的提交日志，他首次提交于 2007 年 11 月 11 日，大约是在 FreeBSD 7.0 BETA 的发布同期。“这个项目 [mfsBSD] 基于 Depenguinator 项目的想法”，Depenguinator 是 Colin Percival 在 2003 年创建的项目，旨在为仅提供 Linux 发行版的专用服务器远程安装 FreeBSD③。Matuška 想开发 FreeBSD 6.x Depenguinator 的功能实现，这就是 mfsBSD 的起源。
 
 自此以降，Matuška 维护着 <https://mfsbsd.vx.sk/> ，用于分发 mfsBSD 的镜像。他已经在 GitHub④ 上维护了十七年的 mfsBSD，一路修复了无数 bug，并添加了对 zfsinstall、`/usr` tar 压缩包的支持等。在此期间，mfsBSD 知名度不断增长，
 

@@ -66,7 +66,7 @@ rpc.tlsservd 还有一个命令行选项，指定守护进程要求客户端 IP 
   - 向 rpc.tlsclntd 执行握手上行调用。为了处理握手，rpc.tlsclntd 中的操作为：  
     - 为 TCP 套接字获取文件描述符。此时 krpc 已经拥有客户端的 NFS 连接的 TCP 套接字，但没有该套接字的文件描述符引用。通过守护进程的自定义系统调用来完成这项操作，类似于 rpc.tlsservd。  
     - 调用 SSL_set_fd() 将套接字与 SSL 上下文关联。  
-    - 如果守护进程是使用 -m/--mutualverf 命令行选项启动的，则调用 SSL_[ctx_]use_certificate_file()/SSL_[ctx_]use_PrivateKey_file() 在握手期间提供证书。上行调用的参数可以覆盖证书/密钥文件的默认名称。默认名称为“cert.pem”和“certkey.pem”，但可以通过“tlscertname”挂载选项在每个挂载上进行覆盖，以防不同的 NFS 服务器需要不同的证书。  
+    - 如果守护进程是使用 -m/--mutualverf 命令行选项启动的，则调用 SSL_[ctx_] use_certificate_file()/SSL_[ctx_] use_PrivateKey_file() 在握手期间提供证书。上行调用的参数可以覆盖证书/密钥文件的默认名称。默认名称为“cert.pem”和“certkey.pem”，但可以通过“tlscertname”挂载选项在每个挂载上进行覆盖，以防不同的 NFS 服务器需要不同的证书。  
     - 调用 SSL_connect() 执行实际的握手。  
     - 如果握手成功，调用 BIO_get_ktls_send() 和 BIO_get_ktls_recv() 检查 KTLS 是否已在套接字上启用。如果其中任何一个返回零，则认为握手失败。如果握手成功：  
       - 向套接字文件描述符的链表中添加一个结构，使用唯一的 64 位引用号作为键。  
@@ -104,7 +104,7 @@ rpc.tlsservd 还有一个命令行选项，指定守护进程要求客户端 IP 
 
   ```sh
   # openssl genrsa -aes256 -out certkey.pem
-  # openssl req -new -key certkey.pem -addext "subjectAltName=otherName:1.3.6.1.4.1.2238.1.1.1;UTF8:rmacklem@uoguelph.ca" -out req.pem
+  # openssl req -new -key certkey.pem -addext "subjectAltName=otherName:1.3.6.1.4.1.2238.1.1.1; UTF8:rmacklem@uoguelph.ca" -out req.pem
   # openssl ca -in req.pem -out cert.pem
   ```
 
@@ -132,7 +132,7 @@ rpc.tlsservd 还有一个命令行选项，指定守护进程要求客户端 IP 
 - 待笔记本电脑连接到互联网，就可以以 su/root 身份执行挂载：
 
   ```sh
-  # mount -t nfs -o nfsv4,minorversion=1,tls nfsv4-server.uoguelph.ca:/ /mnt
+  # mount -t nfs -o nfsv4, minorversion=1, tls nfsv4-server.uoguelph.ca:/ /mnt
   ```
 
 由于客户端提供了由站点本地 CA 签名的证书，服务器可以合理地确认客户端拥有由站点本地 CA 管理员创建的证书。创建客户端私钥时使用的“-aes256”选项迫使 rpc.tlsclntd 在启动时询问输入密码短语。这可以防止笔记本电脑被盗或证书/密钥文件被复制到另一个客户端后轻易的泄露。如果证书要在未经授权的客户端上使用，必须通过某种方式捕获或破解密码短语。

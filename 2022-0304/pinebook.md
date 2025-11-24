@@ -9,7 +9,7 @@ Pinebook Pro 是一款基于 Rockchip rk3399 的 ARM64 笔记本电脑。由于�
 
 ## 支持的硬件
 
-- **图形堆栈**：通过 Ruslan Bukin 的 panfrost 驱动工作以及 Emmanuel Vadot 在 [drm 子树](https://github.com/evadot/drm-subtree/drm-subtree)中的相关工作，实现了硬件加速图形支持。  
+- **图形堆栈**：通过 Ruslan Bukin 的 panfrost 驱动工作以及 Emmanuel Vadot 在 [drm 子树](https://github.com/evadot/drm-subtree/drm-subtree) 中的相关工作，实现了硬件加速图形支持。  
 - **声音**：由 Alexander Tymoshenko 实现了录音和播放功能。  
 - **eMMC 和 SD 卡**：均得到全面支持。  
 - **SPI 闪存**：已能被检测到，但可能仍受到 bug [244146](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=244146) 的影响。  
@@ -46,7 +46,7 @@ NetBSD 注意到面板在软重启时会出现故障。他们提供了一个补�
 
 稍后我会介绍如何从源码安装，但你可以直接从 [GitHub](https://github.com/jsm222/drm-subtree/releases) 获取测试镜像，以及后面提到的修改后软件包。  
 
-如果你已经禁用了 eMMC，或者已为 Pinebook Pro 安装了补丁版 U-Boot（你可以在[这里](https://github.com/jsm222/u-boot-pinebookpro/releases/tag/0.1)找到），那么你就可以开始了。请注意，RELEASE(7) 默认创建了两个不安全的用户：`root`（密码：`root`）和 `freebsd`（密码：`freebsd`）。SSH 也是默认启用的。这样的默认设置适用于 ARM 开发板，但对于笔记本来说并不太合适。此外，别忘了将自己的用户添加到 `video` 组，否则图形堆栈将无法访问图形设备节点。  
+如果你已经禁用了 eMMC，或者已为 Pinebook Pro 安装了补丁版 U-Boot（你可以在 [这里](https://github.com/jsm222/u-boot-pinebookpro/releases/tag/0.1) 找到），那么你就可以开始了。请注意，RELEASE(7) 默认创建了两个不安全的用户：`root`（密码：`root`）和 `freebsd`（密码：`freebsd`）。SSH 也是默认启用的。这样的默认设置适用于 ARM 开发板，但对于笔记本来说并不太合适。此外，别忘了将自己的用户添加到 `video` 组，否则图形堆栈将无法访问图形设备节点。  
 
 
 
@@ -106,7 +106,7 @@ make DESTDIR=$ROOTFS install
 
 ## Port 和修改后的软件包  
 
-如前所述，我将 `sway`、`wlroots` 和 `hikari` 还原到了较早的版本。同时，我对 `libdrm` 进行了修改，以便通过此[补丁](https://gist.github.com/jsm222/7df208cc5a72918a70cfbef8ee15b51b)检测 `panfrost`。`Hikari` 还需要一个小补丁来修复其参数解析[问题](https://hub.darcs.net/raichoo/hikari/issue/20)。此外，`mesa-dri` 和 `mesa-libs` 也经过修改，以便编译 `panfrost` 驱动程序，并启用 `gles1` 和 `gles2`，即按照 Ruslan Bukin 在其文章中描述的方式进行编译。  
+如前所述，我将 `sway`、`wlroots` 和 `hikari` 还原到了较早的版本。同时，我对 `libdrm` 进行了修改，以便通过此 [补丁](https://gist.github.com/jsm222/7df208cc5a72918a70cfbef8ee15b51b) 检测 `panfrost`。`Hikari` 还需要一个小补丁来修复其参数解析 [问题](https://hub.darcs.net/raichoo/hikari/issue/20)。此外，`mesa-dri` 和 `mesa-libs` 也经过修改，以便编译 `panfrost` 驱动程序，并启用 `gles1` 和 `gles2`，即按照 Ruslan Bukin 在其文章中描述的方式进行编译。  
 
 这些软件包均已预编译，可直接下载。同时，如果你更倾向于从源码构建，我也提供了 `ports` 树的补丁。你可以利用 `pkg lock` 功能，防止 `pkg` 命令重新安装这些修改后的软件包。只需运行 `pkg lock`。在我的系统上，我锁定了以下软件包：
 

@@ -190,7 +190,7 @@ devfs rule showsets
 vim /etc/jail.conf
 ```
 
-在 配置块 `gateway`中添加以下行：  
+在 配置块 `gateway` 中添加以下行：  
 
 ```sh
 devfs_ruleset=666;

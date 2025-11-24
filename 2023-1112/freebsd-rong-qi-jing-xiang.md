@@ -3,7 +3,7 @@
 - 原文链接：[FreeBSD Container Images](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/freebsd-container-images/)
 - 作者：Doug Rabson
 
-OCI 容器引擎，比如 [containerd](https://containerd.io/) 和 [podman](https://podman.io/)，需要容器镜像。容器镜像是个只读目录树，通常包含一款应用程序及其支持文件和库。容器镜像在容器引擎上运行时，会创建该镜像的可写副本，并在某种隔离环境（如 jail）中执行该应用程序。通过注册中心分发容器镜像。注册中心存储镜像数据，提供了一个简单的 REST API 来访问镜像及其元数据。由[开放容器标准](https://opencontainers.org/)对注册中心的 API、镜像格式和元数据进行标准化，基本上取代了早期的 Docker 格式。
+OCI 容器引擎，比如 [containerd](https://containerd.io/) 和 [podman](https://podman.io/)，需要容器镜像。容器镜像是个只读目录树，通常包含一款应用程序及其支持文件和库。容器镜像在容器引擎上运行时，会创建该镜像的可写副本，并在某种隔离环境（如 jail）中执行该应用程序。通过注册中心分发容器镜像。注册中心存储镜像数据，提供了一个简单的 REST API 来访问镜像及其元数据。由 [开放容器标准](https://opencontainers.org/) 对注册中心的 API、镜像格式和元数据进行标准化，基本上取代了早期的 Docker 格式。
 
 ## OCI 镜像
 

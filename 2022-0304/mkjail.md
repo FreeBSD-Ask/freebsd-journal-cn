@@ -15,7 +15,7 @@ JT 近日公开表示 Lumina 需要更多开发者的帮助，以推动项目继
 
 ## 开放项目请求
 
-在 Lumina 官网的博客[https://lumina-desktop.org/post/2022-02-08/] 中，JT 发布了三个领域的帮助请求：
+在 Lumina 官网的博客 [https://lumina-desktop.org/post/2022-02-08/] 中，JT 发布了三个领域的帮助请求：
 
 - 将构建系统从 Qmake 转移到 Cmake
 - 重写 Lumina 文件管理器

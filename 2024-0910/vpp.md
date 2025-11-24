@@ -9,7 +9,7 @@ VPP 使得转发和路由应用程序可以在用户空间编写，并提供一�
 
 VPP 是一个完整的网络路由器替代方案，因此需要一些主机配置才能使用。本文展示了如何在 FreeBSD 上使用 VPP 的完整示例，大多数用户应该能够通过自己的虚拟机来跟随这些步骤。VPP 在 FreeBSD 上也可以运行在真实硬件上。
 
-本文将介绍如何在 FreeBSD 上使用 VPP，并给出设置示例，展示如何在 FreeBSD 上完成各种任务。VPP 的资源可能较难找到，项目的文档质量很高，可以访问[https://fd.io](https://fd.io/)获取。
+本文将介绍如何在 FreeBSD 上使用 VPP，并给出设置示例，展示如何在 FreeBSD 上完成各种任务。VPP 的资源可能较难找到，项目的文档质量很高，可以访问 [https://fd.io](https://fd.io/) 获取。
 
 ## 构建一个路由器
 
@@ -26,9 +26,9 @@ VPP 可以用于许多用途，其中最常见且最容易配置的是作为某�
 host # pkg install vpp iperf3
 ```
 
-为了为我们的网络创建三个节点，我们将利用 FreeBSD 最强大的功能之一——VNET jail。VNET jail 为我们提供了完全隔离的网络堆栈实例，它们的操作方式类似于 Linux 的网络命名空间（Network Namespaces）。为了创建一个 VNET，我们需要在创建 jail 时添加`vnet`选项，并传递它将使用的接口。
+为了为我们的网络创建三个节点，我们将利用 FreeBSD 最强大的功能之一——VNET jail。VNET jail 为我们提供了完全隔离的网络堆栈实例，它们的操作方式类似于 Linux 的网络命名空间（Network Namespaces）。为了创建一个 VNET，我们需要在创建 jail 时添加 `vnet` 选项，并传递它将使用的接口。
 
-最后，我们将使用`epair`接口连接我们的节点。`epair`接口提供了以太网电缆两端的功能——如果你熟悉 Linux 上的`veth`接口，它们提供了类似的功能。
+最后，我们将使用 `epair` 接口连接我们的节点。`epair` 接口提供了以太网电缆两端的功能——如果你熟悉 Linux 上的 `veth` 接口，它们提供了类似的功能。
 
 我们可以通过以下 5 个命令构建我们的测试网络：
 
@@ -42,7 +42,7 @@ epair1a
 # jail -c name=server persist vnet vnet.interface=epair1b
 ```
 
-在这些 jail 命令中需要注意的标志是`persist`，如果没有这个选项，jail 将会因为没有运行进程而自动删除；`vnet`使这个 jail 成为一个 VNET  jail；以及`vnet.interface=`，它将指定的接口分配给 jail。
+在这些 jail 命令中需要注意的标志是 `persist`，如果没有这个选项，jail 将会因为没有运行进程而自动删除；`vnet` 使这个 jail 成为一个 VNET  jail；以及 `vnet.interface=`，它将指定的接口分配给 jail。
 
 当一个接口被移到新的 VNET 时，它的所有配置都会被清除——这是需要注意的，因为如果你配置了一个接口然后将其移到 jail，可能会困惑于为什么一切都不工作。
 
@@ -82,7 +82,7 @@ add net default: gateway 10.2.0.1
 
 ## Netmap 要求
 
-在我们的示例中，我们将使用 VPP 与 Netmap，Netmap 是一个高性能的用户空间网络框架，作为 FreeBSD 的默认组件提供。使用 Netmap 之前，接口需要进行一些配置——接口需要处于启用状态，并且需要配置`promisc`选项。
+在我们的示例中，我们将使用 VPP 与 Netmap，Netmap 是一个高性能的用户空间网络框架，作为 FreeBSD 的默认组件提供。使用 Netmap 之前，接口需要进行一些配置——接口需要处于启用状态，并且需要配置 `promisc` 选项。
 
 ```sh
 host # jexec router
@@ -118,11 +118,11 @@ VPP 命令行界面提供了很多选项，用于创建和管理接口、像桥�
 
 接口配置命令的语法类似于 Linux 的 iproute2 命令——对于来自 FreeBSD 的用户来说，这些命令可能稍显陌生，但待开始使用，它们还是相当清晰的。
 
-我们的 VPP 服务器还没有配置任何主机接口，`show int`只列出了默认的`local0`接口。
+我们的 VPP 服务器还没有配置任何主机接口，`show int` 只列出了默认的 `local0` 接口。
 
 要在 VPP 中使用我们的 netmap 接口，我们需要先创建它们，然后再进行配置。
 
-创建命令允许我们创建新的接口，我们使用`netmap`子命令和主机接口。
+创建命令允许我们创建新的接口，我们使用 `netmap` 子命令和主机接口。
 
 ```sh
 vpp# create netmap name epair0a
@@ -132,7 +132,7 @@ vpp# create netmap name epair1a
 netmap-epair1a
 ```
 
-每个 netmap 接口都以`netmap-`为前缀创建。接口创建完成后，我们可以配置它们以供使用，并开始将 VPP 用作路由器。
+每个 netmap 接口都以 `netmap-` 为前缀创建。接口创建完成后，我们可以配置它们以供使用，并开始将 VPP 用作路由器。
 
 ```sh
 vpp# set int ip addr netmap-epair0a 10.1.0.1/24

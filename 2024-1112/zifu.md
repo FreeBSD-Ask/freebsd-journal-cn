@@ -3,7 +3,7 @@
 - 原文链接：[Character Device Driver Tutorial (Part 2)](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/character-device-driver-tutorial-part-2/)
 - 作者：**John Baldwin**
 
-在这篇三部分系列的[上一篇文章](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/character-device-driver-tutorial/)中，我们构建了一个简单的字符设备驱动程序，该程序支持由固定缓冲区支持的 I/O 操作。在本文中，我们将扩展此驱动程序，以支持 FIFO 数据缓冲区，并支持非阻塞 I/O 和事件报告。每个版本的驱动程序的完整源代码可以在[https://github.com/bsdjhb/cdev_tutorial](https://github.com/bsdjhb/cdev_tutorial)找到。
+在这篇三部分系列的 [上一篇文章](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/character-device-driver-tutorial/) 中，我们构建了一个简单的字符设备驱动程序，该程序支持由固定缓冲区支持的 I/O 操作。在本文中，我们将扩展此驱动程序，以支持 FIFO 数据缓冲区，并支持非阻塞 I/O 和事件报告。每个版本的驱动程序的完整源代码可以在 [https://github.com/bsdjhb/cdev_tutorial](https://github.com/bsdjhb/cdev_tutorial) 找到。
 
 然而，在继续之前，我们必须处理上一篇文章中未完成的部分。细心的读者 Virus-V [指出](https://github.com/bsdjhb/cdev_tutorial/issues/1)，文章中的 echo 驱动程序的最终版本没有在卸载时销毁 `/dev/echo` 设备，并且在卸载后访问该设备会触发内核 panic。这个 bug 的第一个线索出现在内核在卸载模块时发出的关于内存泄漏的警告消息，panic 发生之前就已经出现了这个警告。如前文所述，这是内核模块在可能的情况下应该使用专用 malloc 类型的原因之一。该 bug 出现在最后一组更改中添加的 `echodev_create()` 函数中。我们未能通过将值存储在 `*scp` 中将指向新分配的 softc 结构的指针返回给调用者。因此，`echo_softc` 变量始终为 NULL，softc 在模块卸载时未被销毁。修复方法是在 `echodev_create()` 中添加一行代码，在成功时将指针存储到 `*scp` 中，指向新的 softc。
 

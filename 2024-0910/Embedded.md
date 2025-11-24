@@ -22,7 +22,7 @@
 # ifconfig bridge0 up
 ```
 
-我正在使用[24.6.5 节：为 bhyve 客户机配置图形 UEFI 帧缓冲](https://docs.freebsd.org/en/books/handbook/virtualization/#virtualization-host-bhyve)中的说明，因为我不想麻烦地设置 grub。使用 UEFI 帧缓冲还允许我通过 vnc 导出 Linux 显示。如果我使用 FreeBSD 主机，或者从网络上的任何其他机器，都可以连接。不过，也许我应该再考虑一下安全性问题。
+我正在使用 [24.6.5 节：为 bhyve 客户机配置图形 UEFI 帧缓冲](https://docs.freebsd.org/en/books/handbook/virtualization/#virtualization-host-bhyve) 中的说明，因为我不想麻烦地设置 grub。使用 UEFI 帧缓冲还允许我通过 vnc 导出 Linux 显示。如果我使用 FreeBSD 主机，或者从网络上的任何其他机器，都可以连接。不过，也许我应该再考虑一下安全性问题。
 
 我下载了一个 CentOS 的 ISO 版本，是在 RedHat 终止它之前的版本，然后我使用以下虚拟机配置进行安装：
 

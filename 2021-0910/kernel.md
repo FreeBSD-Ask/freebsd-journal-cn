@@ -214,7 +214,7 @@ stress2 套件至少需要几 GB 的 RAM 和一个大磁盘。完成这些测试
 
 最后，syzkaller 已成为一种有效的工具，用于测试从系统调用接口可达的内核部分。作为一个模糊测试工具，它对于证明更改的正确性并不特别有用，但它非常擅长触发不常执行的错误路径，因此可以帮助验证错误处理代码，这些代码可能很难触发。它还有效地引发竞争条件。
 
-syzkaller 的详细概述出现在之前的 [FreeBSD Journal 文章](https://freebsdfoundation.org/wp-content/uploads/2021/01/Kernel-Fuzzing.pdf)中。设置一个 syzkaller 实例是一个相对复杂的任务。可以参考 [syzkaller 仓库](https://github.com/google/syzkaller/tree/master/docs/freebsd#readme) 中的文档，了解如何设置一个 FreeBSD 主机来运行 syzkaller（它通过 QEMU 或 bhyve 虚拟机执行模糊测试）。
+syzkaller 的详细概述出现在之前的 [FreeBSD Journal 文章](https://freebsdfoundation.org/wp-content/uploads/2021/01/Kernel-Fuzzing.pdf) 中。设置一个 syzkaller 实例是一个相对复杂的任务。可以参考 [syzkaller 仓库](https://github.com/google/syzkaller/tree/master/docs/freebsd#readme) 中的文档，了解如何设置一个 FreeBSD 主机来运行 syzkaller（它通过 QEMU 或 bhyve 虚拟机执行模糊测试）。
 
 一种自动化许多设置步骤的替代方法是使用 Bastille 模板。[Bastille](https://bastillebsd.org/) 是一个在 FreeBSD 上部署和管理 jail 系统的工具；Bastille [模板](https://github.com/markjdb/bastille-syzkaller) 允许在运行中的 jail 中运行代码并修改配置。运行 syzkaller 的 Bastille 模板已经可用。要使用它，首先安装 Bastille 并基于 FreeBSD 13.0 创建一个精简的、基于 VNET 的 jail：
 

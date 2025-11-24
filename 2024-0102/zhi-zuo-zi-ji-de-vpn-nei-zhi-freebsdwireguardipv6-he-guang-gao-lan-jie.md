@@ -7,11 +7,11 @@
 
 >**注意**
 >
->本文操作配置基于 FreeBSD。如果你想要基于 OpenBSD 的版本，请点击[这里](https://it-notes.dragas.net/2023/04/03/make-your-own-vpn-wireguard-ipv6-and-ad-blocking-included/)查看。
+>本文操作配置基于 FreeBSD。如果你想要基于 OpenBSD 的版本，请点击 [这里](https://it-notes.dragas.net/2023/04/03/make-your-own-vpn-wireguard-ipv6-and-ad-blocking-included/) 查看。
 
 VPN 是一种基础工具，用于安全地连接到自己的服务器和设备。许多人出于各种原因使用商业 VPN，从不信任自己的服务提供商（尤其通过公共热点连接时），到希望用不同的 IP 地址（可能是来自别国）来“上网”。在这儿，我想突出一些已被引入基础堆栈的新特性——其中许多是默认开启的，有些可能需要专门打开。每个功能都会介绍一些细节，帮助改善网络体验。
 
-无论出于何种原因，解决方案从未匮乏。我一直在设置管理 VPN，以便服务器/客户端使用安全通道相互通信。最近，我[已在所有设备上启用 IPv6 连接](https://my-notes.dragas.net/posts/2023/the-urgency-of-transitioning-to-ipv6/)（包括桌面/服务器和移动设备），并且我需要快速创建一个节点，将一些网络聚合在一起，并让它们通过 IPv6 连接到外部网络。我使用着、并将要介绍的工具有：
+无论出于何种原因，解决方案从未匮乏。我一直在设置管理 VPN，以便服务器/客户端使用安全通道相互通信。最近，我 [已在所有设备上启用 IPv6 连接](https://my-notes.dragas.net/posts/2023/the-urgency-of-transitioning-to-ipv6/)（包括桌面/服务器和移动设备），并且我需要快速创建一个节点，将一些网络聚合在一起，并让它们通过 IPv6 连接到外部网络。我使用着、并将要介绍的工具有：
 
 - **VPS** – 在本例中，我使用了基本的 Hetzner Cloud VPS，但所有提供 IPv6 连接的服务商都可以——如果你的确需要 IPv6。
 - **[FreeBSD](https://www.freebsd.org/)** – 一款多功能、稳定和安全的操作系统。
@@ -33,7 +33,7 @@ VPN 是一种基础工具，用于安全地连接到自己的服务器和设备�
 
 ### 步骤 3：配置 VPS 上的 IPv6
 
-首先配置 VPS 上的 IPv6。对于 Hetzner，遗憾的是，他们只提供了一个 `/64` 地址，因此需要对分配的网络进行细分。在这个示例中，它将被细分为 `/72` 子网——可使用[子网计算器](https://subnettingpractice.com/ipv6-subnet-calculator.html)来找到有效的子类。
+首先配置 VPS 上的 IPv6。对于 Hetzner，遗憾的是，他们只提供了一个 `/64` 地址，因此需要对分配的网络进行细分。在这个示例中，它将被细分为 `/72` 子网——可使用 [子网计算器](https://subnettingpractice.com/ipv6-subnet-calculator.html) 来找到有效的子类。
 
 在 `/etc/rc.conf` 文件中添加类似以下的条目：
 
@@ -103,6 +103,7 @@ wg
 #!/bin/sh
 # 这个脚本通常随 cron 每天运行一次。
 #
+
 echo updating Spamhaus DROP lists:
 (
   { fetch -o - https://www.spamhaus.org/drop/drop.txt && \
@@ -185,9 +186,11 @@ pkg install unbound
 ```sh
 #!/bin/sh
 #
+
 # 使用来自 Pi-Hole 项目的黑名单 https://github.com/pi-hole/ 
 # 来启用 Unbound(8) 中的广告拦截
 #
+
 PATH=”/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin”
 
 # 可用的黑名单 - 注释掉行以禁用

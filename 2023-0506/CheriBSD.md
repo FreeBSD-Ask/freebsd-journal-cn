@@ -73,11 +73,11 @@ CheriBSD 既是一个正在积极开发的研究成果，也是为数十个甚�
 
 ## 对 FreeBSD 的好处
 
-**这表明有超过 1800 次提交到 FreeBSD 源代码库中带有"Sponsored by:"标识，表明这些提交很可能是通过对 CHERI 的工作进行资助而完成的。**
+**这表明有超过 1800 次提交到 FreeBSD 源代码库中带有 "Sponsored by:" 标识，表明这些提交很可能是通过对 CHERI 的工作进行资助而完成的。**
 
 像 CHERI 这样的研究项目可以为 FreeBSD 带来显著的好处。我们为 FreeBSD 做出了从拼写错误修复到对 RISC-V 架构的 port 贡献。我们还进行了演讲，新增了新的提交者，并向许多组织介绍了 FreeBSD。
 
-自 2011 年 1 月以来，在 FreeBSD 源代码中有超过 1800 次提交附带"Sponsored by:"标识，表明它们很可能是由 CHERI 项目的工作资助的。这占到了除了 contrib 和 sys/contrib 以外的提交数量的 1.5% 以上。这些贡献得益于资助了十多个提交者，其中包括两位新提交者。
+自 2011 年 1 月以来，在 FreeBSD 源代码中有超过 1800 次提交附带 "Sponsored by:" 标识，表明它们很可能是由 CHERI 项目的工作资助的。这占到了除了 contrib 和 sys/contrib 以外的提交数量的 1.5% 以上。这些贡献得益于资助了十多个提交者，其中包括两位新提交者。
 
 **一些显著的贡献包括：**
 
@@ -113,7 +113,7 @@ CheriBSD 既是一个正在积极开发的研究成果，也是为数十个甚�
 2. 一些子系统通过直接映射访问用户空间，并对其进行验证，而不直接使用能力。
 3. https://github.com/CTSRD-CHERI/cheribsd-ports
 4. https://msrc-blog.microsoft.com/2020/10/14/securityanalysis-of-cheri-isa/
-5. 部分"由赞助提供"行中的"由 DARPA 赞助"是来自于 CAETS 项目，该项目专注于 Dtrace 工作，但绝大部分是与 CHERI 相关的。
+5. 部分 "由赞助提供" 行中的 "由 DARPA 赞助" 是来自于 CAETS 项目，该项目专注于 Dtrace 工作，但绝大部分是与 CHERI 相关的。
 
 ---
 

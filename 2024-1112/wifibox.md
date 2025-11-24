@@ -19,7 +19,7 @@
 
 尽管 `vm-bhyve` 是一个出色的工具，但我觉得它对于这个特定的用例来说有些过于复杂。相反，我将其作为基本用户界面的模型，例如提供一个控制台让用户与虚拟机进行交互，以及一些基本的编排例程。由于这些例程需要与命令行的 `bhyve` 工具进行交互，我决定坚持使用基于 shell 的方法。如果我尝试用其他更高级的语言（如 Python）实现所有这些操作，可能不会有更好的体验，因为那样会不必要地增加构建时间，并引入对其他第三方软件包的依赖。
 
-最终，Wifibox 的用户界面包括命令 `start`、`stop`、`restart`、`status` 和 `resume` 。恢复操作需要特别处理，因为已知在笔记本电脑睡眠时，虚拟机会失去与虚拟化 PCI 设备的连接，故必须以某种方式恢复这种连接。经过一些实验，我发现通过停止虚拟机、重新加载 `vmm` 内核模块并重新启动虚拟机，可以缓解这一问题。最近，Joshua Rogers 提出了一个[解决方案](https://joshua.hu/brcmfmac-bcm43602-suspension-shutdown-hanging-freeze-linux-freebsd-wifi-bug-pci-passthru)，在内核层面解决了这个问题，但这个修复还没有被加入到基本系统中。
+最终，Wifibox 的用户界面包括命令 `start`、`stop`、`restart`、`status` 和 `resume` 。恢复操作需要特别处理，因为已知在笔记本电脑睡眠时，虚拟机会失去与虚拟化 PCI 设备的连接，故必须以某种方式恢复这种连接。经过一些实验，我发现通过停止虚拟机、重新加载 `vmm` 内核模块并重新启动虚拟机，可以缓解这一问题。最近，Joshua Rogers 提出了一个 [解决方案](https://joshua.hu/brcmfmac-bcm43602-suspension-shutdown-hanging-freeze-linux-freebsd-wifi-bug-pci-passthru)，在内核层面解决了这个问题，但这个修复还没有被加入到基本系统中。
 
 虚拟机与 PCI 设备的交互常常被证明是一个弱点，这通常限制了 Wifibox 本身的可用性。作为这种解决方法的改进，恢复方法的范围已经得到扩展。某些硬件配置对设备关闭和重启的方式有不同的反应。例如，得益于 Joshua 的工作，发现设备是否在虚拟机的关机过程中正确关闭非常重要。还发现，Linux 内核模块 `ath11k_pci` 在虚拟化环境中的运行并不理想，因为它假设消息信号中断（MSI）表的位置与主机一致。只有在 FreeBSD 主机以某种方式支持为虚拟机注入主机物理 MSI 信息或禁用 MSI 虚拟化时，才能处理这个问题。
 
@@ -61,7 +61,7 @@ Wifibox 的一个主要设计原则是用户无需了解底层虚拟机，就能
 
 截至目前，正在积极维护 Wifibox，并且每年三月和九月发布半年度更新。在 Ashish Shukla 的帮助下，这些发布被推送到 FreeBSD Ports，因此可以通过 `pkg` 工具安装。需要注意的是，Wifibox 并未出现在 FreeBSD 发行版的安装介质上，这可能使得在通过无线网络安装 FreeBSD 时，使用 Wifibox 更加困难。然而，可以将所有必需的二进制包添加到安装介质中，并在开始安装过程之前使用它们初始化网络连接。
 
-在项目的 [主页](https://github.com/pgj/freebsd-wifibox) 上，可以找到源代码及相应的 GitHub 仓库的指向，可以打开问题单并开始讨论。还有一个单独的仓库[用于存放 Port](https://github.com/pgj/freebsd-wifibox-port)，发布的开发版本提供了预览下一步进展并测试修复问题的机会。
+在项目的 [主页](https://github.com/pgj/freebsd-wifibox) 上，可以找到源代码及相应的 GitHub 仓库的指向，可以打开问题单并开始讨论。还有一个单独的仓库 [用于存放 Port](https://github.com/pgj/freebsd-wifibox-port)，发布的开发版本提供了预览下一步进展并测试修复问题的机会。
 
 ## 文档
 

@@ -24,12 +24,12 @@ FreeBSD 自带的一些示例 **provider** 包括：
 
 1. **用户指南**  
 2. **DTrace 规范**  
-3. **FreeBSD 手册页面**³  
-4. **DTrace 白皮书**⁴  
-5. **DTrace 书籍**⁵  
-6. **FreeBSD Wiki 页面（包括一些 DTrace 单行命令示例⁶）**。  
+3. **FreeBSD 手册页面** ³  
+4. **DTrace 白皮书** ⁴  
+5. **DTrace 书籍** ⁵  
+6. **FreeBSD Wiki 页面（包括一些 DTrace 单行命令示例 ⁶）**。  
 
-此外，以往的 FreeBSD Journal 也曾多次发表关于 DTrace 的相关文章⁷⁸⁹。  
+此外，以往的 FreeBSD Journal 也曾多次发表关于 DTrace 的相关文章 ⁷⁸⁹。  
 
 ## 简单示例
 
@@ -53,14 +53,14 @@ user = 1001, gid = 1001: /sbin/sysctl
 user = 1001, gid = 1001: /bin/ls
 ```
 
-正如我们所看到的，**D 语言** 在语法上与 **C 语言** 非常相似，但也有一些特定的特殊语法形式。与 C 语言不同，D 语言**不支持循环**，因此任何形式的循环都必须**手动展开**。  
+正如我们所看到的，**D 语言** 在语法上与 **C 语言** 非常相似，但也有一些特定的特殊语法形式。与 C 语言不同，D 语言 **不支持循环**，因此任何形式的循环都必须 **手动展开**。  
 
 在上面的示例中，我们可以通过 **`uid`** 和 **`gid`** 这两个内置变量来访问用户 ID 和组 ID。  
 
-此外，DTrace 还支持以多种方式对跟踪结果进行**聚合**。例如，我们可以统计**每个程序执行的系统调用次数**。
+此外，DTrace 还支持以多种方式对跟踪结果进行 **聚合**。例如，我们可以统计 **每个程序执行的系统调用次数**。
 
 ```sh
-# dtrace -n 'syscall:::entry { @syscall_agg[execname, pid] = count(); }'
+# dtrace -n 'syscall:::entry { @syscall_agg [execname, pid] = count(); }'
 dtrace: description 'syscall:::entry ' matched 1148 probes
  sh                                                    46569                7
  sh                                                    46570                7
@@ -75,13 +75,13 @@ dtrace: description 'syscall:::entry ' matched 1148 probes
  ls                                                    46569            35755
 ```
 
-在变量前使用 **`@`** 作为前缀，会将其定义为**聚合变量**。 `@syscall_agg` 以两个键进行索引，不过也可以继续添加更多的键。 `@syscall_agg` 的聚合输出应解读为：
+在变量前使用 **`@`** 作为前缀，会将其定义为 **聚合变量**。 `@syscall_agg` 以两个键进行索引，不过也可以继续添加更多的键。 `@syscall_agg` 的聚合输出应解读为：
 
 ```c
 execname                                              pid            count
 ```
 
-我们的最后一个示例涉及**堆栈追踪**。DTrace 允许用户使用 **`stack()`** 和 **`ustack()`** 例程分别收集**内核**和**用户空间**的堆栈追踪。此外，DTrace 还可以通过**语言特定的堆栈展开器**进行扩展。例如，**`jstack()`** 操作可以为用户提供 Java 程序的可读**回溯信息**。在我们的示例中，我们将重点关注 **`stack()`**：
+我们的最后一个示例涉及 **堆栈追踪**。DTrace 允许用户使用 **`stack()`** 和 **`ustack()`** 例程分别收集 **内核** 和 **用户空间** 的堆栈追踪。此外，DTrace 还可以通过 **语言特定的堆栈展开器** 进行扩展。例如，**`jstack()`** 操作可以为用户提供 Java 程序的可读 **回溯信息**。在我们的示例中，我们将重点关注 **`stack()`**：
 
 ```c
 # dtrace -x quiet -n 'io:::start { @[stack()] = count(); }'
@@ -119,11 +119,11 @@ execname                                              pid            count
                1
 ```
 
-这个 D 脚本统计了**所有导致块设备 I/O 的内核堆栈追踪**。  
+这个 D 脚本统计了 **所有导致块设备 I/O 的内核堆栈追踪**。  
 
-在此脚本中，我们省略了**聚合名称**，因为它只包含一个聚合，并且**键**是 `stack()`——这是一个 DTrace 内置操作，返回一个**程序计数器数组**，在打印结果时会解析为符号。  
+在此脚本中，我们省略了 **聚合名称**，因为它只包含一个聚合，并且 **键** 是 `stack()`——这是一个 DTrace 内置操作，返回一个 **程序计数器数组**，在打印结果时会解析为符号。  
 
-此外，DTrace 还可以使用 **profile** 提供者收集 **CPU 上的堆栈追踪**，从而支持**生成火焰图（Flame Graphs）**。  
+此外，DTrace 还可以使用 **profile** 提供者收集 **CPU 上的堆栈追踪**，从而支持 **生成火焰图（Flame Graphs）**。  
 
 
 
@@ -131,13 +131,13 @@ execname                                              pid            count
 
 ### dwatch
 
-新工具 **dwatch** 由 **Devin Teske（dteske@freebsd.org）** 开发，并在 **FreeBSD 11.2** 中上游合并。 **dwatch** 使得 DTrace 在常见使用场景下比 `dtrace` 命令行工具更易用。回到我们之前的**进程监视**示例，用户只需运行：
+新工具 **dwatch** 由 **Devin Teske（dteske@freebsd.org）** 开发，并在 **FreeBSD 11.2** 中上游合并。 **dwatch** 使得 DTrace 在常见使用场景下比 `dtrace` 命令行工具更易用。回到我们之前的 **进程监视** 示例，用户只需运行：
 
 ```sh
 # dwatch execve
 ```
 
-即可获得**比之前的简单监视器更丰富的信息**，且输出经过**良好过滤**。
+即可获得 **比之前的简单监视器更丰富的信息**，且输出经过 **良好过滤**。
 
 ```sh
 # dwatch execve

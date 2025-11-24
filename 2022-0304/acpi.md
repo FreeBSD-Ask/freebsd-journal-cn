@@ -20,7 +20,7 @@ ARM64 是一种被广泛应用于各种产品的单一架构——它既可用�
 
 ## 什么是 ACPI？  
 
-在深入讨论细节之前，值得简要介绍一下 ACPI（高级配置与电源管理接口）。ACPI 是固件与操作系统之间的接口，主要用于描述和配置硬件。该[标准](https://uefi.org/specs/ACPI/6.4/index.html)已经发展了近 30 年，并涵盖了多个关键[概念](https://uefi.org/specs/ACPI/6.4/03_ACPI_Concepts/ACPI_Concepts.html#acpi-concepts)，例如电源管理、温度/电池管理、硬件配置以及嵌入式控制器的描述。ACPI 还定义了一种 ACPI 源语言（ASL），它能创建低级硬件配置例程，并被编译为 ACPI 机器语言（[AML](https://uefi.org/specs/ACPI/6.4/20_AML_Specification/AML_Specification.html)），由内核解释并执行。  
+在深入讨论细节之前，值得简要介绍一下 ACPI（高级配置与电源管理接口）。ACPI 是固件与操作系统之间的接口，主要用于描述和配置硬件。该 [标准](https://uefi.org/specs/ACPI/6.4/index.html) 已经发展了近 30 年，并涵盖了多个关键 [概念](https://uefi.org/specs/ACPI/6.4/03_ACPI_Concepts/ACPI_Concepts.html#acpi-concepts)，例如电源管理、温度/电池管理、硬件配置以及嵌入式控制器的描述。ACPI 还定义了一种 ACPI 源语言（ASL），它能创建低级硬件配置例程，并被编译为 ACPI 机器语言（[AML](https://uefi.org/specs/ACPI/6.4/20_AML_Specification/AML_Specification.html)），由内核解释并执行。  
 
 平台信息存储在所谓的“表”（table）中，这些表本质上是系统内存地址空间中的一组层次化结构。ACPI 的起点是根系统描述指针（RSDP），它由固件配置，并指向扩展系统描述表（XSDT），后者进一步链接到次级表。首个次级表始终是固定 ACPI 描述表（FADT），其中包含描述硬件固定 ACPI 特性的各种固定长度条目。
 
@@ -30,7 +30,7 @@ ARM64 是一种被广泛应用于各种产品的单一架构——它既可用�
 
 来源：[UEFI ACPI 6.4 规范](https://uefi.org/specs/ACPI/6.4/05_ACPI_Software_Programming_Model/ACPI_Software_Programming_Model.html#overview-of-the-system-description-table-architecture)
 
-ACPI 规范定义了多种[专用表](https://uefi.org/specs/ACPI/6.4/05_ACPI_Software_Programming_Model/ACPI_Software_Programming_Model.html#acpi-system-description-tables)，但在嵌入式设备的上下文中，有几种表格尤为重要，例如：
+ACPI 规范定义了多种 [专用表](https://uefi.org/specs/ACPI/6.4/05_ACPI_Software_Programming_Model/ACPI_Software_Programming_Model.html#acpi-system-description-tables)，但在嵌入式设备的上下文中，有几种表格尤为重要，例如：
 
 - **通用定时器描述表 (GTDT)**  
 - **多 APIC 描述表 (MADT)**  
@@ -47,9 +47,9 @@ ACPI 规范定义了多种[专用表](https://uefi.org/specs/ACPI/6.4/05_ACPI_So
 
 ## ARM64 的 ACPI 基础部分  
 
-ARM64 SoC 依照标准由 ACPI 表格描述。例如，GTDT 列出了定时器和看门狗，MADT 则包含中断控制器（目前仅支持 GICv2 和 GICv3）。进一步来看嵌入式控制器，控制台由 SPCR（可选 DBG2 表）描述——推荐使用 **ARM SBSA UART (PL011)** 或兼容 **16550** 的 UART，不过近年来 ARM 生态中的更多 UART 类型也已被纳入支持[列表](https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/acpi-debug-port-table#table-3-debug-port-types-and-subtypes)。
+ARM64 SoC 依照标准由 ACPI 表格描述。例如，GTDT 列出了定时器和看门狗，MADT 则包含中断控制器（目前仅支持 GICv2 和 GICv3）。进一步来看嵌入式控制器，控制台由 SPCR（可选 DBG2 表）描述——推荐使用 **ARM SBSA UART (PL011)** 或兼容 **16550** 的 UART，不过近年来 ARM 生态中的更多 UART 类型也已被纳入支持 [列表](https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/acpi-debug-port-table#table-3-debug-port-types-and-subtypes)。
 
-PCIe 控制器的描述更为复杂，必须包含在 MCFG 和 DSDT/SSDT 表中。对于 **ARM64**，唯一允许的类型是完全兼容标准 **ECAM (Enhanced Configuration Access Mechanism)** 的通用 PCIe 控制器，该类型受 **[pci_host_generic_acpi](https://cgit.freebsd.org/src/tree/sys/dev/pci/pci_host_generic_acpi.c)** 驱动程序支持。建议新设计在芯片中保留未经修改的标准 **ECAM** 实现，但对于现有产品，往往无法满足这一要求。因此，在 FreeBSD 的 **pci_host_generic_acpi** 驱动中，已允许通过[配置空间访问 quirks](https://cgit.freebsd.org/src/commit/?id=2de4c7f6d08798fb6269582907155703d1ab5ef4) 来处理对标准的偏离。另一种解决方案是通过 **SMCCC (Secure Monitor Call Calling Convention)** 接口，支持从固件执行低级例程。目前，该机制已在[树莓派 4](https://github.com/ARM-software/arm-trusted-firmware/commit/ab061eb732dcd2ee711b6960c37c4b25c44f3f9d) 上可用，但 FreeBSD 仍未实现该选项。
+PCIe 控制器的描述更为复杂，必须包含在 MCFG 和 DSDT/SSDT 表中。对于 **ARM64**，唯一允许的类型是完全兼容标准 **ECAM (Enhanced Configuration Access Mechanism)** 的通用 PCIe 控制器，该类型受 **[pci_host_generic_acpi](https://cgit.freebsd.org/src/tree/sys/dev/pci/pci_host_generic_acpi.c)** 驱动程序支持。建议新设计在芯片中保留未经修改的标准 **ECAM** 实现，但对于现有产品，往往无法满足这一要求。因此，在 FreeBSD 的 **pci_host_generic_acpi** 驱动中，已允许通过 [配置空间访问 quirks](https://cgit.freebsd.org/src/commit/?id=2de4c7f6d08798fb6269582907155703d1ab5ef4) 来处理对标准的偏离。另一种解决方案是通过 **SMCCC (Secure Monitor Call Calling Convention)** 接口，支持从固件执行低级例程。目前，该机制已在 [树莓派 4](https://github.com/ARM-software/arm-trusted-firmware/commit/ab061eb732dcd2ee711b6960c37c4b25c44f3f9d) 上可用，但 FreeBSD 仍未实现该选项。
 
 ## 处理嵌入式控制器  
 
@@ -93,7 +93,7 @@ Device(AHC0) {
 }
 ```
 
-**清单 1. [ACPI 表](https://github.com/tianocore/edk2-platforms/blob/master/Silicon/Marvell/OcteonTx/AcpiTables/T91/Cn913xDbA/Dsdt.asl#L57)中的 AHCI 控制器描述示例**
+**清单 1. [ACPI 表](https://github.com/tianocore/edk2-platforms/blob/master/Silicon/Marvell/OcteonTx/AcpiTables/T91/Cn913xDbA/Dsdt.asl#L57) 中的 AHCI 控制器描述示例**
 
 **FreeBSD** 的 **XHCI** 和 **AHCI** 驱动程序需要在 **DSDT/SSDT** 中使用完全标准化的描述。**列表 1** 展示了 **XHCI** 控制器的一个示例，它包含引用 **唯一 ID** 的对象，以及 **缓存一致性信息** 和 **内存/中断资源**。所有 **非标准** 配置（例如 **寄存器映射、时钟管理** 或 **电源管理** 处理）都必须由 **固件** 预先配置并实现。  
 
@@ -103,12 +103,12 @@ Device(AHC0) {
 
 在 FreeBSD 中，过去只能在 **DT (Device Tree)** 体系下实现自定义绑定，方法是使用节点属性。但 **ACPI** 规范实际上定义了一个可选对象 `_DSD` ([Device Specific Data](https://uefi.org/specs/ACPI/6.4/06_Device_Configuration/Device_Configuration.html#dsd-device-specific-data))，它可以包含相同的信息。  
 
-借助 **FreeBSD** 的总线层级体系（参见 **图 2**），开发者[设计并实现了](https://cgit.freebsd.org/src/commit/?id=3f9a00e3b577)一种新的通用方案，支持在不依赖具体描述方式的情况下获取控制器特定的数据。此外，还引入了以下辅助函数：  
+借助 **FreeBSD** 的总线层级体系（参见 **图 2**），开发者 [设计并实现了](https://cgit.freebsd.org/src/commit/?id=3f9a00e3b577) 一种新的通用方案，支持在不依赖具体描述方式的情况下获取控制器特定的数据。此外，还引入了以下辅助函数：  
 
 - [`device_get_property`](https://www.freebsd.org/cgi/man.cgi?query=device_get_property&apropos=0&sektion=9&manpath=FreeBSD+14.0-current&arch=default&format=html)
 - `device_has_property`
 
-这些函数允许子设备驱动以相同方式访问父总线提供的设备特定数据，无论系统是以 **ACPI** 还是 **DT** 启动，都能执行相同的代码路径。该方案后来[进一步扩展](https://cgit.freebsd.org/src/commit/?id=b344de4d0d16)，以涵盖 **ACPI** 和 **DT** 体系下的多种属性类型。  
+这些函数允许子设备驱动以相同方式访问父总线提供的设备特定数据，无论系统是以 **ACPI** 还是 **DT** 启动，都能执行相同的代码路径。该方案后来 [进一步扩展](https://cgit.freebsd.org/src/commit/?id=b344de4d0d16)，以涵盖 **ACPI** 和 **DT** 体系下的多种属性类型。  
 
 
 该方案的一个典型应用是 **SD/MMC** 子系统，其中包括：  

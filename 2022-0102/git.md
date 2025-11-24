@@ -369,6 +369,7 @@ pick cddad2b5886b www/nyxt: (WIP) Add missing www/Makefile entry
 pick 061be9ca5d98 www/nyxt: (WIP) Ready for testing
 # Rebase 9f77e9601564..061be9ca5d98 onto 9f77e9601564 (7 commands)
 #
+
 # Commands:
 # p, pick <commit> = use commit
 # r, reword <commit> = use commit, but edit the commit message
@@ -388,12 +389,16 @@ pick 061be9ca5d98 www/nyxt: (WIP) Ready for testing
 # . message (or the oneline, if no original merge commit was
 # . specified); use -c <commit> to reword the commit message
 #
+
 # These lines can be re-ordered; they are executed from top to bottom.
 #
+
 # If you remove a line here THAT COMMIT WILL BE LOST.
 #
+
 # However, if you remove everything, the rebase will be aborted.
 #
+
 ```
 
 历史记录是按时间顺序写的，较旧的提交位于顶部。下面的注释列出了我们可以使用的所有命令。我们通过将这些命令放在提交旁边来指示 Git 如何修改历史记录。每个提交旁边的默认命令是 pick，即保持提交不变。在这里，我们希望将这些 WIP 提交压缩为一个提交以供审核。为了将最新的六个提交压缩到第一个提交中，将这些底部六个提交旁边的 pick 命令更改为 squash。
@@ -487,8 +492,10 @@ git rebase --continue
 #!/bin/sh
 # rum, r_ebase onto u_pdated m_ain
 #
+
 # Usage: rum
 #
+
 # globals expected in ${HOME}/.ports.conf with sample values
 # No leading '/' on directory names means they are relative to $HOME
 # portsd='/usr/home/ashish/ports' # ports 目录
@@ -500,7 +507,7 @@ EOF
 }
 ############################################ main
 [ $# != 0 ] && { usage; exit 1; }
-[ -n "${portsd##/*}" ] && portsd="${HOME}/$portsd"
+[ -n "${portsd##/*}" ] && portsd=" ${HOME}/$ portsd "
 # current branch
 cb="$(git -C "$portsd" branch --show-current)"
 if [ -z "$cb" ]; then
@@ -548,7 +555,7 @@ arc diff --create main
 ```
 
 这将创建一个新的审核，包含 nyxt 分支中的所有提交。在这个例子中，我们将提交合并成了一个单一的提交，因此修订将以该单一提交创建。当你的编辑器打开时，你将有机会编辑修订中的各个字段。顶部一行将是你的提交日志的主题，如 `www/nyxt: New port for
-the Nyxt browser`，摘要将包含其余的提交日志内容。在测试计划下，你可以列出你为测试 Port 所做的工作。例如，如果你为每个受支持版本在 tier 1 架构上执行了 `poudriere testport`，你可以写道：
+the Nyxt browser `，摘要将包含其余的提交日志内容。在测试计划下，你可以列出你为测试 Port 所做的工作。例如，如果你为每个受支持版本在 tier 1 架构上执行了 ` poudriere testport`，你可以写道：
 
 ```sh
 poudriere testport 12/13 amd64/aarch64

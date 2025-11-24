@@ -31,7 +31,7 @@ Wazuh 在 FreeBSD 上的移植是由 [Michael Muenz](mailto:m.muenz@gmail.com) �
 
 [MITRE Caldera](https://caldera.mitre.org/) 是一个旨在轻松自动化对抗仿真、协助手动红队行动并自动化事件响应的网络安全平台。它建立在 MITRE ATT&CK© 框架上，是 MITRE 的一项积极研究项目。
 
-MITRE Caldera（[security/caldera](https://cgit.freebsd.org/ports/tree/security/caldera/)）于 2023 年 4 月加入了 ports 树。该 port 包括对 [MITRE Caldera 原子插件](https://github.com/mitre/atomic)使用的 [Atomic Red Team](https://github.com/redcanaryco/atomic-red-team) 项目的支持。
+MITRE Caldera（[security/caldera](https://cgit.freebsd.org/ports/tree/security/caldera/)）于 2023 年 4 月加入了 ports 树。该 port 包括对 [MITRE Caldera 原子插件](https://github.com/mitre/atomic) 使用的 [Atomic Red Team](https://github.com/redcanaryco/atomic-red-team) 项目的支持。
 
 ## AppJail
 

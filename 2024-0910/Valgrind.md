@@ -3,17 +3,17 @@
 - 原文链接：[Valgrind on FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/valgrind-on-freebsd/)
 - 作者：Paul Floyd
 
-我第一次使用 Valgrind 是在 2000 年代初期。在此之前，我有一些在 Solaris/SPARC 上使用 Purify（现在是[Unicom PurifyPlus](https://www.unicomsi.com/products/purifyplus/)）的经验。老实说，我对[Valgrind](https://valgrind.org/)并没有特别的印象。虽然它不需要特别的构建过程，但它缺少与调试器交互的能力。
+我第一次使用 Valgrind 是在 2000 年代初期。在此之前，我有一些在 Solaris/SPARC 上使用 Purify（现在是 [Unicom PurifyPlus](https://www.unicomsi.com/products/purifyplus/)）的经验。老实说，我对 [Valgrind](https://valgrind.org/) 并没有特别的印象。虽然它不需要特别的构建过程，但它缺少与调试器交互的能力。
 
 稍微转到 FreeBSD，我第一次安装的是 1995 年底的 2.1 版本。像 Valgrind 一样，最初我对它也没有太大兴趣。至少它是我家用 PC 上的“一个 Unix”，如果我需要的话。我继续在 FreeBSD 上小试牛刀，偶尔安装新版本。我的主要家用系统一直是 OS/2，直到 90 年代末；之后是长期使用的 Solaris，直到 11.4 版本进入了“停滞期”。我在 2007 年还买了一台 MacBook，主要用于“桌面”工作——我并不认为在 macOS 上开发是一种令人愉快的体验。
 
-我一直对质量抱有信念。在大学时，我上过一门关于产品质量的短期课程，这让我坚定了这一信念。后来，我读了一些[W. Edwards Deming](https://en.wikipedia.org/wiki/W._Edwards_Deming)的著作。虽然他的文字有些粗糙，但他的思想非常明确有力。由于我学的是电子学，显而易见，日本公司在 20 世纪后半期通过质量流程获得的好处。我最终在电子仿真领域作为软件开发人员工作。不出所料，我继续使用像 Valgrind 这样的工具。
+我一直对质量抱有信念。在大学时，我上过一门关于产品质量的短期课程，这让我坚定了这一信念。后来，我读了一些 [W. Edwards Deming](https://en.wikipedia.org/wiki/W._Edwards_Deming) 的著作。虽然他的文字有些粗糙，但他的思想非常明确有力。由于我学的是电子学，显而易见，日本公司在 20 世纪后半期通过质量流程获得的好处。我最终在电子仿真领域作为软件开发人员工作。不出所料，我继续使用像 Valgrind 这样的工具。
 
 大约五年前，我决定是时候开始为开源社区做出一些贡献了。既然我已经是 Valgrind 的专家，并且已经稍微接触过它的源代码，这对我来说是一个逻辑性的项目。我犹豫了一下，是在 macOS 和 FreeBSD 的 Valgrind 移植之间做选择。两件事让我对 macOS 产生了抵触——频繁的操作系统和用户空间的重大更新，导致一切都无法兼容，以及从 Apple 内部获得帮助的难度。虽然有 XNU 源代码和一些书籍，但除此之外，你就只能独自摸索了。最后，我选择了 FreeBSD。这也很适合我，因为我正在考虑摆脱 Solaris 的使用。Illumos 和 FreeBSD 之间有很多交叉合作，我认为这会让我更容易过渡。与此同时，macOS 仍然存在于 Valgrind 的官方代码库中，但自 2016 年 10.12 版本以来，它基本上无法使用了。
 
 ## Valgrind 的历史
 
-Valgrind 现在已有超过[20 年的历史](https://nnethercote.github.io/2022/07/27/twenty-years-of-valgrind.html)。它最初在 i386 Linux 上启动。随着时间的推移，添加了多个其他 CPU 架构（amd64、MIPS、ARM、PPC 和 s390x），以及其他操作系统（macOS、Solaris，最近是 FreeBSD）。
+Valgrind 现在已有超过 [20 年的历史](https://nnethercote.github.io/2022/07/27/twenty-years-of-valgrind.html)。它最初在 i386 Linux 上启动。随着时间的推移，添加了多个其他 CPU 架构（amd64、MIPS、ARM、PPC 和 s390x），以及其他操作系统（macOS、Solaris，最近是 FreeBSD）。
 
 这些工具在这 20 年里不断发展。从 2002 年初始版本开始，添加的工具包括：
 
@@ -50,23 +50,23 @@ Valgrind 在 FreeBSD 上的历史相当长且充满波折。我不会提及每�
 
 ### Callgrind 和 Cachegrind
 
-这两个工具用于 CPU 性能分析。Callgrind 用于分析函数调用。Cachegrind 通常用于使用基本缓存和分支预测模型分析 CPU 指令。这些模型从来都不是很准确，现在甚至显得非常不现实。此外，Valgrind 并不执行任何预测执行。基于这些原因，当前版本的 Valgrind 默认不再使用 Cachegrind 进行缓存仿真。一些人喜欢指令计数的精确性，但就我个人而言，我通常更喜欢像 Google 的[perftools](https://github.com/gperftools/gperftools)（[port devel/google-perftools](https://www.freshports.org/devel/google-perftools/)）、Linux 的 perf 和[gprofng](https://www.sourceware.org/binutils/docs/gprofng.html)这样的采样分析工具，尤其是在处理大型问题时（运行时间为小时或天，内存使用量达到数百 GB）。
+这两个工具用于 CPU 性能分析。Callgrind 用于分析函数调用。Cachegrind 通常用于使用基本缓存和分支预测模型分析 CPU 指令。这些模型从来都不是很准确，现在甚至显得非常不现实。此外，Valgrind 并不执行任何预测执行。基于这些原因，当前版本的 Valgrind 默认不再使用 Cachegrind 进行缓存仿真。一些人喜欢指令计数的精确性，但就我个人而言，我通常更喜欢像 Google 的 [perftools](https://github.com/gperftools/gperftools)（[port devel/google-perftools](https://www.freshports.org/devel/google-perftools/)）、Linux 的 perf 和 [gprofng](https://www.sourceware.org/binutils/docs/gprofng.html) 这样的采样分析工具，尤其是在处理大型问题时（运行时间为小时或天，内存使用量达到数百 GB）。
 
 ### Massif 和 DHAT
 
-这两个工具是内存分析工具。Massif 用于对内存使用情况进行时间序列分析。就我个人而言，我觉得它有些过于复杂。实际上，还有其他工具通常可以在没有 Valgrind 开销的情况下，提供同样优秀的分析结果——例如 Google 的 perftools，和[HeapTrack](https://github.com/KDE/heaptrack)（[port devel/heaptrack](https://www.freshports.org/devel/heaptrack/)）。不过，还是有一个例外。如果你的应用程序大量使用基于 mmap 的自定义分配器，或者静态链接了 malloc 库，那么这些替代工具就无法工作。Massif 不需要插桩共享库中的分配函数，它还可以选择在 mmap 级别对内存进行分析。DHAT 是 Valgrind 工具套件中的隐藏宝石。这个工具分析堆内存的访问情况。它提供的信息可以帮助你了解哪些内存被频繁使用，哪些内存长时间保持分配状态，哪些内存从未被使用。对于那些不太大的内存块，它还会为这些块生成访问直方图。从中，你可以看到结构体或类中的空洞或未使用的成员。你还可以推断访问模式，这可能有助于重新排序成员，使它们位于同一缓存行上。
+这两个工具是内存分析工具。Massif 用于对内存使用情况进行时间序列分析。就我个人而言，我觉得它有些过于复杂。实际上，还有其他工具通常可以在没有 Valgrind 开销的情况下，提供同样优秀的分析结果——例如 Google 的 perftools，和 [HeapTrack](https://github.com/KDE/heaptrack)（[port devel/heaptrack](https://www.freshports.org/devel/heaptrack/)）。不过，还是有一个例外。如果你的应用程序大量使用基于 mmap 的自定义分配器，或者静态链接了 malloc 库，那么这些替代工具就无法工作。Massif 不需要插桩共享库中的分配函数，它还可以选择在 mmap 级别对内存进行分析。DHAT 是 Valgrind 工具套件中的隐藏宝石。这个工具分析堆内存的访问情况。它提供的信息可以帮助你了解哪些内存被频繁使用，哪些内存长时间保持分配状态，哪些内存从未被使用。对于那些不太大的内存块，它还会为这些块生成访问直方图。从中，你可以看到结构体或类中的空洞或未使用的成员。你还可以推断访问模式，这可能有助于重新排序成员，使它们位于同一缓存行上。
 
 ## Valgrind 基础
 
 ### 无依赖
 
-为了让 Valgrind 能够执行所有客户端代码（不仅仅是 main() 中的代码，而是程序启动时 ELF 文件中的第一条指令），并避免与诸如 stdio 缓冲区等产生冲突，Valgrind 不与 libc 或任何外部库链接。我有时开玩笑说，这不太像 C++，更像 C- -。这意味着 Valgrind 有自己的 libc 子集实现。为了使函数名不冲突，它使用宏作为伪命名空间。Valgrind 版本的*printf*是*VG\_(printf)*（对于代码导航来说非常有趣！）。这也意味着我们不能直接添加第三方库并使用它。这个库需要被移植，以便使用 Valgrind 的 libc 子集。例如，目前有一个 bugzilla 项，计划添加对 zstd 压缩的 DWARF 段的支持。
+为了让 Valgrind 能够执行所有客户端代码（不仅仅是 main() 中的代码，而是程序启动时 ELF 文件中的第一条指令），并避免与诸如 stdio 缓冲区等产生冲突，Valgrind 不与 libc 或任何外部库链接。我有时开玩笑说，这不太像 C++，更像 C- -。这意味着 Valgrind 有自己的 libc 子集实现。为了使函数名不冲突，它使用宏作为伪命名空间。Valgrind 版本的 *printf* 是 *VG\_(printf)*（对于代码导航来说非常有趣！）。这也意味着我们不能直接添加第三方库并使用它。这个库需要被移植，以便使用 Valgrind 的 libc 子集。例如，目前有一个 bugzilla 项，计划添加对 zstd 压缩的 DWARF 段的支持。
 
 ### 多疑的编程
 
 Valgrind 非常谨慎，广泛使用了在发布版本中启用的断言。这使得它的速度略有降低，但考虑到出错的可能性，最好是诚实地直接崩溃，而不是假装继续运行下去。
 
-Valgrind 具有广泛的详细信息和调试信息。你可以通过重复使用-v 和-d 最多 4 次来提高调试/详细程度。除此之外，还有一些更为针对性的跟踪选项，比如`--trace-syscalls=yes`。在 Valgrind 中进行调试可能相当困难，这些输出在开发新功能时会是很大的帮助。它们也对支持工作非常有用，例如要求用户上传日志到 Valgrind 的 bugzilla。
+Valgrind 具有广泛的详细信息和调试信息。你可以通过重复使用-v 和-d 最多 4 次来提高调试/详细程度。除此之外，还有一些更为针对性的跟踪选项，比如 `--trace-syscalls=yes`。在 Valgrind 中进行调试可能相当困难，这些输出在开发新功能时会是很大的帮助。它们也对支持工作非常有用，例如要求用户上传日志到 Valgrind 的 bugzilla。
 
 ### 代码复杂性
 
@@ -126,11 +126,11 @@ Valgrind 拦截所有系统调用。幸运的是，大多数系统调用要么�
 
 在 Linux 上，对于非线程化和线程化应用程序，这一过程适用。对于 FreeBSD，待你链接了 libthr，这一过程就会有所变化。‘thr_sighandler’替代了用户的信号处理程序。它进行一些信号屏蔽等操作，调用用户的信号处理程序并自己调用 sigreturn。
 
-Valgrind 不能让客户代码执行。所以，它处理所有可能的信号。它合成自己的上下文，加入了更多的信息。它用自己的*run_signal_handler_in_valgrind*函数替换了客户的信号处理程序。返回地址设置了自己的 retpoline，它将调用*valgrind_sigreturn*，将客户程序的执行转移回原来的位置。那么可能出了什么问题呢？事实证明，几乎所有的东西都有问题。至少有两件事情在这个流程中被破坏，我都处理过了。
+Valgrind 不能让客户代码执行。所以，它处理所有可能的信号。它合成自己的上下文，加入了更多的信息。它用自己的 *run_signal_handler_in_valgrind* 函数替换了客户的信号处理程序。返回地址设置了自己的 retpoline，它将调用 *valgrind_sigreturn*，将客户程序的执行转移回原来的位置。那么可能出了什么问题呢？事实证明，几乎所有的东西都有问题。至少有两件事情在这个流程中被破坏，我都处理过了。
 
 第一个问题是一个非常小的代码更改。当从客户信号处理程序返回时，Valgrind 在 i386 上崩溃了。经过大量调试，我将问题缩小到汇编语言中的 retpoline 函数 VG\_(*x86_freebsd_SUBST_FOR_sigreturn*)。某个时刻，ucontext 结构的大小发生了变化。VG\_(*x86_freebsd_SUBST_FOR_sigreturn*) 在错误的偏移位置寻找返回地址——0x14 而不是 0x1c。这意味着虚拟 CPU 在某个无效的地址处恢复执行。砰！很快就触发了断言。
 
-我与信号的第二次大战是间歇性的。如果信号在 Valgrind 执行“普通”客户代码时到达，那是非常好的，因为它知道应该从哪里恢复。但如果信号在系统调用时到达呢？情况就变得复杂了，因为系统调用是 Valgrind 让客户在物理 CPU 上运行的地方之一。Valgrind 不能在其全局锁中执行客户的系统调用。系统调用可能会阻塞，这会导致多线程进程挂起。相反，它释放锁，然后执行系统调用。现在，如果在锁被释放的窗口期间发生了中断，Valgrind 需要尝试弄清楚中断发生的位置，以便决定是否需要重新启动。为此，执行客户系统调用的机器代码函数 ML(*do_syscall_for_client_WRK*) 有一个与之相关的地址表，包含了设置、重启、完成、提交和结束的地址。这个方法通常很好用，但偶尔会因断言失败而出错。问题出在系统调用状态的设置上。在 Linux 上，它只保存在 RAX 寄存器中，并从小型汇编函数返回，所以无需做任何特殊处理。而在 FreeBSD（和 Darwin）上，它保存在进位标志中。这需要调用一个函数来在合成 CPU 中设置进位标志。如果信号在 Valgrind 调用*LibVEX_GuestAMD64_put_rflag_c*函数时到达，这个情况就没有处理——导致了断言。遗憾的是，在 C 中没有简单的方法来判断指令指针正在执行哪个函数。你可以轻松地获取函数开始的地址，但函数结束的位置在哪里呢？我曾考虑过使用 Valgrind 的 DWARF 调试信息（它应该始终存在，且 Valgrind 内置了 DWARF 读取代码）。最后，我采取了一个丑陋且不标准的方法。我获取了*LibVEX_GuestAMD64_put_rflag_c*之后的一个虚拟函数的地址。即使没有保证编译器和链接器会按照源文件中的顺序布局函数，这个方法在 i386 和 amd64 上都有效。然而，后来当我处理[aarch64 移植](https://github.com/paulfloyd/freebsdarm64_valgrind)时，这个方法就不行了，因为设置进位标志的函数使用了几个辅助函数，而这些辅助函数并没有按顺序布局。因此，我改为在执行客户系统调用的汇编例程中设置一个全局变量。
+我与信号的第二次大战是间歇性的。如果信号在 Valgrind 执行“普通”客户代码时到达，那是非常好的，因为它知道应该从哪里恢复。但如果信号在系统调用时到达呢？情况就变得复杂了，因为系统调用是 Valgrind 让客户在物理 CPU 上运行的地方之一。Valgrind 不能在其全局锁中执行客户的系统调用。系统调用可能会阻塞，这会导致多线程进程挂起。相反，它释放锁，然后执行系统调用。现在，如果在锁被释放的窗口期间发生了中断，Valgrind 需要尝试弄清楚中断发生的位置，以便决定是否需要重新启动。为此，执行客户系统调用的机器代码函数 ML(*do_syscall_for_client_WRK*) 有一个与之相关的地址表，包含了设置、重启、完成、提交和结束的地址。这个方法通常很好用，但偶尔会因断言失败而出错。问题出在系统调用状态的设置上。在 Linux 上，它只保存在 RAX 寄存器中，并从小型汇编函数返回，所以无需做任何特殊处理。而在 FreeBSD（和 Darwin）上，它保存在进位标志中。这需要调用一个函数来在合成 CPU 中设置进位标志。如果信号在 Valgrind 调用 *LibVEX_GuestAMD64_put_rflag_c* 函数时到达，这个情况就没有处理——导致了断言。遗憾的是，在 C 中没有简单的方法来判断指令指针正在执行哪个函数。你可以轻松地获取函数开始的地址，但函数结束的位置在哪里呢？我曾考虑过使用 Valgrind 的 DWARF 调试信息（它应该始终存在，且 Valgrind 内置了 DWARF 读取代码）。最后，我采取了一个丑陋且不标准的方法。我获取了 *LibVEX_GuestAMD64_put_rflag_c* 之后的一个虚拟函数的地址。即使没有保证编译器和链接器会按照源文件中的顺序布局函数，这个方法在 i386 和 amd64 上都有效。然而，后来当我处理 [aarch64 移植](https://github.com/paulfloyd/freebsdarm64_valgrind) 时，这个方法就不行了，因为设置进位标志的函数使用了几个辅助函数，而这些辅助函数并没有按顺序布局。因此，我改为在执行客户系统调用的汇编例程中设置一个全局变量。
 
 ### GlusterFS swapcontext 崩溃
 
@@ -138,13 +138,13 @@ Valgrind 不能让客户代码执行。所以，它处理所有可能的信号�
 
 ### FreeBSD 问题
 
-我在 Valgrind 上做的工作还揭示了 FreeBSD 中的一些 BUG。我在处理 i386 二进制文件在 amd64 上运行时，早期就遇到过其中一个问题。我在 i386 与 i386、amd64 与 amd64 上没有问题，但 i386 在 amd64 上运行时，在客户启动的早期就崩溃了，发生在链接加载器（lib rtld）阶段。最终，我发现这是一个与页面大小检测有关的问题。正常的独立应用程序将这些信息存储在它们的辅助向量（auxv）中，包含 AT_PAGESZ（实际页面大小）和 AT_PAGESIZES（指向可能页面大小表的指针）。Valgrind 为客户合成了 auxv，但当时它忽略了 AT_PAGESIZES。没有问题，rtld 有回退机制，会使用 HW_PAGESIZE 的 sysctl。i386 有两种可能的页面大小，而 amd64 有三种可能的页面大小。不幸的是，发生的情况是，运行在 amd64 上的 rtld 使用了三种页面大小，但 i386 内核组件使用了两种页面大小。结果，sysctl 返回了[ENOMEM](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=246215)。
+我在 Valgrind 上做的工作还揭示了 FreeBSD 中的一些 BUG。我在处理 i386 二进制文件在 amd64 上运行时，早期就遇到过其中一个问题。我在 i386 与 i386、amd64 与 amd64 上没有问题，但 i386 在 amd64 上运行时，在客户启动的早期就崩溃了，发生在链接加载器（lib rtld）阶段。最终，我发现这是一个与页面大小检测有关的问题。正常的独立应用程序将这些信息存储在它们的辅助向量（auxv）中，包含 AT_PAGESZ（实际页面大小）和 AT_PAGESIZES（指向可能页面大小表的指针）。Valgrind 为客户合成了 auxv，但当时它忽略了 AT_PAGESIZES。没有问题，rtld 有回退机制，会使用 HW_PAGESIZE 的 sysctl。i386 有两种可能的页面大小，而 amd64 有三种可能的页面大小。不幸的是，发生的情况是，运行在 amd64 上的 rtld 使用了三种页面大小，但 i386 内核组件使用了两种页面大小。结果，sysctl 返回了 [ENOMEM](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=246215)。
 
 ## 房间里的大象——Sanitizers
 
 既然我们有了 Sanitizers，为什么还要使用 Valgrind？我也反过来问，既然我们有 Valgrind，为什么还要使用 Sanitizers？大致来说，Address Sanitizer 和 Memory Sanitizer 相当于 Memcheck，而 Thread Sanitizer 相当于 DRD 和 Helgrind。UB sanitizer 没有 Valgrind 的对应工具。
 
-有一种情况使用 Valgrind 根本不可行，那就是在使用不受支持的 CPU 架构时。Valgrind 在 FreeBSD 上只支持 amd64、i386 和 aarch64。如果你使用的是其他架构，那么 Valgrind 就无法使用。接下来，Valgrind 滞后于 CPU 的开发。这意味着如果你的应用依赖于使用[AVX512](https://bugs.kde.org/show_bug.cgi?id=383010)，你就无法使用 Valgrind。
+有一种情况使用 Valgrind 根本不可行，那就是在使用不受支持的 CPU 架构时。Valgrind 在 FreeBSD 上只支持 amd64、i386 和 aarch64。如果你使用的是其他架构，那么 Valgrind 就无法使用。接下来，Valgrind 滞后于 CPU 的开发。这意味着如果你的应用依赖于使用 [AVX512](https://bugs.kde.org/show_bug.cgi?id=383010)，你就无法使用 Valgrind。
 
 如果 Sanitizers 和 Valgrind 都能在你的系统上工作，你该选择哪个呢？一如既往，这取决于情况。
 
@@ -163,19 +163,19 @@ FreeBSD 很幸运，工具链是基于 LLVM 的。这意味着内存 Sanitizer �
 
 ## 未来工作
 
-不幸的是，Valgrind 是一个很容易退化的工具。FreeBSD 的新版本不断发布，带来了新的和变化的系统调用。辅助向量中不断增加新的项。`_umtx_op`命令也在增多。libc++ 不断找到使用 pthread 的更奇怪方式。编译器以看似不安全的方式优化代码。这意味着 Valgrind 的工作永远不会完成。
+不幸的是，Valgrind 是一个很容易退化的工具。FreeBSD 的新版本不断发布，带来了新的和变化的系统调用。辅助向量中不断增加新的项。`_umtx_op` 命令也在增多。libc++ 不断找到使用 pthread 的更奇怪方式。编译器以看似不安全的方式优化代码。这意味着 Valgrind 的工作永远不会完成。
 
 ### CPU 架构
 
-Valgrind 在 FreeBSD 上支持 amd64、i386 和 aarch64。我不认为自己会加入对 MIPS 或 PPC 的支持。RISC-V 尚未被加入到官方 Valgrind 源代码中——一个[RISC-V 移植](https://github.com/petrpavlu/valgrind-riscv64)正在进行中，但目前因为关于矢量指令实现的讨论而被拖延。
+Valgrind 在 FreeBSD 上支持 amd64、i386 和 aarch64。我不认为自己会加入对 MIPS 或 PPC 的支持。RISC-V 尚未被加入到官方 Valgrind 源代码中——一个 [RISC-V 移植](https://github.com/petrpavlu/valgrind-riscv64) 正在进行中，但目前因为关于矢量指令实现的讨论而被拖延。
 
 ### 错误列表
 
-Valgrind 的[Bugzilla](https://bugs.kde.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=ASSIGNED&bug_status=REOPENED&list_id=2388402&product=valgrind&query_format=advanced)中大约有 1000 个未解决的错误。虽然其中许多只影响 Linux/macOS/Solaris，但也有不少影响 FreeBSD。
+Valgrind 的 [Bugzilla](https://bugs.kde.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=ASSIGNED&bug_status=REOPENED&list_id=2388402&product=valgrind&query_format=advanced) 中大约有 1000 个未解决的错误。虽然其中许多只影响 Linux/macOS/Solaris，但也有不少影响 FreeBSD。
 
 - Helgrind 在大量线程创建/销毁时会产生虚假警报，特别是线程局部存储（TLS）。这是因为 pthread 栈包括 TLS 的缓存。Valgrind 没有把回收的 TLS 看作是有不同内存地址的。Linux 通过一个 GNU libc 环境变量禁用 pthread 栈缓存来规避这个问题。但我还没有找到使用 FreeBSD libc 做同样事情的方法。
 - 当客户程序生成核心转储时，实际上是 Valgrind 生成了核心文件。目前，核心文件的布局几乎与 Linux 的核心转储相同。这意味着 lldb 和 gdb 无法对核心文件做太多处理。我认为这不是一个大问题，因为现在很少有人使用核心文件了。
-- 线程调度器。Valgrind 有一个非常基础的线程调度器。线程上下文切换发生在系统调用边界或每 100000 个基本块。默认调度器会释放全局锁，哪个线程获得锁完全取决于运气。如果前一个线程在 CPU 缓存中很热，那么它就有可能获得锁。Linux 有一个基于 futex 的可选公平调度器。虽然这个调度器不能直接移植到 FreeBSD，但用`_umtx_op`来实现它应该不会太难。
+- 线程调度器。Valgrind 有一个非常基础的线程调度器。线程上下文切换发生在系统调用边界或每 100000 个基本块。默认调度器会释放全局锁，哪个线程获得锁完全取决于运气。如果前一个线程在 CPU 缓存中很热，那么它就有可能获得锁。Linux 有一个基于 futex 的可选公平调度器。虽然这个调度器不能直接移植到 FreeBSD，但用 `_umtx_op` 来实现它应该不会太难。
 - 在 aarch64 上，偶尔会出现与线程局部存储中的访问相关的 DRD 虚假警报。
 - 验证 ioctl 的代码非常有限。几乎所有的 ioctl 都只对它们的参数进行基本的大小检查。这个功能需要扩展，理想情况下还需要添加测试用例。
 

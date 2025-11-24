@@ -35,9 +35,9 @@
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2025/07/Screenshot_2025-06-04_at_12.37.42%CE%93CPM.png)
 
-值得一提的是，我在 VirtualBox 中，基于 archive.org 上的公共领域材料，自己制作了这些截图¹²³。
+值得一提的是，我在 VirtualBox 中，基于 archive.org 上的公共领域材料，自己制作了这些截图 ¹²³。
 
-接下来是 Windows 95。和 Windows 3.11 一样，它在安装程序中使用了自身的用户界面，不过有两个中间步骤。通过以下截图可以看出，安装过程相对无痛，但需要用户交互的步骤明显增多⁴。
+接下来是 Windows 95。和 Windows 3.11 一样，它在安装程序中使用了自身的用户界面，不过有两个中间步骤。通过以下截图可以看出，安装过程相对无痛，但需要用户交互的步骤明显增多 ⁴。
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2025/07/Screenshot_2025-06-04_at_12.38.22%CE%93CPM.png)
 
@@ -47,13 +47,13 @@
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2025/07/Screenshot_2025-06-04_at_12.39.29%CE%93CPM.png)
 
-将 Windows 98 纳入讨论值得一提，因为它带来了一些改进：安装步骤总览列表和剩余时间估算⁵。
+将 Windows 98 纳入讨论值得一提，因为它带来了一些改进：安装步骤总览列表和剩余时间估算 ⁵。
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2025/07/Screenshot_2025-06-04_at_12.39.51%CE%93CPM.png)
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2025/07/Screenshot_2025-06-04_at_12.40.11%CE%93CPM.png)
 
-我就不再展示其他版本的 Windows 安装过程了。只要加上 Windows 7，就能总结出以下有关安装程序可用性的模式⁶：
+我就不再展示其他版本的 Windows 安装过程了。只要加上 Windows 7，就能总结出以下有关安装程序可用性的模式 ⁶：
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2025/07/Screenshot_2025-06-04_at_12.40.25%CE%93CPM.png)
 

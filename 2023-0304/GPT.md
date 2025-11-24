@@ -367,4 +367,4 @@ setup_partitions “$HDD $SSD” “$SWAP_SIZE”
 
 ---
 
-**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者和文档工程小组的成员。他曾在 FreeBSD 核心团队任职两届。他在德国达姆施塔特应用科学大学管理着一个大数据集群。他还在为本科生教授"Unix for Developers"【UNIX 开发】课程。他还是每周 bsdnow.tv 播客的主持人之一。
+**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者和文档工程小组的成员。他曾在 FreeBSD 核心团队任职两届。他在德国达姆施塔特应用科学大学管理着一个大数据集群。他还在为本科生教授 "Unix for Developers"【UNIX 开发】课程。他还是每周 bsdnow.tv 播客的主持人之一。
