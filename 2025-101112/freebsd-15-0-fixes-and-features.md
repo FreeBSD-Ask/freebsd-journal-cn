@@ -1,6 +1,6 @@
 # FreeBSD 15.0：改进与特性
 
-- 原文：[FreeBSD 15.0:Fixes and Features](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/freebsd-15-0-fixes-and-features/)
+- 原文：[FreeBSD 15.0: Fixes and Features](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/freebsd-15-0-fixes-and-features/)
 - 作者：John Baldwin
 
 FreeBSD 社区持续推进 15.0 的发布。相较于 2023 年 11 月发布的 14.0，15.0 版本包含了大量新特性、改进以及 bug 修复。下面列出了一些变更要点，但更多细节可参见[发布说明](https://www.freebsd.org/releases/15.0R/relnotes/)。
