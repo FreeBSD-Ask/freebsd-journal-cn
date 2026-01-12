@@ -189,7 +189,7 @@ FreeBSD 内置支持以下声卡：
 
 ### sndctl(8)
 
-`sndctl(8)` 用于列出和操作声卡设置，例如采样率、采样格式、位完美模式（bit-perfect）和实时模式（realtime）设置等。它旨在替代 `/dev/sndstat`（实际上内部就是使用它）以及部分 `sound(4)` 的 sysctl，至少在大多数使用场景下如此。
+`sndctl(8)` 用于列出和操作声卡设置，例如采样率、采样格式、比特完美模式（bit-perfect）和实时模式（realtime）设置等。它旨在替代 `/dev/sndstat`（实际上内部就是使用它）以及部分 `sound(4)` 的 sysctl，至少在大多数使用场景下如此。
 
 ```sh
 $ sndctl
