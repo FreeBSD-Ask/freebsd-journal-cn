@@ -1,4 +1,4 @@
-# printf("Hello, srcmgr\n");
+# printf("Hello, srcmgr\n")
 
 - 原文：[printf(“Hello, srcmgr\n”);](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/freebsd-and-google-summer-of-code-2025/)
 - 作者：Mark Johnston

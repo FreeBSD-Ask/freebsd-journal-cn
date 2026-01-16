@@ -10,13 +10,13 @@
 
 ## 2025 谷歌编程之夏项目
 
-### 改进 Sockstat UI 
+### 改进 Sockstat UI
 
 对于那些不熟悉 sockstat(1) 的人来说，它是用于列出打开的互联网或 Unix 域套接字的命令。Damin Rido 的项目目标是通过支持动态列宽和集成 libxo 提供结构化输出，从而增强命令输出的灵活性。以下三条 Damin 的 pull request 均已合并到 src 中：
 
-* 添加自动列宽功能并移除 `-w` 选项：[freebsd/freebsd-src#1720](https://github.com/freebsd/freebsd-src/pull/1720)
-* 重新引入 `-w` 标志以自动调整列宽：[freebsd/freebsd-src#1746](https://github.com/freebsd/freebsd-src/pull/1746)
-* 添加 libxo 支持：[freebsd/freebsd-src#1770](https://github.com/freebsd/freebsd-src/pull/1770)
+- 添加自动列宽功能并移除 `-w` 选项：[freebsd/freebsd-src#1720](https://github.com/freebsd/freebsd-src/pull/1720)
+- 重新引入 `-w` 标志以自动调整列宽：[freebsd/freebsd-src#1746](https://github.com/freebsd/freebsd-src/pull/1746)
+- 添加 libxo 支持：[freebsd/freebsd-src#1770](https://github.com/freebsd/freebsd-src/pull/1770)
 
 ### vmm(4) 对 QEMU 的加速支持
 
@@ -32,28 +32,28 @@ Abhinav Chavali 的 2025 谷歌编程之夏项目主要目标是将 VMM 加速�
 
 本项目“Rust FreeBSD 设备驱动的测试与开发”基于此前在 FreeBSD 中引入 Rust 的努力。其主要目标之一是为 Rust 内核模块创建测试与持续集成框架。Aaron 在此 [视频](https://www.youtube.com/watch?v=y82-t1tDLWg) 中概述了他的 Rust echo 驱动，并在此 [总结文档](https://gist.github.com/Acesp25/8928e35e710fdce1896b5448fc6327df) 中说明了项目内容。相关代码库如下：
 
-* [https://github.com/Acesp25/rustdrv](https://github.com/Acesp25/rustdrv)
-* [https://github.com/Acesp25/freebsd-kernel-module-rust](https://github.com/Acesp25/freebsd-kernel-module-rust)
-* [https://github.com/Acesp25/RustKLD](https://github.com/Acesp25/RustKLD)
+- [https://github.com/Acesp25/rustdrv](https://github.com/Acesp25/rustdrv)
+- [https://github.com/Acesp25/freebsd-kernel-module-rust](https://github.com/Acesp25/freebsd-kernel-module-rust)
+- [https://github.com/Acesp25/RustKLD](https://github.com/Acesp25/RustKLD)
 
 ### FreeBSD 磁盘管理工具
 
 在 Braulio Rivas 的 2025 谷歌编程之夏项目之前，FreeBSD 缺少类似 Linux 上 GParted 的用户友好型磁盘管理工具，用于分区、调整大小、移动和管理文件系统。本项目旨在填补这一空白，开发了一个新的分区管理工具 [geomman](https://www.freshports.org/sysutils/geomman)。项目完成后，geomman 支持以下操作：
 
-* 在同一块磁盘或不同磁盘之间复制和粘贴分区
-* 扩展 UFS、NTFS、ext2、ext3 和 ext4 文件系统
-* 缩小 NTFS、ext2、ext3 和 ext4 文件系统
-* 可视化选择空闲空间以放置分区
-* 创建 exFAT、NTFS、ext2、ext3 和 ext4 文件系统
-* 检查文件系统：fsck_ufs (UFS)、fsck_msdos (FAT)、fsck.exfat (exFAT)、ntfsfix (NTFS) 以及 e2fsck (ext)
-* 创建并标记分区
-* 创建并加密分区
+- 在同一块磁盘或不同磁盘之间复制和粘贴分区
+- 扩展 UFS、NTFS、ext2、ext3 和 ext4 文件系统
+- 缩小 NTFS、ext2、ext3 和 ext4 文件系统
+- 可视化选择空闲空间以放置分区
+- 创建 exFAT、NTFS、ext2、ext3 和 ext4 文件系统
+- 检查文件系统：fsck_ufs (UFS)、fsck_msdos (FAT)、fsck.exfat (exFAT)、ntfsfix (NTFS) 以及 e2fsck (ext)
+- 创建并标记分区
+- 创建并加密分区
 
 剩余工作：
 
-* 添加 ZFS 支持
-* 解决移动分区时的问题
-* 编写测试用例
+- 添加 ZFS 支持
+- 解决移动分区时的问题
+- 编写测试用例
 
 上游代码库：[https://gitlab.com/brauliorivas/geomman](https://gitlab.com/brauliorivas/geomman)
 
@@ -63,12 +63,12 @@ QCOW2（QEMU Copy-On-Write version 2）是一种广泛使用的虚拟化磁盘�
 
 在本次 GSoC 项目中，Christos Komis 对 mkimg 进行了改进，实现了以下目标：
 
-* 支持 QCOW2 v2 压缩镜像
-* 支持 QCOW2 v3 压缩与非压缩镜像
-* 更新用户界面以提供新功能
-* 扩展测试套件以验证功能正确性
-* 更新 man 页以反映新增功能
-* 进行代码重构以提升可读性与可维护性
+- 支持 QCOW2 v2 压缩镜像
+- 支持 QCOW2 v3 压缩与非压缩镜像
+- 更新用户界面以提供新功能
+- 扩展测试套件以验证功能正确性
+- 更新 man 页以反映新增功能
+- 进行代码重构以提升可读性与可维护性
 
 实现已通过全面测试，并可直接提交至主代码库。用户现在可以直接使用 mkimg 生成压缩 QCOW2 镜像，简化虚拟机镜像生成流程，减少对外部转换工具的依赖。Christos 的代码可在此查看：[https://github.com/ckkomis/freebsd-src/commits/mkimg/qcow2-compression/](https://github.com/ckkomis/freebsd-src/commits/mkimg/qcow2-compression/)
 
@@ -99,9 +99,9 @@ Lahiru Gunathilake 的项目延续了以往提升 FreeBSD 启动速度的工作�
 
 在分析发现的热点环节包括设备附加阶段、大型文件系统子系统（尤其是 ZFS）的初始化，以及 vfs_mountroot（根文件系统挂载）中的 sleep 延时后，优化工作进入实施阶段，包括：
 
-* 将基准测试缓冲区从 16MB 减小到 256KB，使启动时间从 989 ms 缩短到 67 ms
-* 缩短键盘和鼠标初始化中的长等待循环，并引入可调参数 `hw.atkbd.short_delay`
-* 消除对 USB 设备的不必要等待
+- 将基准测试缓冲区从 16MB 减小到 256KB，使启动时间从 989 ms 缩短到 67 ms
+- 缩短键盘和鼠标初始化中的长等待循环，并引入可调参数 `hw.atkbd.short_delay`
+- 消除对 USB 设备的不必要等待
 
 整体来看，Lahiru 报告称在内核初始化阶段减少了 8.2 秒，ZFS 和输入设备优化后减少了 3.5 秒，跳过 USB 启动等待后减少了 1.9 秒。
 
@@ -109,11 +109,11 @@ Lahiru Gunathilake 的项目延续了以往提升 FreeBSD 启动速度的工作�
 
 Muhammad Saheed 承担了开发 FreeBSD 上 WiFi 网络管理工具的项目，包括 CLI 工具 **wutil** 和 TUI 工具 **wutui**。目标是覆盖“工作站模式操作，例如扫描、连接/断开无线网络”，并将这些功能封装到更清晰、一致的用户界面中。其他完成的工作包括：
 
-* 更新相关 man 手册
-* 创建 [wutil 的 Ports](https://www.freshports.org/net/wutil)
-* [为 security/wpa_supplicant Port 添加 libwpa_client 构建选项](https://cgit.freebsd.org/ports/commit/?id=edaddcd1a5bb374e58de0d4f99a7cccf6aed09ec)
-* 创建 [libifconfig 的 Port](https://www.freshports.org/net/libifconfig)
-* 将所需的 ifconfig 辅助功能提取到 libifconfig 中 ([D52130](https://reviews.freebsd.org/D52130), [D52131](https://reviews.freebsd.org/D52131))
+- 更新相关 man 手册
+- 创建 [wutil 的 Ports](https://www.freshports.org/net/wutil)
+- [为 security/wpa_supplicant Port 添加 libwpa_client 构建选项](https://cgit.freebsd.org/ports/commit/?id=edaddcd1a5bb374e58de0d4f99a7cccf6aed09ec)
+- 创建 [libifconfig 的 Port](https://www.freshports.org/net/libifconfig)
+- 将所需的 ifconfig 辅助功能提取到 libifconfig 中 ([D52130](https://reviews.freebsd.org/D52130), [D52131](https://reviews.freebsd.org/D52131))
 
 更多内容可参考 Muhammad 的 [博客](https://saheed.tech/writings)。
 
@@ -123,9 +123,9 @@ Pau Sum 的项目旨在为 FreeBSD 的 ext2fs 文件系统实现 Linux 兼容的
 
 设计上没有完全复制 Linux 的日志框架，而是实现了传统的元数据日志（metadata-only journal），使用相同的磁盘结构以保持兼容性。新代码定义了关键数据结构：
 
-* **ext2fs_journal**：表示活动日志
-* **ext2fs_journal_transaction**：分组原子元数据更新
-* **ext2fs_journal_buf**：跟踪每个块的状态
+- **ext2fs_journal**：表示活动日志
+- **ext2fs_journal_transaction**：分组原子元数据更新
+- **ext2fs_journal_buf**：跟踪每个块的状态
 
 核心文件系统操作（如 `ext2_link`、`ext2_mkdir`、`ext2_write`）扩展了日志钩子，用于开始事务、标记脏数据和结束事务。提交事务时会写入描述符块、元数据块、撤销块和提交块，并进行检查点操作以刷新磁盘更新。恢复分三步进行：验证事务范围、收集撤销块、重放未撤销的元数据。
 
@@ -135,16 +135,16 @@ Pau Sum 的项目旨在为 FreeBSD 的 ext2fs 文件系统实现 Linux 兼容的
 
 Kasyap Jannabhatla 的项目旨在为 FreeBSD 提供细粒度的、基于进程的电源使用分析，以弥补 ACPI 全系统功耗统计的局限。受 [Performance Co-Pilot (PCP)](https://github.com/pxsum/freebsd-ext34/tree/extfs-journaling) 和 RAPL（Running Average Power Limit）启发，该项目实现了 FreeBSD 原生框架，而非移植 Linux 的 PowerTop。解决方案包括：
 
-* **内核组件**：收集与功耗相关的指标
-* **用户态守护进程**：提供命令行界面，跟踪每个进程的 CPU 使用和能耗
+- **内核组件**：收集与功耗相关的指标
+- **用户态守护进程**：提供命令行界面，跟踪每个进程的 CPU 使用和能耗
 
 通过结合 RAPL 读数和由 `kvm_getprocs` 得到的每进程 CPU 利用率，该工具能够估算单个进程和线程的能耗，为精细化电源分析和 FreeBSD 电源管理的后续增强提供基础。
 
 开发过程中，重点包括：
 
-* 构建轻量级的守护进程架构
-* 实现用于结构化访问 RAPL 数据的库 **librapl**
-* 与进程计数整合，计算每线程的能耗
+- 构建轻量级的守护进程架构
+- 实现用于结构化访问 RAPL 数据的库 **librapl**
+- 与进程计数整合，计算每线程的能耗
 
 测试阶段使用了 OpenSSL Speed 等压力基准，并在多核运行环境下使用线程 ID 精确处理能耗计算。项目结束时，框架可可靠报告每进程随时间变化的能耗，所有交付物（守护进程、库和文档）均已完成。
 
@@ -168,8 +168,8 @@ Robert Clausecker，FreeBSD 谷歌编程之夏联合管理员及导师，代表 
 
 回顾 2025 谷歌编程之夏项目的成功令人欣慰，但 2026 谷歌编程之夏很快就会到来。和往常一样，要重复今年的成功，最大的挑战在于设计合适的项目、寻找投入的导师，以及将申请者与导师匹配。幸运的是，谷歌编程之夏最近的变化将有助于缓解这些问题。
 
-* **灵活的时间表与项目规模**：项目时间安排更加灵活。贡献者和导师可选择小型（90 小时）、中型（175 小时）或大型（350 小时）项目，总项目时间可延长，超出标准 8 周（小型）或 12 周（中型和大型）的限制。
-* **扩展的贡献者池**：申请者群体扩大。参与者不必是大学生，任何开源新手都有资格参与。
+- **灵活的时间表与项目规模**：项目时间安排更加灵活。贡献者和导师可选择小型（90 小时）、中型（175 小时）或大型（350 小时）项目，总项目时间可延长，超出标准 8 周（小型）或 12 周（中型和大型）的限制。
+- **扩展的贡献者池**：申请者群体扩大。参与者不必是大学生，任何开源新手都有资格参与。
 
 但目前，让我们先享受这一集体成功，并肯定今年项目付出的巨大努力。
 
@@ -177,23 +177,23 @@ Robert Clausecker，FreeBSD 谷歌编程之夏联合管理员及导师，代表 
 
 感谢所有向 [https://wiki.freebsd.org/SummerOfCodeIdeas](https://wiki.freebsd.org/SummerOfCodeIdeas) 提供项目创意的人，尤其是 2025 年的导师们：
 
-* John Baldwin
-* Olivier Certner
-* Robert Clausecker
-* Pedro Giffuni
-* Tom Jones
-* Warner Losh
-* Ed Maste
-* Getz Mikalsen
-* Joe Mingrone
-* Mehdi Mokhtari
-* George Neville-Neil
-* Colin Percival
-* Alfonso Sabato Siciliano
-* Alan Somers
-* Toomas Soome
-* Fedor Uporov
-* Aymeric Wibo
+- John Baldwin
+- Olivier Certner
+- Robert Clausecker
+- Pedro Giffuni
+- Tom Jones
+- Warner Losh
+- Ed Maste
+- Getz Mikalsen
+- Joe Mingrone
+- Mehdi Mokhtari
+- George Neville-Neil
+- Colin Percival
+- Alfonso Sabato Siciliano
+- Alan Somers
+- Toomas Soome
+- Fedor Uporov
+- Aymeric Wibo
 
 ---
 

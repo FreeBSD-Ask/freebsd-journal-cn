@@ -29,17 +29,17 @@ BSDCan 正式会议于 6 月 13–14 日举行。开幕主题演讲由著名计�
 
 这两天我听了许多讲座，其中印象深刻的有：
 
-* [ShengYi Hung：《ABI stability in FreeBSD》](https://www.bsdcan.org/2025/timetable/timetable-ABI-stability-in.html)，展示了一个检测 CTF 数据差异的实验性工具，用于发现 ABI 变化。之后我们（包括我、Mark Johnston、John Baldwin、Warner Losh 和讲者本人）展开了关于工具局限性及如何在实际应用中的讨论。
-* [Marshall Kirk McKusick：《A History of the BSD Daemon》](https://www.bsdcan.org/2025/timetable/timetable-A-History-of.html)，以及即将出版的《FreeBSD 操作系统设计与实现》（*The Design and Implementation of the FreeBSD Operating System*）第三版更新。我一向喜欢 Kirk 的演讲风格。
-* [Bojan Novković：《Hardware-accelerated program tracing on FreeBSD》](https://www.bsdcan.org/2025/timetable/timetable-Hardware-accelerated-program-tracing.html)，介绍了他在 hwt(8) 框架上的最新工作。
-* [Zhuo Ying Jiang Li：《Improvements to FreeBSD KASAN》](https://www.bsdcan.org/2025/timetable/timetable-Improvements-to-FreeBSD.html)，讲解了 FreeBSD 内核地址消毒器 (KASAN) 的改进工作，这是她参与 CheriBSD 的一部分。
+- [ShengYi Hung：《ABI stability in FreeBSD》](https://www.bsdcan.org/2025/timetable/timetable-ABI-stability-in.html)，展示了一个检测 CTF 数据差异的实验性工具，用于发现 ABI 变化。之后我们（包括我、Mark Johnston、John Baldwin、Warner Losh 和讲者本人）展开了关于工具局限性及如何在实际应用中的讨论。
+- [Marshall Kirk McKusick：《A History of the BSD Daemon》](https://www.bsdcan.org/2025/timetable/timetable-A-History-of.html)，以及即将出版的《FreeBSD 操作系统设计与实现》（*The Design and Implementation of the FreeBSD Operating System*）第三版更新。我一向喜欢 Kirk 的演讲风格。
+- [Bojan Novković：《Hardware-accelerated program tracing on FreeBSD》](https://www.bsdcan.org/2025/timetable/timetable-Hardware-accelerated-program-tracing.html)，介绍了他在 hwt(8) 框架上的最新工作。
+- [Zhuo Ying Jiang Li：《Improvements to FreeBSD KASAN》](https://www.bsdcan.org/2025/timetable/timetable-Improvements-to-FreeBSD.html)，讲解了 FreeBSD 内核地址消毒器 (KASAN) 的改进工作，这是她参与 CheriBSD 的一部分。
 
 我没能参加但本想听的讲座有：
 
-* [John Baldwin：《ELF Nightmares: GOTs, PLTs, and Relocations Oh My》](https://www.bsdcan.org/2025/timetable/timetable-ELF-Nightmares-GOTs,.html)
-* [Andrew Hewus Fresh：《The state of 3D-printing from OpenBSD》](https://www.bsdcan.org/2025/timetable/timetable-The-state-of.html)
-* [Hans-Jörg Höxer：《Confidential Computing with OpenBSD — The Next Step》](https://www.bsdcan.org/2025/timetable/timetable-Confidential-Computing-with.html)
-* [Andreas Kirchner, Benedict Reuschling：《Enhancing Unix Education through Chaos Engineering and Gamification using FreeBSD》](https://www.bsdcan.org/2025/timetable/timetable-Enhancing-Unix-Education.html)
+- [John Baldwin：《ELF Nightmares: GOTs, PLTs, and Relocations Oh My》](https://www.bsdcan.org/2025/timetable/timetable-ELF-Nightmares-GOTs,.html)
+- [Andrew Hewus Fresh：《The state of 3D-printing from OpenBSD》](https://www.bsdcan.org/2025/timetable/timetable-The-state-of.html)
+- [Hans-Jörg Höxer：《Confidential Computing with OpenBSD — The Next Step》](https://www.bsdcan.org/2025/timetable/timetable-Confidential-Computing-with.html)
+- [Andreas Kirchner, Benedict Reuschling：《Enhancing Unix Education through Chaos Engineering and Gamification using FreeBSD》](https://www.bsdcan.org/2025/timetable/timetable-Enhancing-Unix-Education.html)
 
 我在 6 月 14 日，也就是 BSDCan 的最后一天做了演讲。引发了大量问题和交流，甚至在讲座结束后仍在继续。显然，比我预想的更多人希望能在 FreeBSD 上做音乐和音频制作，或用于大型音频系统，这场演讲似乎启发了他们，这是非常好的事情。
 

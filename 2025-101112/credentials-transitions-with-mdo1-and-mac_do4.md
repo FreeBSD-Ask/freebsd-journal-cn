@@ -7,11 +7,11 @@
 
 传统的 UNIX 访问控制方法，本质上依赖于以下概念和组件：
 
-* 用户与组。组旨在通过在某些方面对组内所有用户进行统一处理，从而简化管理。
-* 进程，作为代表某个用户和组行事的主体，这些用户和组被称为其凭据。
-* 文件所有权（一个用户、一个组）与权限，它们分别控制所有者、文件所属组的成员以及其他用户的访问。
-* 特殊的 root 用户[1](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor003)，其拥有全部特权，尤其是不受访问控制约束。
-* set-user-ID / set-group-ID 可执行文件，这类程序在启动时，其进程会分别将可执行文件的所有者作为用户、将可执行文件的组作为“主”组加以认可[2](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor000)。
+- 用户与组。组旨在通过在某些方面对组内所有用户进行统一处理，从而简化管理。
+- 进程，作为代表某个用户和组行事的主体，这些用户和组被称为其凭据。
+- 文件所有权（一个用户、一个组）与权限，它们分别控制所有者、文件所属组的成员以及其他用户的访问。
+- 特殊的 root 用户[1](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor003)，其拥有全部特权，尤其是不受访问控制约束。
+- set-user-ID / set-group-ID 可执行文件，这类程序在启动时，其进程会分别将可执行文件的所有者作为用户、将可执行文件的组作为“主”组加以认可[2](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor000)。
 
 系统管理员的一项主要职责，是为其用户提供对系统各类资源的适当访问权限。在大多数情况下，这意味着定义用户和组，并确保文件权限符合预期的安全策略。
 
@@ -59,9 +59,9 @@ $ mdo -u foo -i
 
 假设现在你想显式指定组，无论是因为你像上文那样使用了数值用户 ID，还是因为你想覆盖某个用户关联的组。你可以使用以下选项：
 
-* `-g`：设置或覆盖主组[8](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor010)。
-* `-G`：设置或覆盖完整的附加组集合。你在此提供的以逗号分隔的列表被视为完整列表，即应包含所有附加组。请注意，从 FreeBSD 15 开始，用户登录时，其初始组（在密码数据库中指定）也会包含在进程的附加组集合中。
-* `-s`：修改附加组集合。此选项的参数由一系列逗号分隔的指令组成。使用 `+` 指令可以确保某组包含在附加组中，使用 `–` 指令可以确保某组不在附加组中，使用 `@` 指令可以重置列表，使 `-s` 的功能类似于 `-G`，但语法不同[9](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor011)。
+- `-g`：设置或覆盖主组[8](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor010)。
+- `-G`：设置或覆盖完整的附加组集合。你在此提供的以逗号分隔的列表被视为完整列表，即应包含所有附加组。请注意，从 FreeBSD 15 开始，用户登录时，其初始组（在密码数据库中指定）也会包含在进程的附加组集合中。
+- `-s`：修改附加组集合。此选项的参数由一系列逗号分隔的指令组成。使用 `+` 指令可以确保某组包含在附加组中，使用 `–` 指令可以确保某组不在附加组中，使用 `@` 指令可以重置列表，使 `-s` 的功能类似于 `-G`，但语法不同[9](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor011)。
 
 一些示例：
 
@@ -107,9 +107,9 @@ mac_do(4) 默认不会编译进内核，但可以很容易地以模块方式加�
 
 然后，你可以通过 sysctl(8) 项 security.mac.do 访问其参数。目前（FreeBSD 14.3 和 15.0）可用的参数如下：
 
-* enabled：模块是否启用（默认值为 true）。这是一个全局开关。也可以通过规则（下一个选项）或 jail 参数（见下文对应小节）在宿主系统或任意 jail 中选择性地停用 mac_do(4)。
-* rules：规则列表，用于指示允许哪些凭据转换。我们将在下一小节中研究多个示例。rules 默认值为空，意味着 mac_do(4) 本身不会允许任何凭据更改。
-* print_parse_error：当设置规则失败时，是否在控制台和系统日志中打印解析错误。
+- enabled：模块是否启用（默认值为 true）。这是一个全局开关。也可以通过规则（下一个选项）或 jail 参数（见下文对应小节）在宿主系统或任意 jail 中选择性地停用 mac_do(4)。
+- rules：规则列表，用于指示允许哪些凭据转换。我们将在下一小节中研究多个示例。rules 默认值为空，意味着 mac_do(4) 本身不会允许任何凭据更改。
+- print_parse_error：当设置规则失败时，是否在控制台和系统日志中打印解析错误。
 
 下面我们先通过示例说明规则，然后再讲如何配置 jail。
 
@@ -198,8 +198,8 @@ FreeBSD 中的 Jail 形成一个层级结构[16](https://freebsdfoundation.org/o
 
 mac_do(4) 支持每个 jail 的配置，通过以下参数实现：
 
-* mac.do：每个 jail 的模块模式。
-* mac.do.rules：适用于该 jail 的规则。
+- mac.do：每个 jail 的模块模式。
+- mac.do.rules：适用于该 jail 的规则。
 
 参数 mac.do.rules 包含适用规则，其格式与上一节中看到的 sysctl(8) 项 security.mac.do.rules  完全相同。
 
@@ -209,9 +209,9 @@ mac_do(4) 支持每个 jail 的配置，通过以下参数实现：
 
 参数 mac.do 指示 mac_do(4) 在 jail 中的工作方式。对于支持 jail 的模块的主控参数来说，通常接受或报告以下值：
 
-* new：jail 的配置独立于父 jail。
-* inherit：jail 的配置继承自父 jail。
-* disable：在该 jail 中禁用 mac_do(4)。
+- new：jail 的配置独立于父 jail。
+- inherit：jail 的配置继承自父 jail。
+- disable：在该 jail 中禁用 mac_do(4)。
 
 出于显而易见的安全原因，默认值为 disable，除非显式设置了 mac.do.rules。
 

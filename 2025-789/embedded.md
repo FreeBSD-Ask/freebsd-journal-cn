@@ -54,9 +54,9 @@ CheriABI 展示了，你可以在一个内存安全的世界里运行真正的 P
 
 我们有三个问题：
 
-* 在 64 位系统上运行良好的 CHERI 机制，能否在 32 位系统上也能运作？
-* 如果有了 CHERI，可以舍弃哪些东西？
-* 如果从零开始假定存在 CHERI，这个操作系统会是什么样子？
+- 在 64 位系统上运行良好的 CHERI 机制，能否在 32 位系统上也能运作？
+- 如果有了 CHERI，可以舍弃哪些东西？
+- 如果从零开始假定存在 CHERI，这个操作系统会是什么样子？
 
 第一个问题并不是显而易见的。CHERI 提供的抽象似乎与地址大小无关，除了一个问题：CHERI 能力的所有元数据必须放进与地址同样多的比特中。这意味着在 32 位系统上，我们只有一半的空间存放元数据。
 
@@ -68,9 +68,9 @@ CHERI 使用一种压缩编码来表示边界，它利用了对象基址、对�
 
 当我们构建第一个 [CHERIoT](https://cheriot.org/) 原型时，有三个核心组件：
 
-* 用 BlueSpec SystemVerilog 编写的 CPU 内核；
-* 移植版的 LLVM；
-* 从零开始的 RTOS。
+- 用 BlueSpec SystemVerilog 编写的 CPU 内核；
+- 移植版的 LLVM；
+- 从零开始的 RTOS。
 
 BlueSpec SystemVerilog 是一种基于 Haskell 的高级硬件描述语言，使快速原型开发变得容易。[BlueSpec 编译器](https://github.com/B-Lang-org/bsc) 在 FreeBSD 上编译只需做少量小改动，我们把这些修改上游合并了，现在 FreeBSD 是一个受支持的平台。它目前还没进入 ports，但这会是一个很好的改进。有了它，我们就能在 FreeBSD 上构建运行 CPU 内核的模拟器。后来我们转向了用 SystemVerilog 实现的生产级代码，并使用（来自软件包的）verilator 在 FreeBSD 上构建模拟器。
 
@@ -198,9 +198,9 @@ SUCCESS
 
 开发容器还包含另外三个模拟器：
 
-* 针对 Ibex 内核的逐周期精确（cycle-accurate）verilator 模拟器，带有最小化的外设集。
-* 针对 lowRISC Sonata 开发板的模拟器。
-* 来自 Google 的 MPact 模拟器，它提供了一个高性能模拟器，并带有集成调试器。
+- 针对 Ibex 内核的逐周期精确（cycle-accurate）verilator 模拟器，带有最小化的外设集。
+- 针对 lowRISC Sonata 开发板的模拟器。
+- 来自 Google 的 MPact 模拟器，它提供了一个高性能模拟器，并带有集成调试器。
 
 MPact 模拟器与 Sail（简化）机器兼容。
 

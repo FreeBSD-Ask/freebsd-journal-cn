@@ -46,6 +46,7 @@ oqsprovider 需要 OpenSSL 3.2 或更高版本。根据其 GitHub 页面说明�
 # rm -rf /usr/ports
 # git clone --depth 1 https://git.FreeBSD.org/ports.git -b 2025Q2 /usr/ports
 ```
+
 之后，我们需要安装 OpenSSL 3.4.1 和 oqsprovider。
 
 ```sh
@@ -74,6 +75,7 @@ module = /usr/local/lib/ossl-modules/oqsprovider.so
 ```sh
 # cd /usr/ports/www/nginx
 ```
+
 我将设置一些环境变量，以便让 nginx 链接到新安装的 OpenSSL 3.4.1。
 
 ```
@@ -149,10 +151,10 @@ compatibility
 
 此配置实现了以下功能：
 
-* 监听 80 和 443 端口
-* 将明文 HTTP 请求重定向到 HTTPS
-* 使用 TLS 1.3 和 TLS 1.2 以保证兼容性
-* 使用平衡的加密套件，在提供较好安全性的同时兼顾广泛的兼容性（加密套件和曲线列表来源于 Mozilla SSL Configuration Generator）
+- 监听 80 和 443 端口
+- 将明文 HTTP 请求重定向到 HTTPS
+- 使用 TLS 1.3 和 TLS 1.2 以保证兼容性
+- 使用平衡的加密套件，在提供较好安全性的同时兼顾广泛的兼容性（加密套件和曲线列表来源于 Mozilla SSL Configuration Generator）
 
 接下来，在本演示中我将创建一张自签名证书，但在生产环境中（以及为了兼容性），你应当获取由可信 CA 签发的有效证书。你可以使用 Let’s Encrypt 证书，并通过 **certbot(1)** 来自动化证书续期。为此，只需运行以下命令：
 
@@ -250,6 +252,7 @@ Starting nginx.
 ```PowerShell
 Invoke-WebRequest https://192.168.2.40
 ```
+
 使用 curl 也可以，不过在 Windows 上它只是 **Invoke-WebRequest** 的前端，不具备 FreeBSD 或 Linux 版本中的那些参数。
 
 为了测试与其他硬件的兼容性，我登录到了我的 **MikroTik 路由器**，并在命令行中调用了该 URL：
@@ -292,17 +295,17 @@ security.tls.enable_kyber
 
 接下来，按 **F12** 打开开发者工具：
 
-* 在 **Firefox** 中切换到 **“network”** 选项卡
-* 在 **Chrome** 中进入 **“隐私和安全”**
+- 在 **Firefox** 中切换到 **“network”** 选项卡
+- 在 **Chrome** 中进入 **“隐私和安全”**
 
 然后输入你的 FreeBSD 安装的 IP 地址并按回车。屏幕上应该只显示一个 IP 地址（即请求的来源）。在开发者工具中，点击对应你 FreeBSD IP 地址的请求条目：
 
-* 如果使用 Firefox，还需要点击右侧的 **“Security”** 标签页。
+- 如果使用 Firefox，还需要点击右侧的 **“Security”** 标签页。
 
 如果你的浏览器支持 PQC，你会看到密钥交换方式是：
 
-* **mlkem768x25519**（Firefox）
-* **X25519MLKEM768**（Chrome）
+- **mlkem768x25519**（Firefox）
+- **X25519MLKEM768**（Chrome）
 
 
 

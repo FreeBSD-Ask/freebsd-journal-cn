@@ -41,10 +41,10 @@ OSS 的另一个优点是它只依赖 POSIX 系统调用，因此可以非常容
 
 OSS API 在 `sound(4)` 中实现。它将一些通用功能抽象为内核模块，使得各个声卡驱动（如 `snd_hda(4)`、`snd_uaudio(4)` 等）无需重复实现这些通用代码。通用功能包括：
 
-* 设备的创建、删除和访问。
-* 缓冲区管理。
-* 音频处理。
-* 提供全局以及大部分设备特定的 sysctl 接口。
+- 设备的创建、删除和访问。
+- 缓冲区管理。
+- 音频处理。
+- 提供全局以及大部分设备特定的 sysctl 接口。
 
 驱动在初始化阶段必须附加到 `sound(4)` 并建立与其的通信管道。换言之，`sound(4)` 是用户空间与设备驱动之间的桥梁。这非常方便，因为 FreeBSD 内核为每个连接的声卡都暴露相同的 `/dev/dsp*` 文件和 sysctl（`hw.snd.*` 和 `dev.pcm.*`），为用户和应用程序提供了统一访问和配置，同时避免驱动层的重复实现。
 
@@ -90,16 +90,16 @@ $ sndctl -v
 
 `sound(4)` 一个有趣的功能是其处理链，包括以下内容：
 
-* **混音（Mixing）**：实际上就是前一节中讲的虚拟通道音频流的混合与解混合。
-* **音量控制（Volume control）**。
-* **通道矩阵（Channel matrixing）**：`sound(4)` 可以进行任意通道映射，例如单声道到立体声，或立体声到 5.1 环绕声。这是通过将流从一种交错 PCM 格式转换为另一种实现的。
-* **基础参数均衡（Basic parametric equalization）**。
-* **格式转换（Format conversions）**。
-* **重采样（Resampling）**，包括三种类型：
+- **混音（Mixing）**：实际上就是前一节中讲的虚拟通道音频流的混合与解混合。
+- **音量控制（Volume control）**。
+- **通道矩阵（Channel matrixing）**：`sound(4)` 可以进行任意通道映射，例如单声道到立体声，或立体声到 5.1 环绕声。这是通过将流从一种交错 PCM 格式转换为另一种实现的。
+- **基础参数均衡（Basic parametric equalization）**。
+- **格式转换（Format conversions）**。
+- **重采样（Resampling）**，包括三种类型：
 
-  * 线性（Linear）
-  * 零阶保持（Zero-order-hold, ZOH）
-  * 正弦基函数（Sine Cardinal, SINC）
+  - 线性（Linear）
+  - 零阶保持（Zero-order-hold, ZOH）
+  - 正弦基函数（Sine Cardinal, SINC）
 
 每个通道都有自己的处理链，只包含必要的组件。例如，如果通道配置的采样率为 44100Hz，但应用程序提供的音频是 48000Hz，则该通道的处理链中需要包含重采样组件；如果音频流的采样率与通道相同，则该组件不需要。其他组件也是类似逻辑。
 
@@ -115,9 +115,9 @@ $ sndctl feederchain
 
 `sound(4)` 的两个特性，尤其受到低延迟应用开发者和音频爱好者的欢迎：**比特完美模式**和**内存映射 I/O**。
 
-* **比特完美模式（Bit-perfect mode）**：意味着音频流会跳过 `sound(4)` 的所有处理链，几乎直接送入声卡。使用该模式的应用程序需要自行确保音频流的配置（采样率、格式、通道矩阵）与声卡匹配。例如，如果应用程序播放 48000Hz 的音频，但声卡不支持此采样率，则应用程序必须负责重采样。比特完美模式默认是关闭的，仅由自行实现音频处理的应用或确信声卡支持比特完美模式的用户启用。
+- **比特完美模式（Bit-perfect mode）**：意味着音频流会跳过 `sound(4)` 的所有处理链，几乎直接送入声卡。使用该模式的应用程序需要自行确保音频流的配置（采样率、格式、通道矩阵）与声卡匹配。例如，如果应用程序播放 48000Hz 的音频，但声卡不支持此采样率，则应用程序必须负责重采样。比特完美模式默认是关闭的，仅由自行实现音频处理的应用或确信声卡支持比特完美模式的用户启用。
 
-* **内存映射 I/O（Memory-mapped I/O）**：与比特完美类似，音频流跳过 `sound(4)` 的所有处理；实际上，使用内存映射 I/O 必须先启用比特完美模式。主要区别在于，内存映射 I/O 将所有音频缓冲区管理责任完全交给应用程序。应用不仅需要处理比特完美模式下的事项，还必须确保缓冲区正确同步，读写操作按时完成（在一定程度上借助 `sound(4)` 的帮助）。在合适的环境下正确实现，可以提高性能，但实现起来非常繁琐且容易出错，因此通常不推荐使用，除非开发者非常清楚自己在做什么。
+- **内存映射 I/O（Memory-mapped I/O）**：与比特完美类似，音频流跳过 `sound(4)` 的所有处理；实际上，使用内存映射 I/O 必须先启用比特完美模式。主要区别在于，内存映射 I/O 将所有音频缓冲区管理责任完全交给应用程序。应用不仅需要处理比特完美模式下的事项，还必须确保缓冲区正确同步，读写操作按时完成（在一定程度上借助 `sound(4)` 的帮助）。在合适的环境下正确实现，可以提高性能，但实现起来非常繁琐且容易出错，因此通常不推荐使用，除非开发者非常清楚自己在做什么。
 
 ## 设备驱动程序
 
@@ -156,10 +156,10 @@ FreeBSD 内置支持以下声卡：
 
 此外，还支持以下 ARM 芯片：
 
-* Allwinner A10/A20 和 H3
-* Broadcom BCM2835
-* Freescale Vybrid
-* Freescale i.MX6
+- Allwinner A10/A20 和 H3
+- Broadcom BCM2835
+- Freescale Vybrid
+- Freescale i.MX6
 
 如果你的声卡在你使用的架构上默认驱动未启用，或者你使用的是未编译声卡支持的自定义内核配置，并且不确定声卡使用的是哪个驱动，可以运行以下命令：
 
@@ -175,12 +175,12 @@ FreeBSD 内置支持以下声卡：
 
 几个重要的面向用户的改进包括：
 
-* 现在支持热拔插。使用旧版 FreeBSD 的 USB 声卡用户可能记得，热拔插声卡通常会导致 USB 总线卡住，直到手动终止使用已断开设备的应用程序
+- 现在支持热拔插。使用旧版 FreeBSD 的 USB 声卡用户可能记得，热拔插声卡通常会导致 USB 总线卡住，直到手动终止使用已断开设备的应用程序
   ([PR 194727](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194727))。
-* 浮点音频支持。这有点容易误解，因为至少目前在设备驱动层并未真正支持浮点音频，而是允许用户空间应用程序使用 OSS 进行浮点音频处理。已修复了不少 Port，例如 Wine，需要 OSS 提供浮点音频支持。
-* `sound(4)` 现在每个设备只暴露一个 `/dev/dsp*` 文件，并在内部完成所有音频流路由，通过 DEVFS_CDEVPRIV(9) 实现，而不是为每个分配的音频流暴露一个 `/dev/dsp*` 文件。当前方法在实现和向用户空间暴露的内容上都更清晰。
-* 对高保真音频卡 (`snd_hda(4)`) 的开箱支持更好。这类声卡一直是开发者和用户的痛点，因为它们往往带有非标准配置，需要在驱动或 `/boot/device.hints` 内添加手动补丁来补偿。一个常见问题是插入耳机时声音不会自动切换，反之亦然。最近已有针对多款声卡的补丁，尤其是 Framework 笔记本。自 FreeBSD 15.0 起，提供了 devd(8) 配置 `/etc/devd/snd.conf` 尝试自动解决该问题。基本思路是，当 snd_hda(4) 检测到插孔被（拔）插时，会发送 devd(8) 通知，而 `/etc/devd/snd.conf` 会通过 `virtual_oss(8)` 将声音重定向到合适的设备。此功能仍处于实验阶段，未来会根据反馈进一步优化。
-* 为 `sound(4)` 添加 kqueue(2) 支持。
+- 浮点音频支持。这有点容易误解，因为至少目前在设备驱动层并未真正支持浮点音频，而是允许用户空间应用程序使用 OSS 进行浮点音频处理。已修复了不少 Port，例如 Wine，需要 OSS 提供浮点音频支持。
+- `sound(4)` 现在每个设备只暴露一个 `/dev/dsp*` 文件，并在内部完成所有音频流路由，通过 DEVFS_CDEVPRIV(9) 实现，而不是为每个分配的音频流暴露一个 `/dev/dsp*` 文件。当前方法在实现和向用户空间暴露的内容上都更清晰。
+- 对高保真音频卡 (`snd_hda(4)`) 的开箱支持更好。这类声卡一直是开发者和用户的痛点，因为它们往往带有非标准配置，需要在驱动或 `/boot/device.hints` 内添加手动补丁来补偿。一个常见问题是插入耳机时声音不会自动切换，反之亦然。最近已有针对多款声卡的补丁，尤其是 Framework 笔记本。自 FreeBSD 15.0 起，提供了 devd(8) 配置 `/etc/devd/snd.conf` 尝试自动解决该问题。基本思路是，当 snd_hda(4) 检测到插孔被（拔）插时，会发送 devd(8) 通知，而 `/etc/devd/snd.conf` 会通过 `virtual_oss(8)` 将声音重定向到合适的设备。此功能仍处于实验阶段，未来会根据反馈进一步优化。
+- 为 `sound(4)` 添加 kqueue(2) 支持。
 
 
 ## 用户空间工具
@@ -242,9 +242,9 @@ pcm3:mixer: <Realtek ALC295 (Analog 2.0+HP/2.0)> on hdaa1 (play/rec) (default)
 
 如 [15.0 发布说明](https://cgit.freebsd.org/src/commit/?id=c457acb4ee821cf015930a94f52c3870786468a7) 所述，FreeBSD 15.0 之前的 `virtual_oss(8)` 用户可以卸载 port audio/virtual_oss 并使用基本系统版本。唯一需要注意的是，某些依赖第三方库的功能已移至独立 port，包括：
 
-* sndio 后端支持：`audio/virtual_oss_sndio`
-* 蓝牙后端支持：`audio/virtual_oss_bluetooth`
-* virtual_equalizer(8)：`audio/virtual_oss_equalizer`
+- sndio 后端支持：`audio/virtual_oss_sndio`
+- 蓝牙后端支持：`audio/virtual_oss_bluetooth`
+- virtual_equalizer(8)：`audio/virtual_oss_equalizer`
 
 ### mididump(1)
 
@@ -275,16 +275,16 @@ Pitch bend              channel=1, change=1
 | dev.pcm.*          | 设备特定的 sysctl(8) 变量。                                                     | man 4 sound   |
 | 驱动特定的 sysctl(8) 变量 |                                                                         | 请参考相应驱动的手册页。  |
 
-## FreeBSD 用于音乐制作？！
+## FreeBSD 用于音乐制作？
 
 你可能会觉得在开玩笑，但实际上，近年来这个话题越来越多地被提及，我们也已经在一些会议上看到了相关演讲，例如：
 
-* Goran Mekić, FOSDEM 2019
-* Goran Mekić, EuroBSDCon 2022
-* Charlie Li, BSDCan 2024
-* Christos Margiolis, FreeBSD DevSummit 09/2024
-* Christos Margiolis, BSDCan 2025
-* Charlie Li, EuroBSDCon 2025
+- Goran Mekić, FOSDEM 2019
+- Goran Mekić, EuroBSDCon 2022
+- Charlie Li, BSDCan 2024
+- Christos Margiolis, FreeBSD DevSummit 09/2024
+- Christos Margiolis, BSDCan 2025
+- Charlie Li, EuroBSDCon 2025
 
 毫无疑问，FreeBSD 并不是音乐人或制作人在考虑音乐制作系统时的首选操作系统，但部分原因在于缺乏“宣传”。实际上，FreeBSD 提供了稳定、高速、可高度配置的声音子系统，拥有不断增长的开源数字音频工作站（DAW）、LV2 插件以及其他类型的音乐/制作软件，并且在 OSS 不适用或不理想的情况下，还可以兼容其他非原生声音子系统（如 ALSA、sndio、JACK、Pulseaudio、Pipewire 等）。
 

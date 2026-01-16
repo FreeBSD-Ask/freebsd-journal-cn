@@ -47,15 +47,15 @@
 
 如前所述，UFS 将多个现有标准叠加，并组织为三个层次：互连层、传输层和应用层。各层的作用如下：
 
-* **UIC（UFS 互连层）：** 管理链路。负责通过 M-PHY/UniPro 启动链路，调整档位和通道设置以平衡性能与功耗，支持电源状态（Active、Hibernate），检测错误并执行恢复。UFS 驱动通过寄存器和 UIC 命令控制该层。
-* **UTP（UFS 传输协议层）：** 传输管理命令和 SCSI 命令。主控器维护管理队列和 I/O 队列；驱动将请求入队并触发门控。数据通过 DMA 传输，完成状态通过中断返回。
-* **UAP（UFS 应用层）：** 处理命令（如 READ/WRITE）及命令队列控制。尽管 UFS 定义了多个命令集，但实际仅使用 SCSI 命令子集。UFS 驱动不会生成 SCSI 命令，而是将 CAM 生成的 SCSI 命令封装到 UPIU 中传递给 UTP，从而允许重用 CAM 的标准路径进行扫描、错误处理和重试。通过该层，CAM 将 UFS 视为标准 SCSI 设备。
+- **UIC（UFS 互连层）：** 管理链路。负责通过 M-PHY/UniPro 启动链路，调整档位和通道设置以平衡性能与功耗，支持电源状态（Active、Hibernate），检测错误并执行恢复。UFS 驱动通过寄存器和 UIC 命令控制该层。
+- **UTP（UFS 传输协议层）：** 传输管理命令和 SCSI 命令。主控器维护管理队列和 I/O 队列；驱动将请求入队并触发门控。数据通过 DMA 传输，完成状态通过中断返回。
+- **UAP（UFS 应用层）：** 处理命令（如 READ/WRITE）及命令队列控制。尽管 UFS 定义了多个命令集，但实际仅使用 SCSI 命令子集。UFS 驱动不会生成 SCSI 命令，而是将 CAM 生成的 SCSI 命令封装到 UPIU 中传递给 UTP，从而允许重用 CAM 的标准路径进行扫描、错误处理和重试。通过该层，CAM 将 UFS 视为标准 SCSI 设备。
 
 ## 主要优势（高性能、低功耗）
 
-* **性能：** 相比 eMMC 的半双工并行接口，UFS 的全双工高速串行接口提供更高带宽和更低延迟。提交路径轻量化，基于队列、DMA 和中断构建。因此，即使仅使用单队列，性能也很稳定，多循环队列（MCQ）在多核系统上进一步提高了可扩展性。WriteBooster 利用 NAND 的 SLC 区域进一步提升突发写入性能。
-* **功耗效率：** UIC 链路仅在 I/O 活跃时提升档位，空闲时迅速降至低功耗状态。标准定义了电源状态切换，从而在热量和功耗受限的移动设备中延长电池寿命。实际上，有报道显示，使用 UFS 而非 NVMe 的平板电脑可额外延长[约 30-90 分钟的续航](https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Duet_3_11IAN8/IdeaPad_Duet_3_11IAN8_Spec.pdf)。
-* **兼容性：** 由于 UFS 使用 SCSI 命令子集，现有 SCSI 基础设施可以复用。在 FreeBSD 中，CAM 处理 SCSI 命令，而 UFS 驱动将 CAM 生成的 SCSI 命令封装到 UPIU 中传递给 UTP，使其与 CAM 的集成十分简便。
+- **性能：** 相比 eMMC 的半双工并行接口，UFS 的全双工高速串行接口提供更高带宽和更低延迟。提交路径轻量化，基于队列、DMA 和中断构建。因此，即使仅使用单队列，性能也很稳定，多循环队列（MCQ）在多核系统上进一步提高了可扩展性。WriteBooster 利用 NAND 的 SLC 区域进一步提升突发写入性能。
+- **功耗效率：** UIC 链路仅在 I/O 活跃时提升档位，空闲时迅速降至低功耗状态。标准定义了电源状态切换，从而在热量和功耗受限的移动设备中延长电池寿命。实际上，有报道显示，使用 UFS 而非 NVMe 的平板电脑可额外延长[约 30-90 分钟的续航](https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Duet_3_11IAN8/IdeaPad_Duet_3_11IAN8_Spec.pdf)。
+- **兼容性：** 由于 UFS 使用 SCSI 命令子集，现有 SCSI 基础设施可以复用。在 FreeBSD 中，CAM 处理 SCSI 命令，而 UFS 驱动将 CAM 生成的 SCSI 命令封装到 UPIU 中传递给 UTP，使其与 CAM 的集成十分简便。
 
 ## UFS 的历史与后续
 
@@ -75,11 +75,11 @@ UFS 驱动与 CAM 子系统紧密集成。在初始化过程中，驱动向 CAM 
 
 初始化遵循 UFS 分层架构，自底向上进行。
 
-* **UFSHCI 寄存器：** 启用主控器，配置所需寄存器，并启用中断。
-* **UIC（UFS 互连层）：** 发送 Link Startup 命令以建立主机与设备之间的链路，并验证连通性。
-* **UTP（UFS 传输协议层）：** 创建 UTP 命令队列并启用 UTP 中断。发送 NOP UPIU 命令以验证传输路径。
-* **配置档位与通道：** 协商档位和通道数量，然后配置链路以实现最大带宽运行。
-* **UAP（UFS 应用层）：** 向 CAM 注册以开始基于 SCSI 的初始化；CAM 扫描总线上的目标设备和 LUN，并将 SCSI 命令传递给驱动。
+- **UFSHCI 寄存器：** 启用主控器，配置所需寄存器，并启用中断。
+- **UIC（UFS 互连层）：** 发送 Link Startup 命令以建立主机与设备之间的链路，并验证连通性。
+- **UTP（UFS 传输协议层）：** 创建 UTP 命令队列并启用 UTP 中断。发送 NOP UPIU 命令以验证传输路径。
+- **配置档位与通道：** 协商档位和通道数量，然后配置链路以实现最大带宽运行。
+- **UAP（UFS 应用层）：** 向 CAM 注册以开始基于 SCSI 的初始化；CAM 扫描总线上的目标设备和 LUN，并将 SCSI 命令传递给驱动。
 
 CAM（Common Access Method）是 FreeBSD 的存储子系统，分为三个层次：CAM 外设层、CAM 传输层（XPT）和 CAM SIM 层。初始化完成后，UFS 驱动通过 `cam_sim_alloc()` 创建 SIM 对象，并通过 `xpt_bus_register()` 向 XPT 注册。随后，XPT 扫描总线上的目标设备和 LUN，以发现 SCSI 设备。当找到有效 LUN 时，它调用 `cam_periph_alloc()` 在 CAM 外设层创建并注册一个 Direct Access（da）外设。
 
