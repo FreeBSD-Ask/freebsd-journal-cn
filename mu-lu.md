@@ -307,3 +307,15 @@
 * [FreeBSD 桌面发行版](2020-0506/Desktop.md)
 * [使用 Poudriere 进行 Port 批量管理](2020-0506/Port.md)
 * [FreeBSD 的新面孔](2020-0506/Faces.md)
+
+## 2017-0910 FreeBSD vs Linux
+
+* [FreeBSD 不是 Linux 发行版](2017-0910/FreeBSD-is-Not-a-Linux-Distro.md)
+* [FreeBSD vs Linux: ZFS](2017-0910/FreeBSD-vs-Linux-ZFS.md)
+* [Unix 沙箱技术比较](2017-0910/A-Comparison-of-Unix-Sandboxing-Techniques.md)
+* [FreeBSD 管理架构的演变](2017-0910/The-Evolution-of-FreeBSD-Governance.md)
+
+## 既往精选
+
+* [由 FreeBSD 驱动的中国 LCD 广告显示屏](other/FreeBSD-Powered-LCD-Advertising-Displays.md)
+* [创建一家 BSD 用户组](other/Starting-a-BSD-User-Group.md)
