@@ -3,7 +3,6 @@
 - 作者：SOOBIN RHO
 - 原文链接 <https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/mfsbsd-in-base/>
 
-
 mfsBSD 是一款基于 FreeBSD 的内存操作系统。
 
 mfsBSD 的不同之处在于，它是完全运行于内存的 FreeBSD 实例——因此叫做 mfs（memory file system，内存文件系统）。所以，这意味着当我们在使用 mfsBSD 时，不会对现有的磁盘设备造成任何干扰。例如，我们可以将其用于本地服务器和云服务器的故障排除①。在邮件列表中搜索 mfsBSD，看看人们是如何解决各种问题的，实乃一大趣事。我个人最喜欢的应用场景是在仅有单个磁盘的设备中安装 FreeBSD，如果因某种原因无法使用 FreeBSD 安装介质，我就会：先制作 mfsBSD 镜像、将这个镜像安装到磁盘设备上、启动 mfsBSD、最后运行 bsdinstall。示例如下：

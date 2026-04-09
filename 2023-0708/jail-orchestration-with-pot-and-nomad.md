@@ -4,7 +4,6 @@
 - 作者：LUCA PIZZAMIGLIO
 - 译者：段龙甫
   
-
 在许多服务器上，尤其是分发水平可扩展应用方面，容器是个卓越的工具。当应用数量和它们的基数增长时，手工管理数量众多的容器将会变得困难起来。
 
 容器管理器是一个旨在简化众多容器管理，遮蔽复杂性，提高可靠性的应用程序，特别是在一个自动伸缩和持续部署的动态环境中。在本文中，我们将讨论基于 FreeBSD，使用 pot(一个支持 jail 镜像的 jail 框架)，和 nomad(一个由 HashiCorp 开发的与容器无关的管理器)。
@@ -49,7 +48,6 @@ Nomad 服务器能运行在任何提供支持的操作系统。要管理 jail，
 
 在 pot 容器中，镜像是通过 fetch(1) 下载的文件，因此注册表可以是一个简单的 web 服务器。
 
-
 ### 服务目录
 
 服务目录是一个被附加的信息增强的服务列表，如实现那些服务所有的容器地址。
@@ -82,7 +80,6 @@ Nomad 有一个插件结构允许它扩展支持新的容器技术。Esteban Bar
 
 ![R%(G0Z M53 6`KY9Y2 M(70](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/21b66fef-1c8f-4172-908b-7d5c3efd6593)
 
-
 ### 精简的 pot 容器
 
 Minipot 是一个在一台 FreeBSD 机器上安装和配置所有上述服务的包，也是我们使用它来展示例子的参考安装。
@@ -96,7 +93,6 @@ Minipot 对于测试是个很有用的配置，但不适用于专业安装，因
 ## 调度任务
 
 minipot 初始化后，并且所有服务正在运行，我们就可以使用下面的任务说明文件在 nomad 中启动一个任务。
-
 
 ```
  job “nginx-minipot” {
@@ -258,7 +254,7 @@ $ nomad run nginx.job
 
 - 跟踪其它容器的日志 (**$ nomad alloc logs -f allocation2**)
 
-- 在入口执行 curl(**$ curl -H Host:hello-web.minipot http://127.0.0.1:8080**)
+- 在入口执行 curl(**$ curl -H Host:hello-web.minipot <http://127.0.0.1:8080>**)
 
 在每次执行 curl 时，代理都会在容器之间分发请求，这可以从容器的日志中看出来。
 
@@ -286,7 +282,6 @@ Minipot 是一个有用的单节点安装的作为学习或本地测试的平台
 值得一提的是，前面提到的设置可以混合不同的操作系统：唯一必须运行 FreeBSD 的服务器是针对 jail/pot 工作负载的 nomad 客户端。
 
 Nomad 或 consul 服务器可以在 Linux 或 Solaris 上运行，允许你重用可能已经可用基础设施。
-
 
 作为入口代理，我们使用 traefik，与本地 consul 同步。但是，可以使用其它服务，如 nginx 或 ha-proxy，以及 consul-template 来实现相同的结果。在这种配置中，consul-template 负责监测 consul 的变更，呈现代理配置模板，并将新配置通知代理。
 

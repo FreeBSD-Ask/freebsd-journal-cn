@@ -26,7 +26,7 @@
 
 但我想我应该介绍一下自己：
 
-我是 phk@FreeBSD.org，我的笔记本电脑叫做“critter”，已经运行了接近 30 年的 FreeBSD-current。在最近十多年里，我平均每 18 小时就会提交代码到 FreeBSD 源代码库，只有在 Norvegian Newspaper 遇到 HTTP 性能问题时我才会停止提交代码。
+我是 <phk@FreeBSD.org>，我的笔记本电脑叫做“critter”，已经运行了接近 30 年的 FreeBSD-current。在最近十多年里，我平均每 18 小时就会提交代码到 FreeBSD 源代码库，只有在 Norvegian Newspaper 遇到 HTTP 性能问题时我才会停止提交代码。
 
 ## 如何让 UNIX 不那么糟糕？
 
@@ -50,7 +50,7 @@
 
 > PATCH00019
 > 补丁：清理 SLIP 接口以避免宕机
-> 作者：Poul-Henning Kamp (p...@data.fls.dk)
+> 作者：Poul-Henning Kamp (<p...@data.fls.dk>)
 > 描述：
 > 这是一个用于清理终端驱动程序（特别是 com 驱动程序）与 sl# 接口之间关系的补丁，这不是一个权宜之计，而是一个真正的错误修复。
 > 症状：在多次出现“com#: silo overflow”后，SLIP 将停止工作。
@@ -192,7 +192,6 @@ Walnut Creek CD-ROM 计划在 1994 年 12 月发布 FreeBSD 2.0 版本的 CD-ROM
 
 ![Daemon-phk svg](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/20100f50-4b6e-403b-b37c-76ca0d1ca074)
 
-
 ## Critter 始终运行 FreeBSD-current 版本
 
 我继续利用我大量的业余时间进行 FreeBSD 的开发，并购买了一台 Gateway Handbook/486 笔记本电脑，这样我就可以在每天的“BART”通勤时间里更加高效地工作。那是我拥有的第一台“critter”笔记本电脑，也是我最喜欢的一台，但这个名字随后被传承给我之后拥有的十几台笔记本电脑，它们全部运行着 FreeBSD 的-current 版本。
@@ -307,4 +306,4 @@ sysinstall 磁盘编辑器向我展示了文件系统和存储设备之间的接
 
 ---
 
-**POUL HENNING-KAMP**，即 phk@FreeBSD.org，他的笔记本电脑叫做“critter”，已经运行了接近 30 年的  FreeBSD-current。在最近十多年里，他会平均每 18 小时提交代码到 FreeBSD 源代码库，只有在 Norvegian Newspaper 遇到 HTTP 性能问题时他才会停止提交代码。
+**POUL HENNING-KAMP**，即 <phk@FreeBSD.org>，他的笔记本电脑叫做“critter”，已经运行了接近 30 年的  FreeBSD-current。在最近十多年里，他会平均每 18 小时提交代码到 FreeBSD 源代码库，只有在 Norvegian Newspaper 遇到 HTTP 性能问题时他才会停止提交代码。

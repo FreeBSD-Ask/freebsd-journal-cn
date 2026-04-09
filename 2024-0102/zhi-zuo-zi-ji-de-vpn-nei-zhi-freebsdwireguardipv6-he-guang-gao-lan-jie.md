@@ -1,9 +1,7 @@
 # 配置自己的 VPN——基于 FreeBSD、Wireguard、IPv6 和广告拦截
 
-
 - 原文链接：[Make Your Own VPN —FreeBSD, Wireguard, IPv6 and Ad-blocking Included](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/make-your-own-vpn-freebsd-wireguard-ipv6-and-ad-blocking-included/)
 - 作者：Stefano Marinelli
-
 
 >**注意**
 >

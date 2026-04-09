@@ -11,7 +11,6 @@
 
 ![](https://github.com/user-attachments/assets/629172b4-8f59-4aa8-a05e-05d3b781a141)
 
-
 ## SCaLE 19x 研讨会回顾
 
 学员们陆续走进会场，映入眼帘的是投影屏幕上《FreeBSD 入门》的标题幻灯片——由 FreeBSD 基金会的市场协调员 **Drew Gurkowski** 设计。这次演示还通过 YouTube 进行了直播，链接如下：  
@@ -30,8 +29,6 @@
 
 在这一阶段，我们会进行短暂的休息，我会利用这段时间帮助尚未跟上的学员。  
 
-
-
 ## 常见问题与解决方案
 
 在研讨会中，我遇到的最常见问题主要与虚拟机的错误配置*有关。例如：  
@@ -47,7 +44,6 @@
 - 由于 DHCP 提供的 DNS 设置有问题，我们不得不手动修改 `/etc/resolv.conf` 文件中的 **nameserver** 配置，以保证网络连接正常。  
 
 ![](https://github.com/user-attachments/assets/54d3652f-6654-4bfa-9d87-fabe3b078a80)
-
 
 ## 总结  
 
@@ -67,7 +63,6 @@
 
 我们使用的工具是 **Poudriere**，它让构建自己的软件包仓库变得非常简单和直观。  
 
-
 ## 自动化管理与 Ansible
 
 在学员们开始熟悉命令行输入后，我们引入了 **Ansible**，这是一款用于**配置管理**的工具，特别适用于通过 SSH 远程管理多台服务器。  
@@ -83,7 +78,6 @@
 ## FreeBSD Jail 与 iocage
 
 ![](https://github.com/user-attachments/assets/1d2d7683-37fd-41fe-9d9c-f1a0f596048c)
-
 
 最后，我们讨论了 **FreeBSD Jail**，让学员体验它们的强大功能，并学习如何使用 **iocage** 进行管理。  
 
@@ -113,8 +107,6 @@
 - **更多 WiFi 相关信息**：请参阅 **《FreeBSD 手册》第 32 章：高级网络配置**，其中包含 FreeBSD 对 WiFi 的详细支持信息。  
 
 我们的目标不仅是回答常见问题，更是帮助学员利用 FreeBSD 做出有趣的事情，并用技术解决现实问题。  
-
-
 
 ## 研讨会后的小故事
 

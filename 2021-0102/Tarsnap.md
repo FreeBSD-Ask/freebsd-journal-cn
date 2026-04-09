@@ -5,7 +5,6 @@
 
 ![](https://github.com/user-attachments/assets/1d93c338-e1f5-4e35-a198-ec4ac7d49bdc)
 
-
 Tarsnap 是一项在线备份服务，注重安全性——事实上，当我在 2006 年创办这家公司时，我很快就定下了口号“为真正偏执的人提供在线备份”，以体现作为一名密码学家和 FreeBSD 安全官，我的目标是提供足够安全的服务，值得我用它来保存自己的秘密。Tarsnap 也是 FreeBSD 能够在 Amazon EC2 上运行的主要原因之一：Tarsnap 需要在 EC2 上运行（其中一个原因是能够以廉价且快速的方式访问 Amazon S3 存储服务），但我需要一个我信任并且能轻松管理的操作系统——换句话说，Tarsnap 需要在 EC2 上运行 FreeBSD，而我正好满足了这个需求。
 
 ## 定制的 AMIs

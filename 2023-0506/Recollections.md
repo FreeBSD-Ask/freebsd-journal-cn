@@ -18,7 +18,7 @@ David Greenman Lawrence：Julian Elischer 在 comp.unix.bsd 于 1992 年 11 月 
 
 Tom Jones：**Julian 的机器是我之前没有听说过的。在未来的项目中，我肯定会更深入地研究这个方向。**
 
-David Greenman Lawrence：此外，Nate Williams 为 386BSD 的主要参与者建立了一个邮件列表，名为 interim@bsd.coe.montana.edu。大部分讨论发生在 386BSD 0.1 之后的时期，当时我们正在等待 Bill Jolitz 发布 0.2 版本，但这似乎被无限期推迟了。
+David Greenman Lawrence：此外，Nate Williams 为 386BSD 的主要参与者建立了一个邮件列表，名为 <interim@bsd.coe.montana.edu>。大部分讨论发生在 386BSD 0.1 之后的时期，当时我们正在等待 Bill Jolitz 发布 0.2 版本，但这似乎被无限期推迟了。
 
 Tom Jones：**你能告诉我你是如何编写 sendfile(2) 函数并且优化它的，使得它能让 ftp.cdrom.com 承载那么大的服务量？**
 

@@ -1,7 +1,5 @@
 # 采访：Warner Losh，第 1 部分
 
-
-
 - 原文链接：[Interview: Warner Losh, Part 1]()
 - 作者：**BSD Now 第 362 集，2.11 BSD 复原。录制于 2020 年 8 月 5 日。**
 

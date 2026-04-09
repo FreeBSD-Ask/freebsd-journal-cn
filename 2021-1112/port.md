@@ -9,7 +9,6 @@
 
 ---
 
-
 我已经在 FreeBSD 虚拟机上运行了我们计算机科学系的 PostgreSQL 服务器多年，且取得了很好的效果。该服务器主要用于数据库课程和需要数据库后端的项目。我在 2019 年的 vBSDcon 上就该服务器做过一次演讲，你可以在 YouTube 上找到视频。
 
 最近，托管这台虚拟化服务器的部门将其底层存储更改为 Ceph。通过在校园内三个不同建筑之间同步 I/O，这为他们增加了更多的容量和冗余。与此同时，数据库课程的教授设计了新的实验，帮助学生熟悉大量数据集。一个实验要求创建大量数据并将其插入到数据库表中，测量有无表索引的执行时间。一切看起来很好，但在该实验开始不久后，教授和学生开始抱怨性能不佳。在某些情况下，学生笔记本上的本地 PostgreSQL 安装运行速度比我们服务器上的速度还快，尽管我们的服务器有更多的 CPU 和内存。例如，执行一个大约 1000 万行的“SELECT COUNT(\*) from bigtable;”查询，平均耗时 2 分 5 秒。而一台本地笔记本仅需约 1 秒。第二次执行相同的查询时，服务器耗时仅 1 秒，证明查询是从更快的主内存缓存中提供的。
@@ -45,7 +44,6 @@ target iqn.dns-name-of-initiator:nvme {
     }
 }
 ```
-
 
 我将这个文件的所有权和权限更改为 root，因为它包含了明文密码。
 
@@ -90,7 +88,7 @@ chapSecret = verysecurepasswordgoeshere
 # zpool create nvme_ts /dev/da0
 ```
 
-是的，这并不是冗余的，但对于我们的基准测试目的，它已经足够了。在 postgres 端，以数据库超级用户身份登录 psql，表空间通过以下语句定义（有关详细信息，请参见 https://www.postgresql.org/docs/current/manage-ag-tablespaces.html）：
+是的，这并不是冗余的，但对于我们的基准测试目的，它已经足够了。在 postgres 端，以数据库超级用户身份登录 psql，表空间通过以下语句定义（有关详细信息，请参见 <https://www.postgresql.org/docs/current/manage-ag-tablespaces.html）：>
 
 ```sql
 psql#>CREATE TABLESPACE nvme LOCATION /nvme;

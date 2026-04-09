@@ -3,7 +3,6 @@
 - [Learning to Walk–Interfacing to the GPIO System](https://freebsdfoundation.org/our-work/journal/browser-based-edition/downstreams/learning-to-walk-interfacing-to-the-gpio-system)
 - 作者：Christopher R. Bowman
 
-
 在上篇文章中，我们创建了简单的电路，使主板上的 LED 灯闪烁，并且学习了两种不同方法来把电路加载到 FPGA。遗憾的是，当我们加载电路时，CPU 停止运行了。此外，尽管这有点有趣，但并没有与芯片上的 CPU 进行交互。在本篇中，我们将深入了解 Vivado，学习如何在加载电路时保持 CPU 运行，并探索 FreeBSD 中的 GPIO 系统。
 
 之前，当我们使用 U-boot 或者 xbit2bin 和 FreeBSD 下的 `/dev/devcfg` 时，我们发现 FreeBSD 停止运行了。我认为发生的问题是处理器的系统停止了运行。原来，我们使用的 FPGA.bit 文件并未包含处理器系统的配置信息。在本期中，我们将修复这个问题。

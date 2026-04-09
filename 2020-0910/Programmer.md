@@ -30,7 +30,6 @@ FreeBSD 项目正在采用 Weblate 作为其基于网页的持续本地化平台
 
 完整的文档集包含 35 篇文章和 8 本书。以下是来自 Weblate 的当前统计数据（<https://translate-dev.freebsd.org/projects/freebsd-doc/#information>）。
 
-
 |                     | 字符串 | 单词量    |
 |---------------------|---------|----------|
 | 所有文档      | 39,779  | 691,513  |
@@ -41,14 +40,13 @@ FreeBSD 手册是个大型文档，目前是 FreeBSD 项目的主要文档。
 |-----------------------|-------------------|----------|
 | FreeBSD 手册     | 12,212            | 254,554  |
 
-
 还有一些较小的文档——例如文章：
 
 |                         | 句子/字符串          | 单词   |
 |-------------------------|-------------------|-------|
 | 为 FreeBSD 做贡献            | 217               | 5,622 |
 
-它们都可以在 https://www.freebsd.org/docs/books.html 上访问。
+它们都可以在 <https://www.freebsd.org/docs/books.html> 上访问。
 
 对于新语言，我们建议先从一到两个小文档开始，而不是直接从 FreeBSD 手册开始，这样人们可以先熟悉工具，并且能更快看到自己的翻译成果。
 
@@ -84,7 +82,6 @@ Weblate 为每个翻译创建新的提交，并通过您的电子邮件地址引
 
 ![](https://github.com/user-attachments/assets/99745e61-ec16-43d3-9725-9a96d3dd34c2)
 
-
 Weblate 有一组链接，指向实际的翻译内容。翻译进一步划分为各个检查项，如“未翻译”或“需要审查”。如果整个文档都已翻译且没有错误，“所有翻译”链接仍然可用。您也可以使用搜索框来查找特定的字符串或术语。您可以在官方 Weblate 文档中了解更多翻译相关的信息——例如键盘快捷键和其他关于翻译工具的技巧，但界面非常直观。
 
 <https://docs.weblate.org/en/latest/user/translating.html#translation-projects>
@@ -99,9 +96,7 @@ Weblate 有一组链接，指向实际的翻译内容。翻译进一步划分为
 
 当您点击项目 / 语言 / 文档时，Weblate 将显示该文档的翻译和字符串状态。此页面对于校对和质量检查非常有用。
 
-
 ![](https://github.com/user-attachments/assets/701d5ea6-5d63-425d-a9d5-387144be21c9)
-
 
 在这个例子中，有一些字符串需要修订。如果您点击这些链接，它将只显示那些需要修订/翻译的字符串。
 
@@ -137,4 +132,4 @@ Weblate 有一组链接，指向实际的翻译内容。翻译进一步划分为
 
 ---
 
-**DANILO G. BAIO** 是 FreeBSD Ports 提交者和巴西葡萄牙语翻译者。dbaio@FreeBSD.org
+**DANILO G. BAIO** 是 FreeBSD Ports 提交者和巴西葡萄牙语翻译者。<dbaio@FreeBSD.org>

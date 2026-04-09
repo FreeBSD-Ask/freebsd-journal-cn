@@ -191,7 +191,6 @@ windows-guest default uefi 2 8G [::]:5900 No Locked (host)
 
 现在，我们已经安装了可用的客户端，但需要对其进行控制，以便根据需要启动和停止。以下命令将对你的客户端执行基本操作，如启动、停止或立即关闭：
 
-
 ```sh
 # vm start linux-guest
 # vm stop windows-guest

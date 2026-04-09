@@ -124,7 +124,6 @@ $ qemu-system-x86_64 -smp 4 -m 4G \
 
 在 amd64 平台上，GENERIC 内核配置已包含 UFS 驱动模块（见 `sys/amd64/conf/GENERIC`）：
 
-
 ```sh
 # Universal Flash Storage Host Controller Interface support
 device          ufshci                  # UFS host controller
@@ -153,7 +152,6 @@ $ fio --name=seq_read  --filename="/dev/da0" --rw=read --bs=128k --iodepth=4 --s
 $ fio --name=rand_write  --filename="/dev/da0" --rw=randwrite --bs=4k --iodepth=32 --size=1G --time_based --runtime=60s --direct=1 --ioengine=posixaio --group_reporting
 $ fio --name=rand_read  --filename="/dev/da0" --rw=randread --bs=4k --iodepth=32 --size=1G --time_based --runtime=60s --direct=1 --ioengine=posixaio --group_reporting
 ```
-
 
 QEMU 是一个模拟器，因此适合检查功能行为。对于性能测试，我使用了 Galaxy Book S。
 
@@ -196,7 +194,3 @@ ufshci(4) UFS 设备驱动的开发得到了三星电子的支持。
 ---
 
 Choi Jaeyoon 是三星电子内存部门的软件工程师，致力于扩展 SSD 和 UFS 的开源生态系统。他自 2024 年开始使用 FreeBSD，并于 2025 年 9 月成为 FreeBSD src 提交者。他曾为 Fuchsia OS 的 F2FS 文件系统做出贡献，目前维护着 Fuchsia OS 的 UFS 驱动，对存储系统的开源工作充满好奇。
-
-
-
-

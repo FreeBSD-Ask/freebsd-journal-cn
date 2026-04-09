@@ -125,13 +125,11 @@ execname                                              pid            count
 
 此外，DTrace 还可以使用 **profile** 提供者收集 **CPU 上的堆栈追踪**，从而支持**生成火焰图（Flame Graphs）**。  
 
-
-
 ## 新进展
 
 ### dwatch
 
-新工具 **dwatch** 由 **Devin Teske（dteske@freebsd.org）** 开发，并在 **FreeBSD 11.2** 中上游合并。 **dwatch** 使得 DTrace 在常见使用场景下比 `dtrace` 命令行工具更易用。回到我们之前的**进程监视**示例，用户只需运行：
+新工具 **dwatch** 由 **Devin Teske（<dteske@freebsd.org>）** 开发，并在 **FreeBSD 11.2** 中上游合并。 **dwatch** 使得 DTrace 在常见使用场景下比 `dtrace` 命令行工具更易用。回到我们之前的**进程监视**示例，用户只需运行：
 
 ```sh
 # dwatch execve
@@ -161,11 +159,11 @@ bin:/usr/sbin:/usr/bin /etc/rc.d/sendmail onestop
 
 **紧凑 C 类型格式（CTF）** 是一种用于在 **FreeBSD ELF** 二进制文件中编码 **C** 类型信息的格式。它使 **DTrace** 能够了解目标二进制文件（进程或内核）的 **C** 类型布局，以便用户编写的脚本可以引用和探索这些类型。  
 
-过去，由于 **CTFv2** 的实现方式，**DTrace** 在单个二进制文件中最多仅支持 **2^15** 种 **C** 类型。这一限制导致了 **FreeBSD** 中许多与 **DTrace** 相关的错误报告。今年 **3 月**，**Mark Johnston（markj@freebsd.org）** 提交了相关更改，使 **DTrace** 切换为 **CTFv3**，这不仅提高了 **DTrace** 可处理的 **C** 类型数量，同时还扩展了 **CTF** 的其他多个限制。
+过去，由于 **CTFv2** 的实现方式，**DTrace** 在单个二进制文件中最多仅支持 **2^15** 种 **C** 类型。这一限制导致了 **FreeBSD** 中许多与 **DTrace** 相关的错误报告。今年 **3 月**，**Mark Johnston（<markj@freebsd.org>）** 提交了相关更改，使 **DTrace** 切换为 **CTFv3**，这不仅提高了 **DTrace** 可处理的 **C** 类型数量，同时还扩展了 **CTF** 的其他多个限制。
 
 ## kinst —— 用于指令级跟踪的全新 DTrace 提供程序  
 
-在 **2022 年 Google 夏季编程大赛（GSoC）** 中，**Christos Margiolis（christos@freebsd.org）** 在 **Mark Johnston（markj@freebsd.org）** 的指导下成功完成了一项项目，并将 **指令级跟踪（Instruction-level Tracing）** 功能合并到 **FreeBSD**。实现该功能的提供程序被称为 **kinst**。
+在 **2022 年 Google 夏季编程大赛（GSoC）** 中，**Christos Margiolis（<christos@freebsd.org>）** 在 **Mark Johnston（<markj@freebsd.org>）** 的指导下成功完成了一项项目，并将 **指令级跟踪（Instruction-level Tracing）** 功能合并到 **FreeBSD**。实现该功能的提供程序被称为 **kinst**。
 
 **kinst** 复用了 **fbt** 机制的部分内容，并扩展了它，使其能够对 **内核函数的任意位置** 进行插桩（Instrumentation），而不仅仅是入口和出口点。对于熟悉 **内核开发** 的读者而言，**kinst** 在分析某些分支的调用栈时所带来的潜力不言而喻。因此，**kinst** 可以帮助更快地发现和修复 **FreeBSD** 中的 **bug** 及 **性能问题**。
 
@@ -226,8 +224,6 @@ Dump of assembler code for function _thread_lock:
 <thread_lock_flags_>
 ```
 
-
-
 在这种情况下，我们可以取偏移量 +138 和 +169 处的指令，这些指令分别是对 `spinlock_exit()` 和 `thread_lock_flags_()` 的函数调用。使用这些偏移量，我们现在可以编写我们的 DTrace 脚本：
 
 ```c
@@ -250,7 +246,7 @@ probename] = count(); }'
 
 ### DTrace 和 eBPF – 比较
 
-Mateusz Piotrowski (0mp@FreeBSD.org) 一直在研究 FreeBSD 上 DTrace 的性能分析，以及它与 Linux 上 eBPF 的比较。今年，他在 EuroBSDcon 2022 上展示了部分结果。这项工作可能会得出有趣的结果，可以作为进一步优化 DTrace 的基础。这将使在性能关键的系统上启用插桩变得更少干扰。
+Mateusz Piotrowski (<0mp@FreeBSD.org>) 一直在研究 FreeBSD 上 DTrace 的性能分析，以及它与 Linux 上 eBPF 的比较。今年，他在 EuroBSDcon 2022 上展示了部分结果。这项工作可能会得出有趣的结果，可以作为进一步优化 DTrace 的基础。这将使在性能关键的系统上启用插桩变得更少干扰。
 
 ### HyperTrace
 

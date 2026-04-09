@@ -31,15 +31,11 @@ Overlord 架构被描述为一种树形链式架构。每个运行 API 服务器
 
 该架构同时抽象了项目的部署方式。想要部署项目的用户无需了解每个链的具体终端节点，只需知道第一个链（也称根链，root chain）即可。这是因为每条链都会被标记一个任意的字符串标签，用户只需在部署文件中指定根链的终端地址、访问令牌和标签即可。虽然标签本质上是主观的，但它们可以表达需求。例如，我们可以用字符串 vm-only 标记那些具备部署虚拟机能力的服务器，用 db-only 标记数据库服务器，实际上标签是完全任意的。
 
-
 <img width="535" height="125" alt="Y__T6KJ`DC9R @T5A89{9ON" src="https://github.com/user-attachments/assets/ccbf707e-3e4c-4ed5-a076-daa22943b3e4" />
-
 
 假设只有 charlie 和 delta 拥有 **db-only** 标签。要将项目部署到带有指定标签的 API 服务器，客户端必须向 main 发起 HTTP 请求，指定链为 **alpha.charlie** 和 **alpha.charlie.delta**。这个过程是透明进行的，无需用户干预。
 
-
 <img width="274" height="83" alt="FEG5 )NST){2T18L3(TJDNQ" src="https://github.com/user-attachments/assets/b6b09e0e-b7df-4506-96fc-3137f37b810f" />
-
 
 如果某条链宕机，会发生什么情况？如果根链宕机，则无法进行任何操作，虽然可以指定多个根链（但本文档其余部分只使用一个）。然而，如果根链之后的某条链宕机，会出现一个有趣的处理机制。
 
@@ -1550,7 +1546,6 @@ $ curl http://revproxy.overlord.lan
 Hello, world!
 UUID: e463b1d5-13eb-4f04-9b0a-caf4339a8058
 ```
-
 
 ## 横向自动扩展
 

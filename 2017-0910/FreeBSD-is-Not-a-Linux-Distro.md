@@ -86,4 +86,3 @@ Capsicum 是一个现代能力系统（capability system），专为 FreeBSD 构
 **GEORGE V. NEVILLE-NEIL** 从事网络和操作系统代码开发，既为兴趣也为职业。他还教授与编程相关的各类课程。他的兴趣领域包括代码探索、操作系统、网络和时间协议。他与 Marshall Kirk McKusick 和 Robert N. M. Watson 合著了《FreeBSD 操作系统设计与实现》。
 
 十余年来，他以专栏作家 “Kode Vicious” 的身份广为人知。他在马萨诸塞州波士顿的东北大学被授予计算机科学学士学位，是 ACM、Usenix 协会和 IEEE 的成员。他热衷骑行和旅行，目前居住在纽约市。
-

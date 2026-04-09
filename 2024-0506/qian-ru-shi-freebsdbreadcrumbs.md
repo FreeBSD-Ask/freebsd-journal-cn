@@ -1,6 +1,5 @@
 # 嵌入式 FreeBSD 面包板
 
-
 - 作者：**CHRISTOPHER R. BOWMAN**
 - 原文链接：<https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/embedded-freebsd-breadcrumbs/>
 

@@ -49,4 +49,3 @@ FreeBSD 以其稳定性和连贯性而闻名。FreeBSD 不会因为旧的系统/
 ---
 
  **TOM JONES** 是一名致力于保持网络堆栈快速运行的 FreeBSD 提交者。
-

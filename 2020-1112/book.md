@@ -1,6 +1,5 @@
 # *Mastering Vim Quickly* 书评
 
-
 - 原文链接：[Network Monitoring on the Console](https://freebsdfoundation.org/wp-content/uploads/2021/01/Book-Review.pdf)
 - 作者：**BENEDICT REUSCHLING**
 

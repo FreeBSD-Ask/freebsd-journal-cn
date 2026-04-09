@@ -153,7 +153,6 @@ $ mdo -u www /usr/local/bin/occ
 
 如果出于某种原因，即使当前组与 unprivileged_user 的数据库信息不符，也希望 `mdo -u www -i` 能生效，可以改用：
 
-
 ```sh
 # sysctl security.mac.do.rules='uid=10001>uid=80,gid=80,+gid=80;uid=10001>uid=80'
 ```

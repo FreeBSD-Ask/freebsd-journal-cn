@@ -27,7 +27,7 @@ monitor# pkg update
 
 在安装所需的软件包（包括 PostgreSQL 作为后台数据库和 nginx 作为 web 服务器来托管 Icingaweb2 监控界面）之前，我们首先创建一个 ZFS 数据集用于存储 postgres 数据库，这样当软件包解压时，它会被填充。如果你不使用 ZFS，使用常规目录也完全可以。
 
-以下命令将在我们的示例池 mypool 上创建一个新的数据集，路径为 `/var/db/postgres/data`。如果该路径下的数据集不存在，`-p` 参数也会创建它们。接下来，我们禁用访问时间（atime），因为这里不需要它，并且通过不在每次写入时更新文件的时间戳来节省一些 I/O。使用更新的 ZFS 2.0，我们还在数据集上使用 zstd 压缩。由于 Postgres 以 8k 为单位写入数据，我们将 ZFS 的 `recordsize` 设置为与其匹配以获得最佳性能。通过将 `logbias` 设置为 `throughput`，我们指示 ZFS 优化数据库的同步写入，以高效利用资源。挂载点设置为重叠现有的 `/var/db/postgres` 路径。当软件包安装时，它会放在该数据集上，而不是常规的 `/var/db` 目录中。在这里我们不关注 PostgreSQL 数据库的进一步调整。你可以访问 https://pgtune.leopard.in.ua/，输入 PostgreSQL 主机的参数，获取配置建议，然后将其添加到 `postgresql.conf` 文件中。
+以下命令将在我们的示例池 mypool 上创建一个新的数据集，路径为 `/var/db/postgres/data`。如果该路径下的数据集不存在，`-p` 参数也会创建它们。接下来，我们禁用访问时间（atime），因为这里不需要它，并且通过不在每次写入时更新文件的时间戳来节省一些 I/O。使用更新的 ZFS 2.0，我们还在数据集上使用 zstd 压缩。由于 Postgres 以 8k 为单位写入数据，我们将 ZFS 的 `recordsize` 设置为与其匹配以获得最佳性能。通过将 `logbias` 设置为 `throughput`，我们指示 ZFS 优化数据库的同步写入，以高效利用资源。挂载点设置为重叠现有的 `/var/db/postgres` 路径。当软件包安装时，它会放在该数据集上，而不是常规的 `/var/db` 目录中。在这里我们不关注 PostgreSQL 数据库的进一步调整。你可以访问 <https://pgtune.leopard.in.ua/，输入> PostgreSQL 主机的参数，获取配置建议，然后将其添加到 `postgresql.conf` 文件中。
 
 ```sh
 monitor# zfs create -p mypool/var/db/postgres/data
@@ -163,7 +163,6 @@ monitor# sed -i "" s,;date.timezone =,date.timezone = Europe/Berlin, php.ini
 
 ## Icinga 监控设置
 
-
 Icinga 使用多种方式来监控系统，并且对不同的监控环境和需求非常灵活。例如，一个主机可能不是一直可用（例如流动用户）或没有与中央监控主机的直接连接。在后者的情况下，卫星系统可以通过不同的网络或子网将监控数据和检查结果转发到中央实例。在我们这里使用的设置中，中央实例（称为主节点）控制对受监控系统的检查执行。通过主节点和客户端之间交换证书来建立信任。一个区域（zone）定义了监控发生的地理位置（如欧洲、非洲等），或者在我们的监控上下文中有意义的某种逻辑分组。例如，一个整个工厂、办公室、服务器机房、机架等可以各自形成自己的区域。当然，DNS 区域也是可以的，任何对整体监控或基于某些共同标准进行监控的内容都是可行的。
 
 首先，我们生成主节点证书，后者将用于监控中央实例本身，并作为信任的基础，用于在本教程后面添加其他受监控客户端。该设置通常是交互式的，但在这里我们将所有必要的参数通过命令行传递：
@@ -234,13 +233,11 @@ enable_flapping = true
 }
 ```
 
-
 这里定义了两个模板，一个用于通用主机，另一个用于服务。总体来说，主机和服务在生成警报之前会被检查五次。这是为了避免偶尔的丢包或响应较慢的设备或进程，但这些设备或进程通常是正常工作的。`check_interval` 定义了检查的执行次数，而 `retry_interval` 定义了在一次检查未返回 OK 状态时，下一次检查的时间间隔。一定要根据你的监控需求调整这些间隔。请记住，监控频率越高，产生的流量就越大，而且检查返回的数据需要存储在数据库中，随着监控时间的延长，数据库会逐渐变大。
 
 "Flapping" 状态指的是主机或服务似乎可用，但下一次又不可用，然后又恢复可用，反复出现这种状态（在状态之间迅速切换，且没有稳定的迹象）。Icinga 能通过在一段时间内比较最后已知状态和当前状态来检测这些 flapping 状态。这些状态默认是未启用的，但对于调试只在特定负载时间或活动期间发生的问题，flapping 状态是非常有价值的信息。一个表现异常的主机会在 Icinga 中显示出来，应该进一步调查其根本原因。问题也可能源于网络本身，因此需要排除任何可能导致问题的其他因素。`check_command` 定义了哪个 Icinga 提供的检查需要作为默认检查运行。`hostalive` 命令基本上是一个伪装的 ping，用于检查主机是否可达。之所以只在 `generic-host` 模板中定义，是因为服务通常会定义一个适合该服务的不同 `check_command`，而这个命令无法轻易通过模板进行通用化。
 
 现在我们已经为常见功能定义了模板，接下来是定义我们要运行哪些检查以及在哪些主机上运行。这些定义存储在 `zones.d/my-zone/services.conf` 文件中。以下是我定义的检查磁盘空间的配置：
-
 
 ```ini
 apply Service "disk" {
@@ -342,7 +339,6 @@ groups = [ "icingaadmins" ]
 
 其他文件组成了 Icinga 监控系统，所有这些都在文档中有详细定义。现在，我们启动所有服务，开始我们的基础监控基础设施。尤其是在添加了所有额外文件之后，Icinga 需要知道它们，因此我们重新启动该服务。
 
-
 ```sh
 monitor# service postgresql restart
 monitor# service php-fpm start
@@ -364,7 +360,6 @@ monitor# chown -R www:www /usr/local/etc/icingaweb2
 在对 Icinga 功能初步了解后，你可能会想知道如何添加更多对象进行监控。我们将通过一个新主机来演示这一过程，并展示将其纳入监控所需的所有步骤。
 
 在一个新安装的主机（这里使用 FreeBSD）上，名为 `client.example.org`，安装 icinga2 包。
-
 
 ```sh
 client# pkg install icinga2
@@ -439,7 +434,6 @@ client# icinga2 daemon -C
 
 如果有任何错误，Icinga 会尝试帮助定位相关的文件和行。典型的错误可能是为父项或区域提供了错误的名称。验证完成后，需要在监控服务器上为这个新客户端添加一个新的条目，以便将其包含在未来的检查执行中。在 monitor.example.org 上，编辑
 
-
 ```sh
 /usr/local/etc/icinga2/zones.d/my-zone/hosts.conf
 ```
@@ -487,4 +481,3 @@ monitor# service icinga2 restart
 ---
 
 **BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，并且是文档工程团队的成员。过去，他曾任两届 FreeBSD 核心团队。他在德国达姆施塔特应用科技大学管理一个大数据集群，并教授一门“Unix 开发者”课程。他还是每周播客 bsdnow.tv 的主持人之一。
-

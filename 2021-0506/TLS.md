@@ -143,11 +143,10 @@ rpc.tlsservd 还有一个命令行选项，指定守护进程要求客户端 IP 
 
 以上只是一个示例用例。守护进程的命令行选项支持多种配置，从仅要求 TLS 对传输中的 RPC 消息进行加密，到要求所有客户端提供可验证的 X.509 证书，其中 subjectAltName 的 DNS 组件必须与客户端 IP 主机地址的 rDNS 名称匹配。客户端还可以以 RFC 6125 推荐的方式验证 NFS 服务器的真实性，用于 TLS 域名应用服务。
 
-要在 FreeBSD 13 上设置 NFS over TLS，请参阅：https://people.freebsd.org/~rmacklem/nfs-over-tls-setup.txt
+要在 FreeBSD 13 上设置 NFS over TLS，请参阅：<https://people.freebsd.org/~rmacklem/nfs-over-tls-setup.txt>
 
 另外，请查阅 rpc.tlsclntd(8)、rpc.tlsservd(8)、exports(5)、ktls(4) 和 mount_nfs(8) 的手册页。
 
 ---
 
 **RICK MACKLEM**  Rick 已经有 30 余年的工作经验，从 1980 年开始，他是计算机科学系的系统管理员，管理着包括 BSD 系统在内的多种系统。当 VAX 11/780 替换为 MicroVAXII 系统时，需要在 4.3BSD 上实现 NFS，因此 Rick 实现了这个功能并将其贡献给了 CSRG。Usenix 论文《Lessons Learned Tuning the 4.3BSD NFS Implementation》描述了作为这项工作的部分内容，第一个在 TCP 上实现的 NFS。Rick 现已退休，继续致力于 FreeBSD 上 NFS 的实现工作。
-

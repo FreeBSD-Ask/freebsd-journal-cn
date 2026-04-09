@@ -12,7 +12,6 @@ FreeBSD 期刊原文位于：<https://freebsdfoundation.org/our-work/journal>
 
 本书部署网站：<https://book.bsdcn.org>
 
-
 ## PDF 文档
 
 使用由 [safreya](https://github.com/safreya) 提供的脚本：

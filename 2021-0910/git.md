@@ -59,8 +59,7 @@ Writing ~/.arcrc...
 
 可以使用 `-r` 选项添加审查者。多个审查者可以用逗号分隔，或者通过多个 `-r` 选项指定。要添加一个审查组，可以在组名前加 `#` 符号，例如 `#bhyve` 以标记负责 bhyve(8) hypervisor 的开发者。  
 
-以下示例为 `gdb_11` 分支上的一个提交创建审查，该提交涉及 `devel/gdb` port，并将 port 维护者（pizzamig@FreeBSD.org）指定为审查者：
-
+以下示例为 `gdb_11` 分支上的一个提交创建审查，该提交涉及 `devel/gdb` port，并将 port 维护者（<pizzamig@FreeBSD.org>）指定为审查者：
 
 ```sh
 > git log --oneline main..gdb_11

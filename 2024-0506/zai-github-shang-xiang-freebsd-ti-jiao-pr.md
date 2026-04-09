@@ -3,7 +3,6 @@
 - 作者：**WARNER LOSH**
 - 原文链接：<https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/submitting-github-pull-requests-to-freebsd/>
 
-
 为了让人们更易贡献，FreeBSD 项目在最近支持了 GitHub 上的拉取请求（pull request，PR）。我们发现使用缺陷跟踪器 Bugzilla 接受补丁会造成许多有用的贡献被搁置直至过期。因此我们建议贡献者首选 GitHub PR 来进行修改，仅把 Bug 放在 Bugzilla。虽然 Phabricator 对开发人员很有用，但我们也发现，在 Phabricator 极易失去外部贡献者的贡献。除非你和直接让你用 Phabricator 的 FreeBSD 开发人员一起工作，否则还是建议用 GitHub。GitHub PR 更易跟踪和处理，并且大部分开源社区都对此更为熟悉。我们希望有更快的决策，更少的提交被放弃，能为所有人提供更佳的体验。
 
 由于 FreeBSD 的志愿者时间有限，本项目制定了标准、规范和政策，以合理规划志愿者的时间。你需要了解这些内容才能提交好的 PR。我们有一些自动化程序来帮助提交者修复常见错误，从而使志愿者可以审查几乎就绪的提交。请理解我们仅接受最有用的贡献，而某些贡献我们无法接受。
@@ -21,7 +20,6 @@ FreeBSD 项目致力于创建文档齐全的集成系统，涉及控制机器的
 FreeBSD 项目对 C 和 C++ 的代码规范在 style(9) 中有所说明。这种风格通常被称为“内核规范形式（Kernel Normal Form，KNF）”，即采用了 Kernighan & Ritchie 的《C 程序设计语言》中使用的风格。这是研究 unix（research unix）使用的标准，后来在伯克利的 CSRG（Computer Systems Research Group，计算机系统研究小组）中沿用，进而催生了 BSD 发行版。FreeBSD 项目在这些实践的基础上进行了现代化。这是提交代码的首选风格，且 FreeBSD 系统中大多数代码使用的风格亦如此。有关这些代码的变更贡献应遵循此风格，但某些文件有自己独特的风格。Lua 和 Makefile 也有各自的标准：能在 style.lua(9)、style.Makefile(9) 中找到。
 
 提交信息（Commit messages）采用正使用着 git 的开源社区的通行形式。第一行应概述整个提交，字数在 50 个字符以内。其余部分的提交信息应陈述提交内容及原因。如果改动是显而易见的，最好只解释原因。每行字数不超过 72 个字符。应使用一般现在时，采用祈使语气书写。结尾部分包含一系列 Git 称为“trailers（预告片）”的行，项目用这些行来跟踪有关提交的附加数据，例如提交的来源、与 bug 相关的详细信息等。有关提交日志消息的详细说明，请参阅提交者指南的“[提交日志消息](https://docs.freebsd.org/en/articles/committers-guide/#commit-log-message)”部分。
-
 
 ## 无法接受的提交
 

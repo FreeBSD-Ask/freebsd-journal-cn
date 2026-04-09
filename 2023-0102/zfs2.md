@@ -217,8 +217,6 @@ storage ONLINE 0 0 0
 errors: No known data errors
 ```
 
-
-
 ## 数据验证  
 
 ZFS 使用校验和来验证存储数据的完整性，这些数据校验和可以被验证（称为清理）以确保存储池的完整性：  
@@ -243,7 +241,6 @@ storage ONLINE 0 0 0
  da2 ONLINE 0 0 0
 errors: No known data errors
 ```
-
 
 显示上次清理完成日期有助于决定何时开始下一次清理。定期清理有助于保护数据免受静默损坏，并确保存储池的完整性。  
 

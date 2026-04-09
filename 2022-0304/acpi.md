@@ -3,7 +3,6 @@
 - 原文链接：[ACPI Support for Embedded Controllers](https://freebsdfoundation.org/wp-content/uploads/2022/04/ACPI-Support-for-Embedded-Controllers.pdf)
 - 作者：**MARCIN WOJTAS**
   
-
 ARM64 是一种被广泛应用于各种产品的单一架构——它既可用于最小型的嵌入式设备，也可用于移动设备、企业级产品，甚至是服务器级解决方案。对服务器级设备的支持要求遵循一定的标准，例如启动方式、与固件的交互以及平台描述等。而事实证明，这种模式同样适用于非服务器设备。本文将探讨 FreeBSD 对这些设备的支持情况，重点关注 ACPI 体系下的嵌入式控制器处理方式。  
 
 ## 处理遗留问题  
@@ -42,8 +41,6 @@ ACPI 规范定义了多种[专用表](https://uefi.org/specs/ACPI/6.4/05_ACPI_So
 上述表格中的最后一项——DSDT，尤为关键。DSDT 始终由 FADT 引用，并包含 CPU 列表、电源管理特性、PCIe 根复杂 (root complex) 以及所有嵌入式控制器的描述。通常，它会配有 SSDT (次级系统描述表)，可能有一个或多个实例。这种结构允许程序员在平台描述代码中逻辑地拆分各种功能。  
 
 上述表格的定义已扩展，以涵盖 ARM64 特定的值和类型（例如中断控制器）——所有这些都被汇总到 **ACPICA (ACPI 组件架构)** 中。ACPICA 是一个开源参考代码库，供各操作系统使用和补充。FreeBSD 始终与其最新版本保持同步。现在，让我们看看这些表格在 FreeBSD ARM64 端口中的处理方式。  
-
-
 
 ## ARM64 的 ACPI 基础部分  
 
@@ -109,7 +106,6 @@ Device(AHC0) {
 - `device_has_property`
 
 这些函数允许子设备驱动以相同方式访问父总线提供的设备特定数据，无论系统是以 **ACPI** 还是 **DT** 启动，都能执行相同的代码路径。该方案后来[进一步扩展](https://cgit.freebsd.org/src/commit/?id=b344de4d0d16)，以涵盖 **ACPI** 和 **DT** 体系下的多种属性类型。  
-
 
 该方案的一个典型应用是 **SD/MMC** 子系统，其中包括：  
 

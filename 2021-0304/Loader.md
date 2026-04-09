@@ -3,7 +3,6 @@
 - 原文链接：[Is There a New Loader in FreeBSD 13.0?](https://freebsdfoundation.org/wp-content/uploads/2021/05/Is-There-a-New-Loader-in-FreeBSD-13.0.pdf)
 - 作者：**TOOMAS SOOME**
 
-
 简短的回答是“不是，仍然是那个老旧的加载程序。”但我们正在努力使它更友好并支持更多的功能。
 
 我最初开始研究的启动加载程序并不是 FreeBSD 的，而是 illumos 的。那时，illumos 使用的是旧版 grub 0.96，只支持 BIOS 启动。UEFI 系统在那时已经出现，而 illumos 迫切需要支持 UEFI 系统。我的最初工作是研究更新版本的 grub。它功能丰富、广泛使用，但管理起来很复杂，而且当你需要支持如 zfs 之类的文件系统特定功能，或是添加操作系统特定功能时，它的许可协议并不友好。这促使我转向 FreeBSD 启动加载程序，并开始为其开发做出贡献。
@@ -11,7 +10,6 @@
 当我开始将 FreeBSD 启动加载程序移植到 illumos 时，illumos 只支持串口控制台和 VGA 文本模式控制台。为了支持 UEFI，我必须为 illumos 内核实现对基于 UEFI 帧缓存的控制台的支持。实现后，下一步就是为加载程序添加相同的功能。当可以在 UEFI 帧缓存上绘制控制台时，重新使用相同的代码在 Vesa BIOS 扩展（VBE）线性帧缓存上绘制，就成为了开发中的另一个逻辑步骤。完成后，我们就得到了像这样的公开发布：<https://omnios.org/setup/fb>
 
 ![](https://github.com/user-attachments/assets/a0acca66-6058-4471-9a53-c279eefdee7d)
-
 
 图 1 启动加载程序与 ASCII 图
 
@@ -84,7 +82,6 @@ vbe_max_resolution
 加载程序当前使用的字体将传递给加载的内核。通过这种方式，我们保留了外观和感觉，并实现了从启动加载程序到正在运行的操作系统的一致过渡。
 
 ![](https://github.com/user-attachments/assets/e24b69fe-0b6b-4b8e-a6a2-7e96a6e4aff3)
-
 
 图 3 FreeBSD 13.0 启动加载程序
 

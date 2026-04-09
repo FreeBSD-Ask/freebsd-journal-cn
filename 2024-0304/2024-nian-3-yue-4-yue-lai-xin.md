@@ -32,6 +32,6 @@
 
 这一次，你甚至可能会实施它们。可能不会。但你会保持希望，而这是一种礼物。
 
-想問 Michael 問題嗎？將其發送至 letters@freebsdjournal.org
+想問 Michael 問題嗎？將其發送至 <letters@freebsdjournal.org>
 
-MICHAEL W LUCAS 是一堆與 BSD 相關的書籍和文章的作者。在多年的要求後，他終於在 https://mwl.io 上放置了一個完整的書目，讓人們更有可能避免他的作品。他還應該向尊貴的特里·普拉切特（Terry Pratchett）表示誠摯且衷心的道歉。
+MICHAEL W LUCAS 是一堆與 BSD 相關的書籍和文章的作者。在多年的要求後，他終於在 <https://mwl.io> 上放置了一個完整的書目，讓人們更有可能避免他的作品。他還應該向尊貴的特里·普拉切特（Terry Pratchett）表示誠摯且衷心的道歉。

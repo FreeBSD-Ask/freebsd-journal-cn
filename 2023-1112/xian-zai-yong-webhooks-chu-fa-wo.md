@@ -369,5 +369,3 @@ webhook_options=” \
 在 GitHub 上创建 webhook 后，你应该能够确认接收到了成功的事件。在你下次推送代码时，可以查看 GitHub 网站，查看 GitHub 发送的请求和 daemon 返回的响应。
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2024/01/03_webhook_req.png)
-
-

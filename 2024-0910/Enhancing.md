@@ -149,7 +149,6 @@ platform = arm64
 unprivileged_user = tests
 ```
 
-
 这个变量可以通过 [`kyua.conf(5)`](https://man.freebsd.org/cgi/man.cgi?query=kyua.conf&sektion=5) 进行操作，也可以作为 [`kyua(1)`](https://man.freebsd.org/cgi/man.cgi?query=kyua&sektion=1) 命令行工具的选项来指定。例如，以下命令将仅执行基于主机的测试，并跳过所有其他测试：
 
 ```sh

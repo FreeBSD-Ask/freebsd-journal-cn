@@ -3,14 +3,11 @@
 - 原文链接：[New Faces of FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2020/11/New-Faces.pdf)
 - 作者：**DRU LAVIGNE**
 
-
-
 在本期聚焦的是 Rainer Hurling，他在 8 月获得了 Ports 权限；以及 Gordon Bergling，他在 6 月获得了文档权限。
 
 ## 请简要介绍一下自己、背景和兴趣爱好
 
 ![](https://github.com/user-attachments/assets/da323975-9d52-4d2f-8f53-f051eb6b6d91)
-
 
 **Rainer:** 我是 Rainer Hurling，成长于德国北部。自从完成学业后，我一直住在德国中部，靠近哥廷根。我从青少年时期起就对计算机产生了浓厚的兴趣。在 1977 年的学校实习中，我初次接触了 Siemens TR 440 主机，这让我对软硬件有了更深入的理解，后来我还使用了一台基于 SC/MP CPU 的自制计算机。1980 年代初，我购买了我的第一台真正的计算机系统——一块来自 Eltec Elektronik（德国美因茨）的 Eurocom II 主板，配有 6809 CPU。随附的 FLEX 操作系统包括汇编语言、反汇编器、Pascal、Forth 和 Fortran（当然，还有 Sargon Chess），所有软件都存储在 8 英寸软盘中。1983 年，我又购置了一台 Apple IIe，并主要用 UCSD Pascal 进行编程。
 

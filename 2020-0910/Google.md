@@ -45,4 +45,4 @@
 
 ---
 
-**MARIUSZ ZABORSKI** 是 Fudo Security 的 QA 和开发经理。他在 2013 年完成了一个成功的谷歌编程之夏项目，并为 FreeBSD 项目指导了几位谷歌编程之夏学生。Mariusz 自 2015 年起自豪地拥有 FreeBSD commit 权限。他的主要兴趣领域是操作系统安全和低级编程。在 Fudo Security，Mariusz 领导一个团队开发用于监控、记录和控制 IT 基础设施中流量的最先进解决方案。2018 年，Mariusz 组织了波兰 BSD 用户组。在空闲时间，他喜欢在 https://oshogbo.vexillium.org 上写博客。
+**MARIUSZ ZABORSKI** 是 Fudo Security 的 QA 和开发经理。他在 2013 年完成了一个成功的谷歌编程之夏项目，并为 FreeBSD 项目指导了几位谷歌编程之夏学生。Mariusz 自 2015 年起自豪地拥有 FreeBSD commit 权限。他的主要兴趣领域是操作系统安全和低级编程。在 Fudo Security，Mariusz 领导一个团队开发用于监控、记录和控制 IT 基础设施中流量的最先进解决方案。2018 年，Mariusz 组织了波兰 BSD 用户组。在空闲时间，他喜欢在 <https://oshogbo.vexillium.org> 上写博客。

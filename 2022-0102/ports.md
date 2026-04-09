@@ -58,7 +58,7 @@ $ find /usr/local/share/icons -name '*xpdf*'
 
 ## 开发补丁
 
-我们需要的第一件事是 FreeBSD ports 树的副本。你可以在 FreeBSD 手册中查阅详细信息（https://docs.freebsd.org/en/books/handbook/ports/#ports-using）。最终，我们只需要以下命令：
+我们需要的第一件事是 FreeBSD ports 树的副本。你可以在 FreeBSD 手册中查阅详细信息（<https://docs.freebsd.org/en/books/handbook/ports/#ports-using）。最终，我们只需要以下命令：>
 
 ```sh
 $ git clone https://git.FreeBSD.org/ports.git ~/ports
@@ -82,7 +82,6 @@ print/xpdfopen Command line utility for PDF viewers
 >**技巧**
 >
 >有时候我不知道安装了我想要修复的文件的软件包名称。在这种情况下，我会使用 `pkg-which(8)`：
-
 
 ```sh
 $ pkg which /usr/local/share/applications/xpdf.desktop

@@ -1,6 +1,6 @@
 # FreeBSD Friday
 
-- 原文链接：[FreeBSD Friday](https://freebsdfoundation.org/wp- content/uploads/2020/09/FreeBSD- Friday.pdf)
+- 原文链接：[FreeBSD Friday](<https://freebsdfoundation.org/wp-> content/uploads/2020/09/FreeBSD- Friday.pdf)
 - 作者：**DEB GOODKIN**
 
 这是几场入门讲座和 101 课程中的第一场，旨在帮助您入门 FreeBSD。本系列由 Deb Goodkin 主讲的《FreeBSD 简介》拉开序幕。
@@ -58,7 +58,6 @@ FreeBSD 项目是独立于 FreeBSD 基金会的，它由核心团队（Core Team
 其中一些人甚至早在 BSD 还是伯克利 UNIX（Berkeley UNIX）时就已经加入，这非常令人敬佩！他们带来了非常宝贵的经验和独特的知识。年轻的开发者可以向这些资深人士学习。而且，这些长期参与 FreeBSD 项目的老成员非常平易近人，在各种技术会议上，你可以面对面地与他们交流。他们会告诉你，为什么当初做出某些决策，为什么某些方面发生了变化，在伯克利时是如何做的，而这些方法为什么今天仍然有效。
 
 这种经验传承和知识共享是 FreeBSD 项目持续发展并保持活力的关键。此外，FreeBSD 是一个真正全球化的社区，来自世界各地的开发者共同参与，这使得社区更加多元化和国际化。
-
 
 在 FreeBSD 社区的核心理念中，最小惊讶原则（Principle of Least Astonishment，POLA）是非常重要的一点。这意味着所有的更改都是为了改进 FreeBSD、增加功能、提升性能。这个社区不会为了变更而变更。正是因为遵循这一理念，FreeBSD 的变更通常不会破坏已有功能。而且由于这种哲学的成功，它已经被 FreeBSD 项目广泛采纳。
 

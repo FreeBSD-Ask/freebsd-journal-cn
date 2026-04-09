@@ -3,7 +3,6 @@
 - [The Handling of SYN Segments in FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/downstreams/the-handling-of-syn-segments-in-freebsd)
 - 作者：Randall Stewart & Michael Tüxen
 
-
 ## TCP 连接设置
 
 传输控制协议（TCP）是一种面向连接的传输协议，提供了可靠的双向字节流服务。TCP 连接设置需要交换三个 TCP 段，这被称为三次握手。发起 TCP 连接并发送第一个 TCP 段（SYN 段）的 TCP 端点称为客户端。等待接收第一个 TCP 段的端点称为服务器，服务器响应接收到的 SYN 段并发送一个 SYN ACK 段。当客户端接收到这个 SYN ACK 段时，它通过发送 ACK 段完成握手。

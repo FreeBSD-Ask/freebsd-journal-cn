@@ -159,7 +159,6 @@ jail -vr gateway
 
 创建 `devfs.rules`
 
-
 ```
 vim /etc/devfs.rules
 ```
@@ -225,7 +224,6 @@ sysrc -j gateway pf_enable=YES
 
 编辑网关 jail 上的 `pf.conf`  
 
-
 ```sh
 vim /lab/gateway/etc/pf.conf
 ```
@@ -275,7 +273,6 @@ sysrc ifconfig_alc0_name=lab0
 sysrc ifconfig_lab0=up
 service netif restart
 ```
-
 
 编辑 `jail.conf`：
 
@@ -406,7 +403,6 @@ jexec -l client1 login -f root
 ```
 
 测试连通性
-
 
 ```sh
 ping -c 3 bsd.pw

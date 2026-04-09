@@ -2,7 +2,6 @@
 
 ![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/ce755f34-18b7-4f99-a338-76aafed8d9da)
 
-
 - 原文链接：<https://freebsdfoundation.org/wp-content/uploads/2023/11/reushling_poudrier.pdf>
 - 作者：BENEDICT REUSCHLING
 - 译者：Canvis-Me & ChatGPT

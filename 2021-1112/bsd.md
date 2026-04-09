@@ -37,7 +37,6 @@ OccamBSD 很高兴在 GitHub 上接受新的问题，接受通过拉取请求提
 
 [https://github.com/michaeldexter/occambsd/issues](https://github.com/michaeldexter/occambsd/issues)
 
-
 ---
 
 **TOM JONES** 希望 FreeBSD 基础的项目能得到应有的关注。他住在苏格兰东北部，并提供 FreeBSD 咨询服务。

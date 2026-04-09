@@ -1,4 +1,5 @@
 # CheriBSD port 和软件包
+
 # CheriBSD port 和软件包——用于 Arm Morello 和 CHERI-RISC-V CheriBSD 的纯能力第三方软件
 
 - 原文：[CheriBSD Ports and Packages](https://freebsdfoundation.org/wp-content/uploads/2023/05/CheriBSD_ports.pdf)
@@ -43,7 +44,6 @@ $ ./cheribuild.py --include-dependencies run-morello-purecap
 与现有软件的兼容性对于 CHERI 项目来说是非常重要的，它可以使软件逐步适应 CHERI。
 
 为了提供一个全功能的开发平台，CheriBSD 允许运行适应 CHERI 的应用程序和为 CHERI 扩展的 CPU（例如，Morello 的 Armv8-A）基线架构编译的应用程序。与现有软件的兼容性对于 CHERI 项目来说是至关重要的，它允许为 CHERI 逐步调整软件，而不是要求从头开始重新开发一个应用程序。FreeBSD，作为 CheriBSD 的基础操作系统，能够实现传统软件和 CHERI 感知软件的运行时环境。然而，当涉及到为多个运行时环境提供第三方软件时，CheriBSD 仍然有一些从 FreeBSD 继承的挑战。
-
 
 ## 多 ABI 支持
 
@@ -277,46 +277,46 @@ CheriBSD 是一个成熟的研究型操作系统，可以用来制作使用 CHER
 
 ## 参考文献
 
-1. cheribuild.py. https://github.com/CTSRD-CHERI/cheribuild
-2. cheribuild.py. the qemu-cheri-bsd-user branch. https://github.com/CTSRD-CHERI/
+1. cheribuild.py. <https://github.com/CTSRD-CHERI/cheribuild>
+2. cheribuild.py. the qemu-cheri-bsd-user branch. <https://github.com/CTSRD-CHERI/>
    cheribuild/tree/qemu-cheri-bsd-user
-3. CheriBSD. https://www.cheribsd.org/
-4. CheriBSD packages. https://pkg.cheribsd.org/
-5. CheriBSD Poudriere logs. https://poudriere.cheribsd.org/
-6. CheriBSD ports. https://github.com/CTSRD-CHERI/cheribsd-ports
-7. Poudriere extended for CheriBSD. https://github.com/CTSRD-CHERI/poudriere
-8. Poudriere infrastructure for CheriBSD packages. https://github.com/CTSRD-CHERI/poudriere-infrastructure
-9. QEMU with support for CHERI. https://github.com/CTSRD-CHERI/qemu
-10. QEMU with support for CHERI. the qemu-cheri-bsd-user branch. https://github.com/
+3. CheriBSD. <https://www.cheribsd.org/>
+4. CheriBSD packages. <https://pkg.cheribsd.org/>
+5. CheriBSD Poudriere logs. <https://poudriere.cheribsd.org/>
+6. CheriBSD ports. <https://github.com/CTSRD-CHERI/cheribsd-ports>
+7. Poudriere extended for CheriBSD. <https://github.com/CTSRD-CHERI/poudriere>
+8. Poudriere infrastructure for CheriBSD packages. <https://github.com/CTSRD-CHERI/poudriere-infrastructure>
+9. QEMU with support for CHERI. <https://github.com/CTSRD-CHERI/qemu>
+10. QEMU with support for CHERI. the qemu-cheri-bsd-user branch. <https://github.com/>
     CTSRD-CHERI/qemu/tree/qemu-cheri-bsd-user
 11. BSDCan 2015: Embedded FreeBSD Development and Package Building via QEMU.
-    https://www.bsdcan.org/2015/schedule/events/532.en.html
-12. BSDCan 2015: Stacey Son. https://www.bsdcan.org/2015/schedule/speakers/267.en.html
-13. The qemu-bsd-user project. https://github.com/qemu-bsd-user/qemu-bsd-user
-14. The CHERI LLVM Compiler Infrastructure. https://github.com/CTSRD-CHERI/llvm-project
-15. The GNU debugger extended to support CHERI. https://github.com/CTSRD-CHERI/gdb
-16. Microsoft. CHERIoT: Rethinking security for low-cost embedded systems. https://www.
+    <https://www.bsdcan.org/2015/schedule/events/532.en.html>
+12. BSDCan 2015: Stacey Son. <https://www.bsdcan.org/2015/schedule/speakers/267.en.html>
+13. The qemu-bsd-user project. <https://github.com/qemu-bsd-user/qemu-bsd-user>
+14. The CHERI LLVM Compiler Infrastructure. <https://github.com/CTSRD-CHERI/llvm-project>
+15. The GNU debugger extended to support CHERI. <https://github.com/CTSRD-CHERI/gdb>
+16. Microsoft. CHERIoT: Rethinking security for low-cost embedded systems. <https://www>.
     microsoft.com/en-us/research/publication/cheriot-rethinking-security-for-low-cost-embedded-systems/
-17. Arm. The CHERI LLVM Compiler Infrastructure. https://git.morello-project.org/morello/
+17. Arm. The CHERI LLVM Compiler Infrastructure. <https://git.morello-project.org/morello/>
     llvm-project
-18. Morello Platform Software Repositories. https://git.morello-project.org/morello/docs
-19. Arm. Morello Development Tools. https://developer.arm.com/Tools%20and%20Software/Morello%20Development%20Tools
-20. Arm. Morello Program. https://www.arm.com/architecture/cpu/morello
+18. Morello Platform Software Repositories. <https://git.morello-project.org/morello/docs>
+19. Arm. Morello Development Tools. <https://developer.arm.com/Tools%20and%20Software/Morello%20Development%20Tools>
+20. Arm. Morello Program. <https://www.arm.com/architecture/cpu/morello>
 21. Robert N. M. Watson, et al. Getting Started with CheriBSD. Installing on a Morello Board.
-    https://ctsrd-cheri.github.io/cheribsd-getting-started/morello-install/
+    <https://ctsrd-cheri.github.io/cheribsd-getting-started/morello-install/>
 22. Robert N.M. Watson, et al. An Introduction to CHERI. Technical Report UCAM-CL- TR941, University of Cambridge, Computer Laboratory, 2019.
 23. Robert N. M. Watson, et al. Assessing the Viability of an Open-Source CHERI Desktop
     Software Ecosystem, Technical Report, Capabilities Limited, 17 September 2021.
 24. Brooks Davis, et al. CheriABI: Enforcing Valid Pointer Provenance and Minimizing Pointer Privilege in the POSIX C Run-time Environment. In Proceedings of 2019 Architectural
     Support for Programming Languages and Operating Systems (ASPLOS’19). Providence,
     RI, USA, April 13-17, 2019.
-25. Robert N. M. Watson, et al. Adversarial CHERI Exercises and Missions. https://ctsrd-cheri.
+25. Robert N. M. Watson, et al. Adversarial CHERI Exercises and Missions. <https://ctsrd-cheri>.
     github.io/cheri-exercises/
-26. Digital Security by Design. Technology Access Programme Participants. https://www.
+26. Digital Security by Design. Technology Access Programme Participants. <https://www>.
     dsbd.tech/whos-involved/technology-access-programme-participants/
 27. Defence and Security Accelerator. Competition: CHERI within Defence and Security.
-    https://www.gov.uk/government/publications/competition-cheri-within-defence-and-security
-28. Digital Security by Design. Funded Projects. https://www.dsbd.tech/whos-involved/funded-projects/
+    <https://www.gov.uk/government/publications/competition-cheri-within-defence-and-security>
+28. Digital Security by Design. Funded Projects. <https://www.dsbd.tech/whos-involved/funded-projects/>
 
  -----
 

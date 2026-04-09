@@ -2,7 +2,6 @@
 
 ![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/bae8f84a-e2c2-4762-9e32-537ee2b0616b)
 
-
 - 原文链接：<https://freebsdfoundation.org/wp-content/uploads/2023/11/Cardenas.pdf>
 - 作者：ALONSO CÁRDENAS
 - 译者：Canvis-Me & ChatGPT

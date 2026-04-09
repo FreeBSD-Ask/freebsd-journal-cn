@@ -146,7 +146,7 @@ make install
 
 该项目包括一个新的 DRMKPI 框架，它是 LinuxKPI 的简化版——但仅用于 DRM。在 DRMKPI 中，大多数不需要的存储/网络代码（如 netdevice/sysfs 代码）已被移除，消除了 Linux 中 task_struct 的大部分字段，目标是完全消除 task_struct 本身。
 
-在 https://github.com/evadot/drm-subtree 上，您可以找到一组可工作的 DRM/KMS 驱动程序和适用于 Allwinner、Nvidia Tegra 和 Rockchip SoC 的说明，这些驱动程序允许在 FreeBSD 下启用显示功能。
+在 <https://github.com/evadot/drm-subtree> 上，您可以找到一组可工作的 DRM/KMS 驱动程序和适用于 Allwinner、Nvidia Tegra 和 Rockchip SoC 的说明，这些驱动程序允许在 FreeBSD 下启用显示功能。
 
 ## Panfrost 的目标平台
 

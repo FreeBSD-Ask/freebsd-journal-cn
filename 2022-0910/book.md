@@ -1,6 +1,5 @@
 # 书评：*Understanding Software Dynamics*（深入理解软件性能——一种动态视角）—— Richard L. Sites 著
 
-
 - 原文链接：[Understanding Software Dynamics by Richard L. Sites](https://freebsdfoundation.org/wp-content/uploads/2022/11/book_review.pdf)
 - 审阅：**TOM JONES**
 
@@ -41,7 +40,6 @@ Bakhvalov 的 **《现代 CPU 的性能分析与调优》(Performance Analysis a
 **《深入理解软件性能——一种动态视角》(USD)** 是一本出色的书籍，适合任何对 **实际系统性能分析** 感兴趣的人。它很好地介绍了必要的背景知识，同时不会过于深入到难以跟进的细节。多个章节配有示例，以巩固和扩展前文所讲述的知识，并专注于提升理解能力。  
 
 **Sites** 在全书中保持了清晰的表达方式，书中引用了大量 **来自 Google 真实系统** 和 **示例系统** 的高质量示例图表。此外，书中还融入了作者自己在 **性能优化** 领域的经验，使内容更具实用价值。**USD** 结构严谨、语言流畅，适合没有 **性能分析** 经验的读者，也能让有经验的读者从 **不同计算机组件的性能细节** 以及作者介绍的新工具中获得新知识。  
-
 
 ---
 

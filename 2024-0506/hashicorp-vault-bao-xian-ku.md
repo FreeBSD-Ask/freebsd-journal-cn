@@ -448,7 +448,6 @@ Success! Vault is sealed.
 
 在过去二十年间， **DAVE COTTLEHUBER** 一直致力于领先于网络上的恶意者至少一步之遥。从 OpenBSD 2.8 到 9.3 共九年，在这段时间内他获得了 Ports 提交权限。他倾向于使用 jail，和晦涩的的函数式编程语言，这与他喜欢分布式系统和边缘异常锋利的电动工具有异曲同工之处。
 
-
 - 职业牦牛牧人，自 2000 年以来剃 BSD 色的牦牛（**译者注：即一直在开发使用 FreeBSD，解决相关故障**）
 - FreeBSD ports@ 提交者  
 - Ansible DevOops 大师

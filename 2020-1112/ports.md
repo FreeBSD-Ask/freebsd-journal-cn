@@ -21,11 +21,11 @@
 
 有时候，我会羡慕那些还没有移植到 FreeBSD 的软件。例如，speedometer [https://excess.org/speedometer/] 就是一个很不错的工具。如果在这篇文章发布时，有个忙碌的 Ports 提交者或贡献者已经移植了它，那会让我很开心——我能听到“挑战接受”吗？毕竟，如果没有那些为确保 FreeBSD 拥有一个良好的第三方软件生态系统而努力工作的人，这篇文章可能根本不会存在。而我相信我们有时候会把这一点当作理所当然。所以，向所有 Ports 维护人员表示感谢，感谢你们不懈的努力，保持事物的更新和运行！
 
-下次你安装了一个自己喜欢的工具时，为什么不发个小小的感谢邮件给维护者，给他们的日子带来一些阳光？你可以在 freshports.org 找到他们（非常感谢 Dan Langille 为该网站做出的贡献！）或者在 Port 本身的 Makefile 中找到他们。除非是 ports@freebsd.org，这样的 Port 就交给你去爱护它了。当你做到了，你可以教别人（包括我）如何做，因为永远都不可能有足够的 Ports 维护者。查看 FreeBSD 的 Wiki 页面上的 WantedPorts [https://wiki.freebsd.org/WantedPorts]，了解更多可能被加入到 Ports 中的 Port。
+下次你安装了一个自己喜欢的工具时，为什么不发个小小的感谢邮件给维护者，给他们的日子带来一些阳光？你可以在 freshports.org 找到他们（非常感谢 Dan Langille 为该网站做出的贡献！）或者在 Port 本身的 Makefile 中找到他们。除非是 <ports@freebsd.org>，这样的 Port 就交给你去爱护它了。当你做到了，你可以教别人（包括我）如何做，因为永远都不可能有足够的 Ports 维护者。查看 FreeBSD 的 Wiki 页面上的 WantedPorts [https://wiki.freebsd.org/WantedPorts]，了解更多可能被加入到 Ports 中的 Port。
 
 如果您不介意网络输出中有更多的颜色，可以看看 sysutils/glances。它就像是 sysutils/htop 和 vmstat 之间的一场恋爱，glances 是结果。除了几乎覆盖整个屏幕的 top(1)-like 信息外，里面还有磁盘活动的显示。在众多 top(1) 克隆程序中，只有 FreeBSD 的可以一眼看出我的 ZFS ARC 统计数据，这得益于 Allan Jude 的贡献。即使有其他很多应用程序，我也经常回到它那里。
 
-作为一个话题，类似 top(1) 的 Port 就足以填满一整篇文章。而且它会填满，所以敬请期待未来的专栏。如果您知道一个很棒的工具应该被包含在这里，请通过电子邮件发送给我，邮箱地址是 bcr@freebsd.org。
+作为一个话题，类似 top(1) 的 Port 就足以填满一整篇文章。而且它会填满，所以敬请期待未来的专栏。如果您知道一个很棒的工具应该被包含在这里，请通过电子邮件发送给我，邮箱地址是 <bcr@freebsd.org>。
 
 ---
 

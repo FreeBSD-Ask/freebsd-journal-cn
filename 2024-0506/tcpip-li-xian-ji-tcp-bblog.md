@@ -1,6 +1,5 @@
 # TCP/IP 历险记：TCP BBLog
 
-
 - 原文链接：[Adventures in TCP/IP: TCP Black Box Logging](https://freebsdfoundation.org/adventures-in-tcp-ip-tcp-black-box-logging/)
 - 作者：RANDALL STEWART、MICHAEL TÜXEN
 
@@ -94,7 +93,6 @@ net.inet.tcp.bb.tp.number: 0
 
 最后三个 `sysctl` 变量与跟踪点相关。`net.inet.tcp.bb.tp.bbmode` 指定了触发跟踪点时要使用的 BBLog 状态。`net.inet.tcp.bb.tp.count` 限制了允许触发指定跟踪点的连接数量。例如，如果设置为 4，则允许 4 个连接触发跟踪点，之后不再触发该特定点（用于限制生成的 BBLog 事件数量）。`net.inet.tcp.bb.tp.number` 指定要启用的跟踪点编号。
 
-
 ### 通过套接字 API 的 TCP 连接特定配置
 
 以下是用于控制单个连接上的 BBLog 的 `IPPROTO_TCP` 级别套接字选项：
@@ -153,7 +151,6 @@ tcplog_dumper -d
 
 `tcplog_dumper` 会输出文件格式 pcapng（pcap next generation）。pcapng 可存储元信息以及数据包信息。对于事件 `TCP_LOG_IN` 和 `TCP_LOG_OUT`，`tcplog_dumper` 从事件中生成一个 IP 头（因此，除了源和目标 IP 地址外，IP 头中的其他字段可能与实际传输的不同），使用事件中的 TCP 头（即与网络上传输的段相同），并添加一个具有正确长度的虚拟负载。对于每个 TCP 连接，`tcplog_dumper` 会创建一系列文件，每个文件大约包含 5000 个 BBLog 事件，按序号命名为 .0、.1、.2 等。以下是单个 TCP 连接的一系列 7 个文件的示例：
 
-
 ```sh
 [rrs]$ ls /var/log/tcplog_dumps/
 UNKNOWN_18262_10.1.1.1_9999.0.pcapng UNKNOWN_18262_10.1.1.1_9999.4.pcapng
@@ -203,4 +200,3 @@ my_output_file.txt -e Files:7 Processed 30964 records Saw
 **RANDALL STEWART**（[rrs@freebsd.org](mailto:rrs@freebsd.org)）是一位操作系统开发人员，已有 40 余年的经验，自 2006 年以来一直是 FreeBSD 开发者。他专注于传输协议，包括 TCP 和 SCTP，但也曾涉猎操作系统的其他领域。目前，他是一名独立顾问。
 
 **MICHAEL TÜXEN**（[tuexen@freebsd.org](mailto:tuexen@freebsd.org)）是明斯特应用技术大学的教授，同时为 Netflix 做兼职承包商，自 2009 年以来一直是 FreeBSD 源代码提交者。他的研究重点是传输协议，如 SCTP 和 TCP，它们在 IETF 的标准化及其在 FreeBSD 中的实现。
-

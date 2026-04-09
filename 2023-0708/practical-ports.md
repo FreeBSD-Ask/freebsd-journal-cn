@@ -99,9 +99,7 @@ sysctl net.link.bridge.pfil_member=0
 
 当我完成设置并重新启动树莓派后，发现 jail 无法再访问网络时，我感到非常困惑。经过一番思考后，我从以下的交流中得知了原因：
 
-
 <https://www.mail-archive.com/freebsd-net@freebsd.org/msg64577.html>
-
 
 这在 FreeBSD 13，需要在 `/boot/loader.conf` 中添加额外的一行。这可能会让你发疯，所以在变得疯狂之前，请将以下内容添加到其中，以确保在未来的重启中正常工作：
 

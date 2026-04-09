@@ -86,4 +86,3 @@ CHERI 项目为 FreeBSD 工具链的未来工作提供了另一个机会。Cheri
 ---
 
 **ED MASTE** 负责 FreeBSD 基金会的项目开发。他也是选举产生的 FreeBSD 核心团队成员。除了 FreeBSD，他还为许多其他开源项目做出了贡献，包括 LLVM、ELF Tool Chain、QEMU 和 Open vSwitch。他与妻子 Anna 以及孩子 Pieter 和 Daniel 住在加拿大滑铁卢。
-

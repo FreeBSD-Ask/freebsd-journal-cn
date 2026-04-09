@@ -309,7 +309,6 @@ rsn_pairwise=CCMP
 wpa_passphrase=”superpassword”
 ```
 
-
 我们可以这样在前台运行 hostapd：
 
 ```sh

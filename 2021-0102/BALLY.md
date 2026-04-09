@@ -5,7 +5,6 @@
 
 ![](https://github.com/user-attachments/assets/cac7e52d-b4fa-4837-932f-137740719eb8)
 
-
 BALLY WULFF Games & Entertainment GmbH 是德国一家知名的娱乐电子产品公司，专门开发、生产和销售现金游戏机。公司总部位于柏林，BALLY WULFF 不仅运营在德国，还在西班牙开展业务，目前约有 300 名员工。
 
 自 2000 年代初以来，FreeBSD 一直是 BALLY WULFF 产品的首选平台。得益于其无与伦比的稳定性和一致性，系统工程团队能够应对市场需求的不断变化，无论是小型磁盘空间占用、更高的安全性措施，还是更好的图形效果。团队经常将代码和文档补丁贡献回社区。此外，许多 BALLY WULFF 员工曾担任 FreeBSD 的提交者。

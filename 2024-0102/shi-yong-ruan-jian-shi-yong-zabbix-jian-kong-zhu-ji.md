@@ -253,4 +253,3 @@ opcache.optimization_level=0x7FFFBFDF
 ---
 
 **BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，也是文档工程团队的成员。过去，他曾担任了两届 FreeBSD 核心团队成员。他在德国达姆施塔特应用技术大学管理着一个大数据集群，并为本科生教授“Unix 开发者”课程。Benedict 还是每周播客 bsdnow.tv 的主持人之一。
-

@@ -32,7 +32,6 @@ Netgraph 是款网络工具包，在 1999 年被引入了 FreeBSD，它采用“
 
 Netgraph 的主要劣势就是：**上手门槛较高**。它在 FreeBSD 中拥有 40 余篇 man 页面，涵盖各种概念、工具和内核模块，新手一眼望过去可能完全不知道从哪里开始。但实际上，大多数常见的场景只需要掌握其中少数几个要点就能用起来。
 
-
 ## 学习 Netgraph 基础：节点与钩子
 
 首先，让我们进入节点（nodes）与钩子（hooks）的思维模式。
@@ -174,7 +173,6 @@ graph netgraph {
 这段文本可以直接用 `dot(1)` 命令（来自 `graphics/graphviz` Port）转化为 SVG 或 PNG 图像。下面是一个简单 Netgraph 配置的清理后输出示例。
 
 <img width="803" height="414" alt="XC~VCKFVVK75F_$)8W(4C61" src="https://github.com/user-attachments/assets/669531f9-ef7f-4a77-bec6-5f321be7412a" />
-
 
 虽然这个输出已经很不错，ngbuddy 还包含一个我编写的辅助脚本 `ngbuddy-mmd.awk`，可以将上述输出转换为更美观、更清晰的 mermaid-js 可视化图形。我们公司的文档系统支持 mermaid-js，因此借助一些 API 魔法，我总能在文档数据库中保持所有主机 Netgraph 拓扑图的实时更新。
 

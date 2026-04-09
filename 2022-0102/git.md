@@ -331,7 +331,7 @@ alias /usr/local/www/dehydrated;
 text/plain log txt; 
 ```
 
-重启 Nginx 后，使用 `service nginx restart`，然后在浏览器中访问 http://pkg.example.org 来查看 poudriere 的 web 界面。
+重启 Nginx 后，使用 `service nginx restart`，然后在浏览器中访问 <http://pkg.example.org> 来查看 poudriere 的 web 界面。
 
 ## 为准备审查而重写历史
 
@@ -516,7 +516,6 @@ git -C "$portsd" checkout main && \
  git rebase main
 ```
 
-
 ## 提交工作以供审查
 
 现在我们准备好将工作提交审查。FreeBSD 目前有两种方法来完成这项操作。Bugzilla 用于提交 bug，Phabricator 用于审查源代码更改。两者都接受补丁，但 Phabricator 具有 Bugzilla 中缺少的有用功能，例如允许审查者针对补丁中的一行或多行添加评论。为了涵盖这两种方法，让我们首先在 Phabricator 中创建一个审查，然后在 Bugzilla 中创建一个新 bug，指向 Phabricator 审查。
@@ -535,7 +534,7 @@ pkg install arcanist-php80
 arc install-certificate https://reviews.freebsd.org
 ```
 
-并按照指示操作。接下来，将 Arcanist 配置为使用 https://reviews.freebsd.org 作为默认 URI。
+并按照指示操作。接下来，将 Arcanist 配置为使用 <https://reviews.freebsd.org> 作为默认 URI。
 
 ```sh
 arc set-config default https://reviews.freebsd.org/
@@ -566,11 +565,11 @@ Reviewers: ashish rene
 arc diff --update <revision>
 ```
 
-其中 `<revision_id>` 是修订版 ID，格式为 DXXXXX。它可以在创建修订版本时发送到你邮箱的邮件中找到。例如，如果你的修订版位于 https://reviews.freebsd.org/D33314，那么就使用 D33314 作为修订 ID。
+其中 `<revision_id>` 是修订版 ID，格式为 DXXXXX。它可以在创建修订版本时发送到你邮箱的邮件中找到。例如，如果你的修订版位于 <https://reviews.freebsd.org/D33314，那么就使用> D33314 作为修订 ID。
 
 ### 提交 Bugzilla 错误报告
 
-要创建新的 Bugzilla 错误报告，请访问 https://bugs.freebsd.org 并点击页面顶部的 New 链接。如果你没有登录到 FreeBSD Bugzilla 实例，系统会提示你进行登录。如果你没有 FreeBSD Bugzilla 账户，可以使用登录页面上的链接创建一个新账户。
+要创建新的 Bugzilla 错误报告，请访问 <https://bugs.freebsd.org> 并点击页面顶部的 New 链接。如果你没有登录到 FreeBSD Bugzilla 实例，系统会提示你进行登录。如果你没有 FreeBSD Bugzilla 账户，可以使用登录页面上的链接创建一个新账户。
 
 在这里，选择 Ports & Packages 链接，因为我们正在创建一个新 Port，并选择 Individual Port(s) 作为组件。对于特定 Port 的错误，错误的主题行可以是提交的主题，前缀加上 [NEW PORT]，例如：[NEW PORT] www/nyxt: New port for the Nyxt browser。如果该 Port 不是新 Port，类别/ Port 前缀会自动将错误分配给该 Port 的维护者。在描述中，你可以添加其余的提交信息以及任何对其他阅读错误的人有帮助的信息。如果你创建了 Phabricator 审核，可以将其添加到 See also 中。
 

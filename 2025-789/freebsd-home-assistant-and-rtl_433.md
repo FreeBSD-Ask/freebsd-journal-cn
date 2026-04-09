@@ -13,7 +13,6 @@
 
 好在 rtl_433 软件已经支持将数据发布到 MQTT 服务器。Home Assistant 里本来就有一项用于 ZigBee 网络的 MQTT 服务，所以只需要创建一新用户来发布数据即可。
 
-
 ```sh
 /var/log/rtl_433.log
 {"time" : "2025-04-13 18:42:55.702554", "protocol" : 19, "model" : "Nexus-TH", "id" : 209, "channel" : 1, "battery_ok" : 1, "temperature_C" : 13.200, "humidity" : 61, "mod" : "ASK", "freq" : 433.910, "rssi" : -0.431, "snr" : 30.360, "noise" : -30.791}

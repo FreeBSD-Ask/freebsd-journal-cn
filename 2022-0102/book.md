@@ -44,4 +44,3 @@
 ---
 
 **PP BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，也是文档工程团队的成员。他是 FreeBSD 基金会董事会的副主席。过去，他曾在 FreeBSD 核心团队服务了两个任期。他在德国达姆施塔特应用科技大学管理一个大数据集群，同时为本科生教授“开发者的 Unix”课程。Benedict 还是每周 bsdnow.tv 播客的主持人之一。
-

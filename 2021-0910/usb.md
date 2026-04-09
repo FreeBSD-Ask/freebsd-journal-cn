@@ -25,7 +25,7 @@
 
 ## OpenRazer
 
-为了获得有关驱动程序所需的上下文，我们将尝试查找用于与键盘通信的包结构，因为这可以帮助我们理解来自 USB 嗅探的转储数据。可以在 https://github.com/openrazer/openrazer 上找到 openrazer 的源代码。在文件 `driver/razercommon.h` 中，我们将找到一个 `razer_report` 结构，这是驱动程序的主要结构。它在该产品的所有设备中都有使用。该结构如清单 1 所示。
+为了获得有关驱动程序所需的上下文，我们将尝试查找用于与键盘通信的包结构，因为这可以帮助我们理解来自 USB 嗅探的转储数据。可以在 <https://github.com/openrazer/openrazer> 上找到 openrazer 的源代码。在文件 `driver/razercommon.h` 中，我们将找到一个 `razer_report` 结构，这是驱动程序的主要结构。它在该产品的所有设备中都有使用。该结构如清单 1 所示。
 
 **清单 1. openrazer 定义的 `razer_report` 结构体**
 
@@ -46,7 +46,7 @@ struct razer_report {
 
 ## 嗅探 Windows 驱动程序
 
-要嗅探 Windows USB 驱动程序，我们可以使用工具 usbpcap（https://desowin.org/usbpcap/）。它是一款命令行工具，非常易于使用（在清单 2 中，我们提供了一个示例）。当我们运行该命令工具时，它会显示可用的设备；接下来，它会询问我们选择要嗅探的设备以及保存 pcap 文件的位置。生成的 pcap 文件可以使用 Wireshark 轻松查看。
+要嗅探 Windows USB 驱动程序，我们可以使用工具 usbpcap（<https://desowin.org/usbpcap/）。它是一款命令行工具，非常易于使用（在清单> 2 中，我们提供了一个示例）。当我们运行该命令工具时，它会显示可用的设备；接下来，它会询问我们选择要嗅探的设备以及保存 pcap 文件的位置。生成的 pcap 文件可以使用 Wireshark 轻松查看。
 
 我们将针对 Razer Windows 驱动程序。在 Windows 上，Razer Synapse 工具允许你自定义键盘的背光颜色。让我们尝试在 usbpcap 运行时设置键盘的不同颜色。通过这个工具，我们将记录发送到键盘的所有请求（Razer Synapse 如图 2 所示）。此时，我们将整个键盘设置为红色方案。
 
@@ -84,7 +84,6 @@ Output file name (.pcap): t1.pcap
 **图 2. Razer Synapse 工具。该工具用于配置背光颜色。**
 
 ![](https://github.com/user-attachments/assets/dd601b4c-a292-403b-b851-30d1555bc00a)
-
 
 **表 1. 来自 USB 文档的设置数据格式，以及转储中的值**
 
@@ -439,12 +438,12 @@ main( void )
 
 ## 参考文献
 
-- USB 2.0 规范 — https://www.usb.org/document-library/usb-20-specification
+- USB 2.0 规范 — <https://www.usb.org/document-library/usb-20-specification>
 
 - 《FreeBSD 设备驱动程序：勇敢者指南》by Joseph Kong
-- Openrazer 源代码 — https://github.com/openrazer/openrazer
-- Roland 的主页 — 从用户空间设置 Razer ornata chroma 颜色 (https://rsmith.home.xs4all.nl/hardware/setting-the-razer-ornata-chroma-color-fromuserspace.html)
+- Openrazer 源代码 — <https://github.com/openrazer/openrazer>
+- Roland 的主页 — 从用户空间设置 Razer ornata chroma 颜色 (<https://rsmith.home.xs4all.nl/hardware/setting-the-razer-ornata-chroma-color-fromuserspace.html>)
 
 ---
 
-**MARIUSZ ZABORSKI** 目前在 4Prime 担任安全专家。自 2015 年以来，他一直是 FreeBSD 的提交者。他主要的兴趣领域是操作系统安全和低级编程。他曾在 Fudo Security 工作，领导团队开发 IT 基础设施中最先进的 PAM 解决方案。2018 年，Mariusz 组织了波兰 BSD 用户组。在空闲时间，他喜欢在 https://oshogbo.vexillium.org 撰写博客。
+**MARIUSZ ZABORSKI** 目前在 4Prime 担任安全专家。自 2015 年以来，他一直是 FreeBSD 的提交者。他主要的兴趣领域是操作系统安全和低级编程。他曾在 Fudo Security 工作，领导团队开发 IT 基础设施中最先进的 PAM 解决方案。2018 年，Mariusz 组织了波兰 BSD 用户组。在空闲时间，他喜欢在 <https://oshogbo.vexillium.org> 撰写博客。

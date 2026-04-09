@@ -37,9 +37,7 @@ Katie
 
 ![](https://github.com/user-attachments/assets/ce02dc5f-b100-4c0b-a237-7ab479da1676)
 
-
 咖啡非常棒。好吧，这并不是唯一的理由，但你绝对应该把“在维也纳喝一杯梅朗日咖啡”加入你的心愿单，那真是一次美妙的体验。维也纳是座令人叹为观止的城市，拥有其壮丽的建筑、食物、纪念碑、购物、剧院、宫殿和公共交通——我鼓励大家都去这座美丽的城市旅行。
-
 
 ![](https://github.com/user-attachments/assets/199e52ce-a037-4dbe-8bea-73c560a0105d)
 
@@ -52,7 +50,6 @@ Katie
 我的朋友们，明年见，祝你们“Gute Fahrt！”
 
 ![](https://github.com/user-attachments/assets/658f4246-3909-4774-9365-0f4ec6df24d7)
-
 
 ---
 
