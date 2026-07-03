@@ -1,4 +1,4 @@
-# SVN 更新
+# svn 更新
 
 作者：Steven Kreuzer
 
