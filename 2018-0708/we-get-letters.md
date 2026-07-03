@@ -6,9 +6,9 @@
 
 我们在为 FreeBSD Journal 头脑风暴专栏点子，而 Kode Vicious 建议你可能愿意为我们处理"读者来信"专栏。人们会向 Journal 提交他们的问题，然后你来为我们回答。你有兴趣吗？
 
-    Best，
-        George V Neville-Neil
-    FreeBSD Foundation 主席
+Best，
+George V Neville-Neil
+FreeBSD Foundation 主席
 
 嗨 George，
 
@@ -16,7 +16,7 @@
 
 FreeBSD 有很多地方可以去寻求具体帮助。系统自带帮助，在 man 页面中。许多类 Unix 操作系统做出了荒谬的决定，将 man 页面单独捆绑，FreeBSD 随系统附带手册。实际上，你无法不安装手册。当然，你可以构建一个不包含手册的 FreeBSD，但要做到这一点需要阅读大量 man 页面。
 
-人们说手册不是教程，他们没错。这就是 FreeBSD 有 Handbook 和大量文章的原因。与 man 页面不同，你可以选择不在 FreeBSD 主机上安装它们。你可以在线浏览所有文档，地址是 <https://docs.freebsd.org。>
+人们说手册不是教程，他们没错。这就是 FreeBSD 有 Handbook 和大量文章的原因。与 man 页面不同，你可以选择不在 FreeBSD 主机上安装它们。你可以在线浏览所有文档，地址是 <https://docs.freebsd.org>。
 
 新用户可以从 FAQ（Frequently Asked Questions）文件开始，其中包含几十个问题和答案。它涵盖从硬件兼容性到 ZFS 的所有内容，虽然 "The FreeBSD Funnies" 中的一些段子已经严重过时——1996 年就修复了那个 bug——文档的其余部分坚如磐石。现在看来，我意识到它对新用户多么有用。我仍记得当我理解为什么 du(1) 和 df(1) 对磁盘空间使用给出不同答案时的那种顿悟感。花一个小时阅读 FAQ 会给新用户带来一次又一次的顿悟。
 
