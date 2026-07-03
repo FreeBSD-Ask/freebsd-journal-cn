@@ -19,10 +19,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### 目录结构
 
-- 章节目录遵循 `di-X-zhang-<主题>/` 命名模式（拼音 slug）
-- 每节为独立 `.md` 文件，如 `di-1-zhang-jian-jie/1.1.-gai-shu.md`
-- 前言在 `qian-yan/`，附录在 `fu-lu-X/`
-- 分部介绍页如 `di-yi-bu-fen-kuai-su-kai-shi.md`
+- 章节目录遵循 `202X-月份/` 命名模式
+- 每刊为独立章节，如 `使用标题的英语命名`，禁止使用 Windows 不兼容的文件名，包括不限于 `con` `com` 冒号顿号等
 - `.gitbook/assets/` — GitBook 静态资源（logo 等）
 
 ### 标题管理（关键约束）
@@ -88,7 +86,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 对已翻译章节进行质量审校时，参考以下步骤：
 
-1. **获取原文**：通过 `WebFetch` 抓取对应章节的英文原版页面（`https://docs.freebsd.org/en/books/handbook/<chapter-slug>/`），获取完整的英文文本。但是，如果存在 en 文件夹，以 en 文件夹对应目录为基准。
+1. **获取原文**：通过 `WebFetch` 抓取对应章节的英文原版页面（可将 PDF 下载到 en 文件夹下用于后续处理），获取完整的英文文本。
 
 2. **逐句对照**：将中文翻译与英文原文逐句比对，重点检查以下问题类别：
 
