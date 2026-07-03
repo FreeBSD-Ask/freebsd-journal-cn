@@ -194,24 +194,17 @@ FreeBSD 尚不支持命名空间管理——例如创建和删除命名空间以
 - "nvmecontrol power" 更改电源状态或为 NVMe 控制器指定工作负载提示
 - "nvmecontrol wdc" 执行特定于 WDC NVMe SSD 的选项
 
-使用 nda(4) 时，camcontrol(8) 目前可用于列出命名空间，但其他功能
-              （如 NVMe identify 或固件下载）尚未管道化。
+使用 nda(4) 时，camcontrol(8) 目前可用于列出命名空间，但其他功能（如 NVMe identify 或固件下载）尚未管道化。
 
-        nvmecontrol(8) 的一个缺点是将 NVMe 控制器或命名空间映射到其关联的
-      nvd 或 nda 条目。目前最佳方法是通过 "geom disk
-      list" 和 "nvmecontrol identify" 之间的序列号关联。随着 camcontrol(8) 获得更多 NVMe 功能，此问题将
-       得到缓解。
+nvmecontrol(8) 的一个缺点是将 NVMe 控制器或命名空间映射到其关联的 nvd 或 nda 条目。目前最佳方法是通过 "geom disk list" 和 "nvmecontrol identify" 之间的序列号关联。随着 camcontrol(8) 获得更多 NVMe 功能，此问题将得到缓解。
 
-    总结
-     NVM Express 提供了一个现代的、高性能的存储接口，非常适合当今的 CPU 架
-        构——FreeBSD 能够很好地利用它。将 NVMe 支持与 CAM 集成，以及
-        未来对命名空间管理和 NVMe SSD 热插拔的支持，将进一步改善 FreeBSD 的
-     NVMe 能力。下次你看 Netflix 时，希望你能对这些
-         位如何出现在你的屏幕上了解得更多一点！ •
+## 总结
 
-           1https://www.intel.com/content/www/us/en/solid-state-drives/optane-ssd-900p-brief.html
-           2https://www.sandvine.com/hubfs/downloads/archive/2016-global-internet-phenomena-report-latin-america-and-north-america.pdf
-           3https://www.intel.com/content/www/us/en/io/data-direct-i-o-technology.html
+NVM Express 提供了一个现代的、高性能的存储接口，非常适合当今的 CPU 架构——FreeBSD 能够很好地利用它。将 NVMe 支持与 CAM 集成，以及未来对命名空间管理和 NVMe SSD 热插拔的支持，将进一步改善 FreeBSD 的 NVMe 能力。下次你看 Netflix 时，希望你能对这些位如何出现在你的屏幕上了解得更多一点！ •
+
+1 <https://www.intel.com/content/www/us/en/solid-state-drives/optane-ssd-900p-brief.html>
+2 <https://www.sandvine.com/hubfs/downloads/archive/2016-global-internet-phenomena-report-latin-america-and-north-america.pdf>
+3 <https://www.intel.com/content/www/us/en/io/data-direct-i-o-technology.html>
            4https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=199321
          5128 是默认值。此数字可通过 hw.nvme.io_trackers 可调参数修改。
 
