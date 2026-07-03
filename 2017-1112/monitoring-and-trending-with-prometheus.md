@@ -195,6 +195,6 @@ datacenter:unbound_queries:rate5m =
 
 希望本文能让你感受到，开始用 Prometheus 监控系统是多么容易。在 Kumina，我们使用 Prometheus 已约一年，深感满意。它是一个稳健、灵活且可扩展的监控系统，拥有健康的开发者和用户生态。未来几个月内，我们将看到 Prometheus 2.0 发布，其中会包含大量新功能。在 Kumina，我们最期待的是存储层的重新设计，它将让我们能在商用硬件上每分钟收集数百万个样本。
 
-自 2016 年起，Prometheus 团队每年举办一次名为 PromCon（<https://promcon.io/）的会议。今年的会议于> 8 月 17—18 日在德国慕尼黑举行。如果你想了解 Prometheus 项目的最新进展，请务必查看会议网站，所有演讲的录像都公开提供。•
+自 2016 年起，Prometheus 团队每年举办一次名为 PromCon（<https://promcon.io/>）的会议。今年的会议于 8 月 17—18 日在德国慕尼黑举行。如果你想了解 Prometheus 项目的最新进展，请务必查看会议网站，所有演讲的录像都公开提供。•
 
 > ED SCHOUTENS 是 Kumina（位于荷兰埃因霍温的托管服务提供商和咨询公司）的首席软件开发者。Kumina 为企业提供完全托管平台，并提供 Prometheus 和 Kubernetes 的支持、培训和咨询。欢迎访问我们的网站 <https://kumina.nl/> 或发送邮件至 <info@kumina.nl>，告诉我们你的项目或索取关于我们服务的更多信息。

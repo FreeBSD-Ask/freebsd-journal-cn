@@ -116,7 +116,7 @@ err = setsockopt(sd, IPPROTO_TCP, TCP_LOG, &log_state, sizeof(int));
 
 此代码也可用于前面提到的所有 BBLog 状态。
 
-若无法访问源代码，可以使用 root 权限进行设置。、
+若无法访问源代码，可以使用 root 权限进行设置。
 
 ```c
 tcpsso -i id TCP_LOG 4

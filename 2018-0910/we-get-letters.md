@@ -1,7 +1,6 @@
 # 读者来信
 
-                                                         作者：Michael W Lucas            letters@WeGetletters
-                   freebsdjournal.org
+作者：Michael W Lucas
 
 嗨，FJ Letters Dude，
 
@@ -62,9 +61,3 @@ FJ Letters Dude，
 MICHAEL W LUCAS (<https://mwl.io>) 写了太多书，包括《Absolute FreeBSD》、《FreeBSD Mastery: Specialty Filesystems》和《git commit murder》。将你的问题发送到
 <letters@freebsdjournal.com>。来信将按其启发、逗乐或激怒专栏作者的顺序回答，并可能为他自己的目的进行编辑。
 
-  在 FreeBSD 所有文件系统的辩护中，
-
-®
-与我们
-做广告！
-联系 <walter@fbsdjournal.com>
