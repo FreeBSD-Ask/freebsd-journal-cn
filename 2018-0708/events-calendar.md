@@ -43,6 +43,3 @@
                         https://ghc.anitab.org/2018-attend/ • Grace Hopper Celebration 是
                           世界上规模最大的女性技术从业者聚会。由 AnitaB.org 主办，
                      并与 ACM 合作举办。
-
-
-46  FreeBSD Journal
