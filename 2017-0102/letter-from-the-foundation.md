@@ -1,0 +1,85 @@
+# 基金会来信：欢迎来到 2017！
+
+作者：George Neville-Neil
+
+代表 FreeBSD 期刊编辑委员会
+
+## 编辑委员会
+
+- John Baldwin — FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会联席主席
+- Brooks Davis — SRI International 高级软件工程师，剑桥大学访问学者，FreeBSD Core Team 前成员
+- Bryan Drewery — EMC Isilon 高级软件工程师，FreeBSD Portmgr Team 成员，FreeBSD 提交者
+- Justin Gibbs — FreeBSD 基金会创始人兼主席，Spectra Logic Corporation 高级软件架构师
+- Daichi Goto — BSD Consulting Inc.（东京）董事
+- Joseph Kong — EMC 高级软件工程师，《FreeBSD Device Drivers》作者
+- Steven Kreuzer — FreeBSD Ports Team 成员
+- Dru Lavigne — FreeBSD 基金会董事，BSD 认证小组主席，《BSD Hacks》作者
+- Michael W. Lucas — 《Absolute FreeBSD》作者
+- Ed Maste — FreeBSD 基金会项目发展总监
+- Kirk McKusick — FreeBSD 基金会董事，《The Design and Implementation》系列图书首席作者
+- George V. Neville-Neil — FreeBSD 基金会董事，FreeBSD 期刊编辑委员会主席，《The Design and Implementation of the FreeBSD Operating System》合著者
+- Hiroki Sato — FreeBSD 基金会董事，AsiaBSDCon 主席，FreeBSD Core Team 成员，东京工业大学助理教授
+- Benedict Reuschling — FreeBSD 基金会副主席，FreeBSD 文档提交者
+- Robert Watson — FreeBSD 基金会董事，TrustedBSD 项目创始人，剑桥大学高级讲师
+
+---
+
+欢迎来到 2017 年《FreeBSD 期刊》！
+
+编辑委员会对 2017 年各期规划的话题感到兴奋，当然也对这新一年的第一期文章感到兴奋。开篇是 Sean Kelly 撰写的关于 FlightAware 如何使用 FreeBSD 提供精准航班数据的文章。如果你经常出差，大概知道 flightaware.com 和他们的免费 App。当你用它查看自己又一次被延误的原因时，你就在使用 FreeBSD。知道自己正在用 FreeBSD，或许能稍微缓解两小时地面等待的痛苦！
+
+本期另外两篇特色文章涉及 FreeBSD 在不同语言环境下的使用。李潇（Li, Xiao）撰文介绍 FreeBSD 与中国铁路信息屏；Warren Block 讨论 FreeBSD 文档与开发团队正在使用的新一代翻译工具。Anne Dickison 来自 FreeBSD 基金会，撰文介绍基金会如何努力让 FreeBSD 在全球范围内被认知和喜爱，为本次国际主题画上圆满句号。
+
+新年伊始，本期没有会议报告，但在后续各期中我们将报道几周前刚落幕的 FOSDEM 2017，以及计划于 3 月在东京举行的 AsiaBSDCon（https://2017.asiabsdcon.org）、6 月在加拿大渥太华举行的 BSDCan（http://www.bsdcan.org/2017/），以及 8 月和 9 月举行的 BSDCam、VBSDCon 和 EuroBSD。
+
+在本期中，你将欣赏到 Dru Lavigne 的专栏，她将介绍 FreeBSD 社区的新面孔；Steven Kreuzer 将评 Aditya Y. Bhargava 所著《Grokking Algorithms: An illustrated guide for programmers and other curious people》，并带来他的 svn update 专栏新一期。
+
+---
+
+## 出版团队
+
+**出版人**
+
+Walter Andrzejewski　walter@freebsdjournal.com
+
+**自由撰稿编辑**
+
+James Maurer　jmaurer@freebsdjournal.com
+
+**文字编辑**
+
+Annaliese Jakimides
+
+**美术总监**
+
+Dianne M. Kischitz　dianne@freebsdjournal.com
+
+**办公室管理员**
+
+Michael Davis　davism@freebsdjournal.com
+
+**广告销售**
+
+Walter Andrzejewski　walter@freebsdjournal.com　电话 888/290-9469
+
+---
+
+2017 年对《FreeBSD 期刊》而言正成为精彩的一年。今年上半年，我们正在筹备关于安全、配置管理和资源控制的各期。今年余下时间的内容，我们暂时保密。
+
+希望 2017 年能在 BSD 活动上见到大家！
+
+---
+
+George Neville-Neil
+
+《FreeBSD 期刊》主编
+
+FreeBSD 基金会董事
+
+---
+
+《FreeBSD 期刊》（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD 基金会出版，地址：5757 Central Ave., Suite 201, Boulder, CO 80301，电话：720/207-5142，传真：720/222-2350，电子邮件：info@freebsdfoundation.org。版权所有 © 2017 FreeBSD Foundation。保留所有权利。
+
+未经出版商书面许可，本杂志不得全部或部分复制。
+
+S&W Publishing LLC　PO Box 408, Belfast, Maine 04915

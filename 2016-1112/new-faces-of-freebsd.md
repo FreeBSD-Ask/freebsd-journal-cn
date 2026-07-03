@@ -1,0 +1,86 @@
+# FreeBSD 新面孔
+
+*作者：Dru Lavigne*
+
+本栏目旨在聚焦近期获得提交位的贡献者，并向 FreeBSD 社区介绍他们。
+
+本月聚光灯对准 2016 年 9 月加入项目的三位提交者：Sevan Janiyan 与 Ruey-Cherng Yu 成为文档提交者，Joseph Mingrone 成为 Ports 提交者。
+
+**谈谈你自己、背景和兴趣。**
+
+**Sevan：** 我三十多岁，是系统管理员，现居英国伦敦。十几岁起开始接触计算机，多年来主要靠自学。我维护一个技术博客 GeekLAN（https://www.geeklan.co.uk），写些我做的东西。
+
+我尽量不囤积电脑，但小型机收藏还是在不断增长。我喜欢摆弄不同操作系统、听电子音乐。我想多了解函数式与面向对象编程语言，特别是 Lisp 与 Smalltalk。
+
+**Ruey-Cherng：** 我是台湾的一名牙医。我并非计算机专业出身，但对计算机很感兴趣。父亲在我 10 岁时买了一台 80286 PC。我记得操作系统是 DOS 3.3，我用它玩了很多 DOS 游戏。随着硬件要求越来越高，父亲把我的电脑从 80386、80486DX2-66、Pentium 等一路升级。过了一阵，我决定搞懂这些游戏怎么运作。高中一年级时，我在台湾大学资讯工程系参加了 C 语言与数据结构课程，当时用的编译器是 Borland C++ 2.0。课程结束后我意识到调试太难，于是改学医。
+
+大学期间，我通过 Redhat Linux 5.2 开始了解类 UNIX 操作系统，也用过 Mandrake Linux 与 Debian。我的兴趣是计算机科学、骑车、经济学，以及陪伴两个女儿。
+
+**Joseph：** 我是加拿大新斯科舍省哈利法克斯 Dalhousie 大学数学/统计系的博士候选人，研究分子演化模型。除研究外，我还管理我们研究组的计算集群。研究生之前，我做软件开发，做过各种项目，用过多种语言。
+
+**你最初怎么知道 FreeBSD 的？FreeBSD 哪一点吸引了你？**
+
+**Sevan：** 很久以前，我弄到一台 Sun3/60 工作站（Sun Microsystems 1980 年代生产、采用 Motorola 68000 CPU 的工作站），想给它找个操作系统。在这个过程中我了解到 BSD 家族，但确实分不清谁是谁。大约 1997 年前后，我访问过三大 BSD 变种的网站。
+
+第一次真正试用 FreeBSD，我记得清清楚楚。5.0 发布消息在 Slashdot 上线那晚我看到。又是同样的情况：我又弄到一台老硬件，这次是 DEC AlphaStation 250。Linux 在这台机器上不太好用，我看到 Alpha CPU 是受支持架构，于是试了 FreeBSD，没让我失望。首先系统比我之前试过的 Linux 发行版快得多；其次，多亏 Handbook，我无需先验知识就能在系统上做很多事情。这让我很有成就感，从此入坑。
+
+**Ruey-Cherng：** 我用 Redhat 5.2 时觉得依赖问题非常烦人。换到 Debian 后有改善。在解决 RPM 文件依赖、上网找方案时，我发现了 FreeBSD 的特性：Ports 系统。Ports 的便利吸引了我。但那时硬件兼容性不佳，我只短暂试用过 FreeBSD。2014 年 5 月，FreeBSD 再次吸引我。我在富士通 T2010 上装了 FreeBSD 9.0，调校一番后运行良好。
+
+**Joseph：** 我最初了解 FreeBSD 大约在 1998 年。两个室友和我搬进公寓，希望共享一条上网连接。当时廉价家用路由器还不普及，我记得 ISP 要么对同一连接上多台电脑额外收费，要么禁止。那时我对 Unix 几乎一窍不通，于是和一位年长、更懂计算机的学生达成交易：他出技术建议，我夏季拼车时多开车。我们捡来一台弃置台式机，加了一块网卡，装了某种 Linux 发行版。我不记得细节，但记得它不好用。这位学长认识一位 FreeBSD 老用户 Marc Fournier，Marc 推荐 FreeBSD。装上 FreeBSD 后，那台旧台式机一年到头跑得非常好。于是 FreeBSD 走入我的视野，最初吸引我的是稳定性。今天我在服务器、台式机、笔记本上仍运行它，原因很多，但只挑一个：我喜欢 FreeBSD 给我的掌控力。凭借相对精简的基础系统和强大的 Ports 系统，我能定制安装，这是我所知任何其他操作系统都做不到的。自然，我很期待即将到来的打包基础系统。
+
+**你是怎么成为提交者的？**
+
+**Sevan：** 我想我提交的补丁达到了一定数量，足以升到下一级——经导师 Benedict Reuschling 评审并放行后，可以提交自己提出的修改。
+
+这一切始于我在审视当前各 BSD 基础系统所附工具的源码历史与文档时。我意识到，关于这些工具的起源、首次出现在哪个操作系统版本上，存在不一致。现代 BSD 享有可追溯至 1BSD 的血脉。FreeBSD 项目托管一份 CSRG 仓库副本，可在 https://svnweb.freebsd.org/csrg/ 检出或用浏览器浏览。如愿意，该仓库连同实际二进制可向 Kirk McKusick 购买 CD 套装，地址 http://www.mckusick.com/csrg/index.html。凭借 CSRG 仓库副本与网上覆盖其他 Unix 的资源，我开始审视手册页中已有的历史章节，并为缺失者补上这一节。结果是 **/bin** 与 **/sbin** 中的工具现已文档化，**/usr/bin** 与 **/usr/sbin** 中的工具是下一步。
+
+**Ruey-Cherng：** 收集 FreeBSD 9.0 安装所需资料时，我发现繁体中文文档匮乏，能找到的也过时，多为 FreeBSD 5.X。zh_TW 版 FreeBSD Handbook 最后更新在 2008 年。FreeBSD 官网没有指向 zh_TW 版的链接，因为内容过时。于是我决定更新 FreeBSD Handbook 的翻译。
+
+我给 freebsd-doc 邮件列表发了封自我介绍并求助的邮件。共同导师 lwhsu@ 联系我，帮我将旧的 BIG-5 编码转换为 UTF-8。然后我开始翻译。delphij@ 帮我解决 PDF 渲染中的乱码问题。我在 Raspberry Pi 2B 上搭了台 FreeBSD 服务器，这样可以从牙科诊所 ssh 上去，有空就翻译。当时 FreeBSD ARM 包仓库还没建立，我安装常用程序时遇到一些问题。我在 FreeBSD 台湾用户组 Facebook 群组认识了导师 kevlo@。他耐心地回答了我许多愚蠢的问题，帮我解决问题并鼓励我继续翻译。我挣扎于 xml 标签，进度很慢。幸好测试与练习 po 翻译那晚，我遇到 po 翻译转 UTF-8 的问题，共同导师 wblock@ 热心帮我解决。把旧翻译方式转换为 po 翻译是劳动密集型工作，必须逐条把字符串复制粘贴到 po 文件，需要更多人参与。为吸引新鲜血液，7 月我在台北本地 BSDDay 做了关于 FreeBSD 文档繁体中文翻译的演讲（https://lists.freebsd.org/pipermail/freebsdtranslators/2016-August/000141.html）。对无法到场的人，我也写了篇文章介绍 FreeBSD 文档繁体中文翻译。一位贡献者 cwlin 通过 subversion 日志联系我，他把 zh_TW 版 Handbook 转成了 po 翻译，工作量很大！之后，kevlo@ 提议我成为提交者以方便翻译工作。如今在 kevlo@ 与 ryusuke@ 帮助下，我已复兴了 zh_TW 版 FreeBSD 网站。
+
+**Joseph：** 像大多数提交者一样，我只是开始提交补丁。我通过潜伏在 IRC 与邮件列表、参加 BSDCan 结识 FreeBSD 人。BSDCan 的黑客休息室是结识 FreeBSD、OpenBSD 乃至一些 DragonFlyBSD 社区成员的好方式。这些联系激发了我更多贡献的动机。
+
+我做过的 Ports 涵盖 games/voxelands 到 security/wpa_supplicant，但有一个领域我希望多提交，可以称为“科学软件”。例如 biology/diamond、biology/njplot、biology/paml、cad/gmsh、math/R。
+
+**加入 FreeBSD 项目后体验如何？对想成为 FreeBSD 提交者的读者有何建议？**
+
+**Sevan：** 我很高兴成为项目一员。入门流程很简单，队友也很乐于提供建议与提示。工作流从 Bugzilla（我们的 bug 跟踪器，请求与补丁落到这里）到 Phabricator（评审系统）。我很喜欢评审系统，有人过目你的改动令人安心。有时会有遗漏，能在改动进入源码树之前发现就好。这一流程也帮助团队相互熟悉彼此的思路，并为问题提供不同视角。
+
+每年 BSD 社区聚首加拿大渥太华的 BSDCan 会议。每晚都有文档冲刺。在文档冲刺上，文档团队的人就文档工作的方方面面做演讲，并帮助大家开始文档工作。
+
+可惜 BSDCan 一年一次，日常交流我们在 IRC 与邮件列表上碰头。我们所在 IRC 网络的 wiki 条目：https://wiki.freebsd.org/IRC/Channels#EFnet。EFnet 上 #bsddocs 是文档团队的所在，freebsddoc@ 邮件列表也是。
+
+对想成为 FreeBSD 提交者的人，我建议加入相关领域的 IRC 频道与邮件列表，这能让你联系到能提供指导与援手的开发者。如果不确定从哪个项目入手，审视系统总是稳妥的起点，好处是让你熟悉当前状态，从而帮助厘清可作哪些新改进，减少潜在疏漏。
+
+**Ruey-Cherng：** 你可以装上 FreeBSD 用它做日常工作。发现系统、Ports 或文档中的 bug 时，附上补丁提交 bug 报告。我在 Macbook Pro 2011 上装了 FreeBSD 加 Xfce 桌面环境，每天用它上网、处理文档、即时通讯。
+
+第一次浏览 FreeBSD 论坛时，我觉得有点冷清。我去翻邮件列表归档，订阅了一些邮件列表。我发现多数 FreeBSD 开发者喜欢邮件列表这种老派讨论方式。订阅你感兴趣领域的邮件列表，很快你就会明白他们为何喜欢邮件列表而非网页论坛——用惯用的邮件客户端浏览与回复非常方便。既然知道开发者聚在哪里，就自我介绍并参与讨论吧。
+
+相关 bug 报告也会发到邮件列表，你会在邮件列表看到自己的 bug 报告与补丁。开发者会认可你的贡献并提供建议。
+
+找一找本地 FreeBSD 用户组并加入，这是获取新信息、解决所遇问题之道，也可能在本地用户组遇到一些开发者。
+
+读 FreeBSD Handbook 及 FreeBSD 文档项目中的其他文章与书籍以更多了解 FreeBSD。发现文档中的 bug 或过时信息时，修正 bug 并贡献你的更新。
+
+浏览你所用语言的 FreeBSD 网站，看看能为同步其内容与英文版做些什么。
+
+如果你的硬件 FreeBSD 暂不支持，别失望。你也许有机会参与驱动测试！在相关邮件列表找驱动方案，看看是否有最新且未发布的驱动，帮开发者测试。
+
+你的所有努力都会受到感激。看到别人“激烈”讨论也别怕，这只是个像现实世界一样的小社会。
+
+**Joseph：** 我的体验相当积极。我有很棒的导师（swills 与 AMDmi3），在我跑偏时把我引回正轨。其他更资深的 Ports 开发者（尤其是 mat）也给了很多有用提示。对任何想为 Ports 树贡献的人我想说：超过 25000 个 Ports，我们需要你！《Porter's Handbook》及 poudriere、portlint 等工具让参与变得平易，即便经验不多的人也行。•
+
+DRU LAVIGNE 是 FreeBSD 项目文档提交者、BSD 认证小组主席。
+
+---
+
+FreeBSD 基金会感谢以下公司持续支持本项目。正是这些慷慨捐赠，使我们能继续推动项目前行。
+
+- Juniper
+- ARM
+- Facebook
+- Netflix
+
+完整慷慨社区投资者名单见 freebsdfoundation.org/donate/sponsors
+
+你是 FreeBSD 粉丝吗？帮助我们回馈项目，今天就捐款！freebsdfoundation.org/donate/

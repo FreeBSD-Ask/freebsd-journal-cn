@@ -1,0 +1,49 @@
+# 来自基金会的信
+
+来自编委会的信
+
+## 全球订阅者突破 1,000 人！
+
+- John Baldwin • FreeBSD 核心团队成员
+- Daichi Goto • BSD Consulting Inc.（东京）董事
+- Joseph Kong • 《FreeBSD Device Drivers》作者
+- Dru Lavigne • FreeBSD 基金会董事，BSD 认证小组主席
+- Michael W. Lucas • 《Absolute FreeBSD》作者
+- Kirk McKusick • FreeBSD 基金会董事，《The Design and Implementation》系列丛书主要作者
+- George Neville-Neil • FreeBSD 基金会董事，《The Design and Implementation of the FreeBSD Operating System》合著者
+- Hiroki Sato • FreeBSD 基金会董事，AsiaBSDCon 主席，FreeBSD 核心团队成员，东京工业大学助理教授
+- Robert Watson • FreeBSD 基金会董事，TrustedBSD 项目创始人，剑桥大学讲师
+
+我们很高兴地宣布，FreeBSD Journal 的推出取得了巨大成功，正如这封信标题所示，我们迄今已拥有超过 1,000 名订阅者。对于一本新杂志而言，这是一个令人振奋且意义非凡的开端，我们预计随着口碑传播，订阅量将继续增长。
+
+本期收录了一组关于 FreeBSD 新包系统的文章。对于每一位曾经使用现有 Ports 与包系统维护过大规模 FreeBSD 安装的人来说，新系统的到来无疑是一股清新的空气。能够维护相关的包集合、构建自己的包仓库，并在 FreeBSD 之上维护多样化的软件，对个人用户和大型 FreeBSD 站点的管理员都是一大福音。邮件列表上每个人都在盛赞新包系统，现在你可以直接从作者本人——Baptiste Daroussin 和 Bryan Drewery——那里读到它的工作原理。PCBSD 拥有自己的打包系统已有一段时间，Kris Moore 用他关于 PBI 格式演进的文章为本期的打包专题收尾。
+
+两篇与打包无直接关联的时效性主题文章为本期增色：一篇关于 Journaled Soft Updates，另一篇聚焦于使用 hwpmc(4) 设备驱动及相关工具进行性能分析。最后，当你想要轻松一读时，不妨翻阅本月的任一专栏，了解 FreeBSD 世界的最新动态。
+
+编委会感谢所有人的反馈，特别是那些在最近的纽约 NYCBSDCon 和东京 AsiaBSDCon 上专程找到我们、讨论这项新创举的读者。这些回应令人鼓舞，富有教益，我们深表感谢。读者们已经为未来几期的文章和专栏提出了许多绝佳的创意。
+
+谈到 BSD 活动，我们一年中最大的活动之一 BSDCan 即将到来。BSDCan 每年五月在加拿大渥太华举行，是规模最大的 BSD 活动，吸引各类 BSD 的开发者、厂商和用户，共度数天的开发者峰会、教程和论文发表。FreeBSD 基金会和 FreeBSD Journal 的代表将出席 BSDCan，如果你是 FreeBSD Journal 的读者，说不定还能在基金会的展台抢到一件收藏品——第 1 期的限量一次性印刷版！
+
+祝阅读愉快！
+
+FreeBSD Journal
+
+---
+
+**出版信息**
+
+SWP & PUBLISHING LLC
+PO BOX 408, BELFAST, MAINE 04915
+
+- 出版人：Walter Andrzejewski，walter@FreeBSDjournal.com
+- 主编：James Maurer，jmaurer@FreeBSDjournal.com
+- 艺术总监：Dianne M. Kischitz，dianne@FreeBSDjournal.com
+- 办公室管理员：Cindy DeBeck，cindy@FreeBSDjournal.com
+- 广告销售：Walter Andrzejewski，walter@FreeBSDjournal.com，致电 888/290-9469
+
+FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
+由 FreeBSD Foundation 出版，PO Box 20247, Boulder, CO 80308
+电话：1/720-207-5142 • 传真：1/720-222-2350
+电子邮件：board@freebsdfoundation.org
+
+版权所有 © 2014 FreeBSD Foundation。保留所有权利。未经出版商书面许可，不得全部或部分复制本杂志。
