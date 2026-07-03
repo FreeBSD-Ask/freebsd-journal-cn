@@ -1,0 +1,113 @@
+# FreeBSD 基金会项目开发更新：工具链现代化
+
+作者：DEB GOODKIN
+
+移除 GCC 4.2.1 标志着 FreeBSD 向集成式、现代化、宽松许可证工具链迁移的重要里程碑。
+
+如前所述，2020 年 2 月 29 日我们将 GNU Compiler Collection（GCC）4.2.1 从 FreeBSD 基本系统中移除。虽然在此提交之前，FreeBSD-current / svn head 已有一段时间没有默认使用 GCC，但这一里程碑标志着 FreeBSD 工具链现代化之旅的完成。
+
+本文简要介绍该计划的动机、范围和时间线。这些内容并非新近才有，但我们认为有必要将散落在邮件列表和手册页中的相关资料汇成一份权威文档，便于查阅。
+
+## 动机
+
+许可证需求显然是工具链项目的重要动机之一。多数读者知道，GCC 在 2007 年采用了强 copyleft 的 GPLv3 许可证，这与本社区的精神明显不相容。
+
+提供高性能、现代化工具链的愿望同样重要。这对研究和开发工作至关重要，也让项目有更大自由度规划工具链的发展路线。工具链项目中的许多工具（完整清单见下文"范围"小节）都体现了技术进步。多数情况下，它们是相对年轻的项目，代码库中遗留的包袱较少，例如只支持当前实际使用的操作系统、可执行文件格式和架构。
+
+以新编译器 Clang/LLVM 为例，它带来诸多优势：
+
+- 相比我们此前使用的 GPLv3 之前的 GCC 4.2.1，凭借解析器设计大幅改进了警告和错误信息。当代 GCC 版本已不存在这些问题
+- 编译速度快到足以用于语法高亮
+- LLVM 始终是交叉编译器
+- 支持 JIT 代码
+- 支持 Blocks
+
+可扩展的模块化设计，让开发者和研究者能够集成、复用或替换 LLVM 的各个组成部分。
+
+一位行业观察者甚至将 Rust、Kotlin、Swift 等新语言近年的蓬勃发展部分归功于 LLVM。我们庆幸当初及早押注 LLVM，让 FreeBSD 成为使用 LLVM 时支持最好的开源操作系统之一（如果不是"那个"最好的）。
+
+项目开发更新：
+工具链现代化
+
+## 范围
+
+除 Clang/LLVM 外，工具链项目还包括：
+
+- ELF Tool Chain 项目：为 GNU binutils 创建 BSD 许可证替代品，并新增其他工具
+- `libc++`：BSD 许可证的 C++ 标准库
+- `libcxxrt`：FreeBSD 使用的 Itanium C++ ABI 的 BSD 实现，提供 C++ 实现的底层部分：异常处理、RTTI 等
+
+本项目还新增对外部工具链的支持，这对嵌入式开发者意义重大，他们经常需要运行厂商提供的工具链。外部工具链支持的一个明确目标是支持任何带 gcc 兼容驱动器的现代编译器。另一个目标是让外部工具链用起来简单。
+
+## 时间线
+
+这些工作已进行多年，2 月 29 日的公告实际上是无数贡献者多年努力的结晶。
+
+多亏众人的辛勤工作，FreeBSD 自 2014 年 1 月发布的 10.0 版起，x86 和 LE arm 目标默认使用 Clang，自 12.0 版起默认使用 `lld`。
+
+完整时间线如下：
+
+- 2010 年 5 月：BSD Toolchain Summit 与 BSDCan，演示 ClangBSD
+- 2011 年 4 月：在 x86 和 powerpc 上默认构建 Clang（Clang 可用，但 FreeBSD 仍用 GCC 构建）
+- 2012 年 1 月：FreeBSD 9 发布，Clang 可用
+- 2012 年 2 月：`WITH_CLANG_IS_CC` 选项
+- 2012 年 11 月：i386 和 amd64 默认使用 Clang
+- 2013 年 2 月：为 LE arm 构建 Clang
+- 2013 年 3 月：arm 默认使用 Clang
+- 2013 年 9 月：Clang 为默认时不构建 GCC
+- 2014 年 1 月：FreeBSD 10 发布，x86 上使用 Clang 而无 GCC
+- 2015 年 1 月：默认使用一组 ELF Tool Chain 工具
+- 2016 年 10 月：FreeBSD 11 发布，附带 ELF Tool Chain 工具
+- 2016 年 11 月：支持通过 LLVM IR 构建和链接
+- 2018 年 5 月：在 i386 上默认启用 `lld` 作为系统链接器
+- 2018 年 12 月：FreeBSD 12 发布，x86 和 Arm 上以 `lld` 为链接器
+- 2020 年 1 月：RISC-V 上以 Clang 和 `lld` 为默认工具链
+- 2020 年 2 月：弃用 GCC 4.2.1。所有受支持的架构要么使用 in-tree Clang，要么依赖外部工具链（即 Ports 中的当代 GCC 版本）
+
+## 结语
+
+显然，许可证问题是替换 GCC 的初始动机的重要部分。但 FreeBSD 工具链项目过去和现在都不止于此。Brooks Davis 说得好：
+
+"FreeBSD 中全面的 LLVM 支持在研究领域极具优势，LLVM 是研究的首选编译器。在 DARPA SSITH 计划中，五个团队中有三个选择 FreeBSD，正是因为我们的 LLVM 支持。此外，我们与 Arm 合作，以 Morello 原型形式将 CHERI 引入 ARMv8-A，若没有宽松许可证的操作系统和工具链，这项工作会艰难得多，甚至不可能完成。"
+
+项目开发更新：
+工具链现代化
+
+最后，我们要向几位贡献者致谢，没有他们的领导和努力，这一重要里程碑不可能实现。
+
+FreeBSD 工具链名人堂
+
+- Brooks Davis
+- Roman Divacky
+- Dimitry Andric
+- Ed Maste
+- David Chisnall
+- Joseph Koshy
+- Kai Wang
+
+特别提及
+
+- Warner Losh
+
+DEB GOODKIN 是 FreeBSD 基金会执行董事。她在基金会工作的第 15 年仍倍感振奋，为勤勉敬业的团队感到自豪。她在数据存储行业从事工程开发、技术销售和技术市场推广超过 20 年。工作之余，她会骑公路车或山地车、跑步、带狗徒步、在科罗拉多滑雪，或者读一本好书。
+
+项目开发更新：
+工具链现代化
+
+## 致谢
+
+FreeBSD 基金会谨向以下公司致谢，感谢他们持续支持本项目。
+
+Uranium
+Iridium
+Silver
+
+完整捐赠者名单请见
+<https://freebsdfoundation.org/donors/>
+
+你是 FreeBSD 的爱好者吗？帮助我们回馈项目，立即捐赠！<https://freebsdfoundation.org/donate/>
+
+TM
+TM
+Platinum
+Gold
