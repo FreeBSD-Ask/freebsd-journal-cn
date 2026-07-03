@@ -64,53 +64,29 @@ FreeBSD 始终将一个提交队列与一个完成队列关联，形成逻辑队
 429
 ```
 
-            这种完成队列处理方法使主机只需读取内存即可确定哪些
-       命令已完成。这确保性能代码路径中没有 MMIO 读取。它
-          还利用 Intel® 的 Data Direct I/O 技术3 等 CPU 特性，将完成
-          条目直接放入最后一级缓存以优化完成条目处理。
-        NVMe 命令进一步分为两种类型——admin 和 I/O——由两种不同
-         类型的 qpairs——也命名为 admin 和 I/O——处理。前面描述的队列处理同样适用于
-         admin 和 I/O qpairs，但初始化它们的方法截然不同。了解
-        NVMe 控制器如何初始化将有助于理解这一点。
+这种完成队列处理方法使主机只需读取内存即可确定哪些命令已完成。这确保性能代码路径中没有 MMIO 读取。它还利用 Intel® 的 Data Direct I/O 技术3 等 CPU 特性，将完成条目直接放入最后一级缓存以优化完成条目处理。NVMe 命令进一步分为两种类型——admin 和 I/O——由两种不同类型的 qpairs——也命名为 admin 和 I/O——处理。前面描述的队列处理同样适用于 admin 和 I/O qpairs，但初始化它们的方法截然不同。了解 NVMe 控制器如何初始化将有助于理解这一点。
 
-    NVMe 控制器初始化
-        高层而言，控制器初始化分为两个阶段：
-         控制器重置——此阶段由主机使用 NVMe MMIO 寄存器读取和写入执行。其主要
-        功能是描述 admin qpair 的参数（主机内存地址和队列大小）
-        然后切换启用位（CC.EN）。切换启用位后，控制器将开始其内部
-           初始化，并在完成时设置就绪位（CSTS.RDY）。主机等待就绪位
-       变为设置，然后继续下一阶段。
-         控制器设置——此阶段由主机使用现在可以在
-         上一阶段设置的 admin qpair 上提交的 admin 命令执行。
-        • 提交 CDW10（command dword 10）设置为 1 的 IDENTIFY 命令。这表示
-           控制器返回与控制器关联的 IDENTIFY 数据。
-        • 提交 CREATE_IO_CQ 和 CREATE_IO_SQ 命令以构造 I/O qpairs。分配的 I/O
-            qpairs 数量通常等于系统上的 CPU 核心数与
-       控制器支持的最大 I/O qpairs 数的最小值。这将在本文稍后
-             更详细地描述。
-        • 为控制器
-       IDENTIFY 数据报告的每个命名空间提交 IDENTIFY 命令。命名空间 IDENTIFY 数据中的关键信息是
-        命名空间的大小和格式。命名空间在 IDENTIFY 命令中使用 NSID 字段指定，它总是
-           从 1 开始（永远没有命名空间 0）！
+## NVMe 控制器初始化
 
-       I/O 队列分配
-          I/O qpair 分配是 nvme(4) 驱动程序的关键特性。有了许多 I/O qpairs，我们理想情况下
-          可以为每个 CPU 核心分配一个单独的 qpair。这使每个 CPU 核心上的线程能够提交 I/O 命令而
-          无需与在其他 CPU 核心上运行的线程同步。它还允许将完成中断绑定到
-       提交 I/O 的 CPU 核心，以改善缓存局部性。
-              实际上，由于几个原因，每个核心 qpair 可能无法实现。首先，虽然
-      NVMe 规范允许每个控制器最多 65,535 个 I/O qpairs，但大多数 NVMe SSD 允许的 I/O qpairs
-         要少得多——有时少于 32 个。其次，系统上可能有有限数量的中断向量可用。
-         后一种限制在拥有许多 NVMe SSD 和
-      多队列 NIC 的系统上最常出现，但得益于一些 SMP 改进，现在
-      在 FreeBSD 11.4 中应该不太可能发生
-            对于无法为每个 CPU 核心分配 qpair 的情况，nvme(4) 将尽可能多地分配 qpair，
-        然后将每个 qpair 与多个 CPU 核心关联。使用 mutex 同步对 qpair 的访问——不仅
-          在提交 I/O 的不同线程之间，还与 qpair 的完成处理程序之间。
+高层而言，控制器初始化分为两个阶段：
 
-       I/O 提交
-       NVMe 命令主要由以下部分组成，由 FreeBSD 的 struct
-       nvme_command 表示，位于 /usr/include/dev/nvme/nvme.h：
+- 控制器重置——此阶段由主机使用 NVMe MMIO 寄存器读取和写入执行。其主要功能是描述 admin qpair 的参数（主机内存地址和队列大小），然后切换启用位（CC.EN）。切换启用位后，控制器将开始其内部初始化，并在完成时设置就绪位（CSTS.RDY）。主机等待就绪位变为设置，然后继续下一阶段。
+- 控制器设置——此阶段由主机使用现在可以在上一阶段设置的 admin qpair 上提交的 admin 命令执行。
+  - 提交 CDW10（command dword 10）设置为 1 的 IDENTIFY 命令。这表示控制器返回与控制器关联的 IDENTIFY 数据。
+  - 提交 CREATE_IO_CQ 和 CREATE_IO_SQ 命令以构造 I/O qpairs。分配的 I/O qpairs 数量通常等于系统上的 CPU 核心数与控制器支持的最大 I/O qpairs 数的最小值。这将在本文稍后更详细地描述。
+  - 为控制器 IDENTIFY 数据报告的每个命名空间提交 IDENTIFY 命令。命名空间 IDENTIFY 数据中的关键信息是命名空间的大小和格式。命名空间在 IDENTIFY 命令中使用 NSID 字段指定，它总是从 1 开始（永远没有命名空间 0）！
+
+## I/O 队列分配
+
+I/O qpair 分配是 nvme(4) 驱动程序的关键特性。有了许多 I/O qpairs，我们理想情况下可以为每个 CPU 核心分配一个单独的 qpair。这使每个 CPU 核心上的线程能够提交 I/O 命令而无需与在其他 CPU 核心上运行的线程同步。它还允许将完成中断绑定到提交 I/O 的 CPU 核心，以改善缓存局部性。
+
+实际上，由于几个原因，每个核心 qpair 可能无法实现。首先，虽然 NVMe 规范允许每个控制器最多 65,535 个 I/O qpairs，但大多数 NVMe SSD 允许的 I/O qpairs 要少得多——有时少于 32 个。其次，系统上可能有有限数量的中断向量可用。后一种限制在拥有许多 NVMe SSD 和多队列 NIC 的系统上最常出现，但得益于一些 SMP 改进，现在在 FreeBSD 11.4 中应该不太可能发生。
+
+对于无法为每个 CPU 核心分配 qpair 的情况，nvme(4) 将尽可能多地分配 qpair，然后将每个 qpair 与多个 CPU 核心关联。使用 mutex 同步对 qpair 的访问——不仅在提交 I/O 的不同线程之间，还与 qpair 的完成处理程序之间。
+
+## I/O 提交
+
+NVMe 命令主要由以下部分组成，由 FreeBSD 的 struct nvme_command 表示，位于 **/usr/include/dev/nvme/nvme.h**：
 
 • 8 位操作码——admin 和 I/O 操作码重叠，但根据其提交
   队列类型容易区分
@@ -188,35 +164,19 @@ nvme_ctrlr_submit_io_request()。
    1215  }
 ```
 
-          这里我们根据当前 CPU 选择 qpair。既然知道使用哪个 qpair，我们
-            调用 nvme_qpair_submit_request()。此函数检查是否有可用的 nvme_track-
-        ers。如果有，它调用我们之前看到的 nvme_qpair_submit_tracker()。如果没有，它将
-       nvme_request 放入 STAILQ。稍后，一旦某些 I/O 完成，将检查此 STAILQ 并
-       重新提交 nvme_requests。
+这里我们根据当前 CPU 选择 qpair。既然知道使用哪个 qpair，我们调用 nvme_qpair_submit_request()。此函数检查是否有可用的 nvme_trackers。如果有，它调用我们之前看到的 nvme_qpair_submit_tracker()。如果没有，它将 nvme_request 放入 STAILQ。稍后，一旦某些 I/O 完成，将检查此 STAILQ 并重新提交 nvme_requests。
 
-    NVMe 命名空间
-        NVMe 规范允许将驱动器逻辑分区为单独的命名空间。命名空间只是
-         一组块，地址为 0..N-1。这些命名空间可以完全配置或
-           精简配置（实际上，模拟 NVMe 驱动器的硬件或虚拟机管理程序通常向主机隐藏这些细节
-        ）。命名空间还提供向这些命名空间独立分配属性的方法。
-       一个命名空间可用于存储操作系统。数据很少变化，通常写
-       少，但读多。另一个命名空间可能包含事务日志，很少读
-          但主要以追加 I/O 模式写入。还有另一个可能包含一直在重写的
-        非常热的数据。NVMe 驱动器上的
-        固件可以使用这些属性优化 NAND 存储。对于冷数据（如操作系统），
-         固件可能将其放入磨损低且每单元存储 3 位的单元，以最大化数据密度。
-         这些单元通常具有出色的长期保留能力。对于非常热的数据，驱动器可能选择使用
-          更磨损的单元，并可能大量以每位单元存储 1 位，以最大化速度。虽然磨损的单元无法
-         保留数据很长时间，但它们适合热数据，因为数据不会存储很长时间，因此
-        长寿方面的任何缺陷都不会阻碍驱动器的性能。
-           FreeBSD 尚不支持命名空间管理——例如创建和删除命名
-        空间以及为这些命名空间指定属性。FreeBSD
-        社区正在此领域积极开展工作，应该能在 FreeBSD 12 之前完成。
+## NVMe 命名空间
 
-     管理 NVMe 驱动器
-        用于列出和配置 NVMe 控制器和命名空间的主要实用工具是 nvmecontrol(8)。最
-        基本的 nvmecontrol 子命令是 "nvmecontrol devlist"，它提供每个 NVMe 控制器及其命名空间的简短摘要
-        。
+NVMe 规范允许将驱动器逻辑分区为单独的命名空间。命名空间只是一组块，地址为 0..N-1。这些命名空间可以完全配置或精简配置（实际上，模拟 NVMe 驱动器的硬件或虚拟机管理程序通常向主机隐藏这些细节）。命名空间还提供向这些命名空间独立分配属性的方法。
+
+一个命名空间可用于存储操作系统。数据很少变化，通常写少，但读多。另一个命名空间可能包含事务日志，很少读但主要以追加 I/O 模式写入。还有另一个可能包含一直在重写的非常热的数据。NVMe 驱动器上的固件可以使用这些属性优化 NAND 存储。对于冷数据（如操作系统），固件可能将其放入磨损低且每单元存储 3 位的单元，以最大化数据密度。这些单元通常具有出色的长期保留能力。对于非常热的数据，驱动器可能选择使用更磨损的单元，并可能大量以每位单元存储 1 位，以最大化速度。虽然磨损的单元无法保留数据很长时间，但它们适合热数据，因为数据不会存储很长时间，因此长寿方面的任何缺陷都不会阻碍驱动器的性能。
+
+FreeBSD 尚不支持命名空间管理——例如创建和删除命名空间以及为这些命名空间指定属性。FreeBSD 社区正在此领域积极开展工作，应该能在 FreeBSD 12 之前完成。
+
+## 管理 NVMe 驱动器
+
+用于列出和配置 NVMe 控制器和命名空间的主要实用工具是 nvmecontrol(8)。最基本的 nvmecontrol 子命令是 "nvmecontrol devlist"，它提供每个 NVMe 控制器及其命名空间的简短摘要。
 
 ```sh
          %sudo nvmecontrol devlist
@@ -224,18 +184,17 @@ nvme_ctrlr_submit_io_request()。
           nvme0ns1 (1024MB)
 ```
 
-            其他 nvmecontrol(8) 子命令包括：
-        • "nvmecontrol identify" 用于根据 NVMe IDENTIFY 命令的信息提供 NVMe 控制器和命名空间的详细信息
-        • "nvmecontrol logpage" 用于从 NVMe 控制器读取日志页面；规范定义的日志
-           页面（错误、Health/SMART 和固件插槽）有处理器将日志页面转换为
-           人类可读的格式
-        • "nvmecontrol firmware" 用于下载和/或在
-        NVMe 控制器上激活不同的固件映像
-        • "nvmecontrol perftest" 用于从 nvme(4) 驱动程序本身运行低级性能测试
-       • "nvmecontrol reset" 向 NVMe 控制器发出控制器级重置
-       • "nvmecontrol power" 更改电源状态或为 NVMe 控制器指定工作负载提示
-       • "nvmecontrol wdc" 执行特定于 WDC NVMe SSD 的选项
-        使用 nda(4) 时，camcontrol(8) 目前可用于列出命名空间，但其他功能
+其他 nvmecontrol(8) 子命令包括：
+
+- "nvmecontrol identify" 用于根据 NVMe IDENTIFY 命令的信息提供 NVMe 控制器和命名空间的详细信息
+- "nvmecontrol logpage" 用于从 NVMe 控制器读取日志页面；规范定义的日志页面（错误、Health/SMART 和固件插槽）有处理器将日志页面转换为人类可读的格式
+- "nvmecontrol firmware" 用于下载和/或在 NVMe 控制器上激活不同的固件映像
+- "nvmecontrol perftest" 用于从 nvme(4) 驱动程序本身运行低级性能测试
+- "nvmecontrol reset" 向 NVMe 控制器发出控制器级重置
+- "nvmecontrol power" 更改电源状态或为 NVMe 控制器指定工作负载提示
+- "nvmecontrol wdc" 执行特定于 WDC NVMe SSD 的选项
+
+使用 nda(4) 时，camcontrol(8) 目前可用于列出命名空间，但其他功能
               （如 NVMe identify 或固件下载）尚未管道化。
 
         nvmecontrol(8) 的一个缺点是将 NVMe 控制器或命名空间映射到其关联的
