@@ -1,36 +1,12 @@
 # NVM Express 与 FreeBSD
 
-   S E E
-  T E X T
-  O N L Y
+作者：Jim Harris 与 Warner Losh
 
-  FreeBSD 与
-  NVM EXPRESS
-                                作者：Jim Harris 与 Warner Losh
+NVM Express（NVMe）已迅速成为通过 PCI Express 进行高性能非易失性存储器访问的主导标准。FreeBSD 于 2012 年加入对 NVMe 的支持，使 FreeBSD 能够利用每个 NVMe 设备可提供超过 500,000 IO/s 的设备1。Netflix 等公司迅速转向在 FreeBSD 上部署 NVMe 存储，使得 FreeBSD 的 NVMe 子系统现在帮助驱动北美洲互联网流量的很大一部分2。在本文中，我们描述 NVMe 规范以及 FreeBSD 对该规范的实现，并提供 FreeBSD 用于监控和管理 NVMe 存储的实用工具概览。
 
-     NVM Express（NVMe）已迅速成为
-       通过 PCI Express 进行高性能非易失性存储器访问的主导标准。FreeBSD
-      于 2012 年加入对 NVMe 的支持，使 FreeBSD 能够利用
-        每个 NVMe 设备可提供超过 500,000 IO/s 的设备1。Netflix 等公司
-          迅速转向在 FreeBSD 上部署 NVMe 存储，使得 FreeBSD 的 NVMe 子系统现在帮助驱动北美洲互联网流量的很大一部分2。在本文中，我们描述 NVMe 规
-        范以及 FreeBSD 对该规范的实现，并提供
-        FreeBSD 用于监控和管理 NVMe 存储的实用工具概览。
+让我们首先描述 NVMe 中使用的一些常见术语。NVMe SSD 被称为 NVMe 控制器，大致相当于 SCSI HBA 或 AHCI 控制器。主要差异在于，对于 NVMe，介质位于控制器本身内部——控制器与其介质之间没有单独的协议或线缆。NVMe 控制器内的存储介质被分组为一个或多个 NVMe 命名空间。命名空间可以被认为大致相当于一个 SCSI LUN。这种将 HBA 和介质组合到一个单元中的做法通过简化所需协议并消除抽象层来减少开销。该设计利用 PCIe 的能力，通过支持无锁请求排队来消除驱动瓶颈。
 
-     让我们首先描述 NVMe 中使用的一些常见术语。NVMe SSD 被称为
-           NVMe 控制器，大致相当于 SCSI HBA 或 AHCI 控制器。主要
-              差异在于，对于 NVMe，介质位于控制器本身内部——控制器与其介质之间没有单独的协议  L          或线缆。NVMe 控制器内的存储介质
-         被分组为一个或多个 NVMe 命名空间。命名空间可以被认为大致相当于一个
-          SCSI LUN。这种将 HBA 和介质组合到一个单元中的做法通过
-           简化所需协议并消除抽象层来减少开销。该设计利用
-          PCIe 的能力，通过支持无锁请求排队来消除驱动瓶颈。
-               在 FreeBSD 中，NVMe 控制器和命名空间通过 nvme(4)
-             驱动程序枚举和初始化。nvme(4) 还负责提供接口，将这些命名空间作为块
-           设备公开，但不直接向 GEOM 或 CAM 注册这些命名空间。nvd(4) 将每个
-         命名空间向 GEOM 注册为块设备。自 nvd(4) 原始
-             开发以来 NVMe 已成为主流，Netflix 添加了 nda(4) 作为 nvd(4) 的替代方案。nvd(4) 驱动程序是 NVMe 协议之上非常薄
-            的一层，旨在高事务速率下运行。nda(4)
-            驱动程序与 CAM 集成，包括其错误恢复和高级排队。它还通过 I/O 调度器向驱动器提供流量
-          整形，以提升整体性能。
+在 FreeBSD 中，NVMe 控制器和命名空间通过 nvme(4) 驱动程序枚举和初始化。nvme(4) 还负责提供接口，将这些命名空间作为块设备公开，但不直接向 GEOM 或 CAM 注册这些命名空间。nvd(4) 将每个命名空间向 GEOM 注册为块设备。自 nvd(4) 原始开发以来 NVMe 已成为主流，Netflix 添加了 nda(4) 作为 nvd(4) 的替代方案。nvd(4) 驱动程序是 NVMe 协议之上非常薄的一层，旨在高事务速率下运行。nda(4) 驱动程序与 CAM 集成，包括其错误恢复和高级排队。它还通过 I/O 调度器向驱动器提供流量整形，以提升整体性能。
 
      NVMe 系统集成
                                                                     用户空间
