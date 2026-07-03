@@ -12,8 +12,6 @@
 
 FreeBSD 期刊原文位于：<https://freebsdfoundation.org/our-work/journal>
 
-基金会书信、读者来信、日历等均不译。
-
 本书部署网站：<https://book.bsdcn.org>
 
 ## PDF 文档
