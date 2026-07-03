@@ -4,7 +4,7 @@
 
 正如上一期所宣布，FreeBSD Journal 现已免费订阅。读者可以免费访问并分享当前及过刊内容。
 
-不止如此。我们也即将告别 Apple 和 Google 的移动应用，推出增强版的浏览器版本，让读者用任何设备——移动设备或其它设备——阅读 FreeBSD Journal 时都能获得更佳体验。从 2019 年 3/4 月号开始，新的选项菜单让你能轻松向朋友分享文章，并使用新的朗读功能收听文章内容。此外，借助新的轮播格式，期刊之间的跳转比以往任何时候都更方便。如果你目前通过其中一款移动应用阅读 FreeBSD Journal，请忽略可能收到的任何续订提醒，并参阅我们的 FAQ（https://www.freebsdfoundation.org/journal/freebsd-journal-faqs/）了解如何注册免费浏览器版。
+不止如此。我们也即将告别 Apple 和 Google 的移动应用，推出增强版的浏览器版本，让读者用任何设备——移动设备或其它设备——阅读 FreeBSD Journal 时都能获得更佳体验。从 2019 年 3/4 月号开始，新的选项菜单让你能轻松向朋友分享文章，并使用新的朗读功能收听文章内容。此外，借助新的轮播格式，期刊之间的跳转比以往任何时候都更方便。如果你目前通过其中一款移动应用阅读 FreeBSD Journal，请忽略可能收到的任何续订提醒，并参阅我们的 FAQ（<https://www.freebsdfoundation.org/journal/freebsd-journal-faqs/）了解如何注册免费浏览器版。>
 
 本期主题是 FreeBSD 入门。还有比让 FreeBSD Journal 免费开放更好的方式来传达这一信息吗！我们期待将 FreeBSD Journal 及时而富有信息量的文章带给更多读者，也期待你把喜爱的文章分享给同事与朋友。
 
@@ -34,6 +34,6 @@ FreeBSD Foundation
 
 ## 出版信息
 
-FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 2222 14th Street, Boulder, CO 80302。电话：720/207-5142，传真：720/222-2350，邮箱：info@freebsdfoundation.org。
+FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 2222 14th Street, Boulder, CO 80302。电话：720/207-5142，传真：720/222-2350，邮箱：<info@freebsdfoundation.org>。
 
 版权所有 © 2019 FreeBSD Foundation。保留所有权利。未经出版商书面许可，不得全部或部分复制本杂志。
