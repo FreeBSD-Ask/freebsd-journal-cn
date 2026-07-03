@@ -1,14 +1,6 @@
 # FreeBSD 在科学计算中的应用
 
- S E E
-T E X T
-O N LY
-
-                    科学计算中的 FreeBSD
-
-
-
-                                    作者：Jason Bacon
+作者：Jason Bacon
 
 我自 20 世纪 90 年代中期以来一直未间断地使用 FreeBSD 和 Linux。多年来我运行过许多不同的 Linux 发行版，最近主要使用 CentOS。我也大量使用 Mac OS X 和 NetBSD，并尝试过许多其他 BSD 平台。作为一个坚信开放标准价值的不可知论者，我喜欢熟悉 POSIX 世界的所有选项，以便随时为工作选择最佳工具。
 

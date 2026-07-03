@@ -1,80 +1,5 @@
 # 基金会书信
 
-每年发行 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
-由 FreeBSD 基金会出版，
-3980 Broadway St. STE #103-107, Boulder, CO 80304
-电话：720/207-5142 • 传真：720/222-2350
-电子邮件：info@freebsdfoundation.org
-版权所有 © 2020 FreeBSD Foundation。保留所有权利。未经出版商书面许可，本杂志不得以任何形式整体或部分复制。
-
-出版人 •
-特约编辑 •
-文字编辑 •
-设计与排版 •
-广告销售 •
-Walter Andrzejewski
-walter@freebsdjournal.com
-James Maurer
-jmaurer@freebsdjournal.com
-Annaliese Jakimides
-Reuter & Associates
-Walter Andrzejewski
-walter@freebsdjournal.com
-致电 888/290-9469
-P O  B O X  4 0 8 ,  B E L F A S T ,  M A I N E  0 4 9 1 5
-John Baldwin •
-Bryan Drewery •
-Justin Gibbs •
-Daichi Goto •
-Joseph Kong •
-Dru Lavigne •
-Michael W Lucas •
-Ed Maste •
-Kirk McKusick •
-George V. Neville-Neil •
-Philip Paeps •
-Kristof Provost •
-Hiroki Sato •
-Benedict Reuschling •
-Robert N. M. Watson •
-J O U R N A L
-E d i t o r i a l  B o a r d
-®
-S&W PUBLISHING LLC
-FreeBSD 开发者、FreeBSD Core Team 成员及……
-EMC Isilon 高级软件工程师，
-FreeBSD Portmgr Team 成员，
-兼 FreeBSD Committer。
-FreeBSD 基金会创始人，
-FreeBSD 基金会主席，
-Facebook 软件工程师。
-BSD Consulting Inc.（东京）
-董事。
-Amazon Web Services 软件开发工程师，
-《FreeBSD Device Drivers》与《Designing
-BSD Rootkits》作者。
-iXsystems 存储工程总监，
-《BSD Hacks》与《The Best of FreeBSD Basics》作者。
-《Absolute FreeBSD》作者。
-FreeBSD 基金会项目开发总监。
-FreeBSD 基金会董事会司库，
-《The Design and Implementation》系列图书主要作者。
-FreeBSD 基金会董事会董事，
-《The Design and Implementation of the FreeBSD
-Operating System》合著者。
-FreeBSD 基金会董事会秘书，
-FreeBSD Committer，独立顾问。
-EuroBSDCon 基金会司库，
-FreeBSD Committer，独立顾问。
-FreeBSD 基金会董事会董事，
-Asia BSDCon 主席，FreeBSD Core Team 成员，
-东京工业大学助理教授。
-FreeBSD 基金会董事会副主席，
-FreeBSD 文档 Committer，FreeBSD Core Team 成员。
-FreeBSD 基金会董事会董事，
-TrustedBSD 项目创始人，
-剑桥大学高级讲师。
-
 ## 庆祝免费访问一周年
 
 亲爱的读者：
@@ -86,6 +11,32 @@ TrustedBSD 项目创始人，
 一如既往，感谢你持续支持 FreeBSD Journal。请考虑捐赠以帮助我们维持这项工作，每一份力量都有帮助。我们期待在每期 FreeBSD Journal 中为你带来及时而实用的文章，也希望你将喜爱的文章分享给同事和朋友。
 
 Anne Dickison
-FreeBSD 基金会
+FreeBSD Foundation
 
-来自董事会的信
+---
+
+## 编辑委员会
+
+| 姓名 | 职务简介 |
+| --- | --- |
+| John Baldwin | FreeBSD 开发者，FreeBSD Core Team 成员，FreeBSD Journal 编辑委员会主席。 |
+| Bryan Drewery | EMC Isilon 高级软件工程师，FreeBSD Portmgr Team 成员，FreeBSD Committer。 |
+| Justin Gibbs | FreeBSD Foundation 创始人，FreeBSD Foundation 主席，Facebook 软件工程师。 |
+| Daichi Goto | BSD Consulting Inc.（东京）董事。 |
+| Joseph Kong | Amazon Web Services 软件开发工程师，FreeBSD Device Drivers 和 Designing BSD Rootkits 作者。 |
+| Dru Lavigne | iXsystems 存储工程总监，BSD Hacks 和 The Best of FreeBSD Basics 作者。 |
+| Michael W Lucas | Absolute FreeBSD 作者。 |
+| Ed Maste | FreeBSD Foundation 项目开发总监。 |
+| Kirk McKusick | FreeBSD Foundation 董事会财务主管，The Design and Implementation 书系主要作者。 |
+| George V. Neville-Neil | FreeBSD Foundation 董事会理事，The Design and Implementation of the FreeBSD Operating System 合著者。 |
+| Philip Paeps | FreeBSD Foundation 董事会秘书，FreeBSD Committer，独立顾问。 |
+| Kristof Provost | EuroBSDCon Foundation 财务主管，FreeBSD Committer，独立顾问。 |
+| Hiroki Sato | FreeBSD Foundation 董事会理事，Asia BSDCon 主席，FreeBSD Core Team 成员，东京工业大学助理教授。 |
+| Benedict Reuschling | FreeBSD Foundation 董事会副主席，FreeBSD Documentation Committer，FreeBSD Core Team 成员。 |
+| Robert N. M. Watson | FreeBSD Foundation 董事会理事，TrustedBSD 项目创始人，剑桥大学高级讲师。 |
+
+## 出版信息
+
+FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 3980 Broadway St. STE #103-107, Boulder, CO 80304。电话：720/207-5142，传真：720/222-2350，邮箱：info@freebsdfoundation.org。
+
+版权所有 © 2020 FreeBSD Foundation。保留所有权利。未经出版商书面许可，不得全部或部分复制本杂志。

@@ -1,4 +1,4 @@
-# 基金会来信
+# 基金会书信
 
 作者：George Neville-Neil
 
@@ -6,21 +6,47 @@
 
 FreeBSD 的第 11 个主版本现已发布，John Baldwin 在本期文章中介绍了 11 中的新内容与亮点。23 年间发布 11 个完整操作系统的主版本是一项重大成就。多年来，数以千计的人参与了文档、Ports 和源代码树的工作，更多的人则在桌面、服务器、笔记本电脑和嵌入式系统上使用、改造和部署这些代码。能走到今天这一步，对于我们这些持续为 FreeBSD 工作的人来说堪称奇迹。这就是为什么我想略微偏离通常的来信主题，谈谈一群正致力于帮助 FreeBSD 项目并需要你帮助的人。
 
+## FreeBSD Foundation
+
+FreeBSD Foundation 通过资助 FreeBSD 生态系统的多个不同部分来支持 FreeBSD。我们为 BSD 相关会议提供直接财务支持，包括 AsiaBSDCon、BSDCan、EuroBSDCon 以及你可能尚未听闻的许多新兴会议。此外，基金会还赞助全年不断增加的开发者峰会。虽然许多人曾预测互联网及相关技术会减少面对面会议的需求，事实证明并非如此。实际上，FreeBSD 上许多最出色的工作都是从这些开发者会议开始的。
+
+基金会雇用了工程资源——从发行工程负责人，到填补社区未能覆盖的技术空白的全职和合同制员工。这些支持保证了你习以为常的及时、稳定、可靠的发行。基金会还聘请了一位全职市场总监，帮助项目触达那些尚未了解 FreeBSD 有多优秀的人，并帮助社区成长。
+
+最后，基金会资助了项目当前运行的许多硬件。无论是发行构建、包服务器，还是不断增长的持续集成基础设施，基金会在过去几年中提供了数十万美元，确保社区产出的软件能够被全世界轻松高效地使用。
+
+与 Linux 世界不同，FreeBSD 项目完全开放。欢迎任何人加入，FreeBSD Foundation 不会对参加开发者会议或厂商峰会等活动收取费用。遗憾的是，这种开放也有其缺点。随着 FreeBSD 项目的成长，其需求也在增长，这意味着基金会始终处于筹款模式。虽然我可以呼吁你们每一位向基金会捐款，但这封信的最后一段要谈的并非此事。
+
+## 我们需要你的帮助
+
+我知道许多 Journal 读者在科技公司工作。其中相当一部分——我假设是大多数——所在的公司每天都在某种程度上使用 FreeBSD。这正是我们需要你的地方。请帮助我们把 FreeBSD Foundation 与你合作或了解的、对 FreeBSD 持续成功有兴趣的公司连接起来。无论通过我本人（gnn@freebsdfoundation.org），还是基金会的执行董事（deb@freebsdfoundation.org），这些联系对于 FreeBSD Foundation 和 FreeBSD 项目的持续成功都绝对必要。
+
+我知道我所要求的，对那些在工程一线工作的人来说可能并不自然。"和管理层谈话？！那是最后一件事……" 因此我们在 https://www.freebsdfoundation.org/donate/donation-letter/ 这个网页上提供了一些建议，告诉你如何开启那段对话。
+
+---
+
+谢谢
+
+George Neville-Neil
+FreeBSD Journal 主编
+FreeBSD Foundation 董事会理事
+
+---
+
 ## 编辑委员会
 
-- John Baldwin — FreeBSD Core Team 成员，SRI International 高级软件工程师，剑桥大学访问工业研究员，前任 FreeBSD Core Team 成员
-- Brooks Davis
-- Bryan Drewery — EMC Isilon 高级软件工程师，FreeBSD Portmgr Team 成员，FreeBSD 提交者
-- Justin Gibbs — FreeBSD 基金会创始人兼主席，Spectra Logic Corporation 高级软件架构师
-- Daichi Goto — BSD Consulting Inc.（东京）董事
-- Joseph Kong — EMC 高级软件工程师，《FreeBSD Device Drivers》作者
-- Ed Maste — FreeBSD Ports Team 成员，FreeBSD 基金会董事，BSD 认证小组主席，《BSD Hacks》作者
-- Michael W. Lucas — 《Absolute FreeBSD》作者，FreeBSD 基金会项目开发董事
-- Kirk McKusick — FreeBSD 基金会董事，《The Design and Implementation》系列图书首席作者
-- George V. Neville-Neil — FreeBSD 基金会董事，《The Design and Implementation of the FreeBSD Operating System》合著者
-- Hiroki Sato — FreeBSD 基金会董事，AsiaBSDCon 主席，FreeBSD Core Team 成员，东京工业大学助理教授
-- Benedict Reuschling — FreeBSD 基金会副主席，FreeBSD 文档提交者
-- Robert Watson — FreeBSD 基金会董事，TrustedBSD 项目创始人，剑桥大学高级讲师
+- **John Baldwin** — FreeBSD Core Team 成员，SRI International 高级软件工程师，剑桥大学访问学者，前 FreeBSD Core Team 成员
+- **Brooks Davis**
+- **Bryan Drewery** — EMC Isilon 高级软件工程师，FreeBSD Portmgr Team 成员，FreeBSD Committer
+- **Justin Gibbs** — FreeBSD Foundation 创始人和主席，Spectra Logic Corporation 高级软件架构师
+- **Daichi Goto** — BSD Consulting Inc.（东京）董事
+- **Joseph Kong** — EMC 高级软件工程师，FreeBSD Device Drivers 作者
+- **Ed Maste** — FreeBSD Ports Team 成员，FreeBSD Foundation 董事会理事，BSD Certification Group 主席，BSD Hacks 作者
+- **Michael W. Lucas** — Absolute FreeBSD 作者，FreeBSD Foundation 项目开发总监
+- **Kirk McKusick** — FreeBSD Foundation 董事会理事，The Design and Implementation 书系主要作者
+- **George V. Neville-Neil** — FreeBSD Foundation 董事会理事，The Design and Implementation of the FreeBSD Operating System 合著者
+- **Hiroki Sato** — FreeBSD Foundation 董事会理事，Asia BSDCon 主席，FreeBSD Core Team 成员，东京工业大学助理教授
+- **Benedict Reuschling** — FreeBSD Foundation 董事会副主席，FreeBSD Documentation Committer
+- **Robert Watson** — FreeBSD Foundation 董事会理事，TrustedBSD 项目创始人，剑桥大学高级讲师
 
 ## 出版信息
 
@@ -32,28 +58,6 @@ S&W PUBLISHING LLC, PO BOX 408, BELFAST, MAINE 04915
 - 办公室管理员：Michael Davis（davism@freebsdjournal.com）
 - 广告销售：Walter Andrzejewski（walter@freebsdjournal.com），电话 888/290-9469
 
-FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 5757 Central Ave., Suite 201, Boulder, CO 80301。电话：720/207-5142，传真：720/222-2350，电子邮件：info@freebsdfoundation.org。版权 © 2016 FreeBSD Foundation。保留所有权利。
+FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 5757 Central Ave., Suite 201, Boulder, CO 80301。电话：720/207-5142，传真：720/222-2350，邮箱：info@freebsdfoundation.org。
 
-## FreeBSD 基金会
-
-FreeBSD 基金会通过资助 FreeBSD 生态系统的多个不同部分来支持 FreeBSD。我们为 BSD 相关会议提供直接财务支持，包括 AsiaBSDCon、BSDCan、EuroBSDCon 以及你可能尚未听闻的许多新兴会议。此外，基金会还赞助全年不断增加的开发者峰会。虽然许多人曾预测互联网及相关技术会减少面对面会议的需求，事实证明并非如此。实际上，FreeBSD 上许多最出色的工作都是从这些开发者会议开始的。
-
-基金会雇用了工程资源——从发行工程负责人，到填补社区未能覆盖的技术空白的全职和合同制员工。这些支持保证了你习以为常的及时、稳定、可靠的发行。基金会还聘请了一位全职市场总监，帮助项目触达那些尚未了解 FreeBSD 有多优秀的人，并帮助社区成长。
-
-最后，基金会资助了项目当前运行的许多硬件。无论是发行构建、包服务器，还是不断增长的持续集成基础设施，基金会在过去几年中提供了数十万美元，确保社区产出的软件能够被全世界轻松高效地使用。
-
-与 Linux 世界不同，FreeBSD 项目完全开放。欢迎任何人加入，FreeBSD 基金会不会对参加开发者会议或供应商峰会等活动收取费用。遗憾的是，这种开放也有其缺点。随着 FreeBSD 项目的成长，其需求也在增长，这意味着基金会始终处于筹款模式。虽然我可以呼吁你们每一位向基金会捐款，但这封信的最后一段要谈的并非此事。
-
-## 我们需要你的帮助
-
-我知道许多《期刊》读者在科技公司工作。其中相当一部分——我假设是大多数——所在的公司每天都在某种程度上使用 FreeBSD。这正是我们需要你的地方。请帮助我们把 FreeBSD 基金会与你合作或了解的、对 FreeBSD 持续成功有兴趣的公司连接起来。无论通过我本人（gnn@freebsdfoundation.org），还是基金会的执行董事（deb@freebsdfoundation.org），这些联系对于 FreeBSD 基金会和 FreeBSD 项目的持续成功都绝对必要。
-
-我知道我所要求的，对那些在工程一线工作的人来说可能并不自然。"和管理层谈话？！那是最后一件事……" 因此我们在 https://www.freebsdfoundation.org/donate/donation-letter/ 这个网页上提供了一些建议，告诉你如何开启那段对话。
-
----
-
-谢谢
-
-George Neville-Neil
-FreeBSD Journal 主编
-FreeBSD 基金会董事会成员
+版权所有 © 2016 FreeBSD Foundation。保留所有权利。
