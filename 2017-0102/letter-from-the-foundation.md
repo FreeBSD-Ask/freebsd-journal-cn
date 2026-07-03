@@ -30,7 +30,7 @@
 
 本期另外两篇特色文章涉及 FreeBSD 在不同语言环境下的使用。李潇（Li, Xiao）撰文介绍 FreeBSD 与中国铁路信息屏；Warren Block 讨论 FreeBSD 文档与开发团队正在使用的新一代翻译工具。Anne Dickison 来自 FreeBSD 基金会，撰文介绍基金会如何努力让 FreeBSD 在全球范围内被认知和喜爱，为本次国际主题画上圆满句号。
 
-新年伊始，本期没有会议报告，但在后续各期中我们将报道几周前刚落幕的 FOSDEM 2017，以及计划于 3 月在东京举行的 AsiaBSDCon（https://2017.asiabsdcon.org）、6 月在加拿大渥太华举行的 BSDCan（http://www.bsdcan.org/2017/），以及 8 月和 9 月举行的 BSDCam、VBSDCon 和 EuroBSD。
+新年伊始，本期没有会议报告，但在后续各期中我们将报道几周前刚落幕的 FOSDEM 2017，以及计划于 3 月在东京举行的 AsiaBSDCon（<https://2017.asiabsdcon.org）、6> 月在加拿大渥太华举行的 BSDCan（<http://www.bsdcan.org/2017/），以及> 8 月和 9 月举行的 BSDCam、VBSDCon 和 EuroBSD。
 
 在本期中，你将欣赏到 Dru Lavigne 的专栏，她将介绍 FreeBSD 社区的新面孔；Steven Kreuzer 将评 Aditya Y. Bhargava 所著《Grokking Algorithms: An illustrated guide for programmers and other curious people》，并带来他的 svn update 专栏新一期。
 
@@ -40,11 +40,11 @@
 
 **出版人**
 
-Walter Andrzejewski　walter@freebsdjournal.com
+Walter Andrzejewski　<walter@freebsdjournal.com>
 
 **自由撰稿编辑**
 
-James Maurer　jmaurer@freebsdjournal.com
+James Maurer　<jmaurer@freebsdjournal.com>
 
 **文字编辑**
 
@@ -52,15 +52,15 @@ Annaliese Jakimides
 
 **美术总监**
 
-Dianne M. Kischitz　dianne@freebsdjournal.com
+Dianne M. Kischitz　<dianne@freebsdjournal.com>
 
 **办公室管理员**
 
-Michael Davis　davism@freebsdjournal.com
+Michael Davis　<davism@freebsdjournal.com>
 
 **广告销售**
 
-Walter Andrzejewski　walter@freebsdjournal.com　电话 888/290-9469
+Walter Andrzejewski　<walter@freebsdjournal.com>　电话 888/290-9469
 
 ---
 
@@ -78,7 +78,7 @@ FreeBSD 基金会董事
 
 ---
 
-《FreeBSD 期刊》（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD 基金会出版，地址：5757 Central Ave., Suite 201, Boulder, CO 80301，电话：720/207-5142，传真：720/222-2350，电子邮件：info@freebsdfoundation.org。版权所有 © 2017 FreeBSD Foundation。保留所有权利。
+《FreeBSD 期刊》（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD 基金会出版，地址：5757 Central Ave., Suite 201, Boulder, CO 80301，电话：720/207-5142，传真：720/222-2350，电子邮件：<info@freebsdfoundation.org>。版权所有 © 2017 FreeBSD Foundation。保留所有权利。
 
 未经出版商书面许可，本杂志不得全部或部分复制。
 

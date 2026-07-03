@@ -4,8 +4,6 @@
 
 ——Ayaka Koshibe
 
-
-
 从最基本的意义上说，软件定义网络（Software-Defined Networking，SDN）可以视为一种构建网络的方法，使其能够像单一逻辑实体一样被管理。基于 SDN 的网络通常由可编程的白盒交换机和软件交换机构建，并由控制应用程序管理，这些应用程序利用对网络的全局视图来协调交换机协同工作。对于习惯于"经典"网络（按设备逐个配置，其行为由分布式网络协议决定）的人来说，结果可能看起来相当陌生。网络模拟器是更好地理解这些网络行为和组装方式的有用工具。
 
 ## Mininet
@@ -90,7 +88,6 @@ h2 -> h1
 # mn --controller=remote,ip=192.168.0.100,port=6633
 ```
 
-
 ## 创建各种拓扑
 
 `--topo` 选项用于用 `mn` 创建各种拓扑。linear 和 tree 拓扑对于创建更大的无环网络很有用，而 torus 拓扑对于测试控制器的环路处理能力很有用。拓扑是参数化的，以便可以指定其大小。例如，创建一个三层高、扇出为二的树：
@@ -135,11 +132,11 @@ net.stop()
 
 虽然此 Port 只支持上游功能的一个子集，但主项目维护的资源应该能更好地了解如何使用 Mininet。这些资源可在以下地址找到：
 
-https://github.com/mininet/mininet/wiki/Documentation
+<https://github.com/mininet/mininet/wiki/Documentation>
 
 而 Port 本身维护在：
 
-https://github.com/akoshibe/mininet
+<https://github.com/akoshibe/mininet>
 
 这就是我们 Mininet 旋风之旅的结束。希望它能为那些有兴趣探索 SDN 领域的人提供一个不错的起点。•
 

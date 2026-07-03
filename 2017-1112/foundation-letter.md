@@ -24,18 +24,18 @@
 S&W Publishing LLC
 PO Box 408, Belfast, Maine 04915
 
-- 出版人：Walter Andrzejewski（walter@freebsdjournal.com）
-- 主编：James Maurer（jmaurer@freebsdjournal.com）
+- 出版人：Walter Andrzejewski（<walter@freebsdjournal.com>）
+- 主编：James Maurer（<jmaurer@freebsdjournal.com>）
 - 文字编辑：Annaliese Jakimides
-- 美术指导：Dianne M. Kischitz（dianne@freebsdjournal.com）
-- 办公室管理员：Michael Davis（davism@freebsdjournal.com）
-- 广告销售：Walter Andrzejewski（walter@freebsdjournal.com），电话 888/290-9469
+- 美术指导：Dianne M. Kischitz（<dianne@freebsdjournal.com>）
+- 办公室管理员：Michael Davis（<davism@freebsdjournal.com>）
+- 广告销售：Walter Andrzejewski（<walter@freebsdjournal.com>），电话 888/290-9469
 
 FreeBSD Journal（ISBN: 978-0-615-88479-0）为双月刊（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
 
 由 FreeBSD 基金会出版，地址：5757 Central Ave., Suite 201, Boulder, CO 80301
 电话：720/207-5142，传真：720/222-2350
-电子邮件：info@freebsdfoundation.org
+电子邮件：<info@freebsdfoundation.org>
 
 版权所有 © 2017 FreeBSD Foundation。保留所有权利。未经出版人事先书面许可，本杂志不得以任何形式整体或部分复制。
 

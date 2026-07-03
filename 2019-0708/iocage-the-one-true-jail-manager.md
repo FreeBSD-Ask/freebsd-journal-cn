@@ -189,4 +189,4 @@ These pkgs will be installed:
 
 ---
 
-MICHAEL W LUCAS 是《Absolute FreeBSD》《FreeBSD Mastery: Jails》以及一堆其他书的作者。新版《Sudo Mastery》应该在你读到本文后不久面世，他的犯罪惊悚小说《Terrapin Sky Tango》也刚脱稿。全部作品见 https://mwl.io。
+MICHAEL W LUCAS 是《Absolute FreeBSD》《FreeBSD Mastery: Jails》以及一堆其他书的作者。新版《Sudo Mastery》应该在你读到本文后不久面世，他的犯罪惊悚小说《Terrapin Sky Tango》也刚脱稿。全部作品见 <https://mwl.io。>

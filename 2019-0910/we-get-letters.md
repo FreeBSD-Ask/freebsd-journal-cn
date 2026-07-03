@@ -74,8 +74,8 @@
 
 享受注定的命运吧。
 
-Michael W Lucas（https://mwl.io）的最新著作是 Sudo Mastery 第 2 版和 Terrapin Sky Tango。
+Michael W Lucas（<https://mwl.io）的最新著作是> Sudo Mastery 第 2 版和 Terrapin Sky Tango。
 
-如果你读到这里，你可能会觉得 FreeBSD Mastery: Jails 有用。把你的问题发送到 letters@freebsdjournal.com，他可能会回答。
+如果你读到这里，你可能会觉得 FreeBSD Mastery: Jails 有用。把你的问题发送到 <letters@freebsdjournal.com>，他可能会回答。
 
 如果他愿意的话。

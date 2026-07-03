@@ -133,11 +133,11 @@ FreeBSD 中的 `mps`(4)（LSI/Broadcom 6Gb SAS）和 `mpr`(4)（LSI/Broadcom 12G
 
 仅位错误率这个话题就能写满一篇相当长的文章，因此这里不展开，以下文章对磁盘和磁盘通道的位错误率覆盖得相当全面：
 
-http://www.enterprisestorageforum.com/storage-technology/sas-vs.-sata-1.html
+<http://www.enterprisestorageforum.com/storage-technology/sas-vs.-sata-1.html>
 
 LTO 联盟的这份白皮书简要说明了磁带机有更好的错误检测和纠正算法，因此远不如磁盘容易发生静默数据损坏：
 
-https://www.lto.org/wp-content/uploads/2014/06/LTO16_0026_ValueProp_Reliability_01_2016_FINAL.pdf
+<https://www.lto.org/wp-content/uploads/2014/06/LTO16_0026_ValueProp_Reliability_01_2016_FINAL.pdf>
 
 现代磁带机还支持保护信息，这是一种额外的 CRC（CRC32 或 Reed-Solomon CRC），可随每个磁带块写入，并由磁带机在读写时检查。FreeBSD `sa`(4) 驱动支持保护信息。我所知唯一在 FreeBSD 上支持向每个块添加 CRC 的应用是 IBM 的 LTFS。（见下文。）详见 `mt`(1) 手册页的 `protect` 子命令部分和 `sa`(4) 手册页。
 
@@ -149,7 +149,7 @@ https://www.lto.org/wp-content/uploads/2014/06/LTO16_0026_ValueProp_Reliability_
 
 ## Amanda
 
-Amanda 全称 Advanced Maryland Automatic Network Disk Archiver。Amanda 主页在 http://amanda.org。Amanda 服务器在 ports 树的 misc/amanda-server。
+Amanda 全称 Advanced Maryland Automatic Network Disk Archiver。Amanda 主页在 <http://amanda.org。Amanda> 服务器在 ports 树的 misc/amanda-server。
 
 Amanda 提供众多功能。我喜欢 Amanda 的一点是它能与 ZFS 快照配合。做完整备份时，它创建 ZFS 文件系统的新快照，用 `zfs send` 将快照发送到磁带。做增量备份时，它创建另一个快照并做增量 `zfs send` 捕获自上次 Amanda 快照以来的变化。
 
@@ -178,11 +178,11 @@ LTFS 全称 Linear Tape File System。它名副其实——磁带上的文件系
 
 LTFS 在磁带上使用两个分区：Index 分区和 Data 分区。所有文件系统元数据（包括每个文件在磁带上的块位置）存储在 index 分区上的 XML 文件中，并包含在 data 分区中。向文件系统添加文件时，会生成新版本的索引并写入磁带。
 
-IBM 最初编写 LTFS，并将标准转交 SNIA（https://www.snia.org/tech_activities/standards/curr_standards/ltfs）。LTO 联盟（http://lto.org）提供 LTFS 实现的合规性测试和认证，使不同厂商能确保其实现可与其他厂商互操作。
+IBM 最初编写 LTFS，并将标准转交 SNIA（<https://www.snia.org/tech_activities/standards/curr_standards/ltfs）。LTO> 联盟（<http://lto.org）提供> LTFS 实现的合规性测试和认证，使不同厂商能确保其实现可与其他厂商互操作。
 
 IBM 提供其 LTFS 版本（又称 Spectrum Archive Single Drive Edition）的源代码，与 IBM 磁带机交互已有数年。IBM 于 2017 年 10 月以 BSD 许可发布其 LTFS 版本（此前为 LGPL 许可），可在此获取：
 
-https://github.com/LinearTapeFileSystem/ltfs
+<https://github.com/LinearTapeFileSystem/ltfs>
 
 我于 2013 年将 IBM 的 LTFS 移植到 FreeBSD（由 Spectra Logic 赞助），目前正在准备将其作为 pull request 提交到 IBM 的代码树。
 

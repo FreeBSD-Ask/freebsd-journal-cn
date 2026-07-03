@@ -38,4 +38,4 @@
 
 每次实验前，系统需要被配置为与系列中其它实验完全相同的状态——当然，由实验目标决定的差异除外（例如比较一种配置与另一种配置）。配置步骤的设计应使系统在实际工作负载运行前回到同一起点。对于文件系统基准测试，我们建议每次实验前都格式化文件系统。仅重新挂载文件系统是不够的，因为前一次实验中文件系统的使用历史会影响后续实验的性能。挂载文件系统后……
 
-> 注：原 PDF 文章此后继续，包括 I/O 负载生成、测量和分析等章节。PDF 文本提取在此处被截断。完整文章请参见原 PDF：https://freebsdfoundation.org/wp-content/uploads/2016/03/The-Dos-and-Donts-of-File-System-Benchmarking.pdf
+> 注：原 PDF 文章此后继续，包括 I/O 负载生成、测量和分析等章节。PDF 文本提取在此处被截断。完整文章请参见原 PDF：<https://freebsdfoundation.org/wp-content/uploads/2016/03/The-Dos-and-Donts-of-File-System-Benchmarking.pdf>

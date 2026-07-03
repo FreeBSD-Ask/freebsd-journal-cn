@@ -10,7 +10,7 @@
 
 假设已有一份 FreeBSD 基本安装并已连接网络、能下载 package 且能通过 ping 和 ssh 访问其他主机。这套设置已在 Raspberry Pi 3 上测试过，也在普通服务器上测试过，不需要任何特殊硬件或调优参数。
 
-Icinga 文档（https://docs.icinga.com）对必要的 Icinga 安装步骤有出色描述，甚至还提供了 FreeBSD 专属说明（例如路径不同时）。FreeBSD port/package 也可用，并已包含一些在其他 Unix 发行版上用户仍需手动执行的步骤。
+Icinga 文档（<https://docs.icinga.com）对必要的> Icinga 安装步骤有出色描述，甚至还提供了 FreeBSD 专属说明（例如路径不同时）。FreeBSD port/package 也可用，并已包含一些在其他 Unix 发行版上用户仍需手动执行的步骤。
 
 > **注意**
 >
@@ -177,7 +177,7 @@ PHP 也要配置。所幸 FreeBSD 提供了一份适合生产环境使用的 PHP
 # service php-fpm start
 ```
 
-如果一切正常，打开浏览器访问以下 URL 开始 Icinga Web 2 配置：http://local.domain.or.ip/icingaweb2/setup。
+如果一切正常，打开浏览器访问以下 URL 开始 Icinga Web 2 配置：<http://local.domain.or.ip/icingaweb2/setup。>
 
 如果出了问题，回顾上述步骤，并查看 **/var/log/icinga2** 下的日志文件寻找线索。newsyslog 的日志轮转示例可在 **/usr/local/share/examples/icinga2/newsyslog** 下找到。
 

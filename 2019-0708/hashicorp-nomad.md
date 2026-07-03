@@ -166,7 +166,7 @@ Nomad 创建了一个全新的 Jail 并运行了 http-echo 服务器。事实上
 
 所以，让我们让自己运行 Jail 更轻松些。为什么用所有这些 shell 脚本来构建 Jail 等等，用困难的方式做呢？让我们用一个 Nomad 任务驱动，它会为我们做所有 Jail 的搭建、拆卸和管理：
 
-https://github.com/cneira/jail-task-driver
+<https://github.com/cneira/jail-task-driver>
 
 安装：
 

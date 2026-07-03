@@ -41,4 +41,4 @@
 
 ---
 
-**Joseph Kong** 是一位自学成才的计算机爱好者，涉足漏洞开发、逆向代码工程、rootkit 开发和系统编程（FreeBSD、Linux 和 Windows）等领域。他是广受好评的《Designing BSD Rootkits》和《FreeBSD Device Drivers》的作者。有关 Joseph Kong 的更多信息，请访问 www.thestackframe.org 或在 Twitter 上关注他 @JosephJKong。
+**Joseph Kong** 是一位自学成才的计算机爱好者，涉足漏洞开发、逆向代码工程、rootkit 开发和系统编程（FreeBSD、Linux 和 Windows）等领域。他是广受好评的《Designing BSD Rootkits》和《FreeBSD Device Drivers》的作者。有关 Joseph Kong 的更多信息，请访问 <www.thestackframe.org> 或在 Twitter 上关注他 @JosephJKong。

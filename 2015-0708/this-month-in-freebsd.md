@@ -46,12 +46,12 @@
 
 以下是本文提到的资源链接：
 
-- https://wiki.freebsd.org/201507DevSummit
-- http://www.linuxhotel.de/
-- https://fosdem.org/2016/
-- http://www.froscon.de
-- https://wiki.freebsd.org/DevSummitHowTo
-- http://www.trustedbsd.org/openbsm.html
-- http://www.brendangregg.com/flamegraphs.html
-- http://www.trustedbsd.org/bsmtrace.html
-- http://www.linuxhotel.de/kurs/freebsd/
+- <https://wiki.freebsd.org/201507DevSummit>
+- <http://www.linuxhotel.de/>
+- <https://fosdem.org/2016/>
+- <http://www.froscon.de>
+- <https://wiki.freebsd.org/DevSummitHowTo>
+- <http://www.trustedbsd.org/openbsm.html>
+- <http://www.brendangregg.com/flamegraphs.html>
+- <http://www.trustedbsd.org/bsmtrace.html>
+- <http://www.linuxhotel.de/kurs/freebsd/>

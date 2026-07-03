@@ -66,6 +66,6 @@ RACK 现在跟踪已重传的数据量（以字节为单位）。任何时候到
 3. R. Stewart, "Dynamic Goodput Pacing: A New Approach to Packet Pacing", in The FreeBSD Journal November/December, 2024.
 4. R. Stewart, M. Tüxen, "RACK and Alternate TCP Stacks for FreeBSD", in The FreeBSD Journal January/February, 2024.
 
---- 
+---
 
 RANDALL STEWART ([rrs@freebsd.org](mailto:rrs@freebsd.org)) 从事操作系统开发 40 余年，自 2006 年以来一直是 FreeBSD 开发者。他专门研究包括 TCP 和 SCTP 在内的传输层，但也以涉足操作系统的其他领域而闻名。他目前是一名独立顾问。

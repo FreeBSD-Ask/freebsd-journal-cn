@@ -6,13 +6,13 @@
 
 FOSDEM 第二天在布鲁塞尔自由大学开幕。FOSDEM 是由社区为社区组织的免费、非商业活动，目的是给自由和开源软件开发者及社区提供一个相聚的场所，完全免费！我记得今年有超过 8000 名参会者，走廊里非常拥挤。我们今年很幸运又拿到了一个展台，位置仍然紧挨着 Illumos 项目。Allan Jude 喜欢站在两个展台之间，这样就能向来访两个项目的人聊 ZFS。和往年一样，我们有大批 FreeBSD 志愿者帮忙值守展台，他们都来自欧洲各地，对 FreeBSD 充满热情。
 
-现场有一个 BSD 开发者房间（devroom），能容纳 100 名对 BSD 感兴趣的人，他们在这里相聚并聆听了 13 场关于各 BSD 项目的演讲。我以一场《FreeBSD 的 25 年》演讲为 devroom 拉开帷幕。录像可以在这里观看：https://fosdem.org/2019/schedule/event/25_years_of_freebsd/。
+现场有一个 BSD 开发者房间（devroom），能容纳 100 名对 BSD 感兴趣的人，他们在这里相聚并聆听了 13 场关于各 BSD 项目的演讲。我以一场《FreeBSD 的 25 年》演讲为 devroom 拉开帷幕。录像可以在这里观看：<https://fosdem.org/2019/schedule/event/25_years_of_freebsd/。>
 
 这一天剩下的时间，我都在和到我们展台的人交流，了解到更多使用 FreeBSD 的公司，并与其他开源社区成员交谈。看到那么多人来到我们展台，我非常激动。虽然很快就发完了我们精美的行李牌和卷尺，但最终发出了 1000 张贴纸，"卖"出了 40 件 T 恤，还派发了大量《FreeBSD 入门》传单。我看到许多志愿者在就内核的具体部分和功能展开深入的技术讨论。
 
 很高兴看到 Shteryana Shopova 来到现场并重新投入 FreeBSD。她曾在保加利亚承办 EuroBSDCon 2014，并参与 FreeBSD 各部分的工作，专注网络方向。
 
-我还听了 Jonathan Looney 在主会场做的题为《Netflix 与 FreeBSD——用开源交付流媒体视频》的演讲。这是对使用 FreeBSD 的好处的有力见证。会场座无虚席，演讲结束后人们上前向 Jonathan 提问。他的演讲可以在这里观看：https://fosdem.org/2019/schedule/event/netflix_freebsd/。
+我还听了 Jonathan Looney 在主会场做的题为《Netflix 与 FreeBSD——用开源交付流媒体视频》的演讲。这是对使用 FreeBSD 的好处的有力见证。会场座无虚席，演讲结束后人们上前向 Jonathan 提问。他的演讲可以在这里观看：<https://fosdem.org/2019/schedule/event/netflix_freebsd/。>
 
 第二天同样疯狂、同样拥挤，不过偶尔你真的能在走廊里走动而不被肘击。
 

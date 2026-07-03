@@ -18,7 +18,7 @@
 
 略带喜感的是，在 BoF 之前，2004 年 1 月 13 日 NetBSD NYC 地区列表上的一条帖子就把我们否了：
 
-http://mail-index.netbsd.org/regional-nyc/2004/01/13/0003.html.
+<http://mail-index.netbsd.org/regional-nyc/2004/01/13/0003.html>.
 
 > "i wonder if beer is involved? there's no mention of it in that posting."
 >

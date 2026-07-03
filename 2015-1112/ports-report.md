@@ -11,6 +11,7 @@
 - Soren Straarup（xride@）在时隔一年多之后，得以重新参与 ports 工作。garga@ 与 mat@ 将担任其导师，在 xride@ 需要追上近期基础设施变化时提供帮助。
 
 另有两位新 committer 加入我们：
+
 - Kenji Takefu，由 hrs@ 与 mat@ 担任导师；
 - Carlos Puga Medina，由 junovitch@、amdmi3@ 和 feld@ 担任导师。
 
@@ -34,13 +35,13 @@
 
 ## 我能如何参与？
 
-如果你喜爱 FreeBSD 并希望加入团队，一个不错的切入点是接手一个无人维护的 port 并提交更新。要查找未指定具体 committer 或团队的 port，可在线浏览 portsmon 的列表（http://portsmon.freebsd.org/portsconcordanceformaintainer.py?maintainer=ports%40FreeBSD.org），或执行以下命令：
+如果你喜爱 FreeBSD 并希望加入团队，一个不错的切入点是接手一个无人维护的 port 并提交更新。要查找未指定具体 committer 或团队的 port，可在线浏览 portsmon 的列表（<http://portsmon.freebsd.org/portsconcordanceformaintainer.py?maintainer=ports%40FreeBSD.org），或执行以下命令：>
 
 ```sh
 make -C /usr/ports quicksearch maint=ports@FreeBSD.org
 ```
 
-作出选择后，应阅读《Porter 手册》（https://www.freebsd.org/doc/en/books/porters-handbook/）巩固你的移植技能。当更新看上去正确时，通过 FreeBSD 在线问题报告界面提交（https://bugs.freebsd.org/bugzilla/）。如在此过程中需要帮助，我们很乐意通过论坛（https://forums.freebsd.org/）或 IRC（如 EFnet 上的 #bsdports 频道）为你协助。祝你好运，期待你早日加入我们的行列！
+作出选择后，应阅读《Porter 手册》（<https://www.freebsd.org/doc/en/books/porters-handbook/）巩固你的移植技能。当更新看上去正确时，通过> FreeBSD 在线问题报告界面提交（<https://bugs.freebsd.org/bugzilla/）。如在此过程中需要帮助，我们很乐意通过论坛（https://forums.freebsd.org/）或> IRC（如 EFnet 上的 #bsdports 频道）为你协助。祝你好运，期待你早日加入我们的行列！
 
 **作者简介**
 

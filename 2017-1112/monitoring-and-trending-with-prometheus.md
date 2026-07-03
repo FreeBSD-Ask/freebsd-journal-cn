@@ -24,7 +24,7 @@ Starting prometheus.
 
 targets 页面向我们展示了 Prometheus 正在监控哪些端点，并且已经透露出一些有趣的信息。这个 Prometheus 实例被配置为监控自身。Prometheus 是一种白盒监控系统，这意味着它能存储由目标自身报告的指标，而不仅仅是测量外部可见的因素（例如 TCP 和 HTTP 健康检查）。通过点击最左侧列中的 HTTP 链接，我们可以查看 Prometheus 服务器生成的原始指标：与 Go 运行时的垃圾回收、线程、HTTP 处理以及指标存储相关的统计信息（见右图）。
 
-Prometheus 通过网络提供指标的格式相当简单。每个指标占据 HTTP 响应中的一行，具有一个 64 位浮点数值。每个指标由一个名称和花括号内一组可选的标签（键值对）唯一标识。标签允许一个程序返回同名但内容不同的多个指标。例如，Web 服务器可以用标签为每个注册的虚拟主机或每个 HTTP 错误码类别返回 HTTP 统计信息（例如，仅返回 **www.freebsd.org** 的 HTTP 200 类响应的延迟）。
+Prometheus 通过网络提供指标的格式相当简单。每个指标占据 HTTP 响应中的一行，具有一个 64 位浮点数值。每个指标由一个名称和花括号内一组可选的标签（键值对）唯一标识。标签允许一个程序返回同名但内容不同的多个指标。例如，Web 服务器可以用标签为每个注册的虚拟主机或每个 HTTP 错误码类别返回 HTTP 统计信息（例如，仅返回 **<www.freebsd.org>** 的 HTTP 200 类响应的延迟）。
 
 为了区分由不同目标返回的同名指标，Prometheus 在摄入数据时会附加额外的标签，例如 `job` 和 `instance`。这些标签包含能唯一标识端点的值。这些标签的值会显示在 Prometheus 的 targets 页面上。在 Kumina，我们利用这一机制附加与我们环境相关的自定义标签，例如物理位置（数据中心名称）、系统所有者（客户名称）和支持合同（7×24 小时或仅办公时间）。这些标签随后可作为查询和告警条件的一部分。
 
@@ -54,7 +54,7 @@ Starting prometheus.
 
 除了 node exporter 之外，此时我们还能配置许多其他目标。常见的服务都有对应的导出器（例如 MySQL、Nginx、Java JMX），它们将指标从原生格式转换为通过 HTTP 提供的形式。Prometheus black box exporter 能执行 ICMP、DNS、TCP、HTTP 和 SSH 检查，并报告可用性和延迟。FreeBSD 12.x 提供了 `prometheus_sysctl_exporter(8)`，它可以提供任意 sysctl 的值。其中一些导出器由 Prometheus 项目官方维护，另一些则由社区维护。
 
-在 Kumina，我们为 Dovecot、PHP-FPM、libvirt、OpenVPN 和 Postfix 等服务开发了导出器。我们还设计了一个基于 libpcap 的简单网络流量统计守护进程，按地址导出统计信息，名为 Promacct。所有这些工具都可以在我们公司的 GitHub 页面（https://github.com/kumina）找到。
+在 Kumina，我们为 Dovecot、PHP-FPM、libvirt、OpenVPN 和 Postfix 等服务开发了导出器。我们还设计了一个基于 libpcap 的简单网络流量统计守护进程，按地址导出统计信息，名为 Promacct。所有这些工具都可以在我们公司的 GitHub 页面（<https://github.com/kumina）找到。>
 
 如果你想用 Prometheus 从内部开发的软件中获取指标，不必使用独立的指标导出器进程。Prometheus 项目为多种编程语言（Go、Java、Python、Ruby 等）提供了客户端库，使你可以直接在代码中用指标对象进行标注。对于 Python 和 Java 等语言，这些库还提供了便捷的函数装饰器，可自动统计函数调用次数并创建其运行时间的直方图。
 
@@ -81,7 +81,7 @@ $ sudo /usr/local/etc/rc.d/grafana forcestart
 Starting grafana.
 ```
 
-按默认设置，Grafana 会启动一个监听 3000 端口的 Web 服务器。用浏览器访问它并以默认凭据（用户名 `admin`，密码 `admin`）登录后，我们便看到 Grafana 的主界面。我们想做的第一件事是点击 "Add data source" 配置 Grafana 应使用的 Prometheus 服务器地址——本例中是 http://localhost:9090/。
+按默认设置，Grafana 会启动一个监听 3000 端口的 Web 服务器。用浏览器访问它并以默认凭据（用户名 `admin`，密码 `admin`）登录后，我们便看到 Grafana 的主界面。我们想做的第一件事是点击 "Add data source" 配置 Grafana 应使用的 Prometheus 服务器地址——本例中是 <http://localhost:9090/。>
 
 完成后，我们可以点击主界面上的下一个按钮，标题为 "Create your first dashboard"。随后我们会看到一个空的仪表盘页面，可以在上面放置面板，例如图形、表格、热力图和列表。对于 Prometheus，大多数情况下使用图形最为合理。创建图形时，我们可以使用与之前相同的查询语法。通过页面顶部的保存图标，仪表盘会保存在 Grafana 服务器上。
 
@@ -189,12 +189,12 @@ datacenter:unbound_queries:rate5m =
 
 它还会为全局 Prometheus 实例生成一个配置文件，使其从所有本地实例抓取 `datacenter:unbound_queries:rate5m`，这样 Grafana 就可以访问它们。
 
-在 Kumina，我们目前正将所有现有的 Prometheus 和 Grafana 配置迁移到基于 Promenade 之上，这也是 Promenade 的设计仍在调整以满足我们需求的原因。我们计划在代码稳定后立即在我们公司的 GitHub 页面（https://github.com/kumina）发布，敬请关注！
+在 Kumina，我们目前正将所有现有的 Prometheus 和 Grafana 配置迁移到基于 Promenade 之上，这也是 Promenade 的设计仍在调整以满足我们需求的原因。我们计划在代码稳定后立即在我们公司的 GitHub 页面（<https://github.com/kumina）发布，敬请关注！>
 
 ## 结语
 
 希望本文能让你感受到，开始用 Prometheus 监控系统是多么容易。在 Kumina，我们使用 Prometheus 已约一年，深感满意。它是一个稳健、灵活且可扩展的监控系统，拥有健康的开发者和用户生态。未来几个月内，我们将看到 Prometheus 2.0 发布，其中会包含大量新功能。在 Kumina，我们最期待的是存储层的重新设计，它将让我们能在商用硬件上每分钟收集数百万个样本。
 
-自 2016 年起，Prometheus 团队每年举办一次名为 PromCon（https://promcon.io/）的会议。今年的会议于 8 月 17—18 日在德国慕尼黑举行。如果你想了解 Prometheus 项目的最新进展，请务必查看会议网站，所有演讲的录像都公开提供。•
+自 2016 年起，Prometheus 团队每年举办一次名为 PromCon（<https://promcon.io/）的会议。今年的会议于> 8 月 17—18 日在德国慕尼黑举行。如果你想了解 Prometheus 项目的最新进展，请务必查看会议网站，所有演讲的录像都公开提供。•
 
-> ED SCHOUTENS 是 Kumina（位于荷兰埃因霍温的托管服务提供商和咨询公司）的首席软件开发者。Kumina 为企业提供完全托管平台，并提供 Prometheus 和 Kubernetes 的支持、培训和咨询。欢迎访问我们的网站 https://kumina.nl/ 或发送邮件至 info@kumina.nl，告诉我们你的项目或索取关于我们服务的更多信息。
+> ED SCHOUTENS 是 Kumina（位于荷兰埃因霍温的托管服务提供商和咨询公司）的首席软件开发者。Kumina 为企业提供完全托管平台，并提供 Prometheus 和 Kubernetes 的支持、培训和咨询。欢迎访问我们的网站 <https://kumina.nl/> 或发送邮件至 <info@kumina.nl>，告诉我们你的项目或索取关于我们服务的更多信息。

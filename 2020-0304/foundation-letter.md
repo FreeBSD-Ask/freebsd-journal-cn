@@ -4,17 +4,17 @@
 由 FreeBSD Foundation 出版，
 3980 Broadway St. STE #103-107, Boulder, CO 80304
 电话：720/207-5142 • 传真：720/222-2350
-邮箱：info@freebsdfoundation.org
+邮箱：<info@freebsdfoundation.org>
 版权所有 © 2020 FreeBSD Foundation。保留所有权利。未经出版商书面许可，不得全部或部分复制本杂志。
 
 出版人 • Walter Andrzejewski
-walter@freebsdjournal.com
+<walter@freebsdjournal.com>
 主编 • James Maurer
-jmaurer@freebsdjournal.com
+<jmaurer@freebsdjournal.com>
 文字编辑 • Annaliese Jakimides
 设计与制作 • Reuter & Associates
 广告销售 • Walter Andrzejewski
-walter@freebsdjournal.com
+<walter@freebsdjournal.com>
 致电 888/290-9469
 P O BOX 408, BELFAST, MAINE 04915
 

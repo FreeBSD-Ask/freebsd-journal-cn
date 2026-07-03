@@ -45,4 +45,4 @@ Dan 写道：
 >
 > 我起初以为 more(1) 是对 AT&T 的 pg(1) 工具的谐音双关，但 3BSD 的手册页中提到"the 'more' feature of the ITS systems at MIT"（MIT ITS 系统的 'more' 特性），所以这个名字可能与此相关。
 
-——Peter Jeremy，FreeBSD 提交者（peter@rulingia.com）
+——Peter Jeremy，FreeBSD 提交者（<peter@rulingia.com>）

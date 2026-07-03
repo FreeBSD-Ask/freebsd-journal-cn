@@ -20,7 +20,7 @@ pfSense 软件的主要目标是成为安全设备，因此我们对此非常重
 
 ## 代码审查
 
-2016 年，Netgate 邀请 Infosec Global 对 pfSense 软件版本 2.3.2 进行自上而下的提交后审计。进行独立代码审查有助于提升产品质量。在此项目中，我们向 Infosec Global 提供了预装 pfSense 软件 2.3.2（默认生产配置）的 Netgate XG-2758 1U 安全网关设备。Infosec Global 以自下而上的百分比量表评估威胁，0% 为完美分数，100% 最为严重。如审计报告所示，pfSense 2.3.2 获得了出色的 1% 分数，其中包括在审计过程中随着 pfSense 软件 2.3.2_p1 版本发布已缓解的问题。提出的其他问题不适用于所审查的固件版本。完整报告可在 https://www.netgate.com/assets/ISG_Netgate_2016.pdf 查看。
+2016 年，Netgate 邀请 Infosec Global 对 pfSense 软件版本 2.3.2 进行自上而下的提交后审计。进行独立代码审查有助于提升产品质量。在此项目中，我们向 Infosec Global 提供了预装 pfSense 软件 2.3.2（默认生产配置）的 Netgate XG-2758 1U 安全网关设备。Infosec Global 以自下而上的百分比量表评估威胁，0% 为完美分数，100% 最为严重。如审计报告所示，pfSense 2.3.2 获得了出色的 1% 分数，其中包括在审计过程中随着 pfSense 软件 2.3.2_p1 版本发布已缓解的问题。提出的其他问题不适用于所审查的固件版本。完整报告可在 <https://www.netgate.com/assets/ISG_Netgate_2016.pdf> 查看。
 
 ## 包
 

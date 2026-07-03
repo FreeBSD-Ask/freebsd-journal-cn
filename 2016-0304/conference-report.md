@@ -2,7 +2,7 @@
 
 作者：Rodrigo Osorio
 
-FOSDEM（https://fosdem.org）
+FOSDEM（<https://fosdem.org）>
 
 FOSDEM 是欧洲主要的大型免费、非商业 FOSS 活动之一，2016 年 1 月 30 日至 31 日周末在比利时布鲁塞尔举办。
 
@@ -10,7 +10,7 @@ FOSDEM 是欧洲主要的大型免费、非商业 FOSS 活动之一，2016 年 1
 
 FOSDEM 正式于周五下午在 Delirium 咖啡馆的"啤酒活动"中拉开帷幕。由于此处通常人满为患，在周围某家酒吧里碰头更为方便。这一夜，布鲁塞尔变成一座神奇城市，你可以在每个街角意外遇见数百名软件开发者，共饮一杯啤酒。
 
-FreeBSD devsummit 在布鲁塞尔市中心举行，靠近中央车站和"大广场"。最热门的话题是为 base 和 ports 实现可复现构建的工作（https://wiki.freebsd.org/ReproducibleBuilds）。下午，部分与会者移步 FOSDEM 会场，听 gnn@ 谈论网络基准测试。
+FreeBSD devsummit 在布鲁塞尔市中心举行，靠近中央车站和"大广场"。最热门的话题是为 base 和 ports 实现可复现构建的工作（<https://wiki.freebsd.org/ReproducibleBuilds）。下午，部分与会者移步> FOSDEM 会场，听 gnn@ 谈论网络基准测试。
 
 周六也是组织晚宴的日子。我们和 devsummit 与会者在布鲁塞尔一家最古老的欧洲玻璃拱廊商业街中的优雅餐厅共进晚餐。
 

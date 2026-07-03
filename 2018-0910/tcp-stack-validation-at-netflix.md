@@ -2,8 +2,6 @@
 
 作者：Jonathan Looney
 
-
-
 从我开始编写 TCP 代码起，对 TCP 栈的更改一直伴随着大量恐惧。这来自多个来源，但根植于在部署之前彻底测试 TCP 更改的困难。这是 Netflix 在投入大量时间和精力优化其 Open Connect Appliances（OCA）上使用的 FreeBSD TCP 栈时面临的挑战，这些服务器向 Netflix 流媒体客户端交付视频流量。在本文中，我们将描述 Netflix 如何从 TCP 开发中消除恐惧，并获得了自信地测试其更改的能力。
 
 ## 挑战

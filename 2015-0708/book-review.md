@@ -8,7 +8,7 @@
 - ISBN：9780321492661
 - 纸质书定价：$59.99* 电子书定价（含 EPUB、MOBI、PDF）：$47.99*
 
-*FreeBSD Journal 读者专享：Limoncelli 两本著作可享 35% 折扣，请访问出版商页面（http://informit.com/tposa），结账时输入优惠码：TPOSA35
+*FreeBSD Journal 读者专享：Limoncelli 两本著作可享 35% 折扣，请访问出版商页面（<http://informit.com/tposa），结账时输入优惠码：TPOSA35>
 
 出版商注：第 3 版计划于 2016 年春季发行。
 

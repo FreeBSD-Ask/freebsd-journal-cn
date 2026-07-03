@@ -149,7 +149,7 @@ TM
 
 ## 更好的 C++ 支持
 
-邮箱 walter@freebsdjournal.com 或致电 888/290-9469
+邮箱 <walter@freebsdjournal.com> 或致电 888/290-9469
 
 CloudABI 最初开发时，我们的重点是让 C 编写的代码工作。在 CloudABI 的 C 库变得相对完整以及相当数量用 C 编写的软件包开始出现后，我们将重点转向改善将 C++ 编写的软件移植到 CloudABI 的体验。
 
@@ -303,14 +303,14 @@ void program_main(const argdata_t *ad) {
 
 ## 链接
 
-FreeBSD 上的 CloudABI：https://nuxi.nl/cloudabi/freebsd/
-CloudABI 开发博客：https://nuxi.nl/blog/
-GitHub 上的 CloudABI：https://github.com/NuxiNL
-CloudABI 版 Bitcoin：https://laanwj.github.io/
+FreeBSD 上的 CloudABI：<https://nuxi.nl/cloudabi/freebsd/>
+CloudABI 开发博客：<https://nuxi.nl/blog/>
+GitHub 上的 CloudABI：<https://github.com/NuxiNL>
+CloudABI 版 Bitcoin：<https://laanwj.github.io/>
 
 ED SCHOUTEN 自 2008 年起就是 FreeBSD 项目的开发者。他的贡献包括 FreeBSD 8 的 SMP 安全 TTY 层、Clang 在 FreeBSD 9 中的初始导入，以及最终进入 FreeBSD 10 的 `vt(4)` 控制台驱动程序的初始版本。
 
-CloudABI 由作者的公司 Nuxi（位于荷兰）开发。它将始终作为开源软件免费提供。Nuxi 为 CloudABI 提供商业支持、咨询和培训。如果你有兴趣在任何产品中使用 CloudABI，请通过 info@nuxi.nl 联系 Nuxi。
+CloudABI 由作者的公司 Nuxi（位于荷兰）开发。它将始终作为开源软件免费提供。Nuxi 为 CloudABI 提供商业支持、咨询和培训。如果你有兴趣在任何产品中使用 CloudABI，请通过 <info@nuxi.nl> 联系 Nuxi。
 
 构建更伟大的事物。
 

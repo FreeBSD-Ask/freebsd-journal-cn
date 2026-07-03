@@ -14,11 +14,11 @@
 
 ## 基础设施
 
-bdrewery@ 和 antoine@ 做了大量工作以改进软件包构建与测试基础设施。这包括升级托管这些服务的机器系统，以及迁移托管 pkgstatus 服务的机器（https://pkg-status.freebsd.org）。此外还做了一些提升构建系统性能的工作。
+bdrewery@ 和 antoine@ 做了大量工作以改进软件包构建与测试基础设施。这包括升级托管这些服务的机器系统，以及迁移托管 pkgstatus 服务的机器（<https://pkg-status.freebsd.org）。此外还做了一些提升构建系统性能的工作。>
 
 ## 管理团队变动
 
-1 月举行了一次投票，决定让 miwi 回归 portmgr 团队。结果全票通过，miwi 成为 portmgr 的第 6 位成员。自 2014 年底 miwi 因家庭和工作事务繁忙而不得不卸任以来，我们一直很想念他。欢迎他归队！如需进一步了解 portmgr 团队及其职责，可从以下链接入手：https://www.freebsd.org/portmgr/。
+1 月举行了一次投票，决定让 miwi 回归 portmgr 团队。结果全票通过，miwi 成为 portmgr 的第 6 位成员。自 2014 年底 miwi 因家庭和工作事务繁忙而不得不卸任以来，我们一直很想念他。欢迎他归队！如需进一步了解 portmgr 团队及其职责，可从以下链接入手：<https://www.freebsd.org/portmgr/。>
 
 ## 重要 Ports 更新
 

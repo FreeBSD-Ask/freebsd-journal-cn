@@ -4,17 +4,17 @@
 
 以下 BSD 相关会议将于 2017 年夏季举行。
 
-Linuxhotel 黑客松与开发者峰会 • 7 月 7–9 日 • 德国埃森 https://wiki.freebsd.org/DevSummit/201707 • 第二届年度 FreeBSD 黑客松与开发者峰会将在 Linuxhotel Villa Vogelsang 公园般的环境中举行。需注册，收取少量费用以覆盖食宿。
+Linuxhotel 黑客松与开发者峰会 • 7 月 7–9 日 • 德国埃森 <https://wiki.freebsd.org/DevSummit/201707> • 第二届年度 FreeBSD 黑客松与开发者峰会将在 Linuxhotel Villa Vogelsang 公园般的环境中举行。需注册，收取少量费用以覆盖食宿。
 
-BSDCam • 8 月 2–4 日 • 英国剑桥 https://wiki.freebsd.org/DevSummit/201708 • 年度剑桥 FreeBSD 开发者峰会将在剑桥大学举行。需注册，提供住宿，收取少量费用以覆盖餐食。
+BSDCam • 8 月 2–4 日 • 英国剑桥 <https://wiki.freebsd.org/DevSummit/201708> • 年度剑桥 FreeBSD 开发者峰会将在剑桥大学举行。需注册，提供住宿，收取少量费用以覆盖餐食。
 
-Openhelp • 8 月 12–16 日 • 俄亥俄州辛辛那提 https://conf.openhelp.cc/ • 这一年度会议汇聚了开源文档与支持领域的领导者，以及对社区化帮助感兴趣的技术通信行业人士。FreeBSD 文档团队的若干成员将出席，8 月 14 日和 15 日将举行 FreeBSD 文档冲刺（现场及 IRC EFNET 的 #bsddocs 频道同步进行）。参加此活动需缴纳少量注册费。
+Openhelp • 8 月 12–16 日 • 俄亥俄州辛辛那提 <https://conf.openhelp.cc/> • 这一年度会议汇聚了开源文档与支持领域的领导者，以及对社区化帮助感兴趣的技术通信行业人士。FreeBSD 文档团队的若干成员将出席，8 月 14 日和 15 日将举行 FreeBSD 文档冲刺（现场及 IRC EFNET 的 #bsddocs 频道同步进行）。参加此活动需缴纳少量注册费。
 
 TM
 
 JOURNAL
 
-订购过刊 @ www.freebsdfoundation.org/journal
+订购过刊 @ <www.freebsdfoundation.org/journal>
 
 ARMv8
 
@@ -27,4 +27,3 @@ ARMv8
 FreeBSD 对 ARM 架构的支持历来是自下而上的草根行动，对于众多嵌入式平台而言这运作良好。随着 ARMv8 的发布，基于 ARM 的系统开发已扩展到企业级领域，无论从服务器基础设施还是网络基础设施的角度皆是如此。为支持企业市场，我们显然需要更激进的开发模式，以交付最完整、最具竞争力的 FreeBSD 版本。
 
 ARM 在 FreeBSD 方面的内部专长有限。我们有诸多对此感兴趣的人，但缺乏真正的开发专长。随着 ARM 架构第 8 版（支持 64 位）的问世，我们开始探索各种方式……
-

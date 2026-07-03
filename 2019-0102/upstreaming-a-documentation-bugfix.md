@@ -3,7 +3,7 @@
 - 原文链接：[Upstreaming: a Document Bugfix](https://freebsdfoundation.org/our-work/journal/browser-based-edition/)
 - 作者：**BENEDICT REUSCHLING**
 
-FreeBSD 文档集由大量文档、手册页以及网站组成。这些都是新人参与社区、为操作系统回馈贡献的好途径。已有现成补丁可供文档提交者审查时，变更通过 Phabricator 提交。其它报告 bug 的方式还有邮件列表（freebsd-doc@freebsd.org）以及 Bugzilla。
+FreeBSD 文档集由大量文档、手册页以及网站组成。这些都是新人参与社区、为操作系统回馈贡献的好途径。已有现成补丁可供文档提交者审查时，变更通过 Phabricator 提交。其它报告 bug 的方式还有邮件列表（<freebsd-doc@freebsd.org>）以及 Bugzilla。
 
 最近有这样一个 bug：<https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=231994>。描述不多，但关键词正中我下怀。主题行写着“sudoers repeated word”，意味着它属于 security/sudo Port 这个广泛使用的软件。重复词是人们匆忙编写文档且不校对（或没有第二双眼睛帮着校对）时常见的错误。我做的第一件事，是确认报告的错误在 sudoers 文件的当前最新版本中确实仍然存在。有时人们报告的 bug 在 Port 的 HEAD 版本中已修复，仅因他们没有更新到最新版本，或者在此期间已有人纠正了错误。本例中，sudoers 手册页里确实存在重复的“and and”。
 

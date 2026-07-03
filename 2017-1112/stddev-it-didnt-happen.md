@@ -96,10 +96,10 @@ a[16] a[17] a[18] b[16] b[17] b[18]
 ```
 
 [1] Michael Moore: Adventures in a TV Nation, p. 9. ISBN 0-330-41914-5
-[2] Statistics of Extreme Events with Application to Climate Change. https://fas.org/irp/agency/dod/jason/statistics.pdf
-[3] Walter A. Shewhart，统计质量控制之父，在 1926 年听说学生 T 检验时对其赞不绝口。https://archive.org/details/bstj5-2-308
-[4] http://www.larrygonick.com/titles/science/the-cartoon-guide-to-statistics/
-[5] http://www.larrygonick.com/ 强烈推荐他的所有书，尤其是历史系列。
-[6] https://en.wikipedia.org/wiki/William_Sealy_Gosset
+[2] Statistics of Extreme Events with Application to Climate Change. <https://fas.org/irp/agency/dod/jason/statistics.pdf>
+[3] Walter A. Shewhart，统计质量控制之父，在 1926 年听说学生 T 检验时对其赞不绝口。<https://archive.org/details/bstj5-2-308>
+[4] <http://www.larrygonick.com/titles/science/the-cartoon-guide-to-statistics/>
+[5] <http://www.larrygonick.com/> 强烈推荐他的所有书，尤其是历史系列。
+[6] <https://en.wikipedia.org/wiki/William_Sealy_Gosset>
 
-> POUL-HENNING KAMP 是 phk@FreeBSD.org，曾是项目中最活跃的内核程序员之一。这些日子他的主要项目是 Varnish HTTP 缓存，但他的笔记本仍运行 FreeBSD-current。
+> POUL-HENNING KAMP 是 <phk@FreeBSD.org>，曾是项目中最活跃的内核程序员之一。这些日子他的主要项目是 Varnish HTTP 缓存，但他的笔记本仍运行 FreeBSD-current。

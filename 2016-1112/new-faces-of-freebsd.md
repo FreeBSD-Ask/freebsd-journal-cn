@@ -8,7 +8,7 @@
 
 **谈谈你自己、背景和兴趣。**
 
-**Sevan：** 我三十多岁，是系统管理员，现居英国伦敦。十几岁起开始接触计算机，多年来主要靠自学。我维护一个技术博客 GeekLAN（https://www.geeklan.co.uk），写些我做的东西。
+**Sevan：** 我三十多岁，是系统管理员，现居英国伦敦。十几岁起开始接触计算机，多年来主要靠自学。我维护一个技术博客 GeekLAN（<https://www.geeklan.co.uk），写些我做的东西。>
 
 我尽量不囤积电脑，但小型机收藏还是在不断增长。我喜欢摆弄不同操作系统、听电子音乐。我想多了解函数式与面向对象编程语言，特别是 Lisp 与 Smalltalk。
 
@@ -32,11 +32,11 @@
 
 **Sevan：** 我想我提交的补丁达到了一定数量，足以升到下一级——经导师 Benedict Reuschling 评审并放行后，可以提交自己提出的修改。
 
-这一切始于我在审视当前各 BSD 基础系统所附工具的源码历史与文档时。我意识到，关于这些工具的起源、首次出现在哪个操作系统版本上，存在不一致。现代 BSD 享有可追溯至 1BSD 的血脉。FreeBSD 项目托管一份 CSRG 仓库副本，可在 https://svnweb.freebsd.org/csrg/ 检出或用浏览器浏览。如愿意，该仓库连同实际二进制可向 Kirk McKusick 购买 CD 套装，地址 http://www.mckusick.com/csrg/index.html。凭借 CSRG 仓库副本与网上覆盖其他 Unix 的资源，我开始审视手册页中已有的历史章节，并为缺失者补上这一节。结果是 **/bin** 与 **/sbin** 中的工具现已文档化，**/usr/bin** 与 **/usr/sbin** 中的工具是下一步。
+这一切始于我在审视当前各 BSD 基础系统所附工具的源码历史与文档时。我意识到，关于这些工具的起源、首次出现在哪个操作系统版本上，存在不一致。现代 BSD 享有可追溯至 1BSD 的血脉。FreeBSD 项目托管一份 CSRG 仓库副本，可在 <https://svnweb.freebsd.org/csrg/> 检出或用浏览器浏览。如愿意，该仓库连同实际二进制可向 Kirk McKusick 购买 CD 套装，地址 <http://www.mckusick.com/csrg/index.html。凭借> CSRG 仓库副本与网上覆盖其他 Unix 的资源，我开始审视手册页中已有的历史章节，并为缺失者补上这一节。结果是 **/bin** 与 **/sbin** 中的工具现已文档化，**/usr/bin** 与 **/usr/sbin** 中的工具是下一步。
 
 **Ruey-Cherng：** 收集 FreeBSD 9.0 安装所需资料时，我发现繁体中文文档匮乏，能找到的也过时，多为 FreeBSD 5.X。zh_TW 版 FreeBSD Handbook 最后更新在 2008 年。FreeBSD 官网没有指向 zh_TW 版的链接，因为内容过时。于是我决定更新 FreeBSD Handbook 的翻译。
 
-我给 freebsd-doc 邮件列表发了封自我介绍并求助的邮件。共同导师 lwhsu@ 联系我，帮我将旧的 BIG-5 编码转换为 UTF-8。然后我开始翻译。delphij@ 帮我解决 PDF 渲染中的乱码问题。我在 Raspberry Pi 2B 上搭了台 FreeBSD 服务器，这样可以从牙科诊所 ssh 上去，有空就翻译。当时 FreeBSD ARM 包仓库还没建立，我安装常用程序时遇到一些问题。我在 FreeBSD 台湾用户组 Facebook 群组认识了导师 kevlo@。他耐心地回答了我许多愚蠢的问题，帮我解决问题并鼓励我继续翻译。我挣扎于 xml 标签，进度很慢。幸好测试与练习 po 翻译那晚，我遇到 po 翻译转 UTF-8 的问题，共同导师 wblock@ 热心帮我解决。把旧翻译方式转换为 po 翻译是劳动密集型工作，必须逐条把字符串复制粘贴到 po 文件，需要更多人参与。为吸引新鲜血液，7 月我在台北本地 BSDDay 做了关于 FreeBSD 文档繁体中文翻译的演讲（https://lists.freebsd.org/pipermail/freebsdtranslators/2016-August/000141.html）。对无法到场的人，我也写了篇文章介绍 FreeBSD 文档繁体中文翻译。一位贡献者 cwlin 通过 subversion 日志联系我，他把 zh_TW 版 Handbook 转成了 po 翻译，工作量很大！之后，kevlo@ 提议我成为提交者以方便翻译工作。如今在 kevlo@ 与 ryusuke@ 帮助下，我已复兴了 zh_TW 版 FreeBSD 网站。
+我给 freebsd-doc 邮件列表发了封自我介绍并求助的邮件。共同导师 lwhsu@ 联系我，帮我将旧的 BIG-5 编码转换为 UTF-8。然后我开始翻译。delphij@ 帮我解决 PDF 渲染中的乱码问题。我在 Raspberry Pi 2B 上搭了台 FreeBSD 服务器，这样可以从牙科诊所 ssh 上去，有空就翻译。当时 FreeBSD ARM 包仓库还没建立，我安装常用程序时遇到一些问题。我在 FreeBSD 台湾用户组 Facebook 群组认识了导师 kevlo@。他耐心地回答了我许多愚蠢的问题，帮我解决问题并鼓励我继续翻译。我挣扎于 xml 标签，进度很慢。幸好测试与练习 po 翻译那晚，我遇到 po 翻译转 UTF-8 的问题，共同导师 wblock@ 热心帮我解决。把旧翻译方式转换为 po 翻译是劳动密集型工作，必须逐条把字符串复制粘贴到 po 文件，需要更多人参与。为吸引新鲜血液，7 月我在台北本地 BSDDay 做了关于 FreeBSD 文档繁体中文翻译的演讲（<https://lists.freebsd.org/pipermail/freebsdtranslators/2016-August/000141.html）。对无法到场的人，我也写了篇文章介绍> FreeBSD 文档繁体中文翻译。一位贡献者 cwlin 通过 subversion 日志联系我，他把 zh_TW 版 Handbook 转成了 po 翻译，工作量很大！之后，kevlo@ 提议我成为提交者以方便翻译工作。如今在 kevlo@ 与 ryusuke@ 帮助下，我已复兴了 zh_TW 版 FreeBSD 网站。
 
 **Joseph：** 像大多数提交者一样，我只是开始提交补丁。我通过潜伏在 IRC 与邮件列表、参加 BSDCan 结识 FreeBSD 人。BSDCan 的黑客休息室是结识 FreeBSD、OpenBSD 乃至一些 DragonFlyBSD 社区成员的好方式。这些联系激发了我更多贡献的动机。
 
@@ -48,7 +48,7 @@
 
 每年 BSD 社区聚首加拿大渥太华的 BSDCan 会议。每晚都有文档冲刺。在文档冲刺上，文档团队的人就文档工作的方方面面做演讲，并帮助大家开始文档工作。
 
-可惜 BSDCan 一年一次，日常交流我们在 IRC 与邮件列表上碰头。我们所在 IRC 网络的 wiki 条目：https://wiki.freebsd.org/IRC/Channels#EFnet。EFnet 上 #bsddocs 是文档团队的所在，freebsddoc@ 邮件列表也是。
+可惜 BSDCan 一年一次，日常交流我们在 IRC 与邮件列表上碰头。我们所在 IRC 网络的 wiki 条目：<https://wiki.freebsd.org/IRC/Channels#EFnet。EFnet> 上 #bsddocs 是文档团队的所在，freebsddoc@ 邮件列表也是。
 
 对想成为 FreeBSD 提交者的人，我建议加入相关领域的 IRC 频道与邮件列表，这能让你联系到能提供指导与援手的开发者。如果不确定从哪个项目入手，审视系统总是稳妥的起点，好处是让你熟悉当前状态，从而帮助厘清可作哪些新改进，减少潜在疏漏。
 

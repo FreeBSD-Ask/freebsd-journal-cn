@@ -18,7 +18,7 @@ FreeBSD 项目中一个被广泛使用的测试是"buildworld"。这是个不错
 
 ## Stress2 的一个典型工作日
 
-我收到 FreeBSD 某位提交者发来的补丁，旨在修复某个 panic。这个问题有时可由现有的某些测试场景触发，有时则需要写一个新测试。一旦能在合理时间内复现问题，就可以测试补丁了。验证修复之后，我通常会运行所有其它场景，以防修复带来副作用——这种情况出奇地常见。一个补丁在提交前经历几次修订并不少见。一个高产的日子，我能走完三到四个修订。我尽量让 Bug 报告包含足够的信息，以促使补丁快速更新。一份典型的 Bug 报告长这样：https://people.freebsd.org/~pho/stress/log/kostik833.txt。
+我收到 FreeBSD 某位提交者发来的补丁，旨在修复某个 panic。这个问题有时可由现有的某些测试场景触发，有时则需要写一个新测试。一旦能在合理时间内复现问题，就可以测试补丁了。验证修复之后，我通常会运行所有其它场景，以防修复带来副作用——这种情况出奇地常见。一个补丁在提交前经历几次修订并不少见。一个高产的日子，我能走完三到四个修订。我尽量让 Bug 报告包含足够的信息，以促使补丁快速更新。一份典型的 Bug 报告长这样：<https://people.freebsd.org/~pho/stress/log/kostik833.txt。>
 
 一次完整测试通常需要 24 小时以上，我才会对修复有信心。
 
@@ -82,11 +82,11 @@ panic: vmspace_fork: entry 0xfffff80019793d00 eflags 50c
 
 ### isofs2.sh
 
-这是最新的一个测试，非常简单。创建一个包含 date(1) 副本的 isofs 文件系统。挂载该文件系统并运行 "date" 副本。这会触发 "panic: witness_warn"，报告见：https://people.freebsd.org/~pho/stress/log/isofs2.txt
+这是最新的一个测试，非常简单。创建一个包含 date(1) 副本的 isofs 文件系统。挂载该文件系统并运行 "date" 副本。这会触发 "panic: witness_warn"，报告见：<https://people.freebsd.org/~pho/stress/log/isofs2.txt>
 
 ### marcus5.sh
 
-这是一个测试的示例，它是搜索另一个问题时的副产品。该测试触发了一个关于 VFS_SYNC() 实现方式的问题：https://people.freebsd.org/~pho/stress/log/marcus5.txt
+这是一个测试的示例，它是搜索另一个问题时的副产品。该测试触发了一个关于 VFS_SYNC() 实现方式的问题：<https://people.freebsd.org/~pho/stress/log/marcus5.txt>
 
 ### md8.sh
 
@@ -124,4 +124,4 @@ Stress2 是一款开发者工具，用于发现 FreeBSD 内核中的问题。它
 
 ---
 
-**Peter Holm**（pho@FreeBSD.org）自 1999 年起就一直在 FreeBSD 中找 Bug。Stress2 测试套件持续开发中，会根据 Bug 报告或补丁测试不断添加新测试。
+**Peter Holm**（<pho@FreeBSD.org>）自 1999 年起就一直在 FreeBSD 中找 Bug。Stress2 测试套件持续开发中，会根据 Bug 报告或补丁测试不断添加新测试。

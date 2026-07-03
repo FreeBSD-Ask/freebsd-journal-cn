@@ -58,6 +58,6 @@ Kristof Provost 是自由职业的嵌入式软件工程师与 FreeBSD src 提交
 
 链接
 
-- EuroBSDcon：https://www.eurobsdcon.org
-- EuroBSDcon Foundation：https://eurobsdconfoundation.org
-- Paul Schenkeveld Travel Grant：https://eurobsdconfoundation.org/paul-schenkeveld-travel-grant/
+- EuroBSDcon：<https://www.eurobsdcon.org>
+- EuroBSDcon Foundation：<https://eurobsdconfoundation.org>
+- Paul Schenkeveld Travel Grant：<https://eurobsdconfoundation.org/paul-schenkeveld-travel-grant/>

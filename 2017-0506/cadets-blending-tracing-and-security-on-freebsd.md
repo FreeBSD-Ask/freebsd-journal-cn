@@ -91,15 +91,15 @@ DR ROBERT N. M. WATSON 是剑桥大学计算机实验室的高级讲师（副教
 本研究由美国国防高级研究计划局（DARPA）和美国空军研究实验室（AFRL）资助，合同编号 FA8650-15-C-7558。本文所含的观点、意见和/或发现均为作者本人观点，不应被解读为代表美国国防部或美国政府的官方观点或政策，无论明示或暗示。
 
 [1] "Jails: Confining the omnipotent root." Poul-Henning Kamp <phk@FreeBSD.org> Robert N. M. Watson <rwatson@FreeBSD.org> (2000)
-[2] Watson, R.; Feldman, B.; Migus, A.; and Vance, C. "Design and implementation of the Trusted BSD MAC framework," Proceedings—DARPA Information Survivability Conference and Exposition, DISCEX 2003, 1(Discex Iii), 38–49. http://doi.org/10.1109/DISCEX.2003.1194871 (2003)
+[2] Watson, R.; Feldman, B.; Migus, A.; and Vance, C. "Design and implementation of the Trusted BSD MAC framework," Proceedings—DARPA Information Survivability Conference and Exposition, DISCEX 2003, 1(Discex Iii), 38–49. <http://doi.org/10.1109/DISCEX.2003.1194871> (2003)
 [3] Watson, R. N. M. and Salamon, W. "The FreeBSD Audit System," UKUUG LISA Conference, 1–6. (2006)
-[4] Watson, R. N. M.; Anderson, J.; Laurie, B.; and Kennaway, K. "Capsicum: practical capabilities for UNIX," 19th Usenix Security Symposium, (Figure 1), 3. http://doi.org/10.1145/2093548.2093572 (2010).
+[4] Watson, R. N. M.; Anderson, J.; Laurie, B.; and Kennaway, K. "Capsicum: practical capabilities for UNIX," 19th Usenix Security Symposium, (Figure 1), 3. <http://doi.org/10.1145/2093548.2093572> (2010).
 [5] Cantril, B.; Shapiro, M. and Leventhal, A. "Dynamic Instrumentation of Production Systems." (2004)
 [6] Davis, B. Everything you ever wanted to know about "hello, world"\* (\*but were afraid to ask), BSDCan. (2016)
 [7] McKusick, M.; Neville-Neil, G.; and Watson, R. N. M. The Design and Implementation of the FreeBSD Operating System, Second Edition. Boston, Massachusetts: Pearson Education. (2014)
-[8] http://dtrace.org/blogs/bmc/2008/11/10/fishworks-now-it-can-be-told/
-[9] https://www.splunk.com
-[10] https://www.freebsd.org/cgi/man.cgi?query=audit&sektion=4
-[11] https://www.niap-ccevs.org/pp/pp_os_ca_v1.d.pdf
-[12] http://www.trustedbsd.org/openbsm.html
-[13] http://open-zfs.org/wiki/Main_Page
+[8] <http://dtrace.org/blogs/bmc/2008/11/10/fishworks-now-it-can-be-told/>
+[9] <https://www.splunk.com>
+[10] <https://www.freebsd.org/cgi/man.cgi?query=audit&sektion=4>
+[11] <https://www.niap-ccevs.org/pp/pp_os_ca_v1.d.pdf>
+[12] <http://www.trustedbsd.org/openbsm.html>
+[13] <http://open-zfs.org/wiki/Main_Page>

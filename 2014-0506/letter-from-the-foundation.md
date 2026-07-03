@@ -19,13 +19,13 @@ FreeBSD Journal 推出网络专题，并更加动态化！
 发行与出版 LLC
 PO BOX 408, BELFAST, MAINE 04915
 
-- 发行商：Walter Andrzejewski，walter@FreeBSDjournal.com
-- 主编：James Maurer，jmaurer@FreeBSDjournal.com
-- 美术总监：Dianne M. Kischitz，dianne@FreeBSDjournal.com
-- 办公室管理员：Cindy DeBeck，cindy@FreeBSDjournal.com
-- 广告销售：Walter Andrzejewski，walter@FreeBSDjournal.com，电话 888/290-9469
+- 发行商：Walter Andrzejewski，<walter@FreeBSDjournal.com>
+- 主编：James Maurer，<jmaurer@FreeBSDjournal.com>
+- 美术总监：Dianne M. Kischitz，<dianne@FreeBSDjournal.com>
+- 办公室管理员：Cindy DeBeck，<cindy@FreeBSDjournal.com>
+- 广告销售：Walter Andrzejewski，<walter@FreeBSDjournal.com>，电话 888/290-9469
 
-FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 发行，PO Box 20247, Boulder, CO 80308，电话 1/720-207-5142，传真 1/720-222-2350，电子邮件 board@freebsdfoundation.org。版权 © 2014 FreeBSD Foundation，保留所有权利。未经发行商书面许可，本杂志不得全部或部分复制。
+FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 发行，PO Box 20247, Boulder, CO 80308，电话 1/720-207-5142，传真 1/720-222-2350，电子邮件 <board@freebsdfoundation.org>。版权 © 2014 FreeBSD Foundation，保留所有权利。未经发行商书面许可，本杂志不得全部或部分复制。
 
 本期是第 3 期，借此节点我们在移动版之外还推出了动态版（Dynamic Edition，DE）。有不少读者希望能在 Web 浏览器中阅读本刊，DE 让这成为可能。我们最初创办这份期刊时，希望提供一种不仅与纸刊或纯 PDF 文件持平、而且更胜一筹的体验。我们的设计工作致力于让 Journal 应用成为一个清爽、清晰、有趣且富有教益的体验。在两期已经发刊、全球各地的设备上都被阅读之后，我们转向思考能为真正偏好用浏览器消费内容的读者做些什么。我们认为已经把应用中的合适功能组合良好地集成到了浏览器版本——即动态版——之中。动态版一年订阅（6 期）售价 19.99 美元，与移动应用同价。关于动态版的更多信息，可访问 FreeBSD Foundation 网站（`www.FreeBSDFoundation.org`）。随着 Journal 演进，所有人都会看到应用版和 DE 版本上同步出现新功能。我们的意图是让这两种交付载体在功能上保持锁定，这样无论你使用哪个版本，都能获得一致的高质量体验。
 

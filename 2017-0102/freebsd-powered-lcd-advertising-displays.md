@@ -160,36 +160,36 @@ FreeBSD 内核启动后，通常会执行 **/sbin/init**，它会尝试运行 **
 
 ## 参考文献
 
-[1] "High-speed rail in China," Wikipedia, 在线：https://en.wikipedia.org/wiki/High-speed_rail_in_China。
+[1] "High-speed rail in China," Wikipedia, 在线：<https://en.wikipedia.org/wiki/High-speed_rail_in_China。>
 
-[2] "Beijing–Shanghai High-Speed Railway," Wikipedia, 在线：https://en.wikipedia.org/wiki/Beijing%E2%80%93Shanghai_High-Speed_Railway。
+[2] "Beijing–Shanghai High-Speed Railway," Wikipedia, 在线：<https://en.wikipedia.org/wiki/Beijing%E2%80%93Shanghai_High-Speed_Railway。>
 
-[3]（仅中文）"京沪高速铁路," 百度百科, 在线：http://baike.baidu.com/view/141756.htm。
+[3]（仅中文）"京沪高速铁路," 百度百科, 在线：<http://baike.baidu.com/view/141756.htm。>
 
-[4] "Harbin-Dalian High-Speed Railway," Wikipedia, 在线：https://en.wikipedia.org/wiki/Harbin%E2%80%93Dalian_High-Speed_Railway。
+[4] "Harbin-Dalian High-Speed Railway," Wikipedia, 在线：<https://en.wikipedia.org/wiki/Harbin%E2%80%93Dalian_High-Speed_Railway。>
 
-[5]（仅中文）"哈大高速铁路," 百度百科, 在线：http://baike.baidu.com/view/1213823.htm。
+[5]（仅中文）"哈大高速铁路," 百度百科, 在线：<http://baike.baidu.com/view/1213823.htm。>
 
-[6]（仅中文）高铁网, 在线：http://www.gaotie.cn/。
+[6]（仅中文）高铁网, 在线：<http://www.gaotie.cn/。>
 
-[7] "Technical Product Specification for the Intel® Desktop Board D410PT," Intel, 在线：http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000021877.html。
+[7] "Technical Product Specification for the Intel® Desktop Board D410PT," Intel, 在线：<http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000021877.html。>
 
-[8] "Technical Product Specification for Intel Desktop Board D425KT/D425KTW," Intel, 在线：http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000020992.html。
+[8] "Technical Product Specification for Intel Desktop Board D425KT/D425KTW," Intel, 在线：<http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000020992.html。>
 
-[9] Mega-info Media Co. Ltd., 官方网站：http://www.megainfomedia.com/。
+[9] Mega-info Media Co. Ltd., 官方网站：<http://www.megainfomedia.com/。>
 
-[10] GA-B75-D3V User's Manual, GIGA-BYTE Technology Co. Ltd., 在线：http://download.gigabyte.cn/FileList/Manual/mb-manual_ga-b75-d3v_v1.2_e.pdf。
+[10] GA-B75-D3V User's Manual, GIGA-BYTE Technology Co. Ltd., 在线：<http://download.gigabyte.cn/FileList/Manual/mb-manual_ga-b75-d3v_v1.2_e.pdf。>
 
-[11] Introduction to Intel Core i5-3450, Intel, 在线：http://ark.intel.com/products/65511/Intel-Corei5-3450-Processor-6M-Cache-up-to-3_50-GHz。
+[11] Introduction to Intel Core i5-3450, Intel, 在线：<http://ark.intel.com/products/65511/Intel-Corei5-3450-Processor-6M-Cache-up-to-3_50-GHz。>
 
-[12] GeForce driver for FreeBSD, NVIDIA, 在线：http://www.geforce.com/drivers。
+[12] GeForce driver for FreeBSD, NVIDIA, 在线：<http://www.geforce.com/drivers。>
 
-[13] Martin Matuška, "mfsBSD", 在线：http://mfsbsd.vx.sk/。
+[13] Martin Matuška, "mfsBSD", 在线：<http://mfsbsd.vx.sk/。>
 
-[14] wxWidgets, a cross-platform C++ GUI library, 在线：http://www.wxwidgets.org/。
+[14] wxWidgets, a cross-platform C++ GUI library, 在线：<http://www.wxwidgets.org/。>
 
-[15] "Kernel Initialization," "FreeBSD Architecture Handbook," 在线：https://www.freebsd.org/doc/en_US.ISO8859-1/books/arch-handbook/boot-kernel.html。
+[15] "Kernel Initialization," "FreeBSD Architecture Handbook," 在线：<https://www.freebsd.org/doc/en_US.ISO8859-1/books/arch-handbook/boot-kernel.html。>
 
-[16] Xinhua News Agency, China, 官方网站：http://www.news.cn/english/。
+[16] Xinhua News Agency, China, 官方网站：<http://www.news.cn/english/。>
 
-[17] 一幅重新制作的中国大陆轮廓地图，参考自政府数字地图网站"天地图"（Tianditu 的中文含义为"天空-土地地图"或"天地地图"），在线：中文 http://map.tianditu.com/，英文 http://en.tianditu.com/。
+[17] 一幅重新制作的中国大陆轮廓地图，参考自政府数字地图网站"天地图"（Tianditu 的中文含义为"天空-土地地图"或"天地地图"），在线：中文 <http://map.tianditu.com/，英文> <http://en.tianditu.com/。>

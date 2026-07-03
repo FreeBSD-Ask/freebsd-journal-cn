@@ -3,7 +3,6 @@
                                                          作者：Michael W Lucas            letters@WeGetletters
                    freebsdjournal.org
 
-
 嗨，FJ Letters Dude，
 
 我应该使用哪个文件系统？
@@ -46,7 +45,6 @@ FreeBSD 对新的 NFSv4 协议有出色的支持。虽然早期版本的 NFS 互
 
 真的，文件系统唯一明智的举动就是不玩。
 
-
 FJ Letters Dude，
 
 我的意思是我正在查看安装程序，它想知道我想使用 UFS 还是 ZFS？而 George Neville-Neil 说你需要来信。
@@ -61,14 +59,12 @@ FJ Letters Dude，
 
 感谢你的提示。下次我遇到 GNN，我们会讨论他鼓励人的不幸倾向。
 
-
-MICHAEL W LUCAS (https://mwl.io) 写了太多书，包括《Absolute FreeBSD》、《FreeBSD Mastery: Specialty Filesystems》和《git commit murder》。将你的问题发送到
-letters@freebsdjournal.com。来信将按其启发、逗乐或激怒专栏作者的顺序回答，并可能为他自己的目的进行编辑。
+MICHAEL W LUCAS (<https://mwl.io>) 写了太多书，包括《Absolute FreeBSD》、《FreeBSD Mastery: Specialty Filesystems》和《git commit murder》。将你的问题发送到
+<letters@freebsdjournal.com>。来信将按其启发、逗乐或激怒专栏作者的顺序回答，并可能为他自己的目的进行编辑。
 
   在 FreeBSD 所有文件系统的辩护中，
-
 
 ®
 与我们
 做广告！
-联系 walter@fbsdjournal.com
+联系 <walter@fbsdjournal.com>

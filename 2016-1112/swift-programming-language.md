@@ -393,14 +393,14 @@ print(myHouse.getDescription())
 
 Swift 还有更多内容，鼓励大家试一试。网上有许多学习 Swift 的好资源：
 
-- https://swift.org/
-- https://developer.apple.com/swift/
-- https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html
+- <https://swift.org/>
+- <https://developer.apple.com/swift/>
+- <https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html>
 
 甚至有几个允许你通过浏览器在线运行代码的网站：
 
-- https://www.weheartswift.com/swift-sandbox/
-- https://swiftlang.ng.bluemix.net/#/repl
+- <https://www.weheartswift.com/swift-sandbox/>
+- <https://swiftlang.ng.bluemix.net/#/repl>
 
 ---
 

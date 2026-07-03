@@ -95,4 +95,4 @@ dial. form of Rice1.
 - 观察：服务器不断意外重启。犰狳在机箱里筑巢。
 - 假设：犰狳在重启服务器。
 
-(jmaurer@freebsdjournal.com)
+(<jmaurer@freebsdjournal.com>)

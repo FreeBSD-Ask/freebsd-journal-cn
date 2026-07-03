@@ -20,7 +20,7 @@
 
 ## Jail
 
-考虑把媒体服务器跑在 jail 里。Michael W Lucas 有一本帮你精通 jail 的新书，https://mwl.io/nonfiction/os#fmjail ，书中讲解了 jail 的所有益处和特性。书中还有一条对媒体服务器很实用的技巧，与加速 FreeBSD 上的 Python 有关。显然，在 **/etc/fstab** 中挂载 **/dev/fd** 可以加速 Python。太好了！只要在 **/etc/fstab** 中加入下面这样的条目：
+考虑把媒体服务器跑在 jail 里。Michael W Lucas 有一本帮你精通 jail 的新书，<https://mwl.io/nonfiction/os#fmjail> ，书中讲解了 jail 的所有益处和特性。书中还有一条对媒体服务器很实用的技巧，与加速 FreeBSD 上的 Python 有关。显然，在 **/etc/fstab** 中挂载 **/dev/fd** 可以加速 Python。太好了！只要在 **/etc/fstab** 中加入下面这样的条目：
 
 ```ini
 fdescfs /dev/fd fdescfs rw 0 0

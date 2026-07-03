@@ -72,4 +72,4 @@ WikiLeaks。多数劫匪发现你笔记本不跑"正常"操作系统时不会觉
 
 也许你的威胁来自需要搜查令的那类人。这些人学会了趁你电脑还开着时把它扣押。
 
-（jmaurer@freebsdjournal.com ）
+（<jmaurer@freebsdjournal.com> ）

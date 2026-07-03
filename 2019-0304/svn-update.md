@@ -6,7 +6,7 @@
 
 ## 实现地址空间布局随机化（ASLR）
 
-https://svnweb.freebsd.org/changeset/base/343964
+<https://svnweb.freebsd.org/changeset/base/343964>
 
 这一改动可以为所有非固定映射启用随机化。也就是说，映射的基址会以有保证的熵（位数）来选取。如果映射要求按超级页对齐，随机化会保留超级页属性。
 
@@ -16,7 +16,7 @@ https://svnweb.freebsd.org/changeset/base/343964
 
 ## 添加 WITH_PIE 旋钮以构建位置无关可执行文件
 
-https://svnweb.freebsd.org/changeset/base/344179
+<https://svnweb.freebsd.org/changeset/base/344179>
 
 将二进制文件构建为 PIE，可在启用 ASLR 时让可执行文件本身（而不仅仅是其共享库）加载到随机地址。这一改动后，PIE 对象使用 `.pieo` 扩展名，INTERNALLIB 库使用 `libXXX_pie.a`。
 
@@ -24,7 +24,7 @@ https://svnweb.freebsd.org/changeset/base/344179
 
 ## 迈向多核 bhyve AMD 支持
 
-https://svnweb.freebsd.org/changeset/base/343075
+<https://svnweb.freebsd.org/changeset/base/343075>
 
 vmm 的 CPUID 仿真此前向客户机呈现 Intel 拓扑信息，却禁用了 AMD 拓扑信息，某些情况下还会传入垃圾数据。CPUID 叶 0x8000_001[de] 被透传给客户机，但客户机 CPU 会在主机线程之间迁移，因此呈现的信息不一致。这可以通过 `cpucontrol -i 0xfoo /dev/cpuctl0` 轻易观察到。
 
@@ -32,7 +32,7 @@ vmm 的 CPUID 仿真此前向客户机呈现 Intel 拓扑信息，却禁用了 A
 
 ## 在 AMD 主机上屏蔽 Spectre 特性位
 
-https://svnweb.freebsd.org/changeset/base/343166
+<https://svnweb.freebsd.org/changeset/base/343166>
 
 为与 Intel 主机保持一致——后者已经屏蔽了指示 `SPEC_CTRL` MSR 存在的 CPUID 特性位——在 AMD 上做同样的处理。
 
@@ -42,7 +42,7 @@ https://svnweb.freebsd.org/changeset/base/343166
 
 ## 添加 AMD Spectre/Meltdown CPUID 信息的定义
 
-https://svnweb.freebsd.org/changeset/base/343120
+<https://svnweb.freebsd.org/changeset/base/343120>
 
 无功能性变化，只是在 CPU 识别时打印已识别的位。这些位记录在 111006-B "Indirect Branch Control Extension"[1] 和 124441 "Speculative Store Bypass Disable"[2] 中。
 
@@ -55,13 +55,13 @@ https://svnweb.freebsd.org/changeset/base/343120
 
 ## 为 RISC-V 实现每 CPU pmap 激活跟踪
 
-https://svnweb.freebsd.org/changeset/base/344108
+<https://svnweb.freebsd.org/changeset/base/344108>
 
 这通过确保只中断正在使用给定 pmap 的 CPU，减少了 TLB 失效的开销。跟踪在 `pmap_activate()` 中进行，该函数在上下文切换时被调用：从 `cpu_throw()` 调用（如果线程正在退出或 AP 正在启动），或对于常规上下文切换从 `cpu_switch()` 调用。目前，`pmap_sync_icache()` 仍然必须中断所有 CPU。
 
 ## 为 RISC-V 实现透明的 2MB 超级页提升
 
-https://svnweb.freebsd.org/changeset/base/344106
+<https://svnweb.freebsd.org/changeset/base/344106>
 
 这些改动很大程度上参考了 amd64。arm64 对超级页创建有更严格的要求，以避免 TLB 冲突中止的可能性，而这些要求不适用于 RISC-V——和 amd64 一样，RISC-V 允许同时缓存给定页面的 4KB 和 2MB 转换。RISC-V 的 PTE 格式仅包含两个软件位，而这两个位已被占用，因此我们没有 amd64 的 `PG_PROMOTED` 等价物。相应地，`pmap_remove_l2()` 总是失效整个 2MB 地址范围。
 
@@ -69,7 +69,7 @@ https://svnweb.freebsd.org/changeset/base/344106
 
 ## 在 i386 上提供 do_cpuid() 和 cpuid_count() 的用户态版本
 
-https://svnweb.freebsd.org/changeset/base/344118
+<https://svnweb.freebsd.org/changeset/base/344118>
 
 生成 PIC 代码时，一些较老的编译器无法处理会破坏 `%ebx` 的内联汇编（因为 `%ebx` 用作 GOT 偏移寄存器）。用户态版本通过在执行 CPUID 指令前将 `%ebx` 保存到栈上来避免破坏它。
 

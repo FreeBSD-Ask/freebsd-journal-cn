@@ -24,7 +24,7 @@ doc lounge 还吸引来程序员、系统管理员、学生以及其他未必对
 
 我们希望能有更多 FreeBSD 开发者和文档 committer 参加 doc lounge，这样我们才能更好地宣传它，吸引更多感兴趣的人，并有机会与所有人合作。
 
-doc lounge 在 BSDCan（http://www.bsdcan.org）和 vBSDCon（http://vbsdcon.com）举办，也可以在其他活动中举办。我们诚邀会议组织者提供场地，欢迎与会者前来参与或协助。 •
+doc lounge 在 BSDCan（<http://www.bsdcan.org）和> vBSDCon（<http://vbsdcon.com）举办，也可以在其他活动中举办。我们诚邀会议组织者提供场地，欢迎与会者前来参与或协助。> •
 
 **作者简介**
 

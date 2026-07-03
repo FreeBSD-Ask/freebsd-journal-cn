@@ -40,13 +40,11 @@
 
 DRU LAVIGNE 是 iXsystems 的存储工程总监，《BSD Hacks》和《The Best of FreeBSD Basics》的作者。
 
-
 ## Write For Us!
 
 联系 Jim Maurer
-（jmaurer@freebsdjournal.com）
+（<jmaurer@freebsdjournal.com>）
 提交你的文章想法。
-
 
 ---
 
@@ -69,7 +67,6 @@ ZFS 专家打造了他们的服务器。
 - 识别并消除瓶颈。
 - 构建极速数据库存储。
 - 深入了解池、metaslab 等！
-
 
 无论你是管理单台小型服务器还是国际数据中心，
 用 FreeBSD Mastery: Advanced ZFS 简化你的存储。立即获取！

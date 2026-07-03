@@ -100,7 +100,7 @@ gpio_22<OUT>, caps:<IN,OUT,PU,PD,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN>
 | GPIO2_23 | USR2 | T15 |
 | GPIO2_24 | USR3 | V16 |
 
-用户 LED 控制信号（BBB SRM 表 7，CC-SA）。表格由 BeagleBoard.org 的 Gerald Coley 制作。更多信息见 http://creativecommons.org/license/results-one?license_code=by-sa。
+用户 LED 控制信号（BBB SRM 表 7，CC-SA）。表格由 BeagleBoard.org 的 Gerald Coley 制作。更多信息见 <http://creativecommons.org/license/results-one?license_code=by-sa。>
 
 从 `gpioctl` 输出可以看到，四个引脚的逻辑电平都是 0；找到板上 LED 最简单的办法就是把它们点亮。我们这么做。
 
