@@ -123,7 +123,6 @@
   远不如单一集合的性能和      物理/化学）的开发库，可直接使用，并有多个活跃的
   特性重要。大多数 HPC 集群      该领域的 ports 提交者。
 
-
    20                                                                                                          图 3. BLIS 和 OpenBLAS 相对于
              netlib gfortran
                                                                                             参考净库 BLAS 在不同大小矩阵-矩阵乘法（dgemm）上的加速
@@ -155,7 +154,6 @@
   用于分析、调试、      不包含加速器，但加速器
   等的工具链      ，基础系统和 ports 集合      对 HPC 和工作站
 
-
           的重要性不言而喻。存在各种
   应用的重要性      我们的 libm 和来自 LLVM。这些应该
   无法被夸大。      已经是一个有趣的 HPC 平台，供
@@ -176,22 +174,22 @@
   由 ports 中的      会议和组织者表达深深的感谢，本文内容
   二进制驱动支持。      最初作为讲座在那里      展示。 •
   FreeBSD 没有官方 CUDA 支持；但      参考列表
-  有些人      过去曾      [1] InsideHPC: https://insidehpc.com/
+  有些人      过去曾      [1] InsideHPC: <https://insidehpc.com/>
   在 Linux 上编译 CUDA 应用程序并      hpc-basic-training/what-is-hpc/
   通过 Linuxulator      [2] 数据源：UK 超级计算机 ARCHER
   在 FreeBSD 上运行它们。          上月应用使用情况，
-          http://www.archer.ac.uk/status/codes
+          <http://www.archer.ac.uk/status/codes>
   OpenCL 支持处于合理状态：我们      [3] 数据源：TOP500 列表，2017 年 6 月，
-  包含来自      https://www.top500.org/statistics/ list/
-  Mesa 项目的非官方 OpenCL clover 库，用于 AMD GPU。其性能      [4] Flang github: https://github.com/
+  包含来自      <https://www.top500.org/statistics/> list/
+  Mesa 项目的非官方 OpenCL clover 库，用于 AMD GPU。其性能      [4] Flang github: <https://github.com/>
   绝对      flang-compiler/flang
-  无法竞争，但工作相当      [5] OpenMP https://www.openmp.org/
-  可靠。对于 Intel，我们包含其官方 beignet      [6] MPI forum https://www.mpi-forum.org/
-  实现；但 Intel GPU      [7] FLAME 项目 https://github.com/flame
+  无法竞争，但工作相当      [5] OpenMP <https://www.openmp.org/>
+  可靠。对于 Intel，我们包含其官方 beignet      [6] MPI forum <https://www.mpi-forum.org/>
+  实现；但 Intel GPU      [7] FLAME 项目 <https://github.com/flame>
   在计算任务上竞争力较弱。开发      [8] Linuxism 讨论
-  OpenCL 应用程序得到良好支持；我们包含      https://wiki.freebsd.org/AvoidingLinuxisms
+  OpenCL 应用程序得到良好支持；我们包含      <https://wiki.freebsd.org/AvoidingLinuxisms>
   CPU OpenCL 模拟器 lang/pocl 和      [9] Radeon Open Compute
-  完整性检查器 devel/oclgrind。通过      https://github.com/RadeonOpenCompute/
+  完整性检查器 devel/oclgrind。通过      <https://github.com/RadeonOpenCompute/>
   OpenMP      offloading 利用加速器
   目前不支持，但      总体上
   尚未普及。
@@ -220,4 +218,3 @@
   让 ROCm 在 FreeBSD 上工作。另一个
   重要事项是在
   libm 和 LLVM 中正确支持 SIMD/向量化。
-

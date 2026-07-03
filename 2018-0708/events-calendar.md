@@ -17,9 +17,8 @@
         以"非会议风格"运行，我们在第一天上午集体讨论实际日程安排，
      重点关注反映与会者兴趣并发挥其知识的互动话题。
 
-
    Write the Docs+Open Help • 8 月 18-22 日 • 美国俄亥俄州辛辛那提
-    http://www.writethedocs.org/conf/cincinnati/2018/ 一场专注于软件文档
+    <http://www.writethedocs.org/conf/cincinnati/2018/> 一场专注于软件文档
      各方面的会议。
 
               FOSSCON • 8 月 25 日 • 美国宾夕法尼亚州费城
@@ -28,7 +27,7 @@
         自由及开源软件用户。
 
    OpenZFS 开发者峰会 • 9 月 10–11 日 • 美国加利福尼亚州旧金山
-                 http://open-zfs.org/wiki/OpenZFS_Developer_Summit • 第六届年度 OpenZFS
+                 <http://open-zfs.org/wiki/OpenZFS_Developer_Summit> • 第六届年度 OpenZFS
                   开发者峰会将于 2018 年 9 月 10-11 日在旧金山举行。与往届一样，
                     本次活动旨在促进 OpenZFS 工作的跨社区讨论，
                 并推动一些已提议的项目取得进展。

@@ -65,7 +65,6 @@
   hdp_user_password: "{{vault_hdp_user_pw}}"
 ```
 
-
   文件：vars.yml
 
   第一行存储 ports 安装的 OpenJDK 位置。为节省 playbook 中的输入，并替换 hadoop
@@ -85,7 +84,7 @@
 
    创建 vault 后会提示创建密码短语以打开 vault，然后在 vault 文件中打开编辑器，
   即可在其中存储机密信息。有关如何生成 Ansible user 模块可理解的加密
-  密码，请参阅（https://docs.ansible.com/ansible/latest/reference_appendices/
+  密码，请参阅（<https://docs.ansible.com/ansible/latest/reference_appendices/>
 faq.html#how-do-i-generate-crypted-passwords-for-the-user-module）。vault 中的行
   应如下所示，将 <password> 替换为密码哈希：
 
@@ -306,7 +305,7 @@ export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
 是时候部署构成 hadoop 发行版的文件了。它基本上是一个可以解压
 到任何目录的 tarball，因为它主要包含 JAR 和配置文件。这样，hadoop 可以轻松地作为一个整体复制，
 因为该目录包含运行 hadoop 所需的一切。这些文件可以从
-hadoop 网页下载（http://hadoop.apache.org/releases.html）。有许多支持的版本
+hadoop 网页下载（<http://hadoop.apache.org/releases.html）。有许多支持的版本>
 不断快速发展，意味着将有新版本定期发布。该
 页面底部列出了每个版本修复了多少 bug。与听起来相反，无需跟上 hadoop 项目
 设定的节奏，如果需要，旧版本的 hadoop 可以运行多年。本文
@@ -363,7 +362,6 @@ playbook 中使用 vars.yml 文件中的定义再次构造。Ansible 的 unarchi
 
          core-site.xml 模板
 
-
 ```xml
     <?xml version="1.0"?>
     <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -402,7 +400,6 @@ playbook 中使用 vars.yml 文件中的定义再次构造。Ansible 的 unarchi
 
          yarn-site.xml 模板
 
-
 ```xml
     <?xml version="1.0"?>
     <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -431,7 +428,6 @@ playbook 中使用 vars.yml 文件中的定义再次构造。Ansible 的 unarchi
 ```
 
    hdfs-site.xml 模板
-
 
 ```xml
 <?xml version="1.0"?>

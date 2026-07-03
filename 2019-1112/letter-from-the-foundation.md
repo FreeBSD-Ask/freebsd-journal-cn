@@ -11,7 +11,7 @@
 ## 编辑委员会
 
 | 姓名 | 职务简介 |
-| --- | --- |
+| ---- | -------- |
 | John Baldwin | FreeBSD 开发者，FreeBSD Core Team 成员，FreeBSD Journal 编辑委员会主席。 |
 | Bryan Drewery | EMC Isilon 高级软件工程师，FreeBSD Portmgr Team 成员，FreeBSD Committer。 |
 | Justin Gibbs | FreeBSD Foundation 创始人，FreeBSD Foundation 主席，Facebook 软件工程师。 |

@@ -39,6 +39,7 @@ FreeBSD 始终将一个提交队列与一个完成队列关联，形成逻辑队
   条目 64 字节。主机通过填写队列中的下一个条目
   然后写入控制器 MMIO 寄存器空间中每个队列的门铃来通知控制器新命令。在 nvme(4) 中，这在
   nvme_qpair_submit_tracker() 中完成：
+
 ```c
 696     /* 将命令从追踪器复制到提交队列。 */
 697     memcpy(&qpair->cmd[qpair->sq_tail], &req->cmd, sizeof(req->cmd));
@@ -52,7 +53,6 @@ FreeBSD 始终将一个提交队列与一个完成队列关联，形成逻辑队
 ```
 
 完成队列是一个 separate 连续主机内存区域，16 字节条目。控制器通知主机关于完成，通过填写完成队列中的下一个条目。此条目包含提交队列的 ID 和主机提交命令时使用的每个队列的命令 ID。然后控制器中断主机，驱动程序可以开始处理完成条目。NVMe 在每个完成队列条目中定义一个相位位，使主机能够确定哪些完成条目有效。控制器第一次通过队列时会将此相位位写入 1，然后在随后的队列遍历中在 0 和 1 之间交替。驱动程序根据期望值检查每个完成队列条目的相位位，以确定哪些条目包含新的完成。在 nvme(4) 中，这在 nvme_qpair_process_completions() 中完成：
-
 
 ```c
 424      while (1) {
@@ -255,7 +255,6 @@ nvme_ctrlr_submit_io_request()。
            3https://www.intel.com/content/www/us/en/io/data-direct-i-o-technology.html
            4https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=199321
          5128 是默认值。此数字可通过 hw.nvme.io_trackers 可调参数修改。
-
 
 Jim Harris 是 Intel 数据中心小组的主要软件工程师，于 2011 年获得 FreeBSD 源代码提交权限。他是 FreeBSD nvme 和 nvd 驱动程序的原始作者，也是 nvmecontrol 管理实用程序。Jim 还帮助将库和工具（如 DPDK 和 Intel VTune Amplifier）带到 FreeBSD，并将 FreeBSD nvme 驱动程序移植到用户空间，作为他目前担任存储性能开发套件软件架构师的角色。
 

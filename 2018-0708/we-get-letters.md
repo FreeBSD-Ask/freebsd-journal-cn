@@ -1,6 +1,6 @@
 # 读者来信
 
-作者：Michael W. Lucas（letters@freebsdjournal.org）
+作者：Michael W. Lucas（<letters@freebsdjournal.org>）
 
 嗨 Michael，
 
@@ -16,7 +16,7 @@
 
 FreeBSD 有很多地方可以去寻求具体帮助。系统自带帮助，在 man 页面中。许多类 Unix 操作系统做出了荒谬的决定，将 man 页面单独捆绑，FreeBSD 随系统附带手册。实际上，你无法不安装手册。当然，你可以构建一个不包含手册的 FreeBSD，但要做到这一点需要阅读大量 man 页面。
 
-人们说手册不是教程，他们没错。这就是 FreeBSD 有 Handbook 和大量文章的原因。与 man 页面不同，你可以选择不在 FreeBSD 主机上安装它们。你可以在线浏览所有文档，地址是 https://docs.freebsd.org。
+人们说手册不是教程，他们没错。这就是 FreeBSD 有 Handbook 和大量文章的原因。与 man 页面不同，你可以选择不在 FreeBSD 主机上安装它们。你可以在线浏览所有文档，地址是 <https://docs.freebsd.org。>
 
 新用户可以从 FAQ（Frequently Asked Questions）文件开始，其中包含几十个问题和答案。它涵盖从硬件兼容性到 ZFS 的所有内容，虽然 "The FreeBSD Funnies" 中的一些段子已经严重过时——1996 年就修复了那个 bug——文档的其余部分坚如磐石。现在看来，我意识到它对新用户多么有用。我仍记得当我理解为什么 du(1) 和 df(1) 对磁盘空间使用给出不同答案时的那种顿悟感。花一个小时阅读 FAQ 会给新用户带来一次又一次的顿悟。
 
@@ -26,7 +26,6 @@ FreeBSD 有很多地方可以去寻求具体帮助。系统自带帮助，在 ma
 
 —ml
 
-
 Michael，
 
 不一定。人们确实有尚未记录的问题。我们真的认为读者来信专栏可以成为 Journal 的有用补充，而你是合适的撰写者。
@@ -35,9 +34,9 @@ Michael，
 
 George，
 
-好吧，让我们谈谈那些确实有 Handbook 中没有的问题的人。当我开始使用 FreeBSD 时，你可以通过 FreeBSD-questions@FreeBSD.org 邮件列表获得帮助。它现在还在。邮件列表上的人想回答问题。他们专门订阅是为了帮助人们解决问题。这些勇敢的人自愿花时间回答用户的问题。我能做那些英雄做不到的什么？
+好吧，让我们谈谈那些确实有 Handbook 中没有的问题的人。当我开始使用 FreeBSD 时，你可以通过 <FreeBSD-questions@FreeBSD.org> 邮件列表获得帮助。它现在还在。邮件列表上的人想回答问题。他们专门订阅是为了帮助人们解决问题。这些勇敢的人自愿花时间回答用户的问题。我能做那些英雄做不到的什么？
 
-对于那些已经忘记电子邮件如何工作的年轻人，FreeBSD 论坛在 https://forums.freebsd.org。与邮件列表不同，论坛按类别分解。用户可以深入讨论安装、存储、硬件、包或任何内容。每当我看论坛，都会发现有趣的讨论。
+对于那些已经忘记电子邮件如何工作的年轻人，FreeBSD 论坛在 <https://forums.freebsd.org。与邮件列表不同，论坛按类别分解。用户可以深入讨论安装、存储、硬件、包或任何内容。每当我看论坛，都会发现有趣的讨论。>
 
 邮件列表档案里有四分之一个世纪的问题解决。我能说什么没被反复说过多次的话？
 
@@ -46,7 +45,6 @@ George，
 不愿在邮件列表档案或搜索论坛上用 DuckDuckGo 的用户肯定也不会费心给我写一封连贯的信。
 
 —ml
-
 
 Michael，
 
@@ -78,13 +76,11 @@ Dang it，George，你就是不放弃，是吧？
 
 —ml
 
-
 Michael，
 
 我们只发好的来信。我保证。
 
 —Best，George
-
 
 George，
 
@@ -94,13 +90,12 @@ Curse you。我加入。
 
 —ml
 
-
 问题？
 
-联系 letters@freebsdjournal.org。来信将按其启发或逗乐专栏作者的顺序回答。
+联系 <letters@freebsdjournal.org>。来信将按其启发或逗乐专栏作者的顺序回答。
 
 ---
 
 Michael W. Lucas 担任系统管理员超过 20 年。他的最新著作包括 SSH Mastery 第二版、Ed Mastery、Absolute FreeBSD 第三版和 git commit murder。
 
-了解更多，请访问 https://mwl.io。
+了解更多，请访问 <https://mwl.io。>
