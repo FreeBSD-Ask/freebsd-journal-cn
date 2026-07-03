@@ -487,4 +487,4 @@ hadooppool/hadoop/hdfs/datanode   refcompressratio     2.35x        -
 
 这表明在 FreeBSD 上运行 hadoop 有好处。OpenZFS 能够为存储在 HDFS 中的数据添加额外保护，并使得在底层磁盘上存储更多数据成为可能。在大数据世界中，这是一个巨大的优势。
 
-BENEDICT REUSCHLING 于 2009 年加入 FreeBSD 项目。2010 年获得完整文档提交权限后，他积极指导其他人成为 FreeBSD 提交者。他是 BSD 认证小组的监考人，2015 年加入 FreeBSD Foundation，目前担任副总裁。Benedict 拥有计算机科学理学硕士学位，在德国达姆施塔特应用技术大学教授软件开发者的 UNIX 课程。
+BENEDICT RE
