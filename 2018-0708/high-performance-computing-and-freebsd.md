@@ -1,14 +1,6 @@
 # 高性能计算与 FreeBSD
 
-     S E E
-    T E X T
-   O N L Y
-
-
-
-                 & FreeBSD
-
-                     作者：Johannes M. Dieterich
+作者：Johannes M. Dieterich
 
                  高性能计算涵盖科学         通用计算中广泛使用的重要基础技术来源，也是
                     和工程到金融和社会研究等多个     创新技术的熔炉，例如基础数值
@@ -32,8 +24,6 @@
            那么 FreeBSD 在这个 monoculture 中           图 1：典型超级计算机上 HPC 中按领域的 FLOP 使用情况。参考文献 [2]
           有何空间，FreeBSD 社区为何应该
           关心 HPC？首先，HPC 仍然是
-
-30 FreeBSD Journal
   在某种程度上，甚至可以认为云计算         所有可能的架构（包括 amd64）使用
   是为传统上没有或无法      基于 LLVM 的 clang 编译器作为基础
   负担大型      编译器，原因在于许可，
@@ -89,7 +79,6 @@
   porter 和开发者的维护负担。      libomp 的 devel/llvm port 之一。已进行多次集成测试
   正在讨论补救措施，但      ，该功能应该很快就能落地。
   尚未有补丁进入树。还请记住      希望这也会激励其他开发者
-                                                                                   July/August 2018  31
         为其他架构添加必要的 FreeBSD 位，      提供厂商调优的、汇编优化的 BLAS
         上游支持这些架构。我的测试表明      和 LAPACK 库。对于 FreeBSD，我们有多个
       libomp 在 LLVM 中的集成从      通过 blaslapack
@@ -151,7 +140,6 @@
       128      256         512        768            1,024         1,280         1,536
                           M/N/K
 
-32  FreeBSD Journal
 开发和移植到             包括优秀的自由替代方案。dtrace FreeBSD         和 hwpmc 与 benchmarks/                                                     make 分析应用性能，从用户到内核级别
 有了语言和库在 FreeBSD 上的总体积极状态，      简单。           和     可能devel/gdb                                                                 lldb没有      相同级别的图形用户
 移植 HPC 应用到 FreeBSD 和在其上开发有多难？      界面支持      ，但能完成
@@ -169,38 +157,6 @@
 
 
           的重要性不言而喻。存在各种
-
-
-
-                                                                                                                IrIr ii diudiu mm
- TThankhhaankk yyou!ouou!!
-  TThehe FreesBSDFreesBSDD FFoundationF oundation wouldwould likelkie toto
-  aacknowledgeck now eldgee ththethe followingfollow ing companiescompaneis forfor
-   ththeirier continuedcontinueed ssupportuppor t ofof thethee Project.PProejc t .
-  BBBecauseeecc aauusese ofooff generousggeeeenneerroouuss donationsddoonnaatitioonnssss suchssssuucchh asaass
-   ththeseese wewe arearee ableaable toto continuecontinuee movingmmoivng thethe
-  PProjectroejc t forward.for warard.
-
-                                                                       SS vli e r
-                                       TMTM
-
-
-
-
-
-
-                                                                          TMTM
-
-
-
-    AreA re yyouo u aa fanf a nofof FreeBSD?F ree e B SD? HelpH le p usu s giveg vi e backb a c k totoo thett h e
-   PProjectro ej c t aandn d ddonateo n a tee ttoday!to da !y freebsdfoundation.org/donate/f r e e b s d f o un d a it o nn .o r g /d o n a te /
-
-      PleaseP el a s e checkc h e c k outo u t thet h e fullf u l l listl si t ofo f generousg e n e r o u s communityc o m m u n ti y investorsi n v e s t o r s ata t
-        rffreebsdfoundation.org/donate/sponsorse e b s d f o u n d a it on. or g /d onon a t e / s p ons or s
-
-
-                                                                                   July/August 2018                                                                   33
   应用的重要性      我们的 libm 和来自 LLVM。这些应该
   无法被夸大。      已经是一个有趣的 HPC 平台，供
   存在各种      开发者使用。希望从长远来看，我们能够
@@ -265,5 +221,3 @@
   重要事项是在
   libm 和 LLVM 中正确支持 SIMD/向量化。
 
-
-34  FreeBSD Journal
