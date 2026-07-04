@@ -16,11 +16,11 @@ FreeBSD 9.3-RELEASE 发布周期已接近尾声。FreeBSD 9.3 基于 FreeBSD 9.2
 
 在 10.0-RELEASE 发布周期接近尾声时，对 ZFS 数据集的自动安装被加入 FreeBSD 安装器 bsdinstall(8)。stable/9 分支的第 264437 次修订将该功能以及 bsdinstall(8) 的其他若干变更引入 9 分支，例如安装到 GELI 加密的 geom(4) 设备，以及将扇区自动对齐到 4096 位。
 
-### ttys(5) 新增 "onifconsole" 选项
+### ttys(5) 新增 “onifconsole” 选项
 
 - stable/9@r267243（<http://svnweb.freebsd.org/changeset/base/267243>）
 
-ttys(5) 文件新增一个标志——“onifconsole”。当 tty 是活动的内核控制台时，新标志等同于 “on”（启用串行控制台）；否则默认为 “off”。这对嵌入式系统特别有用，因为这类系统可能有一条或多条可用串行通道，或者在使用 IPMI SoL（串口 over LAN）连接时，“默认” tty 可能有所不同。此变更最早出现在 head/ 的第 267243 次修订中。
+ttys(5) 文件新增一个标志——“onifconsole”。当 tty 是活动的内核控制台时，新标志等同于“on”（启用串行控制台）；否则默认为“off”。这对嵌入式系统特别有用，因为这类系统可能有一条或多条可用串行通道，或者在使用 IPMI SoL（串口 over LAN）连接时，“默认” tty 可能有所不同。此变更最早出现在 head/ 的第 267243 次修订中。
 
 ### 按 Jail 名过滤进程
 
