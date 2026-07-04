@@ -1,4 +1,4 @@
-# 在 Raspberry Pi 3 上运行 Icinga2
+# 在树莓派 3 上运行 Icinga2
 
 作者：Benedict Reuschling
 

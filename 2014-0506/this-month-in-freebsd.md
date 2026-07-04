@@ -1,4 +1,4 @@
-# 本月 FreeBSD 动态
+# FreeBSD 本月动态
 
 作者：DRU LAVIGNE
 

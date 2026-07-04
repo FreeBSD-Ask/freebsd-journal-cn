@@ -1,4 +1,4 @@
-# 书评：《FreeBSD Device Drivers》——写给无畏者的指南
+# 书评：《FreeBSD 设备驱动程序开发》——写给无畏者的指南
 
 作者：Simon Gerraty
 

@@ -1,4 +1,4 @@
-# 来自基金会的信
+# 基金会致信
 
 - 原文标题：Letter From the Foundation
 - 作者：FreeBSD Journal 编辑委员会
