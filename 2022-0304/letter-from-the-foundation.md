@@ -30,7 +30,7 @@ Arm 的 64 位架构 AArch64 在 FreeBSD 13 中已获得一级架构（Tier 1）
 
 一级架构意味着 FreeBSD 发行工程团队除现有的 amd64 和 i386 外，还会为该架构构建并发布正式发行版。安全团队以二进制和源代码更新支持该架构，修复漏洞和勘误。软件包团队提供完整的二进制软件包集合。
 
-Arm 于 2011 年 10 月公开披露了 AArch64 架构细节，Andrew Turner 很快对 FreeBSD 移植产生了兴趣。FreeBSD 基金会于 2014 年开始支持 arm64 移植工作，资金来自 Arm 和 Cavium。与 Andrew 及 Semihalf 合作，Cavium 的 ThunderX 处理器被引入，成为 FreeBSD/arm64 的首个参考平台。基金会在发行工程、工具链支持等方面做出了贡献。
+Arm 于 2011 年 10 月公开披露了 AArch64 架构细节，Andrew Turner 很快对 FreeBSD 移植产生了兴趣。FreeBSD 基金会于 2014 年开始支持 arm64 移植工作，资金来自 Arm 和 Cavium。与 Andrew 及 Semihalf 合作，Cavium 的 ThunderX 处理器被引入，成为 FreeBSD/arm64 的首个参考平台。基金会在发行工程、工具链支持等方面贡献了力量。
 
 多年来支持持续改进，但晋升一级架构需要多种因素的汇聚。
 
@@ -51,4 +51,4 @@ FreeBSD Journal 由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #10
 电话：720/207-5142，传真：720/222-2350
 邮箱：info@freebsdfoundation.org
 
-Copyright © 2022 by FreeBSD Foundation. All rights reserved. 未经出版商书面许可，本杂志不得全部或部分复制。
+Copyright © 2021 by FreeBSD Foundation. All rights reserved. 未经出版商书面许可，本杂志不得全部或部分复制。
