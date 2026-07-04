@@ -22,7 +22,7 @@ FreeBSD 在内核中内置了 PF，基本系统中也包含相关工具，但 PF
 
 既然你知道只包含一行
 
-```
+```pf
 pass
 ```
 
@@ -30,7 +30,7 @@ pass
 
 如果你尝试重新加载这个极简文件中的规则，并对 `pfctl` 使用 `-v`（verbose）选项，你会看到规则实际加载后的样子：
 
-```
+```sh
 $ sudo pfctl -vf /etc/pf.conf
 pass all flags S/SA keep state
 ```
@@ -43,13 +43,13 @@ pass all flags S/SA keep state
 
 但首先，让我们看看五字节的最大安全规则集——
 
-```
+```pf
 block
 ```
 
 它加载后是这个样子
 
-```
+```sh
 $ sudo pfctl -vf pf.conf
 block drop all
 ```
@@ -60,7 +60,7 @@ block drop all
 
 我从未见过有系统把这个作为完整规则集运行超过几分钟，但它确实是一个非常有用的起点。如果以 block 为默认，你只允许自己知道需要的服务，最终你会得到一个设置，其中你对进出系统的内容有比更宽松的默认值好得多的控制。我见过不少系统正是以这条（block）作为第一条规则，后面跟着其他让特定类型流量通过的规则。这间接揭示了 PF 规则集的结构：最后匹配的规则胜出。在典型的简单配置中，规则集如下：
 
-```
+```pf
 clients = "192.168.103/24"
 backupserver = "192.0.2.227"
 bacula_ports = "9101:9103"
@@ -75,7 +75,7 @@ pass inet proto tcp from $backupserver to $clients port $bacula_ports
 
 逻辑相当清晰。初始的 block 规则默认阻止一切，而接下来的三条规则让来自特定主机的特定流量通过，前提是它瞄准的是指定的端口。好吧，我超前了一点，还引入了另外两个功能：宏（macros）和列表（lists）。宏会就地展开，而像 tcp_ports 和 udp_ports 这样的列表会让解析器为每个列表项生成一条规则，因此实际加载的规则看起来更像是这样：
 
-```
+```sh
 $ sudo pfctl -vf /etc/pf.conf
 clients = "192.168.103/24"
 backupserver = "192.0.2.227"
@@ -107,7 +107,7 @@ pass inet proto tcp from 192.0.2.227 to 192.168.103.0/24 port 9101:9103 flags S/
 
 让我们回到把噪音挡在网络之外、至少挡在日志之外的话题。考虑这个（不完整的）配置：
 
-```
+```pf
 table <bruteforce> persist
 block quick from <bruteforce>
 pass inet proto tcp to $int_if:network port $tcp_services \
@@ -123,7 +123,7 @@ overload <bruteforce> flush global)
 
 有几种方法可以调整状态跟踪选项以适应你的特定需求；一个明显的可能性是为特定类型的流量引入具有不同速率限制的规则。针对 ssh 和其他一些服务的密码猜测近年来有所减缓，现代规则集可能会对 ssh 使用类似这样的规则：
 
-```
+```pf
 # 对 ssh 更严格
 pass quick proto tcp to port ssh \
 keep state (max-src-conn 15, max-src-conn-rate 5/3, \
