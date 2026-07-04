@@ -1,4 +1,4 @@
-# 读者来信：.0 版本就是一次隐喻式的换胎
+# 读者来信
 
 - 原文链接：[We Get Letters: The .0 Release is a Metaphorical Tire Change](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/we-get-letters/)
 - 作者：Michael W Lucas

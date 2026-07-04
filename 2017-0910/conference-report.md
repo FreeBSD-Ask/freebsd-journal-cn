@@ -1,4 +1,4 @@
-# 会议报告：BSDCam 2017
+# 会议报告
 
 作者：MICHAEL W LUCAS
 
