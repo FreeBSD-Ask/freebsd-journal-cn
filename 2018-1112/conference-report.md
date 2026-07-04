@@ -14,9 +14,9 @@
 
 ## 周四
 
-我从酒店步行前往会议地点 Politehnica University of Bucharest（布加勒斯特理工大学），这是罗马尼亚最大的技术大学，1864 年作为桥梁、道路、矿山与建筑学校创立，1920 年更名。一位名叫 Pedro 的与会者是我遇到的第一人。我们同时办理注册，然后坐在一起。我们立刻开始讨论 FreeBSD 笔记本，分享各种技巧。例如，Pedro 演示了如何轻松地通过 USB 将 Android 的网络共享到 FreeBSD：启用 USB 共享，插上电缆，运行 `dhclient` 后跟设备名（`ue0` 或类似设备），等待几秒钟，会议 WiFi 的互联网就通过 Android 的 USB 共享连接到 FreeBSD。Pedro 在笔记本上运行 FreeBSD-CURRENT，我在我的笔记本上运行 FreeBSD-RELEASE。Benedict Reuschling 加入后，我们一起走向他的 Ansible 教程。
+我从酒店步行前往会议地点 Politehnica University of Bucharest（布加勒斯特理工大学），这是罗马尼亚最大的技术大学，1864 年作为桥梁、道路、矿山与建筑学校创立，1920 年更名。一位名叫 Pedro 的与会者是我遇到的第一人。我们同时办理注册，然后坐在一起。我们立刻开始讨论各自的 FreeBSD 笔记本，分享各种技巧。例如，Pedro 演示了如何轻松地通过 USB 将 Android 的网络共享到 FreeBSD：启用 USB 网络共享，插上电缆，运行 `dhclient` 后跟设备名（`ue0` 或类似设备），等待几秒钟，会议 WiFi 的互联网就通过 Android 的 USB 共享连接到 FreeBSD。Pedro 在笔记本上运行 FreeBSD-CURRENT，我在我的笔记本上运行 FreeBSD-RELEASE。Benedict Reuschling 加入后，我们一起走向他的 Ansible 教程。
 
-Reuschling 的教程充满了实用示例，在演示如何以实用方式使用系统各部分的同时，深入讲解各种组件。我很享受能学到这么多管理服务器的技术。
+Reuschling 的教程充满了实用示例，在演示如何以实用方式使用系统各部分的同时，深入讲解各种组件。我很高兴能学到这么多管理服务器的技术。
 
 接下来，我参加了 Niclas Zeising 主讲的 Poudriere 教程，他精彩地介绍了 Poudriere，演示了编译 ports 时可能用到的一些功能。他还带领参与者逐步创建 port。教程参与者受邀参加 Devsummit 晚宴，于是我决定参加，结果与 Deb Goodkin 和 Benedict Reuschling 同桌。晚宴后不久，Mahdi Mokhi 加入我们的桌子，我们讨论了我用 FreeBSD 和 Python 所做的工作。
 
