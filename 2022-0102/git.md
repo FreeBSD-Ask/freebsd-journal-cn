@@ -3,7 +3,7 @@
 - 原文链接：[Contributing to FreeBSD Ports with Git](https://freebsdfoundation.org/wp-content/uploads/2022/08/mingrone_revised.pdf)
 - 作者：**JOSEPH MINGRONE**
 
-FreeBSD ports 树于 1994 年创建，并使用 CVS 进行跟踪，直到 2012 年 7 月 15 日，Subversion 接管了这一过程。2021 年 4 月 6 日，第二次代码库转换发生，真理的源代码从 Subversion 迁移到 Git。由于 CVS 和 Subversion 都是集中式版本控制系统，因此第一次转换所需的工作流变更没有第二次迁移到 Git 时复杂，因为 Git 是一个分布式版本控制系统。
+FreeBSD ports 树于 1994 年创建，并使用 CVS 进行跟踪，直到 2012 年 7 月 15 日，Subversion 接管了这一过程。2021 年 4 月 6 日，第二次代码库转换发生，权威源从 Subversion 迁移到 Git。由于 CVS 和 Subversion 都是集中式版本控制系统，因此第一次转换所需的工作流变更没有第二次迁移到 Git 时复杂，因为 Git 是一个分布式版本控制系统。
 
 这不是一本全面的 Git 使用指南。本文的目的是引导那些不熟悉 Git 或 FreeBSD ports 的人，帮助他们通过 Git 工作流为 FreeBSD ports 做贡献。所涉的主题包括：
 
@@ -55,7 +55,7 @@ https://git.freebsd.org/ports.git ~/freebsd/ports
 zfs create zroot/usr/home/ashish/ports/distfiles
 ```
 
-与 ports 文件本身不同，软件分发文件通常已经压缩，因此可以关闭 `zroot/usr/home/ashish/freebsd/ports/distfiles` 数据集的 ZFS 压缩。
+与 ports 文件本身（主要是文本文件）不同，软件分发文件通常已经压缩，因此可以关闭 `zroot/usr/home/ashish/freebsd/ports/distfiles` 数据集的 ZFS 压缩。
 
 ```sh
 zfs set compression=off zroot/usr/home/ashish/freebsd/ports/distfiles
@@ -79,7 +79,7 @@ export PORTSDIR=/usr/home/ashish/freebsd/ports
 
 ## 保持更新
 
- Ports 是活跃开发的，因此更改会经常推送到 git.freebsd.org/ports.git。要获取上游 FreeBSD 仓库中发生的更改，可以使用：
+ ports 树是活跃开发的，因此更改会经常推送到 git.freebsd.org/ports.git。要获取上游 FreeBSD 仓库中发生的更改，可以使用：
 
 ```sh
 git -C ~/freebsd/ports fetch freebsd 
@@ -189,7 +189,7 @@ git config --global core.editor "emacs -nw"
 git commit
 ```
 
-你的编辑器现在应该显示提交模板，模板中提供了创建提交信息的提示。主题行应采用以下格式：`<port-name>: <description>`，并且理想情况下应少于 50 个字符。一个好的主题行可能是：
+你的编辑器现在应该显示提交模板，模板中提供了创建提交信息的提示。主题行应采用以下格式：`<变更的 ports 树部分>: <变更的简要概述>`，并且理想情况下应少于 50 个字符。一个好的主题行可能是：
 
 ```sh
 www/nyxt: (WIP) First attempt to port Nyxt browser.
@@ -577,7 +577,7 @@ arc diff --update <revision>
 
 ### 主观结论
 
-变革可能是困难的。许多在 Subversion 上投入大量时间并且变得高效的 FreeBSD 开发者和贡献者，对于转向一个全新的版本控制系统，尤其是这样一个在基本原理上完全不同的系统，感到不情愿。我们失去了一些实用的特性，比如简单的、单调递增的提交修订号和在目录和文件被移动时的确定性历史保留。然而，在经历了大约三个月的时间后，大多数迹象表明开发者和更广泛的社区对这一变化感到满意并且能够高效地工作。虽然很难单独归因于某些结果，但从转换日期（2021-04-06）到写作日期（2021-12-31），提交到 Ports 的次数为 29,238 次，比去年同期多了 1,748 次。希望这将是 Ports 贡献的持续趋势。
+变革可能是困难的。许多在 Subversion 上投入大量时间并且变得高效的 FreeBSD 开发者和贡献者，对于转向一个全新的版本控制系统，尤其是这样一个在基本原理上完全不同的系统，感到不情愿。我们失去了一些实用的特性，比如简单的、单调递增的提交修订号和在目录和文件被移动时的确定性历史保留。然而，在经历了大约九个月的时间后，大多数迹象表明开发者和更广泛的社区对这一变化感到满意并且能够高效地工作。虽然很难单独归因于某些结果，但从转换日期（2021-04-06）到写作日期（2021-12-31），提交到 Ports 的次数为 29,238 次，比去年同期多了 1,748 次。希望这将是 Ports 贡献的持续趋势。
 
 ---
 

@@ -39,16 +39,16 @@
 
 ![Xpdf 图标缺失](https://github.com/user-attachments/assets/2d227190-d85f-4d09-b738-4d1e2bb765a9)
 
-在我们开始修改 ports 树之前，先来了解一下为什么 Xpdf 图标会缺失。Xfce 应用程序查找器根据位于 `/usr/local/share/applications` 的桌面文件生成条目列表。
+在我们开始修改 ports 树之前，先来了解一下为什么 Xpdf 图标会缺失。Xfce 应用程序查找器根据位于 **/usr/local/share/applications** 的桌面文件生成条目列表。
 
-其中名为 `/usr/local/share/applications/xpdf.desktop` 的文件描述了 Xpdf 条目。让我们看看这个文件中是否与图标相关的内容。
+其中名为 **/usr/local/share/applications/xpdf.desktop** 的文件描述了 Xpdf 条目。让我们看看这个文件中是否与图标相关的内容。
 
 ```sh
 $ grep -i icon /usr/local/share/applications/xpdf.desktop
 Icon=xpdf
 ```
 
-图标的名称是 xpdf。让我们看看是否能在 `/usr/local/share/icons` 中找到这样一个图标。
+图标的名称是 xpdf。让我们看看是否能在 **/usr/local/share/icons** 中找到这样一个图标。
 
 ```sh
 $ find /usr/local/share/icons -name '*xpdf*'
@@ -58,7 +58,7 @@ $ find /usr/local/share/icons -name '*xpdf*'
 
 ## 开发补丁
 
-我们需要的第一件事是 FreeBSD ports 树的副本。你可以在 FreeBSD 手册中查阅详细信息（<https://docs.freebsd.org/en/books/handbook/ports/#ports-using）。最终，我们只需要以下命令：>
+我们需要的第一件事是 FreeBSD ports 树的副本。你可以在 FreeBSD 手册中查阅详细信息（<https://docs.freebsd.org/en/books/handbook/ports/#ports-using>）。最终，我们只需要以下命令：
 
 ```sh
 $ git clone https://git.FreeBSD.org/ports.git ~/ports
@@ -157,7 +157,7 @@ work/xpdf-4.03/xpdf-qt/indicator-icon5.svg
 work/xpdf-4.03/xpdf-qt/indicator-icon2.svg
 ```
 
-太棒了！`xpdf-icon.ico` 和 `xpdf-icon.svg` 看起来很有前景。这些文件就是我们需要安装到 `/usr/local/share/icons` 的文件。为了实现这一点，我们需要编辑 port 的 Makefile，并扩展安装目标。这个 port 已经有了 `post-install` 目标，因此我们只需要在其中添加四行代码。我们将使用 `${INSTALL_DATA}` 来安装图标文件，并使用 `${MKDIR}` 来创建目录。这些变量是 FreeBSD Ports 框架中定义的众多包装变量的例子。如果你想了解更多这些变量的信息，可以查看例如 `make -V INSTALL_DATA` 的输出。到目前为止，补丁应该如下所示：
+太棒了！`xpdf-icon.ico` 和 `xpdf-icon.svg` 看起来很有前景。这些文件就是我们需要安装到 **/usr/local/share/icons** 的文件。为了实现这一点，我们需要编辑 port 的 Makefile，并扩展安装目标。这个 port 已经有了 `post-install` 目标，因此我们只需要在其中添加四行代码。我们将使用 `${INSTALL_DATA}` 来安装图标文件，并使用 `${MKDIR}` 来创建目录。这些变量是 FreeBSD Ports 框架中定义的众多包装变量的例子。如果你想了解更多这些变量的信息，可以查看例如 `make -V INSTALL_DATA` 的输出。到目前为止，补丁应该如下所示：
 
 ```c
 diff --git a/graphics/xpdf4/Makefile b/graphics/xpdf4/Makefile
@@ -195,9 +195,9 @@ index e6cd3e15dd75..7eee2ae85bc6 100644
  %%DATADIR%%/man/man1/pdffonts.1.gz
 ```
 
-列表中的路径是相对于 `${PREFIX}`（默认情况下是 `/usr/local`）的。行首的 `%%GUI%%` 表示这些文件只有在启用 GUI 选项时才会被安装（显然，有些人喜欢将他们的 Xpdf 软件设置为无头模式）。
+列表中的路径是相对于 `${PREFIX}`（默认情况下是 **/usr/local**）的。行首的 `%%GUI%%` 表示这些文件只有在启用 GUI 选项时才会被安装（显然，有些人喜欢将他们的 Xpdf 软件设置为无头模式）。
 
-我们需要处理的最后一件事是增加 port 的修订号。待更改进入 ports 树，port 构建者必须知道重新构建带有我们修改的包。增加修订号最简单的方法是使用 `portedit`（它是 `portfmt` 包的一部分）：
+我们需要处理的最后一件事是增加 port 的修订号。一旦更改进入 ports 树，port 构建者必须知道重新构建带有我们修改的包。增加修订号最简单的方法是使用 `portedit`（它是 `portfmt` 包的一部分）：
 
 ```sh
 $ portedit bump-revision -i Makefile
