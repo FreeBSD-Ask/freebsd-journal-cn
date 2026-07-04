@@ -99,7 +99,7 @@ Num     Type        Disp Enb Address    What
 
 ## 调试 fork
 
-许多程序通过 fork(2)（<https://www.freebsd.org/cgi/man.cgi?query=fork(2)）和> vfork(2)（<https://www.freebsd.org/cgi/man.cgi?query=vfork(2)）系统调用创建新进程。GDB> 提供了多种工具来处理 fork 产生的子进程。下面的示例将使用清单 1 中的测试程序演示这些功能。
+许多程序通过 fork(2)（<https://www.freebsd.org/cgi/man.cgi?query=fork(2)>）和 vfork(2)（<https://www.freebsd.org/cgi/man.cgi?query=vfork(2)>）系统调用创建新进程。GDB 提供了多种工具来处理 fork 产生的子进程。下面的示例将使用清单 1 中的测试程序演示这些功能。
 
 清单 1：forktest.c
 
@@ -189,7 +189,7 @@ I'm in the child
 
 除了决定 fork 后跟随哪个进程，GDB 还可以选择如何处理非跟随的进程。默认情况下，GDB 从非跟随进程分离，让它在 fork 后自由运行。可以将 `detach-on-fork` 设置改为 "no" 来改变这一行为。设置为 "no" 时，GDB 保持附加在两个进程上，并在 fork 后让两个进程都暂停。
 
-要管理这两个进程，会使用 GDB 的多进程支持（<https://sourceware.org/gdb/current/onlinedocs/gdb/Inferiors-and-Programs.html#Inferiors-and-Programs）。在> GDB 术语中，每个进程关联一个 "inferior"。`info inferiors` 命令用于列出活动的 inferior。`inferior` 命令用于在 inferior 之间切换。来自不同进程的线程也会在 `info threads` 命令中显示。切换到不同 inferior 的线程也是切换 inferior 的一种方式。fork 后，跟随进程的 inferior 被设为当前 inferior。
+要管理这两个进程，会使用 GDB 的多进程支持（<https://sourceware.org/gdb/current/onlinedocs/gdb/Inferiors-and-Programs.html#Inferiors-and-Programs>）。在 GDB 术语中，每个进程关联一个 "inferior"。`info inferiors` 命令用于列出活动的 inferior。`inferior` 命令用于在 inferior 之间切换。来自不同进程的线程也会在 `info threads` 命令中显示。切换到不同 inferior 的线程也是切换 inferior 的一种方式。fork 后，跟随进程的 inferior 被设为当前 inferior。
 
 示例 7 再次给出测试程序的示例。这次禁用 `detach-on-fork`，让两个进程在 fork 后都保持暂停。使用默认的 fork 跟随模式，因此 fork 后 GDB 仍关注父进程。注意，子进程停在 fork 后的第一条指令处。
 
@@ -247,7 +247,7 @@ I'm in the parent
 
 ### 捕获 fork
 
-GDB 还提供了一组用于调试 fork 进程的工具：一组与 fork 相关事件的捕获点。`catch fork` 命令为非 vfork(2)（<https://www.freebsd.org/cgi/man.cgi?query=vfork(2)）的> fork 调用安装捕获点。捕获点在跟随进程从 fork 返回时触发。`catch vfork` 命令为 vfork(2) 的 fork 调用安装捕获点。最后，`catch exec` 命令为 exec 系列系统调用的返回安装捕获点。示例 8 跟随一个 shell 进程，该进程 fork 出一个子进程来执行命令。
+GDB 还提供了一组用于调试 fork 进程的工具：一组与 fork 相关事件的捕获点。`catch fork` 命令为非 vfork(2)（<https://www.freebsd.org/cgi/man.cgi?query=vfork(2)>）的 fork 调用安装捕获点。捕获点在跟随进程从 fork 返回时触发。`catch vfork` 命令为 vfork(2) 的 fork 调用安装捕获点。最后，`catch exec` 命令为 exec 系列系统调用的返回安装捕获点。示例 8 跟随一个 shell 进程，该进程 fork 出一个子进程来执行命令。
 
 示例 8：捕获 fork 和 exec
 
