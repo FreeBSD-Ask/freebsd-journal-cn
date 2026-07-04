@@ -26,7 +26,7 @@
 
 ## 欢迎阅读《FreeBSD Journal》五/六月刊！
 
-计算机是有用的工具，能自动化许多任务。然而，有时事情会出错，原因可能是自然灾害、硬件故障、软件缺陷或配置错误。（这四种我都至少留有伤疤。）Daniel Bell 提出了一种策略，可用于构建在面对此类故障时具有弹性的系统。
+计算机是有用的工具，能自动化许多任务。然而，有时事情会出错，原因可能是自然灾害、硬件故障、软件缺陷或配置错误。（这四种我都至少留有伤疤。）Daniel Bell 提出了一种策略，可用于构建系统，使其在面对此类故障时具有弹性。
 
 虽然在灾难期间或之后，恢复功能通常是首要任务，但诊断最初故障的原因也很重要。在软件缺陷的情况下，调试器是首要工具。Michal Górny 和 Kamil Rytarowski 介绍了来自 LLVM 项目的最新版 LLDB 调试器。Mark Johnston 讨论了通过网络连接进行内核调试，特别是如何通过网络连接而非本地磁盘保存崩溃转储。
 
@@ -41,6 +41,6 @@ FreeBSD Core Team 成员，FreeBSD Journal 编辑委员会主席
 
 FreeBSD Journal 由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #103-107, Boulder, CO 80304
 电话：720/207-5142，传真：720/222-2350
-邮箱：info@freebsdfoundation.org
+邮箱：<info@freebsdfoundation.org>
 
 Copyright © 2022 by FreeBSD Foundation. All rights reserved. 未经出版商书面许可，本杂志不得全部或部分复制。
