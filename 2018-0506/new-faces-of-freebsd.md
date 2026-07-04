@@ -2,9 +2,9 @@
 
 作者：Dru Lavigne
 
-此专栏旨在 spotlight 最近获得 commit bit 的贡献者，并向 FreeBSD 社区介绍他们。
+此专栏旨在聚焦最近获得 commit bit 的贡献者，并向 FreeBSD 社区介绍他们。
 
-本期 spotlight：Jason Bacon（11 月获得 ports bit）、Koichiro Iwao（3 月获得 ports bit）、Sean Fagan（4 月获得 src bit）、Vincenzo Maffione（3 月获得 src bit）、Fernando Apesteguía（3 月获得 ports commit）、Tom Jones（4 月获得 src bit）和 Eric Turgeon（3 月获得 ports bit）。
+本期聚焦：Jason Bacon（11 月获得 ports bit）、Koichiro Iwao（3 月获得 ports bit）、Sean Fagan（4 月获得 src bit）、Vincenzo Maffione（3 月获得 src bit）、Fernando Apesteguía（3 月获得 ports commit）、Tom Jones（4 月获得 src bit）和 Eric Turgeon（3 月获得 ports bit）。
 
 ## 介绍一下你自己、背景和兴趣
 
@@ -16,7 +16,7 @@
 
 哲学上，最接近我的标签是佛教/道教。我信奉完全的开放、自我消除，任何愤怒的暗示都是指向个人成长空间的路标。
 
-**Koichiro**：我出生在日本西南的九洲岛，现在仍在九洲。我是 xrdp 的上游开发者，xrdp 通过 Microsoft Remote Desktop Protocol 为类 UNIX 操作系统提供到远程客户端的图形登录。我在一个 xrdp 项目上工作，改善 FreeBSD 兼容性并处理非 ASCII 字符如 CJK。我也对桌面虚拟化感兴趣。你应该已经知道 GNU screen 和 tmux 有多有用。桌面虚拟化将提供 GUI 版的 GNU screen。你可以从任何地方通过网络恢复现有的远程会话。
+**Koichiro**：我出生在日本西南的九州岛，现在仍在九州。我是 xrdp 的上游开发者，xrdp 通过 Microsoft Remote Desktop Protocol 为类 UNIX 操作系统提供到远程客户端的图形登录。我在一个 xrdp 项目上工作，改善 FreeBSD 兼容性并处理非 ASCII 字符如 CJK。我也对桌面虚拟化感兴趣。你应该已经知道 GNU screen 和 tmux 有多有用。桌面虚拟化将提供 GUI 版的 GNU screen。你可以从任何地方通过网络恢复现有的远程会话。
 
 **Sean**：从决定用 C 写一个 PDP-11 模拟器而不是使用过载的 RSTS/E 系统来做大学汇编语言课程作业时起，我就对类 UNIX 系统感兴趣。我从大学到 The Santa Cruz Operation 工作，大部分时间在 XENIX 上移植 Microsoft 的 C Compiler。我玩了一些内核方面的东西（添加简单形式的 ACL，只是为了看看能不能做到），当 SCO 推出基于 SysVr3.2 的系统时（为了 POSIX 合规性支持作业控制），我开始让它工作（这也涉及从 BSD 移植 tcsh 到 SysVr3.2 并让 emacs 在其上工作）。我把补丁发回给开源代码，也开始为当时新的 386BSD 写一些简单的底层 libc 例程。这导致我为 Cygnus 工作，意味着更直接地参与开源（虽然过了一段时间才有这个名字）。
 
@@ -26,7 +26,7 @@
 
 在个人方面，我和女朋友住在一起，她苦于我缺乏空闲时间。我尽量多旅行和练习武术。我有空手道三段黑带，练习了 25 年，我还有其他学科如 SAMBO 和自卫的黑带。
 
-**Tom**：我是苏格兰东北部阿伯丁大学的研究员，研究互联网传输和标准化。过去几年我一直在 EU NEAT 项目（<https://www.neat-project.org/）中用现代且适应性强的东西替换> Socket API。有时我需要从计算机后面走出来，把它搬到当地的黑客空间 57North Hacklab。其他时候，如果天气好，我会走得更远，在帐篷里设置计算机。
+**Tom**：我是苏格兰东北部阿伯丁大学的研究员，研究互联网传输和标准化。过去几年我一直在 EU NEAT 项目（<https://www.neat-project.org/>）中用现代且适应性强的东西替换 Socket API。有时我需要从计算机后面走出来，把它搬到当地的黑客空间 57North Hacklab。其他时候，如果天气好，我会走得更远，在帐篷里设置计算机。
 
 **Eric**：我是 GhostBSD 的创始人，去年 9 月开始作为 QA 部门的自动化工程师为 iXsystems 工作。我娶了一位名叫 Karine 的好女人，她对我花时间在 GhostBSD 上非常耐心，我有一个去年一月满六岁的儿子 Samuel。像他父亲一样，他喜欢计算机和技术，也是 Minecraft 的狂热粉丝。我目前住在加拿大新不伦瑞克省迪耶普市。我说法语、英语和 Chiac（法语和英语混合）。
 
@@ -72,7 +72,7 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 **Fernando**：成为全职 FreeBSD 用户后，我开始贡献一些 port PR。2011 年，我发了几个 PR，移植了 wiki 的 WantedPorts 页面中列出的一些 ports。这是一件有趣的事，让我学到了很多，得益于所有提交我补丁的人的提示。我甚至在母校（Universidad de Valladolid）做了几次关于 FreeBSD 和如何创建 ports 的演讲。一段时间后，我觉得应该更深入地参与项目，所以我开始用"嘿，如果有人能指导我完成导师过程，我愿意提升"之类的话结束所有 PR。一段时间后，tz@ 回应了我的请求。tz@ 和 tcberner@ 是我耐心的导师。我仍在愉快地学习如何成为一名好的 ports committer。
 
-**Tom**：去年在布拉格的 IETF 上，我被放鸽子吃午餐，被邀请加入一位同事和 Netflix 团队。吃鲁本三明治时，我和 Jonathan Looney（我的导师）聊起我迄今为止在 FreeBSD 上做的工作。几周后在剑桥的 BSDCam，Jonathan 问我是否有兴趣成为 committer。
+**Tom**：去年在布拉格的 IETF 上，约我吃午餐的人放了我鸽子，反而邀请我加入一位同事和 Netflix 团队。吃鲁本三明治时，我和 Jonathan Looney（我的导师）聊起我迄今为止在 FreeBSD 上做的工作。几周后在剑桥的 BSDCam，Jonathan 问我是否有兴趣成为 committer。
 
 实际上，直到 3 月伦敦 IETF 会议我才和 Jonathan 说话并询问启动流程需要哪些步骤。两周后我收到了 Core 的出色邮件。
 
