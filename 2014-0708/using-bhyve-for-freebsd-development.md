@@ -90,7 +90,7 @@ dhcp-range=192.168.16.10,192.168.16.200,12h
 
 **示例 4：启用 dnsmasq 的 DNS 和 DHCP 服务器**
 
-除了为 DHCP 客户端提供本地 DNS 名称外，dnsmasq 还为宿主机上 **/etc/hosts** 中的任何条目提供 DNS 名称。在 **/etc/hosts** 中添加一条将分配给 bridge0 的 IP 地址映射到主机名（例如"host"）的条目，可让客户机使用该主机名联系宿主机。
+除了为 DHCP 客户端提供本地 DNS 名称外，dnsmasq 还为宿主机上 **/etc/hosts** 中的任何条目提供 DNS 名称。在 **/etc/hosts** 中添加一条将分配给 bridge0 的 IP 地址映射到主机名（例如“host”）的条目，可让客户机使用该主机名联系宿主机。
 
 剩下最后一件事：配置宿主机使用 dnsmasq 的 DNS 服务器。让宿主机使用 dnsmasq 的 DNS 服务器后，宿主机就能解析每个客户机的名称。`dnsmasq` 守护进程可以使用 `resolvconf(8)` 无缝处理由 DHCP 或 VPN 客户端提供的宿主机 DNS 配置更新。这是通过 `resolvconf(8)` 更新两个配置文件实现的，dnsmasq 在宿主机 DNS 配置变更时读取这两个文件。最后，宿主机应始终使用 dnsmasq 的 DNS 服务器，并依赖它将请求转发给其他上游 DNS 服务器。
 
