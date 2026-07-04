@@ -7,15 +7,15 @@
 
 **Aberdeen FreeBSD 黑客马拉松** • 4 月 17–19 日 • 苏格兰阿伯丁
 
-<https://wiki.freebsd.org/Hackathon/201904> • 欢迎来苏格兰阿伯丁大学参加 FreeBSD 黑客马拉松。本次活动安排在 AsiaBSDCon 与 BSDCan 的中间点，给热情的黑客们填满日程的机会。更多信息见 wiki。报名截止日期为 2019 年 3 月 31 日。
+<https://wiki.freebsd.org/Hackathon/201904> • 欢迎来苏格兰阿伯丁大学参加 FreeBSD 黑客马拉松。本次活动安排在 AsiaBSDCon 与 BSDCan 的中间点，给热情的黑客填满日程的机会。更多信息见 wiki。报名截止日期为 2019 年 3 月 31 日。
 
 **FOSSASIA 2019** • 3 月 14–17 日 • 新加坡
 
-<http://2019.fossasia.org/> • FOSSASIA 峰会是面向开发者、初创企业及 IT 专业人士的亚洲领先开放技术大会，将于 2019 年 3 月 14–17 日在新加坡终身学习学院举办。
+<http://2019.fossasia.org/> • FOSSASIA 峰会是面向开发者、初创企业、IT 专业人士的亚洲领先开放技术大会，将于 2019 年 3 月 14–17 日在新加坡终身学习学院举办。
 
 **AsiaBSDCon** • 3 月 21–24 日 • 日本东京
 
-<https://2019.asiabsdcon.org/> • 这一年度会议面向所有开发、部署以及使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的人士。AsiaBSDCon 是一场技术大会，旨在汇集最优秀的技术论文与演讲，确保我们开源社区的最新进展能被尽可能广泛的受众所共享。
+<https://2019.asiabsdcon.org/> • 这一年度会议面向所有开发、部署、使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的人士。AsiaBSDCon 是一场技术大会，旨在汇集最优秀的技术论文与演讲，确保我们开源社区的最新进展能被尽可能广泛的受众所共享。
 
 **MENOG 19** • 3 月 31 日–4 月 4 日 • 黎巴嫩贝鲁特
 

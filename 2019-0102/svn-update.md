@@ -11,11 +11,11 @@
 
 ## nvdimm：为 NVDIMM 根设备添加驱动 —— <https://svnweb.freebsd.org/changeset/base/343143>
 
-NVDIMM 根设备是各个 ACPI NVDIMM 设备的父设备。为 NVDIMM 根设备添加驱动，使其能够枚举系统中的 NVDIMM 设备及 NVDIMM SPA 范围。
+NVDIMM 根设备是各个 ACPI NVDIMM 设备的父设备。为 NVDIMM 根设备添加驱动，使其能够枚举系统中的 NVDIMM 设备、NVDIMM SPA 范围。
 
 ## vmm(4)：向多核 bhyve AMD 支持迈进 —— <https://svnweb.freebsd.org/changeset/base/343075>
 
-bhyve 的 CPUID 仿真向客户机呈现 Intel 拓扑信息，却禁用了 AMD 拓扑信息，某些情况下还把垃圾数据透传过去。例如，CPUID leaves 0x8000_001[de] 被透传给客户机，但客户机 CPU 可以在线程间迁移，因此呈现的信息并不一致。这一点可以轻易地通过 `cpucontrol -i 0xfoo /dev/cpuctl0` 观察到。
+bhyve 的 CPUID 仿真向客户机呈现 Intel 拓扑信息，却禁用了 AMD 拓扑信息，某些情况下还把垃圾数据透传过去。例如，CPUID leaves 0x8000_001[de] 被透传给客户机，但客户机 CPU 可以在线程间迁移，因此呈现的信息并不一致。这一点可以轻易通过 `cpucontrol -i 0xfoo /dev/cpuctl0` 观察到。
 
 通过启用 AMD 拓扑特性标志位，并至少呈现 FreeBSD 自身在更现代的 AMD64 硬件（Family 15h+）上探测拓扑所用的 CPUID 字段，对这一情况进行轻微改善。更老的硬件大概不那么值得关注。我未能通过实验确认它是否足够，但也不会造成回归。
 

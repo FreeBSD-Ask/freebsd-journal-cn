@@ -27,7 +27,7 @@
 # pkg search lang/
 ```
 
-另一个优点是所有包都保持最新。repology 项目（<https://repology.org/repositories/statistics/newest>）对大量包仓库及其它来源进行分析，比较各仓库中的包版本。结论是 FreeBSD 拥有最新程度数一数二的 Ports。其包的更新程度远超 Ubuntu 最新版本。如果你需要保持最新的语言基础设施，FreeBSD 是个好选择。
+另一个优点是所有包都保持最新。repology 项目（<https://repology.org/repositories/statistics/newest>）对大量包仓库与其它来源进行分析，比较各仓库中的包版本。结论是 FreeBSD 拥有最新程度数一数二的 Ports。例如，其包的更新程度远超 Ubuntu 最新版本。如果你需要保持最新的语言基础设施，FreeBSD 是个好选择。
 
 ## 开发者环境
 
@@ -40,9 +40,9 @@
 
 如果你的 IDE 不直接支持 FreeBSD，可以尝试用 Linuxulator——FreeBSD 的 Linux 兼容层来运行。代码版本控制系统也不必担心。所有流行的开源 VCS 都能找到，例如 git、mercurial 或 svn，还可以使用 perforce 等商业产品。
 
-维护环境、测试软件，没有比 Jail 更好的方式。如果你想为不同客户准备多个版本的应用，或同时运行多个数据库，Jail 正是所需。还可以把它们与 ZFS 结合，轻松把改动推送至生产环境。如今用 iocage 或 ezjail 管理 Jail 比以往任何时候都更轻松。
+维护环境、测试软件，没有比 Jail 更好的方式。如果你想为不同客户准备多个版本的应用，或同时运行多个数据库等，Jail 正是所需。还可以把它们与 ZFS 结合，轻松把改动推送至生产环境。如今用 iocage 或 ezjail 管理 Jail 比以往任何时候都更轻松。
 
-有时 Jail 还不够，需要使用不同的操作系统。FreeBSD 也涵盖了这一需求。如果你需要轻量级虚拟化 Windows、Linux、OpenBSD、NetBSD 或 FreeBSD 之外的任何现代操作系统，bhyve 是不二之选。
+有时 Jail 还不够，需要使用不同的操作系统。FreeBSD 也涵盖了这一需求。如果你需要轻量级虚拟化任何现代操作系统，例如 Windows、Linux、OpenBSD、NetBSD 或 FreeBSD，bhyve 是不二之选。
 
 ## 收服目录混乱
 
@@ -52,13 +52,13 @@
 - **/usr/bin** 与 **/usr/sbin** 是随操作系统分发的 FreeBSD 专用二进制；
 - **/usr/local/bin** 与 **/usr/local/sbin** 是所有第三方软件落地之处。
 
-此外，整个文件系统层级结构可以在手册页 hier(7) 中查阅。FreeBSD 又一次凭借简洁清晰的方案胜出。
+此外，整个文件系统层级结构可以在手册页 `hier(7)` 中查阅。FreeBSD 又一次凭借简洁清晰的方案胜出。
 
 ## 深入你的程序
 
 DTrace 是开发者最棒的工具之一，而其他操作系统往往欠缺它。篇幅所限无法尽述 DTrace 的所有功能，但自从开始使用 DTrace，我已不知道此前是怎么熬过来的。DTrace 是动态追踪框架，最初由 Sun Microsystems 开发。用几行 D 脚本，我们就能查看程序的当前栈、分析性能、追踪函数输入，等等，不一而足。
 
-DTrace 的真正威力来自 Brendan Gregg 编写的若干脚本（<https://github.com/brendangregg/FlameGraph>），可以生成火焰图。火焰图是对被追踪软件的可视化，便于识别最频繁的代码路径。可以用来追踪许多对象，从你的软件、FreeBSD 内核，到第三方软件。所需的只是一个带符号信息的二进制文件。使用时不必停止程序，也无需重新编译。我们最近对 PostgreSQL 数据库使用 DTrace，追踪为何插入操作耗时如此之长。借助 DTrace，我们轻松地定位到表设置的问题并修复。这是 FreeBSD 相对其他操作系统对软件开发者的一项巨大优势，DTrace 应当常备你的工具箱。
+DTrace 的真正威力来自 Brendan Gregg 编写的若干脚本（<https://github.com/brendangregg/FlameGraph>），可以生成火焰图。火焰图是对被追踪软件的可视化，便于识别最频繁的代码路径。可以用来追踪许多对象，从你的软件、FreeBSD 内核，到第三方软件。所需的只是一个带符号信息的二进制文件。使用时不必停止程序，也无需重新编译。我们最近对 PostgreSQL 数据库使用 DTrace，追踪为何插入操作耗时如此之长。借助 DTrace，我们轻松定位到表设置的问题并修复。这是 FreeBSD 相对其他操作系统对软件开发者的一项巨大优势，DTrace 应当常备你的工具箱。
 
 开发底层应用时还有一些 FreeBSD 专属的实用工具：
 
@@ -79,7 +79,7 @@ DTrace 的真正威力来自 Brendan Gregg 编写的若干脚本（<https://gith
 
 FreeBSD 是许多技术的先驱。它是第一款引入 ZFS 的操作系统——Linux 世界用了多年才追上。FreeBSD 在 docker 出现很久以前就看到了容器的潜力——开发了 chroot 与 Jail。FreeBSD 兼容 POSIX，但还引入或集成了许多流行操作系统中所没有的优秀 API。
 
-所有操作系统都实现了 poll 与 select，它们在可扩展性方面存在问题。我们也见到了 epool，它非但没解决问题，反而引入了一些新问题。FreeBSD 走了不同路线，引入了 `kqueue(1)`。kqueue 在内核与用户态之间提供高效的输入输出事件管道。尤其在大量文件描述符上轮询事件时，kqueue 效率高得多。
+所有操作系统都实现了 poll 与 select，它们在可扩展性方面存在问题。我们也见到了 epoll，它非但没解决问题，反而引入了一些新问题。FreeBSD 走了不同路线，引入了 `kqueue(1)`。kqueue 在内核与用户态之间提供高效的输入输出事件管道。尤其在大量文件描述符上轮询事件时，kqueue 效率高得多。
 
 谈到描述符，也应提到进程描述符——给进程添加句柄（描述符）的新方式。许多操作系统使用的进程标识符（PID）并不可靠。在检查进程状态与发送信号之间，操作系统内可能发生许多事情，理论上 PID 可能已被另一个进程占用。进程描述符通过给你一个可靠的进程句柄来解决这些问题。即便进程终止，你仍然能拿到通知它的句柄。
 
@@ -94,7 +94,7 @@ FreeBSD 正在开发许多有趣的技术，未来或许会成为其他操作系
 FreeBSD 以文档优秀著称。软件开发方面也是如此。你多少次搜索过 ASCII 表？FreeBSD 默认就附带它的手册页：`ascii(7)`。架构/语言相关的特定内容同样如此：
 
 - `arch(7)`——架构相关细节，如指针大小、数字、页面等
-- `operator(7)`——C 与 C++ 运算符优先级及求值顺序
+- `operator(7)`——C 与 C++ 运算符优先级、求值顺序
 - `style(9)`——你能找到的最佳 C 风格，FreeBSD 已使用数十年
 - `hier(7)`——理解 Unix 文件系统布局
 
