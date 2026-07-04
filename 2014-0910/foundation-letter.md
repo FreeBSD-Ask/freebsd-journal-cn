@@ -1,3 +1,19 @@
 # 基金会来信
 
-> 本文原文内容托管于已下线的 Nxtbook 在线阅读器平台（issue.freebsdfoundation.org），无法获取文章正文。如需查阅原文，可访问 [Wayback Machine 快照](https://web.archive.org/web/20150905194726/http://freebsdfoundation.org/journal/vol1_no5/) 或 [FreeBSD Foundation 当前 TOC 页](https://freebsdfoundation.org/our-work/journal/browser-based-edition/science-systems-and-freebsd/)。
+“不要保留！”
+
+作者：FreeBSD Journal 编辑委员会
+
+几周前，FreeBSD Journal 编辑委员会部分成员参加了在保加利亚索菲亚举办的 EuroBSDcon 2014（9 月 27 日与 28 日）。与会者不仅知道或订阅了 FreeBSD Journal，还提出了一些很棒的新文章创意，其中几位甚至主动请缨撰写，这让我们十分欣慰。
+
+我想大家都认同，一本没有新鲜、相关内容的杂志会相当枯燥。我们这本专注 FreeBSD 的杂志概念，在发展相对早期的阶段便引来了源源不断的投稿，这不仅是对已为杂志撰稿的作者的肯定，也说明我们正在制作的内容足够独特、有趣，足以吸引人们为其写作。
+
+如果你一直在阅读本杂志，应该知道我们非常重视写作质量。你所习惯的高质量一方面来自原创作品，另一方面也归功于杂志出色的编辑和设计团队。编辑和设计师与所有作者合作，将他们的文字、代码示例、配套插图和文章版面打磨到最佳状态。这些文章不仅在编辑层面顶尖，外观也十分精美。如果你有文章建议，或自己的大纲、摘要，甚至是完整的文章草稿认为适合本杂志，请联系我们（<editorial@freebsdjournal.com>），编辑委员会将予以审阅。
+
+回到 EuroBSDcon——本期杂志包含 Daniel Peyrolón 撰写的简要会议报告。Daniel 是 2014 年谷歌编程之夏（GSoC）学生，他为未能参会的人带来会议的见闻。你还会读到杂志的每月固定专栏：Ports 报告（Frederic Culot 撰写）、SVN 动态（Glen Barber 撰写），以及 Dru Lavigne 的 FreeBSD 本月动态和活动日历。
+
+本期杂志收录了多样化的精彩文章，从 FreeBSD 的最新调试器（LLDB），到 FreeBSD 在科研中的应用，再到 ULE 调度器的内部机制，以及一篇关于 PF 包过滤器的文章。
+
+我们正在筹备下一期（11–12 月），这是 2014 年的最后一期，同时也忙着规划 2015 年。如前所述，我们想知道你想读什么，所以不要保留！
+
+FreeBSD Journal 编辑委员会

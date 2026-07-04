@@ -33,19 +33,3 @@ yubikey-personalization-gui
 重启刚刚安装 FreeBSD 的机器，你首先会看到一个要求输入密码短语的屏幕。正确输入密码短语后，系统将正常启动。
 
 Roller Angel 是一位热心的 BSD 用户，乐于探索 BSD 技术的各种奇妙用途。他曾基于 FreeBSD 举办编程工作坊，目前正致力于搭建一个在线培训平台，教授 BSD 及相关技术。详见 BSD.pw。
-
----
-
-贡献力量。
-
-» 支持新开发
-» FreeBSD 推广与宣传
-» 支持 FreeBSD 会议和活动
-» 保护 FreeBSD 知识产权
-» 保持 FreeBSD 自由
-
-向 FreeBSD 基金会捐款。
-
-freebsdfoundation.org/donate
-
-你的捐款很重要！

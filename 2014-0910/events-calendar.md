@@ -1,3 +1,51 @@
 # 活动日历
 
-> 本文原文内容托管于已下线的 Nxtbook 在线阅读器平台（issue.freebsdfoundation.org），无法获取文章正文。如需查阅原文，可访问 [Wayback Machine 快照](https://web.archive.org/web/20150905194726/http://freebsdfoundation.org/journal/vol1_no5/) 或 [FreeBSD Foundation 当前 TOC 页](https://freebsdfoundation.org/our-work/journal/browser-based-edition/science-systems-and-freebsd/)。
+直至 12 月
+
+作者：Dru Lavigne
+
+以下 BSD 相关会议定于 2014 年最后一个季度举行。这些活动以及本地用户组会议的更多信息，可访问 <http://www.bsdevents.org>。
+
+## Ohio LinuxFest
+
+- 时间：2014 年 10 月 24–26 日
+- 地点：美国俄亥俄州哥伦布
+- 网站：<https://ohiolinux.org/>
+
+第 12 届年度 Ohio LinuxFest 将设有 FreeBSD 展位和多场 FreeBSD 相关演讲。BSDA 认证考试将于 10 月 25 日和 26 日提供。
+
+## MeetBSD California
+
+- 时间：11 月 1–2 日
+- 地点：美国加利福尼亚州圣何塞
+- 网站：<https://meetbsd.com>
+
+这一两年一度的会议回到旧金山湾区。会议采用混合的非会议（unConference）形式，包括既定演讲以及 BoF、闪电演讲和快速极客（speed geeking）环节。本次活动期间也提供 BSDA 认证考试。
+
+## 硅谷厂商与开发者峰会
+
+- 时间：11 月 3–4 日
+- 地点：美国加利福尼亚州圣何塞
+- 网站：<https://wiki.freebsd.org/201411VendorSummit>
+
+年度硅谷厂商峰会扩展为两天，纳入开发者峰会环节，形成合并的开发者/厂商峰会。完整议程和参会信息可在线获取。
+
+## OpenZFS 开发者峰会
+
+- 时间：11 月 10–11 日
+- 地点：美国加利福尼亚州旧金山
+- 网站：<http://open-zfs.org/wiki/OpenZFS_Developer_Summit_2014>
+
+第二届年度 OpenZFS 开发者峰会旨在促进跨社区关于 OpenZFS 及其进展的讨论。第一天为演讲，第二天为黑客马拉松。
+
+## LISA
+
+- 时间：11 月 9–14 日
+- 地点：美国华盛顿州西雅图
+- 网站：<https://www.usenix.org/conference/lisa14>
+
+第 28 届大规模安装系统管理会议（LISA）将在西雅图举行。博览区设有 FreeBSD 展位。博览区开放时间为 11 月 12 日（星期三）12:00–19:00 和 11 月 13 日（星期四）10:00–14:00。可从会议网站获取免费的博览区通行证。
+
+你知道有什么会议、活动或事件可能令 FreeBSD Journal 读者感兴趣吗？
+
+请将日历条目发送至 <editor@freebsdjournal.com>。

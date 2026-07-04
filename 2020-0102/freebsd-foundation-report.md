@@ -34,23 +34,3 @@
 如果你和我们一样热爱 FreeBSD，请帮助我们传播 FreeBSD，并且如果你尚未捐赠，请今天就捐一笔。携手并肩，我们能为 FreeBSD 取得更多成就。
 
 DEB GOODKIN 是 FreeBSD 基金会执行董事。她很高兴迎来在基金会的第 15 个年头，并为自己辛勤而专注的团队感到自豪。她在数据存储行业从事工程开发、技术销售与技术营销超过 20 年。工作之余，你会在公路或山地自行车上、跑步时、与狗狗徒步时、在科罗拉多滑雪坡道上，或是读一本好书中找到她。
-
-## 谢谢！
-
-FreeBSD 基金会向以下公司致谢，感谢它们对项目的持续支持。
-
-正是这些慷慨的捐赠，让我们能够继续推动项目前行。
-
-Uranium
-Iridium
-Silver
-
-请查看完整的慷慨社区赞助者名单，详见
-freebsdfoundation.org/donors/
-
-你是 FreeBSD 的粉丝吗？帮助我们回馈项目，今天就捐赠！freebsdfoundation.org/donate/
-
-TM
-TM
-Platinum
-Gold

@@ -71,16 +71,3 @@
 **Joseph：** 我的体验相当积极。我有很棒的导师（swills 与 AMDmi3），在我跑偏时把我引回正轨。其他更资深的 Ports 开发者（尤其是 mat）也给了很多有用提示。对任何想为 Ports 树贡献的人我想说：超过 25000 个 Ports，我们需要你！《Porter's Handbook》及 poudriere、portlint 等工具让参与变得平易，即便经验不多的人也行。•
 
 DRU LAVIGNE 是 FreeBSD 项目文档提交者、BSD 认证小组主席。
-
----
-
-FreeBSD 基金会感谢以下公司持续支持本项目。正是这些慷慨捐赠，使我们能继续推动项目前行。
-
-- Juniper
-- ARM
-- Facebook
-- Netflix
-
-完整慷慨社区投资者名单见 freebsdfoundation.org/donate/sponsors
-
-你是 FreeBSD 粉丝吗？帮助我们回馈项目，今天就捐款！freebsdfoundation.org/donate/

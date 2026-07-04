@@ -12,16 +12,3 @@ All Things Open • 10 月 21–23 日 • 美国北卡罗来纳州罗利
 
 LISA • 10 月 29–31 日 • 美国田纳西州纳什维尔
 <https://www.usenix.org/conference/lisa18> • LISA 是运维专业人士的首要会议，系统管理员、系统工程师、IT 运维专业人士、SRE 从业者、开发者、IT 经理和学术研究人员在此分享关于设计、构建、保护和维护我们互联世界关键系统的实战知识。Expo 区域将设有 FreeBSD 展位。
-
-## 谢谢！
-
-FreeBSD Foundation 感谢以下公司对项目的持续支持。正是因为这些慷慨的捐赠，我们才能继续推进项目向前发展。
-
- TM                                               银牌
-
- TM
-
-你是 FreeBSD 的粉丝吗？帮助我们回馈项目，今天就捐赠！
-freebsdfoundation.org/donate/
-
-请查看 freebsdfoundation.org/donate/sponsors 上慷慨的社区投资者完整名单
