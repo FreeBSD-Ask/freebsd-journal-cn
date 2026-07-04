@@ -1,4 +1,4 @@
-# svn 更新
+# SVN 动态
 
 - 原文：[svn update](https://freebsdfoundation.org/wp-content/uploads/2016/06/svn-update.pdf)
 - 作者：Steven Kreuzer

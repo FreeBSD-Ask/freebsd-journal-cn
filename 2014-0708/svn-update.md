@@ -1,4 +1,4 @@
-# svn 更新
+# SVN 动态
 
 - 原文标题：svn update
 - 作者：Glen Barber

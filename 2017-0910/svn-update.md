@@ -1,4 +1,4 @@
-# svn 更新
+# SVN 动态
 
 作者：STEVEN KREUZER
 

@@ -1,4 +1,4 @@
-# svn 更新
+# SVN 动态
 
 - 原文链接：[svn Update](https://freebsdfoundation.org/our-work/journal/browser-based-edition/)
 - 作者：**STEVEN KREUZER**

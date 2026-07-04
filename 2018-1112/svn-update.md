@@ -1,4 +1,4 @@
-# SVN 更新
+# SVN 动态
 
 **作者：Steven Kreuzer**
 
