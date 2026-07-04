@@ -1,4 +1,4 @@
-# 基金会书信
+# 基金会来信
 
 - 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/letter-from-the-foundation/)
 - 作者：Anne Dickison、John Baldwin

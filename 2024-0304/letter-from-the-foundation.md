@@ -1,4 +1,4 @@
-# 基金会书信
+# 基金会来信
 
 欢迎阅读 3/4 月刊《FreeBSD Journal》！本期主题是开发，无论是 FreeBSD 本身的开发，还是以 FreeBSD 为平台开发其他软件。开篇是 Navdeep Parhar 撰写的 FreeBSD 内核开发实用指南，介绍了一套灵活而稳健的环境，借助虚拟机并使用 PCI 直通开发设备驱动。接着，Ben Cooksley 揭开 KDE CI 系统的面纱，概述 KDE 项目如何在 FreeBSD 上测试变更。Tom Jones 介绍 LLVM 调试器（lldb）的内核调试支持，并举例说明如何用 lua 编写新命令扩展 lldb。最后，Mark Johnston 讲述 makefs 工具支持 ZFS 的故事——这一功能对用户和开发者都颇为实用，而 Mark 正是借助 FreeBSD 独特的开发环境实现了它。
 

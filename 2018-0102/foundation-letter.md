@@ -1,4 +1,4 @@
-# 基金会书信
+# 基金会来信
 
 作者：GEORGE NEVILLE-NEIL，FreeBSD 基金会董事会主席
 

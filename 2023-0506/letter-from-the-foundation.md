@@ -1,4 +1,4 @@
-# 基金会书信
+# 基金会来信
 
 - 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2023/06/MayJune23_foundationletter.pdf)
 - 作者：John Baldwin

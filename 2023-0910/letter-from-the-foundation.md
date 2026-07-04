@@ -1,4 +1,4 @@
-# 基金会书信
+# 基金会来信
 
 - 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/our-work/journal/browser-based-edition/13099/foundation-letter-2/)
 - 作者：John Baldwin
