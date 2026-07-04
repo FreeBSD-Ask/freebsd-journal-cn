@@ -101,9 +101,9 @@ FreeBSD 项目确实有许多在各自领域造诣深厚、被誉为专家的贡
 - 提交代码、Port 或文档补丁，或报告 bug：**bugs.freebsd.org**
 - 提交活动列表和新闻条目：**lists.freebsd.org/mailman/listinfo/freebsd-doc**
 - 协助新用户：**forums.freebsd.org**
-- 讨论创建使用案例/用户故事，或请求公司引荐或基金会访问，发邮件至 **board@freebsdfoundation.org**
-- 向基金会捐款：**freebsdfoundation.org/donate**
+- 讨论创建使用案例/用户故事，或请求公司引荐或基金会访问，发邮件至 <board@freebsdfoundation.org>
+- 向基金会捐款：<https://freebsdfoundation.org/donate>
 - 在 Twitter 发布 FreeBSD 相关博客文章新帖时加上 @freebsdblogs
-- 在 **freebsd.org/docs.html** 查找更多文档
+- 在 <https://freebsd.org/docs.html> 查找更多文档
 
 Dru Lavigne 自 1997 年起将 FreeBSD 作为主力平台，是 FreeBSD 衍生项目 PC-BSD 和 FreeNAS 的首席文档撰写者。她著有《BSD Hacks》、《The Best of FreeBSD Basics》和《The Definitive Guide to PC-BSD》。她是 BSD 认证集团（BSD Certification Group Inc.）的创始人和现任主席，该非营利组织致力于建立 BSD 系统管理员认证标准；她同时担任 FreeBSD 基金会理事。
