@@ -20,7 +20,7 @@ Ports 报告是对 Ports 基础设施近期活动的汇总，涵盖 Ports 领域
 
 前文提到的 `ports-mgmt/tinderbox` 和 `ports-mgmt/poudriere` 构建系统还有配套工具 `ports-mgmt/porttools`。借助这些工具，你可以创建一个新 Port，通过 `send-pr` 为更新提交一份 PR，甚至发出 `port test` 命令把它当作简易构建系统使用。更多内容可阅读 `http://www.freebsd.org/doc/en/books/porters-handbook/testing-porttools.html`。
 
-安装该工具包时，你还会得到一个叫 `portlint` 的优秀 porter 工具。正如 `lint` 帮你去除 C 程序中的"绒毛"，`portlint` 用启发式方法帮你发现错误的空白、错位的指令，以及其他大量改进 Port 的提示与建议。例如运行：
+安装该工具包时，你还会得到一个叫 `portlint` 的优秀 porter 工具。正如 `lint` 帮你去除 C 程序中的“绒毛”，`portlint` 用启发式方法帮你发现错误的空白、错位的指令，以及其他大量改进 Port 的提示与建议。例如运行：
 
 ```sh
 portlint -C /usr/ports/devel/fakeport # this is an example only
@@ -45,7 +45,7 @@ WARN: Consider to set DEVELOPER=yes in /etc/make.conf
 
 ## 给准 Porter 的提示
 
-使用（半）自动化构建系统测试你的 Port。在上一期中，我们推荐订阅 `http://redports.org` 来测试 Port。该服务对所有人开放、为公共利益服务。有些人拥有必要的硬件资源来构建自己的构建系统。如果你正是其中一员，那么 Ports 树里有些工具可以一试。最初的构建系统是老牌的 Tinderbox，在树中以 `ports-mgmt/tinderbox` 出现，还有其前沿版本 `ports-mgmt/tinderbox-devel`。可阅读其网站 `http://tinderbox.marcuscom.com/` 了解更多。近年来出现了一个名为 Poudriere 的较新构建系统，译自法语大致就是"tinderbox"。可在 Ports 树中找到 `ports-mgmt/poudriere`，以及其前沿版本 `ports-mgmt/poudriere-devel`。更多信息见 `http://fossil.etoilebsd.net/poudriere`。`poudriere` 构建系统现已成为 Ports 管理团队执行 `-exp` 测试运行和包构建的基础。
+使用（半）自动化构建系统测试你的 Port。在上一期中，我们推荐订阅 `http://redports.org` 来测试 Port。该服务对所有人开放、为公共利益服务。有些人拥有必要的硬件资源来构建自己的构建系统。如果你正是其中一员，那么 Ports 树里有些工具可以一试。最初的构建系统是老牌的 Tinderbox，在树中以 `ports-mgmt/tinderbox` 出现，还有其前沿版本 `ports-mgmt/tinderbox-devel`。可阅读其网站 `http://tinderbox.marcuscom.com/` 了解更多。近年来出现了一个名为 Poudriere 的较新构建系统，译自法语大致就是“tinderbox”。可在 Ports 树中找到 `ports-mgmt/poudriere`，以及其前沿版本 `ports-mgmt/poudriere-devel`。更多信息见 `http://fossil.etoilebsd.net/poudriere`。`poudriere` 构建系统现已成为 Ports 管理团队执行 `-exp` 测试运行和包构建的基础。
 
 选择一个适合你的构建系统，利用它测试 Port 构建，验证其能干净地安装和卸载，甚至搭建你自己的私有打包系统。
 

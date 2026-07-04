@@ -1,6 +1,6 @@
 # 基金会致辞
 
-**FreeBSD Journal 编辑委员会**
+**FreeBSD 期刊 编辑委员会**
 
 - **John Baldwin**——FreeBSD 核心团队成员
 - **Daichi Goto**——BSD Consulting Inc.（东京）董事
@@ -30,7 +30,7 @@
 
 此致敬礼，
 
-**FreeBSD Journal 编辑委员会**
+**FreeBSD 期刊 编辑委员会**
 
 ---
 

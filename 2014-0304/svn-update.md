@@ -8,7 +8,7 @@
 
 head@r262331（<http://svnweb.freebsd.org/base?view=revision&revision=r262331>）
 
-bhyve(8) hypervisor 现已支持从 ZFS 数据集引导虚拟机，从而支持纯"root on ZFS"的虚拟机。在此变更之前，只能从 UFS 文件系统引导。
+bhyve(8) hypervisor 现已支持从 ZFS 数据集引导虚拟机，从而支持纯“root on ZFS”的虚拟机。在此变更之前，只能从 UFS 文件系统引导。
 
 ## urndis(4) 支持
 
@@ -44,7 +44,7 @@ Radeon KMS 驱动已从 head/ 合并。它支持内核模式设置（Kernel Mode
 
 stable/9@r263817（<http://svnweb.freebsd.org/base?view=revision&revision=r263817>）
 
-新的系统控制台驱动 VT（又称"NewCons"）已从 head/ 合并到 stable/9。VT 驱动作为 `sc(4)` 控制台驱动的替代品，提供了一系列增强功能，从 UTF-8 字体支持，到让运行 X11 并启用内核模式设置（简称"KMS"）的用户能够从 X11 切换回控制台。VT 驱动自修订 r262861 起在 stable/10 中也可用。
+新的系统控制台驱动 VT（又称“NewCons”）已从 head/ 合并到 stable/9。VT 驱动作为 `sc(4)` 控制台驱动的替代品，提供了一系列增强功能，从 UTF-8 字体支持，到让运行 X11 并启用内核模式设置（简称“KMS”）的用户能够从 X11 切换回控制台。VT 驱动自修订 r262861 起在 stable/10 中也可用。
 
 VT 驱动由 Aleksandr Rybalko 在 FreeBSD 基金会赞助下开发。
 

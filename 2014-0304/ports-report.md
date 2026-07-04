@@ -38,7 +38,7 @@ WARN: Consider to set DEVELOPER=yes in /etc/make.conf
 
 于是我采纳建议，在 **/etc/make.conf** 中加入 `DEVELOPER=yes`。这本身对 portlint 无益，但会在构建 port 时给出面向开发者的详细输出，颇为有用。其他警告则需要你这位 porter 仔细审视，判断是否需要采取额外行动。请记住：我们驾驭 portlint，而不是 portlint 驾驭我们。它的警告仅供指导参考。
 
-Ports 树是 FreeBSD 的增值软件集合。它是全球贡献者协作的成果，每个人都为让它变得更好一点点而尽了一份力。向所有伸出援手的人致以诚挚的"谢谢"。
+Ports 树是 FreeBSD 的增值软件集合。它是全球贡献者协作的成果，每个人都为让它变得更好一点点而尽了一份力。向所有伸出援手的人致以诚挚的“谢谢”。
 
 - <http://fb.me/portmgr> — 为我们点赞
 - <http://twitter.com/freebsd_portmgr> — 关注我们

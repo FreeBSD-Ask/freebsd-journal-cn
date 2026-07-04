@@ -26,13 +26,13 @@
 
 长期以来 Tinderbox 是构建包的主流首选工具。另一些人会在一台系统上安装所有 Ports，然后从该系统创建包并复制到其他系统。这种方法不推荐，因为包是在一个不断变大、不断污染的不洁环境中创建的。即便今天使用 portmaster 配合 Ports 并从中创建 Pkg 包用于分发，出于同样原因也不推荐。最好使用专门为创建包集而设计的系统。
 
-Poudriere（大致读作 poo-dree-year，法语意为"火药桶"）作为 Tinderbox 的更快更简单的替代品而编写。它由 Pkg 作者 Baptiste Daroussin 编写，现主要由我与 Baptiste 以及其他一些贡献者维护。它迅速成为 FreeBSD 事实上的 Port 测试和包构建工具。它是官方构建集群工具，也被 FreeBSD Ports 项目用于在所谓"exp-runs"中测试大范围补丁。它用 POSIX shell 编写，并正缓慢向 C 组件迁移。与 Tinderbox 不同，它没有 web 界面依赖，也不需要数据库。它在所有操作上都经过大幅优化以实现高度并行。它使用 Jail 在非常严格的条件下于沙箱环境中构建 Ports。Jail 创建通过一条简单命令一次完成。构建期间，Jail 会自动为每个使用的 CPU 克隆一份，给 Ports 提供干净的构建场所。构建可以在 UFS、ZFS 或 TMPFS 文件系统上进行。UFS 是高 I/O、低 RAM、慢速构建，TMPFS 是低 I/O、高 RAM、快速构建。它也可配置为只让构建的某些部分使用 TMPFS，其余使用 UFS/ZFS，以便在低内存机器上达成某种折中。amd64 主机也能毫不费力地构建 i386 包。可以为主机当前版本或更老版本构建包。例如，主机是 9.2 时，可构建 9.2、9.1 和 8.3 包集。
+Poudriere（大致读作 poo-dree-year，法语意为“火药桶”）作为 Tinderbox 的更快更简单的替代品而编写。它由 Pkg 作者 Baptiste Daroussin 编写，现主要由我与 Baptiste 以及其他一些贡献者维护。它迅速成为 FreeBSD 事实上的 Port 测试和包构建工具。它是官方构建集群工具，也被 FreeBSD Ports 项目用于在所谓“exp-runs”中测试大范围补丁。它用 POSIX shell 编写，并正缓慢向 C 组件迁移。与 Tinderbox 不同，它没有 web 界面依赖，也不需要数据库。它在所有操作上都经过大幅优化以实现高度并行。它使用 Jail 在非常严格的条件下于沙箱环境中构建 Ports。Jail 创建通过一条简单命令一次完成。构建期间，Jail 会自动为每个使用的 CPU 克隆一份，给 Ports 提供干净的构建场所。构建可以在 UFS、ZFS 或 TMPFS 文件系统上进行。UFS 是高 I/O、低 RAM、慢速构建，TMPFS 是低 I/O、高 RAM、快速构建。它也可配置为只让构建的某些部分使用 TMPFS，其余使用 UFS/ZFS，以便在低内存机器上达成某种折中。amd64 主机也能毫不费力地构建 i386 包。可以为主机当前版本或更老版本构建包。例如，主机是 9.2 时，可构建 9.2、9.1 和 8.3 包集。
 
 Poudriere 默认进行增量构建，只重建需要的部分。增量构建会检查选项变更、缺失依赖、依赖变更、新版本以及 pkgname 变更。任一项变化都会重建该 Port。这也会导致依赖该 Port 的任何内容被重建。这有时是过度处理，但能确保包创建中不遗漏任何 Port 变更。它还内置 ccache 支持，能在依赖变化时帮助缩短 Port 重建时间。包集的构建时间各不相同，但在一台拥有多 CPU 和足够 RAM 的系统上，几百个 Port 通常能在一两小时内构建完成。
 
 Poudriere 提供只读的实时 web 界面，用于监控构建状态。该界面不需要任何服务端 CGI 或脚本支持，因为 Poudriere 只是把状态文件以 JSON 写出，再由 web 界面使用。它不如 Tinderbox 界面精美，但未来有计划进一步改进。3.1 版本经过增量改进，响应更灵敏，并允许对每个子包列表进行搜索和排序。
 
-Poudriere 还有一个称为"set"的功能。这允许为每个命名的"set"保存多套选项、make.conf 文件和最终包集。这就免去了为同一目标版本/架构维护多个 Jail 的需要。例如，可以在构建系统上用同一个 Jail 创建名为"php53"的 PHP 5.3 包集和名为"php55"的 PHP 5.5 包集。构建该 set 时用"-z setname"指定，例如 `bulk –a php53 –j 91amd64` 会产出包于 **/usr/local/poudriere/data/packages/91amd64-default-php53**。其中"default"指 Ports 树，可用"-p"选项更改。
+Poudriere 还有一个称为“set”的功能。这允许为每个命名的“set”保存多套选项、make.conf 文件和最终包集。这就免去了为同一目标版本/架构维护多个 Jail 的需要。例如，可以在构建系统上用同一个 Jail 创建名为“php53”的 PHP 5.3 包集和名为“php55”的 PHP 5.5 包集。构建该 set 时用“-z setname”指定，例如 `bulk –a php53 –j 91amd64` 会产出包于 **/usr/local/poudriere/data/packages/91amd64-default-php53**。其中“default”指 Ports 树，可用“-p”选项更改。
 
 即将发布的 Poudriere 3.1 还带来一些有趣的新功能。其中一项主要功能名为 `ATOMIC_PACKAGE_REPOSITORY`。它防止仓库在构建完成前被修改。目前在 3.0 中，仓库在启动时删除包，构建期间修改包，因此无法直接通过 http 提供服务。该功能默认启用。其工作方式是启动时将包目录硬链接复制到 `.building` 目录，构建完成时 `.building` 目录重命名为 `.real_TIMESTAMP` 目录，仓库顶层的 `.latest` 符号链接更新为指向新构建。在 `pkg upgrade` 任务期间改变仓库仍可能存在问题，但问题窗口比不启用该功能时小得多（框 1）。
 
@@ -44,7 +44,7 @@ Poudriere 还有一个称为"set"的功能。这允许为每个命名的"set"保
 
 Poudriere 的设置和使用简单快速。安装 poudriere、创建一个 Jail、检出一个 Ports 树、创建一个 Port 列表文件、可选地为签名仓库创建公私钥对，然后构建！（框 2）。
 
-如果需要构建多个 set，应在使用 `options` 和 `bulk` 命令时使用"-z"标志，并在 **/usr/local/etc/poudriere.d** 中设置 SET-make.conf，写入该 set 专属的配置。
+如果需要构建多个 set，应在使用 `options` 和 `bulk` 命令时使用“-z”标志，并在 **/usr/local/etc/poudriere.d** 中设置 SET-make.conf，写入该 set 专属的配置。
 
 Poudriere 官方网站有一份创建和维护仓库的指南。手册页也可在此在线查阅。还有一份使用 Jenkins 进行定时包构建的指南，在三部分系列中有详细文档。
 
