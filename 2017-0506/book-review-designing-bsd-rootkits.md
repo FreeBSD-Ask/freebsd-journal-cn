@@ -1,4 +1,4 @@
-# 书评
+# 书评：*Designing BSD Rootkits: An Introduction to Kernel Hacking*
 
 作者：Steven Kreuzer
 
