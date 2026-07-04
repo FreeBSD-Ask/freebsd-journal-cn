@@ -176,7 +176,7 @@ c9be458cee94 Accepted D31948: mana: Cast an unused value to void to quiet a warn
 8a9b7debfc0c No Review : arm64: Add compat macros for system registers for GNU as.
 ```
 
-## 更新审查
+## 在分支上更新审查
 
 使用 `update` 子命令在分支上更新审查并不像其他命令那样直观。特别是，`update` 子命令无法确定与提交关联的审查是否已经是最新的（因此无需更新）。相反，如果为一个分支提供了审查列表，它将始终更新所有审查。`update` 子命令还会提示为每个提交输入描述。在处理分支时，通常更好的做法是，在单独修改每个提交后使用 `update` 子命令，而不是直接对整个分支运行该命令。  
 

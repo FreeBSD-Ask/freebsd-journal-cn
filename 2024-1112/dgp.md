@@ -70,9 +70,11 @@ TCP 会首先设置一些基本变量，默认值如下：
 
 DGP 尝试在选择其流量控制速率时整合基于丢包和基于延迟的方法。对于基于延迟的部分，选择了 Timely[4]（并进行了适应性修改以适应互联网），尽管可以辩称，任何基于延迟的方法（包括 TCP Vegas）都可以为此目的进行适配。Timely 使用延迟梯度来计算一个乘数，该乘数与当前基于丢包的拥塞控制计算（无论是 New Reno 还是 Cubic）结合，从而得出总体流量控制速率，使用以下公式：
 
-       *Bw = max(GPest, LTbw) * TimelyMultiplier*
-       *FillCwBw = cwnd / CurrentRTT*
-       *PaceRate = max(Bw, ((FCC != 0) ? FillCwBw : min(FillCwBw, FCC)))*
+```sh
+   *Bw = max(GPest, LTbw) * TimelyMultiplier*
+   *FillCwBw = cwnd / CurrentRTT*
+   *PaceRate = max(Bw, ((FCC != 0) ? FillCwBw : min(FillCwBw, FCC)))*
+```
 
 我们将在接下来的子节中讨论上述公式的每个部分，以便让你了解 DGP 的工作原理。有关 Timely 的详细信息，我们建议阅读相关论文[4]。
 

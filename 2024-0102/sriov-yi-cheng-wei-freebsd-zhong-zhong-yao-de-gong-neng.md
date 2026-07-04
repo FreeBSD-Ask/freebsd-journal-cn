@@ -3,7 +3,7 @@
 - 原文链接：[SR-IOV is a First Class FreeBSD Feature](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/sr-iov-is-a-first-class-freebsd-feature/)
 - 作者：Mark McBride
 
-### 如何在 FreeBSD 中使用支持 SR-IOV 的设备设置硬件驱动虚拟化
+## 如何在 FreeBSD 中使用支持 SR-IOV 的设备设置硬件驱动虚拟化
 
 我最喜欢的硬件功能之一是被称为[单根输入/输出虚拟化（SR-IOV）](https://en.wikipedia.org/wiki/Single-root_input/output_virtualization)的技术。它让单一物理设备在操作系统中看起来如同多个类似的设备。FreeBSD 在实现 SR-IOV 功能方面的做法，是我[更倾向于在服务器上使用 FreeBSD 的原因之一](https://markmcb.com/freebsd/vs_linux/)。
 
@@ -15,7 +15,7 @@
 
 要使用 SR-IOV 网络，你需要支持 SR-IOV 的网络适配器和支持 SR-IOV 的主板。多年来，我使用了几块支持 SR-IOV 的网卡，例如 [Intel i350-T4V2 Ethernet Adapter](https://ark.intel.com/content/www/us/en/ark/products/84805/intel-ethernet-server-adapter-i350-t4v2.html)、[Mellanox ConnectX-4 Lx](https://www.nvidia.com/en-us/networking/ethernet/connectx-4-lx/) 和 [Chelsio T520-SO-CR Fiber Network Adapter](https://www.chelsio.com/nic/unified-wire-adapters/t520-so-cr/)。在本文中，我将使用 [Intel X710-DA2 Fiber Network Adapter](https://ark.intel.com/content/www/us/en/ark/products/83964/intel-ethernet-converged-network-adapter-x710da2.html) ([产品简介](https://www.intel.com/content/dam/www/public/us/en/documents/product-briefs/ethernet-x710-brief.pdf))，它被安装在 [FreeBSD 14.0-RELEASE 服务器](https://www.freebsd.org/releases/14.0R/announce/) 上。这是个不错的选择，因为它不需要特别的固件配置，并且 FreeBSD 内核默认内置了驱动支持。而且，它消耗的功率比许多其他方案要少，最多仅为 3.7 w。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig1.jpg)
+![Intel X710-DA2 网卡实物图](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig1.jpg)
 
 X710-DA2 拥有两个物理的 SFP+ 光纤端口。在 SR-IOV 术语中，这些端口对应于物理功能（PF）。如未启用 SR-IOV，这些 PF 就像任何网络适配器卡上的端口一样工作，将在 FreeBSD 中显示为两个网络接口。如启用 SR-IOV，每个 PF 都能够创建、配置和管理多个虚拟功能（VF）。每个 VF 都会在操作系统中显示为一个 PCIe 设备。
 
@@ -35,15 +35,15 @@ X710-DA2 拥有两个物理的 SFP+ 光纤端口。在 SR-IOV 术语中，这些
 
 支持 SR-IOV 的 X710-DA2 安装非常简单，但有一个主要的考虑因素。并非所有的 PCIe 插槽都是一样的。我强烈建议你在开始之前看看主板手册。在这个例子中，我将使用 [Supermicro X12STH-F 主板](https://www.supermicro.com/en/products/motherboard/x12sth-f)。其 [手册](https://www.supermicro.com/manuals/motherboard/X12/MNL-2367.pdf) 提供了两张非常有用的图表：
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig2.jpg)
+![主板 PCIe 插槽编号图](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig2.jpg)
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig3.jpg)
+![主板 PCIe 插槽连接图](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig3.jpg)
 
 在第一张图中，我们看到 PCIe 插槽从左到右编号为 4、5 和 6。如果你仔细观察，会看到插槽 4 有前缀“PCH”，而 5 和 6 则有前缀“CPU”。第二张图则更详细地显示了这些插槽的连接方式。插槽 5 和 6 直连到 LGA1200 插座上的 CPU，而插槽 4 连接到[平台控制器集线器](https://en.wikipedia.org/wiki/Platform_Controller_Hub)。根据你设备中的具体组件，这可能会决定哪些插槽能够使 SR-IOV 按预期工作。直到后续配置 FreeBSD 时，你才会知道哪个插槽适合，一般来说，尤其是对于较旧的主板，CPU 插槽是个可靠的选择。如果后续步骤中发现 SR-IOV 无法正常工作，可以尝试换成 PCIe 插槽。主板文档有时并不详尽，所以试验和错误有时是最快速的方式，能帮助你找出哪个插槽能正常工作。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig5.jpg)
+![PCIe 插槽物理安装图](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig5.jpg)
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig6.jpg)
+![PCIe 插槽安装实物图](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig6.jpg)
 
 ## 硬件配置
 
@@ -51,9 +51,9 @@ X710-DA2 拥有两个物理的 SFP+ 光纤端口。在 SR-IOV 术语中，这些
 
 具体操作会根据主板的不同而有所变化，但大多数主板都有个 PCIe 配置参数的界面。找到该界面，启用 SR-IOV。与此同时，最好检查是否启用了你可能与 SR-IOV 一道使用的其他设置，例如 CPU 虚拟化。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig7.jpg)
+![主板 BIOS PCIe 配置界面](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig7.jpg)
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig8.jpg)
+![主板 SR-IOV 启用界面](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig8.jpg)
 
 现在，我们可以启动 FreeBSD，并查看 [dmesg(8)](https://man.freebsd.org/dmesg)。以下是我系统中 `dmesg` 的一段输出。
 

@@ -106,22 +106,22 @@ FreeBSD 的提交会生成邮件，发送到各种邮件列表。这些邮件包
 
 提交信息的最后一段可能包含一个或多个标准元数据标签。FreeBSD 中使用的标准标签有：
 
-标签  | 描述
-----|----
-PR  | FreeBSD 问题报告（Bugzilla）编号
-Submitted by  | 原作者的 ID（如果不是提交者）
-Reported by  | 报告问题的第三方 ID
-Reviewed by  | 审阅者的 ID
-Tested by  | 测试此更改的人员的 ID
-Approved by  | 批准此更改的导师或代码所有者
-Obtained from  | 来自另一个项目的更改源
-MFC after  | 从 Current 合并到 Stable 前的时间周期
-MFC with  | 与此更改一同合并的关联提交
-MFH  | 用于合并请求的 Ports 季度分支
-Relnotes  | 是否应包含此更改的发布说明（是/否）
-Security  | 与安全问题相关的外部参考，例如 CVE 编号
-Sponsored by  | 资助此更改的组织或事件
-Differential Revision  | FreeBSD Phabricator 实例中代码审查的完整链接
+| 标签 | 描述 |
+| :--: | :--: |
+| PR | FreeBSD 问题报告（Bugzilla）编号 |
+| Submitted by | 原作者的 ID（如果不是提交者） |
+| Reported by | 报告问题的第三方 ID |
+| Reviewed by | 审阅者的 ID |
+| Tested by | 测试此更改的人员的 ID |
+| Approved by | 批准此更改的导师或代码所有者 |
+| Obtained from | 来自另一个项目的更改源 |
+| MFC after | 从 Current 合并到 Stable 前的时间周期 |
+| MFC with | 与此更改一同合并的关联提交 |
+| MFH | 用于合并请求的 Ports 季度分支 |
+| Relnotes | 是否应包含此更改的发布说明（是/否） |
+| Security | 与安全问题相关的外部参考，例如 CVE 编号 |
+| Sponsored by | 资助此更改的组织或事件 |
+| Differential Revision | FreeBSD Phabricator 实例中代码审查的完整链接 |
 
 “ID”表示一个 FreeBSD 用户 ID 或一个名字和电子邮件地址。多个 ID 可以作为逗号分隔的列表呈现，或者通过在后续行中重复元数据标签来表示。
 

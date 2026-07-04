@@ -10,7 +10,7 @@ Jail 是现代系统管理员的强大工具。它们允许轻量级容器化，
 
 Ezjail 是两个 shell 脚本：用于与 Jail 交互的 `ezjail-admin`，以及负责启动和停止 Jail 的 `ezjail-admin` RC 脚本。有一个单独的文件 **/usr/local/etc/ezjail.conf** 控制一些默认设置，每个 Jail 还有一个配置文件 **/usr/local/etc/ezjail/jailname**。
 
-### Jail 的基本配置
+## Jail 的基本配置
 
 首先，我们需要安装 ezjail。可以从 Ports 或软件包安装，即 `sysutils/ezjail`。
 

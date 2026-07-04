@@ -67,5 +67,3 @@ jail 工具与 iocage 工具包
 - 优化硬件配置
 - 从 host 与 Jail 内部管理 Jail
 - 优化磁盘空间以支持数千个 Jail
-
-## 禁锢你的软件！

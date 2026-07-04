@@ -4,18 +4,22 @@
 
 ## DESCRIPTION
 
-     vnet 是虚拟化网络栈的技术名称。
-     (...)。
-     每个（虚拟）网络栈都附加到一个 prison，其中 vnet0
-     是基础系统不受限制的默认网络栈。
+```sh
+vnet 是虚拟化网络栈的技术名称。
+(...)。
+每个（虚拟）网络栈都附加到一个 prison，其中 vnet0
+是基础系统不受限制的默认网络栈。
+```
 
 作为相关的 prison 特性，我们查看 jail(8) 手册页中关于 vnet 的部分：
 
-    vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
-            网络接口、地址、路由表等。内核必须
-            编译了 VIMAGE 选项才能使用此特性。可选值为 "inherit"
-            使用系统网络栈（可能带有受限制的 IP 地址），
-            或 "new" 创建新的网络栈。
+```sh
+vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
+        网络接口、地址、路由表等。内核必须
+        编译了 VIMAGE 选项才能使用此特性。可选值为 "inherit"
+        使用系统网络栈（可能带有受限制的 IP 地址），
+        或 "new" 创建新的网络栈。
+```
 
 简而言之，这一特性让每个 Jail 拥有自己的路由表、ARP 与 NDP 缓存以及接口。
 
@@ -107,10 +111,12 @@ fe80::1%lo0                     link#1                        UHS         lo0
 
 好多了！但我们只有 loopback 接口在运行。下一步是创建一个虚拟 Ethernet tap 接口并分配给 Jail。`ifconfig(8)` 手册页摘录：
 
-    vnet jail
-        将接口移动到 jail(8)，按 name 或 JID 指定。如果
-        jail 拥有虚拟网络栈，该接口将从当前环境消失，
-        对 jail 可见。
+```sh
+vnet jail
+    将接口移动到 jail(8)，按 name 或 JID 指定。如果
+    jail 拥有虚拟网络栈，该接口将从当前环境消失，
+    对 jail 可见。
+```
 
 ```sh
 # TAP=$(ifconfig tap create)
@@ -176,7 +182,7 @@ round-trip min/avg/max/stddev = 0.248/0.387/0.525/0.139 ms
 # arp -na | grep 192.0.2.1
 ```
 
-#
+## 验证网络栈隔离
 
 Jail 可以 ping 自己的接口，自己的 ARP 缓存填充了相应条目，且这些都与 host 网络栈隔离。
 
@@ -204,7 +210,7 @@ Destination        Gateway            Flags     Netif Expire
 # netstat -4rn | grep 198.51.100.0
 ```
 
-#
+## 清理现有 Jail
 
 继续下一个示例前，我们清理现有 Jail 并销毁 tap 接口。需要使用 `-R`（大写）选项来移除不带配置文件创建的 Jail。使用 `-r`（小写）选项时，vnet 接口不会自动归还给 host。
 
@@ -833,6 +839,7 @@ done
 # netstat -ihw 1 -I vnetdemobridge
 ```
 
+```sh
             input vnetdemobridge           output
    packets  errs idrops      bytes    packets  errs      bytes colls
        490     0     0       826K        29k     0       7.0M     0
@@ -840,6 +847,7 @@ done
       1.5k     0     0       3.3M        92k     0        25M     0
        596     0     0       337K       102k     0        35M     0
        732     0     0       479K       100k     0        33M     0
+```
 
 几分钟后检查检测到的邻居数（应为 479）。DR/BDR 选举应选 jail479 为 BDR、jail480 为 DR，并查看已学到的路由数。
 
