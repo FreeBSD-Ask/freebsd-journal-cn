@@ -227,7 +227,7 @@
 * [实用 IPv6（第四部分）](2022-1112/ipv6.md)
 * [EuroBSDCon 会议报道](2022-1112/huiyi.md)
 * [实用 Port：Prometheus 的安装与配置](2022-1112/prometheus.md)
-* [书评：《用火解决问题：管理老化的计算机系统（并为现代系统保驾护航）》*Kill It with Fire: Manage Aging Computer Systems (and Future Proof Modern Ones)*](2022-1112/book.md)
+* [书评：*Kill It with Fire: Manage Aging Computer Systems (and Future Proof Modern Ones)*](2022-1112/book.md)
 * [读者来信](2022-1112/we-get-letters.md)
 
 ## 2022-0910 安全性
