@@ -124,7 +124,7 @@ overload <bruteforce> flush global)
 有几种方法可以调整状态跟踪选项以适应你的特定需求；一个明显的可能性是为特定类型的流量引入具有不同速率限制的规则。针对 ssh 和其他一些服务的密码猜测近年来有所减缓，现代规则集可能会对 ssh 使用类似这样的规则：
 
 ```
-# tighter for ssh
+# 对 ssh 更严格
 pass quick proto tcp to port ssh \
 keep state (max-src-conn 15, max-src-conn-rate 5/3, \
 overload <bruteforce> flush global)
