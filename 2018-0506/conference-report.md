@@ -2,7 +2,7 @@
 
 ## AsiaBSDCon 2018
 
-这是我第一次参加大型国际会议，体验确实超出了我的期望。我在论文会议开始前一天到达东京，因为我也想参加 bhyvecon 会议。bhyvecon 关于 FreeBSD hypervisor bhyve，这是我后来提交的论文主题。在主 AsiaBSDCon 会议上，我非常兴奋有机会与其他参会者谈论我将 bhyve 移植到 ARMv8-A 架构的工作。项目正在进行中，我收到的问题帮助我更清晰地概述项目的近期目标。
+这是我第一次参加大型国际会议，体验确实超出了我的期望。我在论文会议开始前一天到达东京，因为我也想参加 bhyvecon 会议。bhyvecon 是关于 FreeBSD hypervisor bhyve 的会议，这是我后来提交的论文主题。在主 AsiaBSDCon 会议上，我非常兴奋有机会与其他参会者谈论我将 bhyve 移植到 ARMv8-A 架构的工作。项目正在进行中，我收到的问题帮助我更清晰地概述项目的近期目标。
 
 主题演讲是一个亮点。我喜欢内核编程，参加讲座后，我能更清楚地理解 anykernels 和 unikernels 的意义和目的。
 
