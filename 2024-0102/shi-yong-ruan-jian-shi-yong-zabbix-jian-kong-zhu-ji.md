@@ -15,7 +15,6 @@
 
 ![](https://freebsdfoundation.org/wp-content/uploads/2024/02/reuschling_fig1.jpg)
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/reuschling_fig1.jpg)
 ## 安装设置 Zabbix
 
 接下来，让我们看看如何安装这个监控解决方案。我从新的 FreeBSD 14.0 jail 开始，这个 jail 连接到我正在监控的网络，并且从 Web 或者单独的 Poudriere 服务器下载所需的包。请注意，我将 Port 默认的 MySQL 配置改为 PostgreSQL，可以通过在 `net-mgmt/zabbix64-server` 目录下运行 `make config` 来进行更改。
