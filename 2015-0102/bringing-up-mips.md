@@ -110,7 +110,7 @@ miniboot 进入内核前，会清零大多数寄存器，将 a0 设为 argc，a1
 
 ### loader
 
-第三个常见启动阶段是 loader（`loader`）。加载器实际上是一个小型内核，其主要职责是为内核准备环境，然后从磁盘或网络加载内核和任何已配置的模块。加载器包含基于 FICL（**http://ficl.sourceforge.net**）的 Forth 解释器。该解释器用于提供图 4 所示的启动菜单；它解析 **/boot/loader.conf** 等配置文件，并实现 `nextboot` 等功能。为此，加载器还包含访问平台特定设备的微驱动，以及具备只读和有限写支持的 UFS 和 ZFS 实现。在 x86 系统上意味着 BIOS 或 UEFI 磁盘访问，配合 pxeloader 通过 PXE 进行网络访问。在 BERI 上，目前包含一个用于访问 DE4 上 CFI 闪存的基础微驱动。
+第三个常见启动阶段是 loader（`loader`）。加载器实际上是一个小型内核，其主要职责是为内核准备环境，然后从磁盘或网络加载内核和任何已配置的模块。加载器包含基于 FICL（<http://ficl.sourceforge.net>）的 Forth 解释器。该解释器用于提供图 4 所示的启动菜单；它解析 **/boot/loader.conf** 等配置文件，并实现 `nextboot` 等功能。为此，加载器还包含访问平台特定设备的微驱动，以及具备只读和有限写支持的 UFS 和 ZFS 实现。在 x86 系统上意味着 BIOS 或 UEFI 磁盘访问，配合 pxeloader 通过 PXE 进行网络访问。在 BERI 上，目前包含一个用于访问 DE4 上 CFI 闪存的基础微驱动。
 
 我们已将加载器移植到 FreeBSD/MIPS，并与 boot2 共享 SD 卡和 CFI 微驱动，以允许从 CFI 闪存或 SD 卡加载内核。目前我们从 SD 卡加载内核。希望最终为板载以太网设备添加驱动，以便从网络加载内核。
 
@@ -194,13 +194,13 @@ ROBERT N. M. WATSON 博士是剑桥大学计算机实验室系统、安全与架
 
 [1] Heinrich, J. MIPS R4000 Microprocessor User's Manual, Second Edition. (1994)
 
-[2] Markettos, A. T.; Woodruff, J.; Watson, R. N. M.; Zeeb, B. A.; Davis, B.; and Moore, S. W. The BERIpad tablet: open-source construction, CPU, OS and applications (**http://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/2013terasic-beri-submitted.pdf**), Proceedings of 2013 FPGA Workshop and Design Contest, Southeast University, Nanjing, China. (November 1–3, 2013)
+[2] Markettos, A. T.; Woodruff, J.; Watson, R. N. M.; Zeeb, B. A.; Davis, B.; and Moore, S. W. The BERIpad tablet: open-source construction, CPU, OS and applications (<http://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/2013terasic-beri-submitted.pdf>), Proceedings of 2013 FPGA Workshop and Design Contest, Southeast University, Nanjing, China. (November 1–3, 2013)
 
 [3] Power.org, Power.org Standard for Embedded Power Architecture Platform Requirements (ePAPR). (2008)
 
-[4] Watson, R. N. M.; Woodruff, J.; Chisnall, D.; Davis, B.; Koszek, W.; Markettos, A. T.; Moore, S. W.; Murdoch, S. J.; Neumann, P. G.; Norton, R.; and Roe, M. Bluespec Extensible RISC Implementation: BERI Hardware Reference (**http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-852.pdf**), Technical Report UCAM-CL-TR-852, University of Cambridge, Computer Laboratory. (April 2014)
+[4] Watson, R. N. M.; Woodruff, J.; Chisnall, D.; Davis, B.; Koszek, W.; Markettos, A. T.; Moore, S. W.; Murdoch, S. J.; Neumann, P. G.; Norton, R.; and Roe, M. Bluespec Extensible RISC Implementation: BERI Hardware Reference (<http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-852.pdf>), Technical Report UCAM-CL-TR-852, University of Cambridge, Computer Laboratory. (April 2014)
 
-[5] Watson, R. N. M.; Chisnall, D.; Davis, B.; Koszek, W.; Moore, S. W.; Murdoch, S. J.; Neumann, P. G.; and Woodruff, J. Bluespec Extensible RISC Implementation: BERI Software Reference (**http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-853.pdf**), Technical Report UCAM-CL-TR-853, University of Cambridge, Computer Laboratory. (April 2014)
+[5] Watson, R. N. M.; Chisnall, D.; Davis, B.; Koszek, W.; Moore, S. W.; Murdoch, S. J.; Neumann, P. G.; and Woodruff, J. Bluespec Extensible RISC Implementation: BERI Software Reference (<http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-853.pdf>), Technical Report UCAM-CL-TR-853, University of Cambridge, Computer Laboratory. (April 2014)
 
 [6] Woodruff, J.; Watson, R. N. M.; Chisnall, D.; Moore, S. W.; Anderson, J.; Davis, B.; Laurie, B.; Neumann, P. G.; Norton, R.; and Roe, M. "The CHERI Capability Model: Revisiting RISC in an Age of Risk," in Proceedings of the 41st International Symposium on Computer Architecture (ISCA 2014). (June 2014)
 
