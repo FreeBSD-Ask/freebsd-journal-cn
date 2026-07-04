@@ -6,13 +6,13 @@
 
 <https://wiki.freebsd.org/Hackathon/201906>
 
-首届以安全为主题的 FreeBSD 黑客松提供了一个机会，让 FreeBSD 黑客们聚在一起，讨论并直接动手修复 bug、编写代码、添加功能、改进文档、处理 Ports 等等。除了 hacking，晚上还会有社交活动。周一的圣灵降临节假期会为感兴趣的参会者及其伴侣安排观光游览。
+首届以安全为主题的 FreeBSD 黑客松提供了一个机会，让 FreeBSD 黑客聚在一起，讨论并直接动手修复 bug、编写代码、添加功能、改进文档、处理 Ports 等等。除了 hacking，晚上还会有社交活动。周一的圣灵降临节假期会为感兴趣的参会者及其伴侣安排观光游览。
 
 **FreeBSD 黑客松与修 bug 会议** • 5 月 20–22 日 • 加拿大安大略省基奇纳-滑铁卢
 
 <https://hackmd.io/jrbtlbelQ1ahmqAjRHyUsQ#>
 
-BSDCan 之后，在加拿大安大略省基奇纳-滑铁卢，FreeBSD 开发者齐聚一堂，开展为期数日的协作软件开发或硬件 hacking。
+BSDCan 之后，欢迎加入 FreeBSD 开发者队伍，在加拿大安大略省基奇纳-滑铁卢开展为期数日的协作软件开发或硬件 hack。
 
 **Rootconf 2019** • 6 月 21–22 日 • 印度班加罗尔
 

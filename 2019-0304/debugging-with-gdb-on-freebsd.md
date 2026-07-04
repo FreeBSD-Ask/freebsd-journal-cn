@@ -280,11 +280,11 @@ crw-rw-rw- 1 root wheel 0xf Feb 2 18:00 /dev/null
 [Inferior 2 (process 27644) exited normally]
 ```
 
-关于使用 GDB 调试 fork 的更多信息，请参阅 GDB 手册的 Debugging Forks（<https://sourceware.org/gdb/current/onlinedocs/gdb/Forks.html）章节。>
+关于使用 GDB 调试 fork 的更多信息，请参阅 GDB 手册的 Debugging Forks（<https://sourceware.org/gdb/current/onlinedocs/gdb/Forks.html>）章节。
 
 ## 调试 C++ STL 类
 
-对于某些数据类型，数据结构的原始布局可能与该结构在源代码中的使用和表示不一致。C++ 标准模板库（STL）类尤其如此。为了便于检查这些结构，GDB 允许 Python 脚本提供两类辅助类：pretty printer（<https://sourceware.org/gdb/current/onlinedocs/gdb/Pretty-Printing-API.html#Pretty-Printing-API）和> xmethod（<https://sourceware.org/gdb/current/onlinedocs/gdb/Xmethods-In-Python.html#Xmethods-In-Python）。>
+对于某些数据类型，数据结构的原始布局可能与该结构在源代码中的使用和表示不一致。C++ 标准模板库（STL）类尤其如此。为了便于检查这些结构，GDB 允许 Python 脚本提供两类辅助类：pretty printer（<https://sourceware.org/gdb/current/onlinedocs/gdb/Pretty-Printing-API.html#Pretty-Printing-API>）和 xmethod（<https://sourceware.org/gdb/current/onlinedocs/gdb/Xmethods-In-Python.html#Xmethods-In-Python>）。
 
 pretty printer 会覆盖 `print` 命令对对象的默认显示。每个 pretty printer 关联一个或多个 C++ 类，也可以关联模板类。例如，`std::vector` 的 pretty printer 可以将 vector 内容显示为数组。
 

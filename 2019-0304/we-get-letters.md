@@ -46,4 +46,4 @@
 
 附：我赞赏你称呼中的礼貌。你的父母把你教得很好。当然，还没好到能选个更好的职业，但已经很好了。
 
-MICHAEL W LUCAS（<https://mwl.io）的最新书是《FreeBSD> Mastery: Jails》，另外还有 30 来本其他著作，如《Absolute FreeBSD》《PAM Mastery》和《git commit murder》。他正朝着被缓步动物吞噬而死的目标努力。把你的问题发到 <letters@freebsdjournal.com>，他会以自己能安排的最拐弯抹角的恭维方式回你。
+MICHAEL W LUCAS（<https://mwl.io>）的最新书是《FreeBSD Mastery: Jails》，另外还有 30 来本其他著作，如《Absolute FreeBSD》《PAM Mastery》和《git commit murder》。他正朝着被缓步动物吞噬而死的目标努力。把你的问题发到 <letters@freebsdjournal.com>，他会以自己能安排的最拐弯抹角的恭维方式回你。
