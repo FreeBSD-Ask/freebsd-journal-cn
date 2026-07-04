@@ -5,7 +5,7 @@
 
 摘自 BSDNow，第 329 集，录制于 2019 年 12 月。Allan Jude 和 Benedict Reuschling 采访了 Michael W Lucas。
 
-![](https://github.com/user-attachments/assets/3671ca6a-c18c-4e61-950c-f1e9ffb1e7a0)
+![Michael W Lucas 照片](https://github.com/user-attachments/assets/3671ca6a-c18c-4e61-950c-f1e9ffb1e7a0)
 
 **BENEDICT REUSCHLING**：Michael W Lucas 曾在这个节目中接受过几次采访。他上回接受采访是几个月前，我们认为您可能想了解他最近在做什么，以及他接下来的计划。以下是这次采访，享受吧！
 
