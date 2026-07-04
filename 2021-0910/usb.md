@@ -11,7 +11,7 @@
 
 **图 1. Razer Ornata V2**
 
-![](https://github.com/user-attachments/assets/c6a18da9-a020-47de-b791-6291330b18fe)
+![Razer Ornata V2 键盘](https://github.com/user-attachments/assets/c6a18da9-a020-47de-b791-6291330b18fe)
 
 ## 收集信息
 

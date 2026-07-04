@@ -151,7 +151,7 @@ Password  :  @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 
 与之前的操作类似，我们继续使用 Caldera AppJail-Makejail 创建 jail。
 
-```
+```sh
 -f use a AppJail-Makejail from a github repository
 -o for define which version of FreeBSD will be used to create the jail, otherwise it uses the host version
 -j jail name
