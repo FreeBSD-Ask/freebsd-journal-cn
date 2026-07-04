@@ -9,7 +9,7 @@
 
 ## 2026-010203 笔记本与桌面
 
-* [基金会书信](2026-010203/letter-from-the-foundation.md)
+* [基金会来信](2026-010203/letter-from-the-foundation.md)
 * [活动日历](2026-010203/events-calendar.md)
 * [内核黑客的慰藉](2026-010203/consolations-for-kernel-hackers.md)
 * [让休眠的 CPU 安睡 — S0ix](2026-010203/let-sleeping-cpus-lie-s0ix.md)
@@ -20,7 +20,7 @@
 
 ## 2025-101112 FreeBSD 15.0
 
-* [基金会书信](2025-101112/letter-from-the-foundation.md)
+* [基金会来信](2025-101112/letter-from-the-foundation.md)
 * [活动日历](2025-101112/events-calendar.md)
 * [FreeBSD 15.0：改进与特性](2025-101112/freebsd-15-0-fixes-and-features.md)
 * [FreeBSD 上的通用闪存存储（UFS）](2025-101112/universal-flash-storage-on-freebsd.md)
@@ -33,7 +33,7 @@
 
 ## 2025-789 嵌入式
 
-* [基金会书信](2025-789/letter-from-the-foundation.md)
+* [基金会来信](2025-789/letter-from-the-foundation.md)
 * [活动日历](2025-789/events-calendar.md)
 * [开启 FreeBSD 开发之路 —— 专访 Igor Ostapenko](2025-789/interview-with-igor-ostapenko.md)
 * [CHERIoT](2025-789/embedded.md)
@@ -47,7 +47,7 @@
 
 ## 2025-456 网络
 
-* [基金会书信](2025-456/letter-from-the-foundation.md)
+* [基金会来信](2025-456/letter-from-the-foundation.md)
 * [活动日历](2025-456/events-calendar.md)
 * [采访 Kajetan Staszkiewicz](2025-456/Staszkiewicz.md)
 * [使安装程序易于使用](2025-456/Usability.md)
@@ -85,7 +85,7 @@
 
 ## 2024-0910 内核开发
 
-* [基金会书信](2024-0910/letter-from-the-foundation.md)
+* [基金会来信](2024-0910/letter-from-the-foundation.md)
 * [活动日历](2024-0910/events-calendar.md)
 * [字符设备驱动程序教程](2024-0910/Character.md)
 * [VPP 移植到了 FreeBSD：基础用法](2024-0910/vpp.md)
@@ -98,7 +98,7 @@
 
 ## 2024-0708 存储与文件系统
 
-* [基金会书信](2024-0708/letter-from-the-foundation.md)
+* [基金会来信](2024-0708/letter-from-the-foundation.md)
 * [活动日历](2024-0708/events-calendar.md)
 * [FreeBSD 中的 NVMe-oF](2024-0708/NVMe-oF.md)
 * [FreeBSD iSCSI 入门](2024-0708/iscsi.md)
@@ -111,7 +111,7 @@
 
 ## 2024-0506 配置管理对决
 
-* [基金会书信](2024-0506/letter-from-the-foundation.md)
+* [基金会来信](2024-0506/letter-from-the-foundation.md)
 * [活动日历](2024-0506/events-calendar.md)
 * [基本系统中的 mfsBSD](2024-0506/ji-ben-xi-tong-zhong-de-mfsbsd.md)
 * [rdist](2024-0506/rdist.md)
@@ -125,7 +125,7 @@
 
 ## 2024-0304 开发工作流与集成
 
-* [基金会书信](2024-0304/letter-from-the-foundation.md)
+* [基金会来信](2024-0304/letter-from-the-foundation.md)
 * [活动日历](2024-0304/events-calendar.md)
 * [FreeBSD 内核开发工作流程](2024-0304/freebsd-nei-he-kai-fa-gong-zuo-liu.md)
 * [FreeBSD 与 KDE 持续集成（CI）](2024-0304/kde-chi-xu-ji-cheng-ci-he-freebsd.md)
@@ -136,7 +136,7 @@
 
 ## 2024-0102 网络（十周年）
 
-* [基金会书信](2024-0102/letter-from-the-foundation.md)
+* [基金会来信](2024-0102/letter-from-the-foundation.md)
 * [活动日历](2024-0102/events-calendar.md)
 * [FreeBSD 中的 RACK 栈和替代 TCP 栈](2024-0102/rack-he-freebsd-ke-yong-de-tcp-dui-zhan.md)
 * [FreeBSD 14 中有关 TCP 的更新](2024-0102/freebsd-14-you-guan-tcp-de-geng-xin.md)
@@ -149,7 +149,7 @@
 
 ## 2023-1112 FreeBSD 14.0
 
-* [基金会书信](2023-1112/letter-from-the-foundation.md)
+* [基金会来信](2023-1112/letter-from-the-foundation.md)
 * [活动日历](2023-1112/events-calendar.md)
 * [LinuxBoot：从 Linux 启动 FreeBSD](2023-1112/linuxboot-cong-linux-qi-dong-freebsd.md)
 * [FreeBSD 容器镜像](2023-1112/freebsd-rong-qi-jing-xiang.md)
@@ -159,7 +159,7 @@
 
 ## 2023-0910 Port 与软件包
 
-* [基金会书信](2023-0910/letter-from-the-foundation.md)
+* [基金会来信](2023-0910/letter-from-the-foundation.md)
 * [活动日历](2023-0910/events-calendar.md)
 * [回忆录：与 Warner Losh（@imp）的访谈](2023-0910/recollections-an-interview-with-warner-losh-imp.md)
 * [在你自己的仓库中定制 Poudriere 源](2023-0910/custom-poudriere-packages-in-your-own-repository.md)
@@ -170,7 +170,7 @@
 
 ## 2023-0708 容器与云
 
-* [基金会书信](2023-0708/letter-from-the-foundation.md)
+* [基金会来信](2023-0708/letter-from-the-foundation.md)
 * [活动日历](2023-0708/events-calendar.md)
 * [在 Firecracker 上的 FreeBSD](2023-0708/freebsd-on-firecracker.md)
 * [使用 pot 和 nomad 管理 Jail](2023-0708/jail-orchestration-with-pot-and-nomad.md)
@@ -181,7 +181,7 @@
 
 ## 2023-0506 FreeBSD 三十周年纪念特刊
 
-* [基金会书信](2023-0506/letter-from-the-foundation.md)
+* [基金会来信](2023-0506/letter-from-the-foundation.md)
 * [CheriBSD 近十多年的历程](2023-0506/CheriBSD.md)
 * [AArch64：成为 FreeBSD 新的一级架构](2023-0506/AArch64.md)
 * [岁月如梭：我个人的时间线](2023-0506/Timeline.md)
@@ -197,7 +197,7 @@
 
 ## 2023-0304 嵌入式
 
-* [基金会书信](2023-0304/letter-from-the-foundation.md)
+* [基金会来信](2023-0304/letter-from-the-foundation.md)
 * [活动日历](2023-0304/events-calendar.md)
 * [CheriBSD port 和软件包](2023-0304/CheriBSD.md)
 * [让我们来试试 ChatGPT](2023-0304/GPT.md)
@@ -218,7 +218,7 @@
 
 ## 2022-1112 可观测性和衡量标准
 
-* [基金会书信](2022-1112/letter-from-the-foundation.md)
+* [基金会来信](2022-1112/letter-from-the-foundation.md)
 * [活动日历](2022-1112/events-calendar.md)
 * [在 FreeBSD 的 DDB 内核调试器中编写自定义命令](2022-1112/ddb.md)
 * [DTrace：老式跟踪系统的新扩展](2022-1112/dtrace.md)
@@ -232,7 +232,7 @@
 
 ## 2022-0910 安全性
 
-* [基金会书信](2022-0910/letter-from-the-foundation.md)
+* [基金会来信](2022-0910/letter-from-the-foundation.md)
 * [活动日历](2022-0910/events-calendar.md)
 * [CARP 简介](2022-0910/carp.md)
 * [重构内核加密服务框架](2022-0910/kernel.md)
@@ -246,7 +246,7 @@
 
 ## 2022-0708 科研、系统与 FreeBSD
 
-* [基金会书信](2022-0708/letter-from-the-foundation.md)
+* [基金会来信](2022-0708/letter-from-the-foundation.md)
 * [活动日历](2022-0708/events-calendar.md)
 * [在 FreeBSD 上构建 Loom 框架](2022-0708/loom.md)
 * [教授本科生 Unix 课程](2022-0708/unix.md)
@@ -260,7 +260,7 @@
 
 ## 2022-0506 灾难恢复
 
-* [基金会书信](2022-0506/letter-from-the-foundation.md)
+* [基金会来信](2022-0506/letter-from-the-foundation.md)
 * [活动日历](2022-0506/events-calendar.md)
 * [使用 FreeBSD 构建高弹性的私有云](2022-0506/cloud.md)
 * [LLDB 14 —— FreeBSD 新调试器](2022-0506/lldb.md)
@@ -272,7 +272,7 @@
 
 ## 2022-0304 ARM64 是一级架构
 
-* [基金会书信](2022-0304/letter-from-the-foundation.md)
+* [基金会来信](2022-0304/letter-from-the-foundation.md)
 * [活动日历](2022-0304/events-calendar.md)
 * [FreeBSD/ARM64 上的数据科学](2022-0304/datascience.md)
 * [Pinebook Pro 上的 FreeBSD](2022-0304/pinebook.md)
@@ -283,7 +283,7 @@
 
 ## 2022-0102 软件与系统管理
 
-* [基金会书信](2022-0102/letter-from-the-foundation.md)
+* [基金会来信](2022-0102/letter-from-the-foundation.md)
 * [活动日历](2022-0102/events-calendar.md)
 * [为 FreeBSD Ports 做贡献](2022-0102/ports.md)
 * [使用 Git 贡献到 FreeBSD Ports](2022-0102/git.md)
@@ -296,7 +296,7 @@
 
 ## 2021-1112 存储
 
-* [基金会书信](2021-1112/letter-from-the-foundation.md)
+* [基金会来信](2021-1112/letter-from-the-foundation.md)
 * [活动日历](2021-1112/events-calendar.md)
 * [开放通道 SSD](2021-1112/ssd.md)
 * [构建 FreeBSD 社区](2021-1112/shequ.md)
@@ -307,7 +307,7 @@
 
 ## 2021-0910 FreeBSD 开发
 
-* [基金会书信](2021-0910/letter-from-the-foundation.md)
+* [基金会来信](2021-0910/letter-from-the-foundation.md)
 * [活动日历](2021-0910/events-calendar.md)
 * [FreeBSD 代码审查与 git-arc](2021-0910/git.md)
 * [如何为 FreeBSD 实现简单的 USB 驱动程序](2021-0910/usb.md)
@@ -317,7 +317,7 @@
 
 ## 2021-0708 桌面/无线网
 
-* [基金会书信](2021-0708/letter-from-the-foundation.md)
+* [基金会来信](2021-0708/letter-from-the-foundation.md)
 * [活动日历](2021-0708/events-calendar.md)
 * [通往 FreeBSD 桌面的直线路径](2021-0708/Desktop.md)
 * [FreeBSD 13 中的人机接口设备 (HID) 支持](2021-0708/hid.md)
@@ -329,7 +329,7 @@
 
 ## 2021-0506 安全
 
-* [基金会书信](2021-0506/letter-from-the-foundation.md)
+* [基金会来信](2021-0506/letter-from-the-foundation.md)
 * [活动日历](2021-0506/events-calendar.md)
 * [七种提升新安装 FreeBSD 安全性的方法](2021-0506/Security.md)
 * [copyinout 框架](2021-0506/copyinout.md)
@@ -340,7 +340,7 @@
 
 ## 2021-0304 FreeBSD 13.0
 
-* [基金会书信](2021-0304/letter-from-the-foundation.md)
+* [基金会来信](2021-0304/letter-from-the-foundation.md)
 * [活动日历](2021-0304/events-calendar.md)
 * [展望未来](2021-0304/Future.md)
 * [FreeBSD 13.0 工具链](2021-0304/Toolchain.md)
@@ -353,7 +353,7 @@
 
 ## 2021-0102 案例研究
 
-* [基金会书信](2021-0102/letter-from-the-foundation.md)
+* [基金会来信](2021-0102/letter-from-the-foundation.md)
 * [活动日历](2021-0102/events-calendar.md)
 * [Tarsnap 的 FreeBSD 集群](2021-0102/Tarsnap.md)
 * [BALLY WULFF](2021-0102/BALLY.md)
@@ -365,7 +365,7 @@
 
 ## 2020-1112 工作流/持续集成（CI）
 
-* [基金会书信](2020-1112/letter-from-the-foundation.md)
+* [基金会来信](2020-1112/letter-from-the-foundation.md)
 * [活动日历](2020-1112/events-calendar.md)
 * [FreeBSD Git 快速入门](2020-1112/git.md)
 * [使用 syzkaller 进行内核 Fuzzing](2020-1112/syzkaller.md)
@@ -376,7 +376,7 @@
 
 ## 2020-0910 贡献与入门
 
-* [基金会书信](2020-0910/letter-from-the-foundation.md)
+* [基金会来信](2020-0910/letter-from-the-foundation.md)
 * [活动日历](2020-0910/events-calendar.md)
 * [采访：Warner Losh，第 2 部分](2020-0910/Warner.md)
 * [代码审查](2020-0910/Code.md)
@@ -391,7 +391,7 @@
 
 ## 2020-0708 基准测试/调优
 
-* [基金会书信](2020-0708/letter-from-the-foundation.md)
+* [基金会来信](2020-0708/letter-from-the-foundation.md)
 * [活动日历](2020-0708/events-calendar.md)
 * [FreeBSD Friday](2020-0708/Friday.md)
 * [采访：Warner Losh，第 1 部分](2020-0708/Losh.md)
@@ -402,7 +402,7 @@
 
 ## 2020-0506 网络性能
 
-* [基金会书信](2020-0506/letter-from-the-foundation.md)
+* [基金会来信](2020-0506/letter-from-the-foundation.md)
 * [活动日历](2020-0506/events-calendar.md)
 * [内核中的 TLS 卸载](2020-0506/TLS.md)
 * [访谈：Michael W Lucas](2020-0506/Lucas.md)
@@ -415,7 +415,7 @@
 
 * [会议报告：SCALE 18x](2020-0304/conference-report-scale-18x.md)
 * [活动日历](2020-0304/events-calendar.md)
-* [基金会书信](2020-0304/foundation-letter.md)
+* [基金会来信](2020-0304/foundation-letter.md)
 * [FreeBSD 基金会项目开发更新：工具链现代化](2020-0304/freebsd-foundation-project-development-update-toolchain-modernization.md)
 * [FUSE 驱动更新](2020-0304/fuse-driver-update.md)
 * [FreeBSD 新面孔](2020-0304/new-faces-of-freebsd.md)
@@ -426,7 +426,7 @@
 ## 2020-0102 FreeBSD 在研究中
 
 * [活动日历](2020-0102/events-calendar.md)
-* [基金会书信](2020-0102/foundation-letter.md)
+* [基金会来信](2020-0102/foundation-letter.md)
 * [FreeBSD 基金会报告](2020-0102/freebsd-foundation-report.md)
 * [FreeBSD 在网络研究与标准化中的应用](2020-0102/freebsd-in-network-research-and-standardization.md)
 * [FreeBSD/RISC-V 入门](2020-0102/getting-started-with-freebsd-risc-v.md)
@@ -442,7 +442,7 @@
 * [我的 BSD 会议旅行之年](2019-1112/conference-reports-my-year-of-bsd-conference-talks.md)
 * [活动日历](2019-1112/events-calendar.md)
 * [Jail 迁移](2019-1112/jail-migration.md)
-* [基金会书信](2019-1112/letter-from-the-foundation.md)
+* [基金会来信](2019-1112/letter-from-the-foundation.md)
 * [FreeBSD 新面孔](2019-1112/new-faces-of-freebsd.md)
 * [读者来信](2019-1112/we-get-letters.md)
 
@@ -454,13 +454,13 @@
 * [活动日历](2019-0910/events-calendar.md)
 * [改进 FreeBSD 中的内存权限](2019-0910/improving-memory-permissions-in-freebsd.md)
 * [采访 Pawel Dawidek](2019-0910/interview-with-pawel-dawidek.md)
-* [基金会书信](2019-0910/letter-from-the-foundation.md)
+* [基金会来信](2019-0910/letter-from-the-foundation.md)
 * [读者来信](2019-0910/we-get-letters.md)
 
 ## 2019-0708 容器化
 
 * [活动日历](2019-0708/events-calendar.md)
-* [基金会书信](2019-0708/letter-from-the-foundation.md)
+* [基金会来信](2019-0708/letter-from-the-foundation.md)
 * [FreeBSD 新面孔](2019-0708/new-faces-of-freebsd.md)
 * [读者来信](2019-0708/we-get-letters.md)
 * [会议报告](2019-0708/conference-report.md)
@@ -473,7 +473,7 @@
 * [会议报告](2019-0506/conference-report.md)
 * [活动日历](2019-0506/events-calendar.md)
 * [FreeBSD 硬件黑客入门](2019-0506/introduction-to-hardware-hacking-on-freebsd.md)
-* [基金会书信](2019-0506/letter-from-the-foundation.md)
+* [基金会来信](2019-0506/letter-from-the-foundation.md)
 * [非 RPi 上的媒体服务器](2019-0506/media-servers-on-non-rpi.md)
 * [FreeBSD 新面孔](2019-0506/new-faces-of-freebsd.md)
 * [在树莓派 3 上运行 Icinga2](2019-0506/running-icinga2-on-the-raspberry-pi3.md)
@@ -486,7 +486,7 @@
 * [在 FreeBSD 上使用 GDB 调试](2019-0304/debugging-with-gdb-on-freebsd.md)
 * [活动日历](2019-0304/events-calendar.md)
 * [用 DTrace 排查 LDAP 连接过剩](2019-0304/excess-ldap-connection-using-dtrace.md)
-* [基金会书信](2019-0304/letter-from-the-foundation.md)
+* [基金会来信](2019-0304/letter-from-the-foundation.md)
 * [FreeBSD 新面孔](2019-0304/new-faces-of-freebsd.md)
 * [SVN 动态](2019-0304/svn-update.md)
 * [自动化测试框架](2019-0304/the-automated-testing-framework.md)
@@ -499,7 +499,7 @@
 * [活动日历](2019-0102/events-calendar.md)
 * [面向开发者的 FreeBSD](2019-0102/freebsd-for-developers.md)
 * [在 FreeBSD/GhostBSD 上开始 Java 开发](2019-0102/getting-started-with-java-development.md)
-* [基金会书信](2019-0102/letter-from-the-foundation.md)
+* [基金会来信](2019-0102/letter-from-the-foundation.md)
 * [FreeBSD 的新面孔](2019-0102/new-faces-of-freebsd.md)
 * [SVN 动态](2019-0102/svn-update.md)
 * [向上游提交一处文档 bugfix](2019-0102/upstreaming-a-documentation-bugfix.md)
@@ -511,7 +511,7 @@
 * [会议报告](2018-1112/conference-report.md)
 * [调试 FreeBSD 内核](2018-1112/debugging-the-freebsd-kernel.md)
 * [活动日历](2018-1112/events-calendar.md)
-* [基金会书信](2018-1112/foundation-letter.md)
+* [基金会来信](2018-1112/foundation-letter.md)
 * [FreeBSD 12.0 工具链更新](2018-1112/freebsd-12-0-toolchain-update.md)
 * [FreeBSD 新面孔](2018-1112/new-faces-of-freebsd.md)
 * [SVN 动态](2018-1112/svn-update.md)
@@ -524,7 +524,7 @@
 * [使用 Mininet 快速浏览 SDN](2018-0910/a-quick-tour-of-sdn-using-mininet.md)
 * [会议报告](2018-0910/conference-report.md)
 * [活动日历](2018-0910/events-calendar.md)
-* [基金会书信](2018-0910/foundation-letter.md)
+* [基金会来信](2018-0910/foundation-letter.md)
 * [FreeBSD 与处理器趋势](2018-0910/freebsd-and-processor-trends.md)
 * [FreeBSD 中的网络互联](2018-0910/internetworking-in-freebsd.md)
 * [FreeBSD 新面孔](2018-0910/new-faces-of-freebsd.md)
@@ -535,7 +535,7 @@
 ## 2018-0708 大数据
 
 * [活动日历](2018-0708/events-calendar.md)
-* [基金会书信](2018-0708/foundation-letter.md)
+* [基金会来信](2018-0708/foundation-letter.md)
 * [FreeBSD 在科学计算中的应用](2018-0708/freebsd-in-scientific-computing.md)
 * [在 FreeBSD 上使用 ZFS 部署 Hadoop 教程](2018-0708/hadoop-on-freebsd-with-zfs-tutorial.md)
 * [高性能计算与 FreeBSD](2018-0708/high-performance-computing-and-freebsd.md)
@@ -551,7 +551,7 @@
 * [选择 FreeBSD 作为生产环境](2018-0506/choosing-freebsd-as-a-production-environment.md)
 * [会议报告](2018-0506/conference-report.md)
 * [活动日历](2018-0506/events-calendar.md)
-* [基金会书信](2018-0506/foundation-letter.md)
+* [基金会来信](2018-0506/foundation-letter.md)
 * [FreeBSD 新面孔](2018-0506/new-faces-of-freebsd.md)
 * [用 YubiKey 保护你的秘密](2018-0506/protect-your-secrets-with-yubikey.md)
 * [SVN 动态](2018-0506/svn-update.md)
@@ -561,7 +561,7 @@
 * [书评：《凤凰项目：一个IT运维的传奇故事》](2018-0304/book-review.md)
 * [会议报告](2018-0304/conference-report.md)
 * [活动日历](2018-0304/events-calendar.md)
-* [基金会书信](2018-0304/foundation-letter.md)
+* [基金会来信](2018-0304/foundation-letter.md)
 * [FreeBSD 笔记本评测](2018-0304/freebsd-laptop-shootout.md)
 * [唤醒之路上的痛与苦](2018-0304/pain-and-suffering-on-the-road-to-resume.md)
 * [SVN 动态](2018-0304/svn-update.md)
@@ -573,14 +573,14 @@
 * [书评：*FreeBSD Mastery: Specialty Filesystems*](2018-0102/book-review.md)
 * [会议报告：BSDTW 2017](2018-0102/conference-report.md)
 * [活动日历](2018-0102/events-calendar.md)
-* [基金会书信](2018-0102/foundation-letter.md)
+* [基金会来信](2018-0102/foundation-letter.md)
 * [SVN 动态](2018-0102/svn-update.md)
 * [磁带未死](2018-0102/tapes-not-dead.md)
 * [从用户空间到设备驱动追踪 ifconfig 命令](2018-0102/tracing-ifconfig-commands-from-userspace-to-device-driver.md)
 
 ## 2017-1112 监控与度量
 
-* [基金会书信](2017-1112/foundation-letter.md)
+* [基金会来信](2017-1112/foundation-letter.md)
 * [什么是 Icinga？](2017-1112/what-is-icinga.md)
 * [监控 ZFS](2017-1112/monitoring-zfs.md)
 * [STDDEV，否则就是没发生过！](2017-1112/stddev-it-didnt-happen.md)
@@ -592,7 +592,7 @@
 
 ## 2017-0910 FreeBSD vs Linux
 
-* [基金会书信](2017-0910/letter-from-the-foundation.md)
+* [基金会来信](2017-0910/letter-from-the-foundation.md)
 * [活动日历](2017-0910/events-calendar.md)
 * [FreeBSD 不是 Linux 发行版](2017-0910/FreeBSD-is-Not-a-Linux-Distro.md)
 * [FreeBSD vs Linux: ZFS](2017-0910/FreeBSD-vs-Linux-ZFS.md)
@@ -622,7 +622,7 @@
 * [SVN 动态](2017-0506/svn-update.md)
 * [pfSense 与安全](2017-0506/pfsense-and-security.md)
 * [FreeBSD 的新面孔](2017-0506/new-faces-of-freebsd.md)
-* [基金会书信](2017-0506/letter-from-the-foundation.md)
+* [基金会来信](2017-0506/letter-from-the-foundation.md)
 * [游戏中的 BSD](2017-0506/gaming-bsd.md)
 * [FreeBSD 的防火墙盛宴](2017-0506/freebsds-firewall-feast.md)
 * [CADETS：在 FreeBSD 上融合追踪与安全](2017-0506/cadets-blending-tracing-and-security-on-freebsd.md)
@@ -706,7 +706,7 @@
 * [bhyve ATA/ATAPI 仿真](2016-0506/bhyve-ata-emulation.md)
 * [FreeBSD 在 Cavium ThunderX 片上系统上的运行](2016-0506/freebsd-on-cavium-thunderx-system-on-a-chip.md)
 * [ARMv8 成为一级架构：协作开发项目](2016-0506/armv8-enabled-as-tier-1-architecture.md)
-* [基金会书信：FreeBSD 为最新 64 位架构做好了更充分的准备](2016-0506/letter-from-the-foundation.md)
+* [基金会来信：FreeBSD 为最新 64 位架构做好了更充分的准备](2016-0506/letter-from-the-foundation.md)
 
 ## 2016-0304 教学
 
@@ -714,7 +714,7 @@
 * [SVN 动态](2016-0304/svn-update.md)
 * [Ports 报告](2016-0304/ports-report.md)
 * [会议报道：台北/台湾 PortsCamp](2016-0304/meeting-report.md)
-* [基金会书信：现在开课](2016-0304/letter-from-the-foundation.md)
+* [基金会来信：现在开课](2016-0304/letter-from-the-foundation.md)
 * [活动日历](2016-0304/events-calendar.md)
 * [会议报道：FOSDEM](2016-0304/conference-report.md)
 * [CHERI：为安全可信计算基奠定基础](2016-0304/cheri-building-a-foundation-for-secure-trusted-computing-bases.md)
