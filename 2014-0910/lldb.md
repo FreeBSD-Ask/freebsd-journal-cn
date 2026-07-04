@@ -38,7 +38,7 @@ LLDB 致力于在各处允许自定义，让用户能定制调试体验。变量
 
 LLDB 的命令解释器采用一致的结构化语法设计。命令通常遵循“名词 动词”的模式——例如“thread list”或“breakpoint set”。命令语法比 GDB 稍显冗长，长期使用 GDB 的用户可能需要一些时间适应。好处是命令集可发现且规则一致；定向自动补全可以为用户提供相关选项。与 GDB 一样，命令可以缩写为最短的唯一前缀。启动调试会话的示例可能如下：
 
-```
+```sh
 % lldb
 (lldb) target create /bin/ls
 Current executable set to '/bin/ls' (x86_64).
@@ -49,7 +49,7 @@ Breakpoint 1: where = ls`main + 33 at ls.c:163, address = 0x00000000004023f1
 
 LLDB 对命令别名提供强大支持，并内置了许多 GDB 命令的别名。使用 GDB 别名，上述结果可以通过以下方式实现：
 
-```
+```sh
 % lldb /bin/ls
 Current executable set to '/bin/ls' (x86_64).
 (lldb) b main
@@ -62,7 +62,7 @@ Breakpoint 1: where = ls`main + 33 at ls.c:163, address = 0x00000000004023f1
 部分 GDB 和 LLDB 命令对比：
 
 | 操作 | GDB | LLDB |
-| --- | --- | --- |
+| ---- | --- | ---- |
 | 无参数启动进程 | `(gdb) run` `(gdb) r` | `(lldb) process launch` `(lldb) run` `(lldb) r` |
 | 带参数 args 启动进程 | `(gdb) run args` `(gdb) r args` | `(lldb) process launch -- args` `(lldb) r args` |
 | 在新终端窗口中启动进程 | 无 | `(lldb) process launch --tty -- args` |
@@ -82,7 +82,7 @@ Breakpoint 1: where = ls`main + 33 at ls.c:163, address = 0x00000000004023f1
 
 `target create` 命令可以在调试会话中创建多个目标，用 `target list` 显示活动目标：
 
-```
+```sh
 (lldb) target list
 Current targets:
 
@@ -100,7 +100,7 @@ target #1: /bin/app2 ( arch=x86-64-unknown-freebsd10.1, platform=host, pid=81166
 
 每当被调试进程停止时，LLDB 会打印相关信息：停止的线程、进程位置信息（包括地址、文件名和行号）、当前函数及其参数，以及停止原因。报告的停止原因可能是断点、观察点、信号、地址异常，或若干目标或语言特定原因之一。最后，显示当前地址处的源代码的一小部分。
 
-```
+```sh
 * thread #1: tid = 100641, 0x00000000004023f1 ls`main(argc=1, argv=0x00007fffffffe760) + 33 at ls.c:163, name = 'ls', stop reason = breakpoint 1.1
 
 frame #0: 0x00000000004023f1 ls`main(argc=1, argv=0x00007fffffffe760) + 33 at ls.c:163
@@ -142,14 +142,14 @@ LLDB 内置支持语言运行时和库使用的多种高级数据结构格式。
 
 例如，启用类型格式化器时，`std::string` 默认只显示字符串内容：
 
-```
+```sh
 (lldb) expression str
 (string) $1 = "This is a string."
 ```
 
 如有必要，可以禁用格式化器以查看数据结构的完整细节：
 
-```
+```sh
 (lldb) type category disable gnu-libstdc++
 (lldb) expression str
 (string) $2 = {
