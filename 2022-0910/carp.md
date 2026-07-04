@@ -30,7 +30,7 @@ CARP 中的所有数据包均经过加密签名，这意味着冗余组中的每
 
 **图 3. 新的活跃节点**
 
-![](https://github.com/user-attachments/assets/bf2da29e-2f53-434d-88c8-199c26f9c952)
+![CARP 新活跃节点选举示意图](https://github.com/user-attachments/assets/bf2da29e-2f53-434d-88c8-199c26f9c952)
 
 以上所有示例均展示了冗余组中只有一个 IP 地址的情况。但实际上，冗余组可以包含多个 IP 地址，而且主机也可以属于多个冗余组——这可以通过不同的 vhid 实现。得益于这一特性，我们还可以在网络中的服务之间实现某种程度的负载均衡。例如，绿色节点可以在提供 Web 服务器服务的冗余组中担任活跃节点，而蓝色节点则在提供时间服务的冗余组中担任活跃节点。如果其中某一节点消失，另一节点则会在相应冗余组中成为活跃节点。
 
@@ -42,7 +42,7 @@ CARP 同样能解决这一问题。当两个主机均处于活跃状态时，它
 
 **图 4. 脑裂情况**
 
-![](https://github.com/user-attachments/assets/dfccd1fc-fa41-4af0-a593-e80295450110)
+![CARP 脑裂情况示意图](https://github.com/user-attachments/assets/dfccd1fc-fa41-4af0-a593-e80295450110)
 
 ## FreeBSD 内核模块 CARP 配置
 
@@ -71,7 +71,7 @@ em0:
 
 **图 5. 使用 Wireshark 捕获的 CARP 流量**
 
-![](https://github.com/user-attachments/assets/808433d6-02fe-4f66-a2cd-80557fcb97d9)
+![Wireshark 捕获的 CARP 流量截图](https://github.com/user-attachments/assets/808433d6-02fe-4f66-a2cd-80557fcb97d9)
 
 或许有用的一点是，FreeBSD 的 devd(8) 守护进程允许在状态发生变化时运行额外的脚本。列表 2 展示了来自 FreeBSD 手册页的一个此类配置示例。当冗余组状态改变时，将执行 `/root/carpcontrol.sh` 脚本，第一个参数为 `vhid@inet`，第二个参数为当前组状态。
 

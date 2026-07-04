@@ -58,27 +58,27 @@ scrape_configs:
 
 在深入配置之前，我们启用 Prometheus 服务和 node_exporter，以便在 FreeBSD 启动时自动启动。
 
-```
+```sh
 # service prometheus enable
 # service node_exporter enable
 ```
 
 Prometheus 提供了一个基于 Web 的界面，用于查询和显示由系统（在 Prometheus 术语中称为目标）导出的度量数据。我为 Prometheus 服务的启动提供了一个额外的参数，以定义 Web 界面应该在哪个端口上可访问，我的主机名是 mistwood。
 
-```
+```sh
 # sysrc prometheus_args="--web.listen-address=mistwood:9090"
 ```
 
 配置完成后，我们可以像这样启动 Prometheus 服务和 node_exporter：
 
-```
+```sh
 # service prometheus start
 # service node_exporter start
 ```
 
 几秒钟后，执行以下命令：
 
-```
+```sh
 # sockstat -l
 ```
 

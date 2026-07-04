@@ -35,11 +35,11 @@ Katie
 
 ## 为什么明年我还会参加
 
-![](https://github.com/user-attachments/assets/ce02dc5f-b100-4c0b-a237-7ab479da1676)
+![维也纳梅朗日咖啡](https://github.com/user-attachments/assets/ce02dc5f-b100-4c0b-a237-7ab479da1676)
 
 咖啡非常棒。好吧，这并不是唯一的理由，但你绝对应该把“在维也纳喝一杯梅朗日咖啡”加入你的心愿单，那真是一次美妙的体验。维也纳是座令人叹为观止的城市，拥有其壮丽的建筑、食物、纪念碑、购物、剧院、宫殿和公共交通——我鼓励大家都去这座美丽的城市旅行。
 
-![](https://github.com/user-attachments/assets/199e52ce-a037-4dbe-8bea-73c560a0105d)
+![维也纳城市建筑](https://github.com/user-attachments/assets/199e52ce-a037-4dbe-8bea-73c560a0105d)
 
 我明年肯定还会参加，因为人们的原因。我喜欢这个多元化的群体，被热情好客和包容精神所感动。我笑得非常开心，不仅仅是当 Henning Brauer 尝试了在 SBA Research 阳台上长出的野生植物时。他没事，但我决定明年参加会议之前更新我的急救和心肺复苏证书。
 
@@ -49,7 +49,7 @@ Katie
 
 我的朋友们，明年见，祝你们“Gute Fahrt！”
 
-![](https://github.com/user-attachments/assets/658f4246-3909-4774-9365-0f4ec6df24d7)
+![EuroBSDCon 2021 会议合影](https://github.com/user-attachments/assets/658f4246-3909-4774-9365-0f4ec6df24d7)
 
 ---
 

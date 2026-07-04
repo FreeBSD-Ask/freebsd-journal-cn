@@ -42,7 +42,7 @@ www IN SSHFP 3 2 5c5192e78de10…
 
 如果一台主机有多个名字，而你可能会用其中任何一个名字去连接这台主机，那么每个主机名都需要 SSHFP 记录。举例来说，我的 Web 服务器又叫 `pestilence.michaelwlucas.com`。我需要在区里准备两份这样的记录，每个主机名一份，类似下面这样：
 
-```
+```sh
 www IN A 192.0.2.33
 www IN SSHFP 1 1 f44d08efc159…
 www IN SSHFP 1 2 86c744ce05ba…
@@ -67,13 +67,13 @@ DANE，即基于 DNS 的命名实体认证（DNS-based Authentication of Named E
 
 DNS 通过 TLSA 记录提供 SSL 证书指纹。（TLSA 并不是首字母缩略词；它只是一条 TLS 记录，类型 A。估计将来我们还会演进到 TLSB。）一条 TLSA 记录长这样：
 
-```
+```sh
 _port._protocol.hostname TLSA ( 3 0 1 hash...)
 ```
 
 如果你用过 VOIP 之类的服务，这看上去应该相当眼熟。例如，主机 `dnssec.michaelwlucas.com` 上端口 443 的 TLSA 记录长这样：
 
-```
+```sh
 _443._tcp.dnssec TLSA ( 3 0 1
 4CB0F4E1136D86A6813EA4164F19D294005EBFC02F10CC400F1776C45A97F16C)
 ```
@@ -90,7 +90,7 @@ SHA256 Fingerprint=4C:B0:F4:E1:13:6D:86:A6:81:3E:A4:16:4F:19:D2:94:00:5E:BF:C0:2
 
 有趣的是，你也可以用 TLSA 记录校验 CA 签名的证书。用相同方式生成哈希，但把开头的字符串改成 `1 0 1`。我为 `https://www.michaelwlucas.com` 用的是一张 CA 签名的证书，同时通过 DNSSEC 用下面这条记录进行校验。
 
-```
+```sh
 _443._tcp.www TLSA ( 1 0 1
 DBB17D0DE507BB4DE09180C6FE12BBEE20B96F2EF764D8A3E28EED45EBCCD6BA )
 ```

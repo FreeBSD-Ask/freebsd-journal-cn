@@ -25,13 +25,13 @@
 
 请注意，在一个窗口（往返时间）内只能恢复一个数据包，图中的长绿色水平线表示接收应用程序处理更多数据之前所引起的延迟。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/scheffenegger_fig2.png)
+![不使用 SACK 和 PRR 的 Cubic 丢包恢复时序图](https://freebsdfoundation.org/wp-content/uploads/2024/02/scheffenegger_fig2.png)
 
 ### 使用 SACK，但不使用 PRR 的 Cubic
 
 如此例所示，SACK 极大地改善了情况，因为所有丢失的数据包一般都可以在一个往返时间（RTT）内重传。然而，请注意，在每个 ACK 后发送的暂停和恢复。这种行为导致数据的有效发送速率过高，导致一些数据包被网络丢弃。通常，这会导致一个或多个重传数据包到达得太快，网络丢弃了重传包。此时唯一的解决办法就是等待重传超时（RTO）。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/scheffenegger_fig3.png)
+![使用 SACK 和 PRR 的 Cubic 丢包恢复时序图](https://freebsdfoundation.org/wp-content/uploads/2024/02/scheffenegger_fig3.png)
 
 ### 使用 SACK（6675）和 PRR 的 Cubic
 
@@ -53,7 +53,7 @@
 
 总体而言，这些改进使基础栈在面临 IP 网络中常见的病态问题时更加健壮。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/schefenegger_fig4.jpg)
+![SACK 改进后基础栈处理病态问题示意图](https://freebsdfoundation.org/wp-content/uploads/2024/02/schefenegger_fig4.jpg)
 
 最后，基础栈（以及 RACK 栈）在接收到错误的重复数据包时生成 DSACK（RFC2883）响应。尽管接收这样的 DSACK 信息不会改变栈的行为，但将其提供给远程发送方可能使该发送方能够更好地适应特定的网络路径行为——例如，Linux 可以因此增加重复确认阈值（dupthresh），或检测到由于路径往返时间（RTT）突增而导致的错误重传。
 

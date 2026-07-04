@@ -83,21 +83,21 @@ Output file name (.pcap): t1.pcap
 
 **图 2. Razer Synapse 工具。该工具用于配置背光颜色。**
 
-![](https://github.com/user-attachments/assets/dd601b4c-a292-403b-b851-30d1555bc00a)
+![Razer Synapse 工具截图](https://github.com/user-attachments/assets/dd601b4c-a292-403b-b851-30d1555bc00a)
 
 **表 1. 来自 USB 文档的设置数据格式，以及转储中的值**
 
-![](https://github.com/user-attachments/assets/ebf0e691-eb81-4a9d-8529-47ed23bd16bf)
+![USB 设置数据格式表](https://github.com/user-attachments/assets/ebf0e691-eb81-4a9d-8529-47ed23bd16bf)
 
 在设置数据之后，我们有专门针对 Razer 驱动程序的数据。在图 4 中，我们将 pcap 数据与 openrazer 项目中的 razer_report 结构结合起来。接下来，我们可以轻松地看到一些关于参数的更多信息。首先，我们有 2 个字节设置为 0，我们可以假设它们是保留字段。接下来，我们有一个字节设置为 1。当我们查看 pcap 时，可以看到许多类似的数据包，在此位置，值的范围从 0 到 5。我们稍后可以验证这一点，但实际上，它似乎是键盘上的行号。然后，我们有一个值 0x15（21），它实际上是每行的键数。最后，有一个重复了 21 次的值 0xff0000，似乎指的是我们在 RGB 中设置的红色（R: 255, G: 0, B: 0）。
 
 **图 3. 使用 usbpcap 在 Wireshark 下生成的 pcap。设置数据包被高亮显示**
 
-![](https://github.com/user-attachments/assets/059d3241-e726-49ba-9773-8e87d89a880f)
+![Wireshark 中的 pcap 数据包](https://github.com/user-attachments/assets/059d3241-e726-49ba-9773-8e87d89a880f)
 
 **图 4. 使用 openrazer 获取的结构与设置数据结合**
 
-![](https://github.com/user-attachments/assets/5e2ce1cf-0fbc-427c-924d-d801b7c5f603)
+![openrazer 结构与设置数据结合](https://github.com/user-attachments/assets/5e2ce1cf-0fbc-427c-924d-d801b7c5f603)
 
 **图 4. 使用 openrazer 获取的结构与设置数据结合**
 

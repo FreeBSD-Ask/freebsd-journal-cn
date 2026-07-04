@@ -29,7 +29,7 @@ CHERI 是一个硬件/软件/语义学联合设计项目，旨在提高现有和
 
 在 Arm Morello 平台【注 20】发布之前，CheriBSD 和第三方软件已经使用 Morello 和 CHERI-RISC-V【注 9】的 QEMU 仿真器进行开发和移植了。这个环境在今天仍然很有用，可以在多个 CheriBSD 分支上工作，或者将 GDB 调试器连接到 QEMU 上，并在 CheriBSD 内核中逐步进行。任何对我们的研究感兴趣的人都可以尝试 CHERI 练习【注 25】，在 QEMU 下探索 CHERI 如何防止产生内存安全问题。可以通过 *cheribuild* 工具【注 1】在 FreeBSD、Linux 和 macOS 上创建一个基于 Morello QEMU 的虚拟机，使用一个简单的命令来获取和编译所需的软件，并运行该虚拟机：
 
-```
+```sh
 $ ./cheribuild.py --include-dependencies run-morello-purecap
 ```
 
@@ -77,7 +77,7 @@ pkg+http://pkg.FreeBSD.org/${ABI}/latest
 
 被扩展为：
 
-```
+```sh
 pkg+http://pkg.FreeBSD.org/FreeBSD:14:amd64/latest
 ```
 
@@ -89,19 +89,19 @@ pkg+http://pkg.FreeBSD.org/FreeBSD:14:amd64/latest
 
  例如，在一台运行 CheriBSD 22.12 的 Morello 主机上，URL:
 
-```
+```sh
 pkg+http://pkg.CheriBSD.org/${ABI}
 ```
 
 被 pkg64c 扩展为：
 
-```
+```sh
 pkg+http://pkg.CheriBSD.org/CheriBSD:20220828:aarch64c
 ```
 
 和被 pkg64 扩展为：
 
-```
+```sh
 pkg+http://pkg.CheriBSD.org/CheriBSD:20220828:aarch64
 ```
 
@@ -138,13 +138,13 @@ FreeBSD 允许用 binmiscctl(8) 定义二进制图像激活器，使用特定的
 例如，系统管理员可以定义一个激活器，在 amd64 主机上使用 QEMU 用户模式模拟器运行 arch64 二进制文件。
 在实践中，在 FreeBSD/amd64 主机上的 FreeBSD/aarch64 jail 中执行的程序会被包装成用户模式，例如：
 
-```
+```sh
 $ sh
 ```
 
 是在 jail 中作为命令执行的：
 
-```
+```sh
 $ /usr/local/bin/qemu-aarch64-static sh
 ```
 
@@ -173,7 +173,7 @@ b. 我们改变了 QEMU，使其更接近 CheriBSD/FreeBSD 的系统调用接口
 这一部分的项目花了我们最长的时间。目前，用户模式本身可以通过 cheribuild qemu-cheri-bsd-user 分支 2 轻松使用。
  例如，你可以在 FreeBSD/amd64 主机上从 CheriBSD/riscv64c 基本系统运行 CheriABI shell，使用
 
-```
+```sh
 $ ./cheribuild.py run-user-shell-riscv64-purecap
 ```
 
@@ -209,15 +209,15 @@ $ ./cheribuild.py run-user-shell-riscv64-purecap
 
 在 CheriBSD/Morello 主机上为开发分支构建 CheriABI 包需要执行三个简单的命令：
 
-```
+```sh
 $ poudriere jail -c -j aarch64c-dev -a arm64.aarch64c -v dev
 ```
 
-```
+```sh
 $ poudriere ports -c -p main
 ```
 
-```
+```sh
 $ poudriere bulk -j aarch64c-dev -p main -z cheriabi -a
 ```
 
@@ -233,11 +233,11 @@ $ poudriere bulk -j aarch64c-dev -p main -z cheriabi -a
 
 CheriBSD 用户可以使用从 CheriBSD.org 获得的 memstick 安装程序，轻松建立 Morello 主机（见图 2）。CheriBSD 中的 bsdinstall(8) 包括了安装选项，用户可以决定是否要安装运行 CheriABI 图形环境（使用 KDE Plasma 和 Wayland；见图 3）和其他合 ABI 程序（目前是 Firefox 和 Chromium）的软件包。这些包可以很容易地用元包来安装：
 
-```
+```sh
 $ pkg64c install cheri-desktop
 ```
 
-```
+```sh
 $ pkg64 install cheri-desktop-hybrid-extras
 ```
 

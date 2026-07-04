@@ -27,11 +27,11 @@ JSON 日志记录了 rtl_433 解码外部温度计无线电传输的数据。
 
 这确实有效，数据被发送到了 MQTT，Home Assistant 绘制出了我选择的温度传感器的漂亮曲线图。但这种方案不够稳定。每次重启、升级或防火墙故障后，我都得记得重新启动它。它不够可靠，我也对此不满意。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/10/cvelbar_chart1.png)
+![Home Assistant 花园温度传感器温度曲线图](https://freebsdfoundation.org/wp-content/uploads/2025/10/cvelbar_chart1.png)
 
 Home Assistant 顺利绘制出了由花园温度传感器捕获的温度曲线。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/10/cvelbar_chart2.png)
+![两个传感器温度曲线对比图](https://freebsdfoundation.org/wp-content/uploads/2025/10/cvelbar_chart2.png)
 
 Home Assistant 系统捕获的两个传感器的温度曲线图。
 
@@ -51,7 +51,7 @@ Home Assistant 系统捕获的两个传感器的温度曲线图。
 
 怀疑是与操作系统版本存在某些不兼容，我后来写了个粗糙的 shell 脚本，基于 Tom 的说明来自动化镜像创建。运行了几次之后，我开始把它参数化，以便更快地更换版本，并添加了一些其它实用的小功能。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/10/Cvelbar_Final_Implementation.png)
+![NanoPi 与 USB SDR 接收棒最终实现](https://freebsdfoundation.org/wp-content/uploads/2025/10/Cvelbar_Final_Implementation.png)
 
 最终实现 —— NanoPi 与插在防火墙上的 USB SDR 接收棒。
 

@@ -15,11 +15,11 @@
 
 对于 Drew 的情况，我最终为他提供了几个自定义的客户端-服务器程序，这些程序会发送文件并丢弃它，但也会启用 BBlogs。然后 Drew 运行 BBlog 收集器 (tcplog_dumper) 和特定程序来发送一个大小相当的文件，类似于他试图下载到新位置的文件。他有了 BBlogs 以后，就让我阅读并解释它们。我不会用 BBlog 包含的大量文本来烦扰你，但它们很快就描绘了发送方和接收方的情况，立即告诉我们在 TCP 层发生了什么。基本上，发送方会以大约 10 MSS（14,600 字节）的初始窗口开始，并向内部驱动程序 TSO 机制发送一个突发：
 
-![](https://freebsdfoundation.org/wp-content/uploads/2026/04/stewart_fig1.png)
+![TCP 发送方突发数据示意图](https://freebsdfoundation.org/wp-content/uploads/2026/04/stewart_fig1.png)
 
 数据包将穿过互联网并到达 TCP 接收方，如下所示：
 
-![](https://freebsdfoundation.org/wp-content/uploads/2026/04/stewart_fig2.png)
+![TCP 接收方数据包重排序示意图](https://freebsdfoundation.org/wp-content/uploads/2026/04/stewart_fig2.png)
 
 接收方正在发送 SACK 和 ACK，表明数据包是按 P4、P4、P2 并最终是 P1 的顺序由接收方处理的。
 
@@ -53,7 +53,7 @@ Drew 是一位 FreeBSD 开发者（他以处理驱动程序为乐），经过一
 
 所以，我意识到的是一种让 RACK “重新进入”慢启动的方法（请注意，慢启动在我看来是一个错误的名称，因为它是指数增长，每个 RTT 拥塞窗口翻倍），这样它可以更快地打开窗口。所以，当查看初始情况时，RACK 会看到以下情况：
 
-![](https://freebsdfoundation.org/wp-content/uploads/2026/04/stewart_fig3.png)
+![RACK 栈重传时序示意图](https://freebsdfoundation.org/wp-content/uploads/2026/04/stewart_fig3.png)
 
 这里的关键是时间标记 T3（与传输时间相比）刚好足够长于 RTT，告诉 RACK 是的，是时候重传数据包了。这是因为 RACK 到目前为止还没有看到任何重复的确认，并且从初始发送到 T3 的时间长于 RTT 加上 RACK 使用的小初始增量。但更重要的是，T4——将累积点移动到 P4 的确认的实际到达——发生的时间远少于 RTT。基本上，T4 和 T3 之间的时间总是少于 RTT 的一半。这为如何调整 RACK 以处理这种情况提供了洞察。
 

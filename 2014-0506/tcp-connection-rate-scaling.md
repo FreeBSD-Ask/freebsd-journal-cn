@@ -37,12 +37,12 @@
 如果我们假设带宽主要受出站（响应）数据包限制，对于规范的数据包流，可以按每个请求计算出口带宽消耗：
 
 | 数据包类型 | 字节数 | 说明 |
-| :---: | :---: | :--- |
+| :--------: | :----: | :--- |
 | （2）SYN - ACK | 98 | 78 + MSS、SACK、wscale、timestamps |
 | （5）PSH - ACK | 90+ | 78 + timestamps + 响应负载 |
 | （6）FIN | 90 | 78 + timestamps |
 | （9）ACK | 90 | 78 + timestamps |
-| 出站总计 | 368 + 响应负载 |  |
+| 出站总计 | 368 + 响应负载 | |
 
 额外的负载、VLAN 标记（802.1Q）、略不同的数据包计数以及额外的 TCP 选项都可能增加累计请求大小，因此若我们假设入站或出站聚合数据包大小在 500 到 1000 字节之间，单块吉比特网卡端口应争取每秒累计服务约 125,000 到 250,000 次这类请求——相当于每秒 625,000 到 125 万个入站数据包，以及每秒 500,000 到 100 万个出站数据包。
 
@@ -54,7 +54,7 @@
 
 图 2. CPU 利用率，单队列
 
-```
+```sh
 $ top -SHIPz
 CPU 0: 0.0% user, 0.0% nice, 0.4% system, 96.1% interrupt, 3.5% idle [irq core]
 …
@@ -73,7 +73,7 @@ PID USERNAME PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 
 图 3. CPU 利用率，多队列
 
-```
+```sh
 CPU 0: 0.0% user, 0.0% nice, 30.5% system, 64.5% interrupt, 5.0% idle [irq core]
 CPU 1: 0.0% user, 0.0% nice, 29.9% system, 64.3% interrupt, 5.7% idle [irq core]
 CPU 2: 0.0% user, 0.0% nice, 30.2% system, 66.1% interrupt, 3.6% idle [irq core]
@@ -101,7 +101,7 @@ PID USERNAME PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 
 图 4. PMC 性能剖析，中断 CPU
 
-```
+```sh
 # pmcstat -c 0 -S unhalted-cycles -O sample.pmc
 # pmcstat -R sample.pmc -G call.graph
 ... [397427 samples]
@@ -127,7 +127,7 @@ PID USERNAME PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 
 图 5. TCP 负载的锁性能分析
 
-```
+```sh
 # sysctl debug.lock.prof.stats | head -2; sysctl debug.lock.prof.stats | sort -n -k 4 -r | head -6
 max wait_max total wait_total count avg wait_avg cnt_hold cnt_lock name
 210 660 2889429 7854725 568650 5 13 0 562770 …/tcp_input.c:1013 (rw:tcp)
@@ -154,7 +154,7 @@ max wait_max total wait_total count avg wait_avg cnt_hold cnt_lock name
 观察交换的数据包及相应的 TCP 连接状态（见下表），我们看到五个接收到的数据包中有四个会导致 `rw:tcp` 写锁被获取。由于该锁对所有 TCP 套接字全局共享，这一竞争似乎是限制通过 RSS 扩展的主要因素。
 
 | # | 入站包 | 出站包 | 状态（前） | 状态（后） | tcp_input 中锁定 rw:tcp？ |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| - | :----: | :----: | :--------: | :--------: | :-----------------------: |
 | 1 | SYN（1） | SYN + ACK（2） | None | SYN-RECEIVED | 是，WLOCK |
 | 2 | ACK（3） | | SYN-RECEIVED | ESTABLISHED | 是，WLOCK |
 | 3 | PSH（4） | PSH（5） | ESTABLISHED | ESTABLISHED | 否 |

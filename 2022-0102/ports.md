@@ -37,7 +37,7 @@
 
 这是星期六晚上，阳光明媚，雪正在融化。你正在 FreeBSD 桌面上处理重要的事情。你在处理你日益增多的待办事项清单。逐个任务。下一个任务需要 PDF 阅读器。没问题。我们来用我们尊敬的 Xpdf。于是你启动 Xfce 应用程序查找器，搜索 Xpdf。一切进行得很顺利。然后你看到了它。Xpdf 条目没有合适的图标。想象一下！这不行。我们得修复它。
 
-![](https://github.com/user-attachments/assets/2d227190-d85f-4d09-b738-4d1e2bb765a9)
+![Xpdf 图标缺失](https://github.com/user-attachments/assets/2d227190-d85f-4d09-b738-4d1e2bb765a9)
 
 在我们开始修改 ports 树之前，先来了解一下为什么 Xpdf 图标会缺失。Xfce 应用程序查找器根据位于 `/usr/local/share/applications` 的桌面文件生成条目列表。
 
@@ -227,7 +227,7 @@ make reinstall
 
 现在是时候检查一下 Xfce 应用程序查找器中的 Xpdf 条目是否有图标了。
 
-![](https://github.com/user-attachments/assets/3737c43b-5446-402c-be8a-930154b3dce9)
+![Xpdf 图标修复后](https://github.com/user-attachments/assets/3737c43b-5446-402c-be8a-930154b3dce9)
 
 成功！
 

@@ -159,7 +159,7 @@ Password  :  @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 
 以下参数已在 Makejail 文件中定义：
 
-```
+```sh
 --network network name used by jail
 --caldera_ip IP address assigned to jail
 
@@ -168,7 +168,7 @@ Password  :  @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 
 就像 wazuh 的创建和配置过程一样，它将在以下示例中显示为 MITRE Caldera 生成的凭据：
 
-```
+```sh
 ################################################
 MITRE Caldera admin credential
 Hostname  :  https://jail-host-ip:8443
@@ -199,7 +199,7 @@ Password  :  1TPza2NLp0h1scaZ2uA=
 
 ![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/89a8df9a-ea9f-4297-9fc9-2ee0aab53a70)
 
-```
+```sh
 # appjail cmd jexec agent01 sh -c ‘curl -k -s -X POST -H “file:sandcat.go” -H
 “platform:freebsd” https://11.1.0.10:8443/file/download > /root/splunkd’
 # appjail cmd jexec agent01 chmod 750 /root/splunkd

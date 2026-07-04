@@ -9,13 +9,13 @@
 
 本次实验中使用的 ThunderX2 是一款双插槽、56 核的 ARM64 平台。单个 CPU 芯片拥有 28 个核心，这些核心分布在八个核心组中，通过环形互连相连，并共享一个横截带宽超过 6TB/s 的 L3 缓存。每个核心最多可支持 4 个 SMT 线程，整个系统的线程总数达到 224 个。每个芯片的 8 通道 DDR4 接口为整个系统提供了超过 200GB/s 的内存带宽。各个 CPU 芯片之间则通过 CCPIv2 互连连接，提供 600 Gb/s 的带宽。从这些规格来看，它似乎是内存密集型工作负载的理想目标。
 
-![](https://github.com/user-attachments/assets/3de1f087-3fbd-4322-9349-5c308c604ce1)
+![ThunderX2 设备架构图](https://github.com/user-attachments/assets/3de1f087-3fbd-4322-9349-5c308c604ce1)
 
 **图 1. ThunderX2 设备架构。**
 
 最初用于 GNU Linux/x86 桌面环境的该模拟系统，必须适应并行环境，而且这一过程可能不需要太多编程工作。系统的核心部分是一个用 C++ 编写的定制模拟器软件。该模拟器接收记录的分组追踪（PCAP 流），并生成一个网络流数据库。这个流可以来自文件，也可以来自另一个将多个分组流合并在一起的程序（称为混合器）。该网络流数据库采用一种自定义二进制格式，其内存组织方式类似于 C 语言中的结构体表。这种格式既便于在 C/C++ 中序列化（通过 frwrite()），也便于使用 Numpy 解析（通过 fromfile()）。
 
-![](https://github.com/user-attachments/assets/3c8406d5-1c7e-450d-a0fb-45fc3a40f4d5)
+![FreeBSD 上执行的定制数据科学管道](https://github.com/user-attachments/assets/3c8406d5-1c7e-450d-a0fb-45fc3a40f4d5)
 
 **图 2. 在 FreeBSD 上执行的定制数据科学管道**
 
@@ -27,7 +27,7 @@
 
 如果说部署 Python 堆栈如此繁琐，那是否真的值得呢？归根结底——是的——这主要得益于并行计算。默认情况下，DataFrame 对象的计算是单线程的。然而，Pandarallel 包通过多进程方式实现了无缝并行化。尽管这种方式并不完美（因为它要求复制数据），但对于 CPU 密集型计算来说，其加速效果仍然十分显著。
 
-![](https://github.com/user-attachments/assets/403adffa-d2f2-4398-858d-d79b9db770b4)
+![Make 监理的并行化方案示意图](https://github.com/user-attachments/assets/403adffa-d2f2-4398-858d-d79b9db770b4)
 
 **图 3.Make 监理的并行化方案**
 
