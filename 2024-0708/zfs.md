@@ -3,7 +3,7 @@
 - 原文链接：[Protecting Data with ZFS Native Encryption](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/protecting-data-with-zfs-native-encryption/)
 - 作者：Roller Angel
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/09/angel_art-2.jpg)
+![ZFS 加密文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/09/angel_art-2.jpg)
 
 ZFS 原生支持加密数据集，能让你轻松地使用行业标准的密码套件来保护数据。与磁盘的全盘加密相比，将数据集加密的主要优势在于，当未使用数据集时，可以将其卸载，而全盘加密要求在静止状态下加密时，磁盘必须关闭。请记住，ZFS 原生加密有加载和卸载密钥的概念。仅仅卸载加密的数据集是不够的，你还必须卸载与该数据集关联的密钥。如果密钥仍然处于加载状态，数据集可以被挂载并且数据将可用。卸载密钥会使挂载操作失败。加载密钥是挂载数据集的前提。嵌套的子数据集会继承其父数据集的加密密钥，但这并非必须。即使父数据集使用不同的加密设置，也可以使用不同的加密密钥和密码套件。最后，更改密钥就像在数据集上执行 `zfs change-key` 命令一样简单。
 

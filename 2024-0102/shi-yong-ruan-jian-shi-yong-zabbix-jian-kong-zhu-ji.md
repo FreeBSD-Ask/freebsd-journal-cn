@@ -13,7 +13,7 @@
 
 我在 jail 中运行 Zabbix，未遇到过什么大问题。这个基于 PHP 的解决方案需要一款数据库来存储指标。可以使用 Postgres、MySQL/MariaDB、SQLite，甚至是 IBM 和 Oracle 的商业 DB2 数据库服务器。监控本身通过 SNMP/IPMI、SSH 和简单的 ping 来检查可用性。对于主动监控（收集实时机器指标），需要在主机上安装代理。Zabbix 还提供了监控整个子网的功能，可检测新主机，在它们出现时自动将其添加到监控中。还可以为特定的主机和特定情况（例如磁盘已满）设置触发器，可以通过 Web 界面配置这些触发器。可以通过电子邮件、Jabber、SMS 和自定义脚本操作发送相关事件的警报。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/reuschling_fig1.jpg)
+![Zabbix 监控示意图](https://freebsdfoundation.org/wp-content/uploads/2024/02/reuschling_fig1.jpg)
 
 ## 安装设置 Zabbix
 

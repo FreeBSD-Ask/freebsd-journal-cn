@@ -3,7 +3,7 @@
 - 原文地址：[Character Device Driver Tutorial](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/character-device-driver-tutorial/)
 - 作者：John Baldwin
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/11/baldwin_art.png)
+![字符设备驱动教程配图](https://freebsdfoundation.org/wp-content/uploads/2024/11/baldwin_art.png)
 
 **字符设备提供了由设备文件系统（[devfs(5)](https://man.freebsd.org/devfs/5)）暴露到用户空间应用程序的伪文件**。与标准文件系统不同，在标准文件系统中，像读取和写入等操作的语义，在文件系统内的所有文件间是一样的；而所有字符设备为每个文件操作都定义了自己的语义。字符设备驱动程序会声明一个字符设备 switch（character device switch）（`struct cdevsw`），其中包含了每个文件操作的函数指针。
 

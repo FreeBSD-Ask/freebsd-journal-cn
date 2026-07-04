@@ -3,7 +3,7 @@
 - 原文链接：[KDE CI and FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/development-workflow-and-ci/kde-ci-and-freebsd/)
 - 作者：Ben Cooksley
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/05/cooksley_art.png)
+![KDE CI 文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/05/cooksley_art.png)
 
 自 2011 年 8 月以降，KDE 就开始实施 CI（Continuous Integration，持续集成）系统，且持续改进着。自此，系统已经大幅演进，增加了对多个 Qt 版本（大多数 KDE 软件所使用的工具包）以及多个平台的支持。
 

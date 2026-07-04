@@ -3,7 +3,7 @@
 - 作者：Dave Cottlehuber
 - 原文链接：<https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/hashicorp-vault/>
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/07/threequartersopenvault1.png)
+![Vault 文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/07/threequartersopenvault1.png)
 
 居家工作已成为新常态。但从安全性角度看，事情变得更为复杂。安全的办公室不复存在，那些精心锚定的安全边界和全天候的物理安全亦已消失。
 

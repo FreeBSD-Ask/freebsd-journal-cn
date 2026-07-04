@@ -3,7 +3,7 @@
 - 原文链接：[More Modern Kernel Debugging Tools](https://freebsdfoundation.org/our-work/journal/browser-based-edition/development-workflow-and-ci/more-modern-kernel-debugging-tools/)
 - 作者：Tom Jones
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/05/iStock-13373619801.png)
+![内核调试文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/05/iStock-13373619801.png)
 
 恐慌（Panic）是一个奇妙的词！
 

@@ -293,4 +293,4 @@ VPP 是一款令人印象深刻的软件——待解决了兼容性问题，VPP 
 
 **Tom Jones** 是一名 FreeBSD 提交者，致力于保持网络堆栈的高效运行。
 
-![](http://jones-web-resources/image/graphic.png)
+![VPP 文章配图](http://jones-web-resources/image/graphic.png)

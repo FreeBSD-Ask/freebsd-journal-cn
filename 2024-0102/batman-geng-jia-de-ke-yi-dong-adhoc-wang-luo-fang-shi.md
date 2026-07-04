@@ -3,7 +3,7 @@
 - 原文链接：[BATMAN: the Better Approach to Mobile Ad-hoc Networks](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/batman-the-better-approach-to-mobile-ad-hoc-networks/)
 - 作者：Aymeric Wibo
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/batman_art.jpg)
+![BATMAN 文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/02/batman_art.jpg)
 
 在广阔的网络协议领域，有一种协议脱颖而出，作为一个多功能且自适应的竞争者：BATMAN，即 Better Approach to Mobile Ad-hoc Networks（随建即连网络优化方案）。在大城市的无线电波中，BATMAN 能让设备在网状网络中无缝通信，却无需让任何一台设备了解整个网络拓扑。
 
