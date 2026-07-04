@@ -16,7 +16,7 @@
 
 ## BERIpad 平台
 
-我们将 BERI 开发为可在硬件-软件接口上进行实验的平台，例如我们在 CHERI CPU 上围绕硬件支持的能力（capability）所开展的持续工作 [6]。我们的主要硬件目标是基于 Terasic DE4 FPGA 板、配 Terasic MTL 触摸屏和内置电池的平板。CPU 源码和平板设计已在 **http://beri-cpu.org** 开源。对 FreeBSD 支持的修改已合并入 FreeBSD。单处理器支持出现在 10.0 版本，多处理器支持将在未来版本中出现。该平板（图 1）和 BERI 的内部架构在《The BERIpad Tablet》[2] 中有详细描述。
+我们将 BERI 开发为可在硬件-软件接口上进行实验的平台，例如我们在 CHERI CPU 上围绕硬件支持的能力（capability）所开展的持续工作 [6]。我们的主要硬件目标是基于 Terasic DE4 FPGA 板、配 Terasic MTL 触摸屏和内置电池的平板。CPU 源码和平板设计已在 <http://beri-cpu.org> 开源。对 FreeBSD 支持的修改已合并入 FreeBSD。单处理器支持出现在 10.0 版本，多处理器支持将在未来版本中出现。该平板（图 1）和 BERI 的内部架构在《The BERIpad Tablet》[2] 中有详细描述。
 
 我们为三个 Altera IP 核开发了设备驱动：JTAG UART（altera_jtag_uart）、三速 MAC（atse）和 SD 卡（altera_sdcard），分别实现底层 console/tty、以太网接口和块存储类。此外，我们为 Avalon 挂接的设备实现了通用驱动（avgen），允许对不带中断源的任意总线挂接设备进行内存映射——例如 DE4 LED 块、BERI 配置 ROM 和 DE4 风扇与温度控制块。
 
@@ -24,7 +24,7 @@
 
 BERI 主板配置的多数方面用扁平设备树（Flat Device Tree，FDT）描述，这在 PowerPC 和基于 ARM 的系统上很常见 [3]。目前，每个 FreeBSD 内核内嵌一个设备树二进制（DTB），描述特定的硬件配置。每个 DTB 由设备树编译器 `dtc` 从设备树语法（DTS）文件构建，再嵌入内核。图 2 节选自 **boot/fdt/dts/mips/beripad-de4.dts**——该 DTS 文件——包含 BERI CPU、1GB DRAM、可编程中断控制器（PIC）、硬件串口、JTAG UART、SD 卡读卡器、闪存分区表、千兆以太网和触摸屏。
 
-```
+```dts
 model  =  "SRI/Cambridge  BeriPad  (DE4)";
 compatible  =  "sri-cambridge,beripad-de4";
 cpus  {
