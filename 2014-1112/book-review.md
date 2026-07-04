@@ -2,7 +2,7 @@
 
 ## 《Bulletproof SSL and TLS》
 
-*理解并部署 SSL/TLS 与互联网 PKI 以保护服务器和 Web 应用*，Ivan Ristic 著
+**理解并部署 SSL/TLS 与互联网 PKI 以保护服务器和 Web 应用**，Ivan Ristic 著
 
 作者：Steven Kreuzer
 
