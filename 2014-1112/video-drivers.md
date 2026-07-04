@@ -103,7 +103,7 @@ Infiniband 驱动导入时曾尝试过集中垫片方案，但最终被放弃。
 - Nouveau（NVIDIA GPU 的开源驱动）移植到 FreeBSD 应该不难，但耗时，因为我们的 TTM 内存管理器已经能工作。这能让我们开箱即用支持这些 GPU，尽管性能比不上专有驱动。此外这还能带来 GPGPU 支持，因为 NVIDIA 没有为 FreeBSD 提供 libOpenCL.so 库。
 - ARM GPU 驱动目前主要是 GPL，但开发者愿意改为双许可证模式，与其他驱动一致。当初选 GPL 多半只是"默认"选择。
 
-可以看出，让移植更省力会带来很多收益。我正在起草新方案，完成后将发布到 freebsd-arch@FreeBSD.org 邮件列表。
+可以看出，让移植更省力会带来很多收益。我正在起草新方案，完成后将发布到 <freebsd-arch@FreeBSD.org> 邮件列表。
 
 ### DRM PRIME
 

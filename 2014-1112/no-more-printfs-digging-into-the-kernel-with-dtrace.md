@@ -20,7 +20,7 @@ DTrace 本身由若干组件构成：
 
 D 程序由一组"探测点-谓词-动作"元组构成——每个元组指定一个或多个探测点、当某个探测点触发时要执行的动作，以及一个可选的谓词，该谓词在探测点触发时动态决定是否执行动作。语法上，每个元组类似 AWK 程序：
 
-```
+```d
 probe
 /predicate/
 {
@@ -30,7 +30,7 @@ probe
 
 例如，下面这个 D 脚本会打印 re1 接口上收到的每个 IPv6 数据包的源地址：
 
-```
+```d
 ip:::receive
 /args[2]->ip_ver == 6 && args[3]->if_name == "re1"/
 {
@@ -48,7 +48,7 @@ ip:::receive
 
 定位内存泄漏的原因可能是个艰苦的过程。内核里尤其如此——既缺乏用户态程序那样成熟的调试工具，`malloc()` 接口又有大量各异的调用者。FreeBSD 的 DTrace 实现提供 dtmalloc provider，能帮助快速定位内存泄漏来源。介绍它之前，我们先回顾一下 FreeBSD 内核提供的 `malloc()` 接口：
 
-```
+```c
 void *malloc(unsigned long size, struct malloc_type *type, int flags);
 void free(void *addr, struct malloc_type *type);
 ```
@@ -57,13 +57,13 @@ void free(void *addr, struct malloc_type *type);
 
 dtmalloc DTrace provider 为内存分配事件定义探测点，并为每种 malloc type 定义对应探测点。运行 `dtrace -l -P dtmalloc` 可查看这些探测点。下面这条单行命令能快速列出最活跃的子系统：
 
-```
+```sh
 # dtrace -n 'dtmalloc:::malloc {@[probefunc] = count()}'
 ```
 
 该程序在按 Ctrl-C 结束时，会按分配次数从多到少打印活跃的 malloc type 名：
 
-```
+```sh
 ...
 jnewblk                                732
 newblk                                 732
@@ -76,7 +76,7 @@ NFS_fh                                5817
 
 值得注意的是 temp type——它用于不绑定任何特定内核子系统的短命分配。把这条单行命令扩展为按秒记录并展示最活跃的 malloc type 也很有用：
 
-```
+```d
 dtmalloc:::malloc
 {
     @types[probefunc] = count();
@@ -91,19 +91,19 @@ tick-1s
 
 在较新版本的 FreeBSD 上，可以用 DTrace 新的 aggpack 选项查看各子系统的分配请求大小分布：
 
-```
+```sh
 # dtrace -n 'dtmalloc:::malloc {@[probefunc] = quantize(args[3]);}' -x aggpack
 ```
 
 如果某子系统泄漏了 `malloc()` 分配的内存，可以借助 dtmalloc 和 fbt provider 定位导致泄漏的代码路径。考虑这样一个简单场景：运行一个使用 `pmc(3)` 的测试后，观察到 `hwpmc(4)` 在卸载时泄漏内存（通过控制台消息）。
 
-```
+```sh
 Warning: memory type pmc leaked memory on destroy (8 allocations, 1024 bytes leaked).
 ```
 
 修复的第一步是搞清楚内存何时、如何分配。`hwpmc(4)` 代码里大约有 45 处 `malloc(9)` 调用——单靠代码审查很难定位，尤其是不熟悉 `hwpmc(4)` 代码的人。这正是用 D 的 `stack()` 函数识别泄漏代码路径的好机会：
 
-```
+```d
 #pragma D option quiet
 
 dtmalloc::$1:malloc
@@ -144,7 +144,7 @@ fbt::free:return, fbt::contigfree:return
 
 运行脚本产生的输出可以用一段简短的 Perl 脚本做后处理：
 
-```
+```perl
 my %stacks;
 while (<>) {
     if (/^alloc (0x[a-f0-9]+)$/) {
@@ -165,7 +165,7 @@ foreach my $key (keys %stacks) {
 
 把这段脚本作用在 D 脚本输出上会得到：
 
-```
+```sh
 hwpmc.ko`pmc_syscall_handler+0x1fb6
 kernel`amd64_syscall+0x25a
 kernel`0xffffffff809342cb
@@ -177,7 +177,7 @@ kernel`0xffffffff809342cb
 
 因此我们看到的内存泄漏必然源自 `pmc_syscall_handler+0x1fb6`；用 `kgdb(1)` 很容易找到对应代码：
 
-```
+```sh
 # kgdb
 ...
 (kgdb) list *pmc_syscall_handler+0x1fb6
@@ -190,7 +190,7 @@ kernel`0xffffffff809342cb
 - DTrace 为全局变量预留的内存是固定的。如果被追踪的子系统有大量长期分配，DTrace 可能存不下。
 - DTrace 没有把栈回溯存入变量的简便方法；下面这种写法是不允许的：
 
-```
+```d
 fbt::malloc:return, fbt::contigmalloc:return
 /self->trace == 1/
 {
@@ -207,7 +207,7 @@ fbt::malloc:return, fbt::contigmalloc:return
 
 用 DTrace 构建监控工具时，一个常见难点是所需数据可能散落在多个探测点。考虑按进程监控 UDP 流量的任务。自然的起点是用 `udp:::send` 和 `udp:::receive` 探测点统计字节数或包数。但 FreeBSD 上这些探测点的参数无法识别负责流量的进程。`curthread` 变量在这里也帮不上忙——数据包从套接字缓冲区到网络接口之间一般由 netisr(4) 线程处理，这些是处理网络数据包协议处理的专用中断优先级线程：
 
-```
+```sh
 # dtrace -n 'udp:::receive {printf("%s", curthread->td_name);}'
 dtrace: description 'udp:::receive ' matched 1 probe
 CPU     ID                    FUNCTION:NAME
@@ -219,7 +219,7 @@ CPU     ID                    FUNCTION:NAME
 
 到这里，你可能想放弃了。从 "udp" provider 探测点的上下文确实无法直接找到关联的进程。但我们可以利用一个事实：`udp:::send` 和 `udp:::receive` 第二个参数的 `cs_cid` 字段是指向该数据包关联的 `struct inpcb`（互联网协议控制块）的指针。该结构保存 TCP 和 UDP 套接字的连接状态，其中特别包含指向套接字的指针。借助 FBT 探测点，我们可以在进程创建 UDP 套接字时执行动作，用关联数组把 PCB 映射到进程的 PID。然后在 UDP 探测点中用 PCB 地址查找 PID：
 
-```
+```d
 fbt::udp_attach:entry
 {
     self->so = args[0];
@@ -246,7 +246,7 @@ fbt::in_pcbdetach:entry
 
 然后在 UDP 探测点中，用 PCB 地址在 procs 数组中查找：
 
-```
+```d
 udp:::send, udp:::receive
 /procs[args[1]->cs_cid] != 0/
 {
@@ -256,7 +256,7 @@ udp:::send, udp:::receive
 
 当然，如果套接字在脚本运行前已经创建，该脚本无法记录其 PID。除了在 `udp_attach()` 和 `udp_detach()` 中更新 procs 数组，还可以在进程对 UDP 套接字执行 I/O 时顺手更新映射：
 
-```
+```d
 fbt::sosend_dgram:entry, fbt::soreceive:entry
 /args[0]->so_proto->pr_protocol == IPPROTO_UDP/
 {
@@ -268,7 +268,7 @@ fbt::sosend_dgram:entry, fbt::soreceive:entry
 
 这种通过构建查找表来收集信息的通用技巧相当强大，不过需要你对内核及各数据结构之间的关系有一定熟悉。另一个应用是把文件路径映射到 vnode。vnode 是 FreeBSD 内核中文件在内存中的表示，用于在文件被访问时缓存各种信息。但用于查找文件的文件系统路径存储在另一个缓存——name cache 中。路径并不与 vnode 存在一起，所以给定一个 vnode，在 D 脚本中没有直接的方法找到关联路径。但我们可以挂钩 name cache 查找函数，以 vnode 地址为键构建映射表：
 
-```
+```d
 fbt::vn_fullpath1:entry
 {
     self->vn = args[1];
@@ -301,7 +301,7 @@ fbt::cache_purge:entry
 
 execsnoop 是 Brendan Gregg 编写的经典 DTrace 脚本，可在 DTrace toolkit[3] 中找到。它通过在 `execve(2)` 系统调用返回时追踪 `curpsinfo->pr_psargs` 变量（定义在 **/usr/lib/dtrace/psinfo.d**），让用户实时观察进程执行；简化版如下：
 
-```
+```d
 #pragma D option quiet
 
 syscall::execve:return
@@ -312,7 +312,7 @@ syscall::execve:return
 
 在 FreeBSD 系统上运行 execsnoop（或本例）可能产生一些看起来吓人的警告：
 
-```
+```sh
 ...
 cc --version
 sh -c echo 3.4.1 | awk -F. '{print $1 * 10000 + $2 * 100 + $3;}'
@@ -326,7 +326,7 @@ invalid address (0x4) in action #1 at DIF offset 136
 
 但有一个时刻内核中能拿到完整的参数向量——进入 `kern_execve()` 函数时。因此另一种做法是，在 `execve(2)` 首次进入内核时复制参数，待 DTrace 确认 `execve(2)` 系统调用成功后再打印。这可以借助 DTrace 推测（speculation）完成：
 
-```
+```d
 #pragma D option nspec=32
 #pragma D option quiet
 #pragma D option strsize=4096
@@ -365,7 +365,7 @@ syscall::execve:return
 
 本例另一个不常见之处是 `memstr()` D 函数。撰写本文时该函数为 FreeBSD 独有，专门为处理 FreeBSD 内核中参数字符串的内存布局而添加。比如字符串 `wc -w article.txt` 会被存储为：
 
-```
+```sh
 w   c   \   -   w   \   a   r   t   i   c   e   .   t   x   t   \
 ```
 
@@ -377,14 +377,14 @@ w   c   \   -   w   \   a   r   t   i   c   e   .   t   x   t   \
 
 ---
 
-Mark Johnston 是居住在西雅图的软件工程师。他来自多伦多，2013 年在滑铁卢大学取得数学学位，2010 年起成为 FreeBSD 用户。获得提交权限后，他的主要精力放在改进 FreeBSD 的 DTrace 实现上。可通过邮箱 markj@FreeBSD.org 联系他。
+Mark Johnston 是居住在西雅图的软件工程师。他来自多伦多，2013 年在滑铁卢大学取得数学学位，2010 年起成为 FreeBSD 用户。获得提交权限后，他的主要精力放在改进 FreeBSD 的 DTrace 实现上。可通过邮箱 <markj@FreeBSD.org> 联系他。
 
 ## 参考文献
 
 [1] DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X, and FreeBSD by Brendan Gregg and Jim Mauro, Prentice Hall 2011.
 
-[2] CPU Flame Graphs, http://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html
+[2] CPU Flame Graphs, <http://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html>
 
-[3] DTrace Toolkit, http://www.brendangregg.com/dtracetoolkit.html
+[3] DTrace Toolkit, <http://www.brendangregg.com/dtracetoolkit.html>
 
-[4] Speculative Tracing, https://wikis.oracle.com/display/DTrace/Speculative+Tracing
+[4] Speculative Tracing, <https://wikis.oracle.com/display/DTrace/Speculative+Tracing>
