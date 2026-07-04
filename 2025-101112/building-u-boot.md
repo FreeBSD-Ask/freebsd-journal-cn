@@ -3,6 +3,8 @@
 - 原文：[Embedded FreeBSD: Building U-boot](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/building-u-boot/)
 - 作者：Christopher R. Bowman
 
+![嵌入式 FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2026/01/embedded_freebsd_art.png)
+
 一位读者写信告诉我，他在编译 U-boot 时遇到了困难，所以我想走一遍这个过程，因为我也打算启动另一块 Zynq 开发板，反正也得经历这一流程。我需要声明：下面所写内容是准确的，但这些系统很复杂，我可能在某些细节上有误。如果你发现我写错了，欢迎指正。
 
 正如我们之前讨论的，[U-boot](https://u-boot.org/) 是第二阶段和第三阶段的引导加载程序，它运行后会加载 FreeBSD 的加载器，而 FreeBSD 加载器则负责加载 FreeBSD 内核本身。U-boot 是个开源社区的项目，广泛用于各种系统以提供启动服务。相关文档可通过其官网获取：[U-boot 文档](https://docs.u-boot.org/en/latest/index.html)。

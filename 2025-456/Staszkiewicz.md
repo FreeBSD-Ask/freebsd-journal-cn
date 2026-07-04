@@ -3,6 +3,8 @@
 - [Starting FreeBSD Development An Interview with Kajetan Staszkiewicz](https：//freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/starting-freebsd-development/)
 - 作者：Tom Jones
 
+![采访](https://freebsdfoundation.org/wp-content/uploads/2025/07/interview_header-1.png)
+
 **TJ：** 你能简单介绍一下你自己以及你与 FreeBSD 的背景吗？
 
 **KS：** 我叫 Kajetan Staszkiewicz。 1984 年出生于波兰神奇的城市克拉科夫。大约在 8 岁，我在计算机俱乐部接触了 ZX Spectrum 和 Atari 65XE 等 8 位机器。后来父母给我买了一台 Commodore 64。我对这台机器记忆犹新，直到现在我的桌上还摆着一台能正常工作的机器。

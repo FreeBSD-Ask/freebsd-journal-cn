@@ -3,6 +3,8 @@
 - [Starting FreeBSD Development An Interview with with Igor Ostapenko](https://freebsdfoundation.org/our-work/journal/browser-based-edition/embedded-2/interview-with-igor-ostapenko/)
 - 作者：Tom Jones
 
+![采访](https://freebsdfoundation.org/wp-content/uploads/2025/10/interview_header.png)
+
 **TJ:** 通往 FreeBSD 开发之路的有很多因素，有些是通过大学课程，有些是通过工作经验。你是如何了解到这个项目的？最初又是什么吸引你走向操作系统开发的？
 
 **IO:** 在上世纪九十年代，我在上学期间有机会接触到了几种编程语言和技术。比如，我花了很多时间鼓捣 TR-DOS，小心规划行号（这在我开始用 ipfw 时勾起了回忆），为自己设想的另一个游戏写 DATA 和 GOTO，还尝试过在 MS-DOS 下用中断向量开发常驻程序。因为有这些经历，极简的命令行界面对我来说并不陌生。后来我在大学学习计算机科学时初次接触到 FreeBSD，当时唯一的问题就是要买哪些书。
