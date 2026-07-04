@@ -20,7 +20,7 @@ cd /usr/obj/usr/src/${ARCH}/release/ls -lh
 
 然后，将 mfsBSD 写入磁盘设备：
 
-```
+```sh
 # 把 mfsBSD 安装到你的目标磁盘设备上
 # 把 ada0 换成你自己的目标磁盘设备
 dd if=./mfsbsd-se.img of=/dev/ada0 bs=1Mreboot
@@ -28,7 +28,7 @@ dd if=./mfsbsd-se.img of=/dev/ada0 bs=1Mreboot
 
 启动到 mfsBSD，然后执行 bsdinstall：
 
-```
+```sh
 # 复制特别版本（special edition）的 dist 文件，以便 bsdinstall 用其进行安装。
 mkdir /mnt/distmount /dev/ada0p3 /mnt/dist
 mkdir /usr/freebsd-distcp /mnt/dist/<version>/*.txz /usr/freebsd-dist/bsdinstall
