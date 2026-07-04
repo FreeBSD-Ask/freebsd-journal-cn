@@ -1,3 +1,33 @@
 # 书评：《FreeBSD 操作系统设计与实现第 2 版》
 
-> 本文原文内容托管于已下线的 Nxtbook 在线阅读器平台（issue.freebsdfoundation.org），无法获取文章正文。如需查阅原文，可访问 [Wayback Machine 快照](https://web.archive.org/web/http://freebsdfoundation.org/journal/vol2_no1/) 或 [FreeBSD Foundation 当前 TOC 页](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)。
+作者：Rik Farrow
+
+## The Design and Implementation of the FreeBSD Operating System, Second Edition
+
+Marshall Kirk McKusick、George V. Neville-Neil、Robert N. M. Watson 著
+2015 年 Pearson Education 出版，ISBN 978-0-321-96897-5
+859 页
+
+本书源自一系列关于 BSD 操作系统的著作，可追溯到 1989 年出版的《Design of 4.3BSD UNIX》。聚焦 FreeBSD 让本书有别于其他以 Linux 为焦点的操作系统书籍，但这并非它唯一的与众不同之处。
+
+Kirk McKusick 从研究生时代与 Bill Joy 共用办公室起，就参与了至今仍影响 UNIX 相关系统的关键设计决策。本书不仅体现了 McKusick 对文件系统和虚拟内存系统设计的影响，也反映了另外两位作者的贡献。
+
+Robert Love 的《Linux Kernel Development》一书深入探讨如何获取、构建和审查内核代码，而《Design and Implementation》则停留在更高层次。书中解释了算法和数据结构，也阐释了选择特定算法或设计背后的设计决策。
+
+soft updates 是一个特别有争议的例子。早期 Linux 文件系统创建和删除文件的速度远快于 4.3 BSD 快速文件系统（FFS），因为 ext2 的作者决定放弃有序、同步的文件系统元数据写入。以 McKusick 为首的 FreeBSD 开发者的回应是创建了名为 soft updates 的机制，允许元数据更新异步进行，但仍保持有序。书中用清晰简洁的文字解释了 soft updates，既说明为何需要它，也说明它应如何工作。随后一节讨论了记录元数据更新的方案（即 Linux ext3 采用的方案）。
+
+与一般操作系统书籍一样，本书从一位参与者笔下的 UNIX 历史开始，接着概述内核。随后是进程管理，然后是全面重写的安全章节。如果你对操作系统安全特性有浓厚兴趣，这一章对过去 25 年间出现并实现的诸多机制做了出色的概述。虽然 Linux Security Module 及相关的 SELinux 和 Type Enforcement 仅简略提及，但书中深入讨论了访问控制列表、强制访问控制、新的 NFSv4 ACL、安全事件审计、加密服务、随机数生成器、Jail 以及 Capsicum 能力模型——后者是 FreeBSD 的新增内容。
+
+下一章关于内存管理，篇幅与安全章节相当，同样详尽。书的下一部分涵盖 I/O 系统，从概述开始，然后是一般设备，再到 FFS，接着是关于 Zettabyte File System 的新章节。这一章对任何想深入了解 ZFS 的人都很有用，无论你使用的是 FreeBSD，还是 Illumos 等 Solaris 后裔。I/O 部分以 NFS 章节（包括 NFSv4）结束。
+
+第四部分涵盖进程间通信，从 IPC 开始，接着是网络层协议（如 IPv4 和 IPv6）的章节，然后是传输层协议。本书最后以系统启动与关机一章以及术语表收尾。
+
+每章末尾都有练习和一页或多页参考文献。练习涵盖各章内容，也帮助认真的读者思考超出章节范围的潜在解决方案。
+
+对于大型技术书籍，我采用了惯常的做法：读完所有入门材料后，跳到自己最感兴趣的部分。本书的写法让这种阅读方式很轻松，我很少被指引到书中另一节。
+
+> “如果你想要或需要更好地理解 FreeBSD 操作系统的工作原理，你应该读这本书。你可以读完整本书，也可以只读你需要的部分。”
+
+如果你想要或需要更好地理解 FreeBSD 操作系统的工作原理，你应该读这本书。你可以读完整本书，也可以只读你需要的部分（前提是先读完第一节），并期望找到关于某些事情为何如此处理的答案，比如分页的使用、IPv6 实现，或 FreeBSD 的虚拟化。虽然每个 BSD 版本各不相同，但版本之间互相借鉴很多，设计哲学大致相同。本书的特别之处在于它蕴含着丰富的经验，记录了不同的方法，由三位 FreeBSD 提交者撰写，他们都拥有出色的履历。
+
+Rik Farrow 是 USENIX 会员杂志《;login:》的编辑。Rik 于 1983 年开始接触 Unix，为基于微型计算机的 UNIX 系统编写系统文档，后来又撰写了几本关于 Unix 的书。他对 Unix 安全的研究让他多年来从事 UNIX 和互联网安全的教学与咨询。期间，他还担任过《UnixWorld》杂志的技术编辑顾问。Rik 也是 USENIX 的教程负责人。
