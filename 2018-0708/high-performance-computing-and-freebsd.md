@@ -35,7 +35,7 @@ HPC 工具——研究者使用的应用，将 FLOPS 转化为知识——由什
 
 OpenMP 主要针对共享内存机器，后来的标准支持加速器 offloading，下面讨论。这是相对简单、基于 pragma 的方法，支持 C/C++ 和 Fortran，通常用于以数据并行方式并行化循环。
 
-目前，我们的 Ports 树将再次默认使用 `lang/gcc` port 如果遇到 `USES=compiler:openmp`。因此，ports 通常不会默认启用 OpenMP（包括一些常用的，如 `graphics/ImageMagick`），因此将限于单核。amd64 和 i386 有更好的替代方案，即 LLVM 项目自 Intel 最初开源以来的 `libomp` 库。它尚未导入基础系统，但存在较旧库版本的审查。在其令人充满希望地暂时缺席期间，Ports 系统应使用包含 `libomp` 的 `devel/llvm` port 之一。已进行多次集成测试，该功能应该很快就能落地。希望这也会激励其他开发者为其他架构添加必要的 FreeBSD 位，上游支持这些架构。我的测试表明 `libomp` 在 LLVM 中的集成从性能角度看不理想；特别是，LLVM 的向量化器在 OpenMP 的 `simd` pragma 与标准 OpenMP 线程并行化（例如 `parallel for`）一起使用时无法（良好）工作。但当然，次优并行化优于无并行化。
+目前，我们的 Ports 树将再次默认使用 `lang/gcc` port 如果遇到 `USES=compiler:openmp`。因此，ports 通常不会默认启用 OpenMP（包括一些常用的，如 `graphics/ImageMagick`），因此将限于单核。amd64 和 i386 至少有更好的替代方案，即 LLVM 项目自 Intel 最初开源以来的 `libomp` 库。它尚未导入基础系统，但存在较旧库版本的审查。在其有望暂时缺席期间，Ports 系统应使用包含 `libomp` 的 `devel/llvm` port 之一。已进行多次集成测试，该功能应该很快就能落地。希望这也会激励其他开发者为其他架构添加必要的 FreeBSD 位，上游支持这些架构。我的测试表明 `libomp` 在 LLVM 中的集成从性能角度看不理想；特别是，LLVM 的向量化器在 OpenMP 的 `simd` pragma 与标准 OpenMP 线程并行化（例如 `parallel for`）一起使用时无法（良好）工作。但当然，次优并行化优于无并行化。
 
 另一方面，MPI 通过函数调用操作 MPI 通信库。它具有简单的发送/接收/广播功能以及更高级的操作如归约。MPI 用于基于进程的节点内和节点间并行化，在硬件级别，典型使用快速互连如 InfiniBand。通常，启用 MPI 的软件包使用 `mpicc`/`mpif90` 包装脚本编译，配置底层编译器以查找 MPI 头文件并链接 MPI 库。在 Ports 树中，存在多个 MPI 选择，我们仅受限于底层 Fortran 的编译器工具链。
 
@@ -78,11 +78,11 @@ FreeBSD 上的持续维护或开发简单。尽管没有用于分析、调试等
 
 我们的 OpenCL 支持处于合理状态：我们包含来自 Mesa 项目的非官方 OpenCL clover 库，用于 AMD GPU。其性能绝对无法竞争，但工作相当可靠。对于 Intel，我们包含其官方 beignet 实现；但 Intel GPU 在计算任务上竞争力较弱。开发 OpenCL 应用程序得到良好支持；我们包含 CPU OpenCL 模拟器 `lang/pocl` 和完整性检查器 `devel/oclgrind`。通过 OpenMP offloading 利用加速器目前不支持，但总体上尚未普及。
 
-一项重大改进可能是纳入 Radeon Open Compute（ROCm）项目 [9]。它需要一个开放配套内核驱动 `amdkfd`，用于常规开放 `amdgpu` 驱动，并提供以 LLVM 编译器技术为中心的大型开放生态系统，支持 OpenCL 和在 AMD GPU 上的 CUDA 开放竞争者 HIP。FreeBSDDesktop 团队现在积极移植 `amdkfd`，大型 ROCm 栈应该直接移植，虽然有些劳动密集。
+一项重大改进可能是纳入 Radeon Open Compute（ROCm）项目 [9]。它需要一个开放配套内核驱动 `amdkfd`，用于常规开放 `amdgpu` 驱动，并提供以 LLVM 编译器技术为中心的大型开放生态系统，支持 OpenCL 和在 AMD GPU 上的 CUDA 开放竞争者 HIP。FreeBSDDesktop 团队现在积极移植 `amdkfd`，大型 ROCm 栈移植应该比较直接，尽管劳动量较大。
 
 ## 接下来？
 
-最高优先级应该是审查 FLAME 的 BLAS 和 LAPACK 库，并将它们添加为 `blaslapack` 选择器的选项。其次，`libomp` 应通过 `devel/llvm` 成为 amd64 的默认选项。随后，对这些重大更改进行一些稳定和扩展到非 amd64 架构将需要。在中期，我希望我们将能够让 ROCm 在 FreeBSD 上工作。另一个重要事项是在我们的 `libm` 和来自 LLVM 中正确支持 SIMD/向量化。这些应该已经是有趣的 HPC 平台，供开发者使用。希望从长远来看，我们能够改善 Fortran 情况，使 FreeBSD 成为真正引人注目的 HPC 替代方案。
+最高优先级应该是审查 FLAME 的 BLAS 和 LAPACK 库，并将它们添加为 `blaslapack` 选择器的选项。其次，`libomp` 应通过 `devel/llvm` 成为 amd64 的默认选项。随后，需要对这些重大更改进行稳定并扩展到非 amd64 架构。在中期，我希望我们将能够让 ROCm 在 FreeBSD 上工作。另一个重要事项是在我们的 `libm` 和来自 LLVM 中正确支持 SIMD/向量化。这些应该已经是有趣的 HPC 平台，供开发者使用。希望从长远来看，我们能够改善 Fortran 情况，使 FreeBSD 成为真正引人注目的 HPC 替代方案。
 
 还需要认识到，为 HPC 改进 FreeBSD 不会损害它作为服务器或工作站系统。相反，它很可能对这些用例大有裨益。
 

@@ -1,6 +1,6 @@
 # 使用 Mininet 快速浏览 SDN
 
-从 1990 年代中期开始，我就不间断地使用 FreeBSD 和 Linux。多年来我运行过许多不同的 Linux 发行版，最近专注于 CentOS。我也有大量 Mac OS X 和 NetBSD 的使用经验，并尝试过许多其他 BSD 平台。作为一个坚定的不可知论者，坚信开放标准的价值，我喜欢保持对 POSIX 世界中所有选项的熟悉，这样我总能根据工作选择最合适的工具。
+从 20 世纪 90 年代中期开始，我就不间断地使用 FreeBSD 和 Linux。多年来我运行过许多不同的 Linux 发行版，最近专注于 CentOS。我也有大量 Mac OS X 和 NetBSD 的使用经验，并尝试过许多其他 BSD 平台。作为坚信开放标准价值的不可知论者，我喜欢熟悉 POSIX 世界的所有选项，以便随时为工作选择最佳工具。
 
 ——Ayaka Koshibe
 
@@ -8,9 +8,9 @@
 
 ## Mininet
 
-Mininet 是一个相当知名的基于 SDN 的网络模拟器，因与 OpenFlow（SDN 黎明时期的网络控制协议）的关联而普及。它最近也被加入到了 Ports 集合中。以此为契机，这里以 SDN 入门的形式快速介绍 Mininet。
+Mininet 是相当知名的基于 SDN 的网络模拟器，因与 OpenFlow（SDN 黎明时期的网络控制协议）的关联而普及。它最近也被加入到了 Ports 集合中。以此为契机，这里以 SDN 入门的形式快速介绍 Mininet。
 
-开始之前：Mininet 依赖 VIMAGE 来模拟网络主机，因此希望跟随操作的读者需要一台支持 VIMAGE 的主机。移植版的 Mininet 也不支持原版的全部功能，目前还处于进行中的工作。它在清理时也比较激进，所以最好不要在用于托管其他 jail 或 Open vSwitch 实例的机器上运行。
+开始之前：Mininet 依赖 VIMAGE 来模拟网络主机，因此希望跟随操作的读者需要一台支持 VIMAGE 的主机。移植版的 Mininet 也不支持原版的全部功能，目前仍在开发中。它在清理时也比较激进，所以最好不要在用于托管其他 jail 或 Open vSwitch 实例的机器上运行。
 
 ## 安装
 
@@ -18,7 +18,7 @@ Mininet 可以像任何其他应用程序一样安装：用 `pkg`(8) 安装为 `
 
 ## mn 命令
 
-Mininet 版的"Hello world"是一个用 `mn` 命令启动的小型网络：
+Mininet 版的"Hello world"是用 `mn` 命令启动的小型网络：
 
 ```sh
 # mn --controller=ryu
@@ -50,7 +50,7 @@ mininet> dump
 
 ## 检查控制流量
 
-`dump` 的输出显示每个节点都有一个名称、一个或多个端口，以及代表它的 bash 进程的 PID。它还显示主机——实际上是 vnet jail——在这个网络中位于 **10.0.0.1** 和 **10.0.0.2**，控制器 Ryu 在端口 6653 上监听交换机。Ryu 使用 OpenFlow 编程连接到此端口的交换机。排查 OpenFlow 交换机和控制器问题的典型方法是在此通道上检查控制消息。我们可以通过在另一个终端运行 `tcpdump`（或其他数据包分析器）来尝试：
+`dump` 的输出显示每个节点都有名称、一个或多个端口，以及代表它的 bash 进程的 PID。它还显示主机——实际上是 vnet jail——在这个网络中位于 **10.0.0.1** 和 **10.0.0.2**，控制器 Ryu 在端口 6653 上监听交换机。Ryu 使用 OpenFlow 编程连接到此端口的交换机。排查 OpenFlow 交换机和控制器问题的典型方法是在此通道上检查控制消息。我们可以通过在另一个终端运行 `tcpdump`（或其他数据包分析器）来尝试：
 
 ```sh
 # tcpdump -i lo0 port 6653
@@ -64,7 +64,7 @@ mininet> h1 ping -c1 h2
 
 主机的名称会被 CLI 转换为相应的 IP 地址。
 
-或者，可以使用 `pingall` CLI 命令在所有主机对之间进行 ping：
+或者，可以用 `pingall` CLI 命令在所有主机对之间 ping：
 
 ```sh
 mininet> pingall
@@ -74,7 +74,7 @@ h2 -> h1
 *** Results: 0% dropped (2/2 received)
 ```
 
-在任一情况下，我们都应该看到交换机（localhost.<高端口>）向控制器（localhost.6653）发送 PACKET_IN 消息，以及控制器响应发送回的 PACKET_OUT 和 FLOW_MOD 消息。交换机使用 PACKET_IN 将其不知道如何处理的数据包发送给控制器，在这种情况下是 ARP 和 ICMP 消息。控制器使用 PACKET_OUT 指示交换机输出特定数据包（即在 PACKET_IN 中发送的那个，这样它就不会"丢失"），使用 FLOW_MOD 修改交换机处理不同类型流量的方式。在修改因不使用而过期之前，s1 不应因另一次 ping 而生成新的 PACKET_IN。
+在任一情况下，我们都应该看到交换机（localhost.<高端口>）向控制器（localhost.6653）发送 PACKET_IN 消息，以及控制器作为响应发送回的 PACKET_OUT 和 FLOW_MOD 消息。交换机使用 PACKET_IN 将其不知道如何处理的数据包发送给控制器，在这种情况下是 ARP 和 ICMP 消息。控制器使用 PACKET_OUT 指示交换机输出特定数据包（即在 PACKET_IN 中发送的那个，这样它就不会"丢失"），使用 FLOW_MOD 修改交换机处理不同类型流量的方式。在修改因不使用而过期之前，s1 不应因另一次 ping 而生成新的 PACKET_IN。
 
 `Ctrl-D` 或 `exit` 命令将退出 CLI 并拆除网络。
 
@@ -90,7 +90,7 @@ h2 -> h1
 
 ## 创建各种拓扑
 
-`--topo` 选项用于用 `mn` 创建各种拓扑。linear 和 tree 拓扑对于创建更大的无环网络很有用，而 torus 拓扑对于测试控制器的环路处理能力很有用。拓扑是参数化的，以便可以指定其大小。例如，创建一个三层高、扇出为二的树：
+`--topo` 选项用于通过 `mn` 创建各种拓扑。linear 和 tree 拓扑对于创建更大的无环网络很有用，而 torus 拓扑对于测试控制器的环路处理能力很有用。拓扑是参数化的，以便可以指定其大小。例如，创建一个三层高、扇出为二的树：
 
 ```sh
 # mn --controller=ryu, topo=tree,3,2
@@ -100,7 +100,7 @@ torus 也接受两个值，linear 接受一个。
 
 ## 用 Mininet 编写脚本
 
-Mininet 也可以作为 Python 库的集合用于编写实验脚本。需要注意的是，这些示例脚本保持原始形式（很可能无法在 FreeBSD 上运行），包中包含几个示例脚本，演示如何创建自定义拓扑、网络组件和实验。与其他附带示例的应用程序一样，它们应该位于 **/usr/local/share/examples/mininet/** 下。但作为一个小示例，以下脚本定义了一个类似于 `mn` 默认拓扑的自定义拓扑，使用主机 h1 ping h2 的地址，然后退出：
+Mininet 也可作为 Python 库集合，用于编写实验脚本。需要注意的是，这些示例脚本保持原始形式（很可能无法在 FreeBSD 上运行），包中包含几个示例脚本，演示如何创建自定义拓扑、网络组件和实验。与其他附带示例的应用程序一样，它们应该位于 **/usr/local/share/examples/mininet/** 下。但作为小示例，以下脚本定义了类似于 `mn` 默认拓扑的自定义拓扑，使用主机 h1 ping h2 的地址，然后退出：
 
 ```python
 from mininet.topo import Topo
@@ -138,6 +138,6 @@ net.stop()
 
 <https://github.com/akoshibe/mininet>
 
-这就是我们 Mininet 旋风之旅的结束。希望它能为那些有兴趣探索 SDN 领域的人提供一个不错的起点。•
+我们的 Mininet 旋风之旅到此结束。希望它能为那些有兴趣探索 SDN 领域的人提供一个不错的起点。•
 
-AYAKA KOSHIBE 在大学时期作为学生协助部署 GENI OpenFlow 校园试验的基础设施而涉足 SDN 领域。她目前在 Big Switch Networks 工作，是 SDN 控制器平台团队的成员，同时也是 FreeBSD 和 OpenBSD 上 Mininet Port 的维护者和上游。
+AYAKA KOSHIBE 在大学时期协助部署 GENI OpenFlow 校园试验的基础设施而涉足 SDN 领域。她目前在 Big Switch Networks 工作，是 SDN 控制器平台团队的成员，同时也是 FreeBSD 和 OpenBSD 上 Mininet Port 的维护者和上游。

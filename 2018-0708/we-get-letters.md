@@ -6,7 +6,8 @@
 
 我们在为 FreeBSD Journal 头脑风暴专栏点子，而 Kode Vicious 建议你可能愿意为我们处理"读者来信"专栏。人们会向 Journal 提交他们的问题，然后你来为我们回答。你有兴趣吗？
 
-Best，
+此致，
+
 George V Neville-Neil
 FreeBSD Foundation 主席
 
@@ -24,13 +25,13 @@ FreeBSD 有很多地方可以去寻求具体帮助。系统自带帮助，在 ma
 
 此外，现在有各种 FreeBSD 相关站点。连我的博客都有一些 FreeBSD 教程。如果有人真的写信求助，那是因为他们没用这些资源。
 
-—ml
+——ml
 
 Michael，
 
 不一定。人们确实有尚未记录的问题。我们真的认为读者来信专栏可以成为 Journal 的有用补充，而你是合适的撰写者。
 
-—Best，George
+——George
 
 George，
 
@@ -44,7 +45,7 @@ George，
 
 不愿在邮件列表档案或搜索论坛上用 DuckDuckGo 的用户肯定也不会费心给我写一封连贯的信。
 
-—ml
+——ml
 
 Michael，
 
@@ -56,7 +57,7 @@ Michael，
 不。
 你知道我这辈子还有多少本书要写吗？
 才不干。休想让我干。
-—ml
+——ml
 
 我们用意大利冰淇淋支付你。
 ——George
@@ -77,13 +78,13 @@ Michael，
 
 所以，不。让有困难的用户去邮件列表或论坛。我有足够的事要做。
 
-—ml
+——ml
 
 Michael，
 
 我们只发好的来信。我保证。
 
-—Best，George
+——George
 
 George，
 
@@ -91,7 +92,7 @@ George，
 
 但告诉 Kode Vicious，如果他再提我的名字，他就得回家装在桶里。
 
-—ml
+——ml
 
 问题？
 
