@@ -1,4 +1,4 @@
-# 书评：*Understanding Software Dynamics*（深入理解软件性能——一种动态视角）—— Richard L. Sites 著
+# 书评：《深入理解软件性能——一种动态视角》—— Richard L. Sites 著
 
 - 原文链接：[Understanding Software Dynamics by Richard L. Sites](https://freebsdfoundation.org/wp-content/uploads/2022/11/book_review.pdf)
 - 审阅：**TOM JONES**

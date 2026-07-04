@@ -1,4 +1,4 @@
-# 本月 FreeBSD
+# FreeBSD 本月动态
 
 - 原文：[This Month in FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2016/06/This-Month-in-FreeBSD.pdf)
 - 作者：Dru Lavigne

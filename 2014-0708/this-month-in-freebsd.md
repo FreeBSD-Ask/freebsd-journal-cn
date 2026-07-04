@@ -1,4 +1,4 @@
-# 本月 FreeBSD
+# FreeBSD 本月动态
 
 - 原文标题：This Month in FreeBSD
 - 作者：Dru Lavigne

@@ -1,4 +1,4 @@
-# 本月 FreeBSD：访谈 Gleb Smirnoff
+# FreeBSD 本月动态：访谈 Gleb Smirnoff
 
 作者：Dru Lavigne
 

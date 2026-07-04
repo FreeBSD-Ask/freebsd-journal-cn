@@ -1,4 +1,4 @@
-# ARMv8 成为 Tier 1 架构：一项协作开发项目
+# ARMv8 成为一级架构：协作开发项目
 
 - 原文：[ARMv8 Enabled as Tier 1 Architecture: A Collaborative Development Project](https://freebsdfoundation.org/wp-content/uploads/2016/06/ARMv8-Enabled-as-Tier-1-Architecture.pdf)
 - 作者：Andrew Wafaa

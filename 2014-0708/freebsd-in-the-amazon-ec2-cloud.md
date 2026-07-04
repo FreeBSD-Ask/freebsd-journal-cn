@@ -1,4 +1,4 @@
-# FreeBSD 在 Amazon EC2 云中
+# Amazon EC2 云与 FreeBSD
 
 - 原文标题：FreeBSD in the Amazon EC2 Cloud
 - 作者：Colin Percival

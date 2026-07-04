@@ -1,4 +1,4 @@
-# 书评：《Grokking Algorithms》——给程序员和其他好奇者的图解指南
+# 书评：《算法图解》——给程序员和其他好奇者的图解指南
 
 作者：Steven Kreuzer
 
