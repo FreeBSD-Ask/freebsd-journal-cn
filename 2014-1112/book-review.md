@@ -6,7 +6,7 @@
 
 作者：Steven Kreuzer
 
-对大多数开发者和系统管理员来说，以合理且安全的方式部署 SSL 是个巨大挑战。Ivan Ristic 自 2009 年起专注 SSL，投入两年时间写作，其中包括六个月的改写和章节扩充，于 2014 年 8 月推出了他的第二本书《Bulletproof SSL and TLS: Understanding and Deploying SSL/TLS and PKI to Secure Servers and Web Applications》——构建安全服务器和 Web 应用的权威参考。他深入的研究和专注有了回报。Ivan Ristic 实现并超越了他"为你节省时间"的目标。
+对大多数开发者和系统管理员来说，以合理且安全的方式部署 SSL 是个巨大挑战。Ivan Ristic 自 2009 年起专注 SSL，投入两年时间写作，其中包括六个月的改写和章节扩充，于 2014 年 8 月推出了他的第二本书《Bulletproof SSL and TLS: Understanding and Deploying SSL/TLS and PKI to Secure Servers and Web Applications》——构建安全服务器和 Web 应用的权威参考。他深入的研究和专注有了回报。Ivan Ristic 实现并超越了他“为你节省时间”的目标。
 
 《Bulletproof SSL and TLS》全面而通俗地介绍了加密安全、SSL/TLS 和 PKI，涵盖常见攻击方法，并设有专门章节介绍如何安全配置 Apache、Java、Nginx 等主流平台。
 
