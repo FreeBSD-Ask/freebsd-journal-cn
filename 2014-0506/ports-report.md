@@ -28,7 +28,7 @@ portlint -C /usr/ports/devel/fakeport # this is an example only
 
 可能得到类似下面的输出：
 
-```
+```sh
 WARN: Makefile: [14]: possible direct use of command "env" found. use ${SETENV} instead.
 WARN: Makefile: only one MASTER_SITE configured. Consider adding additional mirrors.
 WARN: Makefile: "RUN_DEPENDS" has to appear earlier.

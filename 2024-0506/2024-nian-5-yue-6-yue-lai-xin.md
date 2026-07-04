@@ -23,7 +23,7 @@
 
 每台服务器都是一片独特的雪花，尽管是一种会感染的雪花。当你开始控制这些系统时，从相对简单的东西开始，已是已知的最佳值，在 Unix 变体中亦基本一致。关于这个问题有句陈词滥调：“一切问题都是 DNS 问题。”问题总是 DNS 问题，因为系统管理员不懂 DNS，并且在 DNS 服务器变化时未同步更新 `/etc/resolv.conf`。我总是从这开始的。你不仅要在初步配置管理下使系统生效，还要对当前的 DNS 配置进行审计，作为该项目的先决条件。你的经理会喜欢它。将你的主机按操作系统分组，并将它们的解析器纳入你的管理范围。如果你充满善意，请为这个文件写一下注释。
 
-```
+```sh
 # under configuration management 由配置管理控制
 # your changes will be overwritten without a human ever seeing them 你的任何更改都将被覆盖，且均无效
 search mwl.io tiltedwindmillpress.com
@@ -35,7 +35,7 @@ nameserver 2001:db8::53
 
 你可以合法地声称你的主机已经在配置管理下运行，但你还没有利用它让生活变得更轻松。看看另一个常见的服务，每个主机都有但通常配置不一致的：SSH。你的组织可能有像“禁止基于密码的认证”这样的规则。如果没有，等到发生安全事件再议。绝不能浪费一场好危机！锁定 SSH 并确保它保持锁定状态的最简单方法是将 `sshd_config` 纳入集中管理。是的，每个操作系统都有自己定制的 `sshd_config`，因为在集成软件之前，Unix 的维护者们总要将其改造成自己喜欢的样子，但管理系统使用模板来对抗这种不卫生的行为。你可能已在上班路上睡着的时候，背诵过默认的 `sshd_config`，所以请确保你的管理配置与默认配置看起来截然不同。
 
-```
+```sh
 #Configuration Under Management 由配置管理控制
 #Manual Changes Will be Overwritten 任何任何更改都将被覆盖
 Port 9991

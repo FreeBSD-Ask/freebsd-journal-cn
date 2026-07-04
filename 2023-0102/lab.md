@@ -159,7 +159,7 @@ jail -vr gateway
 
 创建 `devfs.rules`
 
-```
+```sh
 vim /etc/devfs.rules
 ```
 
@@ -179,13 +179,13 @@ devfs restart
 
 验证 devfs 规则  
 
-```
+```sh
 devfs rule showsets
 ```
 
 将新的规则集分配给网关 jail  
 
-```
+```sh
 vim /etc/jail.conf
 ```
 

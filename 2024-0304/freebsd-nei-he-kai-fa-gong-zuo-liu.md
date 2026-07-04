@@ -21,7 +21,7 @@
 
 在工作环境中，更常见的是有专用的开发和测试服务器，分别与开发人员的工作站分离。服务器级系统比桌面系统规格更高，更适合构建源代码和运行虚拟机。它们还提供了更多种类的 PCIe 扩展槽，非常适合 PCIe 设备驱动开发。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/05/dev_workflow_redrawn.png)
+![FreeBSD 内核开发工作流示意图](https://freebsdfoundation.org/wp-content/uploads/2024/05/dev_workflow_redrawn.png)
 
 ## 配置
 

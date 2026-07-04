@@ -279,7 +279,7 @@ object Service "ido" {
 
 我们甚至不需要将此应用于任何主机，因为此检查仅在安装了 Icinga IDO 数据库的地方运行（即中央监控实例）。`host_name = NodeName` 的赋值就解决了这个问题，因为 `NodeName` 默认定义为执行检查并收集结果的主机名称。该插件定期检查 IDO 数据库，并在成功执行后输出有关 IDO 的信息：
 
-```
+```sh
 Connected to the database server (Schema version: ‘1.14.3’). Queries per second:
 4.633 Pending queries: 21.000. Last failover: 2022-03-23 16:05:05 +0100
 ```

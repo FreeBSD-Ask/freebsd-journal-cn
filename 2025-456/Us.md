@@ -176,7 +176,7 @@ graph netgraph {
 
 虽然这个输出已经很不错，ngbuddy 还包含一个我编写的辅助脚本 `ngbuddy-mmd.awk`，可以将上述输出转换为更美观、更清晰的 mermaid-js 可视化图形。我们公司的文档系统支持 mermaid-js，因此借助一些 API 魔法，我总能在文档数据库中保持所有主机 Netgraph 拓扑图的实时更新。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/07/bell-dev1-mmd-crop.png)
+![Netgraph 拓扑 mermaid 可视化图](https://freebsdfoundation.org/wp-content/uploads/2025/07/bell-dev1-mmd-crop.png)
 
 该图示在顶部标注了主机名，中间是 public 与 private 桥接的图形，下方是 jail（椭圆）和 VM（圆柱）。这种可视化在你需要管理带有不同租户网络和不同功能的服务器时尤其有用。
 

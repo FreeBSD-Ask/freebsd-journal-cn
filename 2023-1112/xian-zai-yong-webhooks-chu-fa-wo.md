@@ -364,8 +364,8 @@ webhook_options=” \
 - Content-Type 设置为 `application/json`
 - 共享密钥（如示例中的 `n0decaf`）
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/01/02_add_webhook.png)
+![GitHub 添加 webhook 界面](https://freebsdfoundation.org/wp-content/uploads/2024/01/02_add_webhook.png)
 
 在 GitHub 上创建 webhook 后，你应该能够确认接收到了成功的事件。在你下次推送代码时，可以查看 GitHub 网站，查看 GitHub 发送的请求和 daemon 返回的响应。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/01/03_webhook_req.png)
+![GitHub webhook 请求响应记录](https://freebsdfoundation.org/wp-content/uploads/2024/01/03_webhook_req.png)

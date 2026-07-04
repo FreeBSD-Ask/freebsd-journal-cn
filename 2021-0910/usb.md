@@ -52,7 +52,7 @@ struct razer_report {
 
 以下可用的过滤控制设备：
 
-```
+```sh
 1 \\.\USBPcap1
  \??\USB#ROOT_HUB20#4&19d0fd2a&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
    [Port 1] Generic USB Hub
@@ -94,8 +94,6 @@ Output file name (.pcap): t1.pcap
 **图 3. 使用 usbpcap 在 Wireshark 下生成的 pcap。设置数据包被高亮显示**
 
 ![Wireshark 中的 pcap 数据包](https://github.com/user-attachments/assets/059d3241-e726-49ba-9773-8e87d89a880f)
-
-**图 4. 使用 openrazer 获取的结构与设置数据结合**
 
 ![openrazer 结构与设置数据结合](https://github.com/user-attachments/assets/5e2ce1cf-0fbc-427c-924d-d801b7c5f603)
 

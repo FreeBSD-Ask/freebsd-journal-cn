@@ -67,7 +67,7 @@ stress2/misc 中的许多测试都使用了 stress2/testcases 中更通用的压
 
 这是其中一个模糊测试用例。基本思路是向系统调用传入随机值，试图找出代码中的错误。一旦越过简单的参数校验缺失问题，更有趣的问题就会浮现。这个测试场景通过向 mlock(2)、mprotect(2) 和 mlockall(2) 传入随机值，触发了如下独特问题：
 
-```
+```sh
 panic: deadlkres: possible deadlock detected for 0xcb0ea930, blocked for 1801709 ticks
 panic: pmap active 0xfffff800a90cfd78
 panic: vm_fault_copy_wired: page missing

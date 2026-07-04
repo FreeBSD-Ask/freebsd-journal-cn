@@ -29,7 +29,7 @@
 **表 1. 京沪高铁线产品的硬件配置**
 
 | 组件 | 型号 |
-| --- | --- |
+| ---- | ---- |
 | 主板 | Intel Desktop Board D410PT 或 D425KT |
 | CPU | Intel Atom D410 或 D425 |
 | GPU | Intel GMA 3150 |
@@ -50,7 +50,7 @@
 **表 2. 哈大高铁线产品的硬件配置**
 
 | 组件 | 型号 |
-| --- | --- |
+| ---- | ---- |
 | 主板 | GIGABYTE GA-B75-D3V |
 | CPU | Intel Core i5（LGA1155） |
 | GPU | Intel HD Graphics 2500（板载）+ NVIDIA GeForce 210（PCI-E，两块） |
@@ -75,7 +75,7 @@
 **表 3. U 盘或 SATA SSD 中文件系统的概览布局**
 
 | 路径 | 内容 |
-| --- | --- |
+| ---- | ---- |
 | **/boot/** | FreeBSD 内核与驱动模块、`loader(8)` 及配置文件 |
 | **/libexec/** | 运行时链接器 ld-elf.so.1 |
 | **/bin/**、**/sbin/**、**/usr/bin/**、**/usr/sbin/** | 命令行工具（如 **/bin/sh**、**/bin/rm**、**/usr/bin/killall**、**/sbin/ifconfig** 和 **/sbin/mount**） |
@@ -93,7 +93,7 @@
 **表 4. **/usr/local/** 下定制 Xorg 的概览文件布局**
 
 | 路径 | 内容 |
-| --- | --- |
+| ---- | ---- |
 | **bin/** | 独立可执行文件（如 Xorg、xrandr 和 xkbcomp） |
 | **etc/** | xorg.conf 及 font-config 与 pango 的配置文件 |
 | **lib/** | 共享对象 |

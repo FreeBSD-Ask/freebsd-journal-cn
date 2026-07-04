@@ -50,7 +50,7 @@ CPU ID FUNCTION:NAME
 
 在 D 脚本中，可通过在文件开头加入下面这行达到相同效果：
 
-```
+```sh
 #pragma D option quiet
 ```
 
@@ -112,7 +112,7 @@ args[2]->ip_plength - args[4]->tcp_offset,
 }
 ```
 
-```
+```sh
 SADDR                           SPORT DADDR                           DPORT BYTES FLAGS
 fe80:3::fa1a:67ff:fe03:f659     22    fe80:3::250:b6ff:fe0e:a825      42705 36    (PSH|ACK)
 fe80:3::fa1a:67ff:fe03:f659     22    fe80:3::250:b6ff:fe0e:a825      42705 628   (PSH|ACK)
@@ -149,7 +149,7 @@ ip:::receive
 
 在一个只有单一活动接口（本例中为 `wlan0`）的系统上，样本输出如下。多接口系统会为每个接口各打印一份直方图。
 
-```
+```sh
 wlan0
 value————————- Distribution ————————- count
 < 0 0

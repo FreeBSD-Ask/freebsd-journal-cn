@@ -19,7 +19,7 @@ x86 上最早的系统级电源管理标准称为高级电源管理（Advanced P
 APM 被高级配置与电源接口（Advanced Configuration and Power Interface，ACPI）取代。ACPI 是 APM 的超集，除电源管理外还包含若干用于设备管理的组件。ACPI 还采用了一组扩展的系统睡眠状态（见下表）。
 
 | 睡眠状态 | 描述 |
-| --- | --- |
+| -------- | ---- |
 | S0 | 系统完全运行 |
 | S1 | 不关闭任何组件 |
 | S2 | 仅关闭 CPU |

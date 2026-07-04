@@ -120,14 +120,14 @@ special “chown root:wheel /etc/ipf.conf; chmod 0400 /etc/ipf,conf” ;
 
 命令列表涉及的关键字有 `install`、`except`、`special` 和 `cmdspecial`。
 
-|关键字 | 说明|
-| -------------- | ------------------------------------------ |
-| install        | 指定目标文件的安装位置。                      |
-| notify         | 列出复制操作完成后要通知的电子邮件地址。       |
-| except         | 无需复制的文件，即例外模式。                  |
-| except_pat     | 与 `except` 相同，但使用正则表达式模式。        |
-| special        | 每个文件复制后要执行的 shell 命令。            |
-| cmdspecial     | 所有文件复制后要执行的 shell 命令。            |
+| 关键字 | 说明 |
+| ------ | ---- |
+| install | 指定目标文件的安装位置。 |
+| notify | 列出复制操作完成后要通知的电子邮件地址。 |
+| except | 无需复制的文件，即例外模式。 |
+| except_pat | 与 `except` 相同，但使用正则表达式模式。 |
+| special | 每个文件复制后要执行的 shell 命令。 |
+| cmdspecial | 所有文件复制后要执行的 shell 命令。 |
 
 下面是个简单的例子。它将我这篇文章的工作副本复制到 FreeBSD 工作目录树中的某个目录。
 

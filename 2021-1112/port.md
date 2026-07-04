@@ -72,7 +72,7 @@ chapSecret = verysecurepasswordgoeshere
 
 由于 postgres 用户通过 SSH 登录到该服务器以运行 PostgreSQL 的命令行工具 psql，确保该文件中的密码不被窥探非常重要。通过将文件权限设置为 `chmod 0700`，并将文件所有者和组设置为 root 和 wheel，可以解决这个问题。为了在重启时启动存储导入，必须在 /etc/rc.conf 中加入一个条目（稍后会详细说明）：
 
-```
+```sh
 # sysctl iscsid_enable=yes
 ```
 

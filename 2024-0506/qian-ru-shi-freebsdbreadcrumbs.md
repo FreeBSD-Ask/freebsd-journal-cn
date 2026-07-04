@@ -23,14 +23,14 @@
 
 让 Arty Z7 板子跑起来很简单。我用 `dd` 把预构建的镜像（你可以在这里找到我用的 [14.1 RELEASE](http://www.chrisbowman.com/crb/ArtyZ7/images/FreeBSD-armv7-14.1R-ARTY_Z7-10e31f09.img) ）复制到一张存储卡里，使用一款便宜的 USB 转 SD 卡适配器就行。请注意，存储卡不能大于 32GB。当把存储卡插入我的系统后，会出现一个设备 `/dev/da0`。如果你已经有一个 `/dev/da0` 设备，那么你的系统中可能会稍有不同。你可以通过在插入卡之前和之后 `/dev` 列出 da 设备来轻松查看要使用的设备。以下是一个复制镜像的例子：
 
-```
+```sh
 # dd if=FreeBSD-armv7-14.1R-ARTY_Z7-49874af3.img \
 of=/dev/da0 bs=1m status=progress
 ```
 
 与此同时，我将一端的 USB 线插入 Arty microUSB  连接器，另一端插入我的 FreeBSD 机器。然后启动一个串口程序，连接到适当的设备，并设置为 115kpbs 8-N-1。
 
-```
+```sh
 # cu -s 115200 -l /dev/ttyU1
 ```
 

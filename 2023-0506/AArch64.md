@@ -28,7 +28,7 @@ FreeBSD 起源于 386BSD，而且在最初仅支持一种 CPU 架构，即英特
 
 在 FreeBSD 中最早与 arm64 相关的提交是为 kernel-toolchain 构建目标添加构建基础设施。顾名思义，该目标用于构建工具链（编译器、链接器等），然后用于编译、链接和转换内核。在当时，FreeBSD 的基本系统中包含了 Clang，所以编译器支持相对简单。然而，当时 FreeBSD 仍包含旧版本的 GNU ld 链接器，不支持 AArch64。因此，早期的构建支持依赖于安装了 aarch64-binutils port 或软件包，并自动使用提供的链接器。**第一个针对 arm64 的内核修改是：**
 
-```
+```sh
 commit 412042e2aeb666395b3996808aff3a8e2273438f
 Author: Andrew Turner <andrew@FreeBSD.org>
 Date: Mon Mar 23 11:54:56 2015 +0000
@@ -44,7 +44,7 @@ Sponsored by: The FreeBSD Foundation
 
 **对 arm64/AArch64 支持的开始：**
 
-```
+```sh
 commit 8daa81674ed800f568b87f5e4b8881d028c92aea
 Author: Andrew Turner <andrew@FreeBSD.org>
 Date: Thu Mar 19 13:53:47 2015 +0000

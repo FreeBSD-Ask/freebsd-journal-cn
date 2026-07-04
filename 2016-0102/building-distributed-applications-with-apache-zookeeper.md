@@ -138,7 +138,7 @@ server.3=zook3:2888:3888
 
 将一个节点配置为 observer 的过程相当简单。需要在节点的配置文件中添加一行 `peerType=observer`，告知其担任 observer 角色。此外，其它所有节点也需要通过在对应的 server 配置行末尾追加 `:observer` 来告知哪些服务器担任 observer。
 
-```
+```sh
 server.1=zook1:2888:3888
 server.2=zook2:2888:3888
 server.3=zook3:2888:3888

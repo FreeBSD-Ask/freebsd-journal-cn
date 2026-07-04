@@ -47,7 +47,7 @@ Wifibox 的一个主要设计原则是用户无需了解底层虚拟机，就能
 
 一个常规的基于 Linux 的无线网络栈在虚拟机中运行。首先，Linux 内核用于检测 PCI 无线设备，并通过其驱动程序以及相应的固件（如有必要）使设备运行。由标准的 OpenRC 服务启动无线网络接口 `wlan0`。接着，WPA Supplicant 或 `hostapd` 会连接到该接口以完成配置。除了无线接口外，`bhyve` 还暴露了一个虚拟的 `eth0` 以太网接口。在主机上，定义了一个桥接接口 `wifibox0`，并通过一个 `tap` 软件隧道将其与虚拟机中的 `eth0` 接口连接起来。使用 `ip-tables`，应用了网络地址转换（NAT）和数据包转发，使得流量在 `wlan0` 和 `eth0` 之间双向流动。IP 地址通过 Busybox 内置的 `udhcpd` 获取（在主机上通过 `eth0`），而在虚拟机内（通过 `wlan0`），则使用 `dhcpcd` 或 `udhcpd` 获取 IP 地址。主机的 IP 地址范围可以在 Wifibox 配置中控制，并根据用户需求进行调整。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/01/wifibox_architecture.png)
+![Wifibox 架构示意图](https://freebsdfoundation.org/wp-content/uploads/2025/01/wifibox_architecture.png)
 
 由于引入了 NAT，请注意，Wifibox 为 `eth0` 和 `wlan0` 使用了不同的 IP 地址范围。因此，某些应用程序可能无法直接正常工作，需要部署额外的工具和配置，例如端口转发。从安全角度来看，这可以视为一个优点，因为我们自动安装了防火墙。但同样，这也是一个缺点，因为它打破了端到端的连接性——这是互联网的核心原则。为了解决这个问题，曾进行过实验，将数据包转发推到以太网层级。例如，存在 [WLAN Kabel](https://github.com/escitalopram/wlan_kabel)，它实现了在以太网和无线接口之间移动数据包。虽然流量能够正常流动，但 DHCP 通信无法穿过这个障碍，且观察到的性能较低。尽管如此，这仍然是一个有趣的方案，值得在未来进一步探索。
 

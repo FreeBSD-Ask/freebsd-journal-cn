@@ -15,7 +15,7 @@
 
 top 可能是我们在想知道系统上发生了什么时，首先使用的工具。尽管它非常实用，top 其实是个非常简单的程序，它能够在屏幕上漂亮地显示信息，并且在机器上做了一些抽象层处理，使得代码更加可移植。CPU 利用率接口由 FreeBSD 提供，以两个 sysctl 节点的形式呈现：
 
-![](https://github.com/user-attachments/assets/e25b847c-5b9d-42ba-9812-44ac1c9c757e)
+![FreeBSD CPU 利用率 sysctl 节点示意图](https://github.com/user-attachments/assets/e25b847c-5b9d-42ba-9812-44ac1c9c757e)
 
 ```sh
 $ sysctl hw.ncpu

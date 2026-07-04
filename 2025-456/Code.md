@@ -271,7 +271,7 @@ Overlord 能够借助出色的 [vm-bhyve](https://github.com/churchers/vm-bhyve)
 
 vm.yml:
 
-```
+```yaml
 kind: vmJail
 datacenters:
   main:

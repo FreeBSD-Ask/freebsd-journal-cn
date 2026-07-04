@@ -34,7 +34,7 @@ allow_mount:0
 
 iocage 里的参数用下划线而不是句点分隔，因为 Python。参数 `allow_chflags` 和 jail.conf 的 `allow.chflags` 参数相同。`allow_chflags` 设为 0 时，iocage 默认不设置 `allow.chflags`。由于 iocage 用参数配置 Jail 的一切，有些参数没有 jail.conf 的等价物。`resolver` 参数告诉 iocage 从哪里获取 Jail 的 resolv.conf。
 
-```
+```ini
 …
 resolver:/etc/resolv.conf
 …

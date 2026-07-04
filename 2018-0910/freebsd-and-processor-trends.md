@@ -14,7 +14,7 @@
 
 - 问题约束强扩展（Problem-Constrained strong scaling）——用户希望使用更大的机器更快地解决相同的问题。随着可用于完成任务的处理器数量增加，完成任务的时间减少程度：
 
-```
+```sh
                                      Time(1 processor)
 SpeedupPC(n processors) = ---------------------------------
                                      Time(n processors)
@@ -22,7 +22,7 @@ SpeedupPC(n processors) = ---------------------------------
 
 - 时间约束弱扩展（Time-Constrained weak scaling）——执行给定工作负载的时间保持不变；用户希望解决尽可能大的问题。它是随着处理器数量增加完成的工作量增加的程度：
 
-```
+```sh
                                      Work(n processors)
 SpeedupTC(n processors) = ---------------------------------
                                      Work(1 processor)
@@ -30,7 +30,7 @@ SpeedupTC(n processors) = ---------------------------------
 
 - 内存约束（Memory-Constrained）——用户希望解决能放入内存的最大问题。
 
-```
+```sh
                          Work(p processors)     Time(1 processor)          Increase in Work
 SpeedupMC(p processors) = ------------------- x ---------------- = ----------------------------
                           Time(p processors)     Time(1 processor)      Increase in Execution Time
