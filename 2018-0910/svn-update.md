@@ -60,7 +60,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/336252>
 
-这将大部分 geli 支持从 lib386/biosdisk.c 移到一个新的 geli/gelidev.c，后者实现了一个 devsw 类型设备，其 `dv_strategy()` 函数处理 geli 解密。对所有架构的支持来自于将尝试验证和附加代码移动到 libsa 的 `devopen()` 函数。打开任何 DEVT_DISK 设备后，`devopen()` 调用新函数 `geli_probe_and_attach()`，它将通过创建 geli_devdesc 实例替换 open_file 中的 disk_devdesc 实例来"附加"geli 代码到 open_file 结构。这通过 geli 代码路由设备的所有 IO。添加了一个新的公共 `geli_add_key()` 函数，允许架构/供应商特定的代码添加从自定义硬件或其他来源获得的密钥。有了这些更改，geli 支持将编译到所有架构上 loader(8) 的所有变体中，因为默认是 WITH_LOADER_GELI。
+这将大部分 geli 支持从 lib386/biosdisk.c 迁移到一个新的 geli/gelidev.c，后者实现了一个 devsw 类型设备，其 `dv_strategy()` 函数处理 geli 解密。对所有架构的支持来自于将尝试验证和附加代码迁移到 libsa 的 `devopen()` 函数。打开任何 DEVT_DISK 设备后，`devopen()` 调用新函数 `geli_probe_and_attach()`，它将通过创建 geli_devdesc 实例替换 open_file 中的 disk_devdesc 实例来"附加"geli 代码到 open_file 结构。这通过 geli 代码路由设备的所有 IO。添加了一个新的公共 `geli_add_key()` 函数，允许架构/供应商特定的代码添加从自定义硬件或其他来源获得的密钥。有了这些更改，geli 支持将编译到所有架构上 loader(8) 的所有变体中，因为默认是 WITH_LOADER_GELI。
 
 ## 添加 bhyve NVMe 设备仿真
 
