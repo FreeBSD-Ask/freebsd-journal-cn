@@ -32,9 +32,9 @@ FreeBSD 的 `ifconfig`(8) 使用 `lib80211`(3) 用户空间库，该库作为 AP
 s = socket(AF_LOCAL, SOCK_DGRAM, 0)
 ```
 
-此套接字作为用户空间到内核通信的接口。与其从 `main()` 的 if-else 迷宫中追踪，我搜索了字符串"channel"，在 **/usr/src/sbin/ifconfig/ifieee80211.c** 末尾定义的 `ieee80211_cmd[]` 中找到了它。
+此套接字作为用户空间到内核通信的接口。与其从 `main()` 的 if-else 迷宫中追踪，我搜索了字符串“channel”，在 **/usr/src/sbin/ifconfig/ifieee80211.c** 末尾定义的 `ieee80211_cmd[]` 中找到了它。
 
-该表枚举了所有 ieee80211 `ifconfig`(8) 命令。"channel"命令定义如下：
+该表枚举了所有 ieee80211 `ifconfig`(8) 命令。“channel”命令定义如下：
 
 ```sh
 DEF_CMD_ARG ("channel" set80211channel)
@@ -56,7 +56,7 @@ ioctl(s, SIOCS80211, &ireq)
 
 继续之前有两点简要说明：首先，在高层面上，BSD 内核的运作方式类似 IP 路由器，它在内核中路由执行，沿途填充相关数据值，直到执行到达目标处理函数。以下说明将展示内核如何识别系统调用类型、判断它针对接口卡、判断接口卡类型，最后为将来执行排队一个任务。
 
-其次，BSD 内核使用一种常见模式：模板方法调用一系列函数指针。确切的函数指针有条件地填充，使代码保持一致结构而具体实现可能不同。这种方式效果很好，但如果你只是从头阅读代码，追踪执行路径会很困难。遇到困难时，我通常使用 illumos 的 OpenGrok（<http://src.illumos.org/source/）或> `dtrace`(1)。
+其次，BSD 内核使用一种常见模式：模板方法调用一系列函数指针。确切的函数指针有条件地填充，使代码保持一致结构而具体实现可能不同。这种方式效果很好，但如果你只是从头阅读代码，追踪执行路径会很困难。遇到困难时，我通常使用 illumos 的 OpenGrok（<http://src.illumos.org/source/>）或 `dtrace`(1)。
 
 让我们简要偏离到 `dtrace`(1)。Solaris 的动态追踪工具导入到 FreeBSD，用于实时监控内核或进程。它有助于理解操作系统的行为，省去了 `printf`(3) 式调试的麻烦。我在编写本指南时使用 `dtrace`(1) 来识别内核在执行什么、函数参数以及任意时刻的栈追踪。例如，如果我想监控 `ifioctl` 函数，可以运行：
 
