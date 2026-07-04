@@ -17,7 +17,7 @@ Verisign 使用 FreeBSD 来处理其关键的互联网名称服务查询。Veris
 
 ## 伯克利的计算机系统研究小组（CSRG）
 
-![](https://github.com/user-attachments/assets/8b9862f2-28c4-4e6e-8906-39c845d49af1)
+![CSRG 历史照片](https://github.com/user-attachments/assets/8b9862f2-28c4-4e6e-8906-39c845d49af1)
 
 图片由 Ollivier Robert 提供。
 
