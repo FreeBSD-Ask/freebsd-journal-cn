@@ -1,4 +1,4 @@
-# 书评：《用火解决问题：管理老化的计算机系统（并为现代系统保驾护航）》*Kill It with Fire: Manage Aging Computer Systems (and Future Proof Modern Ones)*
+# 书评：*Kill It with Fire: Manage Aging Computer Systems (and Future Proof Modern Ones)*
 
 - 原文链接：[Kill It with Fire: Manage Aging Computer Systems (and Future Proof Modern Ones) by Marianne Bellotti](https://freebsdfoundation.org/wp-content/uploads/2023/01/book_review.pdf)
 - 作者：**BOOK REVIEW** & **TOM JONES**
