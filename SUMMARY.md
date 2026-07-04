@@ -649,7 +649,7 @@
 * [FreeBSD 新面孔](2017-0102/new-faces-of-freebsd.md)
 * [基金会来信：欢迎来到 2017！](2017-0102/letter-from-the-foundation.md)
 * [改进 FreeBSD 翻译工具](2017-0102/improving-the-freebsd-translation-tools.md)
-* [由 FreeBSD 驱动的 LCD 广告显示屏](2017-0102/freebsd-powered-lcd-advertising-displays.md)
+* [由 FreeBSD 驱动的中国 LCD 广告显示屏](2017-0102/freebsd-powered-lcd-advertising-displays.md)
 * [FlightAware 与 FreeBSD](2017-0102/flightaware-and-freebsd.md)
 * [活动日历](2017-0102/events-calendar.md)
 * [书评：《Grokking Algorithms》——给程序员和其他好奇者的图解指南](2017-0102/book-review.md)
@@ -890,8 +890,3 @@
 * [FreeBSD 与商业工作负载：NYI 的托管服务](2014-0102/freebsd-and-commercial-workloads-managed-services-at-nyi.md)
 * [活动日历](2014-0102/events-calendar.md)
 * [FreeBSD 10 中的 Clang](2014-0102/clang-in-10.md)
-
-## 既往精选
-
-* [由 FreeBSD 驱动的中国 LCD 广告显示屏](other/FreeBSD-Powered-LCD-Advertising-Displays.md)
-* [创建一家 BSD 用户组](other/Starting-a-BSD-User-Group.md)
