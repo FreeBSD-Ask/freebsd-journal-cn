@@ -9,7 +9,7 @@
 - **Sergey**：我叫 Sergey Kozlov，是一名 FreeBSD 痴迷者。我出生并在乌克兰基辅度过了人生大部分时光，但自 2015 年起一直居住在波兰格但斯克。我是 Python 程序员、系统管理员和测试人员。我在 Intel 工作，负责 Intel FreeBSD 有线以太网驱动程序（em、igb、ix、ixl 等）的自动测试。
 - **Vinícius**：我出生并成长于福塔莱萨，根在里约热内卢和米纳斯吉拉斯。我的家族姓氏源自意大利，在意大利人移民巴西期间被拼错，因此我也是把面包蘸咖啡这一美味传统的继承者。原本的家族姓氏是 Zavani。现在我居住在德国（思乡得厉害，尤其在冬天），在 cleverbridge 工作，公司大量使用 FreeBSD。
 
-  小时候，我接触了 TK 85 后开始迷上电脑，后来毕业于计算机工程专业。我喜欢学习不同的语言。我受到自由和开源软件（FOSS）的使用和益处的激励与启发，尤其是 BSD 许可证下的软件，并随时间推移为不同项目做出了贡献和捐赠。近年来，我致力于推动隐私增强技术（PET）在 *BSD 操作系统上的支持。这些努力将我带到了 TorBSD Diversity Project（TDP，`https://torbsd.org/2016/12/17/welcome-aboard-vinicius.html`），在那里我成为核心团队成员（`https://www.torproject.org/about/corepeople.html.en#egypcio`）。
+  小时候，我接触了 TK 85 后开始迷上电脑，后来毕业于计算机工程专业。我喜欢学习不同的语言。我受到自由和开源软件（FOSS）的使用和益处的激励与启发，尤其是 BSD 许可证下的软件，并随时间推移为不同项目做出了贡献和捐赠。近年来，我致力于推动隐私增强技术（PET）在 *BSD 操作系统上的支持。这些努力将我带到了 TorBSD Diversity Project（TDP，<https://torbsd.org/2016/12/17/welcome-aboard-vinicius.html>），在那里我成为核心团队成员（<https://www.torproject.org/about/corepeople.html.en#egypcio>）。
 
 ## 你最初是如何了解到 FreeBSD 的？FreeBSD 的什么吸引了你？
 
@@ -29,7 +29,7 @@
 
 - **Vinícius**：嗯，时间过得真快！感觉就像昨天我第一次运行 sysinstall，使用 cvsup 升级机器，那时我订阅了 FreeBSD Users Group Brazil 邮件列表。当时，我举办讲座、辅导教程、撰写关于 FreeBSD 的文章，让人们熟悉它的功能和它的能力。中间某个时候，我参与了一项将 FreeBSD Handbook 翻译为葡萄牙文的伟大努力，然后我帮助审阅和更新了一本关于网络和 FreeBSD 驱动的互联网服务的书的章节（《FreeBSD：O Poder dos Servidores em Suas Mãos》）。2015 年的某一天，我发现自己正在组织巴西第一届国际 BSD 会议！
 
-  最后，几个月前我参加了 EuroBSDcon 2018，在那里我遇到了其他一些 committer。在一次咖啡休息和关于 PET 支持以及 freebsd-update 替代方案以及 pkg-base 和 bhyve 开发的私下聊天中，araujo@、beat@ 和 rene@ 决定用提交权限惩罚我。
+  最后，几个月前我参加了 EuroBSDcon 2018，在那里我遇到了其他一些 committer。在一次咖啡休息和关于 PET 支持、freebsd-update 替代方案、pkg-base 和 bhyve 开发的私下聊天中，araujo@、beat@ 和 rene@ 决定用提交权限惩罚我。
 
 ## 自加入 FreeBSD 项目以来你的体验如何？对可能也想成为 FreeBSD committer 的读者有什么建议？
 
