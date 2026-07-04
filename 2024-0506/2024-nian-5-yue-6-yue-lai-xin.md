@@ -3,6 +3,8 @@
 - 作者：**Michael W Lucas**
 - 原文链接：<https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/we-get-letters-may-june>
 
+![读者来信](https://freebsdfoundation.org/wp-content/uploads/2024/07/WeGetLetters.png)
+
 > 亲爱的来信专栏，
 >
 > 我的雇主有数十台服务器，但我不知道有多少操作系统。其中一台的运行时间比我都大，没人敢碰。但有个大聪明把一本电脑杂志落在了洗手间，被老板发现了。现在老板的脑瓜里，已经把“配置管理（configuration management，又称组态管理）”当成了化解我们全部问题的万金油，但数据中心真正需要的是背包核弹（核背包）。我该怎样才能让他明白，这些工具并不适合我们这样的环境？

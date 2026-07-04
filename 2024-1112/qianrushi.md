@@ -3,6 +3,8 @@
 - 原文地址：[Fabric – Baby Steps](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/embedded-freebsd-fabric-baby-steps/)
 - 作者：**Christopher R. Bowman**
 
+![嵌入式 FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2025/01/embedded_freebsd_art.png)
+
 在之前的专栏中，我们简要地介绍了 Zynq 芯片，提及了它的结构。自那以后，我们对他没有太多讨论。但在上篇专栏中，我们成功地在 bhyve 上运行了 CentOS 镜像，现在是时候来看我们的第一个结构电路了。本篇专栏将专注于电路，不涉及 FreeBSD，但在接下来的几期中，我们将开始研究结合这两者的系统。
 
 除了 [Zynq-7000 SoC 技术参考手册](https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM/Zynq-7000-SoC-Technical-Reference-Manual)，该手册记录了构成 Arty Z7-20 功能核心的 Zynq 芯片外，Digilent 的 [Arty Z7 参考手册](https://digilent.com/reference/programmable-logic/arty-z7/reference-manual) 提供了大量关于 Zynq 芯片如何在板上连接的有价值的信息。查看第 12 节，我们可以看到该板上有 4 个 LED 直接连接到 ZYNQ 芯片（R14、P14、N16、M14）。如果我们将这些引脚设置为逻辑 1 或高电平电压，则这些引脚将源源不断地提供电流，电流通过 LED，再通过限流电阻流向地线，导致 LED 点亮。

@@ -3,6 +3,8 @@
 - 原文链接：[Practical Ports: Developing Custom Ansible Modules](https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/practical-ports-developing-custom-ansible-modules/)
 - 作者：Benedict Reuschling
 
+![实用软件](https://freebsdfoundation.org/wp-content/uploads/2024/07/practical_ports_header.png)
+
 Ansible 提供了许多不同的模块，普通用户通常可以直接使用这些模块，而无需编写自己的模块，因为现有模块的数量庞大。即使在模块 `ansible.builtin` 中未提供所需的功能，Ansible Galaxy 也有大量来自爱好者的第三方模块，这些模块进一步丰富了模块的数量。
 
 当所需功能未被单一模块及其组合覆盖时，就需要开发自己的模块。开发者可以选择将自定义模块保留为本地模块，而无需将其发布到互联网或通过 Ansible Galaxy 使用。模块通常用 Python 开发，但若不打算把该模块提交到官方 Ansible 生态系统中，使用其他编程语言也是可以的。

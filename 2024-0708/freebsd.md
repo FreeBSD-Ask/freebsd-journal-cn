@@ -3,6 +3,8 @@
 - 原文链接：[Rolling Your Own Images](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/embedded-freebsd-rolling-your-own-images/)
 - 作者：Christopher R. Bowman
 
+![嵌入式 FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2024/09/embedded_freebsd_art.png)
+
 在上一卷中，我粗略提及了我用的开发板，Digilent 的 [ARTYZ7](https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/)。在本卷，我将讨论如何制作自己的镜像。到某个时候，你可能会需要一个与现有镜像略有差异的镜像，因此你可能想从源代码开始构建、创建镜像来写入 SD 卡。
 
 首先，让我们了解一下 [ARTYZ7](https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/) 如何启动。 [Zynq-7000 SoC 技术参考手册](https://docs.xilinx.com/v/u/en-US/ug585-Zynq-7000-TRM) 是一本宝贵的技术信息来源，第 6 章讲述了芯片及所有 Zynq 主板的启动过程。这里有很多技术细节，但根据默认配置的跳线设置，ARTYZ7 是从 SD 卡启动的。你可能已经下载看了我在上一卷中提供的镜像。如果查看过，你会发现它是以 MBR 模式格式化的，首先是 FAT 分区，第二个 MBR 分区上是一个带有 UFS 的 FreeBSD 切片。处理器将查找 MBR，并寻找 FAT16/FAT32 分区。它会在 FAT 分区中查找文件 `boot.bin`。若找到，它会将其加载到内存中，开始执行。如果你想要直接编程到裸机，可以将你的应用程序写入，命名为 `boot.bin`。对我来说这有些复杂。因此，当启动 FreeBSD 时，我们使用了一个第一阶段引导加载程序，像许多嵌入式开发板一样，我们使用 [Das U-Boot](https://en.wikipedia.org/wiki/Das_U-Boot)。U-Boot 是一款由社区维护的开源引导加载程序。在我们的用例中，使用了两回 U-Boot。首先，U-Boot 被编译为最小的第一阶段引导加载程序（FSBL），它设置硬件查找第二阶段引导加载程序，第二阶段引导加载程序也是 U-Boot，但功能更加丰富。在我们的使用中，第二阶段的 U-Boot 位于 FAT 分区中的名为 `U-boot.img` 的文件中。这个 U-Boot 第二阶段加载程序会从 FAT 分区中的 `EFI/BOOT/bootarm.efi` 文件加载 lua 加载器。然后，lua 加载器会将内核等文件加载到内存中再执行。

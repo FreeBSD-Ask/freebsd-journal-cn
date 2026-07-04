@@ -3,6 +3,8 @@
 - 原文链接：[Practical Ports: Go Paperless](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/practical-ports-go-paperless/)
 - 作者：Benedict Reuschling
 
+![实用软件](https://freebsdfoundation.org/wp-content/uploads/2024/09/practical_ports_header-1.png)
+
 在疫情最严重的时候，我一直待在家里，日子基本上和其他日子没什么区别。时间过得很慢，环顾四周，我意识到我的房间变得相当凌乱。尤其是我的工作桌旁，堆积的书籍、笔记、信件和其他纸张已经开始争相堆到桌面上。我决定做点什么。我戴上耳机，开始整理、归类、扔掉，并清理到我的桌面变得整洁。这种成就感在全球危机时期格外强烈。受到这一感觉的激励，我决定开始扫描那些纸张，减少堆积的纸张数量。
 
 我几个月前买了一台移动扫描仪，它通过 USB 连接，并使用一些专有但高效的扫描软件。这个扫描仪的大小不亚于一个擀面杖，能够扫描一张纸。由于当时有时间，我开始一张一张地扫描每张纸，为每个生成的 PDF 添加描述和日期，然后继续扫描下一张。虽然这很繁琐，但最终我完成了。之后整理这些文件又是一个漫长的任务：税务、保险、合同、收据、账单（包括已发送和已收到的）、记录、证书等，都需要放入正确的目录中。

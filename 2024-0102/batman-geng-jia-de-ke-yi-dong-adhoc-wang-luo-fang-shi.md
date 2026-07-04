@@ -3,6 +3,8 @@
 - 原文链接：[BATMAN: the Better Approach to Mobile Ad-hoc Networks](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/batman-the-better-approach-to-mobile-ad-hoc-networks/)
 - 作者：Aymeric Wibo
 
+![](https://freebsdfoundation.org/wp-content/uploads/2024/02/batman_art.jpg)
+
 在广阔的网络协议领域，有一种协议脱颖而出，作为一个多功能且自适应的竞争者：BATMAN，即 Better Approach to Mobile Ad-hoc Networks（随建即连网络优化方案）。在大城市的无线电波中，BATMAN 能让设备在网状网络中无缝通信，却无需让任何一台设备了解整个网络拓扑。
 
 今夏，我参加了谷歌编程之夏 (GSoC)，并将内核模块 `batman-adv`（提供了 Linux 对 BATMAN 协议的支持）移植到了 FreeBSD。谷歌编程之夏是个学生在暑期参与开源项目的计划，谷歌为学生提供津贴，并由导师监督。对我而言，我的导师是那位唯一无二的 Mahdi（或 Mehdi，取决于你问他是星期几）Mokhtari，即 mmokhi@。他是位非常有风度的人，我非常感激在谷歌编程之夏的旅程中有他的指导！

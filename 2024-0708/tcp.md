@@ -3,6 +3,8 @@
 - 原文链接：[Introduction to TCP Large Receive Offload](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/introduction-to-tcp-large-receive-offload/)
 - 作者：Randall Stewart、Michael Tüxen
 
+![TCP/IP 历险记](https://freebsdfoundation.org/wp-content/uploads/2024/09/adventures_in_TCP_logo.png)
+
 TCP 大型接收卸载（TCP Large Receive Offload，TCP LRO）是一种特定于协议的方法，用于降低接收 TCP 段（TCP segment）时所需的 CPU 资源。它也是实现特定的，本篇文章介绍了它在 FreeBSD 内核中的实现。在任何给定时刻，TCP 通常用于单向通信，尽管 TCP 提供了双向通道。例如，当使用 TCP 作为传输协议的应用协议是请求/响应类型（如 HTTP）时，即是这种情况。
 
 TCP LRO 可采用多种方式降低所需的 CPU 资源，包括：

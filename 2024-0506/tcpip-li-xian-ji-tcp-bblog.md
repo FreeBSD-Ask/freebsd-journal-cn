@@ -3,6 +3,8 @@
 - 原文链接：[Adventures in TCP/IP: TCP Black Box Logging](https://freebsdfoundation.org/adventures-in-tcp-ip-tcp-black-box-logging/)
 - 作者：RANDALL STEWART、MICHAEL TÜXEN
 
+![TCP/IP 历险记](https://freebsdfoundation.org/wp-content/uploads/2024/07/adventures_in_TCP_logo.png)
+
 ## FreeBSD 中 TCP 日志记录的演变
 
 4.2 BSD 发布于 1983 年，内置了 BSD 中第一款 TCP 实现。4.2 BSD 还添加了调试 TCP 实现的功能。内核部分由内核参数 `TCP_DEBUG`（默认禁用）控制，提供了一个包含 `TCP_NDEBUG`（默认 100）个元素的全局环形缓冲区，并在发送或接收 TCP 段、TCP 计时器到期或处理与 TCP 协议相关的用户请求时，将条目添加到环形缓冲区。仅当启用 `SOL_SOCKET` 级别套接字参数 `SO_DEBUG` 时，才会为套接字添加这些事件。4.2 BSD 还提供了命令行工具 `trpt`（transliterate protocol trace），可以从活动系统和核心文件中读取环形缓冲区并将其打印出来。它不仅打印发送和接收的 TCP 段的 TCP 头部，还在发送或接收 TCP 段、TCP 计时器到期和处理 TCP 协议相关的用户请求时打印 TCP 端点的最重要参数。值得注意的是，在系统崩溃的情况下，环形缓冲区的内容可能提供了充足的信息来分析系统进入错误状态的原因。然而，由于此功能不再符合当前 TCP 的使用需求，它在 FreeBSD 14 中被移除。在早期版本的 FreeBSD 中，构建非默认配置的内核是必需的。
