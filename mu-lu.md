@@ -1,4 +1,4 @@
-# 目录
+# Table of contents
 
 * [FreeBSD 中文期刊](README.md)
 * [编辑日志](CHANGELOG.md)
@@ -751,7 +751,7 @@
 * [FreeBSD 本月动态](2015-0910/this-month-in-freebsd.md)
 * [SVN 动态](2015-0910/svn-update.md)
 * [Ports 报告](2015-0910/ports-report.md)
-* [书评：](2015-0910/book-review.md)
+* [书评：《云系统管理：大规模分布式系统设计与运营》](2015-0910/book-review.md)
 * [改进 FreeBSD 上 MemGuard 对 UMA 的支持](2015-0910/improving-memguard-support-for-uma-on-freebsd.md)
 * [FreeBSD 虚拟化方案](2015-0910/freebsd-virtualization-options.md)
 * [基金会来信](2015-0910/foundation-letter.md)
@@ -810,7 +810,7 @@
 * [SVN 动态](2015-0102/svn-update.md)
 * [基金会来信](2015-0102/foundation-letter.md)
 * [会议报告](2015-0102/conference-report.md)
-* [书评](2015-0102/book-review.md)
+* [书评：《FreeBSD 操作系统设计与实现第 2 版》](2015-0102/book-review.md)
 * [arm64](2015-0102/arm64.md)
 * [点亮 MIPS](2015-0102/bringing-up-mips.md)
 
@@ -821,7 +821,7 @@
 * [SVN 动态](2014-1112/svn-update.md)
 * [Ports 报告](2014-1112/ports-report.md)
 * [会议报告](2014-1112/conference-report.md)
-* [书评](2014-1112/book-review.md)
+* [书评：《HTTPS 权威指南：在服务器和 Web 应用上部署 SSL-TLS 和 PKI》](2014-1112/book-review.md)
 * [pfSense：三小时之旅](2014-1112/pfsense-a-3-hour-tour.md)
 * [告别 printf：用 DTrace 深入内核](2014-1112/no-more-printfs-digging-into-the-kernel-with-dtrace.md)
 * [基金会来信](2014-1112/foundation-letter.md)
