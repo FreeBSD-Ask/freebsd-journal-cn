@@ -30,23 +30,23 @@ Pedro 又出现了，这次我们讨论了为我的 BSD.pw 域名搭建邮件。
 
 早晨公告由 Michai Stanek 主持，然后他介绍了来自 Politehnica University of Bucharest 的同事 Costin Raiciu。Costin 给出了关于“Lightweight Virtualization”（轻量级虚拟化）的早晨主题演讲。他展示了关于该主题的一些有趣研究，以及在机器上运行非常小的 Python 环境的示例。
 
-接下来是 Tom Jones 的“Hacking Together a FreeBSD Presentation Streaming Box for as Little as Possible”（用最少成本拼凑 FreeBSD 演示流媒体盒），提供了一些如何录制和流式传输 BSD 会议幻灯片及演讲者声音的有用示例。会议设计旨在短时间内提供大量多样化信息，因此接着我参加了 Kristaps Dz 的“OpenBSD and Diving”。这个演讲不仅幽默，充满精美照片，还充满了关于使用 OpenBSD 管理和编辑媒体的大量事实。所有媒体传输、编辑和颜色校正都在 OpenBSD 上完成。Kristaps 询问是否有人对好的媒体管理应用程序有建议，我推荐了 Plex。我告诉他我只见它在 FreeBSD ports 集合中可用，但他向我保证那不是问题，他会看看能否移植，看是否适合自己的工作流。我认为它会，因为我每天都在用，它在消除媒体管理的大量复杂性的同时，提供了稳定的媒体处理界面。
+接下来是 Tom Jones 的“Hacking Together a FreeBSD Presentation Streaming Box for as Little as Possible”（用最少成本拼凑 FreeBSD 演示流媒体盒），提供了一些如何录制和流式传输 BSD 会议幻灯片及演讲者声音的有用示例。会议设计旨在短时间内提供大量多样化信息，因此接着我参加了 Kristaps Dz 的“OpenBSD and Diving”。这个演讲不仅幽默，充满精美照片，还充满了关于使用 OpenBSD 管理和编辑媒体的大量事实。所有媒体传输、编辑和颜色校正都在 OpenBSD 上完成。Kristaps 询问是否有人对好的媒体管理应用程序有建议，我推荐了 Plex。我告诉他我只见它在 FreeBSD Ports 集合中可用，但他向我保证那不是问题，他会看看能否移植，看是否适合自己的工作流。我觉得可以，因为我每天都在用，它在消除媒体管理的大量复杂性的同时，提供了稳定的媒体处理界面。
 
-Ingo Schwarze 在关于使用 Markdown 的一些头痛问题的演讲中，请求帮助解决 OpenBSD 网页上 man 页面呈现所控制的 mandoc.css 文件中的 CSS 问题。我熟悉 CSS，主动提出查看该问题，看看能否帮忙。我看到代码的那一刻就识别出了问题，知道修复需要做什么。我只需要找时间坐下来写代码。Ingo 向我保证我可以慢慢来，有空时联系他。这里不仅有吸收信息的好机会，还有参与公共对话的机会。
+Ingo Schwarze 在关于使用 Markdown 的一些头痛问题的演讲中，请求帮助解决控制 OpenBSD 网页上 man 页面呈现的 mandoc.css 文件中的 CSS 问题。我熟悉 CSS，主动提出查看该问题，看看能否帮忙。我看到代码的那一刻就识别出了问题，知道修复需要做什么。我只需要找时间坐下来写代码。Ingo 向我保证我可以慢慢来，有空时联系他。这里不仅有吸收信息的好机会，还有参与公共对话的机会。
 
-下一个演讲是“What's in Store for NetBSD 9.0”，Sevan Janiyan 分享了 NetBSD 项目中已达成的里程碑，包括下一版本中将包含的内容。我强烈推荐查看他的幻灯片。所有会议幻灯片都可通过 EuroBSDCon.org 网站下载。第二个主题演讲“Some Computing and Networking Historical Perspectives”由 Ron Broersma 主讲，对在场所有人来说都是真正的享受。Ron 带来了他早期职业生涯中的各种历史物品，包括他在 Arpanet 上的工作。整个礼堂都喜欢这个演讲，你能感受到每分钟房间里兴趣的增长。Ron 会周期性地从讲台下取出一件物品——例如，一张旧启动卡，过去用于当时使用的昂贵大型计算机。你实际上需要使用这张卡来知道在内存中将程序设置在何处才能启动它。你必须手动输入代码，让一切对齐，这样启动才能正常工作！演讲后，Ron 欢迎人们上前查看他带来的物品。
+下一个演讲是“What's in Store for NetBSD 9.0”，Sevan Janiyan 分享了 NetBSD 项目中已达成的里程碑，包括下一版本中将包含的内容。我强烈推荐查看他的幻灯片。所有会议幻灯片都可通过 EuroBSDCon.org 网站下载。第二个主题演讲“Some Computing and Networking Historical Perspectives”由 Ron Broersma 主讲，对在场所有人来说都是真正的享受。Ron 带来了他早期职业生涯中的各种历史物品，包括他在 Arpanet 上的工作。整个礼堂都喜欢这个演讲，你能感受到房间里每分钟兴趣都在增长。Ron 会时不时从讲台下取出一件物品——例如，一张旧启动卡，过去用于当时使用的昂贵大型计算机。你实际上需要使用这张卡来知道在内存中将程序设置在何处才能启动它。你必须手动输入代码，让一切对齐，这样启动才能正常工作！演讲后，Ron 欢迎人们上前查看他带来的物品。
 
 ## 周日
 
-会议最后一天，我有点迟到，但匆忙赶到会场，赶上了 Bob Beck 的“Pledge and Unveil in OpenBSD”。Bob 深入理解操作系统开发的本质，介绍了一些最佳实践，以及在 OpenBSD 上使用 pledge 和 unveil 编写安全程序的各种方法。
+会议最后一天，我有点迟到，但匆忙赶到会场，赶上了 Bob Beck 的“Pledge and Unveil in OpenBSD”。Bob 对操作系统开发的内部机制了如指掌，介绍了一些最佳实践，以及在 OpenBSD 上使用 pledge 和 unveil 编写安全程序的各种方法。
 
 Yang Zheng 的“Integrate libFuzzer with the NetBSD Userland”是一场非常高级、技术性很强的演讲，我完全听不懂。也许有一天我能理解这个主题。
 
-Pierre Pronchery 的“DeforaOS, NetBSD, Future Internet”是一场非常富有知性的演讲。Pierre 是一位深思熟虑的开发者，挑战极限，对底层技术有出色的理解。我学到了很多东西，了解到事物为何如此，并得到一个让事物变得更好的挑战。
+Pierre Pronchery 的“DeforaOS, NetBSD, Future Internet”是一场很有思想性的演讲。Pierre 是一位深思熟虑的开发者，挑战极限，对底层技术有出色的理解。我学到了很多东西，了解到事物为何如此，并受到挑战，要让事物变得更好。
 
-Maya Rashish 的“Debugging Lessons Learned as a Newbie Fixing NetBSD”跟随一位新手了解为 NetBSD 贡献的过程，详细介绍了新加入项目的人应该注意的一些事情。Maya 的演讲结束后，我赶上了 Niclas Zeising 的“FreeBSD Graphics”结尾部分，我询问了编译 drm-stable-kmod 过程中的一个问题。Makefile 中有一个 ignore 标志，如果想在 FreeBSD 11.2-RELEASE（我使用的版本）上编译 port，需要移除该标志。Niclas 说这肯定是疏忽，在 11.2 上应该能正常工作。我告诉他我已从 Makefile 中移除了 ignore 标志，并在我的 11.2-RELEASE 笔记本上编译了 drm-stable-kmod，它一直运行良好。
+Maya Rashish 的“Debugging Lessons Learned as a Newbie Fixing NetBSD”跟随一位新手的视角，了解为 NetBSD 贡献的过程，详细介绍了新加入项目的人应该注意的一些事情。Maya 的演讲结束后，我赶上了 Niclas Zeising 的“FreeBSD Graphics”结尾部分，我询问了编译 drm-stable-kmod 过程中的一个问题。Makefile 中有一个 ignore 标志，如果想在 FreeBSD 11.2-RELEASE（我使用的版本）上编译 port，需要移除该标志。Niclas 说这肯定是疏忽，在 11.2 上应该能正常工作。我告诉他我从 Makefile 中移除了 ignore 标志，并在我的 11.2-RELEASE 笔记本上编译了 drm-stable-kmod，它一直运行良好。
 
-接下来轮到我演讲：“Being a BSD User”（作为 BSD 用户）。开始前几分钟，肾上腺素飙升。尽管我对公开演讲感到紧张，但演讲进行得相当顺利。观众积极参与并提出问题。我分享了我使用 BSD 技术的经验，以及向年轻科学家教授该技术如何是一种很好的体验。学习用 BSD 能做的所有酷事，以及了解这个令人惊叹的社区，是我乐于分享给他人的体验。我收到了 Allan Jude、Kirk McKusick 等人的很好反馈。虽然我最初有点担心需要填满 45 分钟的时间块，但一旦开始演讲，我的热情接管了一切，毫无问题地填满了时间。共有来自 37 个国家的 181 名参与者。Groff 由 Sevan Janiyan 带到会议，在闭幕会议上交给 Deb Goodkin 照看。
+接下来轮到我演讲：“Being a BSD User”（作为 BSD 用户）。开始前几分钟，肾上腺素飙升。尽管我对公开演讲感到紧张，但演讲进行得相当顺利。观众积极参与并提出问题。我分享了我使用 BSD 技术的经验，以及向年轻科学家教授该技术是怎样一种很好的体验。学习用 BSD 能做的所有酷事，以及了解这个令人惊叹的社区，是我乐于分享给他人的体验。我收到了 Allan Jude、Kirk McKusick 等人的很好反馈。虽然我最初有点担心需要填满 45 分钟的时间块，但一旦开始演讲，我的热情接管了一切，毫无问题地填满了时间。共有来自 37 个国家的 181 名参与者。Groff 由 Sevan Janiyan 带到会议，在闭幕会议上交给 Deb Goodkin 照看。
 
 ---
 

@@ -1,25 +1,11 @@
 # FreeBSD 中文期刊
 
->**警告**
->
->除已校对部分外，本项目目前翻译错漏百出，不适合用于生产。
->
->本项目目前处于低维护状态，主要维护者因精力所限仅处理 PR 或新的期刊。欢迎社区通过 PR 贡献力量。
+所有期刊均经过校对与审阅。
 
-本作品仅为教学之目的。如认为本作品存在侵权情形，请通过电子邮件联系 ykla <yklaxds@gmail.com>。
+FreeBSD 期刊原文位于：<https://freebsdfoundation.org/our-work/journal>。
 
-本翻译项目遵循 BSD 2 条款许可。
+本书部署网站：<https://book.bsdcn.org>。
 
-FreeBSD 期刊原文位于：<https://freebsdfoundation.org/our-work/journal>
+FreeBSD 中文社区译制。本翻译项目遵循 2 条款 BSD 许可。
 
-本书部署网站：<https://book.bsdcn.org>
-
-## PDF 文档
-
-使用由 [safreya](https://github.com/safreya) 提供的脚本：
-
-<https://github.com/FreeBSD-Ask/gitbook-pdf-export> 用于导出本书的 PDF 文档。该脚本使用 Python 3 编写，仅在 Windows 10、FreeBSD 14 上测试过。
-
-具体使用方法见该项目的 README。
-
-或参见 Github 的 Release。
+本作品仅为教学演示之目的，版权所有者是 FreeBSD 基金会和/或每篇文章开头或结尾注明的作者。如认为本作品存在侵权情形，请通过电子邮件联系 ykla <yklaxds@gmail.com>。
