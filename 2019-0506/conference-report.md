@@ -4,7 +4,7 @@
 
 作者：Conor Beh
 
-4 月 26 日至 28 日，LinuxFest Northwest 迎来 20 周年纪念，FreeBSD 社区来了很多人。我有机会和 Linux 阵营及开源社区的朋友们一起，参加了三场与 FreeBSD 相关的讲座，并在会场布置了一个大型展台。虽然 LinuxFest Northwest 的地点有些偏僻，但讲座内容多样、氛围轻松，吸引了世界各地的人前来。
+4 月 26 日至 28 日，LinuxFest Northwest 迎来 20 周年纪念，FreeBSD 社区来了很多人。我有机会和 Linux 阵营、开源社区的朋友们一起，参加了三场与 FreeBSD 相关的讲座，并在会场布置了一个大型展台。虽然 LinuxFest Northwest 的地点有些偏僻，但讲座内容多样、氛围轻松，吸引了世界各地的人前来。
 
 周六一大早，博览会大厅开放，LinuxFest Northwest 2019 拉开帷幕。我和 Jason Barbier 两位华盛顿州本地人在展台值守。从外地赶来支援的还有 FreeBSD Foundation 执行董事 Deb Goodkin、Core Team 成员 Sean Chittenden，以及俄勒冈州的 Michael Dexter 和 Rodney Grimes。还有其他几位社区成员也现身展台，大家进行了许多有价值的讨论。在展台值守让我既能够与整个社区互动，也能向那些还不知道 FreeBSD 在开源领域存在的人介绍它。
 
