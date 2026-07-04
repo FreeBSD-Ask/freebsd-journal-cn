@@ -151,12 +151,12 @@ OpenVPN 会通过 OVPN_NEW_KEY 命令安装新密钥。每个密钥都有一个 
 
 我在 Netgate 的一位同事花了一些时间用 iperf3 对 Netgate 4100⑩ 设备进行测试，并得到了以下结果：
 
-| 测试类型        | 吞吐量      |
-|:-----------------:|:-------------:|
-| if_tun          | 207.3 Mbit/s |
-| DCO Software    | 213.1 Mbit/s |
-| DCO AES-NI      | 751.2 Mbit/s |
-| DCO QAT         | 1,064.8 Mbit/s |
+| 测试类型 | 吞吐量 |
+| :------: | :----: |
+| if_tun | 207.3 Mbit/s |
+| DCO Software | 213.1 Mbit/s |
+| DCO AES-NI | 751.2 Mbit/s |
+| DCO QAT | 1,064.8 Mbit/s |
 
 “if_tun”是旧的 OpenVPN 方法，无 DCO。值得注意的是，它在用户空间使用了 AES-NI 指令，而 "DCO Software" 设置则没有。尽管有明显的作弊行为，DCO 仍然略快。在公平的条件下（即 DCO 确实使用 AES-NI 指令），差距更是显而易见，DCO 的速度是原来的三倍多。
 

@@ -42,7 +42,7 @@ MITRE Caldera（[security/caldera](https://cgit.freebsd.org/ports/tree/security/
 
 将锚点放入 pf.conf 中：
 
-```
+```sh
 # cat << “EOF” >> /etc/pf.conf
 nat-anchor ‘appjail-nat/jail/*’
 nat-anchor “appjail-nat/network/*”
@@ -52,31 +52,31 @@ EOF
 
 启用数据包过滤器
 
-```
+```sh
 # pfctl -f /etc/pf.confg -e
 ```
 
 启用 IP 转发
 
-```
+```sh
 sysctl net.inet.ip.forwarding=1
 ```
 
 是时候下载创建 jail 所需的文件。默认情况下，AppJail 下载与主机相同版本和架构的文件。
 
-```
+```sh
 # appjail fetch
 ```
 
 如果我们想要指定特定的版本，我们必须使用以下方法：
 
-```
+```sh
 # appjail fetch www -v 13.2-RELEASE -a amd64
 ```
 
 我们添加了一个名为 wazuh-net 的网络。wazuh-net 桥将用于 jail。
 
-```
+```sh
 # appjail network add wazuh-net 11.1.0.0/24
 # appjail network list
 
@@ -92,13 +92,13 @@ Wazuh makejail 将创建并配置一个 jail，其中包含 Wazuh SIEM 使用的
 
 使用 AppJail 通过 AppJail-Makejail 创建它。
 
-```
+```sh
 # appjail makejail -f gh+alonsobsd/wazuh-makejail -o osversion 13.2-RELEASE -j wazuh -- --network wazuh-net --server_ip 11.1.0.2
 ```
 
 完成后，我们将看到为 wazuh-dashboard 生成的凭据，以及在以下示例中用于将代理添加到 wazuh-manager 的密码：
 
-```
+```sh
 ################################################
 Wazuh dashboard admin credentials
 Hostname  :  https://jail-host-ip:5601/app/wazuh
@@ -118,7 +118,7 @@ Password  :  @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 
 如果 wazuh-dashboard 在线，我们将继续向基础架构添加一些代理。为此，我们将使用 wazuh-agent AppJail-Makejail 和先前生成的 Wazuh 代理注册密码。
 
-```
+```sh
 -f use a AppJail-Makejail from a github repository
 -o for define which version of FreeBSD will be used to create the jail, otherwise it uses the host version
 -j jail name
@@ -126,7 +126,7 @@ Password  :  @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 
 以下参数已在 Makejail 文件中定义：
 
-```
+```sh
 --network network name used by jail
 --agent_ip IP address assigned to jail
 --agent_name name of wazuh-agent
@@ -143,7 +143,7 @@ Password  :  @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 
 最后，在每个代理上安装 `net/curl`。此工具将用于下载与 MITRE Caldera 进行交互的有效负载。
 
-```
+```sh
 # appjail pkg jail agent01 install curl
 ```
 

@@ -9,11 +9,11 @@
 
 当我开始将 FreeBSD 启动加载程序移植到 illumos 时，illumos 只支持串口控制台和 VGA 文本模式控制台。为了支持 UEFI，我必须为 illumos 内核实现对基于 UEFI 帧缓存的控制台的支持。实现后，下一步就是为加载程序添加相同的功能。当可以在 UEFI 帧缓存上绘制控制台时，重新使用相同的代码在 Vesa BIOS 扩展（VBE）线性帧缓存上绘制，就成为了开发中的另一个逻辑步骤。完成后，我们就得到了像这样的公开发布：<https://omnios.org/setup/fb>
 
-![](https://github.com/user-attachments/assets/a0acca66-6058-4471-9a53-c279eefdee7d)
+![启动加载程序与 ASCII 图](https://github.com/user-attachments/assets/a0acca66-6058-4471-9a53-c279eefdee7d)
 
 图 1 启动加载程序与 ASCII 图
 
-![](https://github.com/user-attachments/assets/2521f172-692c-4a26-a5ac-098d791ba829)
+![启动加载程序与图像](https://github.com/user-attachments/assets/2521f172-692c-4a26-a5ac-098d791ba829)
 
 图 2 启动加载程序与图像。
 
@@ -81,7 +81,7 @@ vbe_max_resolution
 
 加载程序当前使用的字体将传递给加载的内核。通过这种方式，我们保留了外观和感觉，并实现了从启动加载程序到正在运行的操作系统的一致过渡。
 
-![](https://github.com/user-attachments/assets/e24b69fe-0b6b-4b8e-a6a2-7e96a6e4aff3)
+![FreeBSD 13.0 启动加载程序](https://github.com/user-attachments/assets/e24b69fe-0b6b-4b8e-a6a2-7e96a6e4aff3)
 
 图 3 FreeBSD 13.0 启动加载程序
 

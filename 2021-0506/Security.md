@@ -29,7 +29,7 @@ GELI 是我们首选的工具。它支持全盘加密，只有 FreeBSD 启动分
 
 可以通过 FreeBSD 安装程序轻松配置默认的 GELI 加密：
 
-![](https://github.com/user-attachments/assets/2c4df428-9f8b-49d5-90dd-78bc2de8797c)
+![FreeBSD 安装程序 GELI 加密配置](https://github.com/user-attachments/assets/2c4df428-9f8b-49d5-90dd-78bc2de8797c)
 
 GELI 还支持一次性密钥。当系统重启时，加密密钥不会从系统中移除。这意味着存储在交换分区和临时文件系统中的所有数据将会被清除。
 
@@ -146,7 +146,7 @@ FreeBSD 的安全补丁可以使用以下命令下载和安装：
 
 默认情况下，所有的强化选项都是禁用的。我们建议启用这些选项。
 
-![](https://github.com/user-attachments/assets/7c987922-ba13-403d-8f6b-2f6fd8359f16)
+![FreeBSD 安装程序安全加固选项](https://github.com/user-attachments/assets/7c987922-ba13-403d-8f6b-2f6fd8359f16)
 
 安装后，我们还建议启用 ASLR（地址空间布局随机化），它会在每次运行进程时改变其内存布局，使得应用程序更难被利用。要在 FreeBSD 系统上启用 ASLR（**译者注：14.0 后就默认启用了**），可以运行以下命令：
 

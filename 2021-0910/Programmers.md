@@ -17,9 +17,9 @@ Unix 的一个优势是，尽管它涉及大量的输入，但多年来已经发
 
 你是否曾需要安全地将文件或字符串（如密码）传输到另一台计算机？如果觉得 SSH 复杂到难以应付——毕竟其 740 字符的公钥交换方式确实让人头疼——但又不想在安全性上妥协，那就使用 `net/py-magic-wormhole` 吧！在发送文件时，该工具会生成一个简短且易于人类发音的字符字符串。只需在接收端输入这个一次性密钥，`magic-wormhole` 就会通过 Rendezvous 消息交换和基于 PAKE 的安全机制完成“魔法”传输。它甚至支持密钥的 Tab 补全，帮你节省输入时间。此外，`magic-wormhole` 还可以用作 `ssh-copy-id` 的替代方案，简化初始 SSH 密钥交换过程。在下面的示例中，我将 `backup.zip` 传输到另一台机器。接收端输入代码并确认文件后，几秒钟之内，文件便完成了传输——就像穿越 30,000 光年的三角象限一样神奇！
 
-![](https://github.com/user-attachments/assets/2b97349e-5bd4-4426-95e0-fb7dbb83cefa)
+![magic-wormhole 发送文件示例](https://github.com/user-attachments/assets/2b97349e-5bd4-4426-95e0-fb7dbb83cefa)
 
-![](https://github.com/user-attachments/assets/d1b22eee-d644-42ed-9020-7d6c613426ae)
+![magic-wormhole 接收文件示例](https://github.com/user-attachments/assets/d1b22eee-d644-42ed-9020-7d6c613426ae)
 
 我经常让本科计算机科学专业的学生练习在 Unix 中解析文本文件。在这些作业中，逗号分隔值 (CSV) 仍然是一种常见的文件格式。这通常发生在学生学习数据库和 SQL 之前。如果他们提前了解 SQL，那很可能会直接使用我接下来介绍的工具，并且再也不会回头看其他方法：`textproc/csvq`。你可以随心所欲地读取、更新和删除 CSV 文件。这个工具不仅提供了交互式 shell 和命令行模式，还支持顺序执行多个操作，并通过托管事务进行管理。此外，它还支持变量、游标，甚至临时表。哦，对了，除了 CSV，它还完全支持 UTF-8 和 UTF-16 编码的 JSON，因为——为什么不呢？
 

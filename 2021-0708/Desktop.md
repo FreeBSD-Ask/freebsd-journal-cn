@@ -13,7 +13,7 @@
 
 ## 硬件  
 
-![](https://github.com/user-attachments/assets/bbe6d8e2-844f-4b1b-9215-726255727c9c)
+![FreeBSD 桌面硬件](https://github.com/user-attachments/assets/bbe6d8e2-844f-4b1b-9215-726255727c9c)
 
 硬件是最重要的部分。真的。我已经不止一次犯过这个错误。我买了 FreeBSD 不支持的硬件。我当时非常想要一款“最强”的 Intel X3000 显卡，它搭载在 Intel G965 主板上。我还想把它与当时非常强大的 Intel Core 2 Quad Q6600 处理器搭配使用。不幸的是，FreeBSD 并不支持那款显卡。它支持所有其他 Intel 显卡，如 GMA 950 和 GMA 3000，但唯独不支持 X3000。这个决定让我不得不进入 Ubuntu Linux 的世界大约一年，而你可能也能想象，那并不是一段愉快的时光。  
 
@@ -28,7 +28,7 @@
 
 许多人更喜欢“移动计算”而不是传统的 PC。总体而言，IBM 和联想 ThinkPad 笔记本电脑对 FreeBSD 的支持相当不错。我个人偏爱经典的 7 排 IBM 键盘，因此我使用的是 2011 年（是的，一台十年前的电脑）推出的 ThinkPad W520，在这台设备上，一切都运行得非常顺畅。其他配备该经典键盘的机型包括 X220、T420、T420s 和 T520。  
 
-![](https://github.com/user-attachments/assets/ad1f2407-72f9-42b9-84d3-59bbf59cb08f)
+![ThinkPad 笔记本电脑](https://github.com/user-attachments/assets/ad1f2407-72f9-42b9-84d3-59bbf59cb08f)
 
 不过，你不必回溯那么久的时间。例如，ThinkPad X1 Carbon 第 5 代和第 6 代运行 FreeBSD 非常稳定。ThinkPad X460、X470、T460 和 T470 也表现良好。实际上，有一个完整的笔记本测试列表，其中包含针对 FreeBSD 的有用说明，此外，还有一个 BSD 硬件数据库。在购买设备之前，我建议你查看这两个资源：  
 
@@ -43,7 +43,7 @@
 
 ### 显卡
 
-![](https://github.com/user-attachments/assets/057aa3f5-7840-4d74-b38b-007393408aa8)
+![显卡设备](https://github.com/user-attachments/assets/057aa3f5-7840-4d74-b38b-007393408aa8)
 
 在 FreeBSD 下运行良好的显卡大致可以分为三类：  
 
@@ -66,7 +66,7 @@
 
 ## X11  
 
-![](https://github.com/user-attachments/assets/c4d4a13a-ef00-47ca-9612-7cd17627801e)
+![X11 图形界面](https://github.com/user-attachments/assets/c4d4a13a-ef00-47ca-9612-7cd17627801e)
 
 无论你选择 FreeBSD 12.2 还是 13.0——两者在桌面上的表现都不错。对于 Intel 和 AMD 显卡，你分别需要使用 `graphics/drm-fbsd12.0-kmod` 或 `graphics/drmfbsd13-kmod`。对于 Nvidia 显卡，则需要使用相应版本的 `x11/nvidia-driver`，因为有多个版本，所以请查看 Nvidia 发布说明，了解哪个版本最适合你的 GPU。至于 X11 本身，你可以使用 `x11/xorg` 或 `x11/xorg-minimal`。如果你希望安装最少的包，建议使用后者。不过，从某种意义上说，这其实没有意义，因为当你开始安装 GTK/QT 桌面软件时，你最终会安装大约 1,000 个包，且占用大约 10 GB 的空间。别忘了，FreeBSD 在 X11 方面有大量的文档——在手册和 FAQ 中：
 
@@ -75,7 +75,7 @@
 
 ## 图形环境  
 
-![](https://github.com/user-attachments/assets/b39b34df-1ae7-474c-82d8-2b4b93ba5760)
+![图形环境示例](https://github.com/user-attachments/assets/b39b34df-1ae7-474c-82d8-2b4b93ba5760)
 
 图形环境是由你来决定的，有很多选择。有人偏好简约的 Openbox 和 FVWM 栈式窗口管理器。其他人喜欢 i3 或 Awesome 等平铺式窗口管理器。一些人选择轻量级环境，如 MATE 或 XFCE。还有一些人觉得完整的桌面环境，如 GNOME 或 KDE 最为舒适。如果你坚持使用更简约的窗口管理器，你将需要自己创建环境，包括状态栏和信息栏。决定是否使用通知守护进程，是否使用系统托盘和剪贴板管理器——而在桌面环境中，这些决策已经为你做出了。你无需重新造轮子 😀  
 

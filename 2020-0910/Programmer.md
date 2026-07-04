@@ -80,7 +80,7 @@ Weblate 为每个翻译创建新的提交，并通过您的电子邮件地址引
 
 在 Weblate 界面上在线翻译是最简单的贡献方式，一旦协调员或管理员给予您语言访问权限，保存按钮就会被启用，您可以开始工作。
 
-![](https://github.com/user-attachments/assets/99745e61-ec16-43d3-9725-9a96d3dd34c2)
+![Weblate 翻译界面](https://github.com/user-attachments/assets/99745e61-ec16-43d3-9725-9a96d3dd34c2)
 
 Weblate 有一组链接，指向实际的翻译内容。翻译进一步划分为各个检查项，如“未翻译”或“需要审查”。如果整个文档都已翻译且没有错误，“所有翻译”链接仍然可用。您也可以使用搜索框来查找特定的字符串或术语。您可以在官方 Weblate 文档中了解更多翻译相关的信息——例如键盘快捷键和其他关于翻译工具的技巧，但界面非常直观。
 
@@ -90,13 +90,13 @@ Weblate 有一组链接，指向实际的翻译内容。翻译进一步划分为
 
 如果您熟悉 PO Gettext 并想离线翻译，您可以通过点击您语言的文档页面中的“文件”部分，下载并上传您的翻译。
 
-![](https://github.com/user-attachments/assets/2efd5e3f-0339-4f8a-aad4-e06e396243cd)
+![离线翻译文件下载](https://github.com/user-attachments/assets/2efd5e3f-0339-4f8a-aad4-e06e396243cd)
 
 ## 校对和 Weblate 质量检查
 
 当您点击项目 / 语言 / 文档时，Weblate 将显示该文档的翻译和字符串状态。此页面对于校对和质量检查非常有用。
 
-![](https://github.com/user-attachments/assets/701d5ea6-5d63-425d-a9d5-387144be21c9)
+![翻译字符串状态](https://github.com/user-attachments/assets/701d5ea6-5d63-425d-a9d5-387144be21c9)
 
 在这个例子中，有一些字符串需要修订。如果您点击这些链接，它将只显示那些需要修订/翻译的字符串。
 
@@ -106,7 +106,7 @@ Weblate 有一组链接，指向实际的翻译内容。翻译进一步划分为
 
 我们 Weblate 实例，每天都会构建所有翻译，并且可以通过 <https://doc.fugbr.org/jenkins/> 获取。我们为所有新语言启用了这些构建。如果您想加快这个过程，您可以随时告诉 Weblate 提交您的翻译，然后通过我们的 Jenkins 触发构建过程，几分钟后您就可以进行校对。
 
-![](https://github.com/user-attachments/assets/424f3ae4-6637-4e58-8fab-9bbb0b6d632e)
+![翻译文档构建](https://github.com/user-attachments/assets/424f3ae4-6637-4e58-8fab-9bbb0b6d632e)
 
 您也可以在本地构建文档。有关更多信息，请参阅我们的 Wiki 页面：<https://wiki.freebsd.org/DocTranslationOnWeblate>。
 

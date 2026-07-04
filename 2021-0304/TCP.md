@@ -13,7 +13,7 @@ FreeBSD 长期以来使用的默认 TCP 拥塞控制算法是 NewReno，它是 R
 
 然而，使用现代网络技术（例如，跨越国家的 10G 链路，延迟为 100 毫秒）运行这些数据时，一个单独的 NewReno 会话可能需要（5 Gbps / (1500 *8))* 0.1 秒 RTT ≈ 10 小时，才能重新利用所有可用带宽——前提是没有其他数据包丢失（作为拥塞的指示）。
 
-![](https://github.com/user-attachments/assets/b7d8d2bd-f1d4-4ecc-a515-ac0f4ae8fdad)
+![NewReno 拥塞控制限制](https://github.com/user-attachments/assets/b7d8d2bd-f1d4-4ecc-a515-ac0f4ae8fdad)
 
 - 脆弱的丢包响应，无法扩展的增长  
 - 无法扩展的线性增长：  
@@ -25,7 +25,7 @@ FreeBSD 长期以来使用的默认 TCP 拥塞控制算法是 NewReno，它是 R
 
 TCP Cubic 通过两个主要的变化来解决这些限制。第一个变化是在过载时将传输速度仅降低到 70%（在早期草案中为 80%）。第二个变化是在之后使用立方函数进行增长，该函数的缩放方式使其能够在很长一段时间内徘徊在上一个限制值附近，但快速地达到该限制值——如果网络的可用带宽不再受限，则能够越来越快地增长，有效地匹配 TCP 慢启动期间的指数带宽增长。
 
-![](https://github.com/user-attachments/assets/c6ac473a-a506-4f60-9f41-26ef5bba4f1a)
+![TCP Cubic 立方增长曲线](https://github.com/user-attachments/assets/c6ac473a-a506-4f60-9f41-26ef5bba4f1a)
 
 - 按照立方（x³）函数增长：需要 10 倍的时间才能达到 1000 倍的更高带宽 -> 100 倍更具攻击性
 - 要完全利用一个 10G、100 毫秒的链路，需要在丢包之间保持 >40 秒  

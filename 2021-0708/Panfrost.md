@@ -37,7 +37,7 @@ ARM 为这些 GPU 编写了自家的专有软件驱动程序。这些是针对 L
 
 ### Lima 驱动
 
-![](https://github.com/user-attachments/assets/6d214664-717b-4e1f-9d4a-a5ea2c90651d)
+![Lima 驱动示意图](https://github.com/user-attachments/assets/6d214664-717b-4e1f-9d4a-a5ea2c90651d)
 
 你可能听说过 Lima——一款开源的、逆向工程的 Mali 驱动。它是为 Utgard 微架构设计的，支持 OpenGL ES 2.0（嵌入式）以及 OpenGL 2.1（桌面）。由于 Utgard 硬件的限制，它无法支持更新的 API，如 OpenGL ES 3.2 或 OpenCL/Vulkan。最初由 Luc Verhaegen 在 2012 年初开发，这项工作由 Codethink 赞助。该项目在 2013 年被放弃，并停滞了一段时间，直到 2017 年 6 月，由 AMD 的软件工程师 Qiang Yi 重新启动。
 

@@ -7,7 +7,7 @@
 
 在这一期中，我们聚焦的对象是 Charlie Li，他在四月获得了 Ports 权限。
 
-![](https://github.com/user-attachments/assets/30ecc60d-4239-4c1f-8c53-b2be35a96ff6)
+![Charlie Li 照片](https://github.com/user-attachments/assets/30ecc60d-4239-4c1f-8c53-b2be35a96ff6)
 
 **请告诉我们一些关于你自己、你的背景和兴趣的事情。**
 
