@@ -49,6 +49,6 @@ FreeBSD 基金会技术高级总监，FreeBSD Journal 编辑委员会
 
 FreeBSD Journal 由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #103-107, Boulder, CO 80304
 电话：720/207-5142，传真：720/222-2350
-邮箱：info@freebsdfoundation.org
+邮箱：<info@freebsdfoundation.org>
 
 Copyright © 2021 by FreeBSD Foundation. All rights reserved. 未经出版商书面许可，本杂志不得全部或部分复制。
