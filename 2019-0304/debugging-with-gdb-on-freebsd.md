@@ -4,15 +4,15 @@
 
 大多数调试器都支持一组基础功能，比如查看全局和局部变量的值、生成栈回溯、通过断点中断进程执行，以及通过单步执行控制进程或线程的执行。本文重点关注现代版本的 GNU 调试器（gdb）在 FreeBSD 上支持的其他一些功能。其中部分功能仅 gdb 的最新版本（撰写本文时为 8.3）支持，另一些功能在旧版本中也可用。
 
-要开始使用，先安装一个较新版本的 gdb。最简单的办法是运行 `pkg install gdb` 安装预编译包。也可以通过 devel/gdb port（<https://www.freshports.org/devel/gdb）从源码构建> gdb。
+要开始使用，先安装一个较新版本的 gdb。最简单的办法是运行 `pkg install gdb` 安装预编译包。也可以通过 devel/gdb port（<https://www.freshports.org/devel/gdb>）从源码构建 gdb。
 
 ## info proc 命令
 
 `info proc` 命令可以查看进程在内存和线程之外的状态。默认情况下，`info proc` 提供基本信息，比如进程 ID 和命令行。不过，通过子命令可以获取更多信息，包括通过 `info proc files` 查看打开的文件描述符列表，以及通过 `info proc mappings` 查看活动内存映射列表。在前两个示例中，命令 `wc /usr/src/bin/ls/ls.c` 在调试器下执行。执行在 `cnt` 函数内暂停，目标文件已打开。第一个示例展示基本命令提供的信息。第二个示例展示打开的文件列表，其中包含 `ls.c` 文件描述符的偏移量，表明 `wc` 进程已读取了多少文件内容。
 
-虽然 `info proc` 提供的所有信息也可以通过其他工具获得，比如 ps(1)（<https://www.freebsd.org/cgi/man.cgi?query=ps(1)）和> procstat(1)（<https://www.freebsd.org/cgi/man.cgi?query=procstat(1)），但> `info proc` 命令允许用户在调试器内访问这些信息，无需另开窗口。这些命令也可以用于在非 FreeBSD 操作系统上运行的交叉调试器查看核心转储的场景。
+虽然 `info proc` 提供的所有信息也可以通过其他工具获得，比如 ps(1)（<https://www.freebsd.org/cgi/man.cgi?query=ps(1)>）和 procstat(1)（<https://www.freebsd.org/cgi/man.cgi?query=procstat(1)>），但 `info proc` 命令允许用户在调试器内访问这些信息，无需另开窗口。这些命令也可以用于在非 FreeBSD 操作系统上运行的交叉调试器查看核心转储的场景。
 
-关于 `info proc` 命令及其子命令的更多详细信息，可以查阅《Debugging with GDB 手册》（<https://sourceware.org/gdb/current/onlinedocs/gdb/）中的> Process Information 章节（<https://sourceware.org/gdb/current/onlinedocs/gdb/Process-Information.html）。>
+关于 `info proc` 命令及其子命令的更多详细信息，可以查阅《Debugging with GDB 手册》（<https://sourceware.org/gdb/current/onlinedocs/gdb/>）中的 Process Information 章节（<https://sourceware.org/gdb/current/onlinedocs/gdb/Process-Information.html>）。
 
 示例 1：info proc
 
@@ -52,11 +52,11 @@ root    dir     -           r---------
 
 GDB 支持一类特殊的断点，称为捕获点（catchpoint）。捕获点允许用户在执行期间发生某些类型的事件时暂停执行。GDB 支持的捕获点类型之一是系统调用捕获点。系统调用捕获点在进入和退出系统调用时暂停执行。
 
-系统调用捕获点通过 `catch syscall` 命令创建。如果不指定参数，执行会在所有系统调用的进入和退出时暂停。可以通过向命令传入系统调用列表作为参数，定义更具体的捕获点。系统调用可以按名称或编号指定。例如，`catch syscall write` 会设置一个捕获点，在进入和退出 write(2)（<https://www.freebsd.org/cgi/man.cgi?query=write(2)）系统调用时暂停执行。>
+系统调用捕获点通过 `catch syscall` 命令创建。如果不指定参数，执行会在所有系统调用的进入和退出时暂停。可以通过向命令传入系统调用列表作为参数，定义更具体的捕获点。系统调用可以按名称或编号指定。例如，`catch syscall write` 会设置一个捕获点，在进入和退出 write(2)（<https://www.freebsd.org/cgi/man.cgi?query=write(2)>）系统调用时暂停执行。
 
 系统调用捕获点创建后，可以用其他断点命令管理。`info breakpoints` 命令会列出捕获点及其他断点。捕获点通过 `delete` 命令删除。
 
-示例 3 拦截 ls(1)（<https://www.freebsd.org/cgi/man.cgi?query=ls(1)）进程的> write(2)（<https://www.freebsd.org/cgi/man.cgi?query=write(2)）系统调用。>
+示例 3 拦截 ls(1)（<https://www.freebsd.org/cgi/man.cgi?query=ls(1)>）进程的 write(2)（<https://www.freebsd.org/cgi/man.cgi?query=write(2)>）系统调用。
 
 示例 3：捕获系统调用
 
@@ -85,7 +85,7 @@ Continuing.
 
 对于 FreeBSD，GDB 能识别兼容性系统调用。按名称捕获某个为旧版本提供兼容性系统调用的系统调用时，会捕获该系统调用的所有版本。例如，由于 `struct stat` 的变化，几个系统调用在 FreeBSD 12 中迁移到了新的编号。原有系统调用继续使用旧的 `struct stat` 布局，但被重命名，加上了 `freebsd11_` 前缀。
 
-按名称捕获这类系统调用时，GDB 会同时捕获两个版本，因为应用程序可能使用任一版本。示例 4 中，捕获 fstat(2)（<https://www.freebsd.org/cgi/man.cgi?query=fstat(2)）系统调用会为两个版本都注册捕获点。>
+按名称捕获这类系统调用时，GDB 会同时捕获两个版本，因为应用程序可能使用任一版本。示例 4 中，捕获 fstat(2)（<https://www.freebsd.org/cgi/man.cgi?query=fstat(2)>）系统调用会为两个版本都注册捕获点。
 
 示例 4：捕获 fstat(2)
 
