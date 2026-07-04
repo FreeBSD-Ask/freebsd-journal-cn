@@ -1,4 +1,4 @@
-# 目录
+# Table of contents
 
 * [FreeBSD 中文期刊](README.md)
 * [编辑日志](CHANGELOG.md)
@@ -290,7 +290,7 @@
 * [CBSD：第一部分——生产环境](2022-0102/cbsd.md)
 * [将 OpenBSD 的 pf syncookie 代码移植到 FreeBSD 的 pf](2022-0102/pf.md)
 * [进行中的工作/征求反馈：mkjail](2022-0102/mkjail.md)
-* [《编程智慧：编程鬼才的经验和思考》书评](2022-0102/book.md)
+* [书评：《编程智慧：编程鬼才的经验和思考》](2022-0102/book.md)
 * [会议报告：EuroBSDCon 2021 我的第一次 EuroBSDCon：一位新组织者的视角](2022-0102/huiyi.md)
 * [读者来信](2022-0102/we-get-letters.md)
 
