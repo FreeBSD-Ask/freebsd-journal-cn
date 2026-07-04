@@ -7,7 +7,7 @@
 
 ## 与其他管理系统的比较
 
-如今，FreeBSD 至少支持三十种用于管理容器和虚拟机的工具。在 FreeBSD 平台上有 bhyve，从这里开始，列表逐渐变长。2022 年标志着 CBSD 项目的十周年——它持续更新并继续扩展。到目前为止，它是 FreeBSD 平台上最古老的虚拟环境管理系统之一。虚拟环境不仅意味着基于 Jail 的容器化，还支持基于 bhyve、XEN 和 QEMU / NVMM 超级虚拟机监控器的虚拟机。
+如今，FreeBSD 至少支持三十种用于管理容器和虚拟机的工具。在 FreeBSD 平台上有 bhyve，从这里开始，列表逐渐变长。2022 年标志着 CBSD 项目的十周年——它持续更新并继续扩展。到目前为止，它是 FreeBSD 平台上最古老的虚拟环境管理系统之一。虚拟环境不仅意味着基于 Jail 的容器化，还支持基于 bhyve、XEN 和 QEMU / NVMM 虚拟机监控器的虚拟机。
 
 该项目的开发基于以下概念和哲学：
 
@@ -31,7 +31,7 @@
 CBSD 不仅是面向最终用户的产品，也是参与构建复杂解决方案的元素之一，通过委派创建和管理 CBSD 虚拟环境的功能，能够节省大量工时。因此，存在多个独立的项目和发行版，用于展示和获取有关 CBSD 工作重用的见解：
 
 - Reggae（由 Goran Mekic 开发）使用 CBSD 自动化 DevOps 任务；
-- 发行包 [https://k8s-bhyve.convectix.com/](https://k8s-bhyve.convectix.com/)（k8s-bhyve）展示了能够快速（从几秒钟到 1 分钟）启动设置在 bhyve 超级虚拟机监控器上的 Kubernetes 集群的能力；
+- 发行包 [https://k8s-bhyve.convectix.com/](https://k8s-bhyve.convectix.com/)（k8s-bhyve）展示了能够快速（从几秒钟到 1 分钟）启动设置在 bhyve 虚拟机监控器上的 Kubernetes 集群的能力；
 - 发行包 [https://clonos.convectix.com/](https://clonos.convectix.com/) 具有为 CBSD 上的 bhyve 创建容器和虚拟机构建 Web/UI 界面的能力；
 - 发行包 [https://myb.convectix.com/](https://myb.convectix.com/)（MyBee）使用户能够通过 CBSD 与云镜像进行交互，而无需使用 UI 和 CLI：可以通过向 CBSD API 发送 HTTP 请求（例如，使用 curl 工具）或使用 nubectl 瘦客户端（[https://github.com/bitcoin-software/nubectl](https://github.com/bitcoin-software/nubectl)）来获取虚拟机。
 
@@ -39,7 +39,7 @@ CBSD 不仅是面向最终用户的产品，也是参与构建复杂解决方案
 
 让我们更好地了解可用的 CBSD jail 操作方法。网站上有关于初始 CBSD 安装和自定义过程的描述，假设你已经拥有运行时版本。设置容器的方式有多种：
 
-**选项 1**：命令行对话格式。这种方法不需要学习各种可能的 jail 参数，因为脚本会自动回忆它们：
+**选项 1**：命令行对话格式。这种方法不需要学习各种可能的 jail 参数，因为脚本会自动调取它们：
 
 cbsd jconstruct
 
@@ -79,7 +79,7 @@ shells/bash" astart=0 ip4_addr="DHCP"
 配置文件和命令行参数可以结合使用：
 
 ```sh
-cbsd jcreate jconf=<文件路径>
+cbsd jcreate jconf=<文件路径> ip4_addr="10.0.0.2" runasap=1
 ```
 
 **选项 4：类似 [Vagrant](https://www.vagrantup.com/) 的风格：CBSDfile**
@@ -90,11 +90,11 @@ cbsd jcreate jconf=<文件路径>
 
 ## Jail 模板
 
-我们不会详细讨论典型的容器工作操作，因为这些内容已经在 [网站](https://www.bsdstore.ru/en/docs.html) 上描述。我们将介绍一些 CBSD 项目的创新，旨在简化在 jail 中引用，特别是与容器模板的工作。模板是容器描述和配置的方法。对于容器来说，它可以被导出为可移植的镜像。容器可以包含一个标准的运行时环境，但在大多数情况下，它们用于服务/应用程序的隔离和通过镜像进行分发。这种方式有其优缺点。容器方法的一些优点包括服务部署的速度、不会影响基本系统环境，以及能够提交依赖项的版本，使得应用程序完全正常运行。
+我们不会详细讨论典型的容器工作操作，因为这些内容已经在 [网站](https://www.bsdstore.ru/en/docs.html) 上描述。我们将介绍一些 CBSD 项目的创新，旨在简化 jail 中的操作——特别是与容器模板相关的工作。模板是容器描述和配置的方法。对于容器来说，它可以被导出为可移植的镜像。容器可以包含一个标准的运行时环境，但在大多数情况下，它们用于服务/应用程序的隔离和通过镜像进行分发。这种方式有其优缺点。容器方法的一些优点包括服务部署的速度、不会影响基本系统环境，以及能够提交依赖项的版本，使得应用程序完全正常运行。
 
-谈到这种方法的缺点，最主要的问题是安全性，特别是当使用没有自包含构建脚本（模板）的容器或镜像时。这使得对容器进行操作性软件更新变得困难（例如，修复 [0-day](<https://en.wikipedia.org/wiki/Zero-day_(computing)>) 漏洞），并且容易出现后门，这些后门可能是图像收集者故意或无意留下的。考虑到安装某些软件的复杂性，通常会发现容器中配置的服务是手动放置的，或者丢失了组装说明。
+谈到这种方法的缺点，存在安全性问题，特别是当使用没有自包含构建脚本（模板）的容器或镜像时。这使得对容器进行操作性软件更新变得困难（例如，修复 [0-day](<https://en.wikipedia.org/wiki/Zero-day_(computing)>) 漏洞），并且容易出现后门，这些后门可能是镜像收集者故意或无意留下的。考虑到安装某些软件的复杂性，通常会发现容器中配置的服务是手动放置的，或者丢失了组装说明。
 
-另一个缺点是容器服务配置的复杂性。有些镜像可以通过环境变量配置有限数量的参数，尽管这并不总是足够的。一个例子是动态配置，当需要为 WEB 服务器添加和配置多个虚拟主机（vhost）并在数据库管理系统（DBMS）中设置多个数据库时。对于这样的任务，有一个专门的软件部分，称为配置管理。该类别中最知名的产品包括 [Ansible](https://www.ansible.com/)、[Chef](https://www.chef.io/)、[Puppet](https://puppet.com/)、[Rex](https://www.rexify.org/) 和 [SaltStack](https://saltproject.io/)。然而，它们通常是为了适应经典环境而优化的。CBSD 可以结合配置管理器的全部功能和基于容器的方法，从而获得带有管理服务的容器。CBSD 中使用的模板有两种类型：
+另一个缺点是容器服务配置的复杂性。有些镜像可以通过环境变量配置有限数量的参数，尽管这并不总是足够的。一个例子是动态配置，当需要为 WEB 服务器添加和配置多个虚拟主机（vhost）并在数据库管理系统（DBMS）中设置多个数据库时。对于这样的任务，有一个专门的软件类别，称为配置管理。该类别中最知名的产品包括 [Ansible](https://www.ansible.com/)、[Chef](https://www.chef.io/)、[Puppet](https://puppet.com/)、[Rex](https://www.rexify.org/) 和 [SaltStack](https://saltproject.io/)。然而，通常的做法是它们都为了在经典环境中工作而优化。CBSD 可以结合配置管理器的全部功能和基于容器的方法，从而获得带有管理服务的容器。CBSD 中使用的模板有两种类型：
 
 - 静态（经典）模板，主要仅包含安装软件。例如，CBSD 的一个模板是 sambashare 容器。
 
@@ -127,7 +127,7 @@ pkg install -y rabbitmq python27
 service rabbitmq restart
 ```
 
-这些模板更为复杂，涵盖了服务配置文件的复制，并且在某些情况下，配置过程会伴随着通过复杂的 sed/awk 结构的处理，整个容器配置过程也会包括这些步骤。
+还有更复杂的模板，涵盖了服务配置文件的复制，并且在某些情况下，配置过程会伴随着通过复杂的 sed/awk 结构的处理，整个容器配置过程也会包括这些步骤。
 
 作为一般原则：
 
@@ -159,7 +159,7 @@ pkg install -y git-lite
 cbsd jcreate jname=cbsdpuppet1 jprofile=cbsdpuppet
 ```
 
-cbsd puppet1 容器不应运行，因为它只执行一个功能——它包含了 CBSD 用于配置容器的 [puppet7](https://www.freshports.org/sysutils/puppet7/) 安装包。
+cbsdpuppet1 容器不应运行，因为它只执行一个功能——它包含了 CBSD 用于配置容器的 [puppet7](https://www.freshports.org/sysutils/puppet7/) 安装包。
 
 3. 安装 CBSD puppet 模块——这是可选功能，不包含在基本分发版中。该模块包含了由 CBSD 项目检查的 puppet 模块。这一步需要在每个新的 CBSD 主机上执行一次：
 
@@ -220,7 +220,7 @@ maxmemory 4g
 maxmemory-policy noeviction
 ```
 
-大多数 Puppet 模块会承诺进行不正确的数据验证、配置文件验证和服务状态检查。因此，由于无效参数输入导致无法服务的服务的可能性，比静态模板要小得多。
+大多数 Puppet 模块会进行数据验证、配置文件验证和服务状态检查，以防止不正确的输入。因此，由于无效参数输入导致无法服务的服务的可能性，比静态模板要小得多。
 
 现在我们已经了解了 TUI 界面，让我们转向自动化。cbsd forms 允许通过环境变量接受模板的参数，从而省略交互式对话。为了查看某个特定模板接受哪些变量，可以使用 `vars` 参数并指明所需模块：
 

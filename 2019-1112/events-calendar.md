@@ -2,7 +2,7 @@
 
 作者：ANNE DICKISON 和 DRU LAVIGNE
 
-以下 BSD 活动将于 2020 年 3 月前举行。
+以下 BSD 活动将于 2020 年 3 月底前举行。
 
 ## FOSDEM 2020 • 2 月 1–2 日 • 比利时布鲁塞尔
 

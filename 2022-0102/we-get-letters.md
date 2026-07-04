@@ -38,13 +38,3 @@
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
 **MICHAEL W LUCAS** 的脑袋里塞满了过时的知识，大多是关于 FreeBSD、其他 BSD 以及其他一些次要操作系统的。要学新东西，他得先把其中一些垃圾扔出去。他的最新著作包括《$ git sync murder》、《TLS Mastery》和《SNMP Mastery》。你读到这篇时《DNSSEC Mastery》本该已出版，但他懒，所以多半还没出。更多信息见 <https://mwl.io>。
-
----
-
-*PAM Mastery* by Michael W Lucas
-
-可插拔认证模块（PAM）：威胁还是福音？
-
-PAM 是系统管理中最容易被误解的部分之一。许多系统管理员宁愿忍受认证问题，也不愿冒险把事情弄得更糟。PAM 的本质使它不同于任何其他 Unix 访问控制系统。如果你有 PAM 苦恼或 PAM 谜团，你需要《PAM Mastery》！
-
-"Michael W Lucas 又一次精准命中。"——nixCraft

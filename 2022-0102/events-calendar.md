@@ -7,15 +7,13 @@
 
 如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2022/03/events.pdf)
-
 ## Open Source 101
 
 2022 年 3 月 29 日
 
-线上虚拟
+线上
 
-Open Source 101 是一场聚焦开源"基础"的单日大会。3 月 29 日（星期二），加入 AllThingsOpen 团队以及赞助商、讲者和与会者，享受一整天的直播开源节目。免费参加。基金会很高兴成为媒体赞助商。
+Open Source 101 是一场聚焦开源"基础"的单日大会。3 月 29 日（星期二），加入 AllThingsOpen 团队以及众多赞助商、讲者和与会者，享受一整天的直播开源节目。免费参加。基金会很高兴成为媒体赞助商。
 
 ## SCALE 19x
 

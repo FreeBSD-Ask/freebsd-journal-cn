@@ -22,7 +22,7 @@ ezjail_use_zfs_for_jails="YES"
 ezjail_jailzfs="dozer/jails"
 ```
 
-这会让 ezjail 在 **dozer/jails** 下为每个 Jail 创建一个新数据集。现在，我们可以让 ezjail 为我们安装一个 basejail 供使用：
+这会让 ezjail 在 **dozer/jails** 下为每个 Jail 创建一个新数据集。现在，我们可以让 ezjail 为我们安装 basejail 供使用：
 
 ```sh
 # ezjail-admin install -m
@@ -50,7 +50,7 @@ ezjail_jailzfs="dozer/jails"
 # ezjail-admin start myjail.example.com
 ```
 
-现在我们可以用 `ezjail-admin console` 命令在 Jail 里获取一个 shell：
+现在我们可以用 `ezjail-admin console` 命令在 Jail 里获取 shell：
 
 ```sh
 # ezjail-admin console myjail.example.com
@@ -62,7 +62,7 @@ ezjail_jailzfs="dozer/jails"
 # ezjail-admin config -r {run|norun}
 ```
 
-当你把 Jail 设为 `norun` 时，这个工具用一个精妙的机制阻止 Jail 启动：把 Jail 的配置文件重命名，加上 `.norun` 扩展名。这也会阻止你手动启动 Jail，除非你在子命令前加上 `one` 前缀，即：
+当你把 Jail 设为 `norun` 时，这个工具用精妙的机制阻止 Jail 启动：把 Jail 的配置文件重命名，加上 `.norun` 扩展名。这也会阻止你手动启动 Jail，除非你在子命令前加上 `one` 前缀，即：
 
 ```sh
 # ezjail-admin onestart myjail.example.com
@@ -70,7 +70,7 @@ ezjail_jailzfs="dozer/jails"
 
 ### Jail 的进阶配置
 
-Jail 新手最常搜索的问题之一是“为什么我无法从 Jail 里 ping？”Ping 需要使用原始套接字，出于安全考虑默认是禁用的。我们通常应该保持禁用，但有时你需要它，不管是调试，还是像 Nagios 这样需要能 ping 的程序。Jail 有一个参数 `allow.raw_sockets`，默认设为 0。我们可以用 Jail 配置文件中名副其实的 `parameters` 选项，让 ezjail 为我们的 Jail 设置参数。
+Jail 新手最常搜索的问题之一是“为什么我无法从 Jail 里 ping？”Ping 需要使用原始套接字，出于安全考虑默认是禁用的。我们通常应该保持禁用，但有时你需要它，不管是调试，还是像 Nagios 这样需要能 ping 的程序。Jail 有参数 `allow.raw_sockets`，默认设为 0。我们可以用 Jail 配置文件中名副其实的 `parameters` 选项，让 ezjail 为我们的 Jail 设置参数。
 
 Jail 的 ezjail 配置文件只是一个 shell 脚本，启动脚本在启动 Jail 时会包含它。所以，我们所有的 Jail 设置就是 **/usr/local/etc/ezjail/myjail.example.com** 里类似下面这样的行：
 
@@ -80,9 +80,9 @@ export jail_myjail_example_com_parameters="allow.raw_sockets=1"
 
 注意 `.` 到 `_` 的转换。这些参数在 Jail 启动时设置，所以如果它已经在运行，我们需要重启才能生效。
 
-Jail 的一种常见情形是：在一台有公网 IP 的服务器上，你可能有些程序需要互联网访问，但你要么 IP 地址有限，要么不想让这个程序暴露在公网的“温柔关怀”下。这并不难，除非你的服务器路由器不做 NAT——许多独立服务器和托管服务商就是这种情况。
+Jail 常见情形是：在一台有公网 IP 的服务器上，你可能有些程序需要互联网访问，但你要么 IP 地址有限，要么不想让这个程序暴露在公网的“温柔关怀”下。这并不难，除非你的服务器路由器不做 NAT——许多独立服务器和托管服务商就是这种情况。
 
-由于路由器不做 NAT，任何使用私有 IP 的 Jail 都无法向外连接。我们可以通过在某个地方运行自己的 NAT 来解决，但我们大概不想给整台服务器做 NAT。
+路由器不做 NAT，任何使用私有 IP 的 Jail 都无法向外连接。我们可以通过在某个地方运行自己的 NAT 来解决，但我们大概不想给整台服务器做 NAT。
 
 我们可以为 Jail 更改 FIB，也就是路由表。尝试之前，确保你已在 **/boot/loader.conf** 里把 `net.fibs` 设为大于 1 的数字。在你的 Jail 配置文件里，设置：
 
@@ -92,7 +92,7 @@ export jail_myjail_example_com_fib="2"
 
 如果我们把它设为 2，那么（重）启动 Jail 后，Jail 就会使用 FIB 2。我们可以为 FIB 2 配置 Jail 所需的任何特殊路由，而不影响宿主机。
 
-ZFS 和 Jail 的另一个强大功能是把数据集委托给 Jail。通过把数据集委托进 Jail，Jail 里的 root 用户就能创建和销毁子数据集、调整数据集属性、执行复制等等。这意味着我们可以创建一个与宿主操作系统隔离的存储设置，这样即便一个拥有提权权限的失控脚本也不会破坏宿主机。
+ZFS 和 Jail 的另一个强大功能是把数据集委托给 Jail。通过把数据集委托进 Jail，Jail 里的 root 用户就能创建和销毁子数据集、调整数据集属性、执行复制等等。这意味着我们可以创建存储设置，与宿主操作系统隔离，这样即便拥有提权权限的失控脚本也不会破坏宿主机。
 
 如果我们把数据集的 `jailed` 参数设为 `on`，作为安全措施，宿主机将无法再挂载或管理该数据集及其任何子数据集。设置好那个参数后，我们就可以通过设置以下选项，让 ezjail 把它委托给 Jail：
 

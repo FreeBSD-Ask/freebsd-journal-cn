@@ -18,6 +18,7 @@
 | Daichi Goto | BSD Consulting Inc.（东京）董事。 |
 | Joseph Kong | Amazon Web Services 软件开发工程师，FreeBSD Device Drivers 和 Designing BSD Rootkits 作者。 |
 | Dru Lavigne | iXsystems 存储工程总监，BSD Hacks 和 The Best of FreeBSD Basics 作者。 |
+| Michael W Lucas | Absolute FreeBSD 作者。 |
 | Ed Maste | FreeBSD Foundation 项目开发总监。 |
 | Kirk McKusick | FreeBSD Foundation 董事会财务主管，The Design and Implementation 书系主要作者。 |
 | George V. Neville-Neil | FreeBSD Foundation 董事会理事，The Design and Implementation of the FreeBSD Operating System 合著者。 |

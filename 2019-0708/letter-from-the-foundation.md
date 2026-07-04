@@ -4,11 +4,11 @@
 
 作者：JOHN BALDWIN
 
-欢迎阅读 7/8 月刊的 FreeBSD Journal。在我们家，一年中的这个时候意味着暑假结束、新学年开始。FreeBSD 许多未来的开发者今年秋天也要返校，但他们或许需要一些帮助才能找到 FreeBSD。你愿意和我一起，把 FreeBSD 传播给下一代开发者吗？考虑去当地高中的计算机俱乐部做志愿者，或者申请在 ACM 分会做一次讲座。
+欢迎阅读 7/8 月刊的 FreeBSD Journal。在我们家，一年中的这个时候意味着暑假结束、新学年开始。许多 FreeBSD 未来的开发者今年秋天也要返校，但他们或许需要一些帮助才能找到 FreeBSD。你愿意和我一起，把 FreeBSD 传播给下一代开发者吗？考虑去当地高中的计算机俱乐部做志愿者，或者申请在 ACM 分会做讲座。
 
 传播 FreeBSD 的新闻与信息正是 FreeBSD Journal 的使命。如果你正在用 FreeBSD 做些酷事，或正在开发新功能，我们很乐意在未来的期次中收录你的故事。开始的话，请发邮件到 <info@freebsdjournal.com> 告知我们你的主题。如果你想了解更多某方面的话题，也请写信到同一地址。编辑委员会会努力寻找在该领域工作的作者。（我们也始终欢迎作者推荐！）
 
-最后，我想借此机会感谢 Journal 上一任编辑委员会主席 George Neville-Neil。2013 年夏天，George 第一次跟我谈起他对 Journal 的设想。我熟悉 George 在 ACM Queue 的经验，所以我知道他很清楚把 FreeBSD Journal 创办起来需要什么。George 的热情富有感染力，他的干劲也帮助编辑委员会在初创的几年里越过难关站稳脚跟。34 期之后，Journal 蒸蒸日上，编辑委员会也期待继续推进 George 六年前的愿景。
+最后，我想借此机会感谢 Journal 上一任编辑委员会主席 George Neville-Neil。2013 年夏天，George 第一次跟我谈起他对 Journal 的设想。我熟悉 George 在 ACM Queue 的经验，所以我知道他很清楚把 FreeBSD Journal 创办起来需要什么。George 的热情富有感染力，他的干劲也帮助编辑委员会初创那几年越过难关站稳脚跟。34 期之后，Journal 蒸蒸日上，编辑委员会也期待继续推进 George 六年前的愿景。
 
 John Baldwin
 

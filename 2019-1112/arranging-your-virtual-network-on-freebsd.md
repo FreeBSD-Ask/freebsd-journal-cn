@@ -818,7 +818,7 @@ root@jailhost:~ #
 #!/bin/sh
 set -e
 if [ "$#" -ne 1 -a "$#" -ne 2 ]; then
-echo "用法: $0 jailname [vnetprefix]" >&2
+echo "Usage: $0 jailname [vnetprefix]" >&2
 exit 1
 fi
 JAILNAME=$1
@@ -836,7 +836,7 @@ ifconfig $BRIDGE private $VNETPREFIX.$JID
 exit 0
 fi
 done
-echo "无法在任何桥接上找到接口 $VNETPREFIX.$JID" >&2
+echo "Couldn't find interface $VNETPREFIX.$JID on any bridges" >&2
 exit 1
 ```
 
@@ -918,7 +918,7 @@ root@vnetcage:~ # service pf start
 root@vnetcage:~ # ping -c1 8.8.8.8
 PING 8.8.8.8 (8.8.8.8): 56 data bytes
 64 bytes from 8.8.8.8: icmp_seq=0 ttl=56 time=16.475 ms
---- 8.8.8.8 ping 统计 ---
+--- 8.8.8.8 ping statistics ---
 1 packets transmitted, 1 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 16.475/16.475/16.475/0.000 ms
 root@vnetcage:~ # pfctl -s state
@@ -927,7 +927,7 @@ all icmp 10.1.1.2:39231 -> 8.8.8.8:39231
 root@vnetcage:~ # ping -c1 1.1.1.1
 PING 1.1.1.1 (1.1.1.1): 56 data bytes
 ping: sendto: Permission denied
---- 1.1.1.1 ping 统计 ---
+--- 1.1.1.1 ping statistics ---
 1 packets transmitted, 0 packets received, 100.0% packet loss
 root@vnetcage:~ # fetch -q -o - http://canhazip.com
 93.104.68.83
@@ -1329,7 +1329,7 @@ PING 10.0.111.1 (10.0.111.1): 56 data bytes
 64 bytes from 10.0.111.1: icmp_seq=0 ttl=64 time=1.545 ms
 64 bytes from 10.0.111.1: icmp_seq=1 ttl=64 time=0.793 ms
 64 bytes from 10.0.111.1: icmp_seq=2 ttl=64 time=0.790 ms
---- 10.0.111.1 ping 统计 ---
+--- 10.0.111.1 ping statistics ---
 3 packets transmitted, 3 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 0.790/1.043/1.545/0.355 ms
 root@guest-a:~ # traceroute www.freebsd.org
@@ -1468,7 +1468,7 @@ PING 10.0.111.1 (10.0.111.1): 56 data bytes
 64 bytes from 10.0.111.1: icmp_seq=0 ttl=64 time=0.811 ms
 64 bytes from 10.0.111.1: icmp_seq=1 ttl=64 time=0.816 ms
 64 bytes from 10.0.111.1: icmp_seq=2 ttl=64 time=0.810 ms
---- 10.0.111.1 ping 统计 ---
+--- 10.0.111.1 ping statistics ---
 3 packets transmitted, 3 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 0.810/0.812/0.816/0.003 ms
 root@plainjail-b:~ # ping -c 3 10.0.111.10
@@ -1476,7 +1476,7 @@ PING 10.0.111.10 (10.0.111.10): 56 data bytes
 64 bytes from 10.0.111.10: icmp_seq=0 ttl=64 time=0.716 ms
 64 bytes from 10.0.111.10: icmp_seq=1 ttl=64 time=0.297 ms
 64 bytes from 10.0.111.10: icmp_seq=2 ttl=64 time=0.319 ms
---- 10.0.111.10 ping 统计 ---
+--- 10.0.111.10 ping statistics ---
 3 packets transmitted, 3 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 0.297/0.444/0.716/0.193 ms
 root@plainjail-b:~ # logout
@@ -1538,7 +1538,7 @@ root@vnetjail-b:~ # logout
 
 #### VM 配置（jailhost-b）
 
-安装 `sysutils/vm-bhyve` 并创建一个"manual"类型（不由 vm-bhyve 管理）的交换机，引用前面创建的桥接接口（switch111）：
+安装 `sysutils/vm-bhyve` 并创建一个"manual"类型（不由 vm-bhyve 管理）的交换机，引用前面创建的桥接接口（switch222）：
 
 ```sh
 root@jailhost-b:~ # pkg install vm-bhyve

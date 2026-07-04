@@ -30,7 +30,7 @@
 
 CBSD 提供了一个在 FreeBSD 上管理 jail 和 bhyve 虚拟机的框架。Oleg Ginzburg 提供了一系列文章的第一篇，向用户介绍 CBSD 框架及其使用方法。同样主题下，Tom Jones 介绍了一个用于创建 jail 的新工具。
 
-Kristoff Provost 描述了他维护 FreeBSD 的 pf 包过滤器端口的持续工作中的又一集。
+Kristoff Provost 描述了他持续维护 FreeBSD 上 pf 包过滤器移植版的又一篇章。
 
 本期还刊登两篇来自 EuroBSDCon 的会议报告。我们希望在今年未来几期中，从"老牌"BSD 大会和新会议场地上刊登更多会议报告。
 
@@ -45,4 +45,4 @@ FreeBSD Journal 由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #10
 电话：720/207-5142，传真：720/222-2350
 邮箱：info@freebsdfoundation.org
 
-Copyright © 2022 by FreeBSD Foundation. All rights reserved. 未经出版商书面许可，本杂志不得全部或部分复制。
+Copyright © 2021 by FreeBSD Foundation. All rights reserved. 未经出版商书面许可，本杂志不得全部或部分复制。
