@@ -1,4 +1,4 @@
-# 目录
+# Table of contents
 
 * [FreeBSD 中文期刊](README.md)
 * [编辑日志](CHANGELOG.md)
@@ -477,7 +477,7 @@
 * [非 RPi 上的媒体服务器](2019-0506/media-servers-on-non-rpi.md)
 * [FreeBSD 新面孔](2019-0506/new-faces-of-freebsd.md)
 * [在 Raspberry Pi 3 上运行 Icinga2](2019-0506/running-icinga2-on-the-raspberry-pi3.md)
-* [svn 更新](2019-0506/svn-update.md)
+* [SVN 动态](2019-0506/svn-update.md)
 * [读者来信](2019-0506/we-get-letters.md)
 
 ## 2019-0304 调试与测试
@@ -488,7 +488,7 @@
 * [用 DTrace 排查 LDAP 连接过剩](2019-0304/excess-ldap-connection-using-dtrace.md)
 * [基金会书信](2019-0304/letter-from-the-foundation.md)
 * [FreeBSD 新面孔](2019-0304/new-faces-of-freebsd.md)
-* [svn 更新](2019-0304/svn-update.md)
+* [SVN 动态](2019-0304/svn-update.md)
 * [自动化测试框架](2019-0304/the-automated-testing-framework.md)
 * [读者来信](2019-0304/we-get-letters.md)
 
@@ -501,7 +501,7 @@
 * [在 FreeBSD/GhostBSD 上开始 Java 开发](2019-0102/getting-started-with-java-development.md)
 * [基金会书信](2019-0102/letter-from-the-foundation.md)
 * [FreeBSD 的新面孔](2019-0102/new-faces-of-freebsd.md)
-* [svn 更新](2019-0102/svn-update.md)
+* [SVN 动态](2019-0102/svn-update.md)
 * [向上游提交一处文档 bugfix](2019-0102/upstreaming-a-documentation-bugfix.md)
 * [读者来信](2019-0102/we-get-letters.md)
 * [编写手册页](2019-0102/writing-manual-pages.md)
@@ -514,7 +514,7 @@
 * [基金会书信](2018-1112/foundation-letter.md)
 * [FreeBSD 12.0 工具链更新](2018-1112/freebsd-12-0-toolchain-update.md)
 * [FreeBSD 新面孔](2018-1112/new-faces-of-freebsd.md)
-* [SVN 更新](2018-1112/svn-update.md)
+* [SVN 动态](2018-1112/svn-update.md)
 * [The Daemon's Dozen——介绍 FreeBSD 12.0](2018-1112/the-daemons-dozen-introducing-freebsd-12-0.md)
 * [读者来信](2018-1112/we-get-letters.md)
 * [ZPool 检查点](2018-1112/zpool-checkpoint.md)
@@ -528,7 +528,7 @@
 * [FreeBSD 与处理器趋势](2018-0910/freebsd-and-processor-trends.md)
 * [FreeBSD 中的网络互联](2018-0910/internetworking-in-freebsd.md)
 * [FreeBSD 新面孔](2018-0910/new-faces-of-freebsd.md)
-* [svn 更新](2018-0910/svn-update.md)
+* [SVN 动态](2018-0910/svn-update.md)
 * [Netflix 的 TCP 栈验证](2018-0910/tcp-stack-validation-at-netflix.md)
 * [读者来信](2018-0910/we-get-letters.md)
 
@@ -541,7 +541,7 @@
 * [高性能计算与 FreeBSD](2018-0708/high-performance-computing-and-freebsd.md)
 * [NVM Express 与 FreeBSD](2018-0708/nvm-express-and-freebsd.md)
 * [pNFS](2018-0708/pnfs.md)
-* [svn 更新](2018-0708/svn-update.md)
+* [SVN 动态](2018-0708/svn-update.md)
 * [读者来信](2018-0708/we-get-letters.md)
 
 ## 2018-0506 安全
@@ -554,7 +554,7 @@
 * [基金会书信](2018-0506/foundation-letter.md)
 * [FreeBSD 新面孔](2018-0506/new-faces-of-freebsd.md)
 * [用 YubiKey 保护你的秘密](2018-0506/protect-your-secrets-with-yubikey.md)
-* [svn 更新](2018-0506/svn-update.md)
+* [SVN 动态](2018-0506/svn-update.md)
 
 ## 2018-0304 桌面/笔记本
 
@@ -564,7 +564,7 @@
 * [基金会书信](2018-0304/foundation-letter.md)
 * [FreeBSD 笔记本评测](2018-0304/freebsd-laptop-shootout.md)
 * [唤醒之路上的痛与苦](2018-0304/pain-and-suffering-on-the-road-to-resume.md)
-* [svn 更新](2018-0304/svn-update.md)
+* [SVN 动态](2018-0304/svn-update.md)
 * [ZFS 2018 及展望](2018-0304/zfs-2018-and-onward.md)
 
 ## 2018-0102 存储
@@ -574,7 +574,7 @@
 * [会议报告：BSDTW 2017](2018-0102/conference-report.md)
 * [活动日历](2018-0102/events-calendar.md)
 * [基金会书信](2018-0102/foundation-letter.md)
-* [svn 更新](2018-0102/svn-update.md)
+* [SVN 动态](2018-0102/svn-update.md)
 * [磁带未死](2018-0102/tapes-not-dead.md)
 * [从用户空间到设备驱动追踪 ifconfig 命令](2018-0102/tracing-ifconfig-commands-from-userspace-to-device-driver.md)
 
@@ -585,7 +585,7 @@
 * [监控 ZFS](2017-1112/monitoring-zfs.md)
 * [STDDEV，否则就是没发生过！](2017-1112/stddev-it-didnt-happen.md)
 * [用 Prometheus 进行监控与趋势分析](2017-1112/monitoring-and-trending-with-prometheus.md)
-* [svn 更新](2017-1112/svn-update.md)
+* [SVN 动态](2017-1112/svn-update.md)
 * [FreeBSD 新面孔](2017-1112/new-faces-of-freebsd.md)
 * [会议报告](2017-1112/conference-report.md)
 * [活动日历](2017-1112/events-calendar.md)
@@ -600,7 +600,7 @@
 * [FreeBSD 管理架构的演变](2017-0910/The-Evolution-of-FreeBSD-Governance.md)
 * [会议报告](2017-0910/conference-report.md)
 * [FreeBSD 新面孔](2017-0910/new-faces-of-freebsd.md)
-* [svn 更新](2017-0910/svn-update.md)
+* [SVN 动态](2017-0910/svn-update.md)
 
 ## 2017-0708 资源控制
 
@@ -619,7 +619,7 @@
 * [活动日历](2017-0506/events-calendar.md)
 * [CloudABI 的最新进展](2017-0506/whats-going-on-with-cloudabi.md)
 * [走向无感知沙箱：Capsicum](2017-0506/toward-oblivious-sandboxing-wit-capsicum.md)
-* [svn 更新](2017-0506/svn-update.md)
+* [SVN 动态](2017-0506/svn-update.md)
 * [pfSense 与安全](2017-0506/pfsense-and-security.md)
 * [FreeBSD 的新面孔](2017-0506/new-faces-of-freebsd.md)
 * [基金会书信](2017-0506/letter-from-the-foundation.md)
@@ -658,7 +658,7 @@
 
 * [FreeBSD 新面孔](2016-1112/new-faces-of-freebsd.md)
 * [LLD 链接器](2016-1112/the-lld-linker.md)
-* [SVN 更新](2016-1112/svn-update.md)
+* [SVN 动态](2016-1112/svn-update.md)
 * [教 BSD](2016-1112/teach-bsd.md)
 * [Swift 编程语言](2016-1112/swift-programming-language.md)
 * [创办 BSD 用户组](2016-1112/starting-a-bsd-user-group.md)
@@ -671,7 +671,7 @@
 
 ## 2016-0910 欢迎来到 FreeBSD 11
 
-* [svn 更新](2016-0910/svn-update.md)
+* [SVN 动态](2016-0910/svn-update.md)
 * [书评](2016-0910/book-review.md)
 * [提升 FreeBSD 内核中的高带宽 TLS](2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel.md)
 * [GELI 与 ZFS 改进](2016-0910/geli-and-zfs-improvements.md)
@@ -701,7 +701,7 @@
 * [会议报告：AsiaBSDCon（令人惊叹的友善之人）](2016-0506/conference-report.md)
 * [活动日历](2016-0506/events-calendar.md)
 * [本月 FreeBSD](2016-0506/this-month-in-freebsd.md)
-* [svn 更新](2016-0506/svn-update.md)
+* [SVN 动态](2016-0506/svn-update.md)
 * [围绕谷歌编程之夏构建社区](2016-0506/building-community-around-the-google-summer-of-code.md)
 * [bhyve ATA/ATAPI 仿真](2016-0506/bhyve-ata-emulation.md)
 * [FreeBSD 在 Cavium ThunderX 片上系统上的运行](2016-0506/freebsd-on-cavium-thunderx-system-on-a-chip.md)
@@ -711,7 +711,7 @@
 ## 2016-0304 教学
 
 * [本月 FreeBSD：访谈 Gleb Smirnoff](2016-0304/this-month-in-freebsd.md)
-* [svn update](2016-0304/svn-update.md)
+* [SVN 动态](2016-0304/svn-update.md)
 * [Ports 报告](2016-0304/ports-report.md)
 * [会议报道：台北/台湾 PortsCamp](2016-0304/meeting-report.md)
 * [基金会书信：现在开课](2016-0304/letter-from-the-foundation.md)
@@ -749,7 +749,7 @@
 
 * [活动日历](2015-0910/events-calendar.md)
 * [FreeBSD 本月动态](2015-0910/this-month-in-freebsd.md)
-* [svn Update](2015-0910/svn-update.md)
+* [SVN 动态](2015-0910/svn-update.md)
 * [Ports 报告](2015-0910/ports-report.md)
 * [书评](2015-0910/book-review.md)
 * [改进 FreeBSD 上 MemGuard 对 UMA 的支持](2015-0910/improving-memguard-support-for-uma-on-freebsd.md)
@@ -762,7 +762,7 @@
 ## 2015-0708 企业级 FreeBSD
 
 * [本月 FreeBSD 动态](2015-0708/this-month-in-freebsd.md)
-* [SVN 更新](2015-0708/svn-update.md)
+* [SVN 动态](2015-0708/svn-update.md)
 * [反思 FreeBSD.org 软件包](2015-0708/reflections-on-freebsd-org-packages.md)
 * [Ports 报告](2015-0708/ports-report.md)
 * [走进 FreeBSD 基金会](2015-0708/inside-the-freebsd-foundation.md)
@@ -776,7 +776,7 @@
 ## 2015-0506 测量两次，代码一次写好
 
 * [FreeBSD 本月动态](2015-0506/this-month-in-freebsd.md)
-* [SVN 更新](2015-0506/svn-update.md)
+* [SVN 动态](2015-0506/svn-update.md)
 * [Ports 报告](2015-0506/ports-report.md)
 * [测量两次，代码一次写好](2015-0506/measure-twice-code-once.md)
 * [如何在 FreeBSD 上安装 Bacula 并完成首次备份](2015-0506/how-to-install-bacula-on-freebsd-and-get-your-first-backup-running.md)
@@ -807,7 +807,7 @@
 * [参与其中](2015-0102/getting-involved.md)
 * [活动日历](2015-0102/events-calendar.md)
 * [FreeBSD 本月动态](2015-0102/this-month-in-freebsd.md)
-* [svn update](2015-0102/svn-update.md)
+* [SVN 动态](2015-0102/svn-update.md)
 * [基金会来信](2015-0102/foundation-letter.md)
 * [会议报告](2015-0102/conference-report.md)
 * [书评](2015-0102/book-review.md)
@@ -818,7 +818,7 @@
 
 * [FreeBSD 本月动态](2014-1112/this-month-in-freebsd.md)
 * [活动日历](2014-1112/events-calendar.md)
-* [svn update](2014-1112/svn-update.md)
+* [SVN 动态](2014-1112/svn-update.md)
 * [Ports 报告](2014-1112/ports-report.md)
 * [会议报告](2014-1112/conference-report.md)
 * [书评](2014-1112/book-review.md)
@@ -831,7 +831,7 @@
 
 * [活动日历](2014-0910/events-calendar.md)
 * [FreeBSD 本月动态](2014-0910/this-month-in-freebsd.md)
-* [svn update](2014-0910/svn-update.md)
+* [SVN 动态](2014-0910/svn-update.md)
 * [会议报告](2014-0910/conference-report.md)
 * [为什么要在你的 FreeBSD 系统上设置 PF？](2014-0910/why-set-up-pf-on-your-freebsd-systems.md)
 * [Ports 报告](2014-0910/ports-report.md)
@@ -849,7 +849,7 @@
 * [本月 FreeBSD](2014-0708/this-month-in-freebsd.md)
 * [Ports 报告](2014-0708/ports-report.md)
 * [来自基金会的信](2014-0708/letter-from-the-foundation.md)
-* [svn 更新](2014-0708/svn-update.md)
+* [SVN 动态](2014-0708/svn-update.md)
 * [活动日历](2014-0708/events-calendar.md)
 * [会议报告](2014-0708/conference-report.md)
 
@@ -857,7 +857,7 @@
 
 * [本月 FreeBSD 动态](2014-0506/this-month-in-freebsd.md)
 * [TCP 连接速率扩展](2014-0506/tcp-connection-rate-scaling.md)
-* [SVN 更新](2014-0506/svn-update.md)
+* [SVN 动态](2014-0506/svn-update.md)
 * [Ports 报告](2014-0506/ports-report.md)
 * [来自基金会的信](2014-0506/letter-from-the-foundation.md)
 * [Kqueue 狂想](2014-0506/kqueue-madness.md)
@@ -872,7 +872,7 @@
 * [日志化 Soft Updates](2014-0304/journaled-soft-updates.md)
 * [从 1.x 到 11.x：PBI 格式的持续演进](2014-0304/from-1-x-to-11-x-the-ongoing-evolution-of-the-pbi-format.md)
 * [Poudriere](2014-0304/poudriere.md)
-* [svn 更新](2014-0304/svn-update.md)
+* [SVN 动态](2014-0304/svn-update.md)
 * [Ports 报告](2014-0304/ports-report.md)
 * [FreeBSD 本月动态](2014-0304/this-month-in-freebsd.md)
 * [来自基金会的信](2014-0304/letter-from-the-foundation.md)
@@ -882,7 +882,7 @@
 
 * [本月 FreeBSD](2014-0102/this-month-in-freebsd.md)
 * [存储的未来：Z 文件系统](2014-0102/the-future-of-storage.md)
-* [svn update](2014-0102/svn-update.md)
+* [SVN 动态](2014-0102/svn-update.md)
 * [Ports 报告](2014-0102/ports-report.md)
 * [来自基金会的致辞](2014-0102/letter-from-the-foundation.md)
 * [实现系统控制节点（sysctl）](2014-0102/implementing-system-control-nodes-sysctl.md)
