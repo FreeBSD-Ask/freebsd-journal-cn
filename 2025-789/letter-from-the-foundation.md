@@ -7,4 +7,4 @@
 一如既往，我们乐于倾听读者的声音。如果你有反馈、对未来文章主题的建议，或者有兴趣撰写文章，请发邮件至 [info@freebsdjournal.com](mailto:info@freebsdjournal.com)。
 
 **John Baldwin**
-FreeBSD Journal 编辑委员会主席
+FreeBSD 期刊编辑委员会主席
