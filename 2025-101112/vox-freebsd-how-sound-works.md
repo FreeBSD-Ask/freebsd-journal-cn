@@ -58,11 +58,11 @@ OSS API 在 `sound(4)` 中实现。它将一些通用功能抽象为内核模块
 
 如前所述，并在示例程序中展示，应用程序通过 `/dev/dsp*` 访问声音子系统，使用 `open(2)` 系统调用。可指定以下标志：
 
-| open(2) 标志 | 功能   |
-| ---------- | ----- |
-| O_RDONLY   | 录音    |
-| O_WRONLY   | 播放    |
-| O_RDWR     | 录音和播放 |
+| open(2) 标志 | 功能 |
+| --- | --- |
+| O_RDONLY | 录音 |
+| O_WRONLY | 播放 |
+| O_RDWR | 录音和播放 |
 
 在 `open(2)` 调用中，还可以额外指定 `O_NONBLOCK` 和 `O_EXCL` 标志，分别用于非阻塞 I/O 和对设备的独占访问。为了让 `sound(4)` 知道哪些通道属于哪个文件描述符，并正确路由音频和信息，它使用 `DEVFS_CDEVPRIV(9)`。
 
@@ -125,34 +125,34 @@ $ sndctl feederchain
 
 FreeBSD 内置支持以下声卡：
 
-| 驱动程序             | 支持的声卡                                  | 默认启用平台      |
-| ---------------- | -------------------------------------- | ----------- |
-| snd_ai2s(4)      | Apple I2S                              | powerpc     |
-| snd_als4000(4)   | Avance Logic ALS4000                   |             |
-| snd_atiixp(4)    | ATI IXP                                |             |
-| snd_cmi(4)       | CMedia CMI8338/CMI8738                 | amd64, i386 |
-| snd_cs4281(4)    | Crystal Semiconductor CS4281           |             |
-| snd_csa(4)       | Crystal Semiconductor CS461x/462x/4280 | amd64, i386 |
-| snd_davbus(4)    | Apple Davbus                           | powerpc     |
-| snd_emu10k1(4)   | SoundBlaster Live! 和 Audigy            |             |
-| snd_emu10kx(4)   | Creative SoundBlaster Live! 和 Audigy   | amd64, i386 |
-| snd_envy24(4)    | VIA Envy24 及兼容型号                       |             |
-| snd_envy24ht(4)  | VIA Envy24HT 及兼容型号                     |             |
-| snd_es137x(4)    | Ensoniq AudioPCI ES137x                | amd64, i386 |
-| snd_fm801(4)     | Forte Media FM801                      |             |
-| snd_hda(4)       | Intel 高保真音频 (High Definition Audio)    | amd64, i386 |
-| snd_hdsp(4)      | RME HDSP                               |             |
-| snd_hdspe(4)     | RME HDSPe                              |             |
-| snd_ich(4)       | Intel ICH AC’97 及兼容型号                  | amd64, i386 |
-| snd_maestro3(4)  | ESS Maestro3/Allegro-1                 |             |
-| snd_neomagic(4)  | NeoMagic 256AV/ZX                      |             |
-| snd_solo(4)      | ESS Solo-1/1E                          |             |
-| snd_spicds(4)    | I2S SPI                                |             |
-| snd_t4dwave(4)   | Trident 4DWave                         |             |
-| snd_uaudio(4)    | USB 音频和 MIDI                           | 插入设备时自动加载   |
-| snd_via8233(4)   | VIA Technologies VT8233                | amd64, i386 |
-| snd_via82c686(4) | VIA Technologies 82C686A               |             |
-| snd_vibes(4)     | S3 SonicVibes                          |             |
+| 驱动程序 | 支持的声卡 | 默认启用平台 |
+| --- | --- | --- |
+| snd_ai2s(4) | Apple I2S | powerpc |
+| snd_als4000(4) | Avance Logic ALS4000 | |
+| snd_atiixp(4) | ATI IXP | |
+| snd_cmi(4) | CMedia CMI8338/CMI8738 | amd64, i386 |
+| snd_cs4281(4) | Crystal Semiconductor CS4281 | |
+| snd_csa(4) | Crystal Semiconductor CS461x/462x/4280 | amd64, i386 |
+| snd_davbus(4) | Apple Davbus | powerpc |
+| snd_emu10k1(4) | SoundBlaster Live! 和 Audigy | |
+| snd_emu10kx(4) | Creative SoundBlaster Live! 和 Audigy | amd64, i386 |
+| snd_envy24(4) | VIA Envy24 及兼容型号 | |
+| snd_envy24ht(4) | VIA Envy24HT 及兼容型号 | |
+| snd_es137x(4) | Ensoniq AudioPCI ES137x | amd64, i386 |
+| snd_fm801(4) | Forte Media FM801 | |
+| snd_hda(4) | Intel 高保真音频 (High Definition Audio) | amd64, i386 |
+| snd_hdsp(4) | RME HDSP | |
+| snd_hdspe(4) | RME HDSPe | |
+| snd_ich(4) | Intel ICH AC’97 及兼容型号 | amd64, i386 |
+| snd_maestro3(4) | ESS Maestro3/Allegro-1 | |
+| snd_neomagic(4) | NeoMagic 256AV/ZX | |
+| snd_solo(4) | ESS Solo-1/1E | |
+| snd_spicds(4) | I2S SPI | |
+| snd_t4dwave(4) | Trident 4DWave | |
+| snd_uaudio(4) | USB 音频和 MIDI | 插入设备时自动加载 |
+| snd_via8233(4) | VIA Technologies VT8233 | amd64, i386 |
+| snd_via82c686(4) | VIA Technologies 82C686A | |
+| snd_vibes(4) | S3 SonicVibes | |
 
 此外，还支持以下 ARM 芯片：
 
