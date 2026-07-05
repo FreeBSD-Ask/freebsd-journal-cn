@@ -1,24 +1,5 @@
 # 基金会来信
 
-## 编辑委员会
-
-- John Baldwin • FreeBSD 开发者、FreeBSD 核心团队成员、FreeBSD 期刊编辑委员会联合主席。
-- Brooks Davis • SRI International 高级计算机科学家、剑桥大学访问工业研究员、FreeBSD 核心团队成员。
-- Bryan Drewery • EMC Isilon 高级软件工程师、FreeBSD Portmgr 团队成员、FreeBSD 提交者。
-- Justin Gibbs • FreeBSD 基金会创始人、FreeBSD 基金会董事会董事、Facebook 软件工程师。
-- Daichi Goto • BSD Consulting Inc.（东京）董事。
-- Joseph Kong • Dell EMC 高级软件工程师、《FreeBSD Device Drivers》作者。
-- Steven Kreuzer • FreeBSD Ports 团队成员。
-- Dru Lavigne • iXsystems 存储工程总监、《BSD Hacks》和《The Best of FreeBSD Basics》作者。
-- Michael W Lucas • 《Absolute FreeBSD》作者。
-- Ed Maste • FreeBSD 基金会项目开发总监。
-- Kirk McKusick • FreeBSD 基金会董事会司库、《The Design and Implementation》系列书籍主要作者。
-- George V. Neville-Neil • FreeBSD 基金会董事会主席、《The Design and Implementation of the FreeBSD Operating System》合著者。
-- Philip Paeps • FreeBSD 基金会董事会秘书、FreeBSD 提交者、独立顾问。
-- Hiroki Sato • FreeBSD 基金会董事会董事、Asia BSDCon 主席、FreeBSD 核心团队成员、东京工业大学助理教授。
-- Benedict Reuschling • FreeBSD 基金会董事会副主席、FreeBSD 文档提交者、FreeBSD 核心团队成员。
-- Robert N. M. Watson • FreeBSD 基金会董事会董事、TrustedBSD 项目创始人、剑桥大学高级讲师。
-
 北半球大部分地区春意盎然，而在春天，年轻开发者的心思也会转向调试和测试。如果你对此存疑，那么本期刊登的三篇精彩文章足以让你改观。
 
 作为佐证，我们奉上：John Baldwin 的《Debugging with GDB》、Kristof Provost 的《The Automated Testing Framework》以及 Benedict Reuschling 的《Diagnosing Excess LDAP Connections Using DTrace》。虽然许多开发者仍在用 `printf()` 调试，但你不必继续这样过活——John Baldwin 带我们领略了 GNU 调试器 gdb 最新版本（8.3）的功能，并展示了它如何为我们节省数小时追踪 bug 的挫败时间。

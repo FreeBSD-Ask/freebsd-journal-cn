@@ -4,16 +4,6 @@
 
 ## 全球订阅者突破 1,000 人！
 
-- John Baldwin • FreeBSD 核心团队成员
-- Daichi Goto • BSD Consulting Inc.（东京）董事
-- Joseph Kong • 《FreeBSD Device Drivers》作者
-- Dru Lavigne • FreeBSD 基金会董事，BSD 认证小组主席
-- Michael W. Lucas • 《Absolute FreeBSD》作者
-- Kirk McKusick • FreeBSD 基金会董事，《The Design and Implementation》系列丛书主要作者
-- George Neville-Neil • FreeBSD 基金会董事，《The Design and Implementation of the FreeBSD Operating System》合著者
-- Hiroki Sato • FreeBSD 基金会董事，AsiaBSDCon 主席，FreeBSD 核心团队成员，东京工业大学助理教授
-- Robert Watson • FreeBSD 基金会董事，TrustedBSD 项目创始人，剑桥大学讲师
-
 我们很高兴地宣布，FreeBSD 期刊 的推出取得了巨大成功，正如这封信标题所示，我们迄今已拥有超过 1,000 名订阅者。对于一本新杂志而言，这是一个令人振奋且意义非凡的开端，我们预计随着口碑传播，订阅量将继续增长。
 
 本期收录了一组关于 FreeBSD 新包系统的文章。对于每一位曾经使用现有 Ports 与包系统维护过大规模 FreeBSD 安装的人来说，新系统的到来无疑是一股清新的空气。能够维护相关的包集合、构建自己的包仓库，并在 FreeBSD 之上维护多样化的软件，对个人用户和大型 FreeBSD 站点的管理员都是一大福音。邮件列表上每个人都在盛赞新包系统，现在你可以直接从作者本人——Baptiste Daroussin 和 Bryan Drewery——那里读到它的工作原理。PCBSD 拥有自己的打包系统已有一段时间，Kris Moore 用他关于 PBI 格式演进的文章为本期的打包专题收尾。
