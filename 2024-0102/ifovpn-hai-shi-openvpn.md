@@ -141,7 +141,7 @@ OpenVPN 会通过 OVPN_NEW_KEY 命令安装新密钥。每个密钥都有一个 
 
 这在 pfSense 的使用场景下不是严格要求的，但它使测试变得更简单得多。这样，我们可以在单台机器上进行测试，而不需要任何外部工具（除了 OpenVPN 本身，这点应该很明显）。
 
-对于有兴趣了解具体操作的人，还有另一篇可能有用的 [FreeBSD Journal](https://freebsdfoundation.org/our-work/journal/) 文章：《The Automated Testing Framework》⑨，哦等等，我好像知道那个人，Kristof Provost。
+对于有兴趣了解具体操作的人，还有另一篇可能有用的 [FreeBSD 期刊](https://freebsdfoundation.org/our-work/journal/) 文章：《The Automated Testing Framework》⑨，哦等等，我好像知道那个人，Kristof Provost。
 
 ## 性能
 

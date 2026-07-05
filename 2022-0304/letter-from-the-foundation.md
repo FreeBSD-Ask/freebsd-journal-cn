@@ -5,7 +5,7 @@
 
 ## 编委会
 
-- **John Baldwin**——FreeBSD 开发者，FreeBSD Journal 编辑委员会主席
+- **John Baldwin**——FreeBSD 开发者，FreeBSD 期刊编辑委员会主席
 - **Tom Jones**——FreeBSD 开发者，阿伯丁大学互联网工程师与研究员
 - **Ed Maste**——FreeBSD 基金会技术高级总监，FreeBSD Core Team 成员
 - **Benedict Reuschling**——FreeBSD 基金会董事会副主席，FreeBSD 文档提交者

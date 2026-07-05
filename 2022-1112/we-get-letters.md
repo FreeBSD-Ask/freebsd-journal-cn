@@ -55,11 +55,11 @@
 
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
-**MICHAEL W LUCAS** 是《Absolute FreeBSD》、《$ git sync murder》等五十多本书的作者。《Letters to ed(1)》收录了他在《FreeBSD Journal》的专栏。更多信息见 <https://mwl.io>。
+**MICHAEL W LUCAS** 是《Absolute FreeBSD》、《$ git sync murder》等五十多本书的作者。《Letters to ed(1)》收录了他在《FreeBSD 期刊》的专栏。更多信息见 <https://mwl.io>。
 
 ---
 
-*PAM Mastery* by Michael W Lucas
+《PAM Mastery》 by Michael W Lucas
 
 可插拔认证模块（PAM）：威胁还是福音？
 

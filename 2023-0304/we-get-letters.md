@@ -49,7 +49,7 @@ JHTC：
 
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
-MICHAEL W LUCAS 著有五十多本书，包括《Absolute FreeBSD》《$ git commit murder》和《Networking for System Administrators》。他本以为这本《Journal》几年前就会把他踢出去，并打算逐期增加专栏的尖酸程度，直到他们动手。
+MICHAEL W LUCAS 著有五十多本书，包括《Absolute FreeBSD》《$ git commit murder》和《Networking for System Administrators》。他本以为这本《期刊》几年前就会把他踢出去，并打算逐期增加专栏的尖酸程度，直到他们动手。
 
 能帮你的书。
 
@@ -57,6 +57,6 @@ MICHAEL W LUCAS 著有五十多本书，包括《Absolute FreeBSD》《$ git com
 
 > “虽然我们欣赏 Lucas 先生对本刊的独特贡献，但我们也觉得他的具体才能并未得到充分利用。请买他的书、买他的时间、买他的签名照什么的，让他去忙别的吧。”
 
-——John Baldwin，《FreeBSD Journal》编辑委员会主席
+——John Baldwin，《FreeBSD 期刊》编辑委员会主席
 
 <https://mwl.io>

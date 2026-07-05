@@ -114,7 +114,7 @@
 
 我向他推荐了几个学习资源：  
 
-- **《FreeBSD Journal》**——权威的 FreeBSD 期刊  
+- **《FreeBSD 期刊》**——权威的 FreeBSD 期刊  
 - **MWL.io**——Michael W Lucas 的技术书籍网站  
 - **BSD 用户组（BSD User Groups）**——加入社区，和更多 BSD 爱好者交流  
 

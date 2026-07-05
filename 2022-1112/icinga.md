@@ -27,7 +27,7 @@ monitor# pkg update
 
 在安装所需的软件包（包括 PostgreSQL 作为后台数据库和 nginx 作为 web 服务器来托管 Icingaweb2 监控界面）之前，我们首先创建一个 ZFS 数据集用于存储 postgres 数据库，这样当软件包解压时，它会被填充。如果你不使用 ZFS，使用常规目录也完全可以。
 
-以下命令将在我们的示例池 mypool 上创建一个新的数据集，路径为 `/var/db/postgres/data`。如果该路径下的数据集不存在，`-p` 参数也会创建它们。接下来，我们禁用访问时间（atime），因为这里不需要它，并且通过不在每次写入时更新文件的时间戳来节省一些 I/O。使用更新的 ZFS 2.0，我们还在数据集上使用 zstd 压缩。由于 Postgres 以 8k 为单位写入数据，我们将 ZFS 的 `recordsize` 设置为与其匹配以获得最佳性能。通过将 `logbias` 设置为 `throughput`，我们指示 ZFS 优化数据库的同步写入，以高效利用资源。挂载点设置为重叠现有的 `/var/db/postgres` 路径。当软件包安装时，它会放在该数据集上，而不是常规的 `/var/db` 目录中。在这里我们不关注 PostgreSQL 数据库的进一步调整。你可以访问 <https://pgtune.leopard.in.ua/，输入> PostgreSQL 主机的参数，获取配置建议，然后将其添加到 `postgresql.conf` 文件中。
+以下命令将在我们的示例池 mypool 上创建一个新的数据集，路径为 `/var/db/postgres/data`。如果该路径下的数据集不存在，`-p` 参数也会创建它们。接下来，我们禁用访问时间（atime），因为这里不需要它，并且通过不在每次写入时更新文件的时间戳来节省一些 I/O。使用更新的 ZFS 2.0，我们还在数据集上使用 zstd 压缩。由于 Postgres 以 8k 为单位写入数据，我们将 ZFS 的 `recordsize` 设置为与其匹配以获得最佳性能。通过将 `logbias` 设置为 `throughput`，我们指示 ZFS 优化数据库的同步写入，以高效利用资源。挂载点设置为重叠现有的 `/var/db/postgres` 路径。当软件包安装时，它会放在该数据集上，而不是常规的 `/var/db` 目录中。在这里我们不关注 PostgreSQL 数据库的进一步调整。你可以访问 <https://pgtune.leopard.in.ua/>，输入 PostgreSQL 主机的参数，获取配置建议，然后将其添加到 `postgresql.conf` 文件中。
 
 ```sh
 monitor# zfs create -p mypool/var/db/postgres/data

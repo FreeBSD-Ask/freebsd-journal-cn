@@ -30,15 +30,15 @@
 
 你还能看到 Hiroki Sato 在 FreeBSD 上使用 IPv6 系列的第二期，以及 Tom Jones 的"进行中的工作"专栏，本期呈现 Gleb Smirnoff 关于 FreeBSD 14 中 socket 缓冲区近期变化的文章。此外，本期终于收录了几篇会议报告——过去两年里这类报告寥寥无几。随着社区重新以更规律的节奏相聚，我们期待未来有更多报告。
 
-顺便一提，《Journal》编辑委员会的几位成员将于 9 月前往奥地利维也纳参加 EuroBSDCon 2022。我们期待与到场的读者交流，并计划在未来一期中为无法参会的读者带来来自维也纳的报道。
+顺便一提，《期刊》编辑委员会的几位成员将于 9 月前往奥地利维也纳参加 EuroBSDCon 2022。我们期待与到场的读者交流，并计划在未来一期中为无法参会的读者带来来自维也纳的报道。
 
-我们重视读者的反馈，无论是面对面还是电子邮件。如果你对文章有反馈、对未来话题有建议，或者有意为《Journal》撰稿，请通过 <info@freebsdjournal.com> 联系我们。
+我们重视读者的反馈，无论是面对面还是电子邮件。如果你对文章有反馈、对未来话题有建议，或者有意为《期刊》撰稿，请通过 <info@freebsdjournal.com> 联系我们。
 
 **John Baldwin**
 FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会主席
 
 FreeBSD 期刊由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #103-107, Boulder, CO 80304
 电话：720/207-5142，传真：720/222-2350
-邮箱：info@freebsdfoundation.org
+邮箱：<info@freebsdfoundation.org>
 
 Copyright © 2022 by FreeBSD Foundation. All rights reserved. 未经出版商书面许可，本杂志不得全部或部分复制。

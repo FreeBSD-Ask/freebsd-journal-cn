@@ -29,7 +29,7 @@ FreeBSD 自带的一些示例 **provider** 包括：
 5. **DTrace 书籍**⁵  
 6. **FreeBSD Wiki 页面（包括一些 DTrace 单行命令示例⁶）**。  
 
-此外，以往的 FreeBSD Journal 也曾多次发表关于 DTrace 的相关文章⁷⁸⁹。  
+此外，以往的 FreeBSD 期刊也曾多次发表关于 DTrace 的相关文章⁷⁸⁹。  
 
 ## 简单示例
 
@@ -153,7 +153,7 @@ bin:/usr/sbin:/usr/bin /etc/rc.d/sendmail onestop
 2022 Nov 24 18:47:09 1001.1001 sh[46924]: /sbin/sysctl -n -q kern.boottrace.enabled
 ```
 
-此外，**dwatch** 支持基于 **jail**、用户组、进程等多种条件进行过滤，即便是经验丰富的 **DTrace** 用户也值得学习这款工具。演讲 *All along the dwatch tower* 介绍了 **dwatch** 并详细讲解了其功能。此外，**FreeBSD** 的 **dwatch(1)** 手册页也提供了许多优秀的示例，适合感兴趣的用户尝试。
+此外，**dwatch** 支持基于 **jail**、用户组、进程等多种条件进行过滤，即便是经验丰富的 **DTrace** 用户也值得学习这款工具。演讲《All along the dwatch tower》介绍了 **dwatch** 并详细讲解了其功能。此外，**FreeBSD** 的 **dwatch(1)** 手册页也提供了许多优秀的示例，适合感兴趣的用户尝试。
 
 ## CTFv3  
 

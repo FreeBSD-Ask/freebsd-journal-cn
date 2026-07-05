@@ -11,7 +11,7 @@ CHERI 是一个硬件/软件/语义学联合设计项目，旨在提高现有和
 
 随着 Arm Morello 平台的发布，CHERI 的生态系统迅速扩大。
 
-直到 2022 年，CHERI 项目主要由剑桥大学、SRI 国际和他们的合作伙伴开发，包括微软、谷歌和 Arm。随着 Arm Morello 平台的发布，CHERI 生态系统迅速扩大，这是 CHERI 第一个面向大众的硬件实现。2022 年 1 月，Arm 开始向公司、学术和政府机构运送第一批（大约一千块）Morello 开发板。为了给 Morello 用户提供一个用户友好的工作环境，*CheriBSD*——一个基于 FreeBSD 的操作系统，适配 Arm Morello 和 CHERIRISC-V ——他们需要一个基础工具，在 Morello 发布之前构建和分发兼容 CHERI 的第三方软件。今天，有几十所大学、政府研究实验室和公司在 Morello 的工作中使用 CheriBSD，并且每天都依赖这个基本系统。
+直到 2022 年，CHERI 项目主要由剑桥大学、SRI 国际和他们的合作伙伴开发，包括微软、谷歌和 Arm。随着 Arm Morello 平台的发布，CHERI 生态系统迅速扩大，这是 CHERI 第一个面向大众的硬件实现。2022 年 1 月，Arm 开始向公司、学术和政府机构运送第一批（大约一千块）Morello 开发板。为了给 Morello 用户提供一个用户友好的工作环境，**CheriBSD**——一个基于 FreeBSD 的操作系统，适配 Arm Morello 和 CHERIRISC-V ——他们需要一个基础工具，在 Morello 发布之前构建和分发兼容 CHERI 的第三方软件。今天，有几十所大学、政府研究实验室和公司在 Morello 的工作中使用 CheriBSD，并且每天都依赖这个基本系统。
 
 这篇文章介绍了我们在没有 CHERI 的硬件支持情况下，使用 QEMU 用户模式、FreeBSD ports 和 Poudriere 为 CheriBSD 构建第三方软件包的历程。在讨论软件包构建基础设施的实施细节的同时，文章总结了我们需要做哪些决定和改变，以最终实现约 24,000 个 AArch64 软件包和约 9,000 个支持 CHERI 的软件包。
 
@@ -27,7 +27,7 @@ CHERI 是一个硬件/软件/语义学联合设计项目，旨在提高现有和
 
 **表 1：目前的 CHERI 硬件 - 软件栈**
 
-在 Arm Morello 平台【注 20】发布之前，CheriBSD 和第三方软件已经使用 Morello 和 CHERI-RISC-V【注 9】的 QEMU 仿真器进行开发和移植了。这个环境在今天仍然很有用，可以在多个 CheriBSD 分支上工作，或者将 GDB 调试器连接到 QEMU 上，并在 CheriBSD 内核中逐步进行。任何对我们的研究感兴趣的人都可以尝试 CHERI 练习【注 25】，在 QEMU 下探索 CHERI 如何防止产生内存安全问题。可以通过 *cheribuild* 工具【注 1】在 FreeBSD、Linux 和 macOS 上创建一个基于 Morello QEMU 的虚拟机，使用一个简单的命令来获取和编译所需的软件，并运行该虚拟机：
+在 Arm Morello 平台【注 20】发布之前，CheriBSD 和第三方软件已经使用 Morello 和 CHERI-RISC-V【注 9】的 QEMU 仿真器进行开发和移植了。这个环境在今天仍然很有用，可以在多个 CheriBSD 分支上工作，或者将 GDB 调试器连接到 QEMU 上，并在 CheriBSD 内核中逐步进行。任何对我们的研究感兴趣的人都可以尝试 CHERI 练习【注 25】，在 QEMU 下探索 CHERI 如何防止产生内存安全问题。可以通过 **cheribuild** 工具【注 1】在 FreeBSD、Linux 和 macOS 上创建一个基于 Morello QEMU 的虚拟机，使用一个简单的命令来获取和编译所需的软件，并运行该虚拟机：
 
 ```sh
 $ ./cheribuild.py --include-dependencies run-morello-purecap
@@ -35,7 +35,7 @@ $ ./cheribuild.py --include-dependencies run-morello-purecap
 
 可用的工具链包括 LLVM 编译器【注 14、17】和 GDB 调试器【注 15】。LLVM 可以交叉编译代码或在硬件上/QEMU 下进行本地编译。GDB-CHERI，目前基于 GDB 12，可以反汇编能力感知的指令，并打印寄存器和内存中的能力信息。虽然本文主要讨论 CheriBSD【注 3】，但 Arm 也开发了 Linux 和 Android 操作系统【注 18】，并为 Morello【注 19】提供了 CHERI LLVM 和 GCC 编译器。2023 年 2 月，微软也发布了 CHERIoT 项目【注 16】，该项目为嵌入式 RISC-V 设备实现了一个完整的硬件 - 软件堆栈与 CHERIoT RTOS。
 
-有了上述的 SDK，我们决定复刻 FreeBSD ports，并对其进行错误修正，以及对 CHERI 和 CheriBSD 的必要修改。我们把这个 ports 称为 *CheriBSD ports*。
+有了上述的 SDK，我们决定复刻 FreeBSD ports，并对其进行错误修正，以及对 CHERI 和 CheriBSD 的必要修改。我们把这个 ports 称为 **CheriBSD ports**。
 
 移植软件到 CHERI 的过程类似于将为 32 位架构开发的代码移植到 64 位架构。一个纯能力的程序只能使用 CHERI 能力和 CHERI 感知的 CPU 指令来访问内存。在这样的程序中，一个指针的大小增加到 128 位，以容纳 CHERI 能力。为了编译 C/C++ 程序，代码必须兼容 CHERI C/C++ 语义【注 24】，要求使用适当的数据类型来存储指针（例如，uintptr_t 而不是 long），并将指针的对齐方式增加到 16 字节。CHERI LLVM 可以识别 C/C++ 和 CHERI/C++ 之间的许多不兼容之处，并显示详细的警告，建议对代码进行哪些修改以使其与 CHERI 兼容。在许多情况下，开发者在修复了 CHERI LLVM 发现的所有问题后，就可以成功编译和运行他们的软件。然而，建议进行广泛的测试，以确保移植的软件不包括任何运行时的错误（例如，自定义内存分配器的错位分配）。
 
@@ -47,11 +47,11 @@ $ ./cheribuild.py --include-dependencies run-morello-purecap
 
 ## 多 ABI 支持
 
-FreeBSD 有一个被称为兼容层的功能，它为针对不同 ABI 编译的程序提供系统调用的实现，而非针对本地 ABI。例如，amd64 的 FreeBSD 内核带有一个编译的 32 位兼容层（也被称为 *freebsd32*），可以运行为 i386 编译的程序。CheriBSD 受益于这一特性，支持两种与 CHERI 相关的 ABI：CheriABI 也被称为纯能力 ABI(***MACHINE_ARCH*** aarch64c 和 riscv64c)，用于只能使用 CHERI 能力访问内存的程序，以及混合 ABI(**MACHINE_ARCH** aarch64 和 riscv64)，用于可以但不需要使用 CHERI 能力的程序。后一种 ABI 由纯能力的 CheriBSD 内核与 *freebsd64（兼容层实现，类似于 freebsd32。
+FreeBSD 有一个被称为兼容层的功能，它为针对不同 ABI 编译的程序提供系统调用的实现，而非针对本地 ABI。例如，amd64 的 FreeBSD 内核带有一个编译的 32 位兼容层（也被称为 **freebsd32**），可以运行为 i386 编译的程序。CheriBSD 受益于这一特性，支持两种与 CHERI 相关的 ABI：CheriABI 也被称为纯能力 ABI(***MACHINE_ARCH*** aarch64c 和 riscv64c)，用于只能使用 CHERI 能力访问内存的程序，以及混合 ABI(**MACHINE_ARCH** aarch64 和 riscv64)，用于可以但不需要使用 CHERI 能力的程序。后一种 ABI 由纯能力的 CheriBSD 内核与 *freebsd64（兼容层实现，类似于 freebsd32。
 
 ### 缺少的跨 ABI 支持
 
-尽管 FreeBSD 和 CheriBSD 内核实现了对多 ABI 的支持，但 FreeBSD ports 和 Poudriere 却不支持多 ABI 环境。这在 CHERI 的背景下是一个重要的问题。许多 ports 需要的依赖关系还没有针对 CHERI 进行调整。例如，Meson 和 Ninja 是常用的依赖 Python 的构建系统。由于我们目前还没有 CheriABI Python，我们无法为 CheriABI 构建这些实用程序来编译其他 port。如果 FreeBSD ports 和 Poudriere 支持编译时的跨 ABI 依赖关系，我们就可以使用混合 ABI Meson 和 Ninja 来构建那些在运行时不需要它们的 CheriABI 包。*CheriBSD ports* 一节简要地解释了我们如何设法部分地解决这个问题。
+尽管 FreeBSD 和 CheriBSD 内核实现了对多 ABI 的支持，但 FreeBSD ports 和 Poudriere 却不支持多 ABI 环境。这在 CHERI 的背景下是一个重要的问题。许多 ports 需要的依赖关系还没有针对 CHERI 进行调整。例如，Meson 和 Ninja 是常用的依赖 Python 的构建系统。由于我们目前还没有 CheriABI Python，我们无法为 CheriABI 构建这些实用程序来编译其他 port。如果 FreeBSD ports 和 Poudriere 支持编译时的跨 ABI 依赖关系，我们就可以使用混合 ABI Meson 和 Ninja 来构建那些在运行时不需要它们的 CheriABI 包。**CheriBSD ports** 一节简要地解释了我们如何设法部分地解决这个问题。
 
 ### 软件包管理器
 

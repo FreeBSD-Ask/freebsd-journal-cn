@@ -9,6 +9,6 @@
 
 **John Baldwin**
 
-《*FreeBSD Journal*》编辑委员会主席
+《FreeBSD 期刊》编辑委员会主席
 
-——《*FreeBSD Journal*》，2023 年 5/6 月
+——《FreeBSD 期刊》，2023 年 5/6 月

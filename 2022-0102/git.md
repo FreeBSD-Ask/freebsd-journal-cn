@@ -565,7 +565,7 @@ Reviewers: ashish rene
 arc diff --update <revision>
 ```
 
-其中 `<revision_id>` 是修订版 ID，格式为 DXXXXX。它可以在创建修订版本时发送到你邮箱的邮件中找到。例如，如果你的修订版位于 <https://reviews.freebsd.org/D33314，那么就使用> D33314 作为修订 ID。
+其中 `<revision_id>` 是修订版 ID，格式为 DXXXXX。它可以在创建修订版本时发送到你邮箱的邮件中找到。例如，如果你的修订版位于 <https://reviews.freebsd.org/D33314>，那么就使用 D33314 作为修订 ID。
 
 ### 提交 Bugzilla 错误报告
 

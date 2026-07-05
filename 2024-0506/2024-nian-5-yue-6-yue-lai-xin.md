@@ -57,4 +57,4 @@ Subsystem       sftp    /usr/libexec/sftp-server
 
 ---
 
-**Michael W Lucas** 是 *Networking for System Administrators* 等多本著作的作者，他还犯下了许多其他危害人类文明的罪行。其中的专栏文章集《Dear Abyss》（亲爱的深渊）即将在 Kickstarter（**译者注：美国的一间众筹平台**，该文章集在 <https://www.kickstarter.com/projects/mwlucas/dear-abyss-the-freebsd-journal-letters-column-years-1-6>）上连载，他预谋的证据确凿。详情请访问 <https://mwl.io/ks>。
+**Michael W Lucas** 是《Networking for System Administrators》等多本著作的作者，他还犯下了许多其他危害人类文明的罪行。其中的专栏文章集《Dear Abyss》（亲爱的深渊）即将在 Kickstarter（**译者注：美国的一间众筹平台**，该文章集在 <https://www.kickstarter.com/projects/mwlucas/dear-abyss-the-freebsd-journal-letters-column-years-1-6>）上连载，他预谋的证据确凿。详情请访问 <https://mwl.io/ks>。
