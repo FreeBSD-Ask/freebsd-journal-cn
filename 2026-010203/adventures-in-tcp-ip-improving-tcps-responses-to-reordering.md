@@ -64,7 +64,7 @@ RACK 现在跟踪已重传的数据量（以字节为单位）。任何时候只
 1. R. Stewart, M. Tüxen, “Adventures in TCP/IP: TCP Black Box Logging”, in The FreeBSD Journal May/June, 2024.
 2. C. R. Bennett, C. Partridge and N. Shectman, “Packet reordering is not pathological network behavior,” in IEEE/ACM Transactions on Networking, vol. 7, no. 6, pp. 789-798, Dec. 1999.
 3. R. Stewart, “Dynamic Goodput Pacing: A New Approach to Packet Pacing”, in The FreeBSD Journal November/December, 2024.
-4. R. Stewart, M. Tüxen, “RACK and Alternate TCP Stacks for FreeBSD”, in The FreeBSD 期刊 January/February, 2024.
+4. R. Stewart, M. Tüxen, “RACK and Alternate TCP Stacks for FreeBSD”, in The FreeBSD Journal January/February, 2024.
 
 ---
 
