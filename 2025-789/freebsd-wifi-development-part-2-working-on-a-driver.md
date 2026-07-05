@@ -23,7 +23,7 @@
 
 接下来我们先看看驱动是如何附加并出现在 `net.wlan.devices` 列表中的，然后再看一个数据包是如何从 **net80211** 堆栈发往 WiFi 射频的。
 
-本文将主要关注 **if_iwx** 驱动，原因有两点：第一，我对它非常熟悉，因为我曾将该驱动从 Future Crew 的源码引入 FreeBSD 树；第二，作为一个新驱动，它还有很多“低垂的果实”（容易改进的地方）。
+本文将主要关注 `if_iwx` 驱动，原因有两点：第一，我对它非常熟悉，因为我曾将该驱动从 Future Crew 的源码引入 FreeBSD 树；第二，作为一个新驱动，它还有很多“低垂的果实”（容易改进的地方）。
 
 ## 将驱动连接到硬件
 
@@ -71,7 +71,7 @@ WiFi 设备通常由一颗芯片组和一些辅助硬件组成。芯片组由 Re
 ```c
 diff --git a/sys/dev/usb/wlan/if_run.c b/sys/dev/usb/wlan/if_run.c
 index 00e005fd7d4d..97c790dd5b81 100644
- a/sys/dev/usb/wlan/if_run.c
+--- a/sys/dev/usb/wlan/if_run.c
 +++ b/sys/dev/usb/wlan/if_run.c
 @@ -324,6 +324,7 @@ static const STRUCT_USB_HOST_ID run_devs[] = {
      RUN_DEV(SITECOMEU,         RT2870_3),
@@ -123,7 +123,7 @@ ic->ic_caps =
 
 除了模式以外，iwx 还支持：WPA 加密（`IEEE80211_C_WPA`）、差分服务的多媒体扩展（`IEEE80211_C_WME`）、电源管理（`IEEE80211_C_PMGT`）、短时隙（`IEEE80211_C_SHSLOT`）、短前导码（`IEEE80211_C_SHPREAMBLE`）以及后台扫描（`IEEE80211_C_BGSCAN`）。
 
-完整的能力标志列表在 **ieee80211.h** 头文件中。驱动能声明哪些能力，既取决于硬件特性，也取决于驱动是否实现。在驱动开发阶段，某些功能（例如 WPA 硬件卸载）可能尚未实现，因此缺少某个标志并不意味着硬件不支持该特性。
+完整的能力标志列表在 `ieee80211.h` 头文件中。驱动能声明哪些能力，既取决于硬件特性，也取决于驱动是否实现。在驱动开发阶段，某些功能（例如 WPA 硬件卸载）可能尚未实现，因此缺少某个标志并不意味着硬件不支持该特性。
 
 驱动在 attach 阶段执行的第二个任务，是接管或实现 **net80211** 的功能，这通过 `iwx_attach_hook` 配置回调完成。在这里，驱动会覆盖 `ic_caps` 位字段所声明的大量特性的函数指针。
 
@@ -249,7 +249,7 @@ iwx_vap_create(struct ieee80211com *ic, const char name[IFNAMSIZ], int unit,
 
 到目前为止，我们已经覆盖了足够的驱动部分，可以用 `ifconfig` 启动接口，并让操作系统开始发送数据包。
 
-在测试接口时，我们可能会使用 ifconfig 按如下流程操作：
+在测试接口时，我们可能会使用 `ifconfig` 按如下流程操作：
 
 ```sh
 # ifconfig wlan0 ssid open-network up
@@ -270,7 +270,7 @@ ic->ic_transmit = iwx_transmit;
 
 `ifconfig` 命令中的 `up` 部分最终会调用 `ic_parent` 回调。对于 iwx，这个回调是 `iwx_parent`：
 
-```sh
+```c
 static void
 iwx_parent(struct ieee80211com *ic)
 {

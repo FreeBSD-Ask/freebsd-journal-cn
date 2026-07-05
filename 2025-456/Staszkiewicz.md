@@ -1,6 +1,6 @@
 # 采访 Kajetan Staszkiewicz
 
-- [Starting FreeBSD Development An Interview with Kajetan Staszkiewicz](https：//freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/starting-freebsd-development/)
+- [Starting FreeBSD Development An Interview with Kajetan Staszkiewicz](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/starting-freebsd-development/)
 - 作者：Tom Jones
 
 ![采访](https://freebsdfoundation.org/wp-content/uploads/2025/07/interview_header-1.png)
@@ -13,7 +13,7 @@
 
 网络共享由一台运行 IPchains（注：一款网络数据包过滤与地址转换工具） 的 Linux 机器来完成，最初由网吧的系统管理员提供，很快就被我们网络里年长的朋友搭建的另一套系统取代。后来我接手管理，用 Perl 写了几段 CGI 脚本，通过 Web 界面管理 DHCP 服务器和流量整形。
 
-凭借这些经验，我在一家公司找到了兼职，网络架构和我们当初的类似，不过是商业用途。那时我在雅盖隆大学（注：位于波兰克拉科夫，由卡齐米日三世创建于 1364 年）学习计算机科学。一位同学向我介绍了 FreeBSD，大概是 5.0 版。在新工作中，路由和流量整形由 Linux 系统完成，但 FreeBSD 的 jail 看起来是托管平台的完美方案。我们需要提供网页、电子邮件和 Webmail 等服务。虚拟化尚未普及， jail 帮助我们实现了这些服务的隔离。
+凭借这些经验，我在一家公司找到了兼职，网络架构和我们当初的类似，不过是商业用途。那时我在雅盖隆大学（注：位于波兰克拉科夫，由卡齐米日三世创建于 1364 年）学习计算机科学。一位同学向我介绍了 FreeBSD，大概是 5.0 版。在新工作中，路由和流量整形由 Linux 系统完成，但 FreeBSD 的 Jail 看起来是托管平台的完美方案。我们需要提供网页、电子邮件和 Webmail 等服务。虚拟化尚未普及， Jail 帮助我们实现了这些服务的隔离。
 
 我的下一份工作是在一家大多数服务都使用 FreeBSD 的公司，甚至有员工大胆地在工作站上运行 FreeBSD。
 
@@ -21,7 +21,7 @@
 
 **TJ：** 你是如何开始提交第一个 FreeBSD 贡献的？当时你如何选择起步的项目？
 
-**KS：** 选择很简单：修复那些出问题的部分。在 \$WORK，我们依赖 pf(4) 的源跟踪，期间发现一个棘手的 Bug：删除源节点时，每个源节点会扫描所有状态。数百个源节点与数十万条状态会导致内核代码出现大量循环，系统因此被锁死。
+**KS：** 选择很简单：修复那些出问题的部分。在 \$WORK，我们依赖 `pf(4)` 的源跟踪，期间发现一个棘手的 Bug：删除源节点时，每个源节点会扫描所有状态。数百个源节点与数十万条状态会导致内核代码出现大量循环，系统因此被锁死。
 
 在 glebius@ 的帮助下，我成功修复了该问题，并提交了我的第一个补丁到 FreeBSD。
 
@@ -61,4 +61,4 @@
 
 **Tom Jones** 是一位致力于保持高效网络栈的 FreeBSD 提交者。
 
-**Kajetan Staszkiewicz** 是专注于网络和虚拟化的系统管理员，偶尔为 FreeBSD 的 pf(4) 做出贡献。
+**Kajetan Staszkiewicz** 是专注于网络和虚拟化的系统管理员，偶尔为 FreeBSD 的 `pf(4)` 做出贡献。
