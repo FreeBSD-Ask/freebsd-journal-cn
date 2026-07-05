@@ -13,15 +13,15 @@ FreeBSD 的声音支持始于 1993 年，当时 Jordan K. Hubbard 将通用 Linu
 
 FreeBSD 的声音 API 被称为 OSS，即 “Open Sound System”（开放声音系统）。有趣的是，它曾经也是 Linux 的默认声音 API，后被 ALSA 取代。而 FreeBSD 仍在使用 OSS，它通过标准设备文件提供了简单清晰的接口（`/dev/dsp*` 对应声卡，`/dev/mixer*` 对应混音器），并通过少量常用 POSIX 系统调用进行操作：
 
-| 系统调用                          | 说明                                                                                                                                                            |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| open(2)                       | 打开设备。                                                                                                                                                           |
-| close(2)                      | 关闭设备。                                                                                                                                                           |
-| read(2)                       | 录制音频。                                                                                                                                                           |
-| write(2)                      | 播放音频。                                                                                                                                                           |
-| ioctl(2)                      | 查询或操作设置（采样率、格式、音量等）。                                                                                                                                            |
+| 系统调用 | 说明 |
+| --- | --- |
+| open(2) | 打开设备。 |
+| close(2) | 关闭设备。 |
+| read(2) | 录制音频。 |
+| write(2) | 播放音频。 |
+| ioctl(2) | 查询或操作设置（采样率、格式、音量等）。 |
 | select(2), poll(2), kqueue(2) | 事件轮询。`kqueue(2)` 为 FreeBSD 独有（从 [15.0 版本起](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/vox-freebsd-how-sound-works/) 支持）。 |
-| mmap(2)                       | 内存映射 I/O。                                                                                                                                                       |
+| mmap(2) | 内存映射 I/O。 |
 
 官方手册可在此获取：[http://manuals.opensound.com/developer/](http://manuals.opensound.com/developer/)
 
