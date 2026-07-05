@@ -220,4 +220,4 @@ Exporting counters
 
 ---
 
-**David Chisnall** 的背景涵盖操作系统、编译器、硬件与安全领域。他是 *The Definitive Guide to the Xen Hypervisor* 的作者，自 2008 年起担任 LLVM 提交者，并在 2012 年至 2016 年期间担任 FreeBSD 核心小组成员。他于 2012 年加入 CHERI 项目，负责剑桥大学该研究方向中的编译器与语言部分。2018 年至 2023 年，他继续在微软从事 CHERI 相关工作，包括主导创建 CHERIoT。他现为 SCI Semiconductor 的联合创始人兼系统架构总监，该公司生产 CHERIoT SoC，同时也是 CHERIoT 平台开源项目的共同维护者。
+**David Chisnall** 的背景涵盖操作系统、编译器、硬件与安全领域。他是《The Definitive Guide to the Xen Hypervisor》的作者，自 2008 年起担任 LLVM 提交者，并在 2012 年至 2016 年期间担任 FreeBSD 核心小组成员。他于 2012 年加入 CHERI 项目，负责剑桥大学该研究方向中的编译器与语言部分。2018 年至 2023 年，他继续在微软从事 CHERI 相关工作，包括主导创建 CHERIoT。他现为 SCI Semiconductor 的联合创始人兼系统架构总监，该公司生产 CHERIoT SoC，同时也是 CHERIoT 平台开源项目的共同维护者。

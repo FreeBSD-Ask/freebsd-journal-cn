@@ -11,7 +11,7 @@
 
 我于 11 月 8 日（星期五）进行了演讲，[Learning as We Grow: Managing FreeBSD Infrastructure and Laptop Projects at The FreeBSD Foundation（边成长边学习：FreeBSD 基金会的基础设施与笔记本项目管理）](https://www.youtube.com/watch?v=2IwqWiC4KZg)。听众提出了很多深思熟虑的问题，我也非常感激有机会分享我们如何构建和资助这些项目的见解。
 
-让我印象特别深刻的是 Marshall McKusick 的演讲 *The History of the BSD Daemon*，它为我们提供了有关 BSD 历史的有趣见解。他还带来了既往 BSD 会议的 T 恤，并将其赠送给与会者，这一温馨的举动令所有人感动。
+让我印象特别深刻的是 Marshall McKusick 的演讲《The History of the BSD Daemon》，它为我们提供了有关 BSD 历史的有趣见解。他还带来了既往 BSD 会议的 T 恤，并将其赠送给与会者，这一温馨的举动令所有人感动。
 
 Santana Row 为此次峰会提供了一个充满活力且便利的环境。NetApp 大楼宽敞而友好，使得与人会面和进行有意义的讨论变得十分容易。活动组织得井然有序，这种环境也促进了富有成效的交流。
 

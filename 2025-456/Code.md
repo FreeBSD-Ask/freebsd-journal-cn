@@ -9,7 +9,7 @@
 
 [AppJail Director](https://github.com/DtxdF/director) 是一款基于 AppJail 的多 jail 环境管理工具，使用简单的 YAML 配置文件定义如何配置组成应用程序的一个或多个 jail。有了 Director 文件，你只需一条命令 **appjail-director up** 即可创建并启动你的应用程序。
 
-Director 是 AppJail "一切皆代码"理念的首次实践。它将 jail 组织成项目，让你以声明式方式创建含有一个或多个 jail 的项目；当你修改了该配置文件或相关文件（例如 Makejail 文件），Director 会检测到变更，并毫不犹豫地销毁并重新创建 jail。听起来有点激进，但用 *The Ephemeral Concept*（流变的概念）来解释最为恰当：
+Director 是 AppJail "一切皆代码"理念的首次实践。它将 jail 组织成项目，让你以声明式方式创建含有一个或多个 jail 的项目；当你修改了该配置文件或相关文件（例如 Makejail 文件），Director 会检测到变更，并毫不犹豫地销毁并重新创建 jail。听起来有点激进，但用《The Ephemeral Concept》（流变的概念）来解释最为恰当：
 
 Director 将每个 jail 视为"流变"的。这并不意味着 jail 停止或系统重启后数据会丢失，而是意味着 Director 认为销毁 jail 是安全的，因为你已经明确区分了应持久保存的数据和被视为流变的数据。
 
