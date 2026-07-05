@@ -12,7 +12,7 @@ FreeBSD 基金会为能服务于一个友善的国际化社区而自豪。我们
 
 不仅基金会自己的团队会出席活动，我们的旅行资助计划（Travel Grant Program）也让其他社区成员得以出席。该计划旨在让 FreeBSD 社区成员面对面交流以推进项目发展，同时传播 FreeBSD。旅行资助面向需要经济援助才能参加与 FreeBSD 开发与推广相关会议的社区成员开放。由于基金会董事会与工作人员规模有限，我们依靠 FreeBSD 社区出席我们无法到场的活动。你可在以下网址了解我们的旅行资助计划：<https://www.freebsdfoundation.org/what-we-do/grants/travel-grants/>
 
-出席活动或在聚会上演讲，是 FreeBSD 基金会帮助提升 FreeBSD 项目全球认知度的部分方式。但是，没有你我们做不到这些。如果你想在某活动上演讲却不知从何入手，请告诉我们，我们可以提供帮助。如果你正在为本地聚会寻找演讲者，我们也能帮忙。我们在以下地址提供了宣传材料的 PDF：<https://www.freebsdfoundation.org/what-we-do/education-advocacy/。如果你有兴趣把这些材料翻译成你偏好的语言，我们也可以提供原始文件。最后，如果你是一位> FreeBSD 用户，觉得自己所在的地区缺乏 FreeBSD 推广，请联系我们（<marketing@freebsdfoundation.org>）。
+出席活动或在聚会上演讲，是 FreeBSD 基金会帮助提升 FreeBSD 项目全球认知度的部分方式。但是，没有你我们做不到这些。如果你想在某活动上演讲却不知从何入手，请告诉我们，我们可以提供帮助。如果你正在为本地聚会寻找演讲者，我们也能帮忙。我们在以下地址提供了宣传材料的 PDF：<https://www.freebsdfoundation.org/what-we-do/education-advocacy/>。如果你有兴趣把这些材料翻译成你偏好的语言，我们也可以提供原始文件。最后，如果你是一位 FreeBSD 用户，觉得自己所在的地区缺乏 FreeBSD 推广，请联系我们（<marketing@freebsdfoundation.org>）。
 
 感谢你持续支持 FreeBSD 基金会。
 

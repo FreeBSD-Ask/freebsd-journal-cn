@@ -12,7 +12,7 @@ Openhelp • 8 月 12–16 日 • 俄亥俄州辛辛那提 <https://conf.openhe
 
 TM
 
-JOURNAL
+期刊
 
 订购过刊 @ <www.freebsdfoundation.org/journal>
 
