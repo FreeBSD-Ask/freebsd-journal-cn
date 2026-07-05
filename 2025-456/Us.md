@@ -170,7 +170,7 @@ graph netgraph {
 …
 ```
 
-这段文本可以直接用 `dot(1)` 命令（来自 `graphics/graphviz` Port）转化为 SVG 或 PNG 图像。下面是一个简单 Netgraph 配置的清理后输出示例。
+这段文本可以直接用 `dot(1)` 命令（来自 `graphics/graphviz` Port）转化为 SVG 或 PNG 图像。下面是简单 Netgraph 配置的清理后输出示例。
 
 ![简单 Netgraph 配置的清理后输出示例](https://github.com/user-attachments/assets/669531f9-ef7f-4a77-bec6-5f321be7412a)
 
