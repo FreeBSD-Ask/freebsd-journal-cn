@@ -11,7 +11,7 @@
 
 把一根基于 RTL2832 的接收棒插到笔记本电脑上后，我开始收到温度计的数据，同时也收到了邻居的设备，甚至是路过汽车的胎压监测系统（TPMS）的数据。
 
-好在 rtl_433 软件已经支持将数据发布到 MQTT 服务器。Home Assistant 里本来就有一项用于 ZigBee 网络的 MQTT 服务，所以只需要创建一新用户来发布数据即可。
+好在 rtl_433 软件已经支持将数据发布到 MQTT 服务器。Home Assistant 里本来就有一项用于 ZigBee 网络的 MQTT 服务，所以只需要创建新用户来发布数据即可。
 
 ```sh
 /var/log/rtl_433.log
@@ -174,7 +174,7 @@ else
 fi
 ```
 
-最后，目标镜像会被挂载，并使用 **pkg–chroot** 选项安装软件包，这使我们能够优雅地为不同的硬件平台安装软件包。需要注意的是，目标系统上必须存在正确的 **resolv.conf** 文件。
+最后，目标镜像会被挂载，并使用 `pkg -chroot` 选项安装软件包，这使我们能够优雅地为不同的硬件平台安装软件包。需要注意的是，目标系统上必须存在正确的 **resolv.conf** 文件。
 
 ```sh
 # 挂载目标镜像
@@ -187,7 +187,7 @@ cp /etc/resolv.conf $IMG_MNT_DIR/etc/
 pkg --chroot $IMG_MNT_DIR install -y $TARGET_PACKAGES
 ```
 
-正在目标系统上启用服务。同样，我们使用 **sysrc** 工具的一个便捷选项，直接在已挂载的镜像上访问配置文件。虽然不是严格必须的，但我们还启用了远程 syslog，它应在目标主机上通过 `-a <peer>` 启用。这一功能是在调试系统时启用的，当时系统已经挂起了一天半，如上所述。
+正在目标系统上启用服务。同样，我们使用 `sysrc` 工具的一个便捷选项，直接在已挂载的镜像上访问配置文件。虽然不是严格必须的，但我们还启用了远程 syslog，它应在目标主机上通过 `-a <peer>` 启用。这一功能是在调试系统时启用的，当时系统已经挂起了一天半，如上所述。
 
 ```sh
 # 对目标启用服务
@@ -224,7 +224,7 @@ cp -a  $CUSTOM_DIR/* $IMG_MNT_DIR
 
 时区的设置很简单，只需将定义复制到目标系统的 `/etc/localtime` 即可。
 
-有趣的是 —— 在桌面机器上复制 CET 定义会导致 Mozilla 产品出现问题。比如在 Thunderbird 中，邮件列表里的时间会显示为 UTC，但打开邮件后，时间又显示正确。在这种情况下，更好的做法是使用 **tzsetup** 并指定正确的城市，或者复制某个城市的时区定义。我至今仍需要想办法报告这个 bug。
+有趣的是 —— 在桌面机器上复制 CET 定义会导致 Mozilla 产品出现问题。比如在 Thunderbird 中，邮件列表里的时间会显示为 UTC，但打开邮件后，时间又显示正确。在这种情况下，更好的做法是使用 `tzsetup` 并指定正确的城市，或者复制某个城市的时区定义。我至今仍需要想办法报告这个 bug。
 
 ```sh
 # 设置时区
@@ -258,7 +258,7 @@ echo "The password for the user freebsd is \"$TARGET_USER_PW\""
 echo "The password is also available in the file \""$IMG_TARGET_DIR/$TARGET_IMG".pwd\""
 ```
 
-在自定义部分中，我们准备了服务的配置文件。**Monit** 用于监控 **rtl_433** 的状态，并在需要时重新启动它。下面是 `monitrc` 中定义 **rtl_433** 服务的几行配置：
+在自定义部分中，我们准备了服务的配置文件。`Monit` 用于监控 `rtl_433` 的状态，并在需要时重新启动它。下面是 `monitrc` 中定义 `rtl_433` 服务的几行配置：
 
 ```sh
 # rtl_433
@@ -267,7 +267,7 @@ start program = "/usr/local/etc/rc.d/rtl_433 start" with timeout 60 seconds
 stop program = "/usr/local/etc/rc.d/rtl_433 stop"
 ```
 
-当然，我们还必须配置 **rtl_433**。与示例配置相比，差异如下：
+当然，我们还必须配置 `rtl_433`。与示例配置相比，差异如下：
 
 ```sh
 output mqtt://<homeassistant>,usr=<mqtt user>,pass=<mqtt user pwd> ,retain=0,devices=rtl_433[/model][/id]
@@ -275,7 +275,7 @@ output json:/var/log/rtl_433.log
 output log
 ```
 
-输出被发送到可供 Home Assistant 访问的 MQTT broker，在我的场景中，它运行在同一台虚拟机中。**retain** 标志被设为 `false`，因为我不希望用瞬时设备的数据弄乱 MQTT 主题，并且可以接受在 Home Assistant 中重新发现设备的速度慢一些。
+输出被发送到可供 Home Assistant 访问的 MQTT broker，在我的场景中，它运行在同一台虚拟机中。`retain` 标志被设为 `false`，因为我不希望用瞬时设备的数据弄乱 MQTT 主题，并且可以接受在 Home Assistant 中重新发现设备的速度慢一些。
 
 JSON 输出也会写入 `/var/log` 中的 JSON 文件。
 
@@ -291,7 +291,7 @@ rtl_433 配置文件中的最后一行才是关键。在我的原型系统里，
 
 自上次暴风雨和停电以来，该系统已经保持了 57 天的正常运行时间。在那次事件中，它在无人干预的情况下自动完成了启动。该系统可靠、易于复制，并且能够轻松升级到新的 FreeBSD 版本。只需更换 SD 卡，就可以轻松测试新版本或新配置，并在需要时恢复到原有状态。
 
-日后，我希望探索使用 **nanobsd** 进行开发的可能性，并考虑这个项目是否可以作为深入研究 **Crochet/Poudriere 镜像创建**的一个好机会。
+日后，我希望探索使用 `nanobsd` 进行开发的可能性，并考虑这个项目是否可以作为深入研究 `Crochet/Poudriere` 镜像创建的一个好机会。
 
 ---
 
