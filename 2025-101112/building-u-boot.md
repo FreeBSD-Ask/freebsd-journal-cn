@@ -54,7 +54,7 @@ $(obj)/$(SPL_BIN)-align.bin: $(obj)/$(SPL_BIN).bin
         @dd if=$< of=$@ conv=block,sync bs=4 2>/dev/null;
 ```
 
-如果你去掉输出重定向到 `/dev/null`，你会看到 `dd` 的报错信息：
+如果你去掉输出重定向到 **/dev/null**，你会看到 `dd` 的报错信息：
 
 ```sh
 dd: record operations require cbs
