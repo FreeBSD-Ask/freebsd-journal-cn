@@ -156,7 +156,7 @@ netmap-epair0a                 1   up          9000/0/0/0
 netmap-epair1a                 2   up          9000/0/0/0
 ```
 
-配置好接口后，我们可以通过使用 ping 命令来测试 VPP 的功能：
+配置好接口后，我们可以使用 ping 命令测试 VPP 的功能：
 
 ```sh
 vpp# ping 10.1.0.2
