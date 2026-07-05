@@ -92,13 +92,13 @@ host # jexec router
 
 ## VPP 的基本命令
 
-VPP 非常灵活，提供通过配置文件、命令行接口和具有成熟 Python 绑定的 API 进行配置。VPP 需要一个基础配置文件，告诉它从哪里获取命令，以及它使用的控制文件的名称（如果这些文件不是默认的）。我们可以在命令行中将一个最小配置文件作为 VPP 的参数之一。对于这个示例，我们让 VPP 进入交互模式——提供给我们一个 CLI，并告诉 VPP 只加载我们将使用的插件（netmap），这是一个合理的默认设置。
+VPP 非常灵活，支持通过配置文件、命令行接口和具备成熟 Python 绑定的 API 来配置。VPP 需要基础配置，告诉它从哪里获取命令，以及它使用的控制文件的名称（如果这些文件不是默认的）。我们可以在命令行中将最小配置文件作为 VPP 的参数。对于这个示例，我们让 VPP 进入交互模式——提供给我们 CLI，并告诉 VPP 只加载我们将使用的插件（netmap），这是合理的默认设置。
 
 如果我们不禁用所有插件，我们将需要配置机器使用 DPDK，或者单独禁用该插件。禁用插件的语法与启用 netmap 插件的语法相同。
 
 ```sh
-host # vpp “unix { interactive} plugins { plugin default { disable } plugin
-netmap_plugin.so { enable } plugin ping_plugin.so { enable } }”
+host # vpp "unix { interactive} plugins { plugin default { disable } plugin
+netmap_plugin.so { enable } plugin ping_plugin.so { enable } }"
       _______     _       _   _____  ___
     __/ __/ _ \  (_)__   | | / / _ \/ _ \
     _/ _// // / / / _ \  | |/ / ___/ ___/
