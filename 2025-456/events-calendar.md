@@ -22,7 +22,7 @@
 
 2025 年 10 月 25-28 日
 美国俄勒冈州波特兰
-<https://openzfs.org/wiki/OpenZFS_Developer_Summit_2025>
+[https://openzfs.org/wiki/OpenZFS_Developer_Summit_2025](https://openzfs.org/wiki/OpenZFS_Developer_Summit_2025)
 
 今年的用户峰会将探讨广泛的主题，旨在支持并连接 OpenZFS 社区。
 
