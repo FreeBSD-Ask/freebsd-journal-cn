@@ -37,16 +37,3 @@
 
 **George Neville-Neil**
 FreeBSD 基金会董事会主席
-
----
-
-## 出版信息
-
-FreeBSD 期刊（ISBN：978-0-615-88479-0）每年出版 6 期（1 月/2 月、3 月/4 月、5 月/6 月、7 月/8 月、9 月/10 月、11 月/12 月）。
-
-由 FreeBSD Foundation 出版，
-5757 Central Ave., Suite 201, Boulder, CO 80301
-电话：720/207-5142 • 传真：720/222-2350
-电子邮件：<info@freebsdfoundation.org>
-
-版权 © 2018 FreeBSD Foundation。保留所有权利。未经出版商书面许可，不得全部或部分复制本杂志。

@@ -1,7 +1,7 @@
 # TCP/IP 历险记：改进 TCP 对重排序的响应
 
 - 原文：[Adventures in TCP/IP: Improving TCP’s Responses to Reordering](https://freebsdfoundation.org/our-work/journal/browser-based-edition/laptop-desktop/adventures-in-tcp-ip-improving-tcps-responses-to-reordering/)
-- 作者：Randall Stewart
+- 作者：**Randall Stewart**
 
 本专栏与本系列中的其他专栏略有不同。它介绍了使用 TCP 时出现的一系列问题，并提供了如何排查这些问题的详细过程，说明了之前专栏中介绍的信息。它还将参考本系列之前专栏中介绍的一些 TCP 机制。最后，将把所有内容联系起来，不仅展示问题是如何解决的，还展示了由于发现并修复了驱动程序 bug，RACK 栈如何变得更能抵抗数据包重排序。
 

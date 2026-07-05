@@ -22,26 +22,6 @@ Hiroki Sato • FreeBSD Foundation 董事，AsiaBSDCon 主席，FreeBSD Core Tea
 
 Robert Watson • FreeBSD Foundation 董事，TrustedBSD Project 创始人，剑桥大学讲师
 
-**出版信息**
-
-出版商：Walter Andrzejewski（<walter@freebsdjournal.com>）
-
-主编：James Maurer（<jmaurer@freebsdjournal.com>）
-
-艺术总监：Dianne M. Kischitz（<dianne@freebsdjournal.com>）
-
-办公室管理员：Michael Davis（<davism@freebsdjournal.com>）
-
-广告销售：Walter Andrzejewski（<walter@freebsdjournal.com>），电话 888/290-9469
-
-《FreeBSD 期刊》（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
-
-由 FreeBSD Foundation 出版，地址：PO Box 20247, Boulder, CO 80308，电话 720/207-5142，传真 720/222-2350，电子邮件 <info@freebsdfoundation.org>。版权所有 © 2015 FreeBSD Foundation。保留所有权利。
-
-未经出版商书面许可，本杂志不得全部或部分复制。
-
----
-
 ## 在岁末之际
 
 我们在此驻足，衷心祝愿你在 2016 年充满希望、健康与繁荣。

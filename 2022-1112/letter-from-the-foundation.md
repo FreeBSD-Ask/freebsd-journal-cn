@@ -37,9 +37,3 @@
 **Deb Goodkin**
 执行董事
 FreeBSD Foundation
-
-FreeBSD 期刊由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #103-107, Boulder, CO 80304
-电话：720/207-5142，传真：720/222-2350
-邮箱：<info@freebsdfoundation.org>
-
-Copyright © 2022 by FreeBSD Foundation. All rights reserved. 未经出版商书面许可，本杂志不得全部或部分复制。

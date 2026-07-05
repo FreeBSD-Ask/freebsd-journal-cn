@@ -36,34 +36,6 @@
 
 ---
 
-## 出版团队
-
-**出版人**
-
-Walter Andrzejewski　<walter@freebsdjournal.com>
-
-**自由撰稿编辑**
-
-James Maurer　<jmaurer@freebsdjournal.com>
-
-**文字编辑**
-
-Annaliese Jakimides
-
-**美术总监**
-
-Dianne M. Kischitz　<dianne@freebsdjournal.com>
-
-**办公室管理员**
-
-Michael Davis　<davism@freebsdjournal.com>
-
-**广告销售**
-
-Walter Andrzejewski　<walter@freebsdjournal.com>　电话 888/290-9469
-
----
-
 2017 年对《FreeBSD 期刊》而言正成为精彩的一年。今年上半年，我们正在筹备关于安全、配置管理和资源控制的各期。今年余下时间的内容，我们暂时保密。
 
 希望 2017 年能在 BSD 活动上见到大家！
@@ -76,10 +48,3 @@ George Neville-Neil
 
 FreeBSD 基金会董事
 
----
-
-《FreeBSD 期刊》（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD 基金会出版，地址：5757 Central Ave., Suite 201, Boulder, CO 80301，电话：720/207-5142，传真：720/222-2350，电子邮件：<info@freebsdfoundation.org>。版权所有 © 2017 FreeBSD Foundation。保留所有权利。
-
-未经出版商书面许可，本杂志不得全部或部分复制。
-
-S&W Publishing LLC　PO Box 408, Belfast, Maine 04915

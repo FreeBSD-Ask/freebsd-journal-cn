@@ -20,23 +20,6 @@
 - Benedict Reuschling——FreeBSD 基金会副会长、FreeBSD 文档提交者
 - Robert Watson——FreeBSD 基金会理事、TrustedBSD 项目创始人、剑桥大学高级讲师
 
-**S&W Publishing LLC**
-
-P.O. Box 408, Belfast, Maine 04915
-
-- 出版人：Walter Andrzejewski（<walter@freebsdjournal.com>）
-- 特约主编：James Maurer（<jmaurer@freebsdjournal.com>）
-- 文字编辑：Annaliese Jakimedis
-- 美术总监：Dianne M. Kischitz（<dianne@freebsdjournal.com>）
-- 办公室行政：Michael Davis（<davism@freebsdjournal.com>）
-- 广告销售：Walter Andrzejewski（<walter@freebsdjournal.com>）——电话 888/290-9469
-
-FreeBSD 期刊（ISBN：978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 5757 Central Ave., Suite 201, Boulder, CO 80301。电话：720/207-5142 • 传真：720/222-2350。电子邮件：<info@freebsdfoundation.org>。版权 © 2016 FreeBSD Foundation。保留所有权利。
-
-未经出版人书面许可，本刊不得全部或部分复制。
-
----
-
 又到了 FreeBSD 基金会（FreeBSD 期刊的赞助方）呼吁大家为年终筹款活动捐款的时节。读者所知，FreeBSD 基金会支持 FreeBSD 项目的方方面面，而不仅是本刊。2016 年我们赞助了 BSD 会议，包括 AsiaBSDCon、BSDCan、EuroBSD，并在非 BSD 活动上开展了大量外联工作，使我们不仅能触及已知 FreeBSD 的人，也能触及应该更多了解 FreeBSD 的人。谈到外联，我想鼓励本刊每位读者把本期拿给朋友和同事看，并鼓励他们订阅，这也是壮大 FreeBSD 项目的另一种方式。
 
 继续外联话题，本期 NYC*BUG（纽约市 BSD 用户组）的 George Rosamond 撰文讲述如何创建 BSD 用户组。用户组是开源项目的根基之一。通过会议、演讲与本地会议，用户组让新人结识在同一软件上工作的人。如果你曾考虑创建 BSD 用户组，这篇文章不容错过。

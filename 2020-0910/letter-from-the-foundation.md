@@ -1,23 +1,5 @@
 # 基金会来信
 
-每年出版六期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
-由 FreeBSD Foundation 出版，
-3980 Broadway St. STE #103-107, Boulder, CO 80304
-电话：720/207-5142 • 传真：720/222-2350
-邮箱：<info@freebsdfoundation.org>
-版权所有 © 2020 FreeBSD Foundation。保留所有权利。未经出版商书面许可，不得全部或部分复制本杂志。
-
-出版人 • Walter Andrzejewski
-<walter@freebsdjournal.com>
-主编 • James Maurer
-<jmaurer@freebsdjournal.com>
-文字编辑 • Annaliese Jakimides
-设计与制作 • Reuter & Associates
-广告销售 • Walter Andrzejewski
-<walter@freebsdjournal.com>
-致电 888/290-9469
-P O BOX 408, BELFAST, MAINE 04915
-
 JOURNAL 编辑委员会
 
 - John Baldwin：FreeBSD 开发者，FreeBSD 核心团队成员，FreeBSD Core Team 主席

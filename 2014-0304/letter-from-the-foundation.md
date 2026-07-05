@@ -28,22 +28,3 @@
 
 FreeBSD 期刊
 
----
-
-**出版信息**
-
-SWP & PUBLISHING LLC
-PO BOX 408, BELFAST, MAINE 04915
-
-- 出版人：Walter Andrzejewski，<walter@FreeBSDjournal.com>
-- 主编：James Maurer，<jmaurer@FreeBSDjournal.com>
-- 艺术总监：Dianne M. Kischitz，<dianne@FreeBSDjournal.com>
-- 办公室管理员：Cindy DeBeck，<cindy@FreeBSDjournal.com>
-- 广告销售：Walter Andrzejewski，<walter@FreeBSDjournal.com>，致电 888/290-9469
-
-FreeBSD 期刊（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
-由 FreeBSD Foundation 出版，PO Box 20247, Boulder, CO 80308
-电话：1/720-207-5142 • 传真：1/720-222-2350
-电子邮件：<board@freebsdfoundation.org>
-
-版权所有 © 2014 FreeBSD Foundation。保留所有权利。未经出版商书面许可，不得全部或部分复制本杂志。

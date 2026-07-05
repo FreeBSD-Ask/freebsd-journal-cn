@@ -145,11 +145,7 @@ $ cloudabi-run -e hello < hello.yaml
 Hello, world!
 ```
 
-TM
-
 ## 更好的 C++ 支持
-
-邮箱 <walter@freebsdjournal.com> 或致电 888/290-9469
 
 CloudABI 最初开发时，我们的重点是让 C 编写的代码工作。在 CloudABI 的 C 库变得相对完整以及相当数量用 C 编写的软件包开始出现后，我们将重点转向改善将 C++ 编写的软件移植到 CloudABI 的体验。
 
