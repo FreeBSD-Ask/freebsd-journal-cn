@@ -2,27 +2,6 @@
 
 **来自董事会**
 
-## 编辑委员会
-
-- **John Baldwin** — FreeBSD 开发者，FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会联席主席。
-- **Brooks Davis** — SRI International 高级计算机科学家，剑桥大学访问工业研究员，FreeBSD Core Team 成员。
-- **Bryan Drewery** — EMC Isilon 高级软件工程师，FreeBSD Portmgr 团队成员，FreeBSD Committer。
-- **Justin Gibbs** — FreeBSD 基金会创始人，FreeBSD 基金会董事会董事，Facebook 软件工程师。
-- **Daichi Goto** — BSD Consulting Inc.（东京）董事。
-- **Joseph Kong** — Dell EMC 高级软件工程师，《FreeBSD Device Drivers》作者。
-- **Steven Kreuzer** — FreeBSD Ports 团队成员。
-- **Dru Lavigne** — iXsystems 存储工程总监，《BSD Hacks》和《The Best of FreeBSD Basics》作者。
-- **Michael W Lucas** — 《Absolute FreeBSD》作者。
-- **Ed Maste** — FreeBSD 基金会项目发展总监。
-- **Kirk McKusick** — FreeBSD 基金会董事会财务主管，《Design and Implementation》系列图书主要作者。
-- **George V. Neville-Neil** — FreeBSD 基金会董事会主席，《Design and Implementation of the FreeBSD Operating System》合著者。
-- **Philip Paeps** — FreeBSD 基金会董事会秘书，FreeBSD Committer，独立顾问。
-- **Hiroki Sato** — FreeBSD 基金会董事会董事，AsiaBSDCon 主席，FreeBSD Core Team 成员，东京工业大学助理教授。
-- **Benedict Reuschling** — FreeBSD 基金会董事会副主席，FreeBSD 文档 Committer，FreeBSD Core Team 成员。
-- **Robert N. M. Watson** — FreeBSD 基金会董事会董事，TrustedBSD 项目创始人，剑桥大学高级讲师。
-
----
-
 欢迎来到 2018 年最后一期 FreeBSD 期刊，以及 FreeBSD 12.0 的发布。但首先，我们有一个重大公告。从 2019 年 1 月/2 月期开始，FreeBSD 期刊将向所有人免费。
 
 是的，免费。

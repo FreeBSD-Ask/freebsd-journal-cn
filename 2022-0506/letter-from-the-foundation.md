@@ -3,27 +3,6 @@
 - 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2022/05/foundation_letter.pdf)
 - 作者：John Baldwin、编辑委员会
 
-## 编委会
-
-- **John Baldwin**——FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会主席
-- **Tom Jones**——FreeBSD 开发者，阿伯丁大学互联网工程师与研究员
-- **Ed Maste**——FreeBSD 基金会技术高级总监，FreeBSD Core Team 成员
-- **Benedict Reuschling**——FreeBSD 文档提交者，FreeBSD Core Team 成员
-- **Mariusz Zaborski**——FreeBSD 开发者
-
-## 顾问委员会
-
-- **Anne Dickison**——FreeBSD 基金会市场总监
-- **Justin Gibbs**——FreeBSD 基金会创始人，FreeBSD 基金会董事会主席与财务主管
-- **Daichi Goto**——BSD Consulting Inc.（东京）董事
-- **Allan Jude**——Klara Inc. CTO，该公司是全球 FreeBSD 专业服务与支持公司
-- **Dru Lavigne**——《BSD Hacks》与《The Best of FreeBSD Basics》作者
-- **Michael W Lucas**——《Absolute FreeBSD》、《FreeBSD Mastery》系列、《git commit murder》等 40 余本著作的作者
-- **Kirk McKusick**——《The Design and Implementation》系列丛书主要作者
-- **George Neville-Neil**——前 FreeBSD 基金会董事会主席，《The Design and Implementation of the FreeBSD Operating System》合著者
-- **Hiroki Sato**——FreeBSD 基金会董事会董事，AsiaBSDCon 主席，东京工业大学助理教授
-- **Robert N. M. Watson**——FreeBSD 基金会董事会董事，TrustedBSD 项目创始人，剑桥大学高级讲师
-
 ## 欢迎阅读《FreeBSD 期刊》五/六月刊！
 
 计算机是有用的工具，能自动化许多任务。然而，有时事情会出错，原因可能是自然灾害、硬件故障、软件缺陷或配置错误。（这四种我都至少留有伤疤。）Daniel Bell 提出了一种策略，可用于构建系统，使其在面对此类故障时具有弹性。

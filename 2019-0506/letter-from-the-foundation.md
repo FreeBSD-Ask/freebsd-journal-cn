@@ -14,24 +14,3 @@ George Neville-Neil
 
 John Baldwin
 
----
-
-## 编辑委员会
-
-| 姓名 | 职务简介 |
-| ---- | -------- |
-| John Baldwin | FreeBSD 开发者，FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会主席。 |
-| Bryan Drewery | EMC Isilon 高级软件工程师，FreeBSD Portmgr Team 成员，FreeBSD Committer。 |
-| Justin Gibbs | FreeBSD Foundation 创始人，FreeBSD Foundation 主席，Facebook 软件工程师。 |
-| Daichi Goto | BSD Consulting Inc.（东京）董事。 |
-| Joseph Kong | Amazon Web Services 软件开发工程师，FreeBSD Device Drivers 和 Designing BSD Rootkits 作者。 |
-| Dru Lavigne | iXsystems 存储工程总监，BSD Hacks 和 The Best of FreeBSD Basics 作者。 |
-| Michael W Lucas | Absolute FreeBSD 作者。 |
-| Ed Maste | FreeBSD Foundation 项目开发总监。 |
-| Kirk McKusick | FreeBSD Foundation 董事会财务主管，The Design and Implementation 书系主要作者。 |
-| George V. Neville-Neil | FreeBSD Foundation 董事会理事，The Design and Implementation of the FreeBSD Operating System 合著者。 |
-| Philip Paeps | FreeBSD Foundation 董事会秘书，FreeBSD Committer，独立顾问。 |
-| Kristof Provost | EuroBSDCon Foundation 财务主管，FreeBSD Committer，独立顾问。 |
-| Hiroki Sato | FreeBSD Foundation 董事会理事，Asia BSDCon 主席，FreeBSD Core Team 成员，东京工业大学助理教授。 |
-| Benedict Reuschling | FreeBSD Foundation 董事会副主席，FreeBSD Documentation Committer，FreeBSD Core Team 成员。 |
-| Robert N. M. Watson | FreeBSD Foundation 董事会理事，TrustedBSD 项目创始人，剑桥大学高级讲师。 |

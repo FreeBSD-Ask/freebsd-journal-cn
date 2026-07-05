@@ -3,27 +3,6 @@
 - 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2022/03/foundation_letter.pdf)
 - 作者：Ed Maste、编辑委员会
 
-## 编委会
-
-- **John Baldwin**——FreeBSD 开发者，FreeBSD 期刊编辑委员会主席
-- **Tom Jones**——FreeBSD 开发者，阿伯丁大学互联网工程师与研究员
-- **Ed Maste**——FreeBSD 基金会技术高级总监，FreeBSD Core Team 成员
-- **Benedict Reuschling**——FreeBSD 基金会董事会副主席，FreeBSD 文档提交者
-- **Mariusz Zaborski**——FreeBSD 开发者
-
-## 顾问委员会
-
-- **Anne Dickison**——FreeBSD 基金会市场总监
-- **Justin Gibbs**——FreeBSD 基金会创始人，FreeBSD 基金会主席，Facebook 软件工程师
-- **Daichi Goto**——BSD Consulting Inc.（东京）董事
-- **Allan Jude**——Klara Inc. CTO，该公司是全球 FreeBSD 专业服务与支持公司
-- **Dru Lavigne**——《BSD Hacks》与《The Best of FreeBSD Basics》作者
-- **Michael W Lucas**——《Absolute FreeBSD》、《FreeBSD Mastery》系列、《git commit murder》等 40 余本著作的作者
-- **Kirk McKusick**——FreeBSD 基金会董事会财务主管，《The Design and Implementation》系列丛书主要作者
-- **George Neville-Neil**——前 FreeBSD 基金会董事会主席，FreeBSD Core Team 成员，《The Design and Implementation of the FreeBSD Operating System》合著者
-- **Hiroki Sato**——FreeBSD 基金会董事会董事，AsiaBSDCon 主席，FreeBSD Core Team 成员，东京工业大学助理教授
-- **Robert N. M. Watson**——FreeBSD 基金会董事会董事，TrustedBSD 项目创始人，剑桥大学高级讲师
-
 ## FreeBSD/arm64 现为一级架构
 
 Arm 的 64 位架构 AArch64 在 FreeBSD 13 中已获得一级架构（Tier 1）地位。沿用 32 位 FreeBSD/arm 的命名，我们使用"arm64"。
