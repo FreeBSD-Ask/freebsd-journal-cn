@@ -100,7 +100,7 @@ atf_test_program{name=”test_program”, execenv=”jail”, execenv_jail_param
 
 ## 隐式参数与分层 Jail
 
-由于测试用例及其可选清理例程分别在独立的子进程中运行，Kyua 会隐式地添加 `persist` 参数以保持临时 jail 存在，确保两个子进程都在同一个 jail 中运行。Kyua 会在“执行环境清理”步骤中删除临时 jail。
+由于测试用例及其可选清理例程分别在独立的子进程中运行，Kyua 会隐式添加 `persist` 参数以保持临时 jail 存在，确保两个子进程都在同一个 jail 中运行。Kyua 会在“执行环境清理”步骤中删除临时 jail。
 
 网络测试中常见的做法是生成 jail。这就引出了一个问题：是否允许已经运行在 jail 内的测试用例创建子 jail。从原则上讲，只要不超过系统限制，这是允许的。每个 jail 都有一个关于可创建子 jail 数量的限制。在 15-CURRENT 中引入了以下新的只读 sysctl 变量，用于提供这些信息：
 
@@ -110,7 +110,7 @@ security.jail.children.cur: 0
 security.jail.children.max: 999999
 ```
 
-显然，上述内容指的是层级中的最高 jail，称为 `prison0`。根据当前值和最大值，系统最多可以创建近百万个 jail。当使用 [`jail(8)`](https://man.freebsd.org/cgi/man.cgi?query=jail&sektion=8) 创建新 jail 时，会应用以下默认配置：
+显然，上述内容指的是层级中最高的 jail，称为 `prison0`。根据当前值和最大值，系统最多可以创建近百万个 jail。当使用 [`jail(8)`](https://man.freebsd.org/cgi/man.cgi?query=jail&sektion=8) 创建新 jail 时，会应用以下默认配置：
 
 ```sh
 # jail -c command=sysctl security.jail.children
