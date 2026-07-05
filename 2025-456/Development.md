@@ -281,7 +281,7 @@ OK
 
 `hostapd` 使用较少，但它能让你启动自己的接入点（AP），并在其中做完整的内核调试和数据包捕获，这对调试非常有帮助。
 
-下面是一个针对我们示例中“Closed Network”的配置示例：
+下面是针对我们示例中“Closed Network”的配置示例：
 
 hostapd.conf:
 
