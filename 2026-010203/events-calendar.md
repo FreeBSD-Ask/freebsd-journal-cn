@@ -10,7 +10,7 @@
 
 我们很高兴地宣布，今年 4 月将在威斯巴登举办一场区域性 FreeBSD 黑客马拉松。本次活动面向本地社区成员，同时也欢迎所有对 FreeBSD 贡献感兴趣的人参与。活动目标是协作、交流，在专注且友好的环境中推动 FreeBSD 取得实质性进展。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2026/04/opensourcesummit.png)
+![Open Source Summit](https://freebsdfoundation.org/wp-content/uploads/2026/04/opensourcesummit.png)
 
 ## 2026 开源峰会北美站
 
@@ -30,7 +30,7 @@
 
 本次活动与 BSDCan 2026 同期举办，为期两天，内容包括开发者讨论会、厂商演讲和工作组讨论。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2026/04/bsdcan.png)
+![BSDCan](https://freebsdfoundation.org/wp-content/uploads/2026/04/bsdcan.png)
 
 ## BSDCan 2026
 
