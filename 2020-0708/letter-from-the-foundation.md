@@ -1,25 +1,5 @@
 # 基金会来信
 
-JOURNAL 编辑委员会
-
-- John Baldwin：FreeBSD 开发者，FreeBSD 核心团队成员，FreeBSD Core Team 主席
-- Justin Gibbs：FreeBSD 基金会创始人，FreeBSD 基金会主席，Facebook 软件工程师
-- Daichi Goto：BSD Consulting Inc.（东京）董事
-- Tom Jones：FreeBSD 开发者，互联网工程师，阿伯丁大学研究员
-- Dru Lavigne：《BSD Hacks》和《The Best of FreeBSD Basics》作者
-- Michael W Lucas：《Absolute FreeBSD》作者
-- Ed Maste：FreeBSD 基金会项目开发总监
-- Kirk McKusick：FreeBSD 基金会董事会司库，《The Design and Implementation》系列图书主要作者
-- George V. Neville-Neil：FreeBSD 基金会董事会董事，《The Design and Implementation of the FreeBSD Operating System》合著者
-- Philip Paeps：FreeBSD 基金会董事会秘书，FreeBSD 提交者，独立顾问
-- Kristof Provost：EuroBSDCon 基金会司库，FreeBSD 提交者，独立顾问
-- Hiroki Sato：FreeBSD 基金会董事会董事，Asia BSDCon 主席，FreeBSD 核心团队成员，东京工业大学助理教授
-- Benedict Reuschling：FreeBSD 基金会董事会副主席，FreeBSD 文档提交者，FreeBSD 核心团队成员
-- Robert N. M. Watson：FreeBSD 基金会董事会董事，TrustedBSD 项目创始人，剑桥大学高级讲师
-- Mariusz Zaborski：FreeBSD 开发者，Fudo Security 经理
-
-基金会来信
-
 ## FreeBSD 基金会成立二十周年
 
 今年是 FreeBSD 基金会成立二十周年。有时回想签署注册文件的那天，仿佛已是前世：那时我未婚，两个可爱的孩子还未出生，青少年还未学开车，长子还未准备上大学，父母还未搬到身边，我也还未成为他们的照护者。这期间交织着新的工作与机遇、与亲友的庆祝、激动与失望、成功与失败、喜悦与悲伤——你所能想到的 20 年人生的方方面面。那段时间里，我投入 FreeBSD、推动其发展的能力，也随这些人生经历起伏。20 年人生，本就如此。
