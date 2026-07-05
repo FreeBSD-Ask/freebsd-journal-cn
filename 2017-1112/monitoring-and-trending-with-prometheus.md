@@ -54,7 +54,7 @@ Starting prometheus.
 
 除了 node exporter 之外，此时我们还能配置许多其他目标。常见的服务都有对应的导出器（例如 MySQL、Nginx、Java JMX），它们将指标从原生格式转换为通过 HTTP 提供的形式。Prometheus black box exporter 能执行 ICMP、DNS、TCP、HTTP 和 SSH 检查，并报告可用性和延迟。FreeBSD 12.x 提供了 `prometheus_sysctl_exporter(8)`，它可以提供任意 sysctl 的值。其中一些导出器由 Prometheus 项目官方维护，另一些则由社区维护。
 
-在 Kumina，我们为 Dovecot、PHP-FPM、libvirt、OpenVPN 和 Postfix 等服务开发了导出器。我们还设计了一个基于 libpcap 的简单网络流量统计守护进程，按地址导出统计信息，名为 Promacct。所有这些工具都可以在我们公司的 GitHub 页面（<https://github.com/kumina）找到。>
+在 Kumina，我们为 Dovecot、PHP-FPM、libvirt、OpenVPN 和 Postfix 等服务开发了导出器。我们还设计了一个基于 libpcap 的简单网络流量统计守护进程，按地址导出统计信息，名为 Promacct。所有这些工具都可以在我们公司的 GitHub 页面（<https://github.com/kumina>）找到。
 
 如果你想用 Prometheus 从内部开发的软件中获取指标，不必使用独立的指标导出器进程。Prometheus 项目为多种编程语言（Go、Java、Python、Ruby 等）提供了客户端库，使你可以直接在代码中用指标对象进行标注。对于 Python 和 Java 等语言，这些库还提供了便捷的函数装饰器，可自动统计函数调用次数并创建其运行时间的直方图。
 
@@ -81,7 +81,7 @@ $ sudo /usr/local/etc/rc.d/grafana forcestart
 Starting grafana.
 ```
 
-按默认设置，Grafana 会启动一个监听 3000 端口的 Web 服务器。用浏览器访问它并以默认凭据（用户名 `admin`，密码 `admin`）登录后，我们便看到 Grafana 的主界面。我们想做的第一件事是点击 “Add data source” 配置 Grafana 应使用的 Prometheus 服务器地址——本例中是 <http://localhost:9090/。>
+按默认设置，Grafana 会启动一个监听 3000 端口的 Web 服务器。用浏览器访问它并以默认凭据（用户名 `admin`，密码 `admin`）登录后，我们便看到 Grafana 的主界面。我们想做的第一件事是点击 “Add data source” 配置 Grafana 应使用的 Prometheus 服务器地址——本例中是 <http://localhost:9090/>。
 
 完成后，我们可以点击主界面上的下一个按钮，标题为 “Create your first dashboard”。随后我们会看到一个空的仪表盘页面，可以在上面放置面板，例如图形、表格、热力图和列表。对于 Prometheus，大多数情况下使用图形最为合理。创建图形时，我们可以使用与之前相同的查询语法。通过页面顶部的保存图标，仪表盘会保存在 Grafana 服务器上。
 
@@ -189,7 +189,7 @@ datacenter:unbound_queries:rate5m =
 
 它还会为全局 Prometheus 实例生成一个配置文件，使其从所有本地实例抓取 `datacenter:unbound_queries:rate5m`，这样 Grafana 就可以访问它们。
 
-在 Kumina，我们目前正将所有现有的 Prometheus 和 Grafana 配置迁移到基于 Promenade 之上，这也是 Promenade 的设计仍在调整以满足我们需求的原因。我们计划在代码稳定后立即在我们公司的 GitHub 页面（<https://github.com/kumina）发布，敬请关注！>
+在 Kumina，我们目前正将所有现有的 Prometheus 和 Grafana 配置迁移到基于 Promenade 之上，这也是 Promenade 的设计仍在调整以满足我们需求的原因。我们计划在代码稳定后立即在我们公司的 GitHub 页面（<https://github.com/kumina>）发布，敬请关注！
 
 ## 结语
 
