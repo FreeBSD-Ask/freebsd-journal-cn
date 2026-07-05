@@ -12,7 +12,7 @@
 
 2025 年 9 月 25-28 日
 克罗地亚萨格勒布
-<https://2025.eurobsdcon.org/>
+[https://2025.eurobsdcon.org/](https://2025.eurobsdcon.org/)
 
 这一年度大会提供了绝佳机会，让你了解 BSD 领域的最新动态，见证当代部署案例，并亲自结识其他使用 BSD 技术的用户与企业。EuroBSDCon 也是创意、讨论与信息交流的温床，这些交流常常会催生编程项目。
 
