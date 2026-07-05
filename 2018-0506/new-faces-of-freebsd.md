@@ -46,9 +46,9 @@
 
 **Fernando**：我第一次听说 FreeBSD 是在高中。我的一个朋友是早期 Linux 用户，他告诉我 FreeBSD。不久后，我买了一期西班牙版 PC World，其中附带了 FreeBSD 4.2。它在我的硬件上运行得不太好，但我能安装并玩一段时间。之后我升级到 5.0，但仍更常用 Linux。我想大约 7.0 时我成为主要的 FreeBSD 用户。我被其稳定性打动，这种感觉随时间增长。我仍有一台 12 年历史的笔记本，只有 1 GB 内存，运行 FreeBSD 11.0。
 
-**Tom**：我 2008 年 distro hopping 时在 G4 iBook 上运行 PowerPC FreeBSD，但我的冒险真正开始于 2018 年我加入阿伯丁大学研究组时。当时该组正在标准化一种称为 NewCWV（RFC7661）的 TCP 修改。我们有 Linux 的实现，IETF 标准化信条是"rough consensus and running code"，如果有尽可能多平台的实现会很有帮助。有人谈论移植到 BSD 操作系统，我要求参与。移植工作从我的桌面虚拟机开始，但很快我获得了一些二手服务器来构建和运行 FreeBSD。FreeBSD 因其著名的优秀 TCP 协议栈成为移植的首选操作系统。很快我开始怀念 FreeBSD 开发机器上可用的工具，决定必须把 FreeBSD 用作桌面。
+**Tom**：我 2008 年 distro hopping 时在 G4 iBook 上运行 PowerPC FreeBSD，但我的冒险真正开始于 2018 年我加入阿伯丁大学研究组时。当时该组正在标准化一种称为 NewCWV（RFC7661）的 TCP 修改。我们有 Linux 的实现，IETF 标准化信条是“rough consensus and running code”，如果有尽可能多平台的实现会很有帮助。有人谈论移植到 BSD 操作系统，我要求参与。移植工作从我的桌面虚拟机开始，但很快我获得了一些二手服务器来构建和运行 FreeBSD。FreeBSD 因其著名的优秀 TCP 协议栈成为移植的首选操作系统。很快我开始怀念 FreeBSD 开发机器上可用的工具，决定必须把 FreeBSD 用作桌面。
 
-**Eric**：我那段旅程始于厌倦 Windows XP 上的病毒，想成为黑客。我切换到 PC Linux OS，搬到 Mandriva，然后到 Ubuntu，感觉有点像在家。在我成为臭名昭著的黑客的征途上，大约在同一时间我发现了 Eric Steven Raymond 的 "How To Become A Hacker"，这是一个改变人生的事件，让我停止了成为黑客的旅程。"How To Become A Hacker" 简要谈到 BSD Unix，这引起了我的注意。我开始 Google BSD，这开始了我通向 FreeBSD 的道路。我安装了 FreeBSD 7.0，比 XP 更容易安装，但 shell 是我的克星。所以，我重装了 Ubuntu，做了更多研究，找到并尝试了 PC-BSD 1.4。我不喜欢 KDE，所以我在磁盘的一半重装了 Ubuntu，打印了整个 FreeBSD 手册和文档来安装和设置 Gnome，在另一半重装了 FreeBSD。这就是我对 FreeBSD 所有的爱开始的地方，我开始 GhostBSD 以拥有 PC-BSD 的 Gnome 等价物。
+**Eric**：我那段旅程始于厌倦 Windows XP 上的病毒，想成为黑客。我切换到 PC Linux OS，搬到 Mandriva，然后到 Ubuntu，感觉有点像在家。在我成为臭名昭著的黑客的征途上，大约在同一时间我发现了 Eric Steven Raymond 的 “How To Become A Hacker”，这是一个改变人生的事件，让我停止了成为黑客的旅程。“How To Become A Hacker” 简要谈到 BSD Unix，这引起了我的注意。我开始 Google BSD，这开始了我通向 FreeBSD 的道路。我安装了 FreeBSD 7.0，比 XP 更容易安装，但 shell 是我的克星。所以，我重装了 Ubuntu，做了更多研究，找到并尝试了 PC-BSD 1.4。我不喜欢 KDE，所以我在磁盘的一半重装了 Ubuntu，打印了整个 FreeBSD 手册和文档来安装和设置 Gnome，在另一半重装了 FreeBSD。这就是我对 FreeBSD 所有的爱开始的地方，我开始 GhostBSD 以拥有 PC-BSD 的 Gnome 等价物。
 
 今天我对 FreeBSD 的主要兴趣是 GhostBSD 以及我所有只运行 FreeBSD 的服务器和 VPS。我对 FreeBSD 桌面端比作为服务器的 FreeBSD 更感兴趣，这就是 GhostBSD 开始的原因。
 
@@ -70,7 +70,7 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 **Vincenzo**：我是开源 Netmap 项目的维护者，该项目为应用提供从用户态执行快速网络 I/O 的 API。Netmap 在 FreeBSD 和 Linux 上运行，其源代码目前托管在 GitHub 上。虽然 Netmap 已经包含在 FreeBSD 树中，但其中的代码并没有真正维护，且相对于上游版本不断过时。因此，在上次 AsiaBSDCon 上我被邀请成为 committer，以保持 FreeBSD Netmap 代码的良好状态并与上游对齐。我非常高兴地接受了。
 
-**Fernando**：成为全职 FreeBSD 用户后，我开始贡献一些 port PR。2011 年，我发了几个 PR，移植了 wiki 的 WantedPorts 页面中列出的一些 ports。这是一件有趣的事，让我学到了很多，得益于所有提交我补丁的人的提示。我甚至在母校（Universidad de Valladolid）做了几次关于 FreeBSD 和如何创建 ports 的演讲。一段时间后，我觉得应该更深入地参与项目，所以我开始用"嘿，如果有人能指导我完成导师过程，我愿意提升"之类的话结束所有 PR。一段时间后，tz@ 回应了我的请求。tz@ 和 tcberner@ 是我耐心的导师。我仍在愉快地学习如何成为一名好的 ports committer。
+**Fernando**：成为全职 FreeBSD 用户后，我开始贡献一些 port PR。2011 年，我发了几个 PR，移植了 wiki 的 WantedPorts 页面中列出的一些 ports。这是一件有趣的事，让我学到了很多，得益于所有提交我补丁的人的提示。我甚至在母校（Universidad de Valladolid）做了几次关于 FreeBSD 和如何创建 ports 的演讲。一段时间后，我觉得应该更深入地参与项目，所以我开始用“嘿，如果有人能指导我完成导师过程，我愿意提升”之类的话结束所有 PR。一段时间后，tz@ 回应了我的请求。tz@ 和 tcberner@ 是我耐心的导师。我仍在愉快地学习如何成为一名好的 ports committer。
 
 **Tom**：去年在布拉格的 IETF 上，约我吃午餐的人放了我鸽子，反而邀请我加入一位同事和 Netflix 团队。吃鲁本三明治时，我和 Jonathan Looney（我的导师）聊起我迄今为止在 FreeBSD 上做的工作。几周后在剑桥的 BSDCam，Jonathan 问我是否有兴趣成为 committer。
 

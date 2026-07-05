@@ -38,7 +38,7 @@ NFSv4.1 RFC 规定 `OPEN_SHARE_ACCESS_WANT` 位可以设置在 OpenDowngrade 的
 
 <https://svnweb.freebsd.org/changeset/base/332645>
 
-当 `SIOCSLAGGPORT` 返回错误时发出警告，而不是退出。当我们在 lagg 创建期间因错误退出时，单个失败的 NIC（不再附加）可以阻止 lagg 创建和其他配置（如添加 IPv4 地址），从而使机器无法访问。为 `SIOCSLAGGPORT` 的退出状态保留非 `EEXISTS` 错误，以防脚本正在查找它。希望如果 `ifconfig` 的其他部分可以允许"软"失败，这可以扩展。改进警告消息，提及有问题的 lagg 和成员。
+当 `SIOCSLAGGPORT` 返回错误时发出警告，而不是退出。当我们在 lagg 创建期间因错误退出时，单个失败的 NIC（不再附加）可以阻止 lagg 创建和其他配置（如添加 IPv4 地址），从而使机器无法访问。为 `SIOCSLAGGPORT` 的退出状态保留非 `EEXISTS` 错误，以防脚本正在查找它。希望如果 `ifconfig` 的其他部分可以允许“软”失败，这可以扩展。改进警告消息，提及有问题的 lagg 和成员。
 
 ## 添加 TCP 高精度定时器系统（tcp_hpts）支持
 

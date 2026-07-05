@@ -14,6 +14,6 @@ LinuxFest Northwest • 4 月 25 – 26 日 • 华盛顿州贝灵汉
 BSDCan • 6 月 10 – 13 日 • 加拿大渥太华
 <http://www.bsdcan.org/2015/> • 第 12 届年度 BSDCan 将在加拿大渥太华举行。这场广受欢迎的会议吸引了从初学者到 BSD 操作系统高级开发者的各类人群。会议包括开发者峰会、供应商峰会、文档冲刺、教程和演讲。BSDA 认证考试和 BSDP 的 beta 测试也将在活动期间提供。
 
-如果你知道任何 FreeBSD Journal 读者可能感兴趣的会议、活动或事件，请将日历条目发送至 <editor@freebsdjournal.com>。
+如果你知道任何 FreeBSD 期刊读者可能感兴趣的会议、活动或事件，请将日历条目发送至 <editor@freebsdjournal.com>。
 
 Dru Lavigne 是 FreeBSD 基金会理事，BSD 认证小组主席。

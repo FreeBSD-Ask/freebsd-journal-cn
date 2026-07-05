@@ -3,7 +3,7 @@
 - 原文：[Foundation Letter: FreeBSD is Even Better ARMed for the Latest 64-bit Architecture](https://freebsdfoundation.org/wp-content/uploads/2016/06/Foundation-Letter.pdf)
 - 作者：George Neville-Neil
 
-致 FreeBSD Journal 编辑委员会
+致 FreeBSD 期刊编辑委员会
 
 本期有两篇文章介绍 ARMv8 架构的最新进展，ARM 公司正借此进军 64 位服务器计算领域。FreeBSD 是 ARMv8 架构的早期采用者，FreeBSD 基金会、ARM 公司和 Cavium 都投入了资金和工程资源，确保 FreeBSD 在这一新架构上得到良好支持。Andrew Wafaa 描述了让 FreeBSD 在 ARMv8 上成为 Tier 1 架构所付出的努力。Tier 1 架构是指能够自举并拥有 FreeBSD Ports 集合中完整的第三方软件包的架构。达到 Tier 1 是任何运行 FreeBSD 的架构的重要里程碑，标志着长期的郑重承诺。
 
@@ -19,4 +19,4 @@ Dru Lavigne 采访了 Benedict Reuschling。Benedict 多年来以多种方式为
 
 此致
 George Neville-Neil
- FreeBSD Journal 编辑委员会
+ FreeBSD 期刊编辑委员会

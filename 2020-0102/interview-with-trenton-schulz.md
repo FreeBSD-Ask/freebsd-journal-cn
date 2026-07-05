@@ -1,6 +1,6 @@
 # Trenton Schulz 专访
 
-FreeBSD Journal 编辑委员会建议，BSD Now 系列中的一些精彩专访可能引起读者兴趣，因为它们反映了采访发生时的技术状态。在此，我们整理并节选了 Allan Jude 与 Benedict Reuschling 在 2019 年 10 月对 Trenton Schulz 的专访。
+FreeBSD 期刊编辑委员会建议，BSD Now 系列中的一些精彩专访可能引起读者兴趣，因为它们反映了采访发生时的技术状态。在此，我们整理并节选了 Allan Jude 与 Benedict Reuschling 在 2019 年 10 月对 Trenton Schulz 的专访。
 
 **BENEDICT REUSCHLING**：我们有一期关于 Trenton Schulz 的特别专访，话题涉及他早期使用 FreeBSD 的经历、机器人操作系统（ROS）、Qt 等。大家好，我是主持人 Benedict Reuschling。
 

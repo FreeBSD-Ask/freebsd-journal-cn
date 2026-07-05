@@ -2,13 +2,13 @@
 
 **作者：** Steven Kreuzer
 
-2014 年，作为 Google Summer of Code 项目，FreeBSD 开发者和学生共同设计并实现了一个用于 loader 脚本解释器的模块化接口——将解释器与 loader 解耦。历经四年，它终于被提交！FreeBSD 12 将附带一个全新的、基于 Lua 的 bootloader，这将使大多数人说早已"待得太久"的忠实 Forth loader 退出舞台。本专栏的多数文章倾向于涵盖各子系统的开发进展，但我认为这一期我想专注于 bootloader，因为我从未见过如此低级别的系统组件上有这么多活动。
+2014 年，作为 Google Summer of Code 项目，FreeBSD 开发者和学生共同设计并实现了一个用于 loader 脚本解释器的模块化接口——将解释器与 loader 解耦。历经四年，它终于被提交！FreeBSD 12 将附带一个全新的、基于 Lua 的 bootloader，这将使大多数人说早已“待得太久”的忠实 Forth loader 退出舞台。本专栏的多数文章倾向于涵盖各子系统的开发进展，但我认为这一期我想专注于 bootloader，因为我从未见过如此低级别的系统组件上有这么多活动。
 
 ## 向 /boot/loader 添加 Lua 作为脚本语言
 
 <https://svnweb.freebsd.org/changeset/base/329166>
 
-`liblua` 将 Lua 运行时嵌入 boot loader。它实现了 Lua 所期望的所有运行时例程。此外，它还有一些标准的 C 头文件，会"中和" LUA 构建中那些过于 Lua 特定、不适合放入 `libsa` 的部分。相对原始代码做了大量改进，提升了实现质量并增加了所包含的 Lua 库数量。使用 `int64_t` 作为 `lua_Number`。将 **/boot/lua** 设为默认模块路径。
+`liblua` 将 Lua 运行时嵌入 boot loader。它实现了 Lua 所期望的所有运行时例程。此外，它还有一些标准的 C 头文件，会“中和” LUA 构建中那些过于 Lua 特定、不适合放入 `libsa` 的部分。相对原始代码做了大量改进，提升了实现质量并增加了所包含的 Lua 库数量。使用 `int64_t` 作为 `lua_Number`。将 **/boot/lua** 设为默认模块路径。
 
 原始 GSoC 项目的大量清理工作，包括修改 `libsa`，使 Lua 仅在 `luaconf.h` 之外做一处修改即可构建。添加 Lua glue 的最后一块代码以引入 `liblua`，并接入先前已提交的多解释器框架。
 
@@ -28,7 +28,7 @@
 
 加载内核和模块可能非常慢。在菜单绘制前加载、每次更改内核/启动环境时都加载更加痛苦。将加载延迟到 boot、auto-boot 或退出到 loader 提示符时。我们仍需处理启动环境变化带来的配置变更，但通常快得多。此提交从 `config.load`/`config.reload` 中剥离了所有 ELF 加载逻辑，使它们纯粹用于配置。新增 `config.loadelf` 用于处理内核/模块加载。卸载逻辑已被移除，因为菜单中不再需要处理它。
 
-## 创建"旋转木马"菜单项类型
+## 创建“旋转木马”菜单项类型
 
 <https://svnweb.freebsd.org/changeset/base/329367>
 

@@ -22,6 +22,6 @@
 
 本次活动期间也提供 BSD 认证考试。本会议需缴纳少量注册费。
 
-你知道有什么会议、活动或事件可能令 FreeBSD Journal 读者感兴趣吗？
+你知道有什么会议、活动或事件可能令 FreeBSD 期刊读者感兴趣吗？
 
 请将日历条目发送至 <editor@freebsdjournal.com>。

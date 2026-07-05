@@ -12,7 +12,7 @@
 
 安装完成后需要做一些配置。这主要就是告诉服务器软件应该去硬盘的哪些位置寻找不同类型的媒体。把文件夹提供给软件，它会做扫描，不仅把文件纳入系统以便对外提供服务，还会尝试从互联网上匹配文件的附加信息。例如，如果你的某个文件是位于 Movies 文件夹下名为 `tron.mkv` 的电影《Tron: Legacy》，Plex 会看到它，Plex 界面中 Tron 的列表就不会显示文件名，而是漂亮地填满电影海报、演员姓名、剧情简介等许多内容。Plex 和 Emby 还有可安装在手机和智能电视上的应用，让你也可以从这些设备访问媒体服务器，而不只是从 Web 界面。
 
-我带你过一遍配置 Plex Media Server，因为它是我最常用的。其他媒体服务器的过程大同小异。顺便说一句，我的 Plex 运行在一台 AMD64 桌面机上，正是我在 2019 年 1/2 月号 FreeBSD Journal 上撰写的《A Guide To Getting Started with FreeBSD》一文中的那台机器。安装后，我通常希望 Plex 开机自启，于是输入 `# sysrc plexmediaserver_plexpass_enable=YES`。可以看到，我有 Plex Pass。我主要用它把媒体从服务器同步到 Android 手机，以便离线时访问。我还觉得电影预告片功能很方便，可以快速看个预告片，决定是否要看那部还没看过的电影。
+我带你过一遍配置 Plex Media Server，因为它是我最常用的。其他媒体服务器的过程大同小异。顺便说一句，我的 Plex 运行在一台 AMD64 桌面机上，正是我在 2019 年 1/2 月号 FreeBSD 期刊上撰写的《A Guide To Getting Started with FreeBSD》一文中的那台机器。安装后，我通常希望 Plex 开机自启，于是输入 `# sysrc plexmediaserver_plexpass_enable=YES`。可以看到，我有 Plex Pass。我主要用它把媒体从服务器同步到 Android 手机，以便离线时访问。我还觉得电影预告片功能很方便，可以快速看个预告片，决定是否要看那部还没看过的电影。
 
 接下来启动 Plex，输入 `# service plexmediaserver_plexpass start`。Plex 跑起来后，在与媒体服务器同一网络的 Web 浏览器中打开下面的 URL；注意我的 IP 可能和你的不同，但端口和路径应该相同——**172.16.28.2:32400/web**。在该页面上登录 Plex 账号，告诉 Plex 我喜欢把音乐类媒体放在 **/mediacenter/Music** 数据集中，电影类媒体放在 **/mediacenter/Movies** 数据集中，电视剧类媒体放在 **/mediacenter/Tv Shows** 数据集中。设置好几种媒体类型并完成欢迎向导后，Plex 会扫描所有媒体，并尝试将能识别的媒体与互联网上的资料匹配。如果 Plex 猜错了，我可以取消匹配并使用界面查看它能找到哪些相似匹配，也可以直接提供自己的内容，比如海报、标题和简介。
 

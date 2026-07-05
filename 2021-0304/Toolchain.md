@@ -51,7 +51,7 @@ ELF 工具链项目始于 2008 年作为一个独立的努力，由 Joseph Koshy
 
 ## 源代码级调试器
 
-剩下的工具链组件是调试器，LLVM 在这里也提供了前进的路径。LLDB 是 LLVM 的调试器，已在之前的 FreeBSD Journal 文章中详细描述。它基于 LLVM 组件进行反汇编，使用 Clang 作为表达式解析器，并且可以通过 Python 和 Lua 脚本化。
+剩下的工具链组件是调试器，LLVM 在这里也提供了前进的路径。LLDB 是 LLVM 的调试器，已在之前的 FreeBSD 期刊文章中详细描述。它基于 LLVM 组件进行反汇编，使用 Clang 作为表达式解析器，并且可以通过 Python 和 Lua 脚本化。
 
 我们在 2013 年将 LLDB 作为实验性功能添加到构建中，在 FreeBSD 10.0 发布之前，并在 2015 年为 amd64 和 arm64 启用默认支持，随 FreeBSD 11.0 发布。在 2017 年，Karnajit Wangkhem 提交了一个补丁，添加了对 i386 JIT 表达式引擎的支持，我们在 FreeBSD 12.0 中将其作为默认功能启用。
 

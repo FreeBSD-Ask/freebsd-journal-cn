@@ -88,7 +88,7 @@ $ ykpersonalize -1 -o chal-resp -o chal-btn-trig -o chal-hmac -o hmac-lt64 -o se
 $ ykpamcfg -1 -v
 ```
 
-下一步是配置 PAM 模块。我们希望将第二因素与静态密码一起使用，以保护计算机的任何登录。为此，我们将修改 **/etc/pam.d/system** 文件，使"auth"部分如下所示：
+下一步是配置 PAM 模块。我们希望将第二因素与静态密码一起使用，以保护计算机的任何登录。为此，我们将修改 **/etc/pam.d/system** 文件，使“auth”部分如下所示：
 
 ```sh
 # auth
@@ -116,13 +116,13 @@ key: h:c621245c5f05eefec1d9f2960f34b865849dd074
 ...
 ```
 
-我们需要将用户名和密钥存储在目标机器上的 pam_oath 数据库文件中（当然 "alice" 和密钥应替换为真实值）：
+我们需要将用户名和密钥存储在目标机器上的 pam_oath 数据库文件中（当然 “alice” 和密钥应替换为真实值）：
 
 ```sh
 $ echo "HOTP alice - c621245c5f05eefec1d9f2960f34b865849dd074" >> /usr/local/etc/users.oath
 ```
 
-下一步是修改 sshd PAM 配置以启用 `pam_oath` 模块。我们可以通过修改 **/etc/pam.d/sshd** 文件来实现，使"auth"部分如下所示：
+下一步是修改 sshd PAM 配置以启用 `pam_oath` 模块。我们可以通过修改 **/etc/pam.d/sshd** 文件来实现，使“auth”部分如下所示：
 
 ```sh
 # auth

@@ -1,6 +1,6 @@
 # 基金会来信
 
-FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
+FreeBSD 期刊（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
 
 由 FreeBSD Foundation 出版
 
@@ -30,7 +30,7 @@ P.O. Box 408, Belfast, Maine 04915
 
 ## 编辑委员会
 
-- John Baldwin • FreeBSD 开发者、FreeBSD 核心团队成员、FreeBSD Journal 编辑委员会联合主席。
+- John Baldwin • FreeBSD 开发者、FreeBSD 核心团队成员、FreeBSD 期刊编辑委员会联合主席。
 - Brooks Davis • SRI International 高级计算机科学家、剑桥大学访问工业研究员、FreeBSD 核心团队成员。
 - Bryan Drewery • EMC Isilon 高级软件工程师、FreeBSD Portmgr 团队成员、FreeBSD 提交者。
 - Justin Gibbs • FreeBSD 基金会创始人、FreeBSD 基金会董事会董事、Facebook 软件工程师。
@@ -55,6 +55,6 @@ P.O. Box 408, Belfast, Maine 04915
 
 本期春季刊还带来了全新的专栏阵容。Dru Lavigne 介绍了新 Ports 提交者 Kai Knoblich；Michael W Lucas 回答了一些读者来信；Steven Kreuzer 在 svn Update 中向我们介绍源代码树中的最新动态。FreeBSD 基金会执行董事 Deb Goodkin 带来了 FOSDEM 报告——这是 2019 年首场大型开源会议，吸引了来自欧洲和世界各地逾 5000 名开源项目参与者，在比利时度过一个周末的会议、演讲和聚会。说到会议，如果你有兴趣参加 FreeBSD 相关活动，可以在由 Dru Lavigne 和 Anne Dickison 整理的活动日历中找到清单。
 
-我们期待在 5 月中旬于加拿大安大略省渥太华举办的 BSDCan 上见到尽可能多的读者。大多数编辑委员会成员都会到场，如果你在那里看到我们，请停下来打个招呼，告诉我们 FreeBSD Journal 做得如何。
+我们期待在 5 月中旬于加拿大安大略省渥太华举办的 BSDCan 上见到尽可能多的读者。大多数编辑委员会成员都会到场，如果你在那里看到我们，请停下来打个招呼，告诉我们 FreeBSD 期刊做得如何。
 
 GEORGE NEVILLE-NEIL

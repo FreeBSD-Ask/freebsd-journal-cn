@@ -14,11 +14,11 @@
 
 FreeBSD 基金会（<https://www.freebsdfoundation.org>）既资助 Journal，也支持 FreeBSD 相关的许多其他活动。基金会向那些认为某个项目会对 FreeBSD 有所助益、却苦于没有资金和时间自行推进的开发者提供资助。基金会项目总监 Ed Maste 详尽说明了如何写好一份资助申请。
 
-在专栏与栏目方面，Steven Kreuzer 为《The Book of PF：OpenBSD 防火墙实战指南》撰写了书评。我们计划把书评作为 Journal 的固定栏目，让读者在两期之间也能读到些有趣的内容。如果你想写书评，或希望我们评论某本书，请通过 <editor@freebsdjournal.com> 告知我们。专栏部分还有 Frederic Culot 的最新 Ports 报告、Glen Barber（我们那位永远忙碌的发布工程师）的 SVN 更新，以及基金会执行董事 Deb Goodkin 撰写的 FreeBSD 基金会动态。Dru Lavigne 在"FreeBSD 本月动态"中带来了一篇与 Julio Merino 的精彩访谈。Julio 从一名参与开源的学生到入职 Google 的经历横跨多个 BSD 项目，颇为引人入胜。
+在专栏与栏目方面，Steven Kreuzer 为《The Book of PF：OpenBSD 防火墙实战指南》撰写了书评。我们计划把书评作为 Journal 的固定栏目，让读者在两期之间也能读到些有趣的内容。如果你想写书评，或希望我们评论某本书，请通过 <editor@freebsdjournal.com> 告知我们。专栏部分还有 Frederic Culot 的最新 Ports 报告、Glen Barber（我们那位永远忙碌的发布工程师）的 SVN 更新，以及基金会执行董事 Deb Goodkin 撰写的 FreeBSD 基金会动态。Dru Lavigne 在“FreeBSD 本月动态”中带来了一篇与 Julio Merino 的精彩访谈。Julio 从一名参与开源的学生到入职 Google 的经历横跨多个 BSD 项目，颇为引人入胜。
 
 写到这里，我正准备动身前往 BSDCan（<https://www.bsdcan.org/2015/>）——它仍是规模最大的 BSD 大会。这将是我第 11 次去渥太华。不得不说，多年来这座城市变化颇多，但与 FreeBSD 社区其他成员面对面共事的美好感受一如既往。BSDCan 就是这样一个地方——一周之内，全是 BSD，全是 BSD。我希望在那里见到你们所有人，尽管我完全不知道我们去哪里找 8800 间酒店客房！
 
 此致，
 
 George Neville-Neil
-FreeBSD Journal 编辑部
+FreeBSD 期刊编辑部

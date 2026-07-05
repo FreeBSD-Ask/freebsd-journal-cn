@@ -8,7 +8,7 @@ USENIX Security ‘18 • 8 月 15–17 日 • 美国马里兰州巴尔的摩
 <https://www.usenix.org/conference/usenixsecurity18> • 第 27 届 USENIX 安全研讨会汇聚研究人员、从业者、系统管理员、系统程序员，以及其他关注计算机系统与网络安全和隐私最新进展的人士。
 
 BSDCam 2018 • 8 月 15–17 日 • 英国剑桥
-<https://bsdcam.cl.cam.ac.uk> • 2018 年剑桥 FreeBSD 开发者峰会（BSDCam）将于 2018 年 8 月 15-17 日在英国剑桥举行。本次活动以"非会议风格"运行，我们在第一天上午集体讨论实际日程安排，重点关注反映与会者兴趣并发挥其知识的互动话题。
+<https://bsdcam.cl.cam.ac.uk> • 2018 年剑桥 FreeBSD 开发者峰会（BSDCam）将于 2018 年 8 月 15-17 日在英国剑桥举行。本次活动以“非会议风格”运行，我们在第一天上午集体讨论实际日程安排，重点关注反映与会者兴趣并发挥其知识的互动话题。
 
 Write the Docs+Open Help • 8 月 18-22 日 • 美国俄亥俄州辛辛那提
 <http://www.writethedocs.org/conf/cincinnati/2018/> 一场专注于软件文档各方面的会议。

@@ -2,7 +2,7 @@
 
 作者：Allan Jude 和 Benedict Reuschling
 
-FreeBSD Journal 编辑委员会认为，BSD Now 系列中一些精彩访谈或许会让读者感兴趣，因为它们反映了访谈进行时技术的状态。这里我们转录并节选了 2018 年 Allan Jude 和 Benedict Reuschling 对 Kirk McKusick 的访谈。
+FreeBSD 期刊编辑委员会认为，BSD Now 系列中一些精彩访谈或许会让读者感兴趣，因为它们反映了访谈进行时技术的状态。这里我们转录并节选了 2018 年 Allan Jude 和 Benedict Reuschling 对 Kirk McKusick 的访谈。
 
 ---
 

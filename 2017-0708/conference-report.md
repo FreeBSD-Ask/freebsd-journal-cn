@@ -14,7 +14,7 @@ Devsummit 第一天上午，我早早到达领取胸牌并找位置坐下。Gord
 
 会上还讨论了如何对待非代码贡献以及如何在项目内认可这些贡献者。有人建议设立一种 FreeBSD 成员身份，授予那些非代码贡献对项目有价值的人。这件事很多人都在想，认为应尽快落地。FreeBSD Wiki 上的 junior jobs 也被提及，是了解如何参与 FreeBSD 贡献的好去处。休息时，Benedict 跟我聊了聊作为新人加入社区的感受，欢迎我参与讨论、分享想法。
 
-休息后，英特尔代表介绍了他们的 Quick Assist Driver 技术，以及他们在 FreeBSD 上的实现。午餐时，我遇到 Pierre Pronchery，最后跟他一起去了黑客休息室。Pierre 是一名安全顾问，愿意带我练手提升安全技能。在黑客休息室里，我和 Pierre 一起准备以系统管理员身份加入 EdgeBSD 项目。我们开始讨论用 Flask 重建 edgebsd.org 网站——我过去一年在学 Python Web 开发，觉得用真实项目练手是不错的体验。Pierre 帮我创建了 PGP 和 SSH 密钥，这样就能安全地认证到我们要用的虚拟机。接着 Pierre 给我演示了一个叫 `talk` 的老程序——它让你和登录到同一台机器的其他用户通过彼此的终端交流。`talk` 真是太酷了！我打算参考 FreeBSD Journal 近期的一篇文章，让 Salt 配合这个基于 Flask 的新网站基础设施工作。离开黑客休息室前，我和 Michael Dexter 聊了几句，他告诉我文档团队非常需要帮忙，并且有充足的指导帮助我入门。我告诉 Michael 我打算去文档休息室，把编辑文档的工具上手一遍，以便帮忙。
+休息后，英特尔代表介绍了他们的 Quick Assist Driver 技术，以及他们在 FreeBSD 上的实现。午餐时，我遇到 Pierre Pronchery，最后跟他一起去了黑客休息室。Pierre 是一名安全顾问，愿意带我练手提升安全技能。在黑客休息室里，我和 Pierre 一起准备以系统管理员身份加入 EdgeBSD 项目。我们开始讨论用 Flask 重建 edgebsd.org 网站——我过去一年在学 Python Web 开发，觉得用真实项目练手是不错的体验。Pierre 帮我创建了 PGP 和 SSH 密钥，这样就能安全地认证到我们要用的虚拟机。接着 Pierre 给我演示了一个叫 `talk` 的老程序——它让你和登录到同一台机器的其他用户通过彼此的终端交流。`talk` 真是太酷了！我打算参考 FreeBSD 期刊近期的一篇文章，让 Salt 配合这个基于 Flask 的新网站基础设施工作。离开黑客休息室前，我和 Michael Dexter 聊了几句，他告诉我文档团队非常需要帮忙，并且有充足的指导帮助我入门。我告诉 Michael 我打算去文档休息室，把编辑文档的工具上手一遍，以便帮忙。
 
 ## Devsummit 第二天
 

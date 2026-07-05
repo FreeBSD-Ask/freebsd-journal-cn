@@ -8,16 +8,16 @@
 
 Joseph Kong 评介了 Brendan Gregg 和 Jim Mauro 的《DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X, and FreeBSD》。我对这本书很熟悉，因为在为 <http://www.teachbsd.org> 开发的课程中一直使用它。不过我不剧透——去读这篇书评并享受它吧。
 
-会议季已至，今年第一篇会议报告出自 Benedict Reuschling 之手，他在 FOSDEM 做了志愿服务——FOSDEM 是欧洲最大的开源会议。要在两天内涵盖一场有 5000 名参会者、多条精彩议题轨道的会议绝非易事，但 Benedict 让我们仿佛置身那锅开源浓汤的正中央。顺便说一句，现在还有充足的时间报名 6 月在加拿大渥太华举行的 BSDCan。希望你加入我们，到我们的展台打个招呼。FreeBSD Journal 团队的许多成员都会到场，我们很乐意与你聊聊 Journal 或你心里的任何话题。
+会议季已至，今年第一篇会议报告出自 Benedict Reuschling 之手，他在 FOSDEM 做了志愿服务——FOSDEM 是欧洲最大的开源会议。要在两天内涵盖一场有 5000 名参会者、多条精彩议题轨道的会议绝非易事，但 Benedict 让我们仿佛置身那锅开源浓汤的正中央。顺便说一句，现在还有充足的时间报名 6 月在加拿大渥太华举行的 BSDCan。希望你加入我们，到我们的展台打个招呼。FreeBSD 期刊团队的许多成员都会到场，我们很乐意与你聊聊 Journal 或你心里的任何话题。
 
 此致，George Neville-Neil
 
-FreeBSD Journal 主编
+FreeBSD 期刊主编
 FreeBSD 基金会董事
 
 ## 编辑委员会
 
-- John Baldwin —— FreeBSD 核心团队成员、FreeBSD Journal 编辑委员会联席主席
+- John Baldwin —— FreeBSD 核心团队成员、FreeBSD 期刊编辑委员会联席主席
 - Brooks Davis —— SRI International 高级软件工程师、剑桥大学访问工业研究员、FreeBSD 核心团队前成员
 - Bryan Drewery —— EMC Isilon 高级软件工程师、FreeBSD Portmgr 团队成员、FreeBSD Committer
 - Justin Gibbs —— FreeBSD 基金会创始人兼主席、Spectra Logic Corporation 高级软件架构师
@@ -28,7 +28,7 @@ FreeBSD 基金会董事
 - Michael W Lucas —— 《Absolute FreeBSD》作者
 - Ed Maste —— FreeBSD 基金会项目开发总监
 - Kirk McKusick —— FreeBSD 基金会董事、《The Design and Implementation》系列图书首席作者
-- George V. Neville-Neil —— FreeBSD 基金会董事、FreeBSD Journal 编辑委员会主席、《The Design and Implementation of the FreeBSD Operating System》合著者
+- George V. Neville-Neil —— FreeBSD 基金会董事、FreeBSD 期刊编辑委员会主席、《The Design and Implementation of the FreeBSD Operating System》合著者
 - Hiroki Sato —— FreeBSD 基金会董事、Asia BSDCon 主席、FreeBSD 核心团队成员、东京工业大学助理教授
 - Benedict Reuschling —— FreeBSD 基金会副总裁、FreeBSD 文档提交者
 - Robert Watson —— FreeBSD 基金会董事、TrustedBSD 项目创始人、剑桥大学讲师

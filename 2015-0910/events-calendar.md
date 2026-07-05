@@ -1,3 +1,19 @@
 # 活动日历
 
-> 本文原文内容托管于已下线的 Nxtbook 在线阅读器平台（issue.freebsdfoundation.org），无法获取文章正文。如需查阅原文，可访问 [Wayback Machine 快照](https://web.archive.org/web/http://freebsdfoundation.org/journal/vol2_no5/) 或 [FreeBSD Foundation 当前 TOC 页](https://freebsdfoundation.org/our-work/journal/browser-based-edition/cloudabi/)。
+**截至 2015 年 11 月**
+
+**作者**：Dru Lavigne
+
+11 月将举办以下 BSD 相关会议。关于这些活动及本地用户组会议的更多信息，请访问 <http://www.bsdevents.org>。
+
+**OpenRheinRuhr** • 11 月 7–8 日 • 德国奥伯豪森
+
+<http://openrheinruhr.de/> • OpenRheinRuhr 是一年一度的自由软件会议，面向初学者和专业人士都有演讲。届时至少有一场 FreeBSD 演讲，博览会区设有 BSD 综合展位。
+
+**LISA** • 11 月 8–13 日 • 美国华盛顿特区
+
+<https://www.usenix.org/conference/lisa15> • 一年一度的 LISA 会议为更广泛的系统管理社区提供一个中立的交流场所。博览会区设有 FreeBSD 展位。注册期间可获取免费的博览会专用通行证。
+
+**Fossetcon** • 11 月 19–21 日 • 美国佛罗里达州布埃纳文图拉湖
+
+<http://fossetcon.org/> • Fossetcon 是为期三天的活动，关注各类自由与开源软件。此活动需注册并缴纳少量费用。届时至少有一场 FreeBSD 演讲，博览会区设有 BSD 综合展位。活动期间还可参加 BSDA 认证考试。

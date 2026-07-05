@@ -20,4 +20,4 @@
 
 **OpenZFS DevSummit** • 10 月 19 日和 20 日 • 加利福尼亚州旧金山 <http://open-zfs.org/wiki/OpenZFS_Developer_Summit_2015> • 第三届年度 OpenZFS 开发者峰会将在旧金山举行，恰逢 ZFS 开源 10 周年。邀请所有 OpenZFS 开发者参加。此活动需要注册。
 
-你知道有 FreeBSD Journal 读者可能感兴趣的会议、活动或事件吗？请将日历条目发送至 <editor@freebsdjournal.com>。
+你知道有 FreeBSD 期刊读者可能感兴趣的会议、活动或事件吗？请将日历条目发送至 <editor@freebsdjournal.com>。

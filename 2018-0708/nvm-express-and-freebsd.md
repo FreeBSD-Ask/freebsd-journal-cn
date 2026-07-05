@@ -33,7 +33,7 @@ READ、WRITE 和 IDENTIFY 等 NVMe 命令由主机通过提交
 队列提交给控制器，控制器通过完成
 队列通知主机这些命令的完成。规范允许多个提交队列共享一个完成队列，但
 FreeBSD 始终将一个提交队列与一个完成队列关联，形成逻辑队列对或
-"qpair"。这些 qpair 关联对于在多核系统上解锁 NVMe 并行性至关重要，将
+“qpair”。这些 qpair 关联对于在多核系统上解锁 NVMe 并行性至关重要，将
 在本文稍后描述。
   提交队列是一个连续的主机内存区域，作为循环缓冲区。每个提交队列
   条目 64 字节。主机通过填写队列中的下一个条目
@@ -141,7 +141,7 @@ nvme_ns_cmd_read()：
  49 }
 ```
 
-此处调用者请求从命名空间读取数据到缓冲区"payload"中。首先，
+此处调用者请求从命名空间读取数据到缓冲区“payload”中。首先，
 nvme_allocate_request_vaddr() 使用调用者指定的参数分配一个 nvme_request 结构。
   接下来，nvme_command 结构由 nvme_ns_read_cmd() 填充。
 注意 nvme_command 是一个 64 字节的提交队列条目，但此时我们只是准备提交队列条目——它稍后将被复制到实际提交队列中。最后，我们调用
@@ -171,7 +171,7 @@ FreeBSD 尚不支持命名空间管理——例如创建和删除命名空间以
 
 ## 管理 NVMe 驱动器
 
-用于列出和配置 NVMe 控制器和命名空间的主要实用工具是 nvmecontrol(8)。最基本的 nvmecontrol 子命令是 "nvmecontrol devlist"，它提供每个 NVMe 控制器及其命名空间的简短摘要。
+用于列出和配置 NVMe 控制器和命名空间的主要实用工具是 nvmecontrol(8)。最基本的 nvmecontrol 子命令是 “nvmecontrol devlist”，它提供每个 NVMe 控制器及其命名空间的简短摘要。
 
 ```sh
          %sudo nvmecontrol devlist
@@ -181,17 +181,17 @@ FreeBSD 尚不支持命名空间管理——例如创建和删除命名空间以
 
 其他 nvmecontrol(8) 子命令包括：
 
-- "nvmecontrol identify" 用于根据 NVMe IDENTIFY 命令的信息提供 NVMe 控制器和命名空间的详细信息
-- "nvmecontrol logpage" 用于从 NVMe 控制器读取日志页面；规范定义的日志页面（错误、Health/SMART 和固件插槽）有处理器将日志页面转换为人类可读的格式
-- "nvmecontrol firmware" 用于下载和/或在 NVMe 控制器上激活不同的固件映像
-- "nvmecontrol perftest" 用于从 nvme(4) 驱动程序本身运行低级性能测试
-- "nvmecontrol reset" 向 NVMe 控制器发出控制器级重置
-- "nvmecontrol power" 更改电源状态或为 NVMe 控制器指定工作负载提示
-- "nvmecontrol wdc" 执行特定于 WDC NVMe SSD 的选项
+- “nvmecontrol identify” 用于根据 NVMe IDENTIFY 命令的信息提供 NVMe 控制器和命名空间的详细信息
+- “nvmecontrol logpage” 用于从 NVMe 控制器读取日志页面；规范定义的日志页面（错误、Health/SMART 和固件插槽）有处理器将日志页面转换为人类可读的格式
+- “nvmecontrol firmware” 用于下载和/或在 NVMe 控制器上激活不同的固件映像
+- “nvmecontrol perftest” 用于从 nvme(4) 驱动程序本身运行低级性能测试
+- “nvmecontrol reset” 向 NVMe 控制器发出控制器级重置
+- “nvmecontrol power” 更改电源状态或为 NVMe 控制器指定工作负载提示
+- “nvmecontrol wdc” 执行特定于 WDC NVMe SSD 的选项
 
 使用 nda(4) 时，camcontrol(8) 目前可用于列出命名空间，但其他功能（如 NVMe identify 或固件下载）尚未管道化。
 
-nvmecontrol(8) 的一个缺点是将 NVMe 控制器或命名空间映射到其关联的 nvd 或 nda 条目。目前最佳方法是通过 "geom disk list" 和 "nvmecontrol identify" 之间的序列号关联。随着 camcontrol(8) 获得更多 NVMe 功能，此问题将得到缓解。
+nvmecontrol(8) 的一个缺点是将 NVMe 控制器或命名空间映射到其关联的 nvd 或 nda 条目。目前最佳方法是通过 “geom disk list” 和 “nvmecontrol identify” 之间的序列号关联。随着 camcontrol(8) 获得更多 NVMe 功能，此问题将得到缓解。
 
 ## 总结
 

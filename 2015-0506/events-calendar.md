@@ -22,4 +22,4 @@
 
 <https://2015.eurobsdcon.org/>　欧洲首屈一指的 BSD 大会今年在斯德哥尔摩大学举行。届时将有为期两天的开发者峰会、两天教程、两天演讲。本活动需注册参加。今年的主题演讲由 Paul Vixie 带来。
 
-如果你知道哪些会议、活动或事件可能令 FreeBSD Journal 读者感兴趣，请将日历条目发送至 <editor@freebsdjournal.com>。
+如果你知道哪些会议、活动或事件可能令 FreeBSD 期刊读者感兴趣，请将日历条目发送至 <editor@freebsdjournal.com>。
