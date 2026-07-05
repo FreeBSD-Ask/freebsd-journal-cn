@@ -6,7 +6,7 @@
 
 如有任何 FreeBSD 相关活动或 FreeBSD 用户感兴趣的活动未在此列出，请将详情发送至 [freebsd-doc@FreeBSD.org](mailto:freebsd-doc@FreeBSD.org)。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/07/EuroBSD.png)
+![EuroBSD](https://freebsdfoundation.org/wp-content/uploads/2025/07/EuroBSD.png)
 
 ## EuroBSDCon 2025
 

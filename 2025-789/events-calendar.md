@@ -1,6 +1,6 @@
 # 活动日历
 
-### 截至 2025 年 11 月的 BSD 活动
+## 截至 2025 年 11 月的 BSD 活动
 
 若有 FreeBSD 相关活动或 FreeBSD 用户感兴趣的活动未在此列出，请将详情发送至 [freebsd-doc@FreeBSD.org](mailto:freebsd-doc@FreeBSD.org)。
 
