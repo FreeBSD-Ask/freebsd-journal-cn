@@ -31,7 +31,7 @@ PO Box 408, Belfast, Maine 04915
 - 办公室管理员：Michael Davis（<davism@freebsdjournal.com>）
 - 广告销售：Walter Andrzejewski（<walter@freebsdjournal.com>），电话 888/290-9469
 
-FreeBSD Journal（ISBN: 978-0-615-88479-0）为双月刊（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
+FreeBSD 期刊（ISBN: 978-0-615-88479-0）为双月刊（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。
 
 由 FreeBSD 基金会出版，地址：5757 Central Ave., Suite 201, Boulder, CO 80301
 电话：720/207-5142，传真：720/222-2350
