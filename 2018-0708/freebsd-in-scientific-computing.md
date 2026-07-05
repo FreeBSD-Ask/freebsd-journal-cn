@@ -14,7 +14,7 @@ FreeBSD 已是 HPC 的重要组成部分
 
 FreeBSD 已经在研究中扮演关键角色，包括许多高性能计算（HPC）环境，尽管有些人可能并未听说过它的名字。FreeBSD 是一些最受欢迎的高性能存储设备的基石，包括 FreeNAS、Isilon、NetApp 和 Panasas。FreeBSD 也是 Juniper 网络交换机、pfSense 防火墙、Apple OS X 的重要组件，并运行着许多 Web 托管和云服务的服务器。FreeBSD 还获得其他厂商的强力支持，包括 Mellanox，该公司正在为他们的网络适配器开发 FreeBSD 驱动。
 
-科学研究之外，FreeBSD 也被商业巨头使用，这些公司需要最大化性能和可靠性。你曾在 Netflix 上看过电影吗？如果是，你就是 FreeBSD 用户。把电影流到电视或电脑的 Netflix 服务器就运行 FreeBSD。FreeBSD 也已用于 Yahoo! 服务器数十年。关于使用 FreeBSD 的知名公司清单，见 FreeBSD Handbook（https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/nutshell.html#introduction-nutshell-users）。
+科学研究之外，FreeBSD 也被商业巨头使用，这些公司需要最大化性能和可靠性。你曾在 Netflix 上看过电影吗？如果是，你就是 FreeBSD 用户。把电影流到电视或电脑的 Netflix 服务器就运行 FreeBSD。FreeBSD 也已用于 Yahoo! 服务器数十年。关于使用 FreeBSD 的知名公司清单，见 FreeBSD Handbook（<https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/nutshell.html#introduction-nutshell-users>）。
 
 FreeBSD 作为计算平台
 
@@ -74,7 +74,7 @@ cd /usr/ports/biology/canu
 make install
 ```
 
-如果你需要的软件尚无 FreeBSD port，考虑创建一个。它并不如人们想象的那么难。成为 FreeBSD ports committer 有相当陡峭的学习曲线，committer 须经严格的质量控制后才能向系统添加 port。然而，port 无需提交即可使用 ports 系统部署。事实上，所有 port 在提交前都已部署并测试。创建基本功能 port 或升级现有 port 的学习曲线相当平缓。任何会写 Makefile 并使用上游开发者所用构建系统的人，都可以相当快地学会。Porter's Handbook（https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/）覆盖了你需要了解的大部分内容，从入门到成为 FreeBSD committer。
+如果你需要的软件尚无 FreeBSD port，考虑创建一个。它并不如人们想象的那么难。成为 FreeBSD ports committer 有相当陡峭的学习曲线，committer 须经严格的质量控制后才能向系统添加 port。然而，port 无需提交即可使用 ports 系统部署。事实上，所有 port 在提交前都已部署并测试。创建基本功能 port 或升级现有 port 的学习曲线相当平缓。任何会写 Makefile 并使用上游开发者所用构建系统的人，都可以相当快地学会。Porter's Handbook（<https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/>）覆盖了你需要了解的大部分内容，从入门到成为 FreeBSD committer。
 
 如果从 FreeBSD ports 系统安装二进制包，可以使用以下命令快速轻松地更新它们：
 
