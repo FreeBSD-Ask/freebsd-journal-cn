@@ -1,6 +1,6 @@
 # FreeBSD WiFi 开发第一部分——尝试 WiFi
 
-- 原文：[FreeBSD WiFi Development Part 1 – Experimenting with WiFi](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/freebsd-wifi-development/)
+- 原文：[FreeBSD WiFi Development Part 1 - Experimenting with WiFi](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/freebsd-wifi-development/)
 - 作者：Tom Jones
 
 我在过去六个月中一直在 FreeBSD 上从事 WiFi 相关工作，该项目由 FreeBSD 基金会资助。这个项目的主要成果是将 OpenBSD 的 `iwx` 驱动移植到 FreeBSD，用于支持 Intel 802.11ac/ax 网卡。通过这个项目，我接触到了 WiFi 协议栈的大部分内容，也让我深刻认识到，我们需要更多的人参与 WiFi 的开发，同时也需要更简单的途径让新人能够开始开发。
