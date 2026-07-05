@@ -35,7 +35,7 @@ setenv CROSS_COMPILE arm-none-eabi-
 make xilinx_zynq_virt_defconfig
 ```
 
-但我们必须注意使用 GNU `make`，而不是 BSD `make`。为此，我创建了一个目录，其中有一个名为 `make` 的符号链接指向 `/usr/local/bin/gmake`，并将该目录放在我的 `PATH` 的最前面。这种方法运行得很好。
+但我们必须注意使用 GNU `make`，而不是 BSD `make`。为此，我创建了一个目录，其中有一个名为 `make` 的符号链接指向 **/usr/local/bin/gmake**，并将该目录放在我的 `PATH` 的最前面。这种方法运行得很好。
 
 接下来，我们只需调用 `make` 并等待（如果你有多余的 CPU 核心，我强烈建议使用 `-j` 参数）。它像我一样报错了吗？
 
@@ -47,7 +47,7 @@ make: *** [Makefile:2358: spl/U-boot-spl] Error 2
 make: *** Deleting file 'spl/U-boot-spl'
 ```
 
-`scripts/Makefile.xpl` 中的相关行如下：
+**scripts/Makefile.xpl** 中的相关行如下：
 
 ```sh
 $(obj)/$(SPL_BIN)-align.bin: $(obj)/$(SPL_BIN).bin

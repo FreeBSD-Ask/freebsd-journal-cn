@@ -27,7 +27,7 @@
 * [Vox FreeBSD：如何让音频工作](2025-101112/vox-freebsd-how-sound-works.md)
 * [使用 mdo(1) 与 mac_do(4) 进行凭证转换](2025-101112/credentials-transitions-with-mdo1-and-mac_do4.md)
 * [printf("Hello, srcmgr\n");](2025-101112/printfhello-srcmgrn.md)
-* [FreeBSD 与 2025 谷歌编程之夏](2025-101112/freebsd-and-google-summer-of-code-2025.md)
+* [FreeBSD 与 GSoC 2025](2025-101112/freebsd-and-google-summer-of-code-2025.md)
 * [嵌入式 FreeBSD：构建 U-boot](2025-101112/building-u-boot.md)
 * [读者来信](2025-101112/we-get-letters.md)
 
