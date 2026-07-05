@@ -128,8 +128,8 @@ Voila! 现在，你可以在浏览器中访问 `paperless.conf` 中定义的 web
 
 ## 准备、开始、扫描
 
-现在就可以了。将一份你手头的 PDF 文档拖放到 Web UI 中，看看 paperless-ngx 如何开始处理它。左侧的“日志”部分提供了 paperless-ngx 如何选择匹配通信方和其他详细信息，帮助你调整匹配规则。处理完成后，你可以在仪表板或文档文件夹中找到最终结果。继续扫描其他文档，它们将全部存储在 **/var/db/paperless/media/documents/archive** 目录中（如果你没有在 `paperless.conf` 中修改该路径），然后按照存储路径定义进行存放。希望你能像我一样发现 paperless-ngx 对文档的管理非常有用。我总是期待收到下一封信，以便用 paperless-ngx 扫描它。感谢创建 paperless-ngx 的团队，和使 FreeBSD Port 安装体验如此出色的所有人。
+暂时就这些了。将一份你手头的 PDF 文档拖放到 Web UI 中，看看 paperless-ngx 如何开始处理它。左侧的“日志”部分提供了 paperless-ngx 如何选择匹配通信方和其他详细信息，帮助你调整匹配规则。处理完成后，你可以在仪表板或文档文件夹中找到最终结果。继续扫描其他文档，它们将全部存储在 **/var/db/paperless/media/documents/archive** 目录中（如果你没有在 `paperless.conf` 中修改该路径），然后按照存储路径定义进行存放。希望你能像我一样发现 paperless-ngx 对文档的管理非常有用。我总是期待收到下一封信，以便用 paperless-ngx 扫描它。感谢创建 paperless-ngx 的团队，和使 FreeBSD Port 安装体验如此出色的所有人。
 
 ---
 
-**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，也是文档工程团队的成员。过去，他曾担任 FreeBSD 核心团队成员两个任期。他在德国达姆施塔特应用科技大学管理大数据集群，并教授“Unix for Developers”课程。他是每周 [bsdnow.tv](https://bsdnow.tv/) 播客的主持人之一。
+**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，也是文档工程团队的成员。过去，他曾担任 FreeBSD 核心团队成员两个任期。他在德国达姆施塔特应用科技大学管理大数据集群，并为本科生教授“Unix for Developers”课程。他是每周 [bsdnow.tv](https://bsdnow.tv/) 播客的主持人之一。
