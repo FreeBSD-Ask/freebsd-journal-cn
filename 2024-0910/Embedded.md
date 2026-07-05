@@ -5,7 +5,7 @@
 
 ![嵌入式 FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2024/09/embedded_freebsd_art.png)
 
-在之前的两篇文章中，我们讨论了我一直在实验的 [Digilent Arty Z7-20](https://digilent.com/shop/arty-z7-zynq-7000-soc-development-board/) 开发板。我觉得这是一块很有趣的开发板，因为它不仅可以切换主要引脚与外界进行接口，而且你还可以将自己的电路集成到开发板中，并将其与处理器进行接口。然而，要做到这一点，你需要使用 Xilinx/AMD 的软件来配置和编程芯片。Xilinx 将这个工具套件称为 [Vivado](https://www.xilinx.com/products/design-tools/vivado.html#editions)，你可以从他们的网站上 [免费下载](https://www.xilinx.com/products/design-tools/vivado/vivado-ml.html) 一个适用于 Zynq 芯片的版本。
+在之前的两篇文章中，我们讨论了我一直在试用 [Digilent Arty Z7-20](https://digilent.com/shop/arty-z7-zynq-7000-soc-development-board/) 开发板。我觉得这是一块很有趣的开发板，因为它不仅可以切换主要引脚来与外界接口，而且你还可以将自己的电路集成到开发板中，并与处理器接口。然而，要做到这一点，你需要使用 Xilinx/AMD 的软件来配置和编程芯片。Xilinx 将这个工具套件称为 [Vivado](https://www.xilinx.com/products/design-tools/vivado.html#editions)，你可以从他们的网站上 [免费下载](https://www.xilinx.com/products/design-tools/vivado/vivado-ml.html) 一个适用于 Zynq 芯片的版本。
 
 那么，缺点是什么呢？肯定有什么潜在的问题，对吧？其实有两个问题。首先，Vivado 只有 Windows 和 Linux 版本。其次，下载的文件本身就有 110GB。多年来，我在 Mac 上通过 VMWare 运行 Linux 版本，效果还不错。但最终，我的虚拟机有好几个不同版本，每个版本的软件安装情况都不同。这些虚拟机非常大，早期的版本大约是 30GB，最近的一些安装版本甚至达到了 75GB。假设在几台机器上有几个版本，那么总空间开始变得非常庞大，而且我也很难追踪哪个版本是最新的。
 
