@@ -1,6 +1,6 @@
 # 会议报告：我在都柏林的 EuroBSDCon 体验
 
-- 原文链接：[](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/conference-report-my-eurobsdcon-experience-in-dublin/)
+- 原文链接：[会议报告：我在都柏林的 EuroBSDCon 体验](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/conference-report-my-eurobsdcon-experience-in-dublin/)
 - 作者：**Stefano Marinelli**
   
 ## 在会议前
