@@ -58,22 +58,22 @@ HPTS 系统还会自动调优 FreeBSD 的系统定时器，首先设置最小值
 
 使用 HPTS 进行 Pacing 的 TCP 协议栈有一些特定的责任，以便与 HPTS 协作，实现所需的 Pacing 速率，包括：
 
-- 待启动了 Pacing 定时器，协议栈必须禁止任何发送或其他对`tcp_output()`的调用，直到 Pacing 定时器到期。协议栈可以查看`t_flags2`字段中的`TF2_HPTS_CALLS`标志。当 HPTS 调用`tcp_output()`函数时，该标志将被设置，协议栈应在其`tcp_output()`函数内进行清除。
+- 待启动了 Pacing 定时器，协议栈必须禁止任何发送或其他对 `tcp_output()` 的调用，直到 Pacing 定时器到期。协议栈可以查看 `t_flags2` 字段中的 `TF2_HPTS_CALLS` 标志。当 HPTS 调用 `tcp_output()` 函数时，该标志将被设置，协议栈应在其 `tcp_output()` 函数内进行清除。
 - 在 Pacing 定时器到期后，HPTS 的调用中，协议栈需要验证它的空闲时间。HPTS 可能会比预期稍晚调用协议栈，甚至可能提前调用协议栈（尽管这种情况非常罕见）。协议栈需要将晚到或早到的时间纳入下一个 Pacing 超时计算中，之后再发送数据。
 - 如果协议栈决定使用 FreeBSD 定时器系统，它还必须阻止定时器调用发送数据。RACK 和 BBR 协议栈不会使用 FreeBSD 定时器系统进行超时，而是直接使用 HPTS。
-- 如果协议栈从 LRO 队列中排队数据包，则 HPTS 可能会调用输入函数，而不是`tcp_output()`。如果发生这种情况，则不会再调用`tcp_output()`，因为假设协议栈会在需要时调用其输出函数。
+- 如果协议栈从 LRO 队列中排队数据包，则 HPTS 可能会调用输入函数，而不是 `tcp_output()`。如果发生这种情况，则不会再调用 `tcp_output()`，因为假设协议栈会在需要时调用其输出函数。
 
 HPTS 还提供了一些工具来协助 TCP 协议栈，包括：
 
 - `tcp_in_hpts()`：告诉协议栈是否已在 HPTS 系统中。
 - `tcp_set_hpts()`：设置连接将使用的 CPU，这是一个可选调用，如果协议栈未调用此函数，HPTS 会为该连接执行此操作。
-- `tcp_tv_to_hptstick()`：将`struct timeval`转换为 HPTS 槽位数。
-- `tcp_tv_to_usectick()`：将`struct timeval`转换为 32 位无符号整数。
-- `tcp_tv_to_lusectick()`：将`struct timeval`转换为 64 位无符号整数。
-- `tcp_tv_to_msectick()`：将`struct timeval`转换为 32 位无符号毫秒定时器。
+- `tcp_tv_to_hptstick()`：将 `struct timeval` 转换为 HPTS 槽位数。
+- `tcp_tv_to_usectick()`：将 `struct timeval` 转换为 32 位无符号整数。
+- `tcp_tv_to_lusectick()`：将 `struct timeval` 转换为 64 位无符号整数。
+- `tcp_tv_to_msectick()`：将 `struct timeval` 转换为 32 位无符号毫秒定时器。
 - `get_hpts_min_sleep_time()`：返回 HPTS 强制执行的最小睡眠时间。
-- `tcp_gethptstick()`：可选地填充一个`struct timeval`并返回当前的单体时间，作为 32 位无符号整数。
-- `tcp_get_u64_usecs()`：可选地填充一个`struct timeval`并返回当前的单体时间，作为 64 位无符号整数。
+- `tcp_gethptstick()`：可选地填充一个 `struct timeval` 并返回当前的单体时间，作为 32 位无符号整数。
+- `tcp_get_u64_usecs()`：可选地填充一个 `struct timeval` 并返回当前的单体时间，作为 64 位无符号整数。
 
 ### `sysctl`变量
 
