@@ -11,7 +11,7 @@
 
 其他字符设备 switch 完全以软件构造实现。例如，字符设备 **/dev/null** 和 **/dev/zero** 并未与任何硬件设备关联。
 
-本系列由三篇文章组成，本文是第一篇。我们将构建一款简单的字符设备驱动程序，逐步添加新功能，以探索字符设备 switch 及其驱动程序能实现的多项操作。每个版本的设备驱动程序的完整源代码可以在 [https://github.com/bsdjhb/cdev_tutorial](https://github.com/bsdjhb/cdev_tutorial) 找到。我们将从一款创建单个字符设备的基本驱动程序开始。
+本系列由三篇文章组成，本文是第一篇。我们将构建一款简单的字符设备驱动程序，逐步添加新功能，以探索字符设备 switch 和它的驱动程序能实现的多项操作。每个版本的设备驱动程序的完整源代码可以在 [https://github.com/bsdjhb/cdev_tutorial](https://github.com/bsdjhb/cdev_tutorial) 找到。我们将从一款创建单个字符设备的基本驱动程序开始。
 
 ## 生命周期管理
 
@@ -131,7 +131,7 @@ echo_write(struct cdev *dev, struct uio *uio, int ioflag)
 }
 ```
 
-这些方法的主体基本相同。原因之一是，`uiomove()` 的参数对于读取和写入操作是相同的。这是因为 `uio` 对象将数据传输的方向作为其状态的一部分进行编码。
+这些方法的主体基本相同。原因之一是，`uiomove()` 的参数对于读取和写入操作是相同的。这是因为 `uio` 对象将数据传输的方向作为其状态的一部分编码。
 
 如果我们加载此版本的驱动程序，现在可以通过读取和写入设备与其进行交互。示例 2 展示了几次交互，演示了回显行为。请注意，`jot` 的输出超出了驱动程序 64 字节缓冲区的大小，因此随后的设备读取被截断。
 
@@ -162,9 +162,9 @@ foo
 **清单 3：I/O 控制命令常量**
 
 ```c
-#define     ECHODEV_GBUFSIZE   _IOR('E', 100, size_t)   /* 获取 buffer 大小 */
-#define     ECHODEV_SBUFSIZE   _IOW('E', 101, size_t)   /* 设置 buffer 大小 */
-#define     ECHODEV_CLEAR      _IO('E', 102)            /* 清除 buffer */
+#define     ECHODEV_GBUFSIZE   _IOR('E', 100, size_t)   /* 获取缓冲区大小 */
+#define     ECHODEV_SBUFSIZE   _IOW('E', 101, size_t)   /* 设置缓冲区大小 */
+#define     ECHODEV_CLEAR      _IO('E', 102)            /* 清除缓冲区 */
 ```
 
 支持动态大小缓冲区需要对驱动程序进行一些更改。全局缓冲区被替换为指向动态分配缓冲区的全局指针，并且一个新的全局变量包含缓冲区的当前大小。指针和长度在模块加载时初始化，并在模块卸载时释放当前的缓冲区。由于缓冲区的大小不再是常量，因此现在必须在持有锁的情况下进行越界读取和写入的检查。
@@ -203,7 +203,7 @@ echo_ioctl(struct cdev *dev, u_long cmd, caddr_t data, int fflag,
             new_len = *(size_t *)data;
             sx_xlock(&echolock);
             if (new_len == echolen) {
-                  /* Nothing to do. */
+                  /* 无需操作 */
             } else if (new_len < echolen) {
                   echolen = new_len;
             } else {
