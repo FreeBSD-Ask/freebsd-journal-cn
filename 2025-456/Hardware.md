@@ -29,7 +29,7 @@
 
 既然我们已经讨论了硬件及其构建方式，而本文又刊载于《FreeBSD 期刊》，接下来仔细看看软件部分。在项目的 `software/driver/freebsd/kld/ssd.c` 文件中，你会找到一个相当直观的 KLD（内核模块），它添加了几个 sysctl 条目，最终通过写入内存映射寄存器来驱动七段数码管显示。这段 KLD 代码是一个比较直观的示例，类似于 Joseph Kong 的经典著作 [*FreeBSD Device Drivers: A Guide for the Intrepid*](https://www.amazon.com/FreeBSD-Device-Drivers-Guide-Intrepid-ebook/dp/B007W8OL0S/ref=sr_1_1?crid=3F1MA42Q4G4SN&keywords=FreeBSD+Device+Drivers&qid=1696841016&sprefix=freebsd+device+drivers%2Caps%2C224&sr=8-1) （《深入理解 FreeBSD 设备驱动程序开发》ISBN: 9787111411574）中提供的驱动示例。
 
-不过，这个驱动和你在常见的 AMD64 PC 工作站及其标准 PCIe 总线上看到的驱动有些不同，有几个有趣的地方值得关注。下面是它的 probe 函数：
+不过，这个驱动和你在常见的带有标准 PCIe 总线的 AMD64 PC 工作站上看到的驱动有些不同，有几个有趣的地方值得关注。下面是它的 probe 函数：
 
 ```c
 static int
