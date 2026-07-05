@@ -243,7 +243,7 @@ network={
 
 这个命令只生成添加到 `wpa_supplicant.conf` 所需的配置，免去学习复杂语法的麻烦。
 
-FreeBSD 自带 `wpa_cli` 工具，用于与 `wpa_supplicant` 交互。通过 `wpa_cli`，可以列出网络、连接（选择）、重新配置和断开连接。下面是一个连接 WPA 保护网络的示例会话。
+FreeBSD 自带 `wpa_cli` 工具，用于与 `wpa_supplicant` 交互。通过 `wpa_cli`，可以列出网络、连接（选择）、重新配置和断开连接。下面是连接 WPA 保护网络的示例会话。
 
 ```sh
 $ wpa_cli
