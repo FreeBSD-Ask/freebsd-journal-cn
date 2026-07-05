@@ -27,7 +27,7 @@
 
 另外两个寄存器分别控制数码管的两个数字，每个寄存器的每个位对应数字上的一个段。通过向寄存器的内存地址写入值，就能简单地点亮或关闭该数字的所有段。
 
-既然我们已经讨论了硬件及其构建方式，而本文又刊载于《FreeBSD 期刊》，接下来仔细看看软件部分。在项目的 `software/driver/freebsd/kld/ssd.c` 文件中，你会找到一个相当直观的 KLD（内核模块），它添加了几个 sysctl 条目，最终通过写入内存映射寄存器来驱动七段数码管显示。这段 KLD 代码是一个比较直观的示例，类似于 Joseph Kong 的经典著作 [*FreeBSD Device Drivers: A Guide for the Intrepid*](https://www.amazon.com/FreeBSD-Device-Drivers-Guide-Intrepid-ebook/dp/B007W8OL0S/ref=sr_1_1?crid=3F1MA42Q4G4SN&keywords=FreeBSD+Device+Drivers&qid=1696841016&sprefix=freebsd+device+drivers%2Caps%2C224&sr=8-1) （《深入理解 FreeBSD 设备驱动程序开发》ISBN: 9787111411574）中提供的驱动示例。
+既然我们已经讨论了硬件和它的构建方式，而本文又刊载于《FreeBSD 期刊》，接下来仔细看看软件部分。在项目的 `software/driver/freebsd/kld/ssd.c` 文件中，你会找到一个相当直观的 KLD（内核模块），它添加了几个 sysctl 条目，最终通过写入内存映射寄存器来驱动七段数码管显示。这段 KLD 代码是一个比较直观的示例，类似于 Joseph Kong 的经典著作 [*FreeBSD Device Drivers: A Guide for the Intrepid*](https://www.amazon.com/FreeBSD-Device-Drivers-Guide-Intrepid-ebook/dp/B007W8OL0S/ref=sr_1_1?crid=3F1MA42Q4G4SN&keywords=FreeBSD+Device+Drivers&qid=1696841016&sprefix=freebsd+device+drivers%2Caps%2C224&sr=8-1) （《深入理解 FreeBSD 设备驱动程序开发》ISBN: 9787111411574）中提供的驱动示例。
 
 不过，这个驱动和你在常见的带有标准 PCIe 总线的 AMD64 PC 工作站上看到的驱动有些不同，有几个有趣的地方值得关注。下面是它的 probe 函数：
 
@@ -122,7 +122,7 @@ not found! value = %x\n", value);
 
 借助总线资源系统，我们避免了在驱动里硬编码寄存器地址。这样如果我在设计中更改硬件地址，只需修改 FDT/DTS 即可，非常方便。此外，也避免了必须将物理地址转换成内核虚拟地址。正如我吃了苦头才学到的，内核地址并不直接映射物理地址（而且第一个寄存器的魔数也帮我确认了这一点）。
 
-通过这段代码，我可以比较确信，如果读出第一个寄存器返回了正确的魔数，就说明我确实在和我设计的设备通信。对于第一次使用整套工具链构建设备并将其挂载到 AXI 总线的新手来说，如果不了解内核物理地址和虚拟地址的区别，这种确认是非常安心的。如果我是个纯软件工程师，我甚至可能会尝试在 FDT/DTS overlay 里添加一个自定义资源，指定预期读取的魔数值，而不是硬编码 `0xFEEDFACE`。这很有用，不同的常量可以代表设备的不同版本或不同寄存器布局或不同语义，这样驱动就能校验 FDT/DTS 是否和设备匹配。这里就留给读者作为练习（欢迎提交补丁）。
+通过这段代码，我可以比较确信，如果读出第一个寄存器返回了正确的魔数，就说明我确实在和我设计的设备通信。对于第一次使用整套工具链构建设备并把它挂载到 AXI 总线的新手来说，如果不了解内核物理地址和虚拟地址的区别，这种确认是非常安心的。如果我是个纯软件工程师，我甚至可能会尝试在 FDT/DTS overlay 里添加一个自定义资源，指定预期读取的魔数值，而不是硬编码 `0xFEEDFACE`。这很有用，不同的常量可以代表设备的不同版本或不同寄存器布局或不同语义，这样驱动就能校验 FDT/DTS 是否和设备匹配。这里就留给读者作为练习（欢迎提交补丁）。
 
 现在我们能对设备进行探测（probe）和附加（attach），也可以比较确定设备真实存在。接下来我们看看如何使用它。从用户空间看，我还不太清楚软件接口该怎么设计。Unix 哲学认为“一切皆文件”，但这个设备似乎不太像一个文件。我可以在 `/dev` 下创建一个设备节点，通过打开它并定义 ioctl 函数，允许设置两个控制七段显示的寄存器值，这样还能用文件权限控制访问。但我选择了另一种类似的方案：没有使用文件系统设备节点，也没有 ioctl，而是用 sysctl。
 
