@@ -1,4 +1,4 @@
-# 目录
+# Table of contents
 
 * [FreeBSD 中文期刊](README.md)
 * [编辑日志](CHANGELOG.md)
@@ -672,7 +672,7 @@
 ## 2016-0910 欢迎来到 FreeBSD 11
 
 * [SVN 动态](2016-0910/svn-update.md)
-* [书评：《FreeBSD Mastery: Advanced ZFS》](2016-0910/book-review.md)
+* [书评：*FreeBSD Mastery: Advanced ZFS*](2016-0910/book-review.md)
 * [提升 FreeBSD 内核中的高带宽 TLS](2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel.md)
 * [GELI 与 ZFS 改进](2016-0910/geli-and-zfs-improvements.md)
 * [FreeBSD 工具链](2016-0910/freebsd-toolchain.md)
