@@ -114,11 +114,11 @@ local0                    0         down          0/0/0/0
 
 VPP 命令行界面提供了很多选项，用于创建和管理接口、像桥接一样的组、添加路由和用于检查 VPP 实例性能的工具。
 
-接口配置命令的语法类似于 Linux 的 iproute2 命令——对于来自 FreeBSD 的用户来说，这些命令可能稍显陌生，但待开始使用，它们还是相当清晰的。
+接口配置命令的语法类似于 Linux 的 iproute2 命令——对于来自 FreeBSD 的用户来说，这些命令可能稍显陌生，但一旦开始使用，它们还是相当清晰的。
 
 我们的 VPP 服务器还没有配置任何主机接口，`show int`只列出了默认的`local0`接口。
 
-要在 VPP 中使用我们的 netmap 接口，我们需要先创建它们，然后再进行配置。
+要在 VPP 中使用我们的 netmap 接口，我们需要先创建它们，然后再配置。
 
 创建命令允许我们创建新的接口，我们使用`netmap`子命令和主机接口。
 
@@ -143,7 +143,7 @@ netmap-epair1a (dn):
   L3 10.2.0.1/24
 ```
 
-命令 `show int addr`（`show interface address` 的简写）确认了我们的 IP 地址分配已经成功。然后，我们可以将接口启用：
+命令 `show int addr`（`show interface address` 的简写）确认了我们的 IP 地址分配成功。然后，我们可以将接口启用：
 
 ```sh
 vpp# set int state netmap-epair0a up
