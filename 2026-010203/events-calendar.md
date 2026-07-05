@@ -1,6 +1,6 @@
 # 活动日历
 
-![](https://freebsdfoundation.org/wp-content/uploads/2026/04/freebsd_logo.png)
+![FreeBSD logo](https://freebsdfoundation.org/wp-content/uploads/2026/04/freebsd_logo.png)
 
 ## 202604 黑客马拉松
 
@@ -20,7 +20,7 @@
 
 峰会设有涵盖 Linux、云与容器、AI、安全、嵌入式系统等多个领域的专题。与会者将听到主题演讲、技术报告，并与更广泛的开源社区交流。FreeBSD 基金会执行董事 Deb Goodkin 将在大会上发表演讲。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2026/04/freebsd_logo.png)
+![FreeBSD logo](https://freebsdfoundation.org/wp-content/uploads/2026/04/freebsd_logo.png)
 
 ## 2026 渥太华 FreeBSD 开发者峰会
 

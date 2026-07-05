@@ -61,10 +61,10 @@ RACK 现在跟踪已重传的数据量（以字节为单位）。任何时候到
 
 向 RACK 添加上述小更改使其糟糕的性能与没有重排序时的情况非常接近，并为 RACK 栈提供了更好的防止重排序的保护。
 
-1. R. Stewart, M. Tüxen, "Adventures in TCP/IP: TCP Black Box Logging", in The FreeBSD Journal May/June, 2024.
-2. C. R. Bennett, C. Partridge and N. Shectman, "Packet reordering is not pathological network behavior," in IEEE/ACM Transactions on Networking, vol. 7, no. 6, pp. 789-798, Dec. 1999.
-3. R. Stewart, "Dynamic Goodput Pacing: A New Approach to Packet Pacing", in The FreeBSD Journal November/December, 2024.
-4. R. Stewart, M. Tüxen, "RACK and Alternate TCP Stacks for FreeBSD", in The FreeBSD Journal January/February, 2024.
+1. R. Stewart, M. Tüxen, “Adventures in TCP/IP: TCP Black Box Logging”, in The FreeBSD 期刊 May/June, 2024.
+2. C. R. Bennett, C. Partridge and N. Shectman, “Packet reordering is not pathological network behavior,” in IEEE/ACM Transactions on Networking, vol. 7, no. 6, pp. 789-798, Dec. 1999.
+3. R. Stewart, “Dynamic Goodput Pacing: A New Approach to Packet Pacing”, in The FreeBSD 期刊 November/December, 2024.
+4. R. Stewart, M. Tüxen, “RACK and Alternate TCP Stacks for FreeBSD”, in The FreeBSD 期刊 January/February, 2024.
 
 ---
 
