@@ -260,7 +260,7 @@ Invoke-WebRequest https://192.168.2.40
      data: 192.168.2.1n
 ```
 
-注意末尾的那个 **"n"**。如果你想去掉它，可以在 `/usr/local/etc/nginx/nginx.conf` 中修改以下这一行：
+注意末尾的那个 **”n”**。如果你想去掉它，可以在 `/usr/local/etc/nginx/nginx.conf` 中修改以下这一行：
 
 ```sh
 return 200 "$remote_addr\n";

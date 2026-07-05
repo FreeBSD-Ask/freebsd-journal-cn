@@ -14,7 +14,7 @@
 
 今年的用户峰会将探讨广泛话题，旨在支持并连接 OpenZFS 社区。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/10/freebsdlogo-1.png)
+![FreeBSD logo](https://freebsdfoundation.org/wp-content/uploads/2025/10/freebsdlogo-1.png)
 
 ## 2025 年 11 月 FreeBSD 厂商峰会
 

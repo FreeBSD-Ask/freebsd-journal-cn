@@ -14,7 +14,7 @@ FreeBSD 的声音支持始于 1993 年，当时 Jordan K. Hubbard 将通用 Linu
 FreeBSD 的声音 API 被称为 OSS，即 “Open Sound System”（开放声音系统）。有趣的是，它曾经也是 Linux 的默认声音 API，后被 ALSA 取代。而 FreeBSD 仍在使用 OSS，它通过标准设备文件提供了简单清晰的接口（`/dev/dsp*` 对应声卡，`/dev/mixer*` 对应混音器），并通过少量常用 POSIX 系统调用进行操作：
 
 | 系统调用 | 说明 |
-| --- | --- |
+| -------- | ---- |
 | open(2) | 打开设备。 |
 | close(2) | 关闭设备。 |
 | read(2) | 录制音频。 |
@@ -59,7 +59,7 @@ OSS API 在 `sound(4)` 中实现。它将一些通用功能抽象为内核模块
 如前所述，并在示例程序中展示，应用程序通过 `/dev/dsp*` 访问声音子系统，使用 `open(2)` 系统调用。可指定以下标志：
 
 | open(2) 标志 | 功能 |
-| --- | --- |
+| ------------ | ---- |
 | O_RDONLY | 录音 |
 | O_WRONLY | 播放 |
 | O_RDWR | 录音和播放 |
@@ -126,7 +126,7 @@ $ sndctl feederchain
 FreeBSD 内置支持以下声卡：
 
 | 驱动程序 | 支持的声卡 | 默认启用平台 |
-| --- | --- | --- |
+| -------- | ---------- | ------------ |
 | snd_ai2s(4) | Apple I2S | powerpc |
 | snd_als4000(4) | Avance Logic ALS4000 | |
 | snd_atiixp(4) | ATI IXP | |
@@ -266,13 +266,13 @@ Pitch bend              channel=1, change=1
 
 除了前面提到的工具，声音子系统还提供了以下内容：
 
-| 功能                 | 说明                                                                     | 文档            |
-| ------------------ | ----------------------------------------------------------------------- | ------------- |
-| mixer(3)           | 用于与 OSS mixer 交互的 C 语言库。                                                | man 3 mixer   |
-| sndstat(4)         | 一个 nv(9) 接口，用于列出设备信息，以及注册用户态声音设备。被 `sndctl(8)` 和 `virtual_oss(8)` 内部使用。 | man 4 sndstat |
-| hw.snd.*           | 全局 sysctl(8) 变量。                                                        | man 4 sound   |
-| dev.pcm.*          | 设备特定的 sysctl(8) 变量。                                                     | man 4 sound   |
-| 驱动特定的 sysctl(8) 变量 |                                                                         | 请参考相应驱动的手册页。  |
+| 功能 | 说明 | 文档 |
+| ---- | ---- | ---- |
+| mixer(3) | 用于与 OSS mixer 交互的 C 语言库。 | man 3 mixer |
+| sndstat(4) | 一个 nv(9) 接口，用于列出设备信息，以及注册用户态声音设备。被 `sndctl(8)` 和 `virtual_oss(8)` 内部使用。 | man 4 sndstat |
+| hw.snd.* | 全局 sysctl(8) 变量。 | man 4 sound |
+| dev.pcm.* | 设备特定的 sysctl(8) 变量。 | man 4 sound |
+| 驱动特定的 sysctl(8) 变量 | | 请参考相应驱动的手册页。 |
 
 ## FreeBSD 用于音乐制作？！
 
