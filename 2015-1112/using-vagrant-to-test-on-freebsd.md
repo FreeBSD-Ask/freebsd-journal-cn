@@ -12,7 +12,7 @@
 
 正如 Vagrant 官网（<http://www.vagrantup.com/about.html）所述：>
 
-> Vagrant 是一款用于构建完整开发环境的工具。凭借易用的工作流和对自动化的专注，Vagrant 缩短了开发与环境的搭建时间，提升了开发与生产环境的一致性，并让 "在我机器上能跑" 这类借口成为历史。
+> Vagrant 是一款用于构建完整开发环境的工具。凭借易用的工作流和对自动化的专注，Vagrant 缩短了开发与环境的搭建时间，提升了开发与生产环境的一致性，并让 “在我机器上能跑” 这类借口成为历史。
 
 Vagrant 由 Mitchell Hashimoto 于 2010 年 1 月发起。在将近三年的时间里，Vagrant 一直是 Mitchell 的副业项目，他在全职工作之余的闲暇时间投入其中。这段时间里，Vagrant 逐步赢得了从个人到大型公司整个开发团队的信任与使用。
 
@@ -50,7 +50,7 @@ HashiCorp 在其网站（<http://www.packer.io）上对> Packer 的定义是：
 
 ## Vagrant 入门
 
-默认情况下，Vagrant 有所谓的 "base box"。base box 是预先配置好与 Vagrant 协同工作、并预装了一些工具的 OS 镜像。base box 至少应具备在虚拟化环境下良好运行所需的工具。有些 base box 被预配置为完整的开发栈环境，已预装数据库、Web 服务器等。
+默认情况下，Vagrant 有所谓的 “base box”。base box 是预先配置好与 Vagrant 协同工作、并预装了一些工具的 OS 镜像。base box 至少应具备在虚拟化环境下良好运行所需的工具。有些 base box 被预配置为完整的开发栈环境，已预装数据库、Web 服务器等。
 
 下面演示在 Apple 电脑上设置 Vagrant 的步骤。
 
@@ -88,9 +88,9 @@ VM 启动后，登录到虚拟机很简单：
 brad@penelope:~> vagrant ssh
 ```
 
-默认情况下，所有 Vagrant base box 都有一个名为 "vagrant" 的用户，并预装了 ssh 密钥。通常在一个系统上存在已知用户和公开可用的 ssh 密钥是重大的安全漏洞。Vagrant 试图通过把 VM 配置为 NAT 模式、将 VM 隐藏在你本机 IP 地址之后来回应这一顾虑。这能阻止本机以外的任何人直接访问该虚拟机。虽然还可以采取其他安全措施更好地保护本地系统，但这已超出本文范围，此处不做讨论。
+默认情况下，所有 Vagrant base box 都有一个名为 “vagrant” 的用户，并预装了 ssh 密钥。通常在一个系统上存在已知用户和公开可用的 ssh 密钥是重大的安全漏洞。Vagrant 试图通过把 VM 配置为 NAT 模式、将 VM 隐藏在你本机 IP 地址之后来回应这一顾虑。这能阻止本机以外的任何人直接访问该虚拟机。虽然还可以采取其他安全措施更好地保护本地系统，但这已超出本文范围，此处不做讨论。
 
-关于 Vagrant 系统中 root 用户的另一重要提示：通常会包含 sudo 软件包并配置成允许 "vagrant" 用户做任何它需要做的事。但如果出于某种原因需要 root 密码，默认的 root 密码是 "vagrant"。最新信息请始终参考 Vagrant 文档站点：<https://docs.vagrantup.com/v2/boxes/base.html。>
+关于 Vagrant 系统中 root 用户的另一重要提示：通常会包含 sudo 软件包并配置成允许 “vagrant” 用户做任何它需要做的事。但如果出于某种原因需要 root 密码，默认的 root 密码是 “vagrant”。最新信息请始终参考 Vagrant 文档站点：<https://docs.vagrantup.com/v2/boxes/base.html。>
 
 好了，该装些工具开始了。首先安装 NGINX 和 VIM 软件包（以下命令需以 root 身份执行）：
 
@@ -123,7 +123,7 @@ status: active
 
 现在来做点危险的事，借以展示 Vagrant 的威力。
 
-举例来说，假设 FreeBSD 内核 "神秘地" 消失了（需以 root 身份执行）：
+举例来说，假设 FreeBSD 内核 “神秘地” 消失了（需以 root 身份执行）：
 
 ```sh
 # rm -fr /boot/kernel/kernel

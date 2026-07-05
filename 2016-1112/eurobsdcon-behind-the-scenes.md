@@ -1,6 +1,6 @@
 # EuroBSDCon：幕后
 
-*作者：Kristof Provost 与 Beat Gätzi*
+**作者：Kristof Provost 与 Beat Gätzi**
 
 EuroBSDCon 是一年一度的技术会议，汇集在 BSD 操作系统家族及相关项目上工作或使用 BSD 的用户与开发者。会议通常在 9 月或 10 月举行，每年在欧洲不同城市举办。EuroBSDCon 提供了解 BSD 世界最新动态、观摩当代部署案例、结识其他用户与使用 BSD 技术的公司的绝佳机会。
 

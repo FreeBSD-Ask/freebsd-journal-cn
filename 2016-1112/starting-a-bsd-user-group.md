@@ -1,6 +1,6 @@
 # 创办 BSD 用户组
 
-*作者：George Rosamond*
+**作者：George Rosamond**
 
 2003 年，几位志同道合的 BSD 用户创办了纽约市 BSD 用户组（NYC*BUG）。NYC*BUG 每月开会，托管多个邮件列表，并为 BSD 项目及其他用户组提供服务。
 
@@ -20,9 +20,9 @@
 
 <http://mail-index.netbsd.org/regional-nyc/2004/01/13/0003.html>.
 
-> "i wonder if beer is involved? there's no mention of it in that posting."
+> “i wonder if beer is involved? there's no mention of it in that posting.”
 >
-> "they are just doing what the linux group does... probably same ppl too."
+> “they are just doing what the linux group does... probably same ppl too.”
 
 最终，这位资深 BSD 开发者为我们做了场演讲，并成了我们最热心的支持者之一。
 

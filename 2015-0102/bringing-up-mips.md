@@ -202,6 +202,6 @@ ROBERT N. M. WATSON 博士是剑桥大学计算机实验室系统、安全与架
 
 [5] Watson, R. N. M.; Chisnall, D.; Davis, B.; Koszek, W.; Moore, S. W.; Murdoch, S. J.; Neumann, P. G.; and Woodruff, J. Bluespec Extensible RISC Implementation: BERI Software Reference (<http://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-853.pdf>), Technical Report UCAM-CL-TR-853, University of Cambridge, Computer Laboratory. (April 2014)
 
-[6] Woodruff, J.; Watson, R. N. M.; Chisnall, D.; Moore, S. W.; Anderson, J.; Davis, B.; Laurie, B.; Neumann, P. G.; Norton, R.; and Roe, M. "The CHERI Capability Model: Revisiting RISC in an Age of Risk," in Proceedings of the 41st International Symposium on Computer Architecture (ISCA 2014). (June 2014)
+[6] Woodruff, J.; Watson, R. N. M.; Chisnall, D.; Moore, S. W.; Anderson, J.; Davis, B.; Laurie, B.; Neumann, P. G.; Norton, R.; and Roe, M. “The CHERI Capability Model: Revisiting RISC in an Age of Risk,” in Proceedings of the 41st International Symposium on Computer Architecture (ISCA 2014). (June 2014)
 
 [7] McKusick, M. K.; Neville-Neil, G. V.; Watson, R. N. M. The Design and Implementation of the FreeBSD Operating System, Second Edition, Boston, Massachusetts: Pearson Education. (September 2014)

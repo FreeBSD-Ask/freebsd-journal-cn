@@ -1,6 +1,6 @@
 # 基金会来信：外联与支持
 
-*作者：George Neville-Neil*
+**作者：George Neville-Neil**
 
 **编辑委员会**
 
@@ -31,7 +31,7 @@ P.O. Box 408, Belfast, Maine 04915
 - 办公室行政：Michael Davis（<davism@freebsdjournal.com>）
 - 广告销售：Walter Andrzejewski（<walter@freebsdjournal.com>）——电话 888/290-9469
 
-FreeBSD Journal（ISBN：978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 5757 Central Ave., Suite 201, Boulder, CO 80301。电话：720/207-5142 • 传真：720/222-2350。电子邮件：<info@freebsdfoundation.org>。版权 © 2016 FreeBSD Foundation。保留所有权利。
+FreeBSD 期刊（ISBN：978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 5757 Central Ave., Suite 201, Boulder, CO 80301。电话：720/207-5142 • 传真：720/222-2350。电子邮件：<info@freebsdfoundation.org>。版权 © 2016 FreeBSD Foundation。保留所有权利。
 
 未经出版人书面许可，本刊不得全部或部分复制。
 

@@ -35,7 +35,7 @@ Unaccepted Keys:
 Rejected Keys:
 ```
 
-上面可以看到，我们有一个来自 "test0.com.puter" 的待处理密钥。在接受该密钥前，可以在 Master 上运行 `salt-key -f test0.com.puter` 查看并确认该密钥的指纹与 Minion 上的指纹匹配。确认密钥后，即可接受它：
+上面可以看到，我们有一个来自 “test0.com.puter” 的待处理密钥。在接受该密钥前，可以在 Master 上运行 `salt-key -f test0.com.puter` 查看并确认该密钥的指纹与 Minion 上的指纹匹配。确认密钥后，即可接受它：
 
 ```sh
 $ sudo salt-key -a test0.com.puter
@@ -84,7 +84,7 @@ Summary
 
 ## 使用 SaltState 文件管理 Minion
 
-SaltStack 配置指令存储在所谓 statefile 中，以 .sls 扩展名标识。每个 SaltStack 安装都有一个所谓的"top file"，定义整体结构以及 SaltState 与受管主机的关联。出于我们的目的，从一个非常简单的 top file 开始，它把两个状态关联到我们的节点：
+SaltStack 配置指令存储在所谓 statefile 中，以 .sls 扩展名标识。每个 SaltStack 安装都有一个所谓的”top file”，定义整体结构以及 SaltState 与受管主机的关联。出于我们的目的，从一个非常简单的 top file 开始，它把两个状态关联到我们的节点：
 
 ```yaml
 base:

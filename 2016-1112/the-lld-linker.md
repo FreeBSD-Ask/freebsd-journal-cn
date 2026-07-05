@@ -1,6 +1,6 @@
 # LLD 链接器
 
-*作者：Ed Maste*
+**作者：Ed Maste**
 
 自始 FreeBSD 就使用 GNU binutils 链接器。它也称为“BFD”链接器，得名于其构建所依赖的 Binary File Descriptor 库。FreeBSD 开发者持续更新 FreeBSD 树中链接器副本，随 GNU 项目发布新版而导入。
 

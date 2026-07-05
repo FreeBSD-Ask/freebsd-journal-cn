@@ -106,7 +106,7 @@ FreeBSD 基金会在全球赞助许多会议、活动和峰会。这些活动可
 
 我们支持 FreeBSD 专题活动，为分享知识、共同开发项目、促进开发者与商业用户之间的合作提供场所。这一切都有助于营造健康的开源生态。我们支持非 FreeBSD 活动是为了推广 FreeBSD、提升其知名度，增加 FreeBSD 在不同应用中的使用，并为项目招募更多贡献者。最后，我们向 FreeBSD 贡献者提供旅行资助，让他们有机会面对面交流知识、合作项目，并通过参加演讲、演示和教程更多地了解 FreeBSD。
 
-4 月，董事会成员 Benedict Reuschling 帮助组织并运行了 4 月 22–24 日在德国埃森举办的编程马拉松。随后他与 FreeBSD 贡献者 Allan Jude 一起参加了在柏林举行的开放源代码数据中心会议，发表了关于"用 ZFS 能做的趣事"的演讲，介绍了 OpenZFS 特性以及它们在 FreeBSD 上良好的工作表现。
+4 月，董事会成员 Benedict Reuschling 帮助组织并运行了 4 月 22–24 日在德国埃森举办的编程马拉松。随后他与 FreeBSD 贡献者 Allan Jude 一起参加了在柏林举行的开放源代码数据中心会议，发表了关于”用 ZFS 能做的趣事”的演讲，介绍了 OpenZFS 特性以及它们在 FreeBSD 上良好的工作表现。
 
 仅在过去一个季度，我们就在以下活动中推广了 FreeBSD：
 
@@ -116,7 +116,7 @@ FreeBSD 基金会在全球赞助许多会议、活动和峰会。这些活动可
 - USENIX ATC：6 月 22–23 日，科罗拉多州丹佛。
 - Deb Goodkin 和 Dru Lavigne 参加了 5 月 14–15 日在得克萨斯州奥斯汀举行的社区领导力峰会。
 - 我们团队参加了 BSDCan 和渥太华开发者峰会。我们召开了年度董事会会议，投票表决官员、董事会成员，并制定战略规划。我们中大多数人参加并参与了开发者/厂商峰会。董事会成员 Kirk McKusick 演讲了《BSD 快速文件系统简史》。
-- Ed Maste 发表了关于 FreeBSD 可重现构建的演讲。董事会成员 George Neville-Neil 帮助运营厂商峰会，并发表了题为"Through the Wire"的演讲。
+- Ed Maste 发表了关于 FreeBSD 可重现构建的演讲。董事会成员 George Neville-Neil 帮助运营厂商峰会，并发表了题为”Through the Wire”的演讲。
 - 我们向五位 FreeBSD 贡献者提供旅行资助以参加 BSDCan。
 
 ### 法律/FreeBSD 知识产权

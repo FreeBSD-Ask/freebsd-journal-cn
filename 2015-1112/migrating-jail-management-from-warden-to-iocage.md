@@ -6,25 +6,25 @@
 
 ## 为何选择 iocage？
 
-过去六年里，PC-BSD 一直内置自研的 Jail 管理工具 "Warden"。该工具用 shell 实现，除 FreeBSD 基本系统外几乎没有其他依赖。它提供了易用的界面（可选基于 Qt 的 GUI），用于创建和执行 Jail 的基础管理。然而自其最初诞生以来，Jail 管理在 FreeBSD 本身及其他管理工具中都在持续演进。"base-jails" 这类概念作为同时更新多个 Jail 底层 FreeBSD 基本系统的机制而流行起来，而 ZFS 凭借其独有的 Jail 管理能力，迅速成为首选文件系统。
+过去六年里，PC-BSD 一直内置自研的 Jail 管理工具 “Warden”。该工具用 shell 实现，除 FreeBSD 基本系统外几乎没有其他依赖。它提供了易用的界面（可选基于 Qt 的 GUI），用于创建和执行 Jail 的基础管理。然而自其最初诞生以来，Jail 管理在 FreeBSD 本身及其他管理工具中都在持续演进。“base-jails” 这类概念作为同时更新多个 Jail 底层 FreeBSD 基本系统的机制而流行起来，而 ZFS 凭借其独有的 Jail 管理能力，迅速成为首选文件系统。
 
-Warden 工具虽然最终加入了 ZFS 支持，但其在设计上仍围绕 UFS 作为底层文件系统。这一点在内部代码中体现得淋漓尽致，几乎涵盖每一项主要功能，开始阻碍进一步开发。这尤为棘手，因为 PC-BSD 在 2013 年已转为 "ZFS-only" 系统，并正在把大量工具链改造成理解和利用 ZFS 特性的方式。到 2014 年冬，要么重写 Warden，要么用更现代的工具替代它，已势在必行。
+Warden 工具虽然最终加入了 ZFS 支持，但其在设计上仍围绕 UFS 作为底层文件系统。这一点在内部代码中体现得淋漓尽致，几乎涵盖每一项主要功能，开始阻碍进一步开发。这尤为棘手，因为 PC-BSD 在 2013 年已转为 “ZFS-only” 系统，并正在把大量工具链改造成理解和利用 ZFS 特性的方式。到 2014 年冬，要么重写 Warden，要么用更现代的工具替代它，已势在必行。
 
-我们开始考察市场时，有多种 Jail 管理系统可供评估：ezjail、qjail、cbsd 等。然而当我们审视 iocage 时，很快就发现它几乎具备我们在下一代 Jail 管理器中所期望的全部特性和设计细节。首先，与 Warden 一样，它完全用 shell 编写，没有带来额外复杂性的外部依赖，并采用了与之十分相似的 "Warden 式" 命令行语法。除了原生 shell 实现之外，它从一开始就是为仅在 ZFS 上运行而设计的。从利用 ZFS 属性来配置 Jail，到借助快照、克隆及其他原生 ZFS 特性，iocage 在 ZFS 功能上早已远超 Warden。此外，iocage 还支持由 ezjail 推广开来的 "base-jail" 概念，让我们在单一 Jail 管理工具中集各项特性之大成。
+我们开始考察市场时，有多种 Jail 管理系统可供评估：ezjail、qjail、cbsd 等。然而当我们审视 iocage 时，很快就发现它几乎具备我们在下一代 Jail 管理器中所期望的全部特性和设计细节。首先，与 Warden 一样，它完全用 shell 编写，没有带来额外复杂性的外部依赖，并采用了与之十分相似的 “Warden 式” 命令行语法。除了原生 shell 实现之外，它从一开始就是为仅在 ZFS 上运行而设计的。从利用 ZFS 属性来配置 Jail，到借助快照、克隆及其他原生 ZFS 特性，iocage 在 ZFS 功能上早已远超 Warden。此外，iocage 还支持由 ezjail 推广开来的 “base-jail” 概念，让我们在单一 Jail 管理工具中集各项特性之大成。
 
 鉴于决定在 2016 年即将发布的 PC-BSD 11.0 中切换到 iocage，我们已为终端用户启动了相关流程。在 10.2 版本（2015 年夏）中，iocage 工具与旧版 Warden 一并发布。此举旨在让用户和开发者在正式切换之前有一段时间来试用新工具。今秋将提供迁移工具，可自动将现有 Warden Jail 迁移到 iocage，并将纳入 11.0-RELEASE。
 
 由于 iocage 是命令行工具，我们也在开发新的 GUI 来取代原有的 Warden Qt 界面。新开发的 GUI 是基于 Web 的，作为 AppCafe 项目的一部分，目标是既适用于 PC-BSD 这类桌面环境，也适用于 FreeNAS 或 TrueOS 这类无显示器的服务器环境。新 AppCafe 界面目前正处于密集开发中，计划随 2016 年的 FreeNAS 10 和 PC-BSD 11.0 发布。除了对系统包管理（通过 pkgng）的支持，新 AppCafe 还会以几种独到的方式专门使用 iocage 来处理 Jail。
 
-在更传统的 Jail 管理角色中，AppCafe 的 Web 界面将直接作为 iocage 的前端，提供对创建、删除和执行 Jail 基础管理的简便控制。Brandon Schneider（iocage 共同开发者，与原作者 Peter Toth 并肩）于 2015 年加入 iXsystems 后，iocage 新增了一些特性，让 Jail 的创建与分发比以往轻松许多。新的 Jail 分发机制使用 VCS 工具 git 来初次检出一个预构建好、可直接运行的 Jail 环境。这让内容创作者可以用 pkgng 或其他方式构建 Jail，然后把改动提交并推送到公共 git 服务器（例如 GitHub）。随后客户端只需运行一条 iocage 命令，就能把这个 Jail 仓库拉到本地并开始运行。这种新模式将成为 AppCafe "App Cages" 特性的基础，让我们能以开箱即用的方式打包诸如 Plex Media Server 之类的应用。此外，它还提供了独到的方式来校验更新，并通过 git 直观地查看变更的差异和日志。这些特性已处于可用状态，并包含在 PC-BSD 11.0-CURRENT 分支版本中，让开发者和用户对 11.0-RELEASE 即将带来的内容有了早期预览。
+在更传统的 Jail 管理角色中，AppCafe 的 Web 界面将直接作为 iocage 的前端，提供对创建、删除和执行 Jail 基础管理的简便控制。Brandon Schneider（iocage 共同开发者，与原作者 Peter Toth 并肩）于 2015 年加入 iXsystems 后，iocage 新增了一些特性，让 Jail 的创建与分发比以往轻松许多。新的 Jail 分发机制使用 VCS 工具 git 来初次检出一个预构建好、可直接运行的 Jail 环境。这让内容创作者可以用 pkgng 或其他方式构建 Jail，然后把改动提交并推送到公共 git 服务器（例如 GitHub）。随后客户端只需运行一条 iocage 命令，就能把这个 Jail 仓库拉到本地并开始运行。这种新模式将成为 AppCafe “App Cages” 特性的基础，让我们能以开箱即用的方式打包诸如 Plex Media Server 之类的应用。此外，它还提供了独到的方式来校验更新，并通过 git 直观地查看变更的差异和日志。这些特性已处于可用状态，并包含在 PC-BSD 11.0-CURRENT 分支版本中，让开发者和用户对 11.0-RELEASE 即将带来的内容有了早期预览。
 
 ## iocage 入门 / 内部机制
 
 简要介绍 iocage 的工作原理。首先，我们用 ZFS 属性来配置一切。我们没有配置文件，唯一的例外是在 **rc.conf** 中启用服务。iocage 的大部分命名与 ZFS 保持一致。当某项功能 ZFS 和 iocage 都支持时，我们尽量沿用相同名称。对其余命令，我们选择自认为最直观易懂的命名。Jail 命名采用随机生成的 UUID，以避免任何命名冲突。
 
-让我们开始上手这款工具！如果你有多个 zpool，iocage 会选择它找到的第一个。因此我们通常先用 `iocage activate POOL` 来指定。我们使用所谓的 "bases"，这些 base 是你用 iocage 获取的 RELEASE，构成了 basejail 的基础。本例中我们使用 10.2-RELEASE。要获取它，执行 `iocage fetch release=10.2-RELEASE`，然后让 iocage 自行完成工作。完成后，我们就得到了一个可供使用的新 base。虽然获取与创建时指定 FreeBSD 版本所用的术语有所不同，但这是因为一旦某个 RELEASE 被获取，它在 iocage 中的含义就已改变。
+让我们开始上手这款工具！如果你有多个 zpool，iocage 会选择它找到的第一个。因此我们通常先用 `iocage activate POOL` 来指定。我们使用所谓的 “bases”，这些 base 是你用 iocage 获取的 RELEASE，构成了 basejail 的基础。本例中我们使用 10.2-RELEASE。要获取它，执行 `iocage fetch release=10.2-RELEASE`，然后让 iocage 自行完成工作。完成后，我们就得到了一个可供使用的新 base。虽然获取与创建时指定 FreeBSD 版本所用的术语有所不同，但这是因为一旦某个 RELEASE 被获取，它在 iocage 中的含义就已改变。
 
-至此，我们已选定供 iocage 使用的池，并获取了一个 RELEASE。剩下要做的就是创建一个 Jail。与 ZFS 一样，我们允许用户指定希望在创建时设置的属性。本例中我们将使用静态 IP 并为 Jail 指定一个名称，我们称之为 "tag"。开始！输入 `iocage create tag="example" ip4_addr="DEFAULT|192.168.1.100/24" base="10.2-RELEASE"`。这会创建一个名为 "example" 的 Jail，并给它分配 IPv4 地址 192.168.1.100。`DEFAULT` 是一个特殊关键字，告诉 iocage 自行判断要使用的默认接口。本例中我们指定了 base，但 iocage 默认会采用主机当前运行的版本。该 Jail 将使用所谓的 "shared networking mode"（共享网络模式）。另一种可用的类型是 VIMAGE，它是一种非常灵活的虚拟网络协议栈。两种模式均支持 IPv6。
+至此，我们已选定供 iocage 使用的池，并获取了一个 RELEASE。剩下要做的就是创建一个 Jail。与 ZFS 一样，我们允许用户指定希望在创建时设置的属性。本例中我们将使用静态 IP 并为 Jail 指定一个名称，我们称之为 “tag”。开始！输入 `iocage create tag="example" ip4_addr="DEFAULT|192.168.1.100/24" base="10.2-RELEASE"`。这会创建一个名为 “example” 的 Jail，并给它分配 IPv4 地址 192.168.1.100。`DEFAULT` 是一个特殊关键字，告诉 iocage 自行判断要使用的默认接口。本例中我们指定了 base，但 iocage 默认会采用主机当前运行的版本。该 Jail 将使用所谓的 “shared networking mode”（共享网络模式）。另一种可用的类型是 VIMAGE，它是一种非常灵活的虚拟网络协议栈。两种模式均支持 IPv6。
 
 Jail 已创建，接下来启动它。执行 `iocage start example`，Jail 就会立即启动。我们可以用 `iocage list` 或 `iocage get state example` 验证它是否在运行，输出如下：
 
@@ -44,7 +44,7 @@ Jail 启动后，那些目录就会被挂载，对用户而言使用方式完全
 
 ## 深入剖析
 
-接下来深入探讨 iocage 近期的工作——对 basejail 的彻底重写。我们称之为 "basejail"，是因为它们共享一个公共 base，让用户更新起来更快更轻松，同时还带来可观的存储空间节省。在最新的开发版本中，basejail 已成为我们的默认 Jail 类型。
+接下来深入探讨 iocage 近期的工作——对 basejail 的彻底重写。我们称之为 “basejail”，是因为它们共享一个公共 base，让用户更新起来更快更轻松，同时还带来可观的存储空间节省。在最新的开发版本中，basejail 已成为我们的默认 Jail 类型。
 
 我们的 basejail 结构相当直观。在 iocage 中，Jail 位于 **/iocage/jail/UUID/root**。UUID 会被你创建 Jail 时所生成的 UUID 替换。本例中我的是 `89b2f41a-76b2-11e5-8df9-d05099728dbf`，每个 UUID 都是唯一的。由于这些是只读挂载，用户无法直接修改其中的数据。我们借助出色的 unionfs 文件系统以覆盖层方式挂载它们，允许用户添加文件、修改既有文件，甚至删除文件，而完全不触碰只读层——unionfs 简直有如魔法。实现方式是把读写挂载放在名为 `_` 的目录中。下面是 basejail 所用目录列表及其挂载位置：
 

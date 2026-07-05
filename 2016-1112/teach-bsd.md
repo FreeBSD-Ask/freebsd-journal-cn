@@ -1,6 +1,6 @@
 # 教 BSD
 
-*作者：George V. Neville-Neil 与 Benedict Reuschling*
+**作者：George V. Neville-Neil 与 Benedict Reuschling**
 
 2016 年 8 月第二周，George Neville-Neil 访问了我在德国达姆施塔特应用科学大学计算机科学系。George 与剑桥大学的 Robert Watson 合作多年，开发了一门硕士级课程。
 

@@ -4,7 +4,7 @@
 
 作者：DRU LAVIGNE
 
-以下 BSD 相关会议将于 2016 年 9 月和 10 月举行。关于这些活动以及本地用户组会议的更多信息，请访问 <www.bsdevents.org。>
+以下 BSD 相关会议将于 2016 年 9 月和 10 月举行。关于这些活动以及本地用户组会议的更多信息，请访问 <https://www.bsdevents.org/>。
 
 ## EuroBSDCon
 

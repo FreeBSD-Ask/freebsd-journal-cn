@@ -39,7 +39,7 @@ WatchedEvent state:SyncConnected type:None path:null
 [zookeeper]
 ```
 
-我们先创建一个名为 "test" 的新 zNode，并写入数据 "hello_world"。然后列出根 zNode 的内容，就能看到新建的 "test" zNode 了。
+我们先创建一个名为 “test” 的新 zNode，并写入数据 “hello_world”。然后列出根 zNode 的内容，就能看到新建的 “test” zNode 了。
 
 ```sh
 [zk: localhost:2181(CONNECTED) 1] create /test hello_world
@@ -48,7 +48,7 @@ Created /test
 [test, zookeeper]
 ```
 
-对 zNode 执行 get 即可读取 "test" zNode 的内容。在本例中，将返回字符串 "hello_world" 以及该 zNode 自身的一些元数据。
+对 zNode 执行 get 即可读取 “test” zNode 的内容。在本例中，将返回字符串 “hello_world” 以及该 zNode 自身的一些元数据。
 
 ```sh
 [zk: localhost:2181(CONNECTED) 3] get /test
@@ -66,7 +66,7 @@ dataLength = 11
 numChildren = 0
 ```
 
-"test" zNode 的内容也可以使用 `set` 命令更新。你会注意到命令执行后，`mtime`、`dataVersion` 等元数据也会自动更新。更新完成后，可以再执行一次 `get` 来确认 zNode 内容已被修改。
+“test” zNode 的内容也可以使用 `set` 命令更新。你会注意到命令执行后，`mtime`、`dataVersion` 等元数据也会自动更新。更新完成后，可以再执行一次 `get` 来确认 zNode 内容已被修改。
 
 ```sh
 [zk: localhost:2181(CONNECTED) 4] set /test freebsd_journal
@@ -110,7 +110,7 @@ numChildren = 0
 
 在规划 ensemble 的需求时，建议至少从 3 台机器起步，但对于大多数环境，强烈建议至少 5 台起步。原因在于，3 节点集群中丢失 1 个节点尚可容忍，因为剩余 3 台中的 2 台仍构成多数。但是假设你为了例行维护从 ensemble 中移除一个节点，而此时另一个节点意外故障，那么仲裁就丢失了，剩余节点会切换到对等选举模式，断开现有客户端连接并拒绝新连接，直到选出新领导者。从至少 5 个节点起步可以避免这种特定的故障场景，让集群能容忍最多 2 个节点故障。虽然 Zookeeper 也支持在丢失仲裁时以只读模式运行，但是否启用此特性主要取决于你的应用需求，因此默认行为是停止提供客户端连接。
 
-由于 Zookeeper 的核心目标是确保数据可靠分布，部署 ensemble 时的另一条建议是机器数量始终保持奇数。这可以避免出现"脑裂"（split-brain）的可能：某些节点与其它节点分隔开来但继续独立运行。在这种情况下，这些机器可能与另一半失去同步，故障恢复后集群将不知道如何调和差异。为此，Zookeeper 采用多数计数，并选出新的领导者节点。
+由于 Zookeeper 的核心目标是确保数据可靠分布，部署 ensemble 时的另一条建议是机器数量始终保持奇数。这可以避免出现”脑裂”（split-brain）的可能：某些节点与其它节点分隔开来但继续独立运行。在这种情况下，这些机器可能与另一半失去同步，故障恢复后集群将不知道如何调和差异。为此，Zookeeper 采用多数计数，并选出新的领导者节点。
 
 Zookeeper 的核心是一套原子消息系统，旨在保持 ensemble 中每个成员同步。被选为领导者的节点接收所有写操作，并负责将这些变更发布给所有其它作为 follower 的成员。Zookeeper 通过确保数据始终按发送顺序投递来保证数据最终在 ensemble 的所有成员间一致。某条消息只有在它之前的所有消息都已投递后才会被投递，虽然两个客户端在某一时刻看到的状态可能略有不同，但它们观察变更的顺序始终一致。
 
@@ -128,7 +128,7 @@ server.2=zook2:2888:3888
 server.3=zook3:2888:3888
 ```
 
-在 ensemble 中，每个节点必须被分配一个 1 到 255 之间的唯一 ID。节点通过读取存储在 `dataDir` 指令所定义目录下的 "myid" 文件来获知自己的 ID。该文件只有一行，仅包含该机器的 ID 文本。例如，名为 zook2 的节点在配置文件中的 ID 定义为 2，那么在该节点上可以使用命令 `echo 2 > /var/db/zookeeper/myid` 创建 myid 文件。在 ensemble 中的每个节点都执行此操作后，你只需像独立模式那样启动 Zookeeper 即可。ensemble 中的每个节点会相互联络以进行选举，选出领导者，其它所有节点则成为 follower。
+在 ensemble 中，每个节点必须被分配一个 1 到 255 之间的唯一 ID。节点通过读取存储在 `dataDir` 指令所定义目录下的 “myid” 文件来获知自己的 ID。该文件只有一行，仅包含该机器的 ID 文本。例如，名为 zook2 的节点在配置文件中的 ID 定义为 2，那么在该节点上可以使用命令 `echo 2 > /var/db/zookeeper/myid` 创建 myid 文件。在 ensemble 中的每个节点都执行此操作后，你只需像独立模式那样启动 Zookeeper 即可。ensemble 中的每个节点会相互联络以进行选举，选出领导者，其它所有节点则成为 follower。
 
 一大优势在于，从单机的独立模式扩展到环境中跨多台机器的高度容错仲裁模式，所需的工作量并不大。更妙的是，从开发者角度来看，所有接口都保持不变，因此应用无需额外改动。Zookeeper 最吸引人的特点之一是，系统设计上在初始设置后几乎不需要维护，所有复杂性对终端用户都是隐藏的，因此集成起来非常容易。
 

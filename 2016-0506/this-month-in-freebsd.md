@@ -9,13 +9,13 @@
 
 第二届 FreeBSD 黑客马拉松于 4 月 22–24 日在德国埃森的 Linuxhotel 举行。参与者来自加拿大、瑞典、法国、比利时和荷兰，其中一些是老面孔。
 
-我从法兰克福机场接上 Allan Jude，一起坐火车到埃森。在火车站，一位后来参加了当天下午 BSDA 认证考试的人接上我们，开车送到 Linuxhotel。我们放下行李，我监考 BSDA 考试时，Allan 开始着手他要为 FreeBSD 的 ZFS 实现的 Skein 校验和算法（<https://reviews.csiden.org/r/223/）。主要组织者> Lars Engels 随后到达，与 Linuxhotel 工作人员处理了一些事宜。BSDA 考试结束后，Lars 和我去购买当晚烧烤的物品。Christian Brueffer 加入了我们，路上我们好好交流了一番自上次见面以来的新动态。
+我从法兰克福机场接上 Allan Jude，一起坐火车到埃森。在火车站，一位后来参加了当天下午 BSDA 认证考试的人接上我们，开车送到 Linuxhotel。我们放下行李，我监考 BSDA 考试时，Allan 开始着手他要为 FreeBSD 的 ZFS 实现的 Skein 校验和算法（见 <https://reviews.csiden.org/r/223/>）。主要组织者 Lars Engels 随后到达，与 Linuxhotel 工作人员处理了一些事宜。BSDA 考试结束后，Lars 和我去购买当晚烧烤的物品。Christian Brueffer 加入了我们，路上我们好好交流了一番自上次见面以来的新动态。
 
 我们回来后，下午过去了，更多此前未参加的人到达。我们带他们参观，并开始准备烧烤。其他参与者堵在路上，烧烤已经开始后才陆续加入，但最终每个人都吃到了东西。这是相互认识的好机会，人们很快就在谈论 FreeBSD 的最新进展，这正是合适的人聚到一起时常发生的事。天黑时，我们聚集在 Linuxhotel 工作人员为我们安排的房间里，喝着啤酒和饮料继续交谈。午夜前后，大多数人因旅途劳顿去休息了。
 
 周六是主要的 hacking 日，我们吃过早餐（那里还有 Serendipity 项目的另一个团队），然后聚集到 hacking 房间工作。房间里有我们需要的一切：线缆、WiFi、椅子、桌子、投影仪，以及咖啡机和装有各种饮料的冰箱。Lars 和我再次欢迎大家，谈了一些组织事宜，并提到了我们的赞助商。netzkommune.de 的所有者（他也赞助 BSDCan，今年将首次参加）赞助了所有人的住宿，并在下午加入了我们。作为 FreeBSD 基金会的代表，我说了几句关于我们在欧洲的工作，然后分发纪念品。背包和手提袋赢得了惊讶的参与者的掌声。
 
-之后，Jilles Tjoelker 做了一个简短的即兴演讲，介绍 shell 如何工作以及如何处理输入。然后我们继续讨论议程上的一些事项。之后，人们着手自己带来的小项目，或组成小组一起工作。提交均标注"Sponsored by: Essen Hackathon 2016"（<http://freshbsd.org/search?q=+hackathon+2016+%21openbsd+%21bitrig+%21pkgsrc+%21netbsd+%21edgebsd+%21pfsense+%21pcbsd+%21hardenedbsd）。>
+之后，Jilles Tjoelker 做了一个简短的即兴演讲，介绍 shell 如何工作以及如何处理输入。然后我们继续讨论议程上的一些事项。之后，人们着手自己带来的小项目，或组成小组一起工作。提交均标注”Sponsored by: Essen Hackathon 2016”（见 <http://freshbsd.org/search?q=+hackathon+2016+%21openbsd+%21bitrig+%21pkgsrc+%21netbsd+%21edgebsd+%21pfsense+%21pcbsd+%21hardenedbsd>）。
 
 午餐我们点了披萨，hacking 一直持续到傍晚。有时会被与所有人相关的较大讨论打断；有时我们只通过 IRC 沟通。netzkommune.de 赞助商到达后，我们感谢了他的慷慨，然后拼车前往当晚的餐厅。食物很棒，我们在晚餐和饮品中分享了许多故事。回来后，我们在早餐室的舒适沙发上继续交谈，而其他人则继续 hacking。
 
@@ -23,11 +23,11 @@
 
 ## 开源数据中心大会
 
-开源数据中心大会（OSDC，<https://www.netways.de/osdc/）于> 4 月 26–28 日在德国柏林举行。
+开源数据中心大会（OSDC，<https://www.netways.de/osdc/>）于 4 月 26–28 日在德国柏林举行。
 
-总体而言，OSDC 是组织良好的会议。普通参与者 899 欧元的入场费让我们有点吃惊。虽然包含酒店住宿，但如果你是不隶属于公司的开源人士，想了解 DevOps、Jenkins、Puppet、云基础设施管理以及数据中心背景下可能需要的其他内容，仍然价格不菲。它显然面向公司中能负担派遣员工参加的开源用户。演讲有录像，前几年的幻灯片也可获取。除少数赞助商的"我们在招聘"和展台区域外，它不是营销性质的活动。
+总体而言，OSDC 是组织良好的会议。普通参与者 899 欧元的入场费让我们有点吃惊。虽然包含酒店住宿，但如果你是不隶属于公司的开源人士，想了解 DevOps、Jenkins、Puppet、云基础设施管理以及数据中心背景下可能需要的其他内容，仍然价格不菲。它显然面向公司中能负担派遣员工参加的开源用户。演讲有录像，前几年的幻灯片也可获取。除少数赞助商的”我们在招聘”和展台区域外，它不是营销性质的活动。
 
-Allan Jude 和我做了一场关于 ZFS 的演讲，是唯一一场聚焦存储和 FreeBSD 的演讲。我们的演讲出席率很高。我们在开始时询问观众中有多少人了解 ZFS，几只手举了起来。演讲进展顺利，之后我们进行了几场不错的讨论。显然，整个 GPL/CDDL 许可问题以及 Ubuntu 的做法在 Linux 世界引发了一些 FUD，导致了"等等看"的态度，而我们则宣传 ZFS 在 FreeBSD 上的可用性和稳定性。
+Allan Jude 和我做了一场关于 ZFS 的演讲，是唯一一场聚焦存储和 FreeBSD 的演讲。我们的演讲出席率很高。我们在开始时询问观众中有多少人了解 ZFS，几只手举了起来。演讲进展顺利，之后我们进行了几场不错的讨论。显然，整个 GPL/CDDL 许可问题以及 Ubuntu 的做法在 Linux 世界引发了一些 FUD，导致了”等等看”的态度，而我们则宣传 ZFS 在 FreeBSD 上的可用性和稳定性。
 
 下午，我们与 Colin Charles 就 MySQL 进行了良好的交流。他对 FreeBSD 上 MySQL 的状态非常满意，并提到 MySQL 项目与这些 Ports 的 FreeBSD 提交者关系良好。
 

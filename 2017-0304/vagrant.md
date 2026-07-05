@@ -8,7 +8,7 @@ Vagrant 让你能以自动化且可复现的方式搭建这些环境，最终提
 
 ## 为什么用 Vagrant？
 
-你可以创建 Vagrant 环境并轻松与同事分享，无论他们的笔记本或台式机上用的是什么操作系统。你还可以用一条 `vagrant up` 命令启动单机或多机部署。通过让开发环境可复现，你可以避免常见的"在我机器上能跑"这类问题。Vagrant 通常用于在笔记本或台式工作站上搭建开发和测试环境，但也可用于其他场景。例如，一个有趣的用例是为 Jenkins 等自动化构建环境或工具创建构建节点或临时主机。
+你可以创建 Vagrant 环境并轻松与同事分享，无论他们的笔记本或台式机上用的是什么操作系统。你还可以用一条 `vagrant up` 命令启动单机或多机部署。通过让开发环境可复现，你可以避免常见的”在我机器上能跑”这类问题。Vagrant 通常用于在笔记本或台式工作站上搭建开发和测试环境，但也可用于其他场景。例如，一个有趣的用例是为 Jenkins 等自动化构建环境或工具创建构建节点或临时主机。
 
 Vagrant 一般由软件开发者或测试者使用，对运维人员也有用，比如用于模拟生产环境部署。Vagrant 是一款非常有用的工具，用于可复现的、临时的开发和测试环境。但它并不适合管理承载关键数据的生产主机。Vagrant 简洁的设计使它太容易毁掉你用它创建的一切，不适合那类用途。
 
@@ -18,7 +18,7 @@ Vagrant 一般由软件开发者或测试者使用，对运维人员也有用，
 
 ## Vagrant 项目的组成
 
-Vagrant 环境有两个主要组件。第一个是所谓的 Vagrant "box"。这是包含一个已安装客户机操作系统的磁盘镜像以及该磁盘镜像和操作系统的元数据的封装。用户可以自己——手动——创建并分享它们，或使用其他用户或团队创建好的 box。预构建的 box 可在 <https://atlas.hashicorp.com/boxes/search> 找到。`vagrant` 命令会默认在此位置搜索本地尚不存在的 box。可以用 `vagrant box add` 命令手动将 box 添加到本地 Vagrant 缓存，例如：
+Vagrant 环境有两个主要组件。第一个是所谓的 Vagrant “box”。这是包含一个已安装客户机操作系统的磁盘镜像以及该磁盘镜像和操作系统的元数据的封装。用户可以自己——手动——创建并分享它们，或使用其他用户或团队创建好的 box。预构建的 box 可在 <https://atlas.hashicorp.com/boxes/search> 找到。`vagrant` 命令会默认在此位置搜索本地尚不存在的 box。可以用 `vagrant box add` 命令手动将 box 添加到本地 Vagrant 缓存，例如：
 
 ```sh
 vagrant box add hashicorp/precise64
@@ -215,7 +215,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-现在我们可以用 `vagrant up` 启动 VM。Vagrant 创建并启动 VM 时，会把它创建为不可见的无头 VM。你可能想打开 VirtualBox 管理器，以便在 VM 列表中看到它。你还可以点击该 VM，再点击"Show"按钮查看 VM 控制台。shell provision 脚本运行时，我们可以查看命令的输出。完成后，我们应该能访问默认网站：
+现在我们可以用 `vagrant up` 启动 VM。Vagrant 创建并启动 VM 时，会把它创建为不可见的无头 VM。你可能想打开 VirtualBox 管理器，以便在 VM 列表中看到它。你还可以点击该 VM，再点击”Show”按钮查看 VM 控制台。shell provision 脚本运行时，我们可以查看命令的输出。完成后，我们应该能访问默认网站：
 
 <http://localhost:8080/>
 
@@ -227,7 +227,7 @@ Vagrant 最强大的能力之一来自用自动化创建 box 和 Vagrantfile 并
 
 ### Minio
 
-Minio（<https://min.io/>）是一个"为云应用和 devops 构建的分布式对象存储服务器"。它与 Amazon S3 兼容，相当有用。本例中，我创建了一个使用 Ansible 在 FreeBSD 上配置 Minio 的 Vagrantfile。首先运行 `pkg install ansible` 安装 Ansible；然后克隆或下载此项目（<https://github.com/swills/minio.vagrant>）。然后运行 `vagrant up` 命令，只需几条简单命令就能得到一个可用的 Minio 服务器。
+Minio（<https://min.io/>）是一个”为云应用和 devops 构建的分布式对象存储服务器”。它与 Amazon S3 兼容，相当有用。本例中，我创建了一个使用 Ansible 在 FreeBSD 上配置 Minio 的 Vagrantfile。首先运行 `pkg install ansible` 安装 Ansible；然后克隆或下载此项目（<https://github.com/swills/minio.vagrant>）。然后运行 `vagrant up` 命令，只需几条简单命令就能得到一个可用的 Minio 服务器。
 
 ```sh
 mkdir minio

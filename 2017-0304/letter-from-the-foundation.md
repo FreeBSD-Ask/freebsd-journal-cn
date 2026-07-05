@@ -8,7 +8,7 @@
 
 Joseph Kong 评介了 Brendan Gregg 和 Jim Mauro 的《DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X, and FreeBSD》。我对这本书很熟悉，因为在为 <http://www.teachbsd.org> 开发的课程中一直使用它。不过我不剧透——去读这篇书评并享受它吧。
 
-会议季已至，今年第一篇会议报告出自 Benedict Reuschling 之手，他在 FOSDEM 做了志愿服务——FOSDEM 是欧洲最大的开源会议。要在两天内涵盖一场有 5000 名参会者、多条精彩议题轨道的会议绝非易事，但 Benedict 让我们仿佛置身那锅开源浓汤的正中央。顺便说一句，现在还有充足的时间报名 6 月在加拿大渥太华举行的 BSDCan。希望你加入我们，到我们的展台打个招呼。FreeBSD 期刊团队的许多成员都会到场，我们很乐意与你聊聊 Journal 或你心里的任何话题。
+会议季已至，今年第一篇会议报告出自 Benedict Reuschling 之手，他在 FOSDEM 做了志愿服务——FOSDEM 是欧洲最大的开源会议。要在两天内涵盖一场有 5000 名参会者、多条精彩议题轨道的会议绝非易事，但 Benedict 让我们仿佛置身那锅开源浓汤的正中央。顺便说一句，现在还有充足的时间报名 6 月在加拿大渥太华举行的 BSDCan。希望你加入我们，到我们的展台打个招呼。FreeBSD 期刊团队的许多成员都会到场，我们很乐意与你聊聊期刊或你心里的任何话题。
 
 此致，George Neville-Neil
 
@@ -42,6 +42,6 @@ FreeBSD 基金会董事
 - 办公室管理员：Michael Davis（<davism@freebsdjournal.com>）
 - 广告销售：Walter Andrzejewski（<walter@freebsdjournal.com>，电话 888/290-9469）
 
-FreeBSD Journal（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 5757 Central Ave., Suite 201, Boulder, CO 80301，电话 720/207-5142，传真 720/222-2350，邮箱 <info@freebsdfoundation.org>。版权所有 © 2017 FreeBSD Foundation。保留所有权利。
+FreeBSD 期刊（ISBN: 978-0-615-88479-0）每年出版 6 期（1/2 月、3/4 月、5/6 月、7/8 月、9/10 月、11/12 月）。由 FreeBSD Foundation 出版，地址 5757 Central Ave., Suite 201, Boulder, CO 80301，电话 720/207-5142，传真 720/222-2350，邮箱 <info@freebsdfoundation.org>。版权所有 © 2017 FreeBSD Foundation。保留所有权利。
 
 未经出版商书面许可，本杂志不得全部或部分复制。

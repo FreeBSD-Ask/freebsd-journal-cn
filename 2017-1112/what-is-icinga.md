@@ -2,7 +2,7 @@
 
 作者：Lars Engels 和 Benedict Reuschling
 
-在网络监控的早期，有一种名为 Netsaint 的监控软件，后因法律原因改名为 Nagios。Nagios 在开源世界非常成功，但来自社区的补丁常常被拒绝或非常缓慢地被采纳。2009 年，Nagios 社区成员创建了一个分支，命名为 Icinga（祖鲁语意为"它审视"）。自 2014 年发布 Icinga 2.0 以来，它已不再是 Nagios 的分支，而是一次彻底重写，加入了分布式监控、HA 集群、REST API 等新功能。Icinga 可重用所有 Nagios 监控插件，同时提供现代 Web 界面和对其核心功能的强大扩展。
+在网络监控的早期，有一种名为 Netsaint 的监控软件，后因法律原因改名为 Nagios。Nagios 在开源世界非常成功，但来自社区的补丁常常被拒绝或非常缓慢地被采纳。2009 年，Nagios 社区成员创建了一个分支，命名为 Icinga（祖鲁语意为”它审视”）。自 2014 年发布 Icinga 2.0 以来，它已不再是 Nagios 的分支，而是一次彻底重写，加入了分布式监控、HA 集群、REST API 等新功能。Icinga 可重用所有 Nagios 监控插件，同时提供现代 Web 界面和对其核心功能的强大扩展。
 
 ## 在 FreeBSD/ZFS 上安装
 
@@ -195,13 +195,13 @@ PHP 也要配置。所幸 FreeBSD 提供了一份适合生产环境使用的 PHP
 # chown -R www:www /usr/local/etc/icingaweb2
 ```
 
-复制屏幕上回显的 setup token 并输入到 setup token 字段。点击 Next 继续。下一屏会显示安装检测到的模块。确保至少勾选 "Monitoring"，然后点击 Next。为确保 Icinga 安装包含所有必需组件（主要是 PHP 模块），Icinga 会提供一个概览页，显示本地安装中检测到的内容。按本指南操作时，这些字段大多应为绿色，表示该模块存在且可用。"Linux Platform" 字段可安全忽略，因为该软件在 FreeBSD 上同样运行良好。再次点击 Next。
+复制屏幕上回显的 setup token 并输入到 setup token 字段。点击 Next 继续。下一屏会显示安装检测到的模块。确保至少勾选 “Monitoring”，然后点击 Next。为确保 Icinga 安装包含所有必需组件（主要是 PHP 模块），Icinga 会提供一个概览页，显示本地安装中检测到的内容。按本指南操作时，这些字段大多应为绿色，表示该模块存在且可用。“Linux Platform” 字段可安全忽略，因为该软件在 FreeBSD 上同样运行良好。再次点击 Next。
 
-这一屏询问用户将如何对 Icinga Web 进行认证。我们使用先前设置的 PostgreSQL 数据库，但 LDAP 在企业环境中同样可用。选择 "database" 后，继续到下一页输入连接信息。确保数据库类型选 "PostgreSQL"；localhost 和端口应已正确。数据库名输入 `icinga`。用户名和口令即 postgresql 设置中提供的。编码输入 `UTF-8`。是否持久连接到数据库可自行决定，频繁使用 Web 界面时通常是好主意。可验证连接以确认一切正常，再继续到下一页。
+这一屏询问用户将如何对 Icinga Web 进行认证。我们使用先前设置的 PostgreSQL 数据库，但 LDAP 在企业环境中同样可用。选择 “database” 后，继续到下一页输入连接信息。确保数据库类型选 “PostgreSQL”；localhost 和端口应已正确。数据库名输入 `icinga`。用户名和口令即 postgresql 设置中提供的。编码输入 `UTF-8`。是否持久连接到数据库可自行决定，频繁使用 Web 界面时通常是好主意。可验证连接以确认一切正常，再继续到下一页。
 
 此页询问使用哪个认证后端，应已提供默认条目。更多认证后端可稍后在 Icinga Web 2 中添加，此处直接继续。在下一屏输入 Icinga Web 2 管理员账户的凭据（用户名和口令）。继续前确保记住口令。
 
-下一屏处理调试（是否创建用户可见的堆栈跟踪）、设置存储位置以及日志记录方式（日志类型和级别）。如果不想让 syslog 被 Icinga 2 消息塞满，记录到单独文件是好主意。切换到 "file" 时，运行 `mkdir /var/log/icingaweb2` 后跟 `chown www:www /var/log/icingaweb2`，让 Web 界面能写入日志。
+下一屏处理调试（是否创建用户可见的堆栈跟踪）、设置存储位置以及日志记录方式（日志类型和级别）。如果不想让 syslog 被 Icinga 2 消息塞满，记录到单独文件是好主意。切换到 “file” 时，运行 `mkdir /var/log/icingaweb2` 后跟 `chown www:www /var/log/icingaweb2`，让 Web 界面能写入日志。
 
 下一页汇总所有设置，满意后继续到下一页配置监控组件。后端是 IDO，我们之前已用于 PostgreSQL 数据库，所以从这里继续。我们希望将所有监控信息存储在 PostgreSQL 中，因此需要输入先前使用的相同连接信息。点击 Next 前通过验证确认设置正确。
 
@@ -222,13 +222,13 @@ object Host "Example" {
 }
 ```
 
-将 "Example" 和 "IP-ADDRESS" 分别替换为主机名和 IP 地址。保存并退出文件后，让 Icinga 2 检查其配置（`# service icinga2 configcheck`）并重启 `icinga2` 服务。Icinga Web 2 界面现在应显示一个新的待处理主机，稍后该主机会被 ping 定期检查。如果主机宕机，Icinga 2 会在仪表盘中显示告警，并在主机重新可达时移除告警。
+将 “Example” 和 “IP-ADDRESS” 分别替换为主机名和 IP 地址。保存并退出文件后，让 Icinga 2 检查其配置（`# service icinga2 configcheck`）并重启 `icinga2` 服务。Icinga Web 2 界面现在应显示一个新的待处理主机，稍后该主机会被 ping 定期检查。如果主机宕机，Icinga 2 会在仪表盘中显示告警，并在主机重新可达时移除告警。
 
 ## Icinga 还能做更多……
 
 Icinga 可通过更多功能扩展，超越对机器及其服务的监控。例如，在层级式监控大量对象的复杂环境中，业务流程模块能帮助可视化。这样，构成某服务基础的数千台云机器可从一个高层级仪表盘查看。一旦出现告警，该模块允许你下钻到触发告警的具体机器。[https://github.com/Icinga/icingaweb2-module-businessprocess]
 
-Icinga Director 让处理 Icinga 2 配置变得轻松。允许用户通过"指点和点击"灵活创建自己的对象，同时完全自动化其数据中心，系统管理员可以确信其监控解决方案会随着基础设施需求增长而扩展。[https://github.com/Icinga/icingaweb2-module-director]
+Icinga Director 让处理 Icinga 2 配置变得轻松。允许用户通过”指点和点击”灵活创建自己的对象，同时完全自动化其数据中心，系统管理员可以确信其监控解决方案会随着基础设施需求增长而扩展。[https://github.com/Icinga/icingaweb2-module-director]
 
 另一个模块为 Icinga 2 添加了通用工单系统（TTS）功能。它允许在 Icinga Web 2 中用工单系统（TTS）的链接替换工单模式。它定义了一个工单钩子，可被核心监控模块等用于确认、停机和评论。[https://github.com/Icinga/icingaweb2-module-generictts]
 
