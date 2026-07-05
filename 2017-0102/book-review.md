@@ -53,4 +53,4 @@
 - 打造极速数据库存储。
 - 深入探索池、metaslab 等更多内容！
 
-无论你管理的是单台小型服务器还是跨国数据中心，借助 *FreeBSD Mastery: Advanced ZFS* 简化你的存储。即刻入手！
+无论你管理的是单台小型服务器还是跨国数据中心，借助《FreeBSD Mastery: Advanced ZFS》简化你的存储。即刻入手！

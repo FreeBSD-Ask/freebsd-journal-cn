@@ -1,4 +1,4 @@
-# 书评：*DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD*
+# 书评：《DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD》
 
 作者：JOSEPH KONG
 

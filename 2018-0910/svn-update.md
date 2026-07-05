@@ -4,13 +4,13 @@
 
 我们已经进入了 12.0 发布周期！代码冻结已经开始，12.0-RELEASE 公告定于 11 月 13 日。很可能在你阅读本专栏时，releng/12.0 分支已经创建。
 
-令我欣喜的是，越来越多的用户空间工具获得了 libxo 支持。我一直喜欢 Unix 命令行的地方在于能够将一个命令的输出管道到另一个命令进行一些操作，然后再发送到另一个命令进行最终处理。我最大的烦恼是所有这些输出并不遵循任何真正的"标准"，大多数时候你会发现自己必须解析文本块，查找某个字符串，从那里向下数几行，并执行其他纯粹疯狂的行为。libxo 通过使用一组通用的函数调用使生成文本、XML、JSON 和 HTML 输出变得容易，解决了这个问题。这是对代码树受欢迎的补充。
+令我欣喜的是，越来越多的用户空间工具获得了 libxo 支持。我一直喜欢 Unix 命令行的地方在于能够将一个命令的输出管道到另一个命令进行一些操作，然后再发送到另一个命令进行最终处理。我最大的烦恼是所有这些输出并不遵循任何真正的”标准”，大多数时候你会发现自己必须解析文本块，查找某个字符串，从那里向下数几行，并执行其他纯粹疯狂的行为。libxo 通过使用一组通用的函数调用使生成文本、XML、JSON 和 HTML 输出变得容易，解决了这个问题。这是对代码树受欢迎的补充。
 
-## pf：在通过规则失败时支持 "return" 语句
+## pf：在通过规则失败时支持 “return” 语句
 
 <https://svnweb.freebsd.org/changeset/base/335569>
 
-通常 pf 规则预期做两件事之一：通过流量或阻止它。阻止可以是静默的——"drop"，或大声的——"return"、"return-rst"、"return-icmp"。然而还有第三类通过 pf 的流量：匹配"pass"规则但在应用规则时失败的数据包。这发生在重定向表为空或 src node 或状态创建失败时。这样的规则总是静默失败，不通知发送者。此更改允许用户也配置这种行为，以便 pf 在这些情况下返回错误数据包。
+通常 pf 规则预期做两件事之一：通过流量或阻止它。阻止可以是静默的——”drop”，或大声的——”return”、“return-rst”、“return-icmp”。然而还有第三类通过 pf 的流量：匹配”pass”规则但在应用规则时失败的数据包。这发生在重定向表为空或 src node 或状态创建失败时。这样的规则总是静默失败，不通知发送者。此更改允许用户也配置这种行为，以便 pf 在这些情况下返回错误数据包。
 
 ## 引入 arm64 linuxulator 存根
 
@@ -60,7 +60,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/336252>
 
-这将大部分 geli 支持从 lib386/biosdisk.c 迁移到一个新的 geli/gelidev.c，后者实现了一个 devsw 类型设备，其 `dv_strategy()` 函数处理 geli 解密。对所有架构的支持来自于将尝试验证和附加代码迁移到 libsa 的 `devopen()` 函数。打开任何 DEVT_DISK 设备后，`devopen()` 调用新函数 `geli_probe_and_attach()`，它将通过创建 geli_devdesc 实例替换 open_file 中的 disk_devdesc 实例来"附加"geli 代码到 open_file 结构。这通过 geli 代码路由设备的所有 IO。添加了一个新的公共 `geli_add_key()` 函数，允许架构/供应商特定的代码添加从自定义硬件或其他来源获得的密钥。有了这些更改，geli 支持将编译到所有架构上 loader(8) 的所有变体中，因为默认是 WITH_LOADER_GELI。
+这将大部分 geli 支持从 lib386/biosdisk.c 迁移到一个新的 geli/gelidev.c，后者实现了一个 devsw 类型设备，其 `dv_strategy()` 函数处理 geli 解密。对所有架构的支持来自于将尝试验证和附加代码迁移到 libsa 的 `devopen()` 函数。打开任何 DEVT_DISK 设备后，`devopen()` 调用新函数 `geli_probe_and_attach()`，它将通过创建 geli_devdesc 实例替换 open_file 中的 disk_devdesc 实例来”附加”geli 代码到 open_file 结构。这通过 geli 代码路由设备的所有 IO。添加了一个新的公共 `geli_add_key()` 函数，允许架构/供应商特定的代码添加从自定义硬件或其他来源获得的密钥。有了这些更改，geli 支持将编译到所有架构上 loader(8) 的所有变体中，因为默认是 WITH_LOADER_GELI。
 
 ## 添加 bhyve NVMe 设备仿真
 

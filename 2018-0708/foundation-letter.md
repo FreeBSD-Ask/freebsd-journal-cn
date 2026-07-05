@@ -8,7 +8,7 @@
 
 最后，本月照例带来专栏文章：Steven Kreuzer 在 svn Update 中讨论 pNFS 提交到 FreeBSD 一事，Michael Lucas 负责来信专栏，Dru Lavigne 通过活动日历让你了解未来几个月即将到来的全部活动。
 
-Journal 全体同仁希望，如果你正处于夏日炎炎的地方，不妨倒上一杯最令人放松的饮料，坐在树荫下，享受这份 FreeBSD 精粹的清凉合集。
+期刊全体同仁希望，如果你正处于夏日炎炎的地方，不妨倒上一杯最令人放松的饮料，坐在树荫下，享受这份 FreeBSD 精粹的清凉合集。
 
 George Neville-Neil
 FreeBSD Foundation 董事会主席

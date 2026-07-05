@@ -197,7 +197,7 @@ MARIUSZ ZABORSKI 是 Wheel Systems 的首席软件开发者。他自 2015 年起
 
 ## 参考文献
 
-[1] J. Anderson, A Comparison of Unix Sandboxing Techniques, FreeBSD Journal Sept/Oct 2017
+[1] J. Anderson, A Comparison of Unix Sandboxing Techniques, FreeBSD 期刊 Sept/Oct 2017
 [2] P.Dawidek, M.Zaborski, Sandboxing with Capsicum, ;login: issue:December 2014, Vol. 39, No. 6
 [3] M.Zaborski, Capsicum and Casper - a fairy tale about solving security problems, AsiaBSDCon 2016 <http://oshogbo.vexillium.org/pdf/AsiaBSDcon2016.pdf>
 [4] <http://en.wikipedia.org/wiki/Namespace>
