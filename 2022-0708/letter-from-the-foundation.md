@@ -5,7 +5,7 @@
 
 ## 编委会
 
-- **John Baldwin**——FreeBSD Core Team 成员，FreeBSD Journal 编辑委员会主席
+- **John Baldwin**——FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会主席
 - **Tom Jones**——FreeBSD 开发者，阿伯丁大学互联网工程师与研究员
 - **Ed Maste**——FreeBSD 基金会技术高级总监，FreeBSD Core Team 成员
 - **Benedict Reuschling**——FreeBSD 文档提交者，FreeBSD Core Team 成员
@@ -24,7 +24,7 @@
 - **Hiroki Sato**——FreeBSD 基金会董事会董事，AsiaBSDCon 主席，东京工业大学助理教授
 - **Robert N. M. Watson**——FreeBSD 基金会董事会董事，TrustedBSD 项目创始人，剑桥大学高级讲师
 
-## 欢迎阅读《FreeBSD Journal》七/八月刊！
+## 欢迎阅读《FreeBSD 期刊》七/八月刊！
 
 北半球夏季将尽，新学年伊始。Brian Kidney 以一篇介绍在 FreeBSD 上开发的代码追踪与插桩框架的文章开启本期。Benedict Reuschling 撰文谈他的 Unix 开发者课程，话题从系统管理到 shell 脚本编程；Roller Angel 带我们走过一场面向 FreeBSD 新用户的互动工作坊。Anne Dickison 以一篇关于 FreeBSD 有效推广的文章为正文收尾。
 
@@ -35,9 +35,9 @@
 我们重视读者的反馈，无论是面对面还是电子邮件。如果你对文章有反馈、对未来话题有建议，或者有意为《Journal》撰稿，请通过 <info@freebsdjournal.com> 联系我们。
 
 **John Baldwin**
-FreeBSD Core Team 成员，FreeBSD Journal 编辑委员会主席
+FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会主席
 
-FreeBSD Journal 由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #103-107, Boulder, CO 80304
+FreeBSD 期刊由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #103-107, Boulder, CO 80304
 电话：720/207-5142，传真：720/222-2350
 邮箱：info@freebsdfoundation.org
 

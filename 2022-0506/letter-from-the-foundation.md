@@ -5,7 +5,7 @@
 
 ## 编委会
 
-- **John Baldwin**——FreeBSD Core Team 成员，FreeBSD Journal 编辑委员会主席
+- **John Baldwin**——FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会主席
 - **Tom Jones**——FreeBSD 开发者，阿伯丁大学互联网工程师与研究员
 - **Ed Maste**——FreeBSD 基金会技术高级总监，FreeBSD Core Team 成员
 - **Benedict Reuschling**——FreeBSD 文档提交者，FreeBSD Core Team 成员
@@ -24,7 +24,7 @@
 - **Hiroki Sato**——FreeBSD 基金会董事会董事，AsiaBSDCon 主席，东京工业大学助理教授
 - **Robert N. M. Watson**——FreeBSD 基金会董事会董事，TrustedBSD 项目创始人，剑桥大学高级讲师
 
-## 欢迎阅读《FreeBSD Journal》五/六月刊！
+## 欢迎阅读《FreeBSD 期刊》五/六月刊！
 
 计算机是有用的工具，能自动化许多任务。然而，有时事情会出错，原因可能是自然灾害、硬件故障、软件缺陷或配置错误。（这四种我都至少留有伤疤。）Daniel Bell 提出了一种策略，可用于构建系统，使其在面对此类故障时具有弹性。
 
@@ -37,9 +37,9 @@
 我们乐于聆听读者的声音。如果你有反馈、对未来文章的建议，或者有意为《Journal》撰稿，请通过 <info@freebsdjournal.com> 联系我们。
 
 **John Baldwin**
-FreeBSD Core Team 成员，FreeBSD Journal 编辑委员会主席
+FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会主席
 
-FreeBSD Journal 由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #103-107, Boulder, CO 80304
+FreeBSD 期刊由 FreeBSD 基金会出版，地址：3980 Broadway St. STE #103-107, Boulder, CO 80304
 电话：720/207-5142，传真：720/222-2350
 邮箱：<info@freebsdfoundation.org>
 

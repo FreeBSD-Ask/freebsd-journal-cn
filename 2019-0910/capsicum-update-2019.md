@@ -77,6 +77,6 @@ Mariusz Zaborski 是 Fudo Security 的 QA 与开发经理。他自 2015 年起�
 
 [1] Jonathan Anderson, Stanley Godfrey, Robert N. M. Watson, Toward Oblivious Sandboxing with Capsicum
 
-[2] Mariusz Zaborski, FreeBSD Journal 2018 年 5/6 月刊，“Capsicum—Just apply me!”
+[2] Mariusz Zaborski, FreeBSD 期刊 2018 年 5/6 月刊，“Capsicum—Just apply me!”
 
 [3] <https://github.com/myfreeweb/capsicumizer>

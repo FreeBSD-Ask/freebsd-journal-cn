@@ -21,7 +21,7 @@
 • 该仓库也可以通过 SSH 访问：ssh://anongit@git.freebsd.org/src.git  
 • 还有几个官方维护的外部镜像，列表可在 <https://docs.freebsd.org/en/books/handbook/mirrors/#external-mirrors> 查找  
 • 如果使用 Web 浏览器查看内容，可以通过 cgit Web 界面访问：<https://cgit.freebsd.org/src>  
-• 还有一个旧的实验性 GitHub 仓库，位于 <https://github.com/freebsd/freebsd-legacy/（以前是> <https://github.com/freebsd/freebsd），与新的> Git 仓库类似。然而，GitHub 仓库中存在大量错误，在我们将 Git 仓库作为项目的真源时，需要重新生成该仓库的导出。
+• 还有一个旧的实验性 GitHub 仓库，位于 <https://github.com/freebsd/freebsd-legacy/>（以前是 <https://github.com/freebsd/freebsd>），与新的 Git 仓库类似。然而，GitHub 仓库中存在大量错误，在我们将 Git 仓库作为项目的真源时，需要重新生成该仓库的导出。
 
 这些仓库的哈希值是不同的。要从旧仓库迁移到新仓库，请参阅 <https://github.com/freebsd/freebsd-legacy/commit/de1aa3dab-23c06fec962a14da3e7b4755c5880cf>
 
@@ -138,7 +138,7 @@ HEAD is now at 08b8197a742a hook gpiokeys.4 to the build
 
 如果你读过上一节，可能会想，"我该怎么在这种疯狂的修订号下做二分查找？"那么本节正是为你准备的。如果你没有这么想，但也想进行二分查找，那也是为你准备的。
 
-幸运的是，git 提供了命令 `git bisect` 。这里是如何使用它的简要概述。更多信息，我建议查阅 <https://git-scm.com/docs/git-bisect。man> 页面对于描述可能出错的情况、在修订版无法构建时该怎么办、何时想使用其他术语（如 good 和 bad）等问题非常有用，这些内容在这里不会详细讲解。
+幸运的是，git 提供了命令 `git bisect` 。这里是如何使用它的简要概述。更多信息，我建议查阅 <https://git-scm.com/docs/git-bisect> man 页面对于描述可能出错的情况、在修订版无法构建时该怎么办、何时想使用其他术语（如 good 和 bad）等问题非常有用，这些内容在这里不会详细讲解。
 
 `git bisect start` 将启动二分查找过程。接下来，你需要指定一个范围。`git bisect good XXXXXX` 会告诉它哪个修订版是正常的，`git bisect bad XXXXX` 会告诉它哪个修订版是有问题的。通常情况下，坏的修订版就是 HEAD（它是你当前检出的特殊标签）。好的修订版通常是你最后一次检出的修订版。
 

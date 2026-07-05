@@ -88,7 +88,7 @@ chapSecret = verysecurepasswordgoeshere
 # zpool create nvme_ts /dev/da0
 ```
 
-是的，这并不是冗余的，但对于我们的基准测试目的，它已经足够了。在 postgres 端，以数据库超级用户身份登录 psql，表空间通过以下语句定义（有关详细信息，请参见 <https://www.postgresql.org/docs/current/manage-ag-tablespaces.html）：>
+是的，这并不是冗余的，但对于我们的基准测试目的，它已经足够了。在 postgres 端，以数据库超级用户身份登录 psql，表空间通过以下语句定义（有关详细信息，请参见 <https://www.postgresql.org/docs/current/manage-ag-tablespaces.html>）：
 
 ```sql
 psql#>CREATE TABLESPACE nvme LOCATION /nvme;

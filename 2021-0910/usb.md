@@ -46,7 +46,7 @@ struct razer_report {
 
 ## 嗅探 Windows 驱动程序
 
-要嗅探 Windows USB 驱动程序，我们可以使用工具 usbpcap（<https://desowin.org/usbpcap/）。它是一款命令行工具，非常易于使用（在清单> 2 中，我们提供了一个示例）。当我们运行该命令工具时，它会显示可用的设备；接下来，它会询问我们选择要嗅探的设备以及保存 pcap 文件的位置。生成的 pcap 文件可以使用 Wireshark 轻松查看。
+要嗅探 Windows USB 驱动程序，我们可以使用工具 usbpcap（<https://desowin.org/usbpcap/>）。它是一款命令行工具，非常易于使用（在清单 2 中，我们提供了一个示例）。当我们运行该命令工具时，它会显示可用的设备；接下来，它会询问我们选择要嗅探的设备以及保存 pcap 文件的位置。生成的 pcap 文件可以使用 Wireshark 轻松查看。
 
 我们将针对 Razer Windows 驱动程序。在 Windows 上，Razer Synapse 工具允许你自定义键盘的背光颜色。让我们尝试在 usbpcap 运行时设置键盘的不同颜色。通过这个工具，我们将记录发送到键盘的所有请求（Razer Synapse 如图 2 所示）。此时，我们将整个键盘设置为红色方案。
 

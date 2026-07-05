@@ -369,7 +369,7 @@
 * [活动日历](2020-1112/events-calendar.md)
 * [FreeBSD Git 快速入门](2020-1112/git.md)
 * [使用 syzkaller 进行内核 Fuzzing](2020-1112/syzkaller.md)
-* [书评：*Mastering Vim Quickly*](2020-1112/book.md)
+* [书评：《Mastering Vim Quickly》](2020-1112/book.md)
 * [线上会议实用技巧](2020-1112/Online.md)
 * [在控制台上进行网络监控](2020-1112/ports.md)
 * [读者来信](2020-1112/we-get-letters.md)

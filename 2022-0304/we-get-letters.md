@@ -3,7 +3,7 @@
 - 原文链接：[We Get Letters](https://freebsdfoundation.org/wp-content/uploads/2022/03/letters.pdf)
 - 作者：Michael W Lucas
 
-亲爱的 FreeBSD Journal 来信专栏回答者：
+亲爱的 FreeBSD 期刊来信专栏回答者：
 
 关于 ARM64 现在是一级架构这件事，大家都很兴奋。我该怎么用它？我应该立即把我的桌面、服务器和媒体服务器都换成 ARM64 吗？光是读了这一期，我就已经激动得不行了。我应该多快行动？
 
