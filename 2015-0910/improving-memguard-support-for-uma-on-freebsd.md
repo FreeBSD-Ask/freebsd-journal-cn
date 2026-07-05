@@ -1,4 +1,4 @@
-# 改进 FreeBSD 上 UMA 的 MemGuard 支持
+# 改进 FreeBSD 上 MemGuard 对 UMA 的支持
 
 **作者**：Luke Chang-Hsien Tsai（蔡易修）
 
