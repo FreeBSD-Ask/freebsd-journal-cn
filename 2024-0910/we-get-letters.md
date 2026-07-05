@@ -51,9 +51,9 @@
 
 如果梦想成真，你成了真正的内核开发者，你会发现人不是问题，人是 **问题本身**。你的每一处改动都会得罪某个人。用户和非内核程序员会有一种奇怪的想法，以为你是精英、知道自己在干什么、比他们少一些茫然。
 
-既然你声明了不仅要无视我的想法还要反其道而行之，那让我总结一下：成为内核程序员是通往幸福的唯一正道，祝你好运。继续做梦吧！
+既然你声明了不仅要无视我的想法还要反其道而行，那让我总结一下：成为内核程序员是通往幸福的唯一正道，祝你好运。继续做梦吧！
 
 想向 Michael 提问？
-请发送至 <letters@freebsdjournal.org>
+请发送至 [letters@freebsdjournal.org](mailto:letters@freebsdjournal.org)
 
-Michael W Lucas 与受人尊敬的 FreeBSD 期刊编辑委员会主席、精英内核开发者 John Baldwin 不同，他始终待在文档领域。他的最新著作是《Run Your Own Mail Server》，该书以 FreeBSD 作为参考平台。更多信息见 <https://mwl.io>。
+Michael W Lucas 与受人尊敬的 FreeBSD 期刊编辑委员会主席、精英内核开发者 John Baldwin 不同，他始终待在文档领域。他的最新著作是《Run Your Own Mail Server》，该书以 FreeBSD 作为参考平台。更多信息见 [https://mwl.io](https://mwl.io)。
