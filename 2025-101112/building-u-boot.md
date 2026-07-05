@@ -76,7 +76,7 @@ make V=1
 setenv DEVICE_TREE zynq-zybo-z7
 ```
 
-这会覆盖配置文件中的默认 DTS。重新构建并尝试启动。等等，怎么又出了问题？内核可以加载，但在探测硬件时崩溃？哦，对。FreeBSD 对 DTS 的要求与 Linux 不同。某些硬件识别所需的 `compat` 字符串不同，而且 FreeBSD 似乎要求一些 `clock-frequency` 属性，虽然我不确定这些值是否被实际使用。或许在 FreeBSD 驱动中添加与 Linux 期望一致的 `compat` 值是合理的，但我并不是提交者。我不得不在 DTS 文件 `arch/arm/dts/zynq-zybo-z7.dts` 中添加以下内容：
+这会覆盖配置文件中的默认 DTS。重新构建并尝试启动。等等，怎么又出了问题？内核可以加载，但在探测硬件时崩溃？哦，对。FreeBSD 对 DTS 的要求与 Linux 不同。某些硬件识别所需的 `compat` 字符串不同，而且 FreeBSD 似乎要求一些 `clock-frequency` 属性，虽然我不确定这些值是否被实际使用。或许在 FreeBSD 驱动中添加与 Linux 期望一致的 `compat` 值是合理的，但我并不是提交者。我不得不在 DTS 文件 **arch/arm/dts/zynq-zybo-z7.dts** 中添加以下内容：
 
 ```sh
 &sdhci0 {
