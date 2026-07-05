@@ -4,26 +4,6 @@
 
 代表 FreeBSD 期刊编辑委员会
 
-## 编辑委员会
-
-- John Baldwin — FreeBSD Core Team 成员，FreeBSD 期刊编辑委员会联席主席
-- Brooks Davis — SRI International 高级软件工程师，剑桥大学访问学者，FreeBSD Core Team 前成员
-- Bryan Drewery — EMC Isilon 高级软件工程师，FreeBSD Portmgr Team 成员，FreeBSD 提交者
-- Justin Gibbs — FreeBSD 基金会创始人兼主席，Spectra Logic Corporation 高级软件架构师
-- Daichi Goto — BSD Consulting Inc.（东京）董事
-- Joseph Kong — EMC 高级软件工程师，《FreeBSD Device Drivers》作者
-- Steven Kreuzer — FreeBSD Ports Team 成员
-- Dru Lavigne — FreeBSD 基金会董事，BSD 认证小组主席，《BSD Hacks》作者
-- Michael W. Lucas — 《Absolute FreeBSD》作者
-- Ed Maste — FreeBSD 基金会项目发展总监
-- Kirk McKusick — FreeBSD 基金会董事，《The Design and Implementation》系列图书首席作者
-- George V. Neville-Neil — FreeBSD 基金会董事，FreeBSD 期刊编辑委员会主席，《The Design and Implementation of the FreeBSD Operating System》合著者
-- Hiroki Sato — FreeBSD 基金会董事，AsiaBSDCon 主席，FreeBSD Core Team 成员，东京工业大学助理教授
-- Benedict Reuschling — FreeBSD 基金会副主席，FreeBSD 文档提交者
-- Robert Watson — FreeBSD 基金会董事，TrustedBSD 项目创始人，剑桥大学高级讲师
-
----
-
 欢迎来到 2017 年《FreeBSD 期刊》！
 
 编辑委员会对 2017 年各期规划的话题感到兴奋，当然也对这新一年的第一期文章感到兴奋。开篇是 Sean Kelly 撰写的关于 FlightAware 如何使用 FreeBSD 提供精准航班数据的文章。如果你经常出差，大概知道 flightaware.com 和他们的免费 App。当你用它查看自己又一次被延误的原因时，你就在使用 FreeBSD。知道自己正在用 FreeBSD，或许能稍微缓解两小时地面等待的痛苦！

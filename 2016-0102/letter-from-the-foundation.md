@@ -22,15 +22,3 @@
 George Neville-Neil
 代表 FreeBSD 期刊编辑委员会
 
-## 编辑委员会
-
-- John Baldwin — FreeBSD Core Team 成员
-- Justin Gibbs — FreeBSD 基金会创始人兼主席，Spectra Logic Corporation 高级软件架构师
-- Daichi Goto — BSD Consulting Inc.（东京）董事
-- Joseph Kong — 《FreeBSD Device Drivers》作者
-- Dru Lavigne — FreeBSD 基金会董事，BSD 认证小组主席
-- Michael W. Lucas — 《Absolute FreeBSD》作者
-- Kirk McKusick — FreeBSD 基金会董事，《The Design and Implementation》系列图书首席作者
-- George Neville-Neil — FreeBSD 基金会董事，《The Design and Implementation of the FreeBSD Operating System》合著者
-- Hiroki Sato — FreeBSD 基金会董事，AsiaBSDCon 主席，FreeBSD Core Team 成员，东京工业大学助理教授
-- Robert Watson — FreeBSD 基金会董事，TrustedBSD 项目创始人，剑桥大学讲师
