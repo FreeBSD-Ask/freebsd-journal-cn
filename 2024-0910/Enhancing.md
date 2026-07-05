@@ -96,7 +96,7 @@ atf_test_program{name=”test_program”, execenv=”jail”}
 atf_test_program{name=”test_program”, execenv=”jail”, execenv_jail_params=”vnet allow.raw_sockets”}
 ```
 
-只要不同父 jail 中的子 jail 名称不冲突，并且每个 jail 都能拥有自己的 VNET 堆栈，我们就可以轻松地将测试（例如前面提到的网络测试）隔离到独立的 jail 中运行，并通过移除 `is_exclusive` 标志实现并行运行。具体效果取决于环境和配置，但有报告显示，在相同环境下，`netpfil/pf` 测试套件的运行速度提高了 4 至 5 倍，仅需几分钟就能完成，而非原来的半小时。
+只要不同父 jail 中的子 jail 名称不冲突，并且每个 jail 都能拥有自己的 VNET 堆栈，我们就可以轻松将测试（例如前面提到的网络测试）隔离到独立的 jail 中运行，并通过移除 `is_exclusive` 标志实现并行运行。具体效果取决于环境和配置，但有报告显示，在相同环境下，`netpfil/pf` 测试套件的运行速度提高了 4 至 5 倍，仅需几分钟就能完成，而非原来的半小时。
 
 ## 隐式参数与分层 Jail
 
