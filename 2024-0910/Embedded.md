@@ -13,7 +13,7 @@
 
 目前似乎有两种基本的方法。我可以尝试让安装程序在 FreeBSD 的 Linux 仿真环境下运行，并在我的 FreeBSD 机器上本地运行这些工具，而不需要 Linux 虚拟机。如果能够实现，那将是非常棒的！但我不确定是否能做到，也不清楚可能会遇到哪些问题，或者需要多长时间才能弄明白，而我当时正忙于几个项目。这个方法看起来确实是最好的，我很想知道是否有人已经成功实现，或者有谁想尝试，但我选择了一个我认为会涉及较少工作量且更有可能成功的方法。我听说过 bhyve，决定研究一下。如果我能运行一个支持 Vivado 的 Linux 版本的虚拟机，我认为那将是最简单的。只用了一个晚上阅读和另一个晚上实验，我就惊讶地成功运行了。
 
-我从 FreeBSD 手册开始。它真的是一个很棒的资源，感谢所有帮助使其如此出色的人。[第 24.6 章：作为主机使用 FreeBSD 和 bhyve](https://docs.freebsd.org/en/books/handbook/virtualization/#virtualization-host-bhyve) 对如何使用 FreeBSD 作为主机操作系统做了很好的介绍。在大多数情况下，我从那里和互联网上的其他一些地方拼凑出了一个设置。为了设置，我创建了网络的基本主机配置：
+我从 FreeBSD 手册开始。它真的是一个很棒的资源，感谢所有帮助使其如此出色的人。[第 24.6 章：作为主机使用 FreeBSD 和 bhyve](https://docs.freebsd.org/en/books/handbook/virtualization/#virtualization-host-bhyve) 对如何使用 FreeBSD 作为主机操作系统做了很好的介绍。在大多数情况下，我从那里和互联网上的其他一些地方拼凑出了一个设置。为了进行设置，我为网络创建了基本的主机配置：
 
 ```sh
 # kldload vmm
