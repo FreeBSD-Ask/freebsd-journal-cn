@@ -3,15 +3,15 @@
 - 原文地址：[Enhancing FreeBSD Test Suite Parallelism with Kyua’s Jail Feature](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/enhancing-freebsd-test-suite-parallelism-with-kyuas-jail-feature/)
 - 作者：Igor Ostapenko
 
-**测试是一个广泛的概念** 如今，无论采用何种方法、学术观点或特定情境，很难抗拒这样一个简单愿望：不要让最终用户代替我们进行测试。即使是一个简单的错误，也可能在多个方面对业务造成重大损害：声誉、上市时间、转化率、业务扩展等。行业已经从依赖复杂的手动检查发布演变为尽可能拥抱自动化。自动化测试提供了许多优势：缩短测试周期、更频繁的反馈、对结果的额外信心、减少对变更的恐惧等。尽管自动化测试是开发流程中的重要组成部分，但它仅是改善软件交付的众多实践之一。
+**测试是一个相当广泛的概念** 如今，无论采用何种方法、学术观点或特定情境，很难抗拒这样一个简单愿望：不要让最终用户代替我们测试。即使是一个简单的错误，也可能在多个方面对业务造成重大损害：声誉、上市时间、转化率、业务扩展等。行业已经从依赖发布前的复杂手动检查，演变为尽可能拥抱自动化。自动化测试提供了许多优势：更短的周期、更频繁的反馈、对结果的额外信心、减少对变更的恐惧等。尽管自动化测试是开发流程中的重要组成部分，但它仅是改善软件交付的众多实践之一。
 
 ## 使用 Kyua 组织测试
 
-FreeBSD 测试套件通常位于 `/usr/tests`，其基础设施基于 Julio Merino 创建的测试框架 Kyua。Kyua 提供了一种富有表现力的测试套件定义语言、安全的运行时引擎以及强大的报告生成能力。测试可以使用任意工具编写，也可以不依赖特定的库。测试套件中的单元和集成测试通常使用诸如 [`atf-c(3)`](https://man.freebsd.org/cgi/man.cgi?query=atf-c&sektion=3)、[`atf-c++(3)`](https://man.freebsd.org/cgi/man.cgi?query=atf-c%2B%2B&sektion=3)、[`atf-sh(3)`](https://man.freebsd.org/cgi/man.cgi?query=atf-sh&sektion=3) 或 [`pytest`](https://www.freshports.org/devel/py-pytest/) 等库。
+FreeBSD 测试套件通常位于 **/usr/tests**，其基础设施基于 Julio Merino 创建的测试框架 Kyua。Kyua 提供了一种富有表现力的测试套件定义语言、安全的运行时引擎以及强大的报告生成能力。测试可以使用任意工具编写，也可以不依赖特定的库。测试套件中的单元和集成测试通常使用诸如 [`atf-c(3)`](https://man.freebsd.org/cgi/man.cgi?query=atf-c&sektion=3)、[`atf-c++(3)`](https://man.freebsd.org/cgi/man.cgi?query=atf-c%2B%2B&sektion=3)、[`atf-sh(3)`](https://man.freebsd.org/cgi/man.cgi?query=atf-sh&sektion=3) 或 [`pytest`](https://www.freshports.org/devel/py-pytest/) 等库。
 
 Kyua 的核心概念层次结构如下：测试套件 > 测试程序 > 测试用例。
 
-一个测试套件将多个二进制文件（测试程序）分组为一个具有单一名称的集合。测试套件通过 Lua 脚本描述，通常保存为特殊的 [kyuafile(5)](https://man.freebsd.org/cgi/man.cgi?query=kyuafile&sektion=5)。让我们来看以下已存在的文件示例：
+一个测试套件将多个二进制文件（测试程序）分组为一个具有单一名称的集合。测试套件通过 Lua 脚本描述，通常保存为特殊的 [kyuafile(5)](https://man.freebsd.org/cgi/man.cgi?query=kyuafile&sektion=5)。来看以下已存在的文件示例：
 
 ```sh
 # cat -n /usr/tests/sys/kern/Kyuafile
@@ -35,19 +35,19 @@ Kyua 的核心概念层次结构如下：测试套件 > 测试程序 > 测试用
        50  include(“pipe/Kyuafile”)
 ```
 
-第 3 行指定了所使用语法的必要版本。第 5 行为测试套件设置了名称。通常，所有位于 `/usr/tests/**/Kyuafile` 的描述都会被收集到一个名为 FreeBSD 的测试套件中。如果某个二进制文件基于 ATF 库，它会通过 `atf_test_program` 进行注册，从而使 Kyua 能够利用 ATF 提供的功能和特性。如果测试程序不基于 Kyua 支持的库，而仅通过退出码传递结果，则会使用 `plain_test_program` 构造。此外，还有 `tap_test_program`，用于那些通过经典的 [Test Anything Protocol](https://en.wikipedia.org/wiki/Test_Anything_Protocol)（TAP）协议传递结果的测试程序。
+第 3 行指定了所使用语法的必要版本。第 5 行为测试套件设置了名称。通常，所有位于 **/usr/tests/\*\*/Kyuafile** 的描述都会被收集到一个名为 FreeBSD 的测试套件中。如果某个二进制文件基于 ATF 库，它会通过 `atf_test_program` 注册，从而使 Kyua 能够利用 ATF 提供的功能和特性。如果测试程序不基于 Kyua 支持的库，而仅通过退出码传递结果，则会使用 `plain_test_program` 构造。此外，还有 `tap_test_program`，用于那些通过经典的 [Test Anything Protocol](https://en.wikipedia.org/wiki/Test_Anything_Protocol)（TAP）协议传递结果的测试程序。
 
-每个 Kyuafile 只描述其所在目录中的测试二进制文件。然而，`/usr/tests` 的结构设计方式使得每个测试目录都会显式包含其子目录中的测试文件，如第 48、49 和 50 行所示。因此，在该目录运行测试时，将会执行 `sys/kern` 子树中的所有测试，包括 `sys/kern/acct`、`sys/kern/execve` 和 `sys/kern/pipe` 中的测试：
+每个 Kyuafile 只描述其所在目录中的测试二进制文件。然而，**/usr/tests** 的结构设计方式使得每个测试目录都会显式包含其子目录中的测试文件，如第 48、49 和 50 行所示。因此，在该目录运行测试时，将会执行 `sys/kern` 子树中的所有测试，包括 `sys/kern/acct`、`sys/kern/execve` 和 `sys/kern/pipe` 中的测试：
 
 ```sh
 # kyua test -k /usr/tests/sys/kern/Kyuafile
 ```
 
-第 1 行表明，FreeBSD 测试套件中的 Kyuafile 并不是手动创建的。相反，与 FreeBSD 构建系统的大多数组件一样，该过程通过 Makefile 自动处理，Makefile 构建测试程序并生成相应的 Kyuafile。要详细了解该过程，可以将生成的 `/usr/tests/sys/kern/Kyuafile` 与其源文件 `/usr/src/tests/sys/kern/Makefile` 进行比较——这是一种直观的方法。
+第 1 行表明，FreeBSD 测试套件中的 Kyuafile 并不是手动创建的。相反，与 FreeBSD 构建系统的大多数组件一样，该过程通过 Makefile 自动处理，Makefile 构建测试程序并生成相应的 Kyuafile。要详细了解该过程，可以将生成的 **/usr/tests/sys/kern/Kyuafile** 与其源文件 **/usr/src/tests/sys/kern/Makefile** 比较——这是一种直观的方法。
 
 未在 Kyuafile 中注册的测试程序将不会被 Kyua 识别，因此也不会被执行。
 
-Kyuafile 中未显式提及测试用例（test cases），因为测试用例是在更低的层级（即测试程序内部）定义的，并需要所使用的库的支持。通常，将多个相似的测试（即测试用例）分组到一个测试程序的二进制文件中会比创建多个独立的测试程序更为方便。对于普通测试程序，通常仅提供一个测试用例，通常根据 `main()` 函数命名为“main”。相比之下，基于 ATF 库的测试可以报告多个测试用例。在 Kyua 中，我们通常称为“测试”的内容被称为“测试用例”，并被视为执行的基本单元。因此，尽管 Kyuafile 中描述的测试套件可能看起来只引用了一个测试程序，但它可能包含数十个或更多的测试用例。`kyua list` 命令会以 `<测试程序>:<测试用例>` 的格式列出测试用例，这种格式也可以用于其他命令，例如单独运行特定的测试用例：
+Kyuafile 中未显式提及测试用例（test cases），因为测试用例是在更低的层级（即测试程序内部）定义的，并需要所使用的库的支持。通常，将多个相似的测试（即测试用例）分组到一个测试程序的二进制文件中会比创建多个独立的测试程序更为方便。对于普通测试程序，通常仅提供一个测试用例，通常根据 `main()` 函数命名为“main”。相比之下，基于 ATF 库的测试可以报告多个测试用例。在 Kyua 中，我们通常称为“测试”的内容被称为“测试用例”，并被视为执行的基本单元。因此，尽管 Kyuafile 中描述的测试套件可能看起来只引用了一个测试程序，但它可能包含数十个或更多的测试用例。`kyua list` 命令会以 `<测试程序>:<测试用例>` 的格式列出测试用例，这种格式也可以用于其他命令，例如单独运行某个测试用例：
 
 ```sh
 # cd /usr/tests/sys/kern
@@ -71,13 +71,13 @@ Kyua 可以通过配置实现测试用例的并行运行。默认情况下，`pa
 
 测试用例需要独占访问共享资源时，应标记为 `is_exclusive="true"`，以便 Kyua 知道不与其他测试并行运行。Kyua 的操作分为两个阶段。第一阶段运行所有非独占的测试用例，如果配置了并行性设置，这些测试可以并行执行。第二阶段顺序运行所有独占的测试用例。为了保持测试套件的高效性，最好避免添加新的独占测试，并尽量创建非独占的替代版本，否则测试套件可能会耗费过多时间来执行。
 
-然而，有些测试利用了 [`jail(8)`](https://man.freebsd.org/cgi/man.cgi?query=jail&sektion=8) 功能来处理其他方式难以复现的场景。例如，网络模块测试通常通过创建临时 jail，利用主机通过 [`epair(4)`](https://man.freebsd.org/cgi/man.cgi?query=epair&sektion=4) 对模块行为进行验证。这类测试必须标记为独占有以下几个原因：为了方便通常会重用相同的 jail 名称（但系统中的每个 jail 必须有唯一名称），主机端使用为演示用途分配的相同 IP 地址配置接口，可能导致共享路由表的冲突，以及其他相关问题。虽然这些问题可以由测试用例自身解决，但这样会显著增加测试编写者和维护者的复杂性，并且某些问题可能在没有外部干预的情况下无法解决。这时，最新版本的 Kyua 发挥了作用。
+然而，有些测试利用 [`jail(8)`](https://man.freebsd.org/cgi/man.cgi?query=jail&sektion=8) 功能来处理其他方式难以复现的场景。例如，网络模块测试通常通过创建临时 jail，利用主机通过 [`epair(4)`](https://man.freebsd.org/cgi/man.cgi?query=epair&sektion=4) 对模块行为进行验证。这类测试必须标记为独占有以下几个原因：为了方便通常会重用相同的 jail 名称（但系统中的每个 jail 必须有唯一名称），主机端使用为演示用途分配的相同 IP 地址配置接口，可能导致共享路由表的冲突，以及其他相关问题。虽然这些问题可以由测试用例自身解决，但这样会显著增加测试编写者和维护者的复杂性，并且某些问题可能在没有外部干预的情况下无法解决。这时，最新版本的 Kyua 派上用场了。
 
 ## 执行环境概念
 
 在 15-CURRENT 版本中，Kyua 引入了一个新的概念——“执行环境”。该功能将在 14.2-RELEASE 中提供。
 
-默认情况下，测试仍然按照之前的方式运行，即通过生成子进程——这种方式被称为主机执行环境。测试用例可以通过指定一个新的元数据属性 `execenv`，选择使用不同的执行环境。针对每个测试用例的一般步骤顺序已扩展，包括以下内容：
+默认情况下，测试仍然按照之前的方式运行，即通过生成子进程——这种方式称为主机执行环境。测试用例可以通过指定一个新的元数据属性 `execenv`，选择使用不同的执行环境。针对每个测试用例的一般步骤顺序已扩展，包括以下内容：
 
 1. 初始化执行环境  
 2. 执行测试  
