@@ -15,7 +15,7 @@
 
 欢迎参加 2025 年 6 月 FreeBSD 开发者峰会。本次峰会与 BSDCan 2025 同地举办，地点位于加拿大渥太华。为期两天的活动于 2025 年 6 月 11-12 日举行，内容包括开发者讨论会、厂商演讲和工作组。
 
-![FreeBSD logo](https://freebsdfoundation.org/wp-content/uploads/2025/04/FreeBSD_logo.png)
+![](https://freebsdfoundation.org/wp-content/uploads/2025/04/FreeBSD_logo.png)
 
 ## BSDCan 2025
 
@@ -25,7 +25,7 @@
 
 BSDCan 是一场技术大会，面向使用 BSD 操作系统及相关项目的开发者和使用者。大会以开发者会议的形式，重点关注新兴技术、研究项目和工作进展，同时涵盖用户空间基础设施项目，欢迎自由软件开发者和商业厂商贡献者共同参与。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/04/EuroBSDCon.png)
+![EuroBSDCon](https://freebsdfoundation.org/wp-content/uploads/2025/04/EuroBSDCon.png)
 
 ## EuroBSDCon 2025
 

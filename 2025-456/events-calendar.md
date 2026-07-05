@@ -2,7 +2,7 @@
 
 作者：Anne Dickison
 
-### 截至 2025 年 11 月举办的 BSD 活动
+## 截至 2025 年 11 月举办的 BSD 活动
 
 如有任何 FreeBSD 相关活动或 FreeBSD 用户感兴趣的活动未在此列出，请将详情发送至 [freebsd-doc@FreeBSD.org](mailto:freebsd-doc@FreeBSD.org)。
 
@@ -16,7 +16,7 @@
 
 这一年度大会提供了绝佳机会，让你了解 BSD 领域的最新动态，见证当代部署案例，并亲自结识其他使用 BSD 技术的用户与企业。EuroBSDCon 也是创意、讨论与信息交流的温床，这些交流常常会催生编程项目。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/07/openzfs.png)
+![OpenZFS](https://freebsdfoundation.org/wp-content/uploads/2025/07/openzfs.png)
 
 ## OpenZFS 用户与开发者峰会 2025
 
@@ -26,7 +26,7 @@
 
 今年的用户峰会将探讨广泛的主题，旨在支持并连接 OpenZFS 社区。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2025/07/freebsdlogo.png)
+![FreeBSD logo](https://freebsdfoundation.org/wp-content/uploads/2025/07/freebsdlogo.png)
 
 ## 2025 年 11 月 FreeBSD 厂商峰会
 
