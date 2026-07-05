@@ -3,23 +3,23 @@
 - 原文：[Duplicating your System Using duplicity to back up your FreeBSD desktop](https://freebsdfoundation.org/our-work/journal/browser-based-edition/laptop-desktop/duplicating-your-system/)
 - 作者：Jason Tubnor
 
-你刚刚安装了新的 FreeBSD 桌面（或笔记本电脑），将其设置为你喜欢的样子，正要开始创作新小说或为 FreeBSD 移植你最喜欢的软件供应商刚刚发布的新软件。然后你意识到，只需一个有缺陷的 NVMe 控制器，你就可能面临数据完全丢失的风险，你的所有工作和时间都会随之消失。
+你刚刚安装了新的 FreeBSD 桌面（或笔记本电脑），把它调成了你喜欢的样子，正要开始创作新小说，或把你最喜欢的软件供应商刚发布的新软件移植到 FreeBSD。然后你意识到，只需一个有缺陷的 NVMe 控制器，你就可能面临数据完全丢失的风险，你的所有工作和时间都会随之消失。
 
 在现代，我们有 ZFS 快照和复制功能，使得备份任务变得极其简单。然而，你可能无法访问另一个 ZFS 端点进行复制，需要通过使用非 ZFS 工具进行备份来分散风险，或者你只是使用 UFS2，过着复古的生活。
 
-对于这些情况，我的第一个建议是使用 Tarsnap，因为它易于使用且简单，使恢复与备份一样容易。但某些情况需要不同的方法。也许你公司有严格的防火墙，不允许 Tarsnap 数据流从公司网络流出，或者你可以轻松访问内部存储端点，例如兼容 S3 的对象存储或具有 SFTP 访问权限的大文件存储位置。
+对于这些情况，首选是依靠 Tarsnap，因为它易于使用且简单，使恢复与备份一样容易。但某些情况需要不同的方法。也许你公司有严格的防火墙，不允许 Tarsnap 数据流从公司网络流出，或者你可以方便地访问内部存储端点，例如兼容 S3 的对象存储或具有 SFTP 访问权限的大文件存储位置。
 
-当你面临后者时，可以在 FreeBSD 系统上作为易于安装的软件包使用 duplicity（ports 中的 sysutils/duplicity）工具：
+当你面临后者时，duplicity（ports 中的 sysutils/duplicity）工具可以作为易于安装的软件包安装到你的 FreeBSD 系统上：
 
 ```sh
 # pkg install duplicity par2cmdline
 ```
 
-在上述情况下，还安装了 par2cmdline 软件包，因为它不是 duplicity 的依赖项，但在本文中（以及 duplicity 使用）用于避免备份存档中的脏位。
+在上述情况下，还安装了 par2cmdline 软件包，因为它不是 duplicity 的依赖项，但本文（以及 duplicity）会用到它来避免备份存档中的位腐烂。
 
-Duplicity（[https://duplicity.gitlab.io/](https://duplicity.gitlab.io/)）将把你的各种文件和文件夹备份到加密的 tar 格式卷中，同时使用 librsync 来提高压缩率并对数据执行差分操作。虽然它没有一些使 Tarsnap 吸引人的真正好功能，但它确实提供了一个适用于许多用例的替代方案。
+Duplicity（[https://duplicity.gitlab.io/](https://duplicity.gitlab.io/)）将把你的各种文件和文件夹备份到加密的 tar 格式卷中，同时使用 librsync 来提高压缩率并对数据执行差分操作。虽然它没有 Tarsnap 那些真正出色的功能，但确实提供了一个适用于许多用例的替代方案。
 
-虽然 duplicity 有许多目标存储选项，但我们将在这里专注于使用兼容 S3 的对象存储，因为它可以从许多云提供商那里轻松获得，具有不同的成本、访问速度和耐用性。duplicity 的工作方式更像是一种交互式方法（尤其是在清理旧数据集时）。虽然你可能成功地将备份提交到 AWS Glacier 或类似的对象存储，但数据的恢复和管理将极其缓慢、复杂且昂贵；你已被警告过了。不要追求冷、便宜的存储；选择稍高/更热的存储以获得更好的体验。虽然它是交互式的，
+虽然 duplicity 有许多目标存储选项，但我们将在这里专注于使用兼容 S3 的对象存储，因为它可以从许多云提供商那里轻松获得，具有不同的成本、访问速度和耐用性。duplicity 的工作方式更像是一种交互式方法（尤其是在清理旧数据集时）。虽然你可能成功地将备份提交到 AWS Glacier 或类似的对象存储，但数据的恢复和管理将极其缓慢、复杂且昂贵；在此先提醒你。不要追求冷、便宜的存储；选择稍高/更热的存储以获得更好的体验。虽然它是交互式的，
 但当从 cron 调用、在脚本中执行或在交互式命令行上使用时，它会完美工作。
 
 开始之前，我们需要定义备份数据的参数和最佳实践。关键考虑因素是：
