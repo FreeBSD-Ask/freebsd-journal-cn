@@ -172,6 +172,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 | 模式 | 示例 | 处理 |
 | ---- | ---- | ---- |
+| 编辑委员会块 | `JOURNAL 编辑委员会` + 成员列表（2020 年各期） | 删除整块 |
 | 出版信息块 | `## 出版信息`、`**出版信息**`、`## 出版团队`、`## 工作人员` | 删除整块 |
 | 版权声明 | `版权所有 © 20XX FreeBSD Foundation。保留所有权利。` | 删除 |
 | ISBN 信息 | `FreeBSD 期刊（ISBN: 978-0-615-88479-0）每年出版 6 期...` | 删除 |
@@ -187,7 +188,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 以下内容属于正文，**不得删除**：
 
-- **编辑委员会列表**（`## 编辑委员会`、`**编辑委员会**`、`JOURNAL 编辑委员会`）：保留
+- **编辑委员会列表**（`## 编辑委员会`、`**编辑委员会**`）：保留
 - **作者署名**（如 `**作者：George Neville-Neil**`）：保留
 - **基金会书信正文**：保留
 - **书信签名**（如 `George Neville-Neil` / `《FreeBSD 期刊》主编`）：保留
