@@ -6,13 +6,13 @@
 
 亲爱的"他们怎么让你写这专栏"：
 
-FreeBSD 15 已经发布，基本系统以包的形式提供。在 2022 年 1/2 月刊的 *FreeBSD Journal* 中，你整篇专栏都在抱怨 pkgbase。你错了。显然错了。这够不够让你终于闭嘴，不再回我们的信？
+FreeBSD 15 已经发布，基本系统以包的形式提供。在 2022 年 1/2 月刊的《FreeBSD 期刊》中，你整篇专栏都在抱怨 pkgbase。你错了。显然错了。这够不够让你终于闭嘴，不再回我们的信？
 
 ——想要有用答案的人
 
 亲爱的"想抓把柄的"：
 
-让我闭嘴是个早已解决的问题。每小时收费 200 美元（<https://givebutter.com/c/Penguicon24/auction/items/258146>）。至于他们为什么让我写这个？因为 *FreeBSD Journal* 编辑 John Baldwin 急需一个来信专栏。如今有了专栏，他更急了，但原因完全不同。换个新鲜，权当休息。
+让我闭嘴是个早已解决的问题。每小时收费 200 美元（<https://givebutter.com/c/Penguicon24/auction/items/258146>）。至于他们为什么让我写这个？因为《FreeBSD 期刊》编辑 John Baldwin 急需一个来信专栏。如今有了专栏，他更急了，但原因完全不同。换个新鲜，权当休息。
 
 言归正传，回到你真正的问题。打包的基本系统。怎么回事？为什么？
 
@@ -52,7 +52,7 @@ FreeBSD 以其开放管理为荣，但项目中有一个人掌握着非凡的宇
 
 Colin Percival。
 
-我想我看到了*真正的*问题所在……
+我想我看到了 **真正的** 问题所在……
 
 有问题想问 Michael？
 发送至 [letters@freebsdjournal.org](mailto:letters@freebsdjournal.org)

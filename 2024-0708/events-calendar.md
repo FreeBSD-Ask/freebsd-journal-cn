@@ -3,11 +3,11 @@
 - 原文链接：[2024 Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/events-calendar/)
 - 作者：Anne Dickison
 
-### 截至 2024 年 11 月的 BSD 活动
+## 截至 2024 年 11 月的 BSD 活动
 
 如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/09/freebsd_logo.png)
+![FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2024/09/freebsd_logo.png)
 
 ## 2024 年 9 月 FreeBSD 开发者峰会
 
@@ -17,7 +17,7 @@
 
 2024 年 9 月的 FreeBSD 开发者峰会将与 EuroBSDCon 2024 同地举办，地点在爱尔兰都柏林。本次活动为邀请制。FreeBSD 提交者可使用此 wiki 自行注册；非提交者须由一名提交者推荐方可参加。与会者还须参加 EuroBSDCon 2024，才能参与所有开发者峰会活动。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/09/eurobsdcon_logo.jpg)
+![EuroBSDCon](https://freebsdfoundation.org/wp-content/uploads/2024/09/eurobsdcon_logo.jpg)
 
 ## EuroBSDCon 2024
 
@@ -25,7 +25,7 @@
 
 EuroBSDCon 是年度国际性技术大会，每年在欧洲不同国家举办。大会汇聚基于 4.4BSD（Berkeley Software Distribution）操作系统家族及相关项目的用户和开发者。FreeBSD 基金会再次荣任银牌赞助商。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/09/allthingsopen_logo.png)
+![All Things Open](https://freebsdfoundation.org/wp-content/uploads/2024/09/allthingsopen_logo.png)
 
 ## All Things Open
 
@@ -35,7 +35,7 @@ EuroBSDCon 是年度国际性技术大会，每年在欧洲不同国家举办。
 
 All Things Open 是美国东海岸规模最大的开源/开放技术/开放 Web 大会，也是全美规模最大的同类大会之一。大会常年邀请世界上最知名的专家，以及几乎所有主流科技公司。FreeBSD 荣任本年度 All Things Open 的非营利合作伙伴。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/09/openzfs_logo.png)
+![OpenZFS](https://freebsdfoundation.org/wp-content/uploads/2024/09/openzfs_logo.png)
 
 ## 2024 年 OpenZFS 用户与开发者峰会
 
@@ -59,7 +59,7 @@ All Things Open 是美国东海岸规模最大的开源/开放技术/开放 Web 
 
 基金会荣任铜牌赞助商。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/09/freebsd_logo.png)
+![FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2024/09/freebsd_logo.png)
 
 ## 2024 年秋季 FreeBSD 峰会
 

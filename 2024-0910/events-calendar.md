@@ -3,11 +3,11 @@
 - 原文链接：[2024 Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/events-calendar/)
 - 作者：Anne Dickison
 
-### 截至 2025 年 3 月的 BSD 活动
+## 截至 2025 年 3 月的 BSD 活动
 
 如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2023/11/fosdem_gear.png)
+![FOSDEM](https://freebsdfoundation.org/wp-content/uploads/2023/11/fosdem_gear.png)
 
 ## FOSDEM 2025
 
@@ -17,7 +17,7 @@
 
 FOSDEM 是由志愿者组织的为期两天的活动，旨在推动自由和开源软件的广泛应用。FOSDEM 于 2025 年 2 月 1-2 日举办，为开源和自由软件开发者提供一个相聚、交流想法、协作的平台。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/02/scale.png)
+![SCALE 22X](https://freebsdfoundation.org/wp-content/uploads/2024/02/scale.png)
 
 ## SCALE 22X
 
@@ -29,7 +29,7 @@ SCALE 22X——第 22 届年度南加州 Linux 大会——将于 2025 年 3 月
 
 SCALE 是北美规模最大的社区主办的开源和自由软件大会。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/09/freebsd_logo.png)
+![FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2024/09/freebsd_logo.png)
 
 ## AsiaBSDCon 2025
 

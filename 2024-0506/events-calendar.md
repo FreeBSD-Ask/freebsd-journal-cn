@@ -2,11 +2,11 @@
 
 作者：Anne Dickison
 
-### 截至 2024 年 10 月的 BSD 活动
+## 截至 2024 年 10 月的 BSD 活动
 
 如需提交此处未列出的 FreeBSD 相关活动，或 FreeBSD 用户感兴趣的活动信息，请发送至 <freebsd-doc@FreeBSD.org>。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/07/calander_image1.png)
+![活动日历](https://freebsdfoundation.org/wp-content/uploads/2024/07/calander_image1.png)
 
 ## EuroBSDCon 2024
 
@@ -14,7 +14,7 @@
 
 EuroBSDCon 是年度国际技术大会，每年在欧洲不同国家举办，汇聚基于 4.4BSD（伯克利软件发行版）操作系统家族及相关项目的用户和开发者。FreeBSD 基金会很高兴再次作为银牌赞助商参与。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/07/FreeBSD_logo.png)
+![FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2024/07/FreeBSD_logo.png)
 
 ## EuroBSDCon FreeBSD 开发者峰会
 
@@ -22,7 +22,7 @@ EuroBSDCon 是年度国际技术大会，每年在欧洲不同国家举办，汇
 
 第一天为演讲和讨论组，第二天为黑客马拉松。
 
-![](https://freebsdfoundation.org/wp-content/uploads/2024/07/calander_image2.png)
+![活动日历](https://freebsdfoundation.org/wp-content/uploads/2024/07/calander_image2.png)
 
 ## All Things Open
 
