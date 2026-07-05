@@ -61,4 +61,4 @@
 
 **Tom Jones** 是一位致力于保持高效网络栈的 FreeBSD 提交者。
 
-**Kajetan Staszkiewicz** 是专注于网络和虚拟化的系统管理员，偶尔为 FreeBSD 的 `pf(4)` 做出贡献。
+**Kajetan Staszkiewicz** 是专注于网络和虚拟化的系统管理员，偶尔为 FreeBSD 的 `pf(4)` 贡献代码。
