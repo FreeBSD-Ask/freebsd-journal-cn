@@ -1,4 +1,4 @@
-# FreeBSD 与 2025 谷歌编程之夏
+# FreeBSD 与 GSoC 2025
 
 - 原文：[FreeBSD and Google Summer of Code 2025](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/freebsd-and-google-summer-of-code-2025/)
 - 作者：Joe Mingrone
