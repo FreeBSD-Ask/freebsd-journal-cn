@@ -58,7 +58,7 @@ ping6 google.com
 
 ### 步骤 4：配置 WireGuard
 
-接下来，需要进行一些步骤来配置 WireGuard。首先，生成私钥：
+接下来，配置 WireGuard 需要几个步骤。首先，生成私钥：
 
 ```sh
 wg genkey | tee /dev/stderr | wg pubkey | grep --label PUBLIC -H .
@@ -153,7 +153,7 @@ pass in on $ext_if proto udp to port 51820
 pass out on $ext_if
 ```
 
-这是一个非常简单的配置：它阻断了从 Spamhaus 下载的列表中列出的所有流量，允许 WireGuard 网络通过 NAT 访问公共接口，允许 IPv6 的 ICMP 流量（这是网络正常运行所必需的），同时阻断进入 WireGuard IPv6 网络的流量（记住，IP 地址是公开的并且可以直接访问，所以我们默认不想暴露我们的设备）。所有通过 WireGuard 接口的流量都会被允许通过。然后，所有其他流量都将被阻止，并且会指定一些例外规则，比如允许 SSH 和 WireGuard 连接（当然）。还会允许流量从公共网络接口外发。
+这是一个非常简单的配置：它阻断了从 Spamhaus 下载的列表中列出的所有流量，允许 WireGuard 网络通过 NAT 访问公共接口，允许 IPv6 的 ICMP 流量（这是网络正常运行所必需的），同时阻断进入 WireGuard IPv6 网络的流量（记住，IP 地址是公开的并且可以直接访问，所以我们默认不想暴露我们的设备）。所有通过 WireGuard 接口的流量都会被允许通过。然后，所有其他流量都将被阻止，并且会指定一些例外规则，比如允许 SSH 和 WireGuard 连接（当然）。也会授权允许流量从公共网络接口外发。
 
 将此配置保存到 `/etc/pf.conf` 文件中。
 
