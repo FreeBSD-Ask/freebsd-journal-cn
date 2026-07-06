@@ -33,7 +33,7 @@ DWSDIR=~/work/ws
 WSDIR=/ws
 ```
 
-在 desktop 上的所有检出的代码都假设位于一个公共父目录 `${DWSDIR}` 下的 `${WS}` 目录中。示例使用位于 `~user/work/ws` 目录中的工作区“dev”。builder 上的目录 `${WSDIR}` 是一个自包含的工作区，包含构建配置文件、源代码、共享的目录 obj 以及 gdb 的 sysroot。示例中使用 builder 上的 `/ws` 路径。
+在 desktop 上的所有检出的代码都假设位于一个公共父目录 `${DWSDIR}` 下的 `${WS}` 目录中。示例使用位于 `~user/work/ws` 目录中的工作区“dev”。builder 上的目录 `${WSDIR}` 是一个自包含的工作区，包含构建配置文件、源代码、共享的目录 obj 以及 gdb 的 sysroot。示例中使用 builder 上的 **/ws** 路径。
 
 ## 桌面设置
 
@@ -83,7 +83,7 @@ desktop$ rsync -azO --del --no-o --no-g ~/work/ws/dev root@builder:/ws/src/
 
 ### 构建配置
 
-在构建机的工作区中创建文件 `make.conf` 和 `src.conf`，而不要去修改 `/etc` 中的全局配置文件。目录 `obj` 也位于工作区，而非 `/usr/obj`。使用 meta 模式实现快速增量重建。meta 模式需要 `filemon`。默认情况下，`KERNCONF=` 列表中的所有内核都会被构建，第一个内核会被安装。可以在命令行中用一个 KERNCONF 覆盖默认设置。
+在构建机的工作区中创建文件 `make.conf` 和 `src.conf`，而不要去修改 **/etc** 中的全局配置文件。目录 `obj` 也位于工作区，而非 **/usr/obj**。使用 meta 模式实现快速增量重建。meta 模式需要 `filemon`。默认情况下，`KERNCONF=` 列表中的所有内核都会被构建，第一个内核会被安装。可以在命令行中用一个 KERNCONF 覆盖默认设置。
 
 ```sh
 builder# kldload -n filemon
@@ -301,7 +301,7 @@ hint.uart.0.flags=”0x10”
 hint.uart.1.flags=”0x80”
 ```
 
-创建工作区的挂载点，并在 fstab 中添加条目，以便在启动时挂载。`/dev/fd` 和 `/proc` 一般是有用的。
+创建工作区的挂载点，并在 fstab 中添加条目，以便在启动时挂载。**/dev/fd** 和 **/proc** 一般是有用的。
 
 ```sh
 # mkdir -p /mnt/ws
@@ -479,7 +479,7 @@ builder# wsmake buildkernel
 
 ### 安装
 
-1. 将内核安装到虚拟机中。`INSTKERNNAME` 在 `make.conf` 中设置，因此 `/boot/${INSTKERNNAME}` 中的测试内核不会与 `/boot/kernel` 中的原始内核冲突，后者是发生问题时的安全回退。亦可在命令行中显式指定。
+1. 将内核安装到虚拟机中。`INSTKERNNAME` 在 `make.conf` 中设置，因此 **/boot/${INSTKERNNAME}** 中的测试内核不会与 **/boot/kernel** 中的原始内核冲突，后者是发生问题时的安全回退。亦可在命令行中显式指定。
 
    ```sh
    vm0# alias wsmake='__MAKE_CONF=${WSDIR}/src/make.conf SRC_ENV_CONF=${WSDIR}/src/src-env.conf SRCCONF=${WSDIR}/src/src.conf make -j1C'

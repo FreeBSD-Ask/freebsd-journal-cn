@@ -39,7 +39,7 @@ md0
 /mnt/bin/sh
 ```
 
-这将一个预构建的 FreeBSD 发行版安装到 `/tmp/foo`，然后使用 `makefs` 生成了一个文件系统镜像 `fs.img`。可以用命令 `mdconfig(8)` 挂载该镜像，创建一个由该文件支持的字符设备。`/tmp/foo` 中文件的属性（如模式位和时间戳）在生成的镜像中会得到保留。
+这会将预构建的 FreeBSD 发行版安装到 **/tmp/foo**，然后使用 `makefs` 生成了一个文件系统镜像 `fs.img`。可以用命令 `mdconfig(8)` 挂载该镜像，创建一个由该文件支持的字符设备。**/tmp/foo** 中文件的属性（如模式位和时间戳）在生成的镜像中会得到保留。
 
 与此相比，传统的 FreeBSD“live”安装过程可能会像这样：
 
@@ -108,9 +108,9 @@ $ makefs -t zfs -o poolname=zroot zfs.img /tmp/test
 $ sudo bhyveload -c stdio -d zfs.img test
 ```
 
-这里，`bhyveload` 使用 `/boot/userboot.so`，它是一个经过编译以在用户空间运行的 FreeBSD 引导加载程序副本。它具有大部分真实引导加载程序的功能，但与直接使用 BIOS 调用或 EFI 启动服务从磁盘读取数据不同，它使用熟悉的 `read(2)` 系统调用从镜像文件 `zfs.img` 中获取数据。
+这里，`bhyveload` 使用 **/boot/userboot.so**，它是一个经过编译以在用户空间运行的 FreeBSD 引导加载程序副本。它具有大部分真实引导加载程序的功能，但与直接使用 BIOS 调用或 EFI 启动服务从磁盘读取数据不同，它使用熟悉的 `read(2)` 系统调用从镜像文件 `zfs.img` 中获取数据。
 
-最初的目标是让 `userboot.so` 能够找到并加载位于 `zfs.img` 中的内核文件 `/boot/kernel/kernel`。这是一个非常方便的测试平台，因为我可以轻松地将调试器附加到 `bhyveload`，或向加载程序添加打印语句并重新编译 `userboot.so`。我的第一个里程碑是让 [`vdev_probe()`](https://cgit.freebsd.org/src/tree/stand/libsa/zfs/zfsimpl.c?h=release/14.0.0#n2008) 识别该镜像为有效的 ZFS 池。
+最初的目标是让 `userboot.so` 能够找到并加载位于 `zfs.img` 中的内核文件 **/boot/kernel/kernel**。这是一个非常方便的测试平台，因为我可以轻松地将调试器附加到 `bhyveload`，或向加载程序添加打印语句并重新编译 `userboot.so`。我的第一个里程碑是让 [`vdev_probe()`](https://cgit.freebsd.org/src/tree/stand/libsa/zfs/zfsimpl.c?h=release/14.0.0#n2008) 识别该镜像为有效的 ZFS 池。
 
 ## vdev 标签和 uberblock
 
