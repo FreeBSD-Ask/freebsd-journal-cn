@@ -41,6 +41,6 @@ AsiaBSDCon 面向所有开发、部署和使用 FreeBSD、NetBSD、OpenBSD、Dra
 
 <https://wiki.freebsd.org/OfficeHours>
 
-来加入 FreeBSD 社区成员的 FreeBSD Office Hours 吧。从一般问答到以主题为线索的演示和教程，Office Hours 是解答你 FreeBSD 相关问题的好去处。
+来和 FreeBSD 社区成员一起参加 FreeBSD Office Hours 吧。从一般问答到以主题为线索的演示和教程，Office Hours 是解答你 FreeBSD 相关问题的好去处。
 
 往期节目可在 FreeBSD YouTube 频道观看：<https://www.youtube.com/c/FreeBSDProject>。

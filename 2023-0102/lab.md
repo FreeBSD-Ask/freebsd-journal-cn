@@ -27,7 +27,7 @@
 
 ## 防火墙
 
-我们将使用 PF 作为防火墙。FreeBSD Jail 的工作方式是每个 Jail 都共享主机内核，因此如果你希望在 Jail 内访问某个内核模块，只需允许它，然后在 `jail.conf` 设置中配置该 Jail 的访问权限。请查看文件 **/etc/defaults/devfs.rules**。为了让我们的网关使用 PF 防火墙，我们需要设置 Jail 的配置，使其使用此文件中列出的 pf 规则集。稍后我们会设置自定义的 devfs 规则，并包含 `devfsrules_jail_vnet` 规则中的配置。
+我们将使用 PF 作为防火墙。FreeBSD Jail 的工作方式是每个 Jail 都共享主机内核，因此如果你希望在 Jail 内访问某个内核模块，只需允许它，然后在 `jail.conf` 设置中配置该 Jail 的访问权限。请查看文件 **/etc/defaults/devfs.rules**。为了让网关使用 PF 防火墙，我们需要设置 Jail 的配置，使其使用此文件中列出的 pf 规则集。稍后我们会设置自定义的 devfs 规则，并包含 `devfsrules_jail_vnet` 规则中的配置。
 
 ## 配置
 
