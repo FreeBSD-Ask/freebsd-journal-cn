@@ -68,7 +68,7 @@ net.inet.tcp.functions_default=rack
 
 也可以使用命令行工具 `tcpsso(8)` 来改变单个 TCP 连接的 TCP 栈，如该工具的手册页所述。
 
-如果能修改源代码，则可以使用名为 `TCP_FUNCTION_BLK` 的 `IPPROTO_TCP` 级别的套接字参数，将用于该套接字的 TCP 栈切换到 TCP RACK 栈。选项值的类型为 `struct tcp_function_set`。例如，可用如下代码执行此操作：
+如果能修改源代码，则可以使用名为 `TCP_FUNCTION_BLK` 的 `IPPROTO_TCP` 级别的套接字选项，将用于该套接字的 TCP 栈切换到 TCP RACK 栈。选项值的类型为 `struct tcp_function_set`。例如，可用如下代码执行此操作：
 
 ```c
 struct tcp_function_set tfs;

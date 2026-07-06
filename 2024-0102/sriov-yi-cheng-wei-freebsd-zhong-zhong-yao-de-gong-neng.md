@@ -477,7 +477,7 @@ lspci -nn | grep ConnectX
 05:00.1 Ethernet controller [0200]: Mellanox Technologies MT27710 Family [ConnectX-4 Lx] [15b3:1015]
 ```
 
-可以在目录 `/sys/bus/pci/devices/0000:05:00.*/` 下查看通过 `udev` 设置的属性，此外还有很多其他属性。列出该目录的内容是查找需要传给 `udev` 的信息的好方法。
+可以在目录 **/sys/bus/pci/devices/0000:05:00.*/** 下查看通过 `udev` 设置的属性，此外还有很多其他属性。列出该目录的内容是查找需要传给 `udev` 的信息的好方法。
 
 ```sh
 (linux) $ ls -AC /sys/bus/pci/devices/0000:05:00.0/
