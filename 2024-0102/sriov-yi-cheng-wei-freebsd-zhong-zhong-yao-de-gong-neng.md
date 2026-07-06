@@ -49,7 +49,7 @@ X710-DA2 拥有两个物理的 SFP+ 光纤端口。在 SR-IOV 术语中，这些
 
 在未启用 SR-IOV 时，X710-DA2 会表现成一张不支持 SR-IOV 的网卡。启用 SR-IOV 很简单，但也容易被忘记，所以一定不要跳过这一重要步骤。
 
-具体操作会根据主板的不同而有所变化，但大多数主板都有个 PCIe 配置参数的界面。找到该界面，启用 SR-IOV。与此同时，最好检查是否启用了你可能与 SR-IOV 一道使用的其他设置，例如 CPU 虚拟化。
+具体操作会根据主板的不同而有所变化，但大多数主板都有个 PCIe 配置选项的界面。找到该界面，启用 SR-IOV。与此同时，最好检查是否启用了你可能与 SR-IOV 配合使用的其他设置，例如 CPU 虚拟化。
 
 ![主板 BIOS PCIe 配置界面](https://freebsdfoundation.org/wp-content/uploads/2024/02/mcbride_fig7.jpg)
 

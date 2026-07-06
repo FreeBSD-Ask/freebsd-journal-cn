@@ -78,7 +78,7 @@ tfs.pcbcnt = 0;
 setsockopt(fd, IPPROTO_TCP, TCP_FUNCTION_BLK, &tfs, sizeof(tfs));
 ```
 
-使用 TCP RACK 栈可启用许多当下默认 TCP 栈不支持的功能。许多这些功能可以通过 `IPPROTO_TCP` 级别的套接字参数和 `sysctl` 变量 `net.inet.tcp.rack` 进行控制。
+使用 TCP RACK 栈可启用许多当下默认 TCP 栈不支持的功能。许多这些功能可以通过 `IPPROTO_TCP` 级别的套接字选项和 `sysctl` 变量 `net.inet.tcp.rack` 进行控制。
 
 ## TCP RACK 栈的功能
 
