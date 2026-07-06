@@ -304,7 +304,7 @@ $ vault write auth/github/map/teams/admin value=admins
 Success! Data written to: auth/github/map/teams/admin
 ```
 
-将这个小策略文件放置在 `/usr/local/etc/vault/admins.hcl`：
+将这个小策略文件放置在 **/usr/local/etc/vault/admins.hcl**：
 
 ```sh
 # 授予 GitHub 管理员组成员在 `kv/` 挂载点中的所有权限
@@ -406,7 +406,7 @@ secret_id_num_uses 0
 secret_id_ttl 0s
 ```
 
-如果我们想要使这些秘密在设想的守护进程 `beastie` 中可用，可以将这两个参数放入一个 `/etc/rc.conf.d/beastie` 文件，该文件可设置为仅 root 可读。
+如果我们想要使这些秘密在设想的守护进程 `beastie` 中可用，可以将这两个参数放入一个 **/etc/rc.conf.d/beastie** 文件，该文件可设置为仅 root 可读。
 
 ```sh
 beastie_enable=YES
@@ -418,7 +418,7 @@ VAULT_ADDR=http://localhost:8200/
 “
 ```
 
-脚本 `/usr/local/etc/rc.d/beastie` 会运行一个预命令，以 root 身份获取秘密，并将其注入子环境。
+脚本 **/usr/local/etc/rc.d/beastie** 会运行一个预命令，以 root 身份获取秘密，并将其注入子环境。
 
 ```sh
 start_precmd=${name}_vault

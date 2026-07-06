@@ -140,7 +140,7 @@ ${FILES} -> ${HOSTS}
 install /home/cy/freebsd/rdist/rdist.odt ;
 ```
 
-这里将文件 `/t/tmp/rdist.odt` 复制到我的笔记本电脑上的 `/home/cy/freebsd/rdist/rdist.odt`。当然，简单的 `cp(1)` 命令就可以完成，但这个简单的例子初步展示了如何复制单个文件。还请注意，目标是同名文件。如目标是个目录，如 `/home/cy/freebsd/rdist`，它将删除目标目录中的所有文件和子目录，并用单个 `rdist.odt` 文件进行替换。指定目标文件或目录时要小心。类似于：
+这里将文件 **/t/tmp/rdist.odt** 复制到我的笔记本电脑上的 **/home/cy/freebsd/rdist/rdist.odt**。当然，简单的 `cp(1)` 命令就可以完成，但这个简单的例子初步展示了如何复制单个文件。还请注意，目标是同名文件。如目标是个目录，如 **/home/cy/freebsd/rdist**，它将删除目标目录中的所有文件和子目录，并用单个 `rdist.odt` 文件进行替换。指定目标文件或目录时要小心。类似于：
 
 ```sh
 rsync -aHW --delete /t/tmp /home/cy/freebsd/rdist
@@ -180,11 +180,11 @@ rsync -aHW --delete /t/tmp /home/cy/freebsd/rdist
                        notify root@cory ;
 ```
 
-在上述示例中，列在 `FILES` 变量中的文件将从本地主机复制到 `HOSTS` 变量中列出的机器上。除了 `EXLIB` 变量中列出的文件、`/usr/games/lib` 和一个模式之外。每个文件复制后，将运行带 `-bz` 选项的 `sendmail`。
+在上述示例中，列在 `FILES` 变量中的文件将从本地主机复制到 `HOSTS` 变量中列出的机器上。除了 `EXLIB` 变量中列出的文件、**/usr/games/lib** 和一个模式之外。每个文件复制后，将运行带 `-bz` 选项的 `sendmail`。
 
-`special` 一般用于运行 shell 命令。但在上述例子中，`special` 执行了 `/usr/lib/sendmail`（就如同 shell 一样），将引号内的参数传给 `sendmail`。
+`special` 一般用于运行 shell 命令。但在上述例子中，`special` 执行了 **/usr/lib/sendmail**（就如同 shell 一样），将引号内的参数传给 `sendmail`。
 
-`/usr/local` 中的三个文件将被复制到目标系统上的 `/usr/local/lib`，复制完成后会发送电子邮件通知 `ralph`。
+**/usr/local** 中的三个文件将被复制到目标系统上的 **/usr/local/lib**，复制完成后会发送电子邮件通知 `ralph`。
 
 作业完成时会触发时间戳文件，发送邮件给 `root@cory`。时间戳文件用于避免不必要的复制。例如，如果列出的文件比时间戳文件更新，就会复制该文件（而 ansible 使用校验和）。
 
