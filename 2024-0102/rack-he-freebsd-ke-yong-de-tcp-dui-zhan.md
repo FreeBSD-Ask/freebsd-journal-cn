@@ -3,13 +3,13 @@
 - 原文链接：[RACK and Alternate TCP Stacks for FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/rack-and-alternate-tcp-stacks-for-freebsd/)
 - 作者：Randall Stewart、Michael TÜxen
 
-在 2017 年，FreeBSD 对 TCP 栈进行了修改，实现了多 TCP 栈共存。以这种方式，现有的 TCP 栈可保持不变，从而能在有限的函数调用数量下进行创新。某些功能仍然是所有 TCP 栈共享的：例如，SYN 缓存的实现，包括 SYN Cookie 的处理；以及处理传入 TCP 段的初步步骤，比如校验和验证和根据端口号与 IP 地址查找 TCP 端点。在任何时刻，单个 TCP 连接只由单个 TCP 栈处理，但在 TCP 连接的生命周期内，此 TCP 栈是可更换的。
+2017 年，FreeBSD 对 TCP 栈进行了修改，实现了多 TCP 栈共存。这样，现有的 TCP 栈可保持不变，从而以有限的函数调用次数为代价进行创新。某些功能仍然是所有 TCP 栈共享的：例如，SYN 缓存的实现，包括 SYN Cookie 的处理；以及处理传入 TCP 段的初步步骤，比如校验和验证和根据端口号与 IP 地址查找 TCP 端点。在任何时刻，单个 TCP 连接只由单个 TCP 栈处理，但在 TCP 连接的生命周期内，此 TCP 栈是可更换的。
 
 这就是 TCP RACK 栈的起源，它从调用函数 `tcp_do_segment()` 及许多其他模块化子函数开始，完全重写了原始的 TCP 栈。最初目标是支持一种名为“Recent Acknowledgement”（RACK）的丢包检测方法。RACK 最初出现在一份互联网草案中，并在 2021 年成为了 RFC 8985。这也是该 TCP 栈名称——RACK 的由来。然而，TCP RACK 栈的功能已经远超对 RFC 8985 的支持。重写的那部分，以完全不同的方式来处理 SACK（selective acknowledgement）信息。在 TCP RACK 栈中，维护了所有发送的用户数据的完整映射，这使得用户数据的重传处理得到了改进，并且实现了 RFC 8985 中说明的 RACK 丢包检测。许多额外的特性也是从这次重写中衍生出来的，本文将详细介绍这些特性。
 
 ## 如何使用 TCP RACK 栈
 
-在 FreeBSD CURRENT 和 FreeBSD 14.0，均可使用 TCP RACK 栈。如何启用取决于使用的 FreeBSD 版本。
+FreeBSD CURRENT 和 FreeBSD 14.0，均可使用 TCP RACK 栈。如何启用取决于使用的 FreeBSD 版本。
 
 对于 FreeBSD 14.0，需要在内核配置文件中添加如下两行：
 
@@ -24,7 +24,7 @@ makeoptions WITH_EXTRA_TCP_STACKS=1
 tcp_rack_load=”YES”
 ```
 
-在 FreeBSD CURRENT 中，TCP RACK 和 HPTS 均默认作为内核模块构建。由于 `tcphpts.ko` 是 `tcp_rack.ko` 的依赖项，因此仅需加载后者即可。要在每次重启时加载 TCP RACK 栈，需在 `/boot/loader.conf` 文件中添加如下两行：
+在 FreeBSD CURRENT 中，TCP RACK 和 HPTS 均默认作为内核模块构建。由于 `tcphpts.ko` 会作为 `tcp_rack.ko` 的依赖项自动加载，因此仅需使用 kldload 加载后者即可。要在每次重启时加载 TCP RACK 栈，需在 `/boot/loader.conf` 文件中添加如下两行：
 
 ```sh
 tcphpts_load=”YES”
@@ -40,9 +40,9 @@ option TCP_RACK
 
 然后重新编译内核。
 
-值得注意的是，现在在所有 64 位平台上的 FreeBSD 14.0 及更高版本和 FreeBSD CURRENT 上，都默认构建了 TCP BBLog（参数 `TCP_BLACKBOX`），因为它是 TCP 传输开发人员用来对各种 TCP 栈进行测试和调试的标准方式。
+值得注意的是，现在在所有 64 位平台上的 FreeBSD 14.0 及更高版本和 FreeBSD CURRENT 上，都默认构建了 TCP BBLog（参数 `TCP_BLACKBOX`），因为它是 TCP 传输开发人员用来对各种 TCP 栈进行插桩和调试的标准方式。
 
-上述内容概述了如何在 FreeBSD 系统上启用 TCP RACK 栈。可以在 shell 中运行以下命令，来查看所有可用的 TCP 栈列表：
+上述内容概述了如何在 FreeBSD 系统上启用 TCP RACK 栈。可以在 shell 中运行以下命令查看所有可用的 TCP 栈列表：
 
 ```sh
 sysctl net.inet.tcp.functions_available

@@ -7,11 +7,11 @@
 >
 >本文操作配置基于 FreeBSD。如果你想要基于 OpenBSD 的版本，请点击[这里](https://it-notes.dragas.net/2023/04/03/make-your-own-vpn-wireguard-ipv6-and-ad-blocking-included/)查看。
 
-VPN 是一种基础工具，用于安全地连接到自己的服务器和设备。许多人出于各种原因使用商业 VPN，从不信任自己的服务提供商（尤其通过公共热点连接时），到希望用不同的 IP 地址（可能是来自别国）来“上网”。这里，我想重点介绍一些已引入基础堆栈的新特性——其中许多是默认开启的，有些可能需要专门打开。每个功能都会介绍一些细节，帮助改善网络体验。
+VPN 是基础工具，用于安全地连接到自己的服务器和设备。许多人出于各种原因使用商业 VPN，从不信任自己的服务提供商（尤其通过公共热点连接时），到希望用不同的 IP 地址（可能是来自别国）来“上网”。这里，我想重点介绍一些已引入基础堆栈的新特性——其中许多是默认开启的，有些可能需要专门打开。每个功能都会介绍一些细节，帮助改善网络体验。
 
 无论出于何种原因，解决方案从未匮乏。我一直在设置管理 VPN，以便服务器/客户端使用安全通道相互通信。最近，我[一直在所有设备上启用 IPv6 连接](https://my-notes.dragas.net/posts/2023/the-urgency-of-transitioning-to-ipv6/)（包括桌面/服务器和移动设备），并且我需要快速创建一个节点，将一些网络聚合在一起，并让它们通过 IPv6 接入网络。我所使用并将在本文中介绍的工具包括：
 
-- **VPS** – 在本例中，我使用了基本的 Hetzner Cloud VPS，但所有提供 IPv6 连接的服务商都可以——如果你的确需要 IPv6。
+- **VPS** – 在本例中，我使用了入门级 Hetzner Cloud VPS，但所有提供 IPv6 连接的服务商都可以——如果你的确需要 IPv6。
 - **[FreeBSD](https://www.freebsd.org/)** – 一款多功能、稳定且安全的操作系统。
 - **[WireGuard](https://www.wireguard.com/)** – 轻量级、安全，并且不会占用太多带宽，所以在移动设备上也比较省电。当没有流量时，它完全不会传输/接收任何数据。在所有主要桌面和服务器操作系统以及 Android 和 iOS 设备上支持良好。
 - **[Unbound](https://nlnetlabs.nl/projects/unbound/about/)** – 可以直接向根 DNS 服务器发起查询，而非通过转发器。它还允许插入拦截列表，产生类似 Pi-Hole 的效果（即广告拦截）。
@@ -131,12 +131,12 @@ set skip on lo
 
 nat on $ext_if from { $wg0_networks } to any -> ($ext_if)
 
-# Spamhaus 删除列表：
+# Spamhaus DROP 列表：
 table <spamhaus> persist file "/var/db/drop.txt"
 
 block drop log quick from <spamhaus>
 
-# ipv6 通过 ICMP 
+# 允许 ipv6 的 ICMP
 pass quick proto ipv6-icmp
 # Block from ipv6 to wg0 network
 block in quick on $ext_if inet6 to { 2a01:4f8:cafe:cafe:100::/72 }
@@ -188,7 +188,7 @@ pkg install unbound
 #
 PATH=”/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin”
 
-# 可用的黑名单 - 注释掉行以禁用
+# 可用的黑名单 - 注释掉某行以禁用该黑名单
 _disconad=”https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt”
 _discontrack=”https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt”
 _stevenblack=”https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts”
@@ -216,7 +216,7 @@ sed -e ‘s/#.*$//’ -e ‘/^[[:space:]]*$/d’ >> $2
   sed -e 's/#.*$//' -e '/^[[:space:]]*$/d' | \
   awk '/^0.0.0.0/ { print $2 }' >> $_tmpfile
 
-# 创建 unbound(8) 局域网文件
+# 创建 unbound(8) 本地区域文件
 sort -fu $_tmpfile | grep -v “^[[:space:]]*$” | \
 awk '{
   print “local-zone: \”” $1 “\” redirect”

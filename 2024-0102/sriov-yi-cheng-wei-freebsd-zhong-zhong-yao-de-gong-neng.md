@@ -72,7 +72,7 @@ ixl0: SR-IOV ready ixl0: netmap queues/slots: TX 4/1024, RX 4/1024
 
 在第三行，我们看到了一些 SR-IOV 的信息。“PF-ID[0]”与 ixl0 相关，并且这个 PF 能支持 64 个 VF。而在第十行，我们可以看到明确确认：这个 PCIe 设备已是“SR-IOV 就绪”（SR-IOV ready）。之所以名称是“ixl”，是因为这张网卡使用了 [ixl(4)](https://man.freebsd.org/cgi/man.cgi?query=ixl) Intel Ethernet 700 系列驱动。
 
-除了检查硬件状态外，无需其他配置。某些网卡（比如前面提到的 Mellanox）需要你配置网卡的固件，而其他网卡（比如前面提到的 Chelsio）则需要在 `/boot/loader.conf` 中进行驱动配置。但 X710-DA2 并不需要这些配置，尽管你可能需要检查并更新卡的固件版本（如有必要）。
+除了检查硬件状态外，无需其他配置。某些网卡（比如前面提到的 Mellanox）需要你配置网卡的固件，而其他网卡（比如前面提到的 Chelsio）则需要在 **/boot/loader.conf** 中进行驱动配置。但 X710-DA2 并不需要这些配置，尽管你可能需要检查并更新卡的固件版本（如有必要）。
 
 至此，我们可以从硬件设置转到 FreeBSD 配置的部分。
 
@@ -80,7 +80,7 @@ ixl0: SR-IOV ready ixl0: netmap queues/slots: TX 4/1024, RX 4/1024
 
 ### 使用 PF（物理功能）
 
-SR-IOV 的一个优点是，无论是否用 PF 创建 VF，你仍可以将 PF 用作网络接口。我在我的 `/etc/rc.conf` 中添加了以下内容，并为 PF 分配了一个 IP 地址，用于主机的连接：
+SR-IOV 的一个优点是，无论是否用 PF 创建 VF，你仍可以将 PF 用作网络接口。我在我的 **/etc/rc.conf** 中添加了以下内容，并为 PF 分配了一个 IP 地址，用于主机的连接：
 
 ```sh
 ifconfig_ixl0=”inet 10.0.1.201 netmask 255.255.255.0” defaultrouter=”10.0.1.1”
@@ -90,7 +90,7 @@ ifconfig_ixl0=”inet 10.0.1.201 netmask 255.255.255.0” defaultrouter=”10.0.
 
 ### 指示 PF 创建 VF
 
-在 FreeBSD 中，是通过 [iovctl(8)](https://man.freebsd.org/cgi/man.cgi?query=iovctl) 实现 PF 和 VF 的管理的，`iovctl` 是操作系统的基础工具之一。要创建 VF，我们需要在 `/etc/iov/` 目录下创建一个文件，指定我们需要的配置。我们将采用一个简单的策略：创建一个 VF 分配给 jail，另一个 VF 分配给 bhyve 虚拟机。可以参考手册页 [iovctl.conf(5)](https://man.freebsd.org/iovctl.conf) 了解最重要的参数。
+在 FreeBSD 中，是通过 [iovctl(8)](https://man.freebsd.org/cgi/man.cgi?query=iovctl) 实现 PF 和 VF 的管理的，`iovctl` 随操作系统提供。要创建 VF，我们需要在 **/etc/iov/** 目录下创建一个文件，指定我们需要的配置。我们将采用一个简单的策略：创建一个 VF 分配给 Jail，另一个 VF 分配给 bhyve 虚拟机。可以参考手册页 [iovctl.conf(5)](https://man.freebsd.org/iovctl.conf) 了解最重要的参数。
 
 ```INI
 OPTIONS
@@ -98,7 +98,7 @@ OPTIONS
     device (string)
     该参数指定 PF 设备的名称。此参数是必需的。
     num_vfs (uint16_t)
-    该参数指定要创建的 VF 子设备的数量。此参数不能为空。该参数的最大值由设备决定。
+    该参数指定要创建的 VF 子设备的数量。此参数不能为零。该参数的最大值由设备决定。
 ```
 
 我喜欢将 `num_vfs` 设置为实际需要的数量。我们本可以将其设置为最大值，但我发现这样会使查看 `ifconfig` 等命令的输出变得更加困难。
@@ -130,7 +130,7 @@ IOVCTL OPTIONS
     num-queues : uint16_t (默认 = 4)
 ```
 
-我们将使用参数 `mac-addr` 为每个 VF 设置特定的 MAC 地址。在此例中，把 MAC 地址设置为随意生成的，但我将演示如何在配置文件中设置 PF 参数、默认的 VF 参数以及特定于单个 VF 的参数。
+我们将使用参数 `mac-addr` 为每个 VF 设置特定的 MAC 地址。在此例中，设置 MAC 地址并非必须，但我将演示如何在配置文件中设置 PF 参数、默认的 VF 参数以及特定于单个 VF 的参数。
 
 ```ini
 PF {
@@ -174,7 +174,7 @@ device=0x1572 subvendor=0x8086 subdevice=0x0000
     subclass   = ethernet
 ```
 
-要使 `/etc/iov/ixl0.conf` 配置文件生效，我们使用 [iovctl(8)](https://man.freebsd.org/cgi/man.cgi?query=iovctl)。
+要使 **/etc/iov/ixl0.conf** 配置文件生效，我们使用 [iovctl(8)](https://man.freebsd.org/cgi/man.cgi?query=iovctl)。
 
 ```sh
 (host) $ sudo iovctl -C -f /etc/iov/ixl0.conf
@@ -221,7 +221,7 @@ iavf1@pci0:1:0:17:        class=0x020000 rev=0x01 hdr=0x00 vendor=0x8086 device=
 
 除了看到新的 PCI 设备外，`ifconfig` 也确认它们已经被识别为网络接口。对于大多数网络设备的常见功能，你可能区分不开 PF 和 VF。想要了解更详细的区别，可以查看驱动文档及使用 `pciconf` 的 `-c` 功能参数，例如 `pciconf -lc iavf`。
 
-为了确保在重启后配置能够保持有效，修改 `/etc/rc.conf` 文件：
+为了确保在重启后配置能够保持有效，修改 **/etc/rc.conf** 文件：
 
 ```sh
 # 配置 SR-IOV
@@ -252,7 +252,7 @@ desk {
 }
 ```
 
-就这样！这个 Jail 现在能通过 [vnet(9)](https://man.freebsd.org/vnet) 访问自己专用的 VF 网络设备。我将修改这个 Jail 的 `/etc/rc.conf` 文件，启用网络配置：
+就这样！这个 Jail 现在能通过 [vnet(9)](https://man.freebsd.org/vnet) 访问自己专用的 VF 网络设备。我将修改这个 Jail 的 **/etc/rc.conf** 文件，启用网络配置：
 
 ```sh
 ifconfig_iavf0=”inet 10.0.1.231 netmask 255.255.255.0”
@@ -413,7 +413,7 @@ PING 9.9.9.9 (9.9.9.9) 56(84) bytes of data.
 64 bytes from 9.9.9.9: icmp_seq=2 ttl=58 time=19.8 ms
 ```
 
-**成功！** 现在，我们在 bhyve 虚拟机中为网络配置了一个 SR-IOV VF 设备。如果你是极简主义者，不想使用 `vm-bhyve`，可通过 `vm` 命令查看 `vm-bhyve.log` 文件，其中会列出传递给 `grub-bhyve` 和 `bhyve` 的参数，用来启动虚拟机。
+**成功！** 现在，我们在 bhyve 虚拟机中为网络配置了一个 SR-IOV VF 设备。如果你是纯粹主义者，不想使用 `vm-bhyve`，使用 `vm` 命令时，详细信息会追加到 `vm-bhyve.log` 文件中，其中会列出传递给 `grub-bhyve` 和 `bhyve` 的参数，用来启动虚拟机。
 
 ```sh
 create file /mnt/apps/bhyve/debian-test/device.map
@@ -436,10 +436,10 @@ bhyve -c 1 -m 4G -AHP
 
 要在 FreeBSD 中使用启用 SR-IOV 的虚拟 PCIe 设备，我们需要：
 
-- 安装一张支持 SR-IOV 的网络卡到支持 SR-IOV 的主板上
+- 安装一张支持 SR-IOV 的网卡到支持 SR-IOV 的主板上
 - 确保主板的 SR-IOV 功能已启用
-- 创建 `/etc/iov/ixl0.conf` 并指定我们想要的 VF 个数
-- 在 `/etc/rc.conf` 中引用 `/etc/iov/ixl0.conf` 以便在重启时保留配置
+- 创建 **/etc/iov/ixl0.conf** 并指定我们想要的 VF 个数
+- 在 **/etc/rc.conf** 中引用 **/etc/iov/ixl0.conf** 以便在重启时保留配置
 
 就这么简单！
 
@@ -496,7 +496,7 @@ d3cold_allowed            iommu_group       msi_irqs          resource      srio
 
 在这个列出的目录中，我们看到 `sriov_drivers_autoprobe` 和 `sriov_numvfs`，这是我们在启动时需要设置的属性。其他属性的作用是什么？你可能需要通过搜索引擎来获取答案。
 
-通过 `udev`，我们已经完成了两大步骤中的第一步。它有效地“解放”了硬件的 SR-IOV 能力。接下来，我们需要为网络使用配置 SR-IOV，这是第二步。根据我们使用的网络管理方式，这个过程有极大的差异。例如，如果你使用的是 `systemd-networkd`，可以像这样进行配置：
+通过 `udev`，我们已经完成了两大步骤中的第一步。它有效地“开启”了硬件的 SR-IOV 能力。接下来，我们需要为网络使用配置 SR-IOV，这是第二步。根据我们使用的网络管理方式，这个过程有极大的差异。例如，如果你使用的是 `systemd-networkd`，可以像这样进行配置：
 
 ```sh
 #/etc/systemd/network/21-wired-sriov-p1.network
@@ -527,7 +527,7 @@ Trust=true
 unmanaged-devices=interface-name:enp5s0f1*,interface-name:phys*
 ```
 
-这只是一个例子。以为一切都配置好，结果几天后才发现系统出现问题的情况并不罕见。一般来说，所有的烦恼都有一个根本原因：Linux 生态系统中并没有一个现成/正在兴起的标准配置 SR-IOV 的方式。虽然设置过程不够直观，但只要你克服了这些难题，Linux 中的 SR-IOV 网络配置就能正常工作。
+这只是一个例子。以为一切都配置好，结果几天后才发现系统出现问题，并不是好的体验。一般来说，所有的烦恼都有一个根本原因：Linux 生态系统中并没有一个现成/正在兴起的标准配置 SR-IOV 的方式。虽然设置过程不够直观，但只要你克服了这些难题，Linux 中的 SR-IOV 网络配置就能正常工作。
 
 ## 结论
 
