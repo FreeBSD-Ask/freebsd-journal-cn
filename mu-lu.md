@@ -1,4 +1,4 @@
-# 目录
+# Table of contents
 
 * [FreeBSD 中文期刊](README.md)
 * [编辑日志](CHANGELOG.md)
@@ -145,7 +145,7 @@
 * [FreeBSD 接口 API（IfAPI）](2024-0102/freebsd-jie-kou-apiifapi.md)
 * [BATMAN：更优的可移动热点网络方式](2024-0102/batman-geng-jia-de-ke-yi-dong-adhoc-wang-luo-fang-shi.md)
 * [配置自己的 VPN——基于 FreeBSD、Wireguard、IPv6 和广告拦截](2024-0102/zhi-zuo-zi-ji-de-vpn-nei-zhi-freebsdwireguardipv6-he-guang-gao-lan-jie.md)
-* [实用 Ports：使用 Zabbix 监控主机](2024-0102/shi-yong-ruan-jian-shi-yong-zabbix-jian-kong-zhu-ji.md)
+* [实用 Port：使用 Zabbix 监控主机](2024-0102/shi-yong-ruan-jian-shi-yong-zabbix-jian-kong-zhu-ji.md)
 
 ## 2023-1112 FreeBSD 14.0
 
