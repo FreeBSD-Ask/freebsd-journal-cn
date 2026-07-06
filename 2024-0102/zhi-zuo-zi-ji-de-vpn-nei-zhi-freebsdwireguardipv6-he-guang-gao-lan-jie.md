@@ -170,13 +170,13 @@ service pf start
 
 ### 配置 DNS 缓存和广告拦截
 
-现在是配置 `Unbound` 以缓存 DNS 查询并启用广告拦截的时间了。首先，我们需要安装 `Unbound`：
+现在该配置 `Unbound` 来缓存 DNS 查询并启用广告拦截了。首先，需要安装 `Unbound`：
 
 ```sh
 pkg install unbound
 ```
 
-不久前，我找到了一个脚本并稍作修改。我记不清楚原始作者是谁了，所以我只在这里贴出来脚本。
+不久前，我找到了某脚本并稍作修改。我不记得从哪里获取的，所以只是将脚本贴在这里，不引用原作者。
 
 ### 创建更新 Unbound 广告拦截的脚本 `/usr/local/sbin/unbound-adhosts.sh`
 
@@ -307,7 +307,7 @@ AllowedIPs = 172.14.0.2/32, 2a01:4f8:cafe:cafe:100::2/128
 service wireguard restart
 ```
 
-如果希望仅使用 VPN 作为广告拦截器，可以仅通过 VPN 路由 DNS 流量。为此，请在客户端配置中仅允许已配置的 Unbound 地址（在此示例中为 `172.14.0.1`、`2a01:4f8:cafe:cafe:100::1`）——DNS 解析将通过 VPN 进行，但浏览将继续通过主要提供商进行。
+如果希望仅使用 VPN 作为广告拦截器，可以仅通过 VPN 路由 DNS 流量。为此，请在客户端配置中仅允许已配置的 Unbound 地址（在此示例中为 `172.14.0.1`、`2a01:4f8:cafe:cafe:100::1`）——DNS 解析将通过 VPN 进行，但浏览则继续通过主网络提供商进行。
 
 ### 自动更新 Spamhaus 和广告拦截列表
 
@@ -336,4 +336,4 @@ echo “@daily /usr/local/sbin/update-blocklists.sh” >> /etc/crontab
 
 ---
 
-**Stefano Marinelli** 是一位 IT 顾问，拥有二十余年的 IT 咨询、培训、研究和出版经验。他的专业领域涵盖了多种操作系统，尤其专注于 BSD 系统（如 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD）和 Linux 系统。Stefano 还是 BSD Cafe 的咖啡师，这是一家活跃的 BSD 爱好者社区中心。他还领导了博洛尼亚大学的 FreeOsZoo 项目，为虚拟机提供开放源代码操作系统镜像。
+**Stefano Marinelli** 是 IT 顾问，拥有二十余年的 IT 咨询、培训、研究和出版经验。他的专业领域涵盖了多种操作系统，尤其专注于 BSD 系统（如 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD）和 Linux 系统。Stefano 还是 BSD Cafe 的咖啡师，这是一家活跃的 BSD 爱好者社区中心。他还领导了博洛尼亚大学的 FreeOsZoo 项目，为虚拟机提供可访问的开源操作系统镜像。
