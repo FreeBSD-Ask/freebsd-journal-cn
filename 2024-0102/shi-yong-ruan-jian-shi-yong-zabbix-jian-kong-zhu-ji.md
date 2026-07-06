@@ -1,4 +1,4 @@
-# 实用 Ports：使用 Zabbix 监控主机
+# 实用 Port：使用 Zabbix 监控主机
 
 - 原文链接：[Practical Ports: Monitor Your Hosts with Zabbix](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/practical-ports-monitor-your-hosts-with-zabbix/)
 - 作者：Benedict Reuschling
