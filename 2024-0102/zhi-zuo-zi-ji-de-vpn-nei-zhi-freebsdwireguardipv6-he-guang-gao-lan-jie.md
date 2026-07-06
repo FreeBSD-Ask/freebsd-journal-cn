@@ -7,31 +7,31 @@
 >
 >本文操作配置基于 FreeBSD。如果你想要基于 OpenBSD 的版本，请点击[这里](https://it-notes.dragas.net/2023/04/03/make-your-own-vpn-wireguard-ipv6-and-ad-blocking-included/)查看。
 
-VPN 是一种基础工具，用于安全地连接到自己的服务器和设备。许多人出于各种原因使用商业 VPN，从不信任自己的服务提供商（尤其通过公共热点连接时），到希望用不同的 IP 地址（可能是来自别国）来“上网”。在这儿，我想突出一些已被引入基础堆栈的新特性——其中许多是默认开启的，有些可能需要专门打开。每个功能都会介绍一些细节，帮助改善网络体验。
+VPN 是一种基础工具，用于安全地连接到自己的服务器和设备。许多人出于各种原因使用商业 VPN，从不信任自己的服务提供商（尤其通过公共热点连接时），到希望用不同的 IP 地址（可能是来自别国）来“上网”。这里，我想重点介绍一些已引入基础堆栈的新特性——其中许多是默认开启的，有些可能需要专门打开。每个功能都会介绍一些细节，帮助改善网络体验。
 
-无论出于何种原因，解决方案从未匮乏。我一直在设置管理 VPN，以便服务器/客户端使用安全通道相互通信。最近，我[已在所有设备上启用 IPv6 连接](https://my-notes.dragas.net/posts/2023/the-urgency-of-transitioning-to-ipv6/)（包括桌面/服务器和移动设备），并且我需要快速创建一个节点，将一些网络聚合在一起，并让它们通过 IPv6 连接到外部网络。我使用着、并将要介绍的工具有：
+无论出于何种原因，解决方案从未匮乏。我一直在设置管理 VPN，以便服务器/客户端使用安全通道相互通信。最近，我[已在所有设备上启用 IPv6 连接](https://my-notes.dragas.net/posts/2023/the-urgency-of-transitioning-to-ipv6/)（包括桌面/服务器和移动设备），并且我需要快速创建一个节点，将一些网络聚合在一起，并让它们通过 IPv6 接入网络。我所使用并将在本文中介绍的工具包括：
 
 - **VPS** – 在本例中，我使用了基本的 Hetzner Cloud VPS，但所有提供 IPv6 连接的服务商都可以——如果你的确需要 IPv6。
-- **[FreeBSD](https://www.freebsd.org/)** – 一款多功能、稳定和安全的操作系统。
+- **[FreeBSD](https://www.freebsd.org/)** – 一款多功能、稳定且安全的操作系统。
 - **[WireGuard](https://www.wireguard.com/)** – 轻量级、安全，并且不会占用太多带宽，所以在移动设备上也比较省电。当没有流量时，它完全不会传输/接收任何数据。在所有主要桌面和服务器操作系统以及 Android 和 iOS 设备上支持良好。
 - **[Unbound](https://nlnetlabs.nl/projects/unbound/about/)** – 可以直接向根 DNS 服务器发起查询，而非转发器。它还允许插入拦截列表，产生类似 Pi-Hole 的效果（即广告拦截）。
 - **[SpamHaus](https://www.spamhaus.org/)** 列表 – 立即阻断与黑名单用户的连接。
 
 ## 步骤 1：激活 VPS 并安装 FreeBSD
 
-首先，启用一台 VPS，再安装 FreeBSD。在 Hetzner Cloud 控制台中，可能没有预构建的 FreeBSD 镜像，只能选 Linux 发行版。别担心，随便选择一款 Linux 发行版创建 VPS。创建完成后，FreeBSD ISO 镜像将出现在“ISO 镜像”中。只需插入虚拟光驱，重启 VPS，FreeBSD 安装程序就会出现在控制台中。
+首先，启用一台 VPS，再安装 FreeBSD。在 Hetzner Cloud 控制台中，可能没有预构建的 FreeBSD 镜像，只能选 Linux 发行版。别担心，任意选择一款 Linux 发行版创建 VPS。创建完成后，FreeBSD ISO 镜像将出现在“ISO 镜像”中。只需插入虚拟光驱，重启 VPS，FreeBSD 安装程序就会出现在控制台中。
 
-我不会详细说明，操作非常简单。唯一需要注意的一点是，在 Hetzner Cloud VPS 中，IPv4 使用“DHCP”进行配置，但暂时别配置 IPv6。IPv6 将在稍后配置。
+我不详细说明，操作非常简单。唯一需要注意的一点是，在 Hetzner Cloud VPS 中，IPv4 使用“DHCP”进行配置，但暂时别配置 IPv6。IPv6 将在稍后配置。
 
 安装所有的 FreeBSD 更新（使用 `freebsd-update fetch install` 命令）并重启。
 
 ### 步骤 2：安装 WireGuard
 
-在 FreeBSD 上，现在 WireGuard 作为内核模块提供，可以用包管理器通过 `pkg install wireguard-tools` 安装用户空间工具。这意味着你可以轻松地将它与系统上的其他软件一起更新。
+在 FreeBSD 上，现在 WireGuard 作为内核模块提供，可以通过 `pkg install wireguard-tools` 命令安装用户空间工具。这意味着你可以轻松地将它与系统上的其他软件一起更新。
 
 ### 步骤 3：配置 VPS 上的 IPv6
 
-首先配置 VPS 上的 IPv6。对于 Hetzner，遗憾的是，他们只提供了一个 `/64` 地址，因此需要对分配的网络进行细分。在这个示例中，它将被细分为 `/72` 子网——可使用[子网计算器](https://subnettingpractice.com/ipv6-subnet-calculator.html)来找到有效的子类。
+首先配置 VPS 上的 IPv6。对于 Hetzner，遗憾的是，他们只提供了 `/64` 网段，因此需要对分配的网络进行细分。在这个示例中，它将被细分为 `/72` 子网——可使用[子网计算器](https://subnettingpractice.com/ipv6-subnet-calculator.html)来找到有效的子网。
 
 在 `/etc/rc.conf` 文件中添加类似以下的条目：
 
@@ -41,7 +41,7 @@ ifconfig_vtnet0_ipv6=”inet6 2a01:4f8:cafe:cafe::1 prefixlen 72”
 ipv6_defaultrouter=”fe80::1%vtnet0”
 ```
 
-简而言之，保留 Hetzner 分配的基础地址，但将前缀长度更成 72——这样就可以拥有其他可用网络。现在，需要打开 IPv4 和 IPv6 的转发功能。将以下行添加到 `/etc/sysctl.conf` 文件中：
+简而言之，保留 Hetzner 分配的基础地址，但将前缀长度改为 72——这样就可以拥有其他可用网络。现在，需要启用 IPv4 和 IPv6 的转发功能。将以下行添加到 `/etc/sysctl.conf` 文件中：
 
 ```sh
 net.inet.ip.forwarding=1
@@ -89,9 +89,9 @@ service wireguard start
 wg
 ```
 
-至于防火墙，FreeBSD 默认未配置 `pf`。在我的设置中，我倾向于阻断不需要的流量，而对可能有用的流量保持宽松。然而，我喜欢把“坏家伙”挡在外面，因此我使用黑名单。`pf` 允许在运行时将元素插入和移出表格，所以防火墙可以根据需要进行配置。
+至于防火墙，FreeBSD 默认未配置 `pf`。在我的设置中，我倾向于阻断不需要的流量，而对可能有用的流量保持宽松。然而，我喜欢把“坏家伙”挡在外面，因此我使用黑名单。`pf` 允许在运行时将元素插入和移出表，所以防火墙可以根据需要进行配置。
 
-为了下载、应用 Spamhaus 列表，我使用了一个简单但有效的脚本，可以在网上找到它，但原本是为 OpenBSD 设计的。
+下载、应用 Spamhaus 列表，我使用了一个简单但有效的脚本，该脚本来自互联网，但原本是为 OpenBSD 设计的。
 
 对于 Spamhaus 列表，继续创建 FreeBSD 脚本。
 
@@ -166,7 +166,7 @@ service pf start
 
 你可能会被系统踢出去。别担心，只需重新连接即可。`pf` 正在执行其工作。
 
-若一帆风顺，防火墙应该已经加载了新规则。
+如果一切顺利，防火墙应该已经加载了新规则。
 
 ### 配置 DNS 缓存和广告拦截
 
