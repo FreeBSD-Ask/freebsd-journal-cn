@@ -236,9 +236,9 @@ $ curl http://hello-web.minipot:8080
 $ nomad run nginx.job
 ```
 
-调度完成后，运行中的 nomad 分配现在是 2 个，consul 中的服务“hello-web”有两个实例，traefik 中的服务器也是如此。
+调度完成后，运行中的 nomad 分配数量为 2，consul 中的服务“hello-web”有两个实例，traefik 中的服务器同样如此。
 
-- 为了验证入口的轮询分布，我们可以：
+- 为了验证入口的轮询分发，我们可以：
 
 - 跟踪一个容器的日志（`$ nomad alloc logs -f allocation1`）
 
