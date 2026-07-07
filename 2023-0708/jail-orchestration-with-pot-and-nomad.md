@@ -190,7 +190,7 @@ IPv6 地址是 nomad 客户端的地址。
 $ sudo pot show
 ```
 
-作为命令行的替代方案，nomad 服务器也配置为提供功能强大的 web UI，可以通过 **localhost:4646** 访问。从中可以看到“nginx-minipot”任务，并导航查看关于集群、分配、客户端等所有信息。
+作为命令行的替代方案，nomad 服务器也配置为提供功能强大的 web UI，可以通过 **localhost:4646** 访问。在 UI 中可以看到“nginx-minipot”任务，并导航查看集群、分配、客户端等所有信息。
 
 通过 nomad，我们可以直接看到所有容器的状态。进入分配页面后，点击“exec”按钮即可在运行中的容器里启动 /bin/sh shell。
 
@@ -202,7 +202,7 @@ $ sudo pot show
 
 ### 检查 traefik
 
-代理 traefik 被配置为在 8080 端口路由流量，同时在 9200 端口（**localhost:9200**）提供 web-ui 来监控状态。Traefik 也配置为从 consul 同步服务目录。
+代理 traefik 配置为在 8080 端口路由流量，同时在 9200 端口（**localhost:9200**）提供 web-ui 来监控状态。Traefik 也配置为从 consul 同步服务目录。
 
 选择 http 服务后，我们可以看到“hello-web”服务（标记为 **hello-web@consulcatalog**）。
 
@@ -226,7 +226,7 @@ $ curl -H Host:hello-web.minipot http://127.0.0.1:8080
 $ curl http://hello-web.minipot:8080
 ```
 
-我们将得到与直接将 curl 指向 Jail 时相同的输出。
+我们将得到与直接对 Jail 执行 curl 时相同的输出。
 
 ### 水平扩展
 
