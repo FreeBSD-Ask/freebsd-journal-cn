@@ -61,7 +61,7 @@ echo_write(struct cdev *dev, struct uio *uio, int ioflag)
 # echo "foo" > /dev/echo
 # cat /dev/echo
 foo
-# echo “12345678” > /dev/echo
+# echo "12345678" > /dev/echo
 # dd if=/dev/echo bs=1 count=4 status=none | hd
 00000000 31 32 33 34 |1234|
 00000004
