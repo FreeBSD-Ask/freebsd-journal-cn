@@ -155,7 +155,7 @@ I'm in the parent
 [Inferior 1 (process 25297) exited normally]
 ```
 
-GDB 通过 `follow-fork-mode` 设置决定 fork 后跟随哪个进程。要改为跟随子进程而非父进程，使用 “child” 设置。要恢复默认行为，使用 “parent” 设置。该设置通过 `set follow-fork-mode` 命令更改。`show follow-fork-mode` 命令显示当前设置。示例 6 再次执行测试程序，但改为跟随子进程。
+GDB 通过 `follow-fork-mode` 设置决定 fork 后跟随哪个进程。要改为跟随子进程而非父进程，使用“child”设置。要恢复默认行为，使用“parent”设置。该设置通过 `set follow-fork-mode` 命令更改。`show follow-fork-mode` 命令显示当前设置。示例 6 再次执行测试程序，但改为跟随子进程。
 
 示例 6：跟随子进程
 
