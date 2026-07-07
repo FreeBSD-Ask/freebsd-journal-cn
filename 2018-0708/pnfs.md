@@ -150,7 +150,7 @@ nfscbd_enable="YES"
 -rw-r--r--   1 ricktst  wheel   0 Jun  5 18:02 abc.c
 ```
 
-然后，在同一目录中执行 “lsextattr system abc.c” 会显示：
+然后，在同一目录中执行“lsextattr system abc.c”会显示：
 
 ```sh
 abc.c pnfsd.dsfile     pnfsd.dsattr
