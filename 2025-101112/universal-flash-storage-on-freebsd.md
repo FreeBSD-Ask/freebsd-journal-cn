@@ -41,7 +41,7 @@
 
 通过这种方式，UFS 设备驱动控制主控器对 UFS 设备执行读写操作。
 
-![UFS 分层架构示意图](https://freebsdfoundation.org/wp-content/uploads/2026/01/choi_fig1.png)
+![UFS 分层架构示意图](../png/2025-101112/universal-flash-storage-on-freebsd-02.png)
 
 图 2. UFS 分层架构
 

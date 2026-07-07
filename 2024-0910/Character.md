@@ -35,7 +35,7 @@ static struct cdev *echodev;
 
 static struct cdevsw echo_cdevsw = {
       .d_version =      D_VERSION,
-      .d_name =         “echo”
+      .d_name =         "echo"
 };
 
 static int
@@ -50,7 +50,7 @@ echodev_load(void)
       args.mda_uid = UID_ROOT;
       args.mda_gid = GID_WHEEL;
       args.mda_mode = 0600;
-      error = make_dev_s(&args, &echodev, “echo”);
+      error = make_dev_s(&args, &echodev, "echo");
       return (error);
 }
 
@@ -142,7 +142,7 @@ echo_write(struct cdev *dev, struct uio *uio, int ioflag)
 # echo foo > /dev/echo
 # cat /dev/echo
 foo
-# jot -c -s “” 70 48 > /dev/echo
+# jot -c -s "" 70 48 > /dev/echo
 # cat /dev/echo
 0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmno#
 ```

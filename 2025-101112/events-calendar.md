@@ -6,7 +6,7 @@
 
 如有任何 FreeBSD 相关活动或对 FreeBSD 用户有吸引力的活动未在此处列出，请将详情发送至 [freebsd-doc@FreeBSD.org](mailto:freebsd-doc@FreeBSD.org)。
 
-![Code & Compliance](https://freebsdfoundation.org/wp-content/uploads/2026/01/CODECOMPLIANCE.png)
+![Code & Compliance](../png/2025-101112/events-calendar-01.png)
 
 ## Code & Compliance FOSDEM 特别版
 
@@ -16,7 +16,7 @@
 
 欢迎来布鲁塞尔参加下一届 Code & Compliance 聚会。在这场开放、社区驱动的活动中，开源开发者、项目维护者和行业领袖齐聚一堂，深入探讨欧盟《网络弹性法案》，改进开源合规实践，并分享提升软件安全性的实用方法。
 
-![FOSDEM](https://freebsdfoundation.org/wp-content/uploads/2026/01/gear.png)
+![FOSDEM](../png/2025-101112/events-calendar-02.png)
 
 ## FOSDEM 2026
 
