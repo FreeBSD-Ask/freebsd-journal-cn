@@ -44,7 +44,7 @@ vmm 的 CPUID 仿真此前向客户机呈现 Intel 拓扑信息，却禁用了 A
 
 <https://svnweb.freebsd.org/changeset/base/343120>
 
-无功能性变化，只是在 CPU 识别时打印已识别的位。这些位记录在 111006-B “Indirect Branch Control Extension”[1] 和 124441 “Speculative Store Bypass Disable”[2] 中。
+无功能性变化，只是在 CPU 识别时打印已识别的位。这些位记录在 111006-B“Indirect Branch Control Extension”[1] 和 124441“Speculative Store Bypass Disable”[2] 中。
 
 值得注意的缺失项（留作未来工作）：
 
