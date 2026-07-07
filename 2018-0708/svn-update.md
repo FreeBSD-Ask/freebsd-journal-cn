@@ -36,7 +36,7 @@ tp->t_badrxtwin = ticks + (tp->t_srtt >> (TCP_RTT_SHIFT + 1));
 
 提升线程优先级同时更改 CPU 频率 — <https://svnweb.freebsd.org/changeset/base/333325>
 
-当用户空间线程设置其亲和性以调整其频率时，提升它们的优先级。这避免了具有相同亲和性的 CPU 密集型内核线程在下时钟核心上运行并会“阻塞” powerd 升频核心直到内核线程让出的情况。这可能导致性能不佳以及潜在地卡在 Giant 上。
+当用户空间线程设置其亲和性以调整其频率时，提升它们的优先级。这避免了具有相同亲和性的 CPU 密集型内核线程在下时钟核心上运行并会“阻塞”powerd 升频核心直到内核线程让出的情况。这可能导致性能不佳以及潜在地卡在 Giant 上。
 
 导入 netdump 客户端代码 — <https://svnweb.freebsd.org/changeset/base/333283>
 
