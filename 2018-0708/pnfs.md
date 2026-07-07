@@ -128,7 +128,7 @@ nfscbd_enable="YES"
 # mount -t nfs -o nfsv4,minorversion=1,pnfs nfsv4-server:/ /mnt
 ```
 
-客户端然后可以像使用普通 NFS 挂载一样使用 “/mnt”。如果在 nfsv4-server 上执行 “nfsstat -E -s”，你不应该看到很多读或写操作。大多数读和写操作应该出现在 DSs 上执行的 “nfsstat -E -s” 中。在 MDS 上有少量读和写操作是正常的，因为这是客户端因任何原因未能获取有效布局时回退的方式。
+客户端然后可以像使用普通 NFS 挂载一样使用“/mnt”。如果在 nfsv4-server 上执行“nfsstat -E -s”，你不应该看到很多读或写操作。大多数读和写操作应该出现在 DSs 上执行的“nfsstat -E -s”中。在 MDS 上有少量读和写操作是正常的，因为这是客户端因任何原因未能获取有效布局时回退的方式。
 
 如果改用 NFSv3 挂载，命令可能是：
 
