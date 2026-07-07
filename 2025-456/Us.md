@@ -78,7 +78,7 @@ ngbuddy_private_if: -> nghost0
 - **public**：连接到物理接口（此示例中为 ix0）
 - **private**：连接到一个新的虚拟接口（nghost0），用于主机专用网络（host-only networking）
 
-如果你希望使用不同的桥接名称（我更偏好如 “lanbridge” 这类更具体的名字），可以编辑 **/etc/rc.conf** 中的 ngbuddy 配置行以符合你的偏好。
+如果你希望使用不同的桥接名称（我更偏好如“lanbridge”这类更具体的名字），可以编辑 **/etc/rc.conf** 中的 ngbuddy 配置行以符合你的偏好。
 
 启动服务以创建 Netgraph 桥接节点：
 
@@ -142,7 +142,7 @@ private
   jail2: RX 0B, TX 0B
 ```
 
-这提供了每个接口上流量的快速总览，对于故障排查与性能监控非常有用。你还可以使用 `service ngbuddy status` 或 `service ngbuddy vmname` 命令来识别 vm-bhyve 节点，否则它们在 `ngctl` 输出中将以 “unnamed” 的 `ng_socket` 设备形式出现。
+这提供了每个接口上流量的快速总览，对于故障排查与性能监控非常有用。你还可以使用 `service ngbuddy status` 或 `service ngbuddy vmname` 命令来识别 vm-bhyve 节点，否则它们在 `ngctl` 输出中将以“unnamed”的 `ng_socket` 设备形式出现。
 
 ## 可视化你的网络
 
