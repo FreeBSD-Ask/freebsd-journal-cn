@@ -1,8 +1,7 @@
 # 活动日历
 
-直至 12 月
-
-作者：Dru Lavigne
+- 原文标题：Events Calendar — Through December
+- 作者：**Dru Lavigne**
 
 以下 BSD 相关会议定于 2014 年最后一个季度举行。这些活动以及本地用户组会议的更多信息，可访问 <http://www.bsdevents.org>。
 
@@ -20,7 +19,7 @@
 - 地点：美国加利福尼亚州圣何塞
 - 网站：<https://meetbsd.com>
 
-这一两年一度的会议回到旧金山湾区。会议采用混合的非会议（unConference）形式，包括既定演讲以及 BoF、闪电演讲和快速极客（speed geeking）环节。本次活动期间也提供 BSDA 认证考试。
+这场两年一度的会议回到旧金山湾区。会议采用混合的非会议（unConference）形式，包括既定演讲以及 BoF、闪电演讲和快速极客（speed geeking）环节。本次活动期间也提供 BSDA 认证考试。
 
 ## 硅谷厂商与开发者峰会
 

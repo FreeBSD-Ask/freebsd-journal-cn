@@ -1,6 +1,6 @@
 # 我们收到的来信
 
-- 原地址：<https://freebsdfoundation.org/wp-content/uploads/2023/08/JulyAugust23_letters.pdf>
+- 原文链接：<https://freebsdfoundation.org/wp-content/uploads/2023/08/JulyAugust23_letters.pdf>
 - 作者：MICHAEL W LUCAS
 - 译者：ykla & ChatGPT
 
@@ -8,9 +8,7 @@
 >
 > 几年前，你曾表示虚拟化不仅仅是糟糕的，而且是有罪的。难道你没有夸张吗？在今天，我可以下载为各种服务预配置的容器，部署它们，它们立刻就能运行。我没有时间用其他方式来完成我的工作！
 >
-> 最好的祝愿，
->
-> 虚拟化是必要的恶行
+> ——虚拟化是必要的恶行
 
 亲爱的 VINE，
 
