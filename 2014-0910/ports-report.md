@@ -1,6 +1,7 @@
 # Ports 报告
 
-作者：Frederic Culot
+- 原文标题：Ports Report
+- 作者：**Frederic Culot**
 
 我们的月度仪表板显示，由于各位可敬的提交者享受了应得的暑假，夏季活动有所减少。不过，FreeBSD Ports 树上的活动从未停止。以下是过去几个月中发生的重要事件。
 
