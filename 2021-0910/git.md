@@ -39,7 +39,7 @@ install -o root -g wheel -m 444 git-arc.1.gz /usr/share/man/man1/
 
 ```sh
 > arc install-certificate https://reviews.freebsd.org
- CONNECT Connecting to “https://reviews.freebsd.org/api/”...
+ CONNECT Connecting to "https://reviews.freebsd.org/api/"...
 LOGIN TO PHABRICATOR
 Open this page in your browser and login to Phabricator if necessary:
 https://reviews.freebsd.org/conduit/login/
@@ -130,7 +130,7 @@ Does this look OK? [y/N] y
 
 ```sh
 > git arc create -l -s emaste main..
-2f7e09973ab6 cryptodev: Use ‘csp’ in the handlers for requests.
+2f7e09973ab6 cryptodev: Use 'csp' in the handlers for requests.
 fbc805bb4d62 ccp, ccr: Simplify drivers to assume an AES-GCM IV length of 12.
 8390644fd45f crypto: Permit variable-sized IVs for ciphers with a reinit hook.
 f08d44eaa9ee cryptosoft, ccr: Use crp_iv directly for AES-CCM and AES-GCM.
@@ -166,7 +166,7 @@ Does this look OK? [y/N] y
 > git arc list main..gcc9_universe
 f0f665a2f4a5 Accepted D26202: Switch to GCC 9 for the GCC tinderbox.
 a98a78e2dabc Accepted D26203: Pass -msecure-plt to GCC for 32-bit powerpc.
-b4412a18ab23 Needs Review D31933: hyperv storvsc: Don’t abuse struct sglist to hold virtual addresses.
+b4412a18ab23 Needs Review D31933: hyperv storvsc: Don't abuse struct sglist to hold virtual addresses.
 a0eaf413441a Accepted D31934: kernel: Disable errors for -Walloca-larger-than for GCC.
 daf618e9a8c4 No Review : Fix various places which cast a pointer to a vm_paddr_t or vice versa.
 8c46bb47a57f Needs Review D31938: bhyve: Add an empty case for event types in mevent_kq_fflags().

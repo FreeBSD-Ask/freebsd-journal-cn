@@ -3,7 +3,7 @@
 - 原文：[Embedded FreeBSD: Building U-boot](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/building-u-boot/)
 - 作者：Christopher R. Bowman
 
-![嵌入式 FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2026/01/embedded_freebsd_art.png)
+![嵌入式 FreeBSD](../png/2025-101112/building-u-boot-01.png)
 
 一位读者写信告诉我，他在编译 U-boot 时遇到了困难，所以我想走一遍这个过程，因为我也打算启动另一块 Zynq 开发板，反正也得经历这一流程。我需要声明：下面所写内容是准确的，但这些系统很复杂，我可能在某些细节上有误。如果你发现我写错了，欢迎指正。
 

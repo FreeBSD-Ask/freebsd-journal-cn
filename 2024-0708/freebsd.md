@@ -64,7 +64,7 @@ TARGET_ARCH=armv7 DESTDIR=ufs -j32
 ```sh
 # echo 'xxxx' | pw -R ${ufs} useradd -n crb -m -u 1001 \
 -d /homes/crb -g crb -G 1001,wheel,operator\
--c “Christopher R. Bowman” -s /bin/tcsh -H 0
+-c "Christopher R. Bowman" -s /bin/tcsh -H 0
 ```
 
 `pw` 命令的选项 `-R` 使得 `pw` 会编辑 `ufs/etc` 中的密码文件，而不是我主机系统中的文件。选项 `-H0` 能让我使用 `echo` 将密码通过管道传输给 `pw`，而无需交互式输入（你需要使用你主机系统中的编码密码替代 `xxxx`）。你也可能觉得修改 root 账户的密码更加方便，避免没有密码的情况。

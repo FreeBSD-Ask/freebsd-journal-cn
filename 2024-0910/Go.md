@@ -3,7 +3,7 @@
 - 原文链接：[Practical Ports: Go Paperless](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/practical-ports-go-paperless/)
 - 作者：Benedict Reuschling
 
-![实用软件](https://freebsdfoundation.org/wp-content/uploads/2024/09/practical_ports_header-1.png)
+![实用软件](../png/2024-0910/Go-1.png)
 
 在疫情最严重的时候，我一直待在家里，日子基本上和其他日子没什么区别。时间过得很慢，环顾四周，我痛苦地意识到我的房间变得相当凌乱。尤其是我的工作桌旁，堆积的书籍、笔记、信件和其他纸张已经开始争相堆到桌面上。我决定做点什么。我打开播客，开始整理、归类、扔掉，一直清理到桌面整洁。这种巨大的成就感在全球危机时期格外强烈。受到这一感觉的激励，我决定开始扫描那些纸张，减少堆积的纸张数量。
 

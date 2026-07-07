@@ -63,10 +63,10 @@ chown -R tammy /backup/timemachine/tammy
 到此为止，所需的软件已经安装完毕——简单易行。接下来，我们需要创建两个配置文件，一个是时间机器服务的配置，另一个是 Samba 配置。时间机器服务通过 Avahi 运行——不是来自《马达加斯加》的狐猴，而是这个软件。Avahi 是一款 Zeroconf 网络实现，允许程序在本地网络中发布和发现服务（比如我们的时间机器）。配置文件是基于 XML 格式的，位于 `/usr/local/etc/avahi/services/timemachine.service`（如果该文件不存在，需要创建），文件内容如下：
 
 ```xml
-<?xml version=”1.0” standalone='no'?>
-<!DOCTYPE service-group SYSTEM “avahi-service.dtd”>
+<?xml version="1.0" standalone='no'?>
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 <service-group>
-<name replace-wildcards=”yes”>%h</name>
+<name replace-wildcards="yes">%h</name>
 <service>
 <type>_smb._tcp</type>
 <port>445</port>

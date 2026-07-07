@@ -3,7 +3,7 @@
 - 原文链接：[Valgrind on FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/valgrind-on-freebsd/)
 - 作者：Paul Floyd
 
-![Valgrind 标志](https://freebsdfoundation.org/wp-content/uploads/2024/11/knight_art.png)
+![Valgrind 标志](../png/2024-0910/Valgrind-1.png)
 
 我第一次使用 Valgrind 是在 2000 年代初期。在此之前，我在 Solaris/SPARC 上使用 Purify（现在是 [Unicom PurifyPlus](https://www.unicomsi.com/products/purifyplus/)）有相当多的经验。老实说，我对 [Valgrind](https://valgrind.org/) 并没有太深的印象。虽然它不需要特殊的构建过程，但它缺少与调试器交互的能力。
 

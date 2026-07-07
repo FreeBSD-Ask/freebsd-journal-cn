@@ -2,7 +2,7 @@
 
 作者：Michael W Lucas
 
-![mailbox graphic](https://freebsdfoundation.org/wp-content/uploads/2026/01/FreeBSD_mailbox.png)
+![mailbox graphic](../png/2025-101112/we-get-letters-01.png)
 
 亲爱的”他们怎么让你写这专栏”：
 
