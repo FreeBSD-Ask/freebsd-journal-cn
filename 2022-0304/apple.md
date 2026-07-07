@@ -125,7 +125,7 @@ valid users = @timemachinists
 
 就像 Darth Vader 在旧主人的面前感受到原力的震动一样，我们希望通过 Avahi 自动通知 Mac 客户端有关你的时间机器服务的存在。为此，我们在以下位置创建新文件：
 
-**`/usr/local/etc/avahi/services/afp.service`**
+**/usr/local/etc/avahi/services/afp.service**
 
 并添加如下内容：
 
