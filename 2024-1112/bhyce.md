@@ -49,10 +49,10 @@ pkg install openntpd vm-bhyve bhyve-firmware
 ```sh
 # zfs create -o mountpoint=/vm -o recordsize=64k zroot/vm
 # cat <<EOF >> /etc/rc.conf
-vm_enable=”YES”
-vm_dir=”zfs:zroot/vm”
-vm_list=””
-vm_delay=”30”
+vm_enable="YES"
+vm_dir="zfs:zroot/vm"
+vm_list=""
+vm_delay="30"
 EOF
 # vm init
 ```
@@ -104,18 +104,18 @@ EOF
 
 ```sh
 # cat <<EOF > /vm/.templates/linux-uefi.conf
-loader=”uefi”
-graphics=”yes”
+loader="uefi"
+graphics="yes"
 cpu=2
 memory=1G
-disk0_type=”virtio-blk”
-disk0_name=”disk0.img”
-disk0_dev=”file”
-graphics_listen=”[::]”
-graphics_res=”1024x768”
-xhci_mouse=”yes”
-utctime=”yes”
-virt_random=”yes”
+disk0_type="virtio-blk"
+disk0_name="disk0.img"
+disk0_dev="file"
+graphics_listen="[::]"
+graphics_res="1024x768"
+xhci_mouse="yes"
+utctime="yes"
+virt_random="yes"
 EOF
 
 # cat <<EOF > /vm/.templates/windows-uefi.conf
