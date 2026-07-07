@@ -6,4 +6,4 @@
 执行董事
 FreeBSD Foundation
 
-![节日图片](https://freebsdfoundation.org/wp-content/uploads/2026/01/holiday_image.png)
+![节日图片](../png/2025-101112/letter-from-the-foundation-01.png)
