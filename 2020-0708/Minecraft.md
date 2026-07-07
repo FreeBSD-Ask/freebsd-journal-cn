@@ -5,7 +5,7 @@
 
 ## 第一步：选择设备
 
-![Minecraft 服务器设备](https://github.com/user-attachments/assets/4de7a864-211c-4834-9b35-e2d19f79274c)
+![Minecraft 服务器设备](../png/2020-0708/Minecraft-01.png)
 
 在设置服务器之前，选择设置专用设备还是运行 FreeBSD 的虚拟机。
 
@@ -40,7 +40,7 @@
 
 ## 第三步：Port minecraft-server
 
-![minecraft-server Port 截图](https://github.com/user-attachments/assets/487d6fbc-4cb4-4d88-9f06-4560ba5582f4)
+![minecraft-server Port 截图](../png/2020-0708/Minecraft-02.png)
 
 FreeBSD ports 中有各种各样的游戏 Port，其中包括一个很好的选项，用于运行基本的 Minecraft 服务器：Port minecraft-server。
 
@@ -100,7 +100,7 @@ eula=true
 
 ## 第五步：端口转发
 
-![端口转发示意图](https://github.com/user-attachments/assets/7b192ce3-36f2-415f-827f-dd90b0e07557)
+![端口转发示意图](../png/2020-0708/Minecraft-03.png)
 
 下一步是确保与设备连接的路由器正确地将所有 Minecraft 流量转发到设备上。即使网络上没有其他计算机，这也是一个必需的步骤。Minecraft 使用端口 25565，因此需要设置路由器将所有通过 25565 端口的流量发送到运行 Minecraft 服务器的计算机。路由器设置必须在另外的已设置桌面环境的计算机上完成。
 

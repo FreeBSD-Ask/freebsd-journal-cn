@@ -4,11 +4,11 @@
 
 以下 BSD 相关会议将于 2018 年 3 月和 4 月举行。
 
-## AsiaBSDCon　3 月 8—11 日　日本东京
+## AsiaBSDCon 3 月 8—11 日 日本东京
 
-<https://2018.asiabsdcon.org/>　这是面向基于 BSD 系统用户和开发者的年度 BSD 技术大会。提供多日的研讨会、演讲和开发者峰会。此活动需注册。
+<https://2018.asiabsdcon.org/> 这是面向基于 BSD 系统用户和开发者的年度 BSD 技术大会。提供多日的研讨会、演讲和开发者峰会。此活动需注册。
 
-## SCALE　3 月 8—11 日　美国加州帕萨迪纳
+## SCALE 3 月 8—11 日 美国加州帕萨迪纳
 
 <http://www.socallinuxexpo.org/scale/16x>　第 16 届南加州 Linux 博览会将再次提供多场 FreeBSD 相关演讲，并在展区设有 FreeBSD 展位。此活动需支付少量费用注册。
 

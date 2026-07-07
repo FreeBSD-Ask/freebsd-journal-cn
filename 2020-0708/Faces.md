@@ -55,7 +55,7 @@ FreeBSD 项目核心团队的选举在今年早些时候举行，结果公布于
 
 ## Kyle Evans，Portmgr 团队联络员
 
-![Kyle Evans 照片](https://github.com/user-attachments/assets/c2e0b278-defc-4696-8aa9-3ca027709baf)
+![Kyle Evans 照片](../png/2020-0708/Faces-04.png)
 
 我算是比较新的成员，加入项目仅约四年。我的大部分工作集中在用户空间和 lualoader 上。FreeBSD 对我来说大多是一个爱好——我在工作中部署了一小批 FreeBSD/arm 板子，用于各种目的，但它们非常稳定，几乎不需要对 FreeBSD 做什么工作。我通常被项目吸引，是因为它有一些有趣的挑战需要解决，当然，我留下来也是因为“山羊”
 
@@ -69,7 +69,7 @@ FreeBSD 项目核心团队的选举在今年早些时候举行，结果公布于
 
 ## Mark Johnston，Bugmeister 和 CI 团队联络员
 
-![Mark Johnston 照片](https://github.com/user-attachments/assets/05aace88-f2da-4826-a9a0-54042d9b5cd0)
+![Mark Johnston 照片](../png/2020-0708/Faces-05.png)
 
 我因为在一家使用 FreeBSD 构建网络设备的公司做学生实习而接触了 FreeBSD。当时，我非常想参与开源项目，并对操作系统感兴趣，幸运的是，我设法在这家公司相对小的操作系统团队中找到了工作，团队里有几位 FreeBSD 提交者，他们帮助我成为项目的一员。从那时起，我在几家设备厂商工作过，现在从事自由职业的 FreeBSD 开发工作。我的许多贡献主要是在内核的 bug 修复方面——出于某种奇怪的原因，我喜欢追踪那些晦涩的并发问题。我也做了一些关于 DTrace  Ports 和虚拟内存子系统的工作。
 
