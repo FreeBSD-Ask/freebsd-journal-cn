@@ -1213,7 +1213,7 @@ root@gateway:~ # reboot
 
 ### Jailhost-a
 
-“jailhost-a” 托管一台 VM 和一个 VNET jail，通过交换机（桥接接口）连接到 VXLAN 接口，VXLAN 接口再使用物理接口 `igb0` 在局域网传输封装流量。
+“jailhost-a”托管一台 VM 和一个 VNET jail，通过交换机（桥接接口）连接到 VXLAN 接口，VXLAN 接口再使用物理接口 `igb0` 在局域网传输封装流量。
 
 #### 网络配置（jailhost-a）
 
