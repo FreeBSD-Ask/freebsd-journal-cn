@@ -77,7 +77,7 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 
 ## 第四步：创建批量 Port 列表
 
-![Port 列表示例](https://github.com/user-attachments/assets/9f685d00-607f-407b-b3ec-5471d735ba0b)
+![Port 列表示例](../png/2020-0506/Port-01.png)
 
 继续之前，运行以下命令：
 
@@ -99,7 +99,7 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 
 ## 第五步：配置 Poudriere 安装选项
 
-![Poudriere 选项配置](https://github.com/user-attachments/assets/a9c24659-321e-4a9d-836e-06e9c0c46c49)
+![Poudriere 选项配置](../png/2020-0506/Port-02.png)
 
 此步骤是可选的，除非需要手动配置。
 
@@ -113,7 +113,7 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 
 ## 第六步：使用 Poudriere 管理 Port
 
-![Poudriere 批量管理](https://github.com/user-attachments/assets/2b628cac-88f3-4019-9d9b-53a411bf6767)
+![Poudriere 批量管理](../png/2020-0506/Port-03.png)
 
 配置完成后，安装整个 Ports 列表只需一条命令：
 
