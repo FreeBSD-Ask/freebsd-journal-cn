@@ -171,7 +171,7 @@ FreeBSD 尚不支持命名空间管理——例如创建和删除命名空间以
 
 ## 管理 NVMe 驱动器
 
-用于列出和配置 NVMe 控制器和命名空间的主要实用工具是 nvmecontrol(8)。最基本的 nvmecontrol 子命令是 “nvmecontrol devlist”，它提供每个 NVMe 控制器及其命名空间的简短摘要。
+用于列出和配置 NVMe 控制器和命名空间的主要实用工具是 nvmecontrol(8)。最基本的 nvmecontrol 子命令是“nvmecontrol devlist”，它提供每个 NVMe 控制器及其命名空间的简短摘要。
 
 ```sh
          %sudo nvmecontrol devlist
