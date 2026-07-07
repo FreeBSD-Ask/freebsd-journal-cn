@@ -181,17 +181,17 @@ FreeBSD 尚不支持命名空间管理——例如创建和删除命名空间以
 
 其他 nvmecontrol(8) 子命令包括：
 
-- “nvmecontrol identify” 用于根据 NVMe IDENTIFY 命令的信息提供 NVMe 控制器和命名空间的详细信息
-- “nvmecontrol logpage” 用于从 NVMe 控制器读取日志页面；规范定义的日志页面（错误、Health/SMART 和固件插槽）有处理器将日志页面转换为人类可读的格式
-- “nvmecontrol firmware” 用于下载和/或在 NVMe 控制器上激活不同的固件映像
-- “nvmecontrol perftest” 用于从 nvme(4) 驱动程序本身运行低级性能测试
-- “nvmecontrol reset” 向 NVMe 控制器发出控制器级重置
-- “nvmecontrol power” 更改电源状态或为 NVMe 控制器指定工作负载提示
-- “nvmecontrol wdc” 执行特定于 WDC NVMe SSD 的选项
+- “nvmecontrol identify”用于根据 NVMe IDENTIFY 命令的信息提供 NVMe 控制器和命名空间的详细信息
+- “nvmecontrol logpage”用于从 NVMe 控制器读取日志页面；规范定义的日志页面（错误、Health/SMART 和固件插槽）有处理器将日志页面转换为人类可读的格式
+- “nvmecontrol firmware”用于下载和/或在 NVMe 控制器上激活不同的固件映像
+- “nvmecontrol perftest”用于从 nvme(4) 驱动程序本身运行低级性能测试
+- “nvmecontrol reset”向 NVMe 控制器发出控制器级重置
+- “nvmecontrol power”更改电源状态或为 NVMe 控制器指定工作负载提示
+- “nvmecontrol wdc”执行特定于 WDC NVMe SSD 的选项
 
 使用 nda(4) 时，camcontrol(8) 目前可用于列出命名空间，但其他功能（如 NVMe identify 或固件下载）尚未管道化。
 
-nvmecontrol(8) 的一个缺点是将 NVMe 控制器或命名空间映射到其关联的 nvd 或 nda 条目。目前最佳方法是通过 “geom disk list” 和 “nvmecontrol identify” 之间的序列号关联。随着 camcontrol(8) 获得更多 NVMe 功能，此问题将得到缓解。
+nvmecontrol(8) 的一个缺点是将 NVMe 控制器或命名空间映射到其关联的 nvd 或 nda 条目。目前最佳方法是通过“geom disk list”和“nvmecontrol identify”之间的序列号关联。随着 camcontrol(8) 获得更多 NVMe 功能，此问题将得到缓解。
 
 ## 总结
 
