@@ -3,7 +3,7 @@
 - 原文链接：[BALLY WULFF](https://freebsdfoundation.org/wp-content/uploads/2021/03/Bally-Wulf.pdf)
 - 作者：**MATEUSZ PIOTROWSKI**
 
-![BALLY WULFF 公司形象](https://github.com/user-attachments/assets/cac7e52d-b4fa-4837-932f-137740719eb8)
+![BALLY WULFF 公司形象](../png/2021-0102/BALLY-01.png)
 
 BALLY WULFF Games & Entertainment GmbH 是德国一家知名的娱乐电子产品公司，专门开发、生产和销售现金游戏机。公司总部位于柏林，BALLY WULFF 不仅运营在德国，还在西班牙开展业务，目前约有 300 名员工。
 

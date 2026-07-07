@@ -3,7 +3,7 @@
 - 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2023/08/JulyAugust_foundation_letter.pdf)
 - 作者：Deb Goodkin
 
-亲爱的读者们：
+亲爱的读者：
 
 我非常高兴为大家介绍 7/8 月刊！近十年来，FreeBSD 基金会一直在制作《期刊》，我们为能向全球 BSD 与 Unix 爱好者提供信息丰富而实用的内容感到自豪。
 
@@ -13,7 +13,7 @@ Drew Gallatin 撰写了一篇动情的纪念文章，追忆长期从事 FreeBSD 
 
 最后，别忘了看看活动日历，其中重点介绍了社区同好可能感兴趣的即将举办的活动。
 
-感谢你一直以来对 FreeBSD、FreeBSD 基金会以及所有投身这一了不起的项目（最近刚过完 30 岁生日！）的人的支持。现在，请舒舒服服地靠在椅背上，尽情享受本期的精彩内容吧！
+感谢你一直以来对 FreeBSD、FreeBSD 基金会以及所有投身这一了不起的项目（最近刚庆祝 30 周年！）的人的支持。现在，请放松一下，尽情享受本期的精彩内容吧！
 
 **Deb Goodkin**
 

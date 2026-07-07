@@ -6,9 +6,9 @@
 
 悼念：Hans Petter William Sirevåg Selasky
 
-FreeBSD 社区近期因一位最多产的贡献者的不幸离世而深感悲痛。我们得知，Hans Petter Selasky 于 2023 年 6 月 23 日在挪威利勒桑德的一场交通事故中去世，享年 41 岁。Hans 是一位极其聪明和善良的人，为 FreeBSD 贡献了许多宝贵的东西。他的父亲 Gordon 先于他去世，他留下了母亲 Inger Elisabeth、兄弟 Mark 和 Leif Conrad，还有侄女和侄子 Petra、David 和 Signe。
+FreeBSD 社区近期因一位最多产的贡献者的不幸离世而深感悲痛。我们得知，Hans Petter Selasky 于 2023 年 6 月 23 日在挪威利勒桑德的一场交通事故中去世，享年 41 岁。Hans 是一位极其聪明和善良的人，为 FreeBSD 作出了许多宝贵的贡献。他的父亲 Gordon 先于他去世，他留下了母亲 Inger Elisabeth、兄弟 Mark 和 Leif Conrad，还有侄女和侄子 Petra、David 和 Signe。
 
-Hans 大约在 25 年前开始为 FreeBSD 贡献代码，最初是修复 FreeBSD 的 ISDN 支持。他担任 FreeBSD 提交者近 15 年，最为人所知的是重写和维护 USB 协议栈。Hans 编写了 webcamd 包，该包支持在 FreeBSD 上的用户空间运行 Linux 摄像头驱动程序，使我们这些在桌面上使用 FreeBSD 的人能够参与现代电话会议。最近，他在 Mellanox（现为 NVIDIA）工作，负责在 FreeBSD 上支持其 ConnectX 系列高速网卡。Hans 的工作包括对内核 TLS 框架的重大贡献，以及对 `mce(4)` 驱动程序中网卡 kTLS 发送和接收卸载的支持，还有对 Linux 设备驱动兼容层的许多改进。
+Hans 大约在 25 年前开始为 FreeBSD 贡献代码，最初是修复 FreeBSD 的 ISDN 支持。他担任 FreeBSD 提交者近 15 年，最为人所知的是重写和维护 USB 协议栈。Hans 编写了 webcamd 包，该包支持在 FreeBSD 上的用户空间运行 Linux 摄像头驱动程序，使我们这些在桌面上使用 FreeBSD 的人能够参与现代视频会议。最近，他在 Mellanox（现为 NVIDIA）工作，负责在 FreeBSD 上支持其 ConnectX 系列高速网卡。Hans 的工作包括对内核 TLS 框架的重大贡献，以及对 `mce(4)` 驱动程序中网卡 kTLS 发送和接收卸载的支持，还有对 Linux 设备驱动兼容层的许多改进。
 
 照片由 Ollivier Robert 提供。
 
