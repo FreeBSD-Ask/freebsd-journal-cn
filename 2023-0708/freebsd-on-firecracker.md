@@ -50,15 +50,15 @@ Firecracker 提供的少数模拟设备之一（与 Virtio 块和网络设备等
 
 在让 FreeBSD 在 Firecracker 中运行起来的过程中，我能够启动已将根磁盘编译到内核映像中的 FreeBSD 内核——虚拟磁盘驱动程序尚未工作——并读取了内核的所有控制台输出。然而，在所有内核控制台输出之后，FreeBSD 进入了引导过程的用户空间部分，我看到 16 个字符的控制台输出，然后就停止了。
 
-有趣的是，我在 10 多年前就见过完全相同的症状，当时我首次在 EC2 实例上运行 FreeBSD。QEMU 中的一个错误导致 UART 在传输 FIFO 清空时不发送中断；FreeBSD 向 UART 写入 16 字节，然后不再写入，因为它在等待一个永远不会到达的中断。现代的 EC2 实例运行在亚马逊的“Nitro”平台上，但在早期，它们使用 Xen，设备使用 QEMU 的代码模拟。不知何故，在 QEMU 中修复了这个错误十年后，完全相同的错误又出现在 Firecracker 中；但幸运的是，我当初加入 FreeBSD 内核的解决方法——`hw.broken_txfifo="1"`——仍然可用，添加这个加载器可调参数后（由于 Firecracker 直接加载内核，不经过引导加载器，这意味着将该值编译为内核的环境变量）修复了控制台输出。
+有趣的是，我在 10 多年前就见过完全相同的症状，当时我首次在 EC2 实例上运行 FreeBSD。QEMU 中的一个错误导致 UART 在传输 FIFO 清空时不发送中断；FreeBSD 向 UART 写入 16 字节，然后不再写入，因为它在等待永远不会到达的中断。现代的 EC2 实例运行在亚马逊的“Nitro”平台上，但在早期，它们使用 Xen，设备用 QEMU 的代码模拟。不知何故，在 QEMU 中修复了这个错误十年后，完全相同的错误又出现在 Firecracker 中；但幸运的是，我当初加入 FreeBSD 内核的解决方法——`hw.broken_txfifo="1"`——仍然可用，添加这个加载器可调参数后（由于 Firecracker 直接加载内核，不经过引导加载器，这意味着将该值编译为内核的环境变量）修复了控制台输出。
 
-然后我发现控制台输入也是无效的：FreeBSD 对我在控制台中键入的任何内容都没有响应。事实上，在我跟踪 Firecracker 进程时，我发现 Firecracker 甚至没有从控制台读取——因为 Firecracker 认为模拟串口上的接收 FIFO 已满。结果证明这是 Firecracker 的另一个错误：在初始化串口时，FreeBSD 用垃圾填充接收 FIFO 以测量其大小，然后通过写入 FIFO 控制寄存器来刷新 FIFO。Firecracker 没有实现 FIFO 控制寄存器，因此 FIFO 保持满状态，并且合理地不尝试读取任何更多的字符放入其中。在这里，我向 FreeBSD 添加了另一个解决方法：如果在我们尝试通过 FIFO 控制寄存器刷新 FIFO 后，LSR_RXRDY 仍然被断言（也就是说，如果 FIFO 没有按要求清空），那么我们现在会继续逐个读取和丢弃字符，直到 FIFO 清空。有了这个解决方法，Firecracker 现在可以认识到 FreeBSD 已准备好从串口读取更多输入，我有了一个可工作的双向串行控制台。
+然后我发现控制台输入也坏了：FreeBSD 对我在控制台中键入的任何内容都没有响应。事实上，在我跟踪 Firecracker 进程时，我发现 Firecracker 甚至没有从控制台读取——因为 Firecracker 认为模拟串口上的接收 FIFO 已满。结果证明这是 Firecracker 的另一个错误：在初始化串口时，FreeBSD 用垃圾填充接收 FIFO 以测量其大小，然后通过写入 FIFO 控制寄存器来刷新 FIFO。Firecracker 没有实现 FIFO 控制寄存器，因此 FIFO 保持满状态，也就合理地不再读取更多字符放入其中。在这里，我向 FreeBSD 添加了另一个解决方法：如果在我们尝试通过 FIFO 控制寄存器刷新 FIFO 后，LSR_RXRDY 仍然被断言（也就是说，如果 FIFO 没有按要求清空），那么我们现在会继续逐个读取和丢弃字符，直到 FIFO 清空。有了这个解决方法，Firecracker 现在可以认识到 FreeBSD 已准备好从串口读取更多输入，我有了可工作的双向串行控制台。
 
 ## Virtio 设备
 
-虽然没有磁盘或网络的系统对某些用途可能是有用的，但在我们能够在 FreeBSD 中做很多事情之前，我们需要这些设备。Firecracker 支持 Virtio 块和网络设备，并将它们以 mmio（内存映射 I/O）设备的形式暴露给虚拟机。使这些在 FreeBSD 中工作的第一步：在 Firecracker 内核配置中添加 `device virtio_mmio`。
+虽然没有磁盘或网络的系统对某些用途可能有用，但在我们能够在 FreeBSD 中做很多事情之前，我们需要这些设备。Firecracker 支持 Virtio 块和网络设备，并将它们以 mmio（内存映射 I/O）设备的形式暴露给虚拟机。让这些在 FreeBSD 中工作的第一步：在 Firecracker 内核配置中添加 `device virtio_mmio`。
 
-接下来，我们需要告诉 FreeBSD 如何找到虚拟化的设备。FreeBSD 期望通过 FDT（扁平化设备树）发现 mmio 设备，这是一种在嵌入式系统上常用的机制；但是，Firecracker 通过内核命令行传递设备参数，比如 `virtio_mmio.device=4K@0x1001e000:5`。让这些设备在 FreeBSD 中工作的第二步：编写用于解析此类指令并创建 virtio_mmio 设备节点的代码。（创建设备节点后，FreeBSD 的常规设备探测过程就会启动，内核将自动确定 Virtio 设备的类型并连接适当的驱动程序。）
+接下来，我们需要告诉 FreeBSD 如何找到虚拟化的设备。FreeBSD 期望通过 FDT（扁平化设备树）发现 mmio 设备，这在嵌入式系统上是常用机制；但是，Firecracker 通过内核命令行传递设备参数，比如 `virtio_mmio.device=4K@0x1001e000:5`。让这些设备在 FreeBSD 中工作的第二步：编写解析此类指令并创建 virtio_mmio 设备节点的代码。（创建设备节点后，FreeBSD 的常规设备探测过程就会启动，内核将自动确定 Virtio 设备的类型并连接适当的驱动程序。）
 
 然而，如果我们有多个设备，例如，一个磁盘设备和一个网络设备——则会出现另一个问题：Firecracker 以 Linux 所期望的方式传递指令，即作为内核命令行上的一系列键值对，而 FreeBSD 将内核命令行解析为环境变量……这意味着如果在命令行上传递了两个 `virtio_mmio.device=` 指令，只会保留一个。为了解决这个问题，我重新编写了早期的内核环境解析代码，通过附加带编号的后缀来处理重复变量：我们会得到一个设备的 `virtio_mmio.device=`，而第二个设备则为 `virtio_mmio.device_1=`。
 

@@ -29,7 +29,7 @@ TCP 的发送和接收行为已经经历了 40 多年发展。在这期间，许
 
 以下示例说明了 TCP Pacing。假设使用 TCP 连接以 12 兆比特每秒的速度向对等方传输数据，包括 IP 和 TCP 头。假设最大 IP 数据包大小为 1500 字节（即 12000 位），这将导致每秒发送 1000 个 TCP 段。在使用 Pacing 时，将每毫秒发送一个 TCP 段。可以使用一个每毫秒触发的定时器来实现这一点。以下图形展示了这种发送行为。
 
-![TCP Pacing 控制发送时序图](https://freebsdfoundation.org/wp-content/uploads/2024/11/stewart_chart2.png)
+![TCP Pacing 控制发送时序图](../png/2024-0910/TCP-3.png)
 
 **图 2：以 12Mbps 速率 Pacing 的 TCP 连接**
 
