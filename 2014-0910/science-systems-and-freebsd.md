@@ -1,6 +1,7 @@
 # 科学、系统与 FreeBSD
 
-作者：George Neville-Neil
+- 原文标题：Science, Systems, and FreeBSD
+- 作者：**George Neville-Neil**
 
 FreeBSD 操作系统源于学术研究，源自加州大学伯克利分校计算机系统研究组（CSRG）在 20 世纪 70 年代中期至 90 年代期间开发的 4.4-Lite 版本的伯克利软件发行版（Berkeley Software Distribution）。CSRG 在操作系统研究领域耕耘二十年 [11] 后，于 1995 年解散。在这二十年的活跃开发期间，CSRG 在虚拟内存 [1]、文件系统 [12] 方面产出了研究成果，开发了 Sockets API 和最受欢迎的 TCP/IP 网络协议栈，以及伯克利数据包过滤器 [10]。
 
