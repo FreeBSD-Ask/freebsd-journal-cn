@@ -1390,7 +1390,7 @@ root@vnetjail-a:~ # logout
 
 ### Jailhost-b
 
-“jailhost-b” 的设置与”jailhost-a”类似，但网络对调（VM 在 VXLAN 222，jail 在 VXLAN 111）。此外，它托管一个普通 jail，使用 VXLAN 接口（vxlan111）上的别名地址直接访问，但不以该网络作为默认网关。在生产环境中，这个 jail 可用于容纳底层 jailhost 提供的支持性服务。
+“jailhost-b”的设置与”jailhost-a”类似，但网络对调（VM 在 VXLAN 222，jail 在 VXLAN 111）。此外，它托管一个普通 jail，使用 VXLAN 接口（vxlan111）上的别名地址直接访问，但不以该网络作为默认网关。在生产环境中，这个 jail 可用于容纳底层 jailhost 提供的支持性服务。
 
 #### 网络配置（jailhost-b）
 
@@ -1483,7 +1483,7 @@ root@plainjail-b:~ # logout
 root@jailhost-b:~ #
 ```
 
-> **注意**：“plainjail-b” 这种配置下，其公共流量不会通过 VXLAN 发送并由网关主机 NAT。此设置是有意的；否则会用 VNET jail。
+> **注意**：“plainjail-b”这种配置下，其公共流量不会通过 VXLAN 发送并由网关主机 NAT。此设置是有意的；否则会用 VNET jail。
 
 #### 网络交换机设置（jailhost-b）
 
