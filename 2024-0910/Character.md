@@ -244,7 +244,7 @@ echo_ioctl(struct cdev *dev, u_long cmd, caddr_t data, int fflag,
 # echoctl clear
 # cat /dev/echo
 # echoctl resize 80
-# jot -c -s “” 70 48 > /dev/echo
+# jot -c -s "" 70 48 > /dev/echo
 # cat /dev/echo
 0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstu
 # vmstat -m | egrep 'Type|echo'
@@ -304,7 +304,7 @@ echodev_create(struct echodev_softc **scp, size_t len)
       int error;
 
       sc = malloc(sizeof(*sc), M_ECHODEV, M_WAITOK | M_ZERO);
-      sx_init(&sc->lock, “echo”);
+      sx_init(&sc->lock, "echo");
       sc->buf = malloc(len, M_ECHODEV, M_WAITOK | M_ZERO);
       sc->len = len;
       make_dev_args_init(&args);
@@ -314,7 +314,7 @@ echodev_create(struct echodev_softc **scp, size_t len)
       args.mda_gid = GID_WHEEL;
       args.mda_mode = 0600;
       args.mda_si_drv1 = sc;
-      error = make_dev_s(&args, &sc->dev, “echo”);
+      error = make_dev_s(&args, &sc->dev, "echo");
       if (error != 0) {
             free(sc->buf, M_ECHODEV);
             sx_destroy(&sc->lock);

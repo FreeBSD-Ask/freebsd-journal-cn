@@ -118,8 +118,8 @@
 然而，与许多 git 操作一样，这并不像看起来那么简单。你将看到类似以下的消息：
 
 ```c
-Note: checking out ‘08b8197a742a96964d2924391bf9fdfeb788865d’.
-You are in ‘detached HEAD’ state. You can look around, make experimental
+Note: checking out '08b8197a742a96964d2924391bf9fdfeb788865d'.
+You are in 'detached HEAD' state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
 state without impacting any branches by performing another checkout.
 If you want to create a new branch to retain commits you create, you may
