@@ -10,9 +10,9 @@
 
 ## SCALE 3 月 8—11 日 美国加州帕萨迪纳
 
-<http://www.socallinuxexpo.org/scale/16x>　第 16 届南加州 Linux 博览会将再次提供多场 FreeBSD 相关演讲，并在展区设有 FreeBSD 展位。此活动需支付少量费用注册。
+<http://www.socallinuxexpo.org/scale/16x> 第 16 届南加州 Linux 博览会将再次提供多场 FreeBSD 相关演讲，并在展区设有 FreeBSD 展位。此活动需支付少量费用注册。
 
-## FOSSASIA Summit 2018　3 月 22—25 日　新加坡
+## FOSSASIA Summit 2018 3 月 22—25 日 新加坡
 
 <https://2018.fossasia.org/>　FOSSASIA 峰会是亚洲面向开发者、初创企业和 IT 专业人士的领先开源技术大会，将于 2018 年 3 月 22—25 日在新加坡终身学习学院举行。
 
