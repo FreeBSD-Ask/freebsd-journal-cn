@@ -92,7 +92,7 @@ echo_read(struct cdev *dev, struct uio *uio, int ioflag)
 
       /* Wait for bytes to read. */
       while (sc->valid == 0) {
-            error = sx_sleep(sc, &sc->lock, PCATCH, “echord”, 0);
+            error = sx_sleep(sc, &sc->lock, PCATCH, "echord", 0);
             if (error != 0) {
                   sx_xunlock(&sc->lock);
                   return (error);
@@ -117,7 +117,7 @@ echo_read(struct cdev *dev, struct uio *uio, int ioflag)
 **示例 2**：阻塞 I/O 永久挂起
 
 ```sh
-# echo “12345678” > /dev/echo
+# echo "12345678" > /dev/echo
 # cat /dev/echo
 12345678
 ^C
@@ -139,7 +139,7 @@ echo_read(struct cdev *dev, struct uio *uio, int ioflag)
             if (sc->dying)
                   error = ENXIO;
             else
-                  error = sx_sleep(sc, &sc->lock, PCATCH, “echord”, 0);
+                  error = sx_sleep(sc, &sc->lock, PCATCH, "echord", 0);
             if (error != 0) {
                   sx_xunlock(&sc->lock);
                   return (error);
@@ -246,7 +246,7 @@ echo_read(struct cdev *dev, struct uio *uio, int ioflag)
             else if (ioflag & O_NONBLOCK)
                   error = EWOULDBLOCK;
             else
-                  error = sx_sleep(sc, &sc->lock, PCATCH, “echord”, 0);
+                  error = sx_sleep(sc, &sc->lock, PCATCH, "echord", 0);
       ...
 }
 

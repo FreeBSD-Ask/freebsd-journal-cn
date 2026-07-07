@@ -1,6 +1,7 @@
 # SVN 动态
 
-作者：Glen Barber
+- 原文标题：svn update
+- 作者：**Glen Barber**
 
 又到了一年中的这个时候，FreeBSD 10.1-RELEASE 周期已经开始。本专栏介绍 FreeBSD 10.1 中预计首发的一些激动人心的新功能。
 
