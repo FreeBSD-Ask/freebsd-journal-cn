@@ -1,8 +1,7 @@
 # 会议报告
 
-EuroBSDcon 2014
-
-作者：Daniel Peyrolón
+- 原文标题：Conference Report — EuroBSDcon 2014
+- 作者：**Daniel Peyrolón**
 
 EuroBSDcon 是欧洲首屈一指的开源 BSD 操作系统会议，吸引了来自欧洲及世界各地的高技能工程专业人员、软件开发者、计算机科学学生、教授和用户。会议的目标是交流 BSD 操作系统知识，促进用户和开发者之间的协调与合作。2014 年 9 月 27 日与 28 日在保加利亚索菲亚举行的主会议之前，先是为期两天的 FreeBSD 开发者峰会和教程。
 

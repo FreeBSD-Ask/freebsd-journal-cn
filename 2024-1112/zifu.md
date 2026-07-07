@@ -3,7 +3,7 @@
 - 原文链接：[Character Device Driver Tutorial (Part 2)](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/character-device-driver-tutorial-part-2/)
 - 作者：**John Baldwin**
 
-![字符设备驱动教程配图](https://freebsdfoundation.org/wp-content/uploads/2025/01/baldwin_art_pt2.png)
+![字符设备驱动教程配图](../png/2024-1112/zifu-1.png)
 
 在这篇三部分系列的[上一篇文章](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/character-device-driver-tutorial/)中，我们构建了一个简单的字符设备驱动程序，该程序支持由固定缓冲区支持的 I/O 操作。在本文中，我们将扩展此驱动程序，以支持 FIFO 数据缓冲区，并支持非阻塞 I/O 和事件报告。每个版本的驱动程序的完整源代码可以在[https://github.com/bsdjhb/cdev_tutorial](https://github.com/bsdjhb/cdev_tutorial)找到。
 
