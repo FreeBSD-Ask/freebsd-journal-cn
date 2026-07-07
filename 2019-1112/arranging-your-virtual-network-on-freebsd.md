@@ -842,7 +842,7 @@ exit 1
 
 脚本以 jail 名称为必需参数，可选 vnet 接口（iocage 内部编号）。后者默认为”vnet0”。
 
-现在重启”vnetcage” jail，检查桥接成员配置，然后修改其配置以使用新脚本，再次重启并比较结果桥接配置：
+现在重启”vnetcage”jail，检查桥接成员配置，然后修改其配置以使用新脚本，再次重启并比较结果桥接配置：
 
 ```sh
 root@jailhost:~ # iocage restart vnetcage
