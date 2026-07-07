@@ -3,7 +3,7 @@
 - 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/our-work/journal/browser-based-edition/13099/foundation-letter-2/)
 - 作者：John Baldwin
 
-欢迎阅读 9/10 月刊。在我撰写这篇致辞时，FreeBSD 正在为下一个主版本 14.0 做最后的收尾工作。敬请关注，11/12 月刊将带来 14.0 诸多令人兴奋的新特性。
+欢迎阅读 9/10 月刊。在我撰写本文时，FreeBSD 正在为下一个主版本 14.0 做最后的收尾工作。敬请关注，11/12 月刊的文章将涵盖 14.0 诸多令人兴奋的新特性。
 
 与此同时，在 14.0 抵达你附近的 CDN 服务器之前，本期提供了精彩的阅读内容供你消遣。
 
