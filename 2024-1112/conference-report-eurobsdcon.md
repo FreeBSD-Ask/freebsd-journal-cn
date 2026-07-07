@@ -3,7 +3,7 @@
 - 原文链接：[Conference Report: My EuroBSDCon Experience in Dublin](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/conference-report-my-eurobsdcon-experience-in-dublin/)
 - 作者：Stefano Marinelli
 
-![Conference Report](https://freebsdfoundation.org/wp-content/uploads/2025/01/conferencereport_dublin.png)
+![Conference Report](../png/2024-1112/conference-report-eurobsdcon-1.png)
 
 ![都柏林插画](https://freebsdfoundation.org/wp-content/uploads/2025/01/dublin_art.png)
 
