@@ -8,7 +8,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/329166>
 
-`liblua` 将 Lua 运行时嵌入 boot loader。它实现了 Lua 所期望的所有运行时例程。此外，它还有一些标准的 C 头文件，会“中和” LUA 构建中那些过于 Lua 特定、不适合放入 `libsa` 的部分。相对原始代码做了大量改进，提升了实现质量并增加了所包含的 Lua 库数量。使用 `int64_t` 作为 `lua_Number`。将 **/boot/lua** 设为默认模块路径。
+`liblua` 将 Lua 运行时嵌入 boot loader。它实现了 Lua 所期望的所有运行时例程。此外，它还有一些标准的 C 头文件，会“中和”LUA 构建中那些过于 Lua 特定、不适合放入 `libsa` 的部分。相对原始代码做了大量改进，提升了实现质量并增加了所包含的 Lua 库数量。使用 `int64_t` 作为 `lua_Number`。将 **/boot/lua** 设为默认模块路径。
 
 原始 GSoC 项目的大量清理工作，包括修改 `libsa`，使 Lua 仅在 `luaconf.h` 之外做一处修改即可构建。添加 Lua glue 的最后一块代码以引入 `liblua`，并接入先前已提交的多解释器框架。
 
