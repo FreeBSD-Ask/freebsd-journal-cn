@@ -1,4 +1,4 @@
-# 目录
+# Table of contents
 
 * [FreeBSD 中文期刊](README.md)
 * [编辑日志](CHANGELOG.md)
@@ -171,6 +171,7 @@
 ## 2023-0708 容器与云
 
 * [基金会来信](2023-0708/letter-from-the-foundation.md)
+* [悼念：Hans Petter Selasky](2023-0708/in-memoriam-hans-petter-selasky.md)
 * [活动日历](2023-0708/events-calendar.md)
 * [在 Firecracker 上的 FreeBSD](2023-0708/freebsd-on-firecracker.md)
 * [使用 pot 和 nomad 管理 Jail](2023-0708/jail-orchestration-with-pot-and-nomad.md)
