@@ -119,18 +119,18 @@ virt_random="yes"
 EOF
 
 # cat <<EOF > /vm/.templates/windows-uefi.conf
-loader=”uefi”
-graphics=”yes”
+loader="uefi"
+graphics="yes"
 cpu=2
 memory=4G
-disk0_type=”nvme”
-disk0_name=”disk0.img”
-disk0_dev=”file”
-graphics_listen=”[::]”
-graphics_res=”1024x768”
-xhci_mouse=”yes”
-utctime=”no”
-virt_random=”yes”
+disk0_type="nvme"
+disk0_name="disk0.img"
+disk0_dev="file"
+graphics_listen="[::]"
+graphics_res="1024x768"
+xhci_mouse="yes"
+utctime="no"
+virt_random="yes"
 EOF
 ```
 
