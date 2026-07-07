@@ -1,7 +1,7 @@
 # 使用 bhyve 进行 FreeBSD 开发
 
-- 原文标题：Using bhyve for FreeBSD Development
-- 作者：John Baldwin
+- 原文：[Using bhyve for FreeBSD Development](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization/using-bhyve-for-freebsd-development/)
+- 作者：**John Baldwin**
 
 FreeBSD 10.0 中令人兴奋的新特性之一是 bhyve 虚拟机监控器。虚拟机监控器和虚拟机在广泛的应用场景中使用。本文聚焦如何将 bhyve 用作辅助开发 FreeBSD 本身的工具。其中涉及的细节并非全部特定于 FreeBSD 开发，许多内容对其他应用也有用。
 
@@ -136,7 +136,7 @@ dnsmasq_resolv=/etc/dnsmasq-resolv.conf
 
 FreeBSD 客户机不需要大量配置设置即可运行，大多数设置可由系统安装程序设置。不过有几个约定和额外设置可能有用。
 
-开箱即用时，9.3 和 10.1 之前的 FreeBSD 发行版期望使用视频控制台和键盘作为系统控制台。因此它们不会在串行控制台上启用登录提示。需要通过编辑 **/etc/ttys** 并将 ttyu0 终端标记为“on”来在串行控制台上启用登录提示。注意，这可以在安装完成后从宿主机完成，方法是使用 `mdconfig(8)` 在宿主机上挂载磁盘镜像。
+开箱即用时，9.3 和 10.1 之前的 FreeBSD 发行版期望使用视频控制台和键盘作为系统控制台。因此它们不会在串行控制台上启用登录提示。通过编辑 **/etc/ttys** 并将 ttyu0 终端标记为“on”，可在串行控制台上启用登录提示。注意，这可以在安装完成后从宿主机完成，方法是使用 `mdconfig(8)` 在宿主机上挂载磁盘镜像。
 
 > 注意：在宿主机上挂载客户机文件系统之前，务必确保客户机已不再访问该磁盘镜像，以避免数据损坏。
 

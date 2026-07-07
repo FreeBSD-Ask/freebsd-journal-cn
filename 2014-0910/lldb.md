@@ -35,7 +35,7 @@ LLDB 致力于在各处允许自定义，让用户能定制调试体验。变量
 
 ## LLDB 使用
 
-LLDB 的命令解释器采用一致的结构化语法设计。命令通常遵循“名词 动词”的模式——例如“thread list”或“breakpoint set”。命令语法比 GDB 稍显冗长，长期使用 GDB 的用户可能需要一些时间适应。好处是命令集可发现且规则一致；定向自动补全可以为用户提供相关选项。与 GDB 一样，命令可以缩写为最短的唯一前缀。启动调试会话的示例可能如下：
+LLDB 的命令解释器采用一致的结构化语法设计。命令通常遵循“名词 动词”的模式——例如 `thread list` 或 `breakpoint set`。命令语法比 GDB 稍显冗长，长期使用 GDB 的用户可能需要一些时间适应。好处是命令集可发现且规则一致；定向自动补全可以为用户提供相关选项。与 GDB 一样，命令可以缩写为最短的唯一前缀。启动调试会话的示例可能如下：
 
 ```sh
 % lldb
@@ -56,7 +56,7 @@ Breakpoint 1: where = ls`main + 33 at ls.c:163, address = 0x00000000004023f1
 (lldb) run
 ```
 
-不过内置别名是有限的，GDB 命令提供的一些较为冷僻的重载功能无法通过别名使用。断点尤其如此——在 GDB 中，breakpoint 命令参数可以是行号、文件名、函数或地址，有时含义重叠或冲突。迁移到 LLDB 的语法并依赖子字符串匹配以使用更简洁的命令，可能是最有效的方式。
+不过内置别名是有限的，GDB 命令提供的一些较为冷僻的重载功能无法通过别名使用。断点尤其如此——在 GDB 中，`breakpoint` 命令参数可以是行号、文件名、函数或地址，有时含义重叠或冲突。迁移到 LLDB 的语法并依赖子字符串匹配以使用更简洁的命令，可能是最有效的方式。
 
 部分 GDB 和 LLDB 命令对比：
 
@@ -131,7 +131,7 @@ frame #0: 0x00000000004023f1 ls`main(argc=1, argv=0x00007fffffffe760) + 33 at ls
 
 LLDB 将单步进程控制命令归组到顶层 `thread` 命令下。`thread step-in` 单步执行一行源码，进入函数调用。`thread step-over` 也单步执行一行源码，但不会在函数调用内停止。`thread step-out` 继续执行直到程序从当前函数返回。`thread until <line>` 命令继续执行，直到程序到达指定源文件行或从当前函数返回。
 
-单步命令有与 GDB 匹配的别名：`s` 或 `step` 对应 thread step-in，`n` 或 `next` 对应 thread step-over，`f` 或 `finish` 对应 thread step-out。
+单步命令有与 GDB 匹配的别名：`s` 或 `step` 对应 `thread step-in`，`n` 或 `next` 对应 `thread step-over`，`f` 或 `finish` 对应 `thread step-out`。
 
 ## 数据格式化器
 

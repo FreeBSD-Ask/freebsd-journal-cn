@@ -66,13 +66,13 @@ Nomad 服务器能运行在任何受支持的操作系统上。要编排 Jail，
 
 入口代理通过持续与服务目录交互，动态维护有效容器地址列表。
 
-在我们的例子中，我们使用 traefik，一个由 Traefik Labs 开发的入口代理。
+在我们的例子中，我们使用 traefik，由 Traefik Labs 开发的入口代理。
 
 ### Nomad-pot-driver
 
 Nomad 的构建旨在支持多种容器技术和不同的操作系统。事实上，nomad 软件包是可用的，HashiCorp 公司也为 FreeBSD 提供二进制包。
 
-Nomad 有一个插件架构，允许扩展以支持新的容器技术。Esteban Barrios 编写并开源了 [nomad-pot-driver 插件](https://github.com/bsdpot/nomad-pot-driver/)。这个插件作为 nomad 客户端和 pot 之间的接口，提供编排 Jail 所需的特性。
+Nomad 有插件架构，允许扩展以支持新的容器技术。Esteban Barrios 编写并开源了 [nomad-pot-driver 插件](https://github.com/bsdpot/nomad-pot-driver/)。该插件作为 nomad 客户端和 pot 之间的接口，提供编排 Jail 所需的特性。
 
 编排器将工作负载调度到使用插件与 pot 交互的客户端。
 
@@ -82,9 +82,9 @@ Nomad 有一个插件架构，允许扩展以支持新的容器技术。Esteban 
 
 ### 精简的 pot 容器
 
-Minipot 是一个软件包，在一台 FreeBSD 机器上安装并配置所有上述服务，也是我们用于展示示例的参考安装。
+Minipot 是软件包，在一台 FreeBSD 机器上安装并配置上述所有服务，也是展示示例所用的参考安装。
 
-Minipot 是适用于测试的配置，但不适用于生产环境安装，因为它会把所有服务集中在一台机器上，将集群缩减为一个节点来完成所有工作。
+Minipot 是适用于测试的配置，但不适用于生产环境安装，因为所有服务会集中在一台机器上，将集群缩减为单节点来完成所有工作。
 
 具体来说，它将安装并配置 consul、traefik 和 nomad。Nomad 将作为客户端和服务器运行，扮演编排器和执行者的双重角色。
 

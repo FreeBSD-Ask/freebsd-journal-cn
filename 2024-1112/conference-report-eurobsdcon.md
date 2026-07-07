@@ -5,7 +5,7 @@
 
 ![Conference Report](../png/2024-1112/conference-report-eurobsdcon-1.png)
 
-![都柏林插画](https://freebsdfoundation.org/wp-content/uploads/2025/01/dublin_art.png)
+![都柏林插画](../png/2024-1112/conference-report-eurobsdcon-2.png)
 
 ## 在会议前
 
@@ -15,7 +15,7 @@
 
 我还记得在去办公室的路上，我瞥了一眼智能手表上的通知：我的演讲被接受了。刹那间，我感到两种截然不同的强烈情绪：兴奋与恐惧。我不怕公开演讲，但在这样一个场合用英语演讲……事实上，这份恐惧是多余的，直到两个月后我才发现这一点。
 
-![都柏林酒店爱尔兰海景](https://freebsdfoundation.org/wp-content/uploads/2025/01/01_hotel_view.jpg)
+![都柏林酒店爱尔兰海景](../png/2024-1112/conference-report-eurobsdcon-3.jpg)
 
 随着活动临近，组织者提供了所有必要的信息。他们非常耐心，即使我问了一些看似琐碎的问题。这是我第一次参加 EuroBSDCon，而"BSD"作为名字的核心，本该让我意识到每个 BSD 用户都知道的事情：一切都被详尽地记录在案。FAQ 经常更新。这是一个公认的 **特性**：与 BSD 相关的文档总是无可挑剔的。
 
