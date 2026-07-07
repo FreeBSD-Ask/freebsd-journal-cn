@@ -1,6 +1,6 @@
 # 活动日历
 
-![FreeBSD logo](https://freebsdfoundation.org/wp-content/uploads/2026/04/freebsd_logo.png)
+![FreeBSD logo](../png/2026-010203/events-calendar-01.png)
 
 ## 202604 黑客马拉松
 
@@ -10,7 +10,7 @@
 
 我们很高兴地宣布，今年 4 月将在威斯巴登举办一场区域性 FreeBSD 黑客马拉松。本次活动面向本地社区成员，同时也欢迎所有对 FreeBSD 贡献感兴趣的人参与。活动目标是协作、交流，在专注且友好的环境中推动 FreeBSD 取得实质性进展。
 
-![Open Source Summit](https://freebsdfoundation.org/wp-content/uploads/2026/04/opensourcesummit.png)
+![Open Source Summit](../png/2026-010203/events-calendar-02.png)
 
 ## 2026 开源峰会北美站
 
@@ -20,7 +20,7 @@
 
 峰会设有涵盖 Linux、云与容器、AI、安全、嵌入式系统等多个领域的专题。与会者将听到主题演讲、技术报告，并与更广泛的开源社区交流。FreeBSD 基金会执行董事 Deb Goodkin 将在大会上发表演讲。
 
-![FreeBSD logo](https://freebsdfoundation.org/wp-content/uploads/2026/04/freebsd_logo.png)
+![FreeBSD logo](../png/2026-010203/events-calendar-01.png)
 
 ## 2026 渥太华 FreeBSD 开发者峰会
 
@@ -30,7 +30,7 @@
 
 本次活动与 BSDCan 2026 同期举办，为期两天，内容包括开发者讨论会、厂商演讲和工作组讨论。
 
-![BSDCan](https://freebsdfoundation.org/wp-content/uploads/2026/04/bsdcan.png)
+![BSDCan](../png/2026-010203/events-calendar-03.png)
 
 ## BSDCan 2026
 

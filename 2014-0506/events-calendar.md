@@ -1,6 +1,7 @@
 # 活动日历
 
-作者：DRU LAVIGNE
+- 原文：[Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking/events-calendar/)
+- 作者：**Dru Lavigne**
 
 2014 年第二季度安排了如下 BSD 相关会议。关于这些活动的更多信息以及本地用户组会议，可访问 `bsdevents.org`。
 

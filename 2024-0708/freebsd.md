@@ -3,7 +3,7 @@
 - 原文链接：[Rolling Your Own Images](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/embedded-freebsd-rolling-your-own-images/)
 - 作者：Christopher R. Bowman
 
-![嵌入式 FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2024/09/embedded_freebsd_art.png)
+![嵌入式 FreeBSD](../png/2024-0708/freebsd-1.png)
 
 在上一卷中，我粗略提及了我用的开发板，Digilent 的 [ARTYZ7](https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/)。在本卷，我将讨论如何制作自己的镜像。到某个时候，你可能会需要一个与现有镜像略有差异的镜像，因此你可能想从源代码开始构建、创建镜像来写入 SD 卡。
 

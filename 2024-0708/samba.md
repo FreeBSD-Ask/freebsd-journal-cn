@@ -3,7 +3,7 @@
 - 原文链接：[Samba-based Time Machine Backups](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/samba-based-time-machine-backups/)
 - 作者：Benedict Reuschling
 
-![实用软件](https://freebsdfoundation.org/wp-content/uploads/2024/09/practical_ports_header.png)
+![实用软件](../png/2024-0708/samba-1.png)
 
 “我真希望我能把做备份的带宽节省下来做点有用的事情，因为我永远不会需要它们”——从未有人这么说过。在发生灾难时——而灾难总是不期而至——备份是 IT 弹性的重要组成部分。硬盘故障、笔记本电脑被盗、固件驱动程序损坏导致数据不可读等等，都是备份所要应对的情况。定期备份并确保其可用性对于持续的业务运营至关重要，而测试备份的可恢复性同样重要。但如果备份解决方案不再受支持，并且无法在较新的系统上工作该怎么办？新的系统如何备份，又如何与现有的解决方案集成？
 

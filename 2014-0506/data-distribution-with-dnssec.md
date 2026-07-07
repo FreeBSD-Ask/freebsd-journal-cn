@@ -1,6 +1,7 @@
 # 用 DNSSEC 分发数据
 
-作者：MICHAEL W. LUCAS
+- 原文：[Data Distribution With DNSSEC](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking/data-distribution-with-dnssec/)
+- 作者：**Michael W. Lucas**
 
 在公共网络中，信任身份是一个棘手的问题。你如何确认一台服务器确实如它所声称的那样？在组织内部你可以有多种解决方案，但在公共互联网上，要么信任各种外部实体来验证身份（证书授权机构），要么自己手工搭建一套身份识别网络（OpenPGP 的信任网络）。DNS 安全扩展（DNS Security Extensions，DNSSEC）正在改变这一现状。
 
@@ -57,7 +58,7 @@ pestilence IN SSHFP 1 2 86c744ce05ba…
 
 每个主机名变体的哈希值相同。
 
-要让 OpenSSH 客户端检查 SSHFP 记录，请在 **ssh_config** 或 **~/.ssh/config** 中将 `VerifyHostKeyDNS` 设为 `yes`。`ssh` 会使用 SSHFP 记录来校验主机密钥，而不再提示用户。计算机擅长比较，你不擅长。把活交给它们。
+要让 OpenSSH 客户端检查 SSHFP 记录，请在 **ssh_config** 或 **~/.ssh/config** 中将 `VerifyHostKeyDNS` 设为 `yes`。`ssh(1)` 会使用 SSHFP 记录来校验主机密钥，而不再提示用户。计算机擅长比较，你不擅长。把活交给它们。
 
 ## DANE 与 TLSA
 
@@ -78,7 +79,7 @@ _443._tcp.dnssec TLSA ( 3 0 1
 4CB0F4E1136D86A6813EA4164F19D294005EBFC02F10CC400F1776C45A97F16C)
 ```
 
-哈希从哪里来？对你的证书文件运行 `openssl` 即可。下面我对证书文件 `dnssec.mwl.com.crt` 生成 SHA256 哈希：
+哈希从哪里来？对你的证书文件运行 `openssl(1)` 即可。下面我对证书文件 `dnssec.mwl.com.crt` 生成 SHA256 哈希：
 
 ```sh
 # openssl x509 -noout -fingerprint -sha256 < dnssec.mwl.com.crt

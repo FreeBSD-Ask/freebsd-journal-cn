@@ -3,7 +3,7 @@
 - 原文链接：[Conference Report: BSDCan 2024](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/conference-report-bsdcan-2024/)
 - 作者：Aymeric Wibo
 
-![会议报告](https://freebsdfoundation.org/wp-content/uploads/2024/09/confererence_report.jpg)
+![会议报告](../png/2024-0708/conference-report-bsdcan-2024-1.jpg)
 
 几个月前，我有幸参加今年的 BSDCan 并发表演讲。BSDCan 是三大年度 BSD 大会之一（另外两个是 AsiaBSDCon 和 EuroBSDCon），今年在渥太华举办。这是我第一次踏足北美——我来自比利时，那是华夫饼、啤酒以及组阁耗时 652 天的国度——所以我在从波士顿飞往渥太华参加 BSDCan 之前，先在东北走廊沿线转了两周。
 
