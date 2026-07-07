@@ -144,7 +144,7 @@ nfscbd_enable="YES"
 -rw-r--r--   1 ricktst  wheel  274 Jun  5 18:02 abc.c
 ```
 
-而如果你转到 nfsv4-server 上的 **/export**，“ls -l” 行会如下所示：
+而如果你转到 nfsv4-server 上的 **/export**，“ls -l”行会如下所示：
 
 ```sh
 -rw-r--r--   1 ricktst  wheel   0 Jun  5 18:02 abc.c
