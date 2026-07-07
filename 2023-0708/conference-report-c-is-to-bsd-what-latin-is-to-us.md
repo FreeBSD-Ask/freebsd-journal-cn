@@ -8,7 +8,7 @@
 
 ![image](../png/2023-0708/conference-report-c-is-to-bsd-1.png)
 
-我半开玩笑地想，这也许是有人第一次把我误认为是黑客（恶意的那种）。如果是这样，我刚刚又经历了进入 BSD 群体的传统仪式吗？
+我半开玩笑地想，这也许是有人第一次把我误认为是黑客（恶意的那种）。如果是这样，我刚刚又经历了进入 BSD 群体的入门仪式吗？
 
 作为一个明显的外来者，我在 BSDCan 上向许多与会者介绍自己时，收到了各种各样的问题。奇怪的是，最常见的问题对我来说却是最难回答的：“Corey，你为什么会在这里？”那些常去 BSDCan 的人真的很好奇，一位职业的天主教神学家在一个关于类 Unix 操作系统的会议上会做什么。即使在会议结束之后，我仍然不确定我为什么会前往渥太华参加 BSDCan 2023。总之，我想我想要尝试一些与日常工作完全不同的东西。多年以来，我一直是一个业余爱好者，通过 Michael W. Lucas 的《Absolute FreeBSD》（第三版）和《Absolute OpenBSD》（第二版），以及来自 BSDCan、EuroBSDCon 和 AsiaBSDCon（以及 YouTube 上的 RoboNuggie）的在线演讲录音来了解 BSD。尽管我偶尔会进行一些简单的家庭实验，但我对 FreeBSD、OpenBSD 和其他 BSD 操作系统的主要兴趣一直是出于把它们作为完全可定制的桌面操作系统的通用实用性。具体来说，我喜欢使用 FreeBSD 和 OpenBSD 来帮助我作为基督教神学历史学者来进行多元化来源的研究和写作。我在 2021 年 10 月的 FreeBSD Friday 讲座“FreeBSD for the Writing Scholar”（面向写作学者的 FreeBSD）就是关于这个主题的，同样我在 BSDCan 上的演讲也是，题为“BSD for Researching, Writing, and Teaching in the Liberal Arts”（BSD 用于博雅领域的研究、写作和教学）。
 
