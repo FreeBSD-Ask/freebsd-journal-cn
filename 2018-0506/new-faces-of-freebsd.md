@@ -48,7 +48,7 @@
 
 **Tom**：我 2008 年 distro hopping 时在 G4 iBook 上运行 PowerPC FreeBSD，但我的冒险真正开始于 2018 年我加入阿伯丁大学研究组时。当时该组正在标准化一种称为 NewCWV（RFC7661）的 TCP 修改。我们有 Linux 的实现，IETF 标准化信条是“rough consensus and running code”，如果有尽可能多平台的实现会很有帮助。有人谈论移植到 BSD 操作系统，我要求参与。移植工作从我的桌面虚拟机开始，但很快我获得了一些二手服务器来构建和运行 FreeBSD。FreeBSD 因其著名的优秀 TCP 协议栈成为移植的首选操作系统。很快我开始怀念 FreeBSD 开发机器上可用的工具，决定必须把 FreeBSD 用作桌面。
 
-**Eric**：我那段旅程始于厌倦 Windows XP 上的病毒，想成为黑客。我切换到 PC Linux OS，搬到 Mandriva，然后到 Ubuntu，感觉有点像在家。在我成为臭名昭著的黑客的征途上，大约在同一时间我发现了 Eric Steven Raymond 的 “How To Become A Hacker”，这是一个改变人生的事件，让我停止了成为黑客的旅程。“How To Become A Hacker” 简要谈到 BSD Unix，这引起了我的注意。我开始 Google BSD，这开始了我通向 FreeBSD 的道路。我安装了 FreeBSD 7.0，比 XP 更容易安装，但 shell 是我的克星。所以，我重装了 Ubuntu，做了更多研究，找到并尝试了 PC-BSD 1.4。我不喜欢 KDE，所以我在磁盘的一半重装了 Ubuntu，打印了整个 FreeBSD 手册和文档来安装和设置 Gnome，在另一半重装了 FreeBSD。这就是我对 FreeBSD 所有的爱开始的地方，我开始 GhostBSD 以拥有 PC-BSD 的 Gnome 等价物。
+**Eric**：我那段旅程始于厌倦 Windows XP 上的病毒，想成为黑客。我切换到 PC Linux OS，搬到 Mandriva，然后到 Ubuntu，感觉有点像在家。在我成为臭名昭著的黑客的征途上，大约在同一时间我发现了 Eric Steven Raymond 的“How To Become A Hacker”，这是一个改变人生的事件，让我停止了成为黑客的旅程。“How To Become A Hacker”简要谈到 BSD Unix，这引起了我的注意。我开始 Google BSD，这开始了我通向 FreeBSD 的道路。我安装了 FreeBSD 7.0，比 XP 更容易安装，但 shell 是我的克星。所以，我重装了 Ubuntu，做了更多研究，找到并尝试了 PC-BSD 1.4。我不喜欢 KDE，所以我在磁盘的一半重装了 Ubuntu，打印了整个 FreeBSD 手册和文档来安装和设置 Gnome，在另一半重装了 FreeBSD。这就是我对 FreeBSD 所有的爱开始的地方，我开始 GhostBSD 以拥有 PC-BSD 的 Gnome 等价物。
 
 今天我对 FreeBSD 的主要兴趣是 GhostBSD 以及我所有只运行 FreeBSD 的服务器和 VPS。我对 FreeBSD 桌面端比作为服务器的 FreeBSD 更感兴趣，这就是 GhostBSD 开始的原因。
 
