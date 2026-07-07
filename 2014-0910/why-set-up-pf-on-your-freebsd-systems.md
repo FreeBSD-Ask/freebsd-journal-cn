@@ -1,8 +1,7 @@
 # 为什么要为 FreeBSD 系统设置 PF？
 
-若干理由……请继续阅读……
-
-作者：Peter N. M. Hansteen
+- 原文标题：Why Set Up PF on Your FreeBSD Systems? — A Handful of Reasons... Read On...
+- 作者：**Peter N. M. Hansteen**
 
 ## 还记得今夏窗口大小的麻烦吗？
 
@@ -31,7 +30,7 @@ pass
 如果你尝试重新加载这个极简文件中的规则，并对 `pfctl` 使用 `-v`（verbose）选项，你会看到规则实际加载后的样子：
 
 ```sh
-$ sudo pfctl -vf /etc/pf.conf
+# pfctl -vf /etc/pf.conf
 pass all flags S/SA keep state
 ```
 
@@ -50,7 +49,7 @@ block
 它加载后是这个样子
 
 ```sh
-$ sudo pfctl -vf pf.conf
+# pfctl -vf pf.conf
 block drop all
 ```
 
@@ -76,7 +75,7 @@ pass inet proto tcp from $backupserver to $clients port $bacula_ports
 逻辑相当清晰。初始的 block 规则默认阻止一切，而接下来的三条规则让来自特定主机的特定流量通过，前提是它瞄准的是指定的端口。好吧，我超前了一点，还引入了另外两个功能：宏（macros）和列表（lists）。宏会就地展开，而像 tcp_ports 和 udp_ports 这样的列表会让解析器为每个列表项生成一条规则，因此实际加载的规则看起来更像是这样：
 
 ```sh
-$ sudo pfctl -vf /etc/pf.conf
+# pfctl -vf /etc/pf.conf
 clients = "192.168.103/24"
 backupserver = "192.0.2.227"
 bacula_ports = "9101:9103"
@@ -117,7 +116,7 @@ overload <bruteforce> flush global)
 
 第一行引入了关键字 `table`。PF 的表（table）是专门用于存储 IP 地址的数据结构。在许多情况下，你可以用宏来指定 IP 地址列表，但这会将你的列表转换成加载规则集中每个 IP 地址一条规则。相比之下，表在规则评估中被视为一个对象，使用 `pfctl` 子命令甚至可以在不重新加载 PF 配置的情况下更改表的内容。表在 pass 和 block 规则中都很有用。如果你编写的 pass 规则引用与网络中特定主机组相对应的表，那么为新主机添加访问权限或为已停用的主机移除访问权限，可能就像在表中添加或删除 IP 地址一样简单（更多信息见文末的参考文献部分）。
 
-这个部分规则集的另一个引人注目的特性是 `keep state` 之后括号 `()` 中的一系列选项。这些是状态跟踪选项。第一个，`max-src-conn`，指定来自单个主机的最大同时连接数。第二个，`max-src-conn-rate`，指定新连接的最大速率，这里是 5 秒内 15 次。第三个，`overload <bruteforce>`，指定任何违反上述任一限制的主机将被添加到该表中，最后，`flush global` 表示被踢入过载表的主机的所有现有连接状态将从状态表中刷新。违反限制的主机的流量将不再匹配 pass 规则，但我们在规则集前面提供了 `block quick`，违规者重试时将被该规则阻止。你可能一直在想，`$int_if:network` 表示宏 `$int_if` 展开后的网络接口名称，以及直接连接到该接口的任何网络。你可能想用这种表示法来指定局域网。
+这个部分规则集的另一个值得注意的特性是 `keep state` 之后括号 `()` 中的一系列选项。这些是状态跟踪选项。第一个，`max-src-conn`，指定来自单个主机的最大同时连接数。第二个，`max-src-conn-rate`，指定新连接的最大速率，这里是 5 秒内 15 次。第三个，`overload <bruteforce>`，指定任何违反上述任一限制的主机将被添加到该表中，最后，`flush global` 表示被踢入过载表的主机的所有现有连接状态将从状态表中刷新。违反限制的主机的流量将不再匹配 pass 规则，但我们在规则集前面提供了 `block quick`，违规者重试时将被该规则阻止。你可能一直在想，`$int_if:network` 表示宏 `$int_if` 展开后的网络接口名称，以及直接连接到该接口的任何网络。你可能想用这种表示法来指定局域网。
 
 ## 根据服务和用户的需求进行区分
 
@@ -141,6 +140,6 @@ FreeBSD 中的 PF（以及原始 OpenBSD 中更进一步的版本——出于各
 ## 参考文献
 
 - Hansteen, Peter N. M. The Book of PF. No Starch Press.（第 3 版，2014）<http://www.nostarch.com/pf3>
-- Hansteen, Peter, Peter N. M. The Hail Mary Cloud and the Lessons Learned（博客文章）。（2013）<http://bsdly.blogspot.com/2013/10/the-hail-mary-cloud-and-lessons-learned.html>
+- Hansteen, Peter N. M. The Hail Mary Cloud and the Lessons Learned（博客文章）。（2013）<http://bsdly.blogspot.com/2013/10/the-hail-mary-cloud-and-lessons-learned.html>
 - FreeBSD Handbook, PF chapter. (1995–2014) <https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/firewalls-pf.html>
 - The PF man pages `pfctl(8)` `pf.conf(5)`
