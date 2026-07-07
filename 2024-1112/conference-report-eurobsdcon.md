@@ -43,7 +43,7 @@ EuroBSDCon 在 [都柏林大学学院（UCD）的 O'Reilly Hall](https://www.ucd
 
 周六早上 9:30：注册和参与者陆续到达。我有些紧张地积极打量着每个人的胸卡，读名字、辨认、记下！就在入口大厅，我开始认识人：Vanja、Toni 和 Natalino 走过来，我们自我介绍，聊了聊各自的角色。在嘈杂中我很高兴能讲几句意大利语。Alfonso Siciliano 也到了，我们聊了不少。Alfonso 为人亲切友好，又极具能力和认真——我在 Leonardo Taccari（NetBSD 团队）身上也看到同样的品质。
 
-![EuroBSDCon 2024 开幕式](https://freebsdfoundation.org/wp-content/uploads/2025/01/03_opening_session.jpg)
+![EuroBSDCon 2024 开幕式](../png/2024-1112/conference-report-eurobsdcon-5.jpg)
 
 我四处走了走，看看一切怎么布置的。[共有三个会议室](https://2024.eurobsdcon.org/venue.html)（Foyer A、Foyer B 和 Stage End），还有一个俯瞰 UCD 湖的明亮宽敞的大厅。大厅供应茶、咖啡和水。有一张桌子，大家把贴纸和其他伴手礼留在那里——我带了很多 BSD Cafe 贴纸和杯垫，亲自分发了一些，也留在那张桌上，似乎颇受欢迎。还有赞助商展位，中央则是 [FreeBSD Foundation](https://freebsdfoundation.org/) 的专属展位。很高兴能当面见到 Deb Goodkin 和 Kim McMahon——和她们交谈真是乐事。从她们口中直接听到基金会的想法和项目，太棒了。
 
