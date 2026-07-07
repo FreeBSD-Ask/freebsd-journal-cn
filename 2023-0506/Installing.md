@@ -109,7 +109,7 @@ $ sudo dd if=kcopy-ah-floppy of=/dev/da0 bs=30b
 
 但是这个设备对我一点用都没有。失望而又不耐烦，我决定放弃它，彻底擦除了 MS-DOS 磁盘（谁要 DOS，我要安装 UNIX 系统！）。我设置 FreeBSD 占据了整个 200MB 的硬盘空间。
 
-完成磁盘格式化后，安装一个最小的系统。然后再次从内核软盘启动计算机，这次会出现提示符 `kc>`，你需要键入`copy`来将内核复制到磁盘上。
+完成磁盘格式化后，安装一个最小的系统。然后再次从内核软盘启动计算机，这次会出现提示符 `kc>`，你需要键入 `copy` 来将内核复制到磁盘上。
 
 接下来重新启动，并在提示时插入 cpio 软盘。它会根据最小安装的系统引导你完成接下来的操作。然后，你需要获取安装集，至少安装 `bin.tar.gz.xx` 等文件。
 
@@ -184,8 +184,8 @@ ncsa-httpd 附带了一个用于构建的 Makefile，比 cern-httpd 脚本友好
 - 进入 conf 子目录（通常是 **/sys/ARCH/conf**，对于我们来说是 **/sys/i386/conf**）。
 - 使用系统配置文件运行 config 命令（我将 SYSCONS 配置复制为 NINETYTHREE）。
 - 进入 **../../compile/SYSTEM_NAME** 目录（在这种情况下是 NINETYTHREE）。
-- 运行`make depend`。
-- 运行`make all`。
+- 运行 `make depend`。
+- 运行 `make all`。
 - 将 386bsd 内核二进制文件复制到根目录 **/**。
 - 重新启动。
 
