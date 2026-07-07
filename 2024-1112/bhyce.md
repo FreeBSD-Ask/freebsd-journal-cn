@@ -3,7 +3,7 @@
 - 原文链接：[bhyve for the Linux and Windows Users](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/bhyve-for-the-linux-and-windows-users/)
 - 作者：**Jason Tubnor**
 
-![bhyve 文章配图](https://freebsdfoundation.org/wp-content/uploads/2025/01/bhyve_background-1.png)
+![bhyve 文章配图](../png/2024-1112/bhyce-1.png)
 
 FreeBSD bhyve 虚拟化程序在 2011 年 5 月由 Neel Natu 和 Peter Grehan 向全世界宣布，随后由 NetApp 赠送给 FreeBSD。这为 FreeBSD 提供了与 Linux KVM 虚拟化程序竞争的机会。然而，bhyve 还有其他好处，它不仅小巧且稳健，性能优异，并且高度依赖 CPU 指令集，而不是通过解释执行。
 

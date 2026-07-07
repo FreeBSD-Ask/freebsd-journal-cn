@@ -3,7 +3,7 @@
 - 原文地址：[Fabric – Baby Steps](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/embedded-freebsd-fabric-baby-steps/)
 - 作者：**Christopher R. Bowman**
 
-![嵌入式 FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2025/01/embedded_freebsd_art.png)
+![嵌入式 FreeBSD](../png/2024-1112/qianrushi-1.png)
 
 在之前的专栏中，我们简要地介绍了 Zynq 芯片，提及了它的结构。自那以后，我们对它没有太多讨论。但在上篇专栏中，我们成功地在 bhyve 上运行了 CentOS 镜像，现在是时候来看我们的第一个结构电路了。本篇专栏将专注于电路，不涉及 FreeBSD，但在接下来的几期中，我们将开始研究结合这两者的系统。
 
