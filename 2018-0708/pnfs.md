@@ -156,7 +156,7 @@ nfscbd_enable="YES"
 abc.c pnfsd.dsfile     pnfsd.dsattr
 ```
 
-执行 “pnfsdsfile abc.c” 会显示：
+执行“pnfsdsfile abc.c”会显示：
 
 ```sh
 abc.c: nfsv4-data2
