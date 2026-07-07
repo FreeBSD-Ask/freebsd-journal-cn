@@ -13,7 +13,7 @@
 
 我在 jail 中运行 Zabbix，未遇到过什么大问题。这个基于 PHP 的解决方案需要数据库来存储指标。可以使用 Postgres、MySQL/MariaDB、SQLite，甚至是 IBM 的商业 DB2 和 Oracle 数据库服务器。监控本身通过 SNMP/IPMI、SSH 或简单的 ping 来检查可用性。对于主动监控（收集实时机器指标），需要在主机上安装代理。Zabbix 还提供了监控整个子网的功能，可检测新主机，在它们出现时自动将其添加到监控中。还可以为特定的主机和特定情况（例如磁盘已满）设置触发器，可以通过 Web 界面配置这些触发器。可以通过电子邮件、Jabber、SMS 或自定义脚本操作发送相关事件的警报。
 
-![Zabbix 监控示意图](https://freebsdfoundation.org/wp-content/uploads/2024/02/reuschling_fig1.jpg)
+![Zabbix 监控示意图](../png/2024-0102/shi-yong-ruan-jian-shi-yong-zabbix-jian-kong-zhu-ji-1.jpg)
 
 ## 安装设置 Zabbix
 
@@ -248,7 +248,7 @@ opcache.optimization_level=0x7FFFBFDF
 
 你可能会发现，在新安装的 Zabbix 中没有任何主机。要至少看到你自己的监控服务器，请点击左侧的“监控”（大眼睛图标），然后点击“主机”。在新页面中，点击右上角的“创建主机”按钮。会出现一个表单，你可以在其中输入主机的名称、IP 地址和使用的监控方式（在我们的例子中是 Zabbix Agent）。模板字段提供了某些类型主机的默认值，当你开始输入操作系统名称时，我们会找到适用于 FreeBSD 的模板。组会将具有相似特征的主机按逻辑组合在一起（你可以创建任意数量的组）。这使得过滤变得更容易，若发生故障，可能会告诉你哪些其他系统需要关注。在接口部分，点击“添加”再选择 Agent。新的输入字段将出现，你可以在其中输入 IP 地址/DNS 名称。默认的代理端口是 10050，因此请检查是否有防火墙规则阻止访问。简介是可选的，但随着服务器数量的增加，提醒自己每个系统的目的还是有用的。点击蓝色的“添加”按钮创建主机。若一切顺利，它会出现在你的主机列表中，并且很快就会有代理收集的数据和一些图表显示出来。仪表板将显示监控期间发现的任何问题。
 
-![Zabbix 主机监控仪表板](https://freebsdfoundation.org/wp-content/uploads/2024/02/reuschling_fig2.png)
+![Zabbix 主机监控仪表板](../png/2024-0102/shi-yong-ruan-jian-shi-yong-zabbix-jian-kong-zhu-ji-2.png)
 
 查看 Zabbix 文档，了解如何监控整个子网，如何使用 SNMP 监控，以及如何自动添加主机，而无需在 Zabbix 中逐一点击每个主机。探索 Zabbix UI 的其他功能，发现你以前没有注意到的功能，定期查看，看看是否有异常情况。祝你监控愉快！
 

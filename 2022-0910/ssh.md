@@ -52,13 +52,13 @@ Enter ~ .
 
 ```sh
 #!/bin/sh
-HOMEDIR=”/home/${USER}”
+HOMEDIR="/home/${USER}"
 # Restore restrictive home directory permissions
 if [ -d ${HOMEDIR} ]; then
  chmod 0700 ${HOMEDIR}
  chown ${USER}: ${HOMEDIR}
 else
-  echo “Home directory ${HOMEDIR} does not exist” >&2
+  echo "Home directory ${HOMEDIR} does not exist" >&2
 fi
 ```
 

@@ -3,7 +3,7 @@
 - 原文：[FreeBSD WiFi Development Part 2: Working on a Driver](https://freebsdfoundation.org/our-work/journal/browser-based-edition/embedded-2/freebsd-wifi-development-part-2-working-on-a-driver/)
 - 作者：Tom Jones
 
-![WiFi 开发](https://freebsdfoundation.org/wp-content/uploads/2025/10/wifi_art2.png)
+![WiFi 开发](../png/2025-789/freebsd-wifi-development-part-2-working-on-a-driver-01.png)
 
 这是 FreeBSD 上 WiFi 开发系列的第二篇文章。在[第一篇文章](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/freebsd-wifi-development/)中，我们介绍了 WiFi/80211 网络的一些术语，简要讲解了典型的网络架构，并展示了如何使用 `ifconfig` 和一些无线网卡创建 station、host ap 和 monitor 模式的 WLAN 接口。我们还介绍了实现 WiFi 子系统的两个不同内核层 —— **驱动** 和 **net80211**。
 

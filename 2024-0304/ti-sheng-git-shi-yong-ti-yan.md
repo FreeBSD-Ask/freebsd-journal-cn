@@ -118,9 +118,9 @@ scalar clone https://git.FreeBSD.org/src.git
 # Any edits made in this region might be
 # replaced in the future by a Git command.
 
-29 1-23 * * * “/usr/local/libexec/git-core/git” --exec-path=”/usr/local/libexec/git-core” for-each-repo --config=maintenance.repo maintenance run --schedule=hourly
-29 0 * * 1-6 “/usr/local/libexec/git-core/git” --exec-path=”/usr/local/libexec/git-core” for-each-repo --config=maintenance.repo maintenance run --schedule=daily
-29 0 * * 0 “/usr/local/libexec/git-core/git” --exec-path=”/usr/local/libexec/git-core” for-each-repo --config=maintenance.repo maintenance run --schedule=weekly
+29 1-23 * * * "/usr/local/libexec/git-core/git" --exec-path="/usr/local/libexec/git-core" for-each-repo --config=maintenance.repo maintenance run --schedule=hourly
+29 0 * * 1-6 "/usr/local/libexec/git-core/git" --exec-path="/usr/local/libexec/git-core" for-each-repo --config=maintenance.repo maintenance run --schedule=daily
+29 0 * * 0 "/usr/local/libexec/git-core/git" --exec-path="/usr/local/libexec/git-core" for-each-repo --config=maintenance.repo maintenance run --schedule=weekly
 # END GIT MAINTENANCE SCHEDULE
 ```
 
@@ -200,7 +200,7 @@ git config --global commit.verbose true
 
 ```sh
 git config --global gpg.format ssh
-git config --global user.signingKey ‘ssh-ed25519 AAAAC3(...)34rve user@host’
+git config --global user.signingKey 'ssh-ed25519 AAAAC3(...)34rve user@host'
 ```
 
 是否应在所有地方使用相同的 SSH 密钥，目前存在争议。如果不希望，请从上面的最后一行中删除选项 `--global` ，并为每个存储库单独更改其密钥。
@@ -230,7 +230,7 @@ email ssh-ed25519 ssh_public_key comment
 目光敏锐的人会认出它与 ssh-keygen(1) 使用的格式相同。我们至少需要信任自己的 SSH 密钥，所以将其放在这里。对你圈子中其他为仓库做贡献并签署提交的人重复此步骤。为了教会 git 如何处理这个文件，添加另一个配置选项（正是之前错误消息提到的那个）。
 
 ```sh
-git config --global gpg.ssh.allowedSignersFile “~/.config/git/allowed_signers”
+git config --global gpg.ssh.allowedSignersFile "~/.config/git/allowed_signers"
 ```
 
 重试命令 `git show --show-signature`（并为其创建一个别名），看看错误消息是否被 git 签名替换。

@@ -3,7 +3,7 @@
 - 作者：SOOBIN RHO
 - 原文链接 <https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/mfsbsd-in-base/>
 
-![mfsBSD 文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/07/art1.png)
+![mfsBSD 文章配图](../png/2024-0506/ji-ben-xi-tong-zhong-de-mfsbsd-1.png)
 
 mfsBSD 是一款基于 FreeBSD 的内存操作系统。
 

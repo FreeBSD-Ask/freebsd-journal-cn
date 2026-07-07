@@ -189,7 +189,7 @@ cbsd forms module=redis jname=jail1
 
 将出现熟悉的 TUI 界面，显示 Redis 模块的参数，你可以根据需要进行配置：
 
-![Redis 模块参数 TUI 界面](https://github.com/user-attachments/assets/6c449efc-a184-40fc-867e-de07e1498e82)
+![Redis 模块参数 TUI 界面](../png/2022-0102/cbsd-03.png)
 
 保留默认参数，并通过 [COMMIT] 操作选择它们。脚本运行完成可能需要一段时间（取决于互联网连接速度，因为模块从官方仓库 pkg.FreeBSD.org 安装 redis 服务器），因此你需要再次确认容器中的服务已安装并正在运行：
 
@@ -239,7 +239,7 @@ env H_PORT=9999 cbsd forms module=redis jname=jail1 inter=0
 
 请注意应用模板时输出的值：
 
-![CBSD 变量输出信息](https://github.com/user-attachments/assets/b7cf7bb8-6ae1-4d78-a816-354ddecc5e24)
+![CBSD 变量输出信息](../png/2022-0102/cbsd-04.png)
 
 这是模板工作结果导出的 CBSD 变量的输出信息。参数化格式可以通过掩码设置，掩码由配置文件 `forms_export_vars.conf` 在目录 `~cbsd/etc` 中定义。
 
@@ -311,7 +311,7 @@ COMMIT;
 EOF
 ```
 
-![SQLite3 数据库表单截图](https://github.com/user-attachments/assets/cbb13782-3e4a-49e7-b83a-f761e1a77700)
+![SQLite3 数据库表单截图](../png/2022-0102/cbsd-05.png)
 
 下面详细说明这些行中的一些内容。其中最重要的表格列是：
 
@@ -331,27 +331,27 @@ cbsd forms formfile=/tmp/myforms.sqlite
 
 输出将是一个动态构建的表单，用于处理参数：
 
-![动态构建的参数表单](https://github.com/user-attachments/assets/446765ee-e5bd-41ef-88d0-319feb936317)
+![动态构建的参数表单](../png/2022-0102/cbsd-06.png)
 
 redis 服务的表单结构更为复杂，因为它包含布尔类型和下拉菜单类型的字段元素。下面看一下表格：
 
-![Redis 服务表单结构](https://github.com/user-attachments/assets/2f2b6823-665a-4853-8d8d-61b8a08d794c)
+![Redis 服务表单结构](../png/2022-0102/cbsd-07.png)
 
 以表格 [memory_policy_select](http://clonos.bsdstore.ru:81/phpliteadmin.php?database=%2Fusr%2Fjails%2Fvar%2Fdb%2Fredis.sqlite&table=memory_policy_select&fulltexts=0&numRows=30&action=row_view) 为例，这是 memory_policy 参数的选择类型变体表：
 
-![memory_policy 选择类型变体表](https://github.com/user-attachments/assets/670a38c9-b562-4856-9387-b5e7d1931349)
+![memory_policy 选择类型变体表](../png/2022-0102/cbsd-08.png)
 
 在 WEB 界面中，自动生成的表单（截图来自 ClonOS）如下所示：
 
-![ClonOS WEB 界面表单截图](https://github.com/user-attachments/assets/ed585bb2-caf3-4324-bfb6-906b75830eda)
+![ClonOS WEB 界面表单截图](../png/2022-0102/cbsd-09.png)
 
 其中，maxmemory 策略参数位于特定的下拉菜单元素中。
 
-![maxmemory 策略下拉菜单](https://github.com/user-attachments/assets/26c8f6f0-3743-4ebc-bd4f-c465ddaa6921)
+![maxmemory 策略下拉菜单](../png/2022-0102/cbsd-10.png)
 
 TUI 界面提供了类似的选择：
 
-![TUI 界面选择截图](https://github.com/user-attachments/assets/1c718aa8-d542-4031-9aac-652cd4ad54c1)
+![TUI 界面选择截图](../png/2022-0102/cbsd-11.png)
 
 > **注意**
 >
@@ -365,7 +365,7 @@ TUI 界面提供了类似的选择：
 
 例如，以下是应用参数时 nullfs 挂载点的样子：
 
-![nullfs 挂载点截图](https://github.com/user-attachments/assets/276a0979-fc93-4e61-81fb-f2c876349569)
+![nullfs 挂载点截图](../png/2022-0102/cbsd-12.png)
 
 服务配置完成后，临时 nullfs 文件系统会卸载，因为它们已经不再需要。因此，查看上述示例中 jail1 容器内已安装的软件，将不会看到 puppet7 包或它依赖的文件。
 

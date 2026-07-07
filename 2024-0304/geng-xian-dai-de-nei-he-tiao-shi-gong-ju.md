@@ -3,7 +3,7 @@
 - 原文链接：[More Modern Kernel Debugging Tools](https://freebsdfoundation.org/our-work/journal/browser-based-edition/development-workflow-and-ci/more-modern-kernel-debugging-tools/)
 - 作者：Tom Jones
 
-![内核调试文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/05/iStock-13373619801.png)
+![内核调试文章配图](../png/2024-0304/geng-xian-dai-de-nei-he-tiao-shi-gong-ju-1.png)
 
 恐慌（Panic）是奇妙的词！
 
@@ -135,7 +135,7 @@ Reading symbols from /usr/lib/debug//boot/kernel/tcp_rack.ko.debug...
 Reading symbols from /boot/kernel/tcphpts.ko...
 Reading symbols from /usr/lib/debug//boot/kernel/tcphpts.ko.debug...
 __curthread () at /usr/src/sys/amd64/include/pcpu_aux.h:57
-57 __asm(“movq %%gs:%P1,%0” : “=r” (td) : “n” (offsetof(struct pcpu,
+57 __asm("movq %%gs:%P1,%0" : "=r" (td) : "n" (offsetof(struct pcpu,
 (kgdb)
 ```
 
@@ -146,8 +146,8 @@ __curthread () at /usr/src/sys/amd64/include/pcpu_aux.h:57
 ```sh
 (kgdb) bt
 ...
-#10 0xffffffff80b51233 in vpanic (fmt=0xffffffff811f87ca “Assertion %s failed at %s:%d”, ap=ap@entry=0xfffffe0047d2f5f0) at /usr/src/sys/kern/kern_shutdown.c:953
-#11 0xffffffff80b51013 in panic (fmt=0xffffffff81980420 <cnputs_mtx> “\371\023\025\201\377\377\377\377”) at /usr/src/sys/kern/kern_shutdown.c:889
+#10 0xffffffff80b51233 in vpanic (fmt=0xffffffff811f87ca "Assertion %s failed at %s:%d", ap=ap@entry=0xfffffe0047d2f5f0) at /usr/src/sys/kern/kern_shutdown.c:953
+#11 0xffffffff80b51013 in panic (fmt=0xffffffff81980420 <cnputs_mtx> "\371\023\025\201\377\377\377\377") at /usr/src/sys/kern/kern_shutdown.c:889
 #12 0xffffffff80d5483b in tcp_discardcb (tp=tp@entry=0xfffff80008584a80) at /usr/src/sys/netinet/tcp_subr.c:2432
 #13 0xffffffff80d60f71 in tcp_usr_detach (so=0xfffff800100b6b40) at /usr/src/sys/netinet/tcp_usrreq.c:215
 #14 0xffffffff80c01357 in sofree (so=0xfffff800100b6b40) at /usr/src/sys/kern/uipc_socket.c:1209
@@ -200,7 +200,7 @@ $ lldb --core <核心文件> path/to/kernel/symbols
 ```sh
 
 $ lldb --core ../gdb/coredump/vmcore.0 ../gdb/coredump/kernel-debug/kernel.debug
-(lldb) target create “../gdb/coredump/kernel-debug/kernel.debug” --core “../gdb/coredump/vmcore.0”
+(lldb) target create "../gdb/coredump/kernel-debug/kernel.debug" --core "../gdb/coredump/vmcore.0"
 Core file '/home/tj/code/scripts/gdb/coredump/vmcore.0' (x86_64) was loaded.
 (lldb)
 ```
@@ -215,7 +215,7 @@ Core file '/home/tj/code/scripts/gdb/coredump/vmcore.0' (x86_64) was loaded.
 
 ```sh
 (lldb) p panicstr
-(const char *) 0xffffffff819c1a00 “Assertion !tcp_in_hpts(tp) failed at /usr/src/sys/netinet/tcp_subr.c:2432”
+(const char *) 0xffffffff819c1a00 "Assertion !tcp_in_hpts(tp) failed at /usr/src/sys/netinet/tcp_subr.c:2432"
 ```
 
 这可能足够让人开始调试。我也喜欢通过 lldb 的 `bt` 命令获取堆栈跟踪：
@@ -228,7 +228,7 @@ frame #1: 0xffffffff80b5e9e3 kernel.debug`mi_switch(flags=259) at kern_synch.c:5
 frame #2: 0xffffffff80bb0dc4 kernel.debug`sleepq_switch(wchan=0xffffffff817e1448, pri=0) at subr_sleepqueue.c:607:2
 frame #3: 0xffffffff80bb11a6 kernel.debug`sleepq_catch_signals(wchan=0xffffffff817e1448, pri=0) at subr_sleepqueue.c:523:3
 frame #4: 0xffffffff80bb0ef9 kernel.debug`sleepq_wait_sig(wchan=<unavailable>, pri=<unavailable>) at subr_sleepqueue.c:670:11
-frame #5: 0xffffffff80b5df3c kernel.debug`_sleep(ident=0xffffffff817e1448, lock=0xffffffff817e1428, priority=256, wmesg=”tcplogdev”, sbt=0, pr=0, flags=256) at kern_synch.c:219:10
+frame #5: 0xffffffff80b5df3c kernel.debug`_sleep(ident=0xffffffff817e1448, lock=0xffffffff817e1428, priority=256, wmesg="tcplogdev", sbt=0, pr=0, flags=256) at kern_synch.c:219:10
 frame #6: 0xffffffff8091190e kernel.debug`tcp_log_dev_read(dev=<unavailable>, uio=0xfffffe0079b4ada0, flags=0) at tcp_log_dev.c:303:9
 frame #7: 0xffffffff809d99ce kernel.debug`devfs_read_f(fp=0xfffff80012857870, uio=0xfffffe0079b4ada0, cred=<unavailable>, flags=0, td=0xfffff800174be740) at devfs_vnops.c:1413:10
 frame #8: 0xffffffff80bc9bc6 kernel.debug`dofileread [inlined] fo_read(fp=0xfffff80012857870, uio=0xfffffe0079b4ada0, active_cred=<unavailable>, flags=<unavailable>, td=0xfffff800174be740) at file.h:340:10
@@ -265,7 +265,7 @@ lldb 目前还没有类似的启动命令。不过，《Panic!》为我们提供
 ```sh
 (lldb) p *msgbufp
 (msgbuf) {
-msg_ptr = 0xfffff8001ffe8000 “---<<BOOT>>---\nCopyright (c) 1992-2023 The FreeBSD Project.\nCopyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994\n\tThe Regents of the University of California. All rights reserved.\nFreeBSD is a registered trademark of The FreeBSD Foundation.\nFreeBSD 15.0-CURRENT #0 main-272a40604: Wed Nov 29 13:42:38 UTC 2023\n tj@vpp:/usr/obj/usr/src/amd64.amd64/sys/GENERIC amd64\nFreeBSD clang version 16.0.6 (https://github.com/llvm/llvm-project.git llvmorg-16.0.6-0-g7cbf1a259152)\nWARNING: WITNESS option enabled, expect reduced performance.\nVT: init without driver.\nCPU: 12th Gen Intel(R) Core(TM) i7-1260P (2500.00-MHz K8-class CPU)\n Origin=\”GenuineIntel\” Id=0x906a3 Family=0x6 Model=0x9a Stepping=3\n Features=0x9f83fbff<FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,MMX,FXSR,SSE,SSE2,SS,HTT,PBE>\n Features2=0xfeda7a17<SSE3,PCLMULQDQ,DTES64,DS_CPL,SSSE3,SDBG,FMA,CX16,xTPR,PCID,SSE4.1,SSE4.2,MOVBE,POPCNT,AESNI,XSAVE,OSXSAVE,AVX,F16C,RDRAND,HV>\n AMD Features=0x2c100800<SYSCALL,”...
+msg_ptr = 0xfffff8001ffe8000 "---<<BOOT>>---\nCopyright (c) 1992-2023 The FreeBSD Project.\nCopyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994\n\tThe Regents of the University of California. All rights reserved.\nFreeBSD is a registered trademark of The FreeBSD Foundation.\nFreeBSD 15.0-CURRENT #0 main-272a40604: Wed Nov 29 13:42:38 UTC 2023\n tj@vpp:/usr/obj/usr/src/amd64.amd64/sys/GENERIC amd64\nFreeBSD clang version 16.0.6 (https://github.com/llvm/llvm-project.git llvmorg-16.0.6-0-g7cbf1a259152)\nWARNING: WITNESS option enabled, expect reduced performance.\nVT: init without driver.\nCPU: 12th Gen Intel(R) Core(TM) i7-1260P (2500.00-MHz K8-class CPU)\n Origin=\"GenuineIntel\" Id=0x906a3 Family=0x6 Model=0x9a Stepping=3\n Features=0x9f83fbff<FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,MMX,FXSR,SSE,SSE2,SS,HTT,PBE>\n Features2=0xfeda7a17<SSE3,PCLMULQDQ,DTES64,DS_CPL,SSSE3,SDBG,FMA,CX16,xTPR,PCID,SSE4.1,SSE4.2,MOVBE,POPCNT,AESNI,XSAVE,OSXSAVE,AVX,F16C,RDRAND,HV>\n AMD Features=0x2c100800<SYSCALL,"...
 msg_magic = 405602
 msg_size = 98232
 msg_wseq = 16777
@@ -276,7 +276,7 @@ msg_lastpri = -1
 msg_flags = 0
 msg_lock = {
 lock_object = {
-lo_name = 0xffffffff81230bcc “msgbuf”
+lo_name = 0xffffffff81230bcc "msgbuf"
 lo_flags = 196608
 lo_data = 0
 lo_witness = NULL
@@ -292,17 +292,17 @@ mtx_lock = 0
 
 ```sh
 (lldb) p msgbufp->msg_ptr+msgbufp->msg_rseq
-(char *) 0xfffff8001ffeba99 “panic: Assertion !tcp_in_hpts(tp) failed at /usr/src/sys/netinet/tcp_subr.c:2432\ncpuid = 2\ntime = 1706644478\nKDB: stack backtrace:\ndb_trace_self_wrapper() at db_trace_self_wrapper+0x2b/frame 0xfffffe0047d2f480\nvpanic() at vpanic+0x132/frame 0xfffffe0047d2f5b0\npanic() at panic+0x43/frame 0xfffffe0047d2f610\ntcp_discardcb() at tcp_discardcb+0x25b/frame 0xfffffe0047d2f660\ntcp_usr_detach() at tcp_usr_detach+0x51/frame 0xfffffe0047d2f680\nsorele_locked() at sorele_locked+0xf7/frame 0xfffffe0047d2f6b0\ntcp_close() at tcp_close+0x155/frame 0xfffffe0047d2f6e0\nrack_check_data_after_close() at rack_check_data_after_close+0x8a/frame 0xfffffe0047d2f720\nrack_do_fin_wait_1() at rack_do_fin_wait_1+0x141/frame 0xfffffe0047d2f7a0\nrack_do_segment_nounlock() at rack_do_segment_nounlock+0x243b/frame 0xfffffe0047d2f9a0\nrack_do_segment() at rack_do_segment+0xda/frame 0xfffffe0047d2fa00\ntcp_input_with_port() at tcp_input_with_port+0x1157/frame 0xfffffe0047d2fb50\ntcp_input() at tcp_input+0xb/frame 0xfffffe0047d2fb60\nip_input() at ip_in”...
+(char *) 0xfffff8001ffeba99 "panic: Assertion !tcp_in_hpts(tp) failed at /usr/src/sys/netinet/tcp_subr.c:2432\ncpuid = 2\ntime = 1706644478\nKDB: stack backtrace:\ndb_trace_self_wrapper() at db_trace_self_wrapper+0x2b/frame 0xfffffe0047d2f480\nvpanic() at vpanic+0x132/frame 0xfffffe0047d2f5b0\npanic() at panic+0x43/frame 0xfffffe0047d2f610\ntcp_discardcb() at tcp_discardcb+0x25b/frame 0xfffffe0047d2f660\ntcp_usr_detach() at tcp_usr_detach+0x51/frame 0xfffffe0047d2f680\nsorele_locked() at sorele_locked+0xf7/frame 0xfffffe0047d2f6b0\ntcp_close() at tcp_close+0x155/frame 0xfffffe0047d2f6e0\nrack_check_data_after_close() at rack_check_data_after_close+0x8a/frame 0xfffffe0047d2f720\nrack_do_fin_wait_1() at rack_do_fin_wait_1+0x141/frame 0xfffffe0047d2f7a0\nrack_do_segment_nounlock() at rack_do_segment_nounlock+0x243b/frame 0xfffffe0047d2f9a0\nrack_do_segment() at rack_do_segment+0xda/frame 0xfffffe0047d2fa00\ntcp_input_with_port() at tcp_input_with_port+0x1157/frame 0xfffffe0047d2fb50\ntcp_input() at tcp_input+0xb/frame 0xfffffe0047d2fb60\nip_input() at ip_in"...
 ```
 
 输出的格式不太友好，控制字符直接打印出来了，不过我们能读取内核消息缓冲区的内容。输出被截断，无法获取完整的回溯信息。试试其他命令：
 
 ```sh
 (lldb) x/b msgbufp->msg_ptr+msgbufp->msg_rseq
-0xfffff8001ffeba99: “panic: Assertion !tcp_in_hpts(tp) failed at /usr/src/sys/netinet/tcp_subr.c:2432\ncpuid = 2\ntime = 1706644478\nKDB: stack backtrace:\ndb_trace_self_wrapper() at db_trace_self_wrapper+0x2b/frame 0xfffffe0047d2f480\nvpanic() at vpanic+0x132/frame 0xfffffe0047d2f5b0\npanic() at panic+0x43/frame 0xfffffe0047d2f610\ntcp_discardcb() at tcp_discardcb+0x25b/frame 0xfffffe0047d2f660\ntcp_usr_detach() at tcp_usr_detach+0x51/frame 0xfffffe0047d2f680\nsorele_locked() at sorele_locked+0xf7/frame 0xfffffe0047d2f6b0\ntcp_close() at tcp_close+0x155/frame 0xfffffe0047d2f6e0\nrack_check_data_after_close() at rack_check_data_after_close+0x8a/frame 0xfffffe0047d2f720\nrack_do_fin_wait_1() at rack_do_fin_wait_1+0x141/frame 0xfffffe0047d2f7a0\nrack_do_segment_nounlock() at rack_do_segment_nounlock+0x243b/frame 0xfffffe0047d2f9a0\nrack_do_segment() at rack_do_segment+0xda/frame 0xfffffe0047d2fa00\ntcp_input_with_port() at tcp_input_with_port+0x1157/frame 0xfffffe0047d2fb50\ntcp_input() at tcp_input+0xb/frame 0xfffffe0047d2fb60\nip_input() at ip_i”
+0xfffff8001ffeba99: "panic: Assertion !tcp_in_hpts(tp) failed at /usr/src/sys/netinet/tcp_subr.c:2432\ncpuid = 2\ntime = 1706644478\nKDB: stack backtrace:\ndb_trace_self_wrapper() at db_trace_self_wrapper+0x2b/frame 0xfffffe0047d2f480\nvpanic() at vpanic+0x132/frame 0xfffffe0047d2f5b0\npanic() at panic+0x43/frame 0xfffffe0047d2f610\ntcp_discardcb() at tcp_discardcb+0x25b/frame 0xfffffe0047d2f660\ntcp_usr_detach() at tcp_usr_detach+0x51/frame 0xfffffe0047d2f680\nsorele_locked() at sorele_locked+0xf7/frame 0xfffffe0047d2f6b0\ntcp_close() at tcp_close+0x155/frame 0xfffffe0047d2f6e0\nrack_check_data_after_close() at rack_check_data_after_close+0x8a/frame 0xfffffe0047d2f720\nrack_do_fin_wait_1() at rack_do_fin_wait_1+0x141/frame 0xfffffe0047d2f7a0\nrack_do_segment_nounlock() at rack_do_segment_nounlock+0x243b/frame 0xfffffe0047d2f9a0\nrack_do_segment() at rack_do_segment+0xda/frame 0xfffffe0047d2fa00\ntcp_input_with_port() at tcp_input_with_port+0x1157/frame 0xfffffe0047d2fb50\ntcp_input() at tcp_input+0xb/frame 0xfffffe0047d2fb60\nip_input() at ip_i"
 warning: unable to find a NULL terminated string at 0xfffff8001ffeba99. Consider increasing the maximum read length.
 (lldb) x/2048b msgbufp->msg_ptr+msgbufp->msg_rseq
-error: Normally, ‘memory read’ will not read over 1024 bytes of data.
+error: Normally, 'memory read' will not read over 1024 bytes of data.
 error: Please use --force to override this restriction just once.
 error: or set target.max-memory-read-size if you will often need a larger limit.
 ```
@@ -317,7 +317,7 @@ lldb 还提供了用于控制的脚本接口，这也是为什么许多命令的
 
 ```lua
 (lldb) script
->>> print(“hello esteemed FreeBSD Journal readers!”)
+>>> print("hello esteemed FreeBSD Journal readers!")
 hello esteemed FreeBSD Journal readers!
 >>> quit
 ```
@@ -327,7 +327,7 @@ hello esteemed FreeBSD Journal readers!
 在《Panic!》一书中，我们了解到 SunOS/Solaris 调试器 adb 有方便易懂的宏，用于查找和打印消息缓冲区：
 
 ```sh
-msgbuf/”magic”16t”size”16t”bufx”16t”bufr”n4X
+msgbuf/"magic"16t"size"16t"bufx"16t"bufr"n4X
 +,(*msgbuf+0t8)-*(msgbuf+0t12)))&80000000$<msgbuf.wrap
 .+*(msgbuf+0t12),(*(msgbuf+0t8)-*(msfbuf+0t12))/c
 ```
@@ -340,10 +340,10 @@ lldb 的 Lua 接口是通过 swig 绑定生成的。swig 是使用 C++ 格式来
 
 ```lua
 $ lldb --core coredump/vmcore.1 coredump/kernel-debug/kernel.debug
-(lldb) target create “coredump/kernel-debug/kernel.debug” --core “coredump/vmcore.1”
-Core file ‘/home/tj/code/scripts/gdb/coredump/vmcore.1’ (x86_64) was loaded.
+(lldb) target create "coredump/kernel-debug/kernel.debug" --core "coredump/vmcore.1"
+Core file '/home/tj/code/scripts/gdb/coredump/vmcore.1' (x86_64) was loaded.
 (lldb) script
->>> print(“hello”)
+>>> print("hello")
 hello
 >>> quit
 (lldb) command script import ./hello.lua
@@ -353,7 +353,7 @@ hello from the script hello.lua
 假设文件 `hello.lua` 内容为：
 
 ```lua
-print(“hello from the script hello.lua”)
+print("hello from the script hello.lua")
 ```
 
 lldb 的 Lua 环境提供了变量 `lldb`，包含了访问目标、调试器、帧、进程和线程的成员。这些对象映射到 Python API 中描述的对象。
@@ -369,7 +369,7 @@ lldb 的 Lua 环境提供了变量 `lldb`，包含了访问目标、调试器、
 正如我们之前所看到的，`msgbufp` 是内核消息缓冲区的全局实例。在 lldb Lua 中可以通过以下方式访问它：
 
 ```lua
-msgbuf = lldb.target:FindFirstGlobalVariable(“msgbufp”)
+msgbuf = lldb.target:FindFirstGlobalVariable("msgbufp")
 ```
 
 这会返回一个 SBValue 实例，代表核心转储内存中的这个结构体实例。我们可以使用 `GetChildMemberWithName` 方法和成员名（例如 `msg_rseq`）来访问结构体的子成员。
@@ -379,18 +379,18 @@ msgbuf = lldb.target:FindFirstGlobalVariable(“msgbufp”)
 使用这些方法，我们可以组装指向消息缓冲区起始位置的指针，从核心转储中读取它，并使用 Lua 打印出来。我将所有内容放入了名为 `msgbuf.lua` 的脚本中：
 
 ```lua
-msgbuf = lldb.target:FindFirstGlobalVariable(“msgbufp”)
+msgbuf = lldb.target:FindFirstGlobalVariable("msgbufp")
 
-msgbuf_start = msgbuf:GetChildMemberWithName(“msg_rseq”):GetValue()
-msgbuf_end = msgbuf:GetChildMemberWithName(“msg_wseq”):GetValue()
+msgbuf_start = msgbuf:GetChildMemberWithName("msg_rseq"):GetValue()
+msgbuf_end = msgbuf:GetChildMemberWithName("msg_wseq"):GetValue()
 unread_len = msgbuf_end - msgbuf_start
 
-msgbuf_addr = msgbuf:GetChildMemberWithName(“msg_ptr”)
+msgbuf_addr = msgbuf:GetChildMemberWithName("msg_ptr")
 :Dereference()
 :GetLoadAddress() + msgbuf_start
 msgbuf_ptr = lldb.process:ReadMemory(msgbuf_addr, unread_len, lldb.SBError())
 
-print(“Unread portion of the kernel message buffer:”)
+print("Unread portion of the kernel message buffer:")
 print(msgbuf_ptr)
 ```
 

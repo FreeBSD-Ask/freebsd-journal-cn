@@ -21,14 +21,14 @@ makeoptions WITH_EXTRA_TCP_STACKS=1
 然后重新编译内核。首行将 TCP 高精度定时器系统（HPTS）编译进内核。第二行会生成 TCP RACK 栈的可加载内核模块（`tcp_rack.ko`）。要使用 TCP RACK 栈，必须加载此内核模块。可以在 **/boot/loader.conf** 文件中添加如下行，使其在每次重启时自动加载：
 
 ```sh
-tcp_rack_load=”YES”
+tcp_rack_load="YES"
 ```
 
 在 FreeBSD CURRENT 中，TCP RACK 和 HPTS 均默认作为内核模块构建。由于 `tcphpts.ko` 会作为 `tcp_rack.ko` 的依赖项自动加载，因此仅需使用 kldload 加载后者即可。要在每次重启时加载 TCP RACK 栈，需在 **/boot/loader.conf** 文件中添加如下两行：
 
 ```sh
-tcphpts_load=”YES”
-tcp_rack_load=”YES”
+tcphpts_load="YES"
+tcp_rack_load="YES"
 ```
 
 在 FreeBSD CURRENT 中，也可以将如下两行添加到内核配置文件中，将 TCP RACK 栈静态编译进内核：
@@ -73,7 +73,7 @@ net.inet.tcp.functions_default=rack
 ```c
 struct tcp_function_set tfs;
 
-strncpy(tfs.function_set_name, “rack”, TCP_FUNCTION_NAME_LEN_MAX);
+strncpy(tfs.function_set_name, "rack", TCP_FUNCTION_NAME_LEN_MAX);
 tfs.pcbcnt = 0;
 setsockopt(fd, IPPROTO_TCP, TCP_FUNCTION_BLK, &tfs, sizeof(tfs));
 ```

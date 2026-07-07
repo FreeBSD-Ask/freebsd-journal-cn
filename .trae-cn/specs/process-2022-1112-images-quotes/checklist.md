@@ -1,0 +1,21 @@
+# Checklist
+
+- [x] 14 张 PNG 图片已下载至 `png/2022-1112/` 且非空（act-01、huiyi-01/02、ipv6-01 至 06、prometheus-01 至 05）
+- [x] events-calendar PDF 已下载至 `png/2022-1112/events-calendar-01.pdf` 且非空（512046 bytes，原 URL 可用无需兜底）
+- [x] act.md 行 18 远程图片引用已替换为 `../png/2022-1112/act-01.png`
+- [x] events-calendar.md 行 10 远程 PDF 引用已替换为 `../png/2022-1112/events-calendar-01.pdf`
+- [x] huiyi.md 行 8/22 远程图片引用已替换为本地路径（huiyi-01.png、huiyi-02.png）
+- [x] ipv6.md 行 59/68/241/245/251/255 远程图片引用已替换为本地路径（ipv6-01 至 06）
+- [x] prometheus.md 行 94/98/125/131/164 远程图片引用已替换为本地路径（prometheus-01 至 05）
+- [x] act.md 行 96/98/113 JSON 字符串弯引号已校正为直引号（Grep 确认无 `'’` 残留）
+- [x] dtrace.md 行 41 `printf("...")` 弯引号已校正为直引号
+- [x] dtrace.md 行 256/257 `printf("...")` 弯引号已校正为直引号
+- [x] icinga.md 行 120 sed 命令行尾弯引号已校正为直引号
+- [x] icinga.md 行 283 `'1.14.3'` 弯引号已校正为直引号
+- [x] ddb.md 行 207/211 中文注释全角弯引号保留未改动（`/* 保存"demo *"命令的列表。*/`、`/* 定义了一个"demo"顶级命令。 */`）
+- [x] 正文中的弯引号保留未改动（book.md、prometheus.md 正文、icinga.md 行 147/483、dtrace.md 行 36/243 等）
+- [x] 未修改 `# 标题`（H1 由 CI 覆盖，8 个文件 H1 均未改动）
+- [x] 未篡改代码语义、版本号（1.14.3 保留）、用户名、带圈数字、URL/IP
+- [x] Grep 确认 2022-1112/ 下无远程 `![...](http` 引用残留（0 匹配）
+- [x] Grep 确认代码块内无弯引号残留（act.md 0 匹配、dtrace.md 仅剩行 36/243 正文、icinga.md 仅剩行 147/483 正文、ddb.md 行 207/211 中文注释保留）
+- [x] 临时脚本 `script/dl_2022_1112.py`、`script/find_2022_1112_events.py` 保留未清理（遵循用户规则）

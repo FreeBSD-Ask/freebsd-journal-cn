@@ -3,7 +3,7 @@
 - [Starting FreeBSD Development An Interview with Kajetan Staszkiewicz](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/starting-freebsd-development/)
 - 作者：Tom Jones
 
-![采访](https://freebsdfoundation.org/wp-content/uploads/2025/07/interview_header-1.png)
+![采访](../png/2025-456/Staszkiewicz-01.png)
 
 **TJ：** 你能简单介绍一下你自己和你与 FreeBSD 的背景吗？
 

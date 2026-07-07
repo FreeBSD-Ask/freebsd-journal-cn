@@ -3,7 +3,7 @@
 - 作者：**Michael W Lucas**
 - 原文链接：<https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/we-get-letters-may-june>
 
-![读者来信](https://freebsdfoundation.org/wp-content/uploads/2024/07/WeGetLetters.png)
+![读者来信](../png/2024-0506/2024-nian-5-yue-6-yue-lai-xin-1.png)
 
 > 亲爱的来信专栏，
 >

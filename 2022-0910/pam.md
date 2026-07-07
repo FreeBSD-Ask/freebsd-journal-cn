@@ -138,13 +138,13 @@ auth required pam_aroma.so
 **pam_echo(8)** 模块接受一个文本字符串作为参数，这个字符串会传回给用户。这些规则总是设为 optional 类型。让我们在其中一个实验性策略中添加一些 echo 调试信息。
 
 ```sh
-auth optional pam_echo.so “auth policy starting, trying voice”
+auth optional pam_echo.so "auth policy starting, trying voice"
 auth sufficient pam_voice.so
-auth optional pam_echo.so “voice failed, trying finger”
+auth optional pam_echo.so "voice failed, trying finger"
 auth sufficient pam_finger.so
-auth optional pam_echo.so “finger failed, taking a whiff”
+auth optional pam_echo.so "finger failed, taking a whiff"
 auth required pam_aroma.so
-auth optional pam_echo.so “how did we get here?”
+auth optional pam_echo.so "how did we get here?"
 ```
 
 如果你觉得这看起来就像在代码中到处散布 printf() 调用，那你说对了。对于 1990 年代的 Sun 来说这已经足够用了，对你来说也同样适用。
@@ -167,7 +167,7 @@ auth optional pam_exec.so /usr/sbin/pamdebug.sh impossible_end_of_pam_rule
 
 ```sh
 #!/bin/sh
-logger “process $PPID calling $1”
+logger "process $PPID calling $1"
 ```
 
 这会记录进程 ID 以及你当前处于认证的哪个阶段。你肯定不会希望在一个忙碌的生产环境中运行它——那里的用户不断登录和注销——但在测试系统上调试时，这会使工作变得简单。

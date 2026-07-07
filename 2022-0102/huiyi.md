@@ -49,7 +49,7 @@ Katie
 
 我的朋友们，明年见，祝你们“Gute Fahrt！”
 
-![EuroBSDCon 2021 会议合影](https://github.com/user-attachments/assets/658f4246-3909-4774-9365-0f4ec6df24d7)
+![EuroBSDCon 2021 会议合影](../png/2022-0102/huiyi-03.png)
 
 ---
 

@@ -36,9 +36,9 @@ VPN 是基础工具，用于安全地连接到自己的服务器和设备。许�
 在 **/etc/rc.conf** 文件中添加类似以下的条目：
 
 ```sh
-ifconfig_vtnet0=”DHCP”
-ifconfig_vtnet0_ipv6=”inet6 2a01:4f8:cafe:cafe::1 prefixlen 72”
-ipv6_defaultrouter=”fe80::1%vtnet0”
+ifconfig_vtnet0="DHCP"
+ifconfig_vtnet0_ipv6="inet6 2a01:4f8:cafe:cafe::1 prefixlen 72"
+ipv6_defaultrouter="fe80::1%vtnet0"
 ```
 
 简而言之，保留 Hetzner 分配的基础地址，但将前缀长度改为 72——这样就可以拥有其他可用网络。现在，需要启用 IPv4 和 IPv6 的转发功能。将以下行添加到 **/etc/sysctl.conf** 文件中：
@@ -79,7 +79,7 @@ PrivateKey = YUkS6cNTyPbXmtVf/23ppVW3gX2hZIBzlHtXNFRp80w=
 
 ```sh
 service wireguard enable
-sysrc wireguard_interfaces=”wg0”
+sysrc wireguard_interfaces="wg0"
 service wireguard start
 ```
 
@@ -106,7 +106,7 @@ echo updating Spamhaus DROP lists:
   { fetch -o - https://www.spamhaus.org/drop/drop.txt && \
     fetch -o - https://www.spamhaus.org/drop/edrop.txt && \
     fetch -o - https://www.spamhaus.org/drop/dropv6.txt ; \
-  } 2>/dev/null | sed “s/;/#/” > /var/db/drop.txt
+  } 2>/dev/null | sed "s/;/#/" > /var/db/drop.txt
 )
 pfctl -t spamhaus -T replace -f /var/db/drop.txt
 ```
@@ -186,41 +186,41 @@ pkg install unbound
 # 使用来自 Pi-Hole 项目的黑名单 https://github.com/pi-hole/ 
 # 来启用 Unbound(8) 中的广告拦截
 #
-PATH=”/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin”
+PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 
 # 可用的黑名单 - 注释掉某行以禁用该黑名单
-_disconad=”https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt”
-_discontrack=”https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt”
-_stevenblack=”https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts”
+_disconad="https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
+_discontrack="https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
+_stevenblack="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
 
 # 全局变量
-_tmpfile=”$(mktemp)” && echo '' > $_tmpfile
-_unboundconf=”/usr/local/etc/unbound/unbound-adhosts.conf”
+_tmpfile="$(mktemp)" && echo '' > $_tmpfile
+_unboundconf="/usr/local/etc/unbound/unbound-adhosts.conf"
 
 # 从黑名单中移除注释
 simpleParse() {
 fetch -o - $1 | \
-sed -e ‘s/#.*$//’ -e ‘/^[[:space:]]*$/d’ >> $2
+sed -e 's/#.*$//' -e '/^[[:space:]]*$/d' >> $2
 }
 
 # 解析 DisconTrack
-[ -n “${_discontrack}” ] && simpleParse $_discontrack $_tmpfile
+[ -n "${_discontrack}" ] && simpleParse $_discontrack $_tmpfile
 
 # 解析 DisconAD
-[ -n “${_disconad}” ] && simpleParse $_disconad $_tmpfile
+[ -n "${_disconad}" ] && simpleParse $_disconad $_tmpfile
 
 # 解析 StevenBlack
-[ -n “${_stevenblack}” ] && \
+[ -n "${_stevenblack}" ] && \
   fetch -o - $_stevenblack | \
   sed -n '/Start/,$p' | \
   sed -e 's/#.*$//' -e '/^[[:space:]]*$/d' | \
   awk '/^0.0.0.0/ { print $2 }' >> $_tmpfile
 
 # 创建 unbound(8) 本地区域文件
-sort -fu $_tmpfile | grep -v “^[[:space:]]*$” | \
+sort -fu $_tmpfile | grep -v "^[[:space:]]*$" | \
 awk '{
-  print “local-zone: \”” $1 “\” redirect”
-  print “local-data: \”” $1 “ A 0.0.0.0\””
+  print "local-zone: \"" $1 "\" redirect"
+  print "local-data: \"" $1 " A 0.0.0.0\""
 }' > $_unboundconf && rm -f $_tmpfile
 
 service unbound reload 1>/dev/null
@@ -248,7 +248,7 @@ server:
         interface: 2a01:4f8:cafe:cafe:100::1
         interface: ::1
         outgoing-range: 64
-        chroot: “”
+        chroot: ""
 
         access-control: 0.0.0.0/0 refuse
         access-control: 127.0.0.0/8 allow
@@ -263,7 +263,7 @@ server:
         val-log-level: 2
         aggressive-nsec: yes
         prefetch: yes
-        username: “unbound”
+        username: "unbound"
         directory: "/usr/local/etc/unbound"
         logfile: "/var/log/unbound.log"
         use-syslog: no
@@ -329,7 +329,7 @@ chmod +x /usr/local/sbin/update-blocklists.sh
 然后，将其添加到 `crontab` 中，以便每天运行：
 
 ```sh
-echo “@daily /usr/local/sbin/update-blocklists.sh” >> /etc/crontab
+echo "@daily /usr/local/sbin/update-blocklists.sh" >> /etc/crontab
 ```
 
 这种方法从更新管理和安全性的角度都带来了好处。

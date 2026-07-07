@@ -13,7 +13,7 @@
 
 **图 1：C 运行时库 `.data` 部分的映射**
 
-![图 1：C 运行时库 .data 部分的映射](https://freebsdfoundation.org/wp-content/uploads/2025/04/fig1.png)
+![图 1：C 运行时库 .data 部分的映射](../png/2025-123/device-01.png)
 
 每个虚拟内存对象（VM object）都与一个分页器（pager）相关联，分页器提供一组用于确定与虚拟内存对象关联的页面内容的函数。vnode 分页器用于与常规文件相关联的虚拟内存对象，这些文件来自块存储文件系统和网络文件系统。其函数从关联的文件中读取数据以初始化页面，并将修改后的页面写回关联的文件。交换分页器用于与常规文件无关的匿名虚拟内存对象。在首次使用时，系统会为这些对象分配填充为零的页面。如果系统内存不足，交换分页器会将使用较少的脏页面写入交换分区，直至它们再次被需要。
 
@@ -337,7 +337,7 @@ mappage_destroy(struct mappage_softc *sc)
 ^Z
 Suspended
 # kldunload mappage
-kldunload: can’t unload file: Device busy
+kldunload: can't unload file: Device busy
 # fg
 maprw write /dev/mappage 16
 maprw: empty read

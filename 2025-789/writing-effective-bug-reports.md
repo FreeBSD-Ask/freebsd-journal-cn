@@ -3,7 +3,7 @@
 - 原文：[Writing Effective Bug Reports](https://freebsdfoundation.org/our-work/journal/browser-based-edition/embedded-2/writing-effective-bug-reports/)
 - 作者：Tom Jones
 
-![Bug 报告](https://freebsdfoundation.org/wp-content/uploads/2025/10/bug_art.jpg)
+![Bug 报告](../png/2025-789/writing-effective-bug-reports-01.jpg)
 
 几年前，我们深受敬重的前 FreeBSD 期刊编辑委员会成员 Kristof Provost 写过一篇关于理想 Bug 报告方式的好文章。遗憾的是，Michael W Lucas 总会在年初就用光我们每期讽刺的额度，所以为了避免“讽刺透支”，决定由我改写 Kristof 的原文，以免出现“反讽破产”。
 

@@ -7,7 +7,7 @@
 
 如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
-![活动日历](https://freebsdfoundation.org/wp-content/uploads/2023/01/events.pdf)
+![活动日历](../png/2022-1112/events-calendar-01.pdf)
 
 ## FOSDEM 2023
 

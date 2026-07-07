@@ -105,7 +105,7 @@ $ cat -n Makefile
  3
  4 MASTERDIR= ${.CURDIR}/../xpdf${XPDF_VERSION}
  5
- 6 .include “${MASTERDIR}/Makefile”
+ 6 .include "${MASTERDIR}/Makefile"
 ```
 
 看到第 4 行的 `MASTERDIR` 变量了吗？这意味着 `graphics/xpdf` 是一个主 port。当这个 port 被构建时，实际上是 `graphics/xpdf4` 在驱动整个过程。（顺便说一下，根据第 2 行，Xpdf 版本 4 显然是默认版本）。继续深入探索！
@@ -227,7 +227,7 @@ make reinstall
 
 现在是时候检查一下 Xfce 应用程序查找器中的 Xpdf 条目是否有图标了。
 
-![Xpdf 图标修复后](https://github.com/user-attachments/assets/3737c43b-5446-402c-be8a-930154b3dce9)
+![Xpdf 图标修复后](../png/2022-0102/ports-02.png)
 
 成功！
 

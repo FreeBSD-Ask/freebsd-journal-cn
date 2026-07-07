@@ -3,7 +3,7 @@
 - [Starting FreeBSD Development An Interview with with Igor Ostapenko](https://freebsdfoundation.org/our-work/journal/browser-based-edition/embedded-2/interview-with-igor-ostapenko/)
 - 作者：Tom Jones
 
-![采访](https://freebsdfoundation.org/wp-content/uploads/2025/10/interview_header.png)
+![采访](../png/2025-789/interview-with-igor-ostapenko-01.png)
 
 **TJ:** 通往 FreeBSD 开发之路的有很多因素，有些是通过大学课程，有些是通过工作经验。你是如何了解到这个项目的？最初又是什么吸引你走向操作系统开发的？
 

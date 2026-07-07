@@ -66,7 +66,7 @@ Raspberry Pi 支持在 r239922 中引入。
 
 ## Clang 作为默认编译器
 
-GCC 在大多数架构上不再是默认 base 系统的一部分。FreeBSD 项目已从 GCC 切换到 CLANG 作为默认编译器。这为 FreeBSD 提供了更现代、活跃开发的默认编译器。
+GCC 在大多数架构上不再是默认 base 系统的一部分。FreeBSD 项目已从 GCC 切换到 Clang 作为默认编译器。这为 FreeBSD 提供了更现代、活跃开发的默认编译器。
 
 虽然 GCC 默认不再构建，但在 FreeBSD 10 base 系统中仍可用。默认禁用 GCC 的变更在 r255348 中完成。
 

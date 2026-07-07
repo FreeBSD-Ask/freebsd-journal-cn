@@ -18,7 +18,7 @@ FreeBSD 最早吸引我的一点是它能够轻松运行服务。这些服务可
 
 本文将部署名为 AdGuard 的服务，由 AdGuard Software Limited 提供。通过在网络中运行 AdGuard 服务，将 DNS 解析指向该服务的客户端可以过滤掉网页浏览活动中的广告。这有助于避免广告商的跟踪和建立用户画像，同时还可以加快页面加载速度，因为页面不必连同广告一起传输。AdGuard 通过过滤列表和 DNS sinkholing 完成屏蔽。基于过滤列表，AdGuard 会在浏览器中呈现广告之前，通过发送无效的地址响应来阻止已知的广告站点。有多种使用 AdGuard 服务的方式——作为个人设备的浏览器扩展、桌面应用程序，或者将其作为递归 DNS 解析器运行。请注意，AdGuard 并不能完全防范所有形式的广告（尤其是动态嵌入在视频站点中的广告），但能有效屏蔽网页中的大部分广告。
 
-![image](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/cfb9b796-2366-4bc5-a90f-40dd6fcb35da)
+![image](../png/2023-0708/practical-ports-1.png)
 
 我们从树莓派开始，因为这个服务基本上一直在运行，而且我们希望功耗较低。我这里有一台树莓派 3，但其他能够运行 FreeBSD 的设备（包括完整的服务器）同样适用。安装操作系统，应用最新的安全补丁，并使用 SSH 密钥锁定远程访问。
 
@@ -392,7 +392,7 @@ htpasswd -Bnb adguard BastilleBSD!
 
 顶部有设置向导，显示了如何使用你的新 AdGuard 服务，无论是用于路由器（以覆盖整个网络）还是各种设备，并为移动设备和桌面操作系统都作了描述。太棒了！
 
-![image](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/2119e84d-b4ed-4a0f-85fc-9dee97a3116d)
+![image](../png/2023-0708/practical-ports-2.png)
 
 我在手机上设置后——出于测试目的——稍微浏览了一下网页，就看到仪表板中出现了统计数据。这表明我们的设置正在运行，我们应该将互联网更名为 SnooperNet。几乎所有的网站在某种程度上都会追踪你或显示让你不悦的广告。树莓派能够处理这种负载，我在 `AdGuardHome.yaml` 的 ratelimit 参数中微调了连接数。
 

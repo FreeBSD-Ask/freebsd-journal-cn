@@ -42,14 +42,14 @@ mypool           ONLINE    0     0     0
 
 ```sh
 for S in $SSD; do
-      gpart add -t freebsd-swap -l swap${COUNTER} -s ${SWAP} -a 4k “${S}”
-      echo “Setting ${SWAP} of swap space on disk ${S}.”
-      SERIAL=$(camcontrol identify “${S}”|awk '/serial number/ { print $3 }')
-          gpart add -t freebsd-zfs -l “{$SERIAL}” -a 4k “${S}”
+      gpart add -t freebsd-swap -l swap${COUNTER} -s ${SWAP} -a 4k "${S}"
+      echo "Setting ${SWAP} of swap space on disk ${S}."
+      SERIAL=$(camcontrol identify "${S}"|awk '/serial number/ { print $3 }')
+          gpart add -t freebsd-zfs -l "{$SERIAL}" -a 4k "${S}"
       if [ $((COUNTER%2)) -eq 0 ]; then
-            SERIALS=”${SERIALS} mirror”
+            SERIALS="${SERIALS} mirror"
       fi
-      SERIALS=”${SERIALS} /dev/gpt/${SERIAL}”
+      SERIALS="${SERIALS} /dev/gpt/${SERIAL}"
       COUNTER=$((COUNTER+1))
       NUM_SSDS=${COUNTER}
 done
@@ -64,22 +64,22 @@ setup_partitions() {
     local SSD=$1
     local SWAP_SIZE=$2
     local COUNTER=1
-    local SERIALS=””
+    local SERIALS=""
      
     for S in $SSD; do
         # 创建交换分区
-        gpart add -t freebsd-swap -l swap${COUNTER} -s ${SWAP_SIZE} -a 4k “${S}”
-        echo “Setting ${SWAP_SIZE} of swap space on disk ${S}.”
+        gpart add -t freebsd-swap -l swap${COUNTER} -s ${SWAP_SIZE} -a 4k "${S}"
+        echo "Setting ${SWAP_SIZE} of swap space on disk ${S}."
         
         # 创建 ZFS 分区
-        SERIAL=$(camcontrol identify “${S}”|awk '/serial number/ { print $3 }')
-        gpart add -t freebsd-zfs -l “${SERIAL}” -a 4k “${S}”
+        SERIAL=$(camcontrol identify "${S}"|awk '/serial number/ { print $3 }')
+        gpart add -t freebsd-zfs -l "${SERIAL}" -a 4k "${S}"
         
         # 添加到序列号列表并增加计数器
         if [ $((COUNTER%2)) -eq 0 ]; then
-            SERIALS=”${SERIALS} mirror”
+            SERIALS="${SERIALS} mirror"
         fi
-        SERIALS=”${SERIALS} /dev/gpt/${SERIAL}”
+        SERIALS="${SERIALS} /dev/gpt/${SERIAL}"
         COUNTER=$((COUNTER+1))
     done
     
@@ -91,9 +91,9 @@ setup_partitions() {
 ***ChatGPT***：你可以通过传递两个参数来调用这个函数：SSD 数组和所需的交换空间大小。例如，如果你有两个固态硬盘（**/dev/sda** 和 **/dev/sdb**），你希望它们每个都有 4GB 的交换空间，你可以这样调用这个函数：
 
 ```sh
-SSD=(“/dev/sda” “/dev/sdb”)
-SWAP_SIZE=”4g”
-setup_partitions “$SSD” “$SWAP_SIZE”
+SSD=("/dev/sda" "/dev/sdb")
+SWAP_SIZE="4g"
+setup_partitions "$SSD" "$SWAP_SIZE"
 ```
 
 好吧，这确实是令人印象深刻的开始。它能找出我想做的事情，并提供了解决方案和合适的解释。仔细审视，它需要做一些修改：首先，代码是用 bash 写的（正如代码片段窗口所标注的那样）。由于我们处于安装程序环境中，而 FreeBSD 默认不包含 bash，所以 bash 特有的结构无法工作。第二，它假定我使用的是 Linux，因为磁盘设备节点（**/dev/sda**）表明了这一点。不过，其余的代码都很好，而且它不必修改我自己的大部分代码，只是将其包装成函数。
@@ -112,31 +112,31 @@ setup_partitions “$SSD” “$SWAP_SIZE”
 
 ```sh
 for HD in $HDD; do
-        gpart add -t freebsd-swap -l swap${COUNTER} -s ${SWAP} -a 4k “${HD}”
-        echo “Setting ${SWAP} of swap space on disk ${HD}.”
-        SERIAL=$(camcontrol inquiry “${HD}” -S|sed -e 's/^[[:space:]]*//')
+        gpart add -t freebsd-swap -l swap${COUNTER} -s ${SWAP} -a 4k "${HD}"
+        echo "Setting ${SWAP} of swap space on disk ${HD}."
+        SERIAL=$(camcontrol inquiry "${HD}" -S|sed -e 's/^[[:space:]]*//')
         
         if [ $((COUNTER%2)) -eq 0 ]; then
-                SERIALS=”${SERIALS} mirror”
+                SERIALS="${SERIALS} mirror"
         fi
-        SERIALS=”$SERIALS /dev/gpt/${SERIAL}”
+        SERIALS="$SERIALS /dev/gpt/${SERIAL}"
         
-        gpart add -t freebsd-zfs -l “${SERIAL}” -a 4k “${HD}”
+        gpart add -t freebsd-zfs -l "${SERIAL}" -a 4k "${HD}"
         COUNTER=$((COUNTER+1))
 done
 
 COUNTER=0
 # 我们从其中一个 SSD 启动
 for S in $SSD; do
-        gpart add -t freebsd-swap -l swap${COUNTER} -s ${SWAP} -a 4k “${S}”
-        echo “Setting ${SWAP} of swap space on disk ${S}.”
-        SERIAL=$(camcontrol identify “${S}”|awk /serial number/ { print $3 })
-gpart add -t freebsd-zfs -l “${SERIAL}” -a 4k “${S}”
+        gpart add -t freebsd-swap -l swap${COUNTER} -s ${SWAP} -a 4k "${S}"
+        echo "Setting ${SWAP} of swap space on disk ${S}."
+        SERIAL=$(camcontrol identify "${S}"|awk '/serial number/ { print $3 }')
+gpart add -t freebsd-zfs -l "${SERIAL}" -a 4k "${S}"
 
         if [ $((COUNTER%2)) -eq 0 ]; then
-                SERIALS=”${SERIALS} mirror”
+                SERIALS="${SERIALS} mirror"
         fi
-        SERIALS=”$SERIALS /dev/gpt/${SERIAL}”
+        SERIALS="$SERIALS /dev/gpt/${SERIAL}"
         COUNTER=$((COUNTER+1))
         NUM_SSDS=${COUNTER}
 done
@@ -146,32 +146,32 @@ done
 
 ```sh
 setup_partitions() {
-    local disks=(“$@”)
+    local disks=("$@")
     local swap_size=$2
     local is_hdd=$3
     local counter=1
-    local serials=””
+    local serials=""
     
-for disk in “${disks[@]}”; do
+for disk in "${disks[@]}"; do
     # 创建交换分区
-    gpart add -t freebsd-swap -l swap$counter -s $swap_size -a 4k “$disk”
-    echo “Setting $swap_size of swap space on disk ${disk}.”
+    gpart add -t freebsd-swap -l swap$counter -s $swap_size -a 4k "$disk"
+    echo "Setting $swap_size of swap space on disk ${disk}."
     
     # 确定磁盘序列号
-    if [[ $is_hdd == “true” ]]; then
-        serial=$(camcontrol inquiry “$disk” -S | sed -e 's/^[[:space:]]*//')
+    if [[ $is_hdd == "true" ]]; then
+        serial=$(camcontrol inquiry "$disk" -S | sed -e 's/^[[:space:]]*//')
     else
-        serial=$(camcontrol identify “$disk” | awk '/serial number/ { print $3 }')
+        serial=$(camcontrol identify "$disk" | awk '/serial number/ { print $3 }')
     fi
     
     # 创建 ZFS 分区
-    gpart add -t freebsd-zfs -l “$serial” -a 4k “$disk”
+    gpart add -t freebsd-zfs -l "$serial" -a 4k "$disk"
     
     # 添加到序列号列表并增加计数器
     if [ $((counter%2)) -eq 0 ]; then
-        serials=”$serials mirror”
+        serials="$serials mirror"
     fi
-    serials=”$serials /dev/gpt/$serial”
+    serials="$serials /dev/gpt/$serial"
     counter=$((counter+1))
 done
 
@@ -182,12 +182,12 @@ NUM_DISKS=$counter
 ***ChatGPT***: 你可以用磁盘数组、所需的交换空间大小和指示磁盘是 HDD 还是 SSD 的选项来调用这个函数。例如，要在两个 HDD（**/dev/ada0** 和 **/dev/ada1**）上设置具有 2GB 交换空间的分区，和两个 SSD（**/dev/ada2** 和 **/dev/ada3**）上设置具有 4GB 交换空间的分区，你可以这样调用这个函数：
 
 ```sh
-DD=(“/dev/ada0” “/dev/ada1”)
-SSD=(“/dev/ada2” “/dev/ada3”)
-SWAP_SIZE_HDD=”2g”
-SWAP_SIZE_SSD=”4g”
-setup_partitions “${HDD[@]}” “$SWAP_SIZE_HDD” “true”
-setup_partitions “${SSD[@]}” “$SWAP_SIZE_SSD” “false”
+DD=("/dev/ada0" "/dev/ada1")
+SSD=("/dev/ada2" "/dev/ada3")
+SWAP_SIZE_HDD="2g"
+SWAP_SIZE_SSD="4g"
+setup_partitions "${HDD[@]}" "$SWAP_SIZE_HDD" "true"
+setup_partitions "${SSD[@]}" "$SWAP_SIZE_SSD" "false"
 ```
 
 ***ChatGPT***：请注意，我添加了一个选项，以表明这些磁盘是 HDD 还是 SSD，因为每种磁盘类型的序列号检索方法不同。
@@ -204,45 +204,45 @@ setup_partitions “${SSD[@]}” “$SWAP_SIZE_SSD” “false”
 #!/bin/sh
 
 setup_partitions() {
-    disks=”$1”
-    swap_size=”$2”
-    is_hdd=”$3”
+    disks="$1"
+    swap_size="$2"
+    is_hdd="$3"
     counter=1
-    serials=””
+    serials=""
     
 for disk in $disks; do
     # 创建交换分区
-    gpart add -t freebsd-swap -l swap$counter -s $swap_size -a 4k “$disk”
-    echo “Setting $swap_size of swap space on disk ${disk}.”
+    gpart add -t freebsd-swap -l swap$counter -s $swap_size -a 4k "$disk"
+    echo "Setting $swap_size of swap space on disk ${disk}."
     
     # 确定磁盘序列号
-    if [ “$is_hdd” = “true” ]; then
-        serial=$(camcontrol inquiry “$disk” -S | sed -e 's/^[[:space:]]*//')
+    if [ "$is_hdd" = "true" ]; then
+        serial=$(camcontrol inquiry "$disk" -S | sed -e 's/^[[:space:]]*//')
     else
-        serial=$(camcontrol identify “$disk” | awk /serial number/ { print $3 })
+        serial=$(camcontrol identify "$disk" | awk '/serial number/ { print $3 }')
 fi
 
     # 创建 ZFS 分区
-    gpart add -t freebsd-zfs -l “$serial” -a 4k “$disk”
+    gpart add -t freebsd-zfs -l "$serial" -a 4k "$disk"
     
     # 添加到序列号列表并增加计数器
     if [ $((counter%2)) -eq 0 ]; then
-        serials=”$serials mirror”
+        serials="$serials mirror"
     fi
-    serials=”$serials /dev/gpt/$serial”
+    serials="$serials /dev/gpt/$serial"
     counter=$((counter+1))
 done
 
 NUM_DISKS=$counter
 }
 
-HDD=”/dev/ada0 /dev/ada1”
-SSD=”/dev/ada2 /dev/ada3”
-SWAP_SIZE_HDD=”2g”
-SWAP_SIZE_SSD=”4g”
+HDD="/dev/ada0 /dev/ada1"
+SSD="/dev/ada2 /dev/ada3"
+SWAP_SIZE_HDD="2g"
+SWAP_SIZE_SSD="4g"
 
-setup_partitions “$HDD” “$SWAP_SIZE_HDD” “true”
-setup_partitions “$SSD” “$SWAP_SIZE_SSD” “false”
+setup_partitions "$HDD" "$SWAP_SIZE_HDD" "true"
+setup_partitions "$SSD" "$SWAP_SIZE_SSD" "false"
 ```
 
 ***ChatGPT***：请注意，**/bin/sh** 和 **/bin/bash** 在语法上有一些不同，比如使用 `=` 而不是 `==` 来进行字符串比较，缺少数组变量。为了解决这些差异，我将磁盘列表作为空格分隔的字符串传递，并使用 `$1`、`$2` 和 `$3` 来访问函数参数。
@@ -257,38 +257,38 @@ setup_partitions “$SSD” “$SWAP_SIZE_SSD” “false”
 #!/bin/sh
 
 setup_partitions() {
-    disks=”$1”
-    swap_size=”$2”
+    disks="$1"
+    swap_size="$2"
     counter=1
-    serials=””
+    serials=""
     
     for disk in $disks; do
         # 创建交换分区
-        gpart add -t freebsd-swap -l swap$counter -s $swap_size -a 4k “$disk”
-        echo “Setting $swap_size of swap space on disk ${disk}.”
+        gpart add -t freebsd-swap -l swap$counter -s $swap_size -a 4k "$disk"
+        echo "Setting $swap_size of swap space on disk ${disk}."
         
         # 确定磁盘序列号
-        serial=$(camcontrol identify “$disk” | awk '/serial number/ { print $3 }')
+        serial=$(camcontrol identify "$disk" | awk '/serial number/ { print $3 }')
         
         # 创建 ZFS 分区
-        gpart add -t freebsd-zfs -l “$serial” -a 4k “$disk”
+        gpart add -t freebsd-zfs -l "$serial" -a 4k "$disk"
         
         # 添加到序列号列表并增加计数器
         if [ $((counter%2)) -eq 0 ]; then
-            serials=”$serials mirror”
+            serials="$serials mirror"
         fi
-        serials=”$serials /dev/gpt/$serial”
+        serials="$serials /dev/gpt/$serial"
         counter=$((counter+1))
 done
 
 NUM_DISKS=$counter
 }
 
-HDD=”/dev/ada0 /dev/ada1”
-SSD=”/dev/ada2 /dev/ada3”
-SWAP_SIZE=”4g”
+HDD="/dev/ada0 /dev/ada1"
+SSD="/dev/ada2 /dev/ada3"
+SWAP_SIZE="4g"
 
-setup_partitions “$HDD $SSD” “$SWAP_SIZE”
+setup_partitions "$HDD $SSD" "$SWAP_SIZE"
 ```
 
 ***ChatGPT***：在这里，我们将 HDD 和 SSD 磁盘列表作为一个空格分隔的字符串传递给 `setup_partitions` 函数，并对两种类型的磁盘使用相同的交换空间大小 4g。
@@ -313,39 +313,39 @@ setup_partitions “$HDD $SSD” “$SWAP_SIZE”
 #!/bin/sh
 
 setup_partitions() {
-    disks=”$1”
-    swap_size=”$2”
+    disks="$1"
+    swap_size="$2"
     counter=1
-    serials=””
+    serials=""
     
 for disk in $disks; do
     # 创建交换分区
-    gpart add -t freebsd-swap -l swap$counter -s $swap_size -a 4k “$disk”
-    echo -n “Setting $swap_size of swap space on disk ${disk}. “
+    gpart add -t freebsd-swap -l swap$counter -s $swap_size -a 4k "$disk"
+    echo -n "Setting $swap_size of swap space on disk ${disk}. "
     
     # 确定磁盘序列号
-    serial=$(camcontrol identify “$disk” | grep “serial number” | cut -d':' -f2 |
+    serial=$(camcontrol identify "$disk" | grep "serial number" | cut -d':' -f2 |
     ${SED-sed} 's/^[[:space:]]*//')
     
     # 创建 ZFS 分区
-    gpart add -t freebsd-zfs -l “$serial” -a 4k “$disk”
+    gpart add -t freebsd-zfs -l "$serial" -a 4k "$disk"
     
     # 添加到序列号列表并增加计数器
     if [ $((counter%2)) -eq 0 ]; then
-        serials=”$serials mirror”
+        serials="$serials mirror"
     fi
-    serials=”$serials /dev/gpt/$serial”
+    serials="$serials /dev/gpt/$serial"
     ((counter++))
   done
   
   NUM_DISKS=$counter
 }
 
-HDD=”/dev/ada0 /dev/ada1”
-SSD=”/dev/ada2 /dev/ada3”
-SWAP_SIZE=”4g”
+HDD="/dev/ada0 /dev/ada1"
+SSD="/dev/ada2 /dev/ada3"
+SWAP_SIZE="4g"
 
-setup_partitions “$HDD $SSD” “$SWAP_SIZE”
+setup_partitions "$HDD $SSD" "$SWAP_SIZE"
 ```
 
 ***ChatGPT***：这些优化应该能让代码效率略微提高，但请记住，对性能的影响可能可以忽略不计，这取决于磁盘的大小和正在创建的分区的数量。

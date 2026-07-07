@@ -3,7 +3,7 @@
 - 作者：**Michael W Lucas**
 - 原文链接：<https://freebsdfoundation.org/our-work/journal/browser-based-edition/development-workflow-and-ci/march-april-2024-we-get-letters>
 
-![FreeBSD mailbox](https://freebsdfoundation.org/wp-content/uploads/2024/05/FreeBSD_mailbox-1.png)
+![FreeBSD mailbox](../png/2024-0304/we-get-letters-1.png)
 
 > 哦，夸夸其谈的 BSD 用户啊，
 >

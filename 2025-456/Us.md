@@ -17,7 +17,7 @@ Netgraph 是款网络工具包，在 1999 年被引入了 FreeBSD，它采用“
 
 使用 Netgraph 有充分的理由。老实说，如果 `if_bridge` 始终可以跑得更快，我可能不会考虑它。但我在几个不同年代的服务器上，针对 FreeBSD 14.3 Jail 和 bhyve VM 之间的网络通信做了一些简单的 `iperf3` 性能测试，对比了 `if_bridge/tap/epair` 与纯 Netgraph 通信方式。尽管测试不够科学严谨，Netgraph 无论在哪种硬件上都始终表现更快。
 
-![性能对比图](https://freebsdfoundation.org/wp-content/uploads/2025/07/bell-chart1.png)
+![性能对比图](../png/2025-456/Us-01.png)
 
 当然，在理想条件之外，Netgraph 在高包速场景下的扩展性会受到限制。其瓶颈主要在于钩子查找机制的锁竞争。目前已经有一个解决方案正在开发中，希望能赶上 FreeBSD 15，但在那之前，对于像 CDN 前端这种需要高吞吐量的应用来说，Netgraph 仍然不是最佳选择。
 
@@ -172,11 +172,11 @@ graph netgraph {
 
 这段文本可以直接用 `dot(1)` 命令（来自 `graphics/graphviz` Port）转化为 SVG 或 PNG 图像。下面是简单 Netgraph 配置的清理后输出示例。
 
-![简单 Netgraph 配置的清理后输出示例](https://github.com/user-attachments/assets/669531f9-ef7f-4a77-bec6-5f321be7412a)
+![简单 Netgraph 配置的清理后输出示例](../png/2025-456/Us-02.png)
 
 虽然这个输出已经很不错，ngbuddy 还包含一个我编写的辅助脚本 `ngbuddy-mmd.awk`，可以将上述输出转换为更美观、更清晰的 mermaid-js 可视化图形。我们公司的文档系统支持 mermaid-js，因此借助一些 API 魔法，我总能在文档数据库中保持所有主机 Netgraph 拓扑图的实时更新。
 
-![Netgraph 拓扑 mermaid 可视化图](https://freebsdfoundation.org/wp-content/uploads/2025/07/bell-dev1-mmd-crop.png)
+![Netgraph 拓扑 mermaid 可视化图](../png/2025-456/Us-03.png)
 
 该图示在顶部标注了主机名，中间是 public 与 private 桥接的图形，下方是 Jail（椭圆）和 VM（圆柱）。这种可视化在你需要管理带有不同租户网络和不同功能的服务器时尤其有用。
 

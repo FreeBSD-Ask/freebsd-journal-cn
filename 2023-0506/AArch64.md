@@ -105,23 +105,23 @@ AArch64 最初在可用硬件方面存在一些明显的缺口，特别是与中
 
 将 FreeBSD/arm64 带入一级架构状态需要大量的时间和资源投入。64 位 Arm 生态系统在服务器市场上占据了重要的份额，并且没有放缓的迹象。FreeBSD 将通过这个一级架构平台从服务器市场中获益。
 
-![image](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/6dc86389-911d-4fa3-9982-8451be051c82)
+![image](../png/2023-0506/AArch64-1.png)
 
 AWS Graviton
 
-![image](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/79e6732f-9b84-4d9c-adb5-c2b782506da2)
+![image](../png/2023-0506/AArch64-2.png)
 
 Ampere “Mount Jade”
 
-![image](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/4721725a-d91b-479b-b3d8-30cffcb9a44a)
+![image](../png/2023-0506/AArch64-3.png)
 
 树莓派 4
 
-![image](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/57263b2a-c50f-4583-8186-ec07baedd486)
+![image](../png/2023-0506/AArch64-4.png)
 
 微软 Arm 开发套件
 
-![image](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/23ac923c-ed09-45d1-85b8-1d9f28d1b5fd)
+![image](../png/2023-0506/AArch64-5.png)
 
 Pine A64 LTS
 

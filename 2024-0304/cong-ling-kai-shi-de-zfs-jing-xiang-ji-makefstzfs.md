@@ -3,7 +3,7 @@
 - 原文链接：[ZFS Images From Scratch, or makefs -t zfs](https://freebsdfoundation.org/our-work/journal/browser-based-edition/development-workflow-and-ci/zfs-images-from-scratch-or-makefs-t-zfs/)
 - 作者：Mark Johnston
 
-![ZFS 镜像文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/05/iStock-1322243682_Converted.jpg)
+![ZFS 镜像文章配图](../png/2024-0304/cong-ling-kai-shi-de-zfs-jing-xiang-ji-makefstzfs-1.jpg)
 
 长期以来，FreeBSD 项目在下载站点提供了虚拟机 (VM) 磁盘镜像：只需访问 [https://download.freebsd.org/snapshots/VM-IMAGES](https://download.freebsd.org/snapshots/VM-IMAGES)，即可找到一系列预构建的镜像来下载。这些镜像支持多种格式，常见的虚拟化平台如 QEMU、VirtualBox、VMware 和 bhyve 都可以识别。FreeBSD 项目还为多个云平台（如 EC2、Azure 和 GCP）提供了镜像。作为 FreeBSD 用户，你只需要选择镜像并创建实例，在几秒钟内即可获得一个完全预装的 FreeBSD 系统。
 

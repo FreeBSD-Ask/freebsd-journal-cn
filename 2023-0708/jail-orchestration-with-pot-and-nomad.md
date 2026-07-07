@@ -78,7 +78,7 @@ Nomad 有一个插件架构，允许扩展以支持新的容器技术。Esteban 
 
 图片：**架构概述和不同服务的角色。**
 
-![R%(G0Z M53 6`KY9Y2 M(70](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/21b66fef-1c8f-4172-908b-7d5c3efd6593)
+![R%(G0Z M53 6`KY9Y2 M(70](../png/2023-0708/jail-orchestration-with-pot-and-nomad-1.png)
 
 ### 精简的 pot 容器
 
@@ -95,40 +95,40 @@ Minipot 是适用于测试的配置，但不适用于生产环境安装，因为
 minipot 初始化完成且所有服务运行后，我们可以使用以下任务描述文件在 nomad 中启动一个任务。
 
 ```sh
- job “nginx-minipot” {
-   datacenters = [“minipot”]
-   type = “service”
-   group “group1” {
+ job "nginx-minipot" {
+   datacenters = ["minipot"]
+   type = "service"
+   group "group1" {
      count = 1
      network {
-       port “http” {}
+       port "http" {}
      }
 
-     task “www1” {
-      driver = “pot”
+     task "www1" {
+      driver = "pot"
 
       service {
-        tags = [“nginx”, “www”]
-        name = “hello-web”
-        port = “http”
+        tags = ["nginx", "www"]
+        name = "hello-web"
+        port = "http"
 
         check {
-          type     = “tcp”
-          name     = “tcp”
-          interval = “5s”
-          timeout  = “2s”
+          type     = "tcp"
+          name     = "tcp"
+          interval = "5s"
+          timeout  = "2s"
         }
      }
 
      config {
-       image = “https://potluck.honeyguide.net/nginx-nomad”
-       pot = “nginx-nomad-amd64-13_1”
-       tag = “1.1.13”
-       command = “nginx”
-       args = [“-g”,”’daemon off;’”]
+       image = "https://potluck.honeyguide.net/nginx-nomad"
+       pot = "nginx-nomad-amd64-13_1"
+       tag = "1.1.13"
+       command = "nginx"
+       args = ["-g","'daemon off;'"]
 
        port_map = {
-         http = “80”
+         http = "80"
        }
      }
 
@@ -175,7 +175,7 @@ Allocation Addresses:
 Label Dynamic Address
 *http yes     2003:f1:c709:de00:faac:65ff:fe86:9458:22854
 [...]
-$ curl “[2003:f1:c709:de00:faac:65ff:fe86:9458]:22854”
+$ curl "[2003:f1:c709:de00:faac:65ff:fe86:9458]:22854"
 ```
 
 “Allocation”是 nomad 用来标识容器（任务实例）的名称。

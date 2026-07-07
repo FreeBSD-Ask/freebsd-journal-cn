@@ -1,6 +1,6 @@
 # 读者来信
 
-![邮箱插图](https://freebsdfoundation.org/wp-content/uploads/2025/10/FreeBSD_mailbox.png)
+![邮箱插图](../png/2025-789/we-get-letters-01.png)
 
 来信专栏作家，你好：
 

@@ -3,7 +3,7 @@
 - 原文链接：[Adventures in TCP/IP: TCP Black Box Logging](https://freebsdfoundation.org/adventures-in-tcp-ip-tcp-black-box-logging/)
 - 作者：**Randall Stewart**、**Michael Tüxen**
 
-![TCP/IP 历险记](https://freebsdfoundation.org/wp-content/uploads/2024/07/adventures_in_TCP_logo.png)
+![TCP/IP 历险记](../png/2024-0506/tcpip-li-xian-ji-tcp-bblog-1.png)
 
 ## FreeBSD 中 TCP 日志记录的演变
 

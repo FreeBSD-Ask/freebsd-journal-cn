@@ -3,7 +3,7 @@
 - 原文链接：[FreeBSD Interface API (IfAPI)](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/freebsd-interface-api-ifapi/)
 - 作者：Justin Hibbits
 
-![IfAPI 文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/02/hibbits_headerart.jpg)
+![IfAPI 文章配图](../png/2024-0102/freebsd-jie-kou-apiifapi-1.jpg)
 
 如某些人所知，瞻博（Juniper）使用自己定制的网络栈，该网络栈基于 FreeBSD——很久以前分叉而来，因此在表面上它看起来与当前的 FreeBSD 网络栈相似，但实际上存在诸多差异。当前 FreeBSD 网络栈中的某些状态在 Junos 中并不存在，反之亦然。
 

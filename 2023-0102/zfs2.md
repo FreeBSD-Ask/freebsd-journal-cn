@@ -177,8 +177,8 @@ pool: storage
 status: One or more devices has been taken offline by the administrator.
 Sufficient replicas exist for the pool to continue functioning in a
 degraded state.
-action: Online the device using ‘zpool online’ or replace the device with
-zpool replace.
+action: Online the device using 'zpool online' or replace the device with
+zpool replace.
  scrub: none requested
 config:
 NAME STATE READ WRITE CKSUM

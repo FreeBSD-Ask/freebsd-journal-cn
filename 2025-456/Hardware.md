@@ -5,7 +5,7 @@
 
 当我开始踏上 FPGA 和 FreeBSD 的这段旅程时，我选择了 [Digilent Arty Z7-20](https://digilent.com/shop/arty-z7-zynq-7000-soc-development-board/)，因为它是基于 Zynq 的开发板中价格较低且具有良好扩展性的型号。它既带有符合 Arduino Shield 物理规格的一组引脚，也配备了符合 [PMOD](https://en.wikipedia.org/wiki/Pmod_Interface) 标准的一组连接器。事后看来，我觉得我会选择放弃 Arduino Shield 接口（我其实从未使用过），换成更多的 [PMOD](https://en.wikipedia.org/wiki/Pmod_Interface) 接口。市面上有很多 [PMOD 设备](https://digilent.com/reference/pmod/start)，而且价格普遍较低。本文将使用其中的 [PMOD SSD](https://digilent.com/reference/pmod/pmodssd/start) 作为示例。
 
-![PMOD SSD 模块实物图](https://freebsdfoundation.org/wp-content/uploads/2025/07/bowman_Figure_1_PMOD_SSD.png)
+![PMOD SSD 模块实物图](../png/2025-456/Hardware-01.png)
 
 图 1 PMOD SSD
 

@@ -103,7 +103,7 @@ $ sudo pkg install -r FreeBSD www/webhook ftp/curl www/gurl
 最后，我们使用 `curl` 来触发 Webhook，首先不带查询参数，然后再带上查询参数：
 
 ```sh
-$ curl -4v ‘http://localhost:9000/hooks/logger’
+$ curl -4v 'http://localhost:9000/hooks/logger'
 * Trying 127.0.0.1:9000…
 * Connected to localhost (127.0.0.1) port 9000
 › GET /hooks/logger HTTP/1.1
@@ -176,16 +176,16 @@ $ export HMAC_SECRET=$(head /dev/random | sha256)
           source: header
           name: x-hmac-sig
   pass-arguments-to-command:
-  - source: ‘payload’
-    name: ‘os’
-  - source: ‘payload’
-    name: ‘town’
+  - source: 'payload'
+    name: 'os'
+  - source: 'payload'
+    name: 'town'
 ```
 
 使用 `openssl dgst` 计算正文的签名：
 
 ```sh
-$ echo -n ‘{“os”:”freebsd”,”town”:”vienna”}’ \
+$ echo -n '{"os":"freebsd","town":"vienna"}' \
     | openssl dgst -sha256 -hmac n0decaf
 SHA2-256(stdin)= f8cb13e906bcb2592a13f5d4b80d521a894e0f422a9e697bc68bc34554394032
 ```
@@ -194,7 +194,7 @@ SHA2-256(stdin)= f8cb13e906bcb2592a13f5d4b80d521a894e0f422a9e697bc68bc3455439403
 
 ```sh
 $ curl -v http://localhost:9000/hooks/echo \
-    --json {“os”:”freebsd”,”town”:”vienna”} \
+    --json {"os":"freebsd","town":"vienna"} \
     -Hx-hmac-sig:sha256=f8cb13e906bcb2592a13f5d4b80d521a894e0f422a9e697bc68bc34554394032
 
 *  Trying [::1]:9000...
@@ -222,7 +222,7 @@ freebsd vienna
 [webhook] 2023/10/21 00:41:57 [9d5040] incoming HTTP POST request from [::1]:11747
 [webhook] 2023/10/21 00:41:57 [9d5040] echo got matched
 [webhook] 2023/10/21 00:41:57 [9d5040] echo hook triggered successfully
-[webhook] 2023/10/21 00:41:57 [9d5040] executing /bin/echo (/bin/echo) with arguments [“/bin/echo” “freebsd” “vienna”] and environment [] using as cwd
+[webhook] 2023/10/21 00:41:57 [9d5040] executing /bin/echo (/bin/echo) with arguments ["/bin/echo" "freebsd" "vienna"] and environment [] using as cwd
 [webhook] 2023/10/21 00:41:57 [9d5040] command output: freebsd vienna
 
 [webhook] 2023/10/21 00:41:57 [9d5040] finished handling echo
@@ -250,7 +250,7 @@ Content-Type: application/json
 User-Agent: gurl/0.2.3
 X-Hmac-Sig: sha256=f634363faff03deed8fbcef8b10952592d43c8abbb6b4a540ef16af0acaff172
 
-{“os”:”freebsd”,”town”:”otutahi”}
+{"os":"freebsd","town":"otutahi"}
 ```
 
 如上所示，签名会自动生成，并且添加 JSON 键=值对时无需引号和转义。
@@ -276,7 +276,7 @@ freebsd otutahi
 
 ```sh
 $ openssl req -newkey rsa:2048 -keyout hooks.key \
-  -x509 -days 365 -nodes -subj ‘/CN=localhost’ -out hooks.crt
+  -x509 -days 365 -nodes -subj '/CN=localhost' -out hooks.crt
 
 $ webhook -debug -hotreload \
   -secure -cert hooks.crt -key hooks.key \
@@ -343,7 +343,7 @@ webhook_enable=YES
 webhook_facility=daemon
 webhook_user=www
 webhook_conf=/usr/local/etc/webhook/webhooks.yml
-webhook_options=” \
+webhook_options=" \
   -verbose \
   -hotreload \
   -nopanic \
@@ -351,7 +351,7 @@ webhook_options=” \
   -http-methods POST \
   -port 1999 \
   -logfile /var/log/webhooks.log \
-  “
+  "
 ```
 
 从外部验证该 URL 和 webhook daemon 是否可访问。
@@ -364,8 +364,8 @@ webhook_options=” \
 - Content-Type 设置为 `application/json`
 - 共享密钥（如示例中的 `n0decaf`）
 
-![GitHub 添加 webhook 界面](https://freebsdfoundation.org/wp-content/uploads/2024/01/02_add_webhook.png)
+![GitHub 添加 webhook 界面](../png/2023-1112/xian-zai-yong-webhooks-1.png)
 
 在 GitHub 上创建 webhook 后，你应该能够确认接收到了成功的事件。在你下次推送代码时，可以查看 GitHub 网站，了解 GitHub 发送的请求和 daemon 返回的响应。
 
-![GitHub webhook 请求响应记录](https://freebsdfoundation.org/wp-content/uploads/2024/01/03_webhook_req.png)
+![GitHub webhook 请求响应记录](../png/2023-1112/xian-zai-yong-webhooks-2.png)

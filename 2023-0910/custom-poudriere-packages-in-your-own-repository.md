@@ -1,16 +1,16 @@
 # 在你自己的仓库中定制 Poudriere 源
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/ce755f34-18b7-4f99-a338-76aafed8d9da)
+![image](../png/2023-0910/custom-poudriere-packages-1.png)
 
 - 原文链接：<https://freebsdfoundation.org/wp-content/uploads/2023/11/reushling_poudrier.pdf>
 - 作者：BENEDICT REUSCHLING
 - 译者：Canvis-Me & ChatGPT
 
-我深深感激那些让 FreeBSD 上的 Ports 和软件包安装变得如此简单的人。其他类 Unix 系统需要手动安装大量库和依赖，更别提以文本文件形式存在的软件包源码，而 BSD 通常不需要这些。简单的 `pkg install foo` 就能替我完成一切，最终 foo 也就装好了。这些预编译软件包来自官方 FreeBSD 软件包分发系统，配置了适用于大多数默认场景的默认选项。
+我深深感激那些让 FreeBSD 上的 Ports 和软件包安装变得如此简单的人。其他类 Unix 系统需要手动安装大量库和依赖，更不用说以文本文件形式存在的软件包来源，而 BSD 通常不需要这些。简单的 `pkg install foo` 就能替我完成一切，最终 foo 也就装好了。这些预编译软件包来自官方 FreeBSD 软件包分发系统，配置了适用于大多数默认场景的默认选项。
 
-不幸的是，我的工作场所里默认设置并不合适。我们需要 LDAP 支持，用于查询中央数据库验证身份。很多 Ports 通过“make config”提供 LDAP 支持，但基于它们的软件包默认未启用该选项。因此，当我想安装带 LDAP 支持的 PostgreSQL 15 时，无法通过 `pkg install postgresql15-server` 完成，因为安装的二进制文件对数据库的 LDAP 身份验证一无所知。
+不幸的是，我的工作场所里默认设置并不合适。我们需要 LDAP 支持，用于查询中央数据库验证身份。很多 Ports 通过 `make config` 提供 LDAP 支持，但基于它们的软件包默认未启用该选项。因此，当我想安装带 LDAP 支持的 PostgreSQL 15 时，无法通过 `pkg install postgresql15-server` 完成，因为安装的二进制文件对数据库的 LDAP 身份验证一无所知。
 
-首要解决方案是编译我自己的自定义软件包。我用以下命令获取最新的 ports 树：
+第一种解决方案是编译我自己的自定义软件包。我用以下命令获取最新的 ports 树：
 
 ```sh
 # portsnap auto
@@ -109,7 +109,7 @@ hash_dir = false
 EOF
 ```
 
-`max_size` 选项可以将缓存大小限制为一定数量，但设为 0 时，它可以使用所需的全部磁盘空间。我并不太担心，因为 ZFS 压缩在这里效果不错。如果磁盘空间不足，我甚至可以在数据集 `zroot/var/cache/ccache` 上设置配额。
+`max_size` 选项可以将缓存大小限制为一定数量，但设为 0 时，它可以使用所需的全部磁盘空间。我并不太担心，因为 ZFS 压缩在这里效果不错。如果磁盘空间不足，我甚至可以在数据集 **zroot/var/cache/ccache** 上设置配额。
 
 `cache_dir` 和 `base_dir` 定义缓存的位置。这里它们指向我们的数据集。将 `hash_dir` 选项设为 `false` 可以增加缓存命中率，但启用它会增加调试难度。这是我为了更好性能愿意做的权衡。此选项及其他选项的详情请参阅 ccache(1)。FreeBSD 论坛的一个帖子也讨论了这个问题：<https://forums.freebsd.org/threads/howto-speeding-up-poudriere-build-times.69431/>
 
@@ -183,7 +183,7 @@ databases/postgresql15-contrib
 
 更好的办法是让软件包系统生成软件包列表。登录到装好所有这些软件包的系统，运行 `pkg_info`。这会生成一份包括依赖关系的列表。已经是相当长的列表了！如果原本就想删除某个软件包，你可以从列表中删掉。某些软件包也可能太大而不便编译（例如 libreoffice）。
 
-定义要编译哪些 ports 并不会自动配置它们。我们仍需告诉 poudriere 为每个 port 设置哪些选项。但只需做一次，后续编译中，poudriere 会保存我们选定的选项并复用，甚至用于软件包的将来版本。这相当于在文章开头我们于 ports 目录中运行 "make config"。
+定义要编译哪些 ports 并不会自动配置它们。我们仍需告诉 poudriere 为每个 port 设置哪些选项。但只需做一次，后续编译中，poudriere 会保存我们选定的选项并复用，甚至用于软件包的将来版本。这相当于文章开头我们在 ports 目录中运行的 `make config`。
 
 ```sh
 poudriere# poudriere options \
@@ -227,7 +227,7 @@ poudriere# mkdir -p /usr/local/etc/pkg/repos
 ```sh
 poudriere# cat /usr/local/etc/pkg/repos/local.conf
 Poudriere: {
-        url: “file:///usr/local/poudriere/data/packages/132x64-default”,
+        url: "file:///usr/local/poudriere/data/packages/132x64-default",
         priority: 23,
 }
 ```
@@ -263,7 +263,7 @@ Poudriere repository update completed. 232 packages processed.
 All repositories are up to date.
 ```
 
-请注意软件包的数量。这绝对是我们自己的本地存储库，因为主 FreeBSD 存储库此时包含超过 31500 个软件包，而这个只有 232 个。这些是我们根据自己的 pkglist.txt 列表编译的软件包，加上让这些软件包编译和运行所需的依赖项。查看可用存储库的另一种方式是用 `pkg stats`，该命令在我的系统上输出如下：
+请注意软件包的数量。这绝对是我们自己的本地存储库，因为主 FreeBSD 存储库此时包含超过 31500 个软件包，而这个只有 232 个。这些是我们根据自己的 `pkglist.txt` 列表编译的软件包，加上让这些软件包编译和运行所需的依赖项。查看可用存储库的另一种方式是用 `pkg stats`，该命令在我的系统上输出如下：
 
 ```sh
 Local package database:
@@ -320,9 +320,9 @@ FreeBSD: {
 
 或者直接从 **/usr/local/etc/pkg/repos/local.conf** 删除该存储库定义。
 
-那么其他越来越多运行 FreeBSD 的机器怎么办？特别是虚拟机或嵌入式系统，你不会在每台机器上运行单独的 poudriere 编译器。一种方法是通过 NFS 把 repo URL 共享给每台机器。更好的办法是配置一台中央的、性能强劲的 poudriere 编译机，通过 http 把它的软件包作为存储库共享。网络中其他 FreeBSD 机器可以像添加官方 FreeBSD 存储库一样添加它。相比 NFS 共享，这种办法的额外好处是你可以对这些软件包签名。这能保证密码学完整性和对源的信任（这些软件包确实是你自定义编译的）。这样，机器会检查编译机的公钥是否与它们持有的记录匹配，确保软件包来自真实源。下面开始相关设置。
+那么其他越来越多运行 FreeBSD 的机器怎么办？特别是虚拟机或嵌入式系统，你不会在每台机器上运行单独的 poudriere 编译机。一种方法是通过 NFS 把 repo URL 共享给每台机器。更好的办法是配置一台中央的、性能强劲的 poudriere 编译机，通过 http 把它的软件包作为存储库共享。网络中其他 FreeBSD 机器可以像添加官方 FreeBSD 存储库一样添加它。相比 NFS 共享，这种办法的额外好处是你可以对这些软件包签名。这能保证密码学完整性和对源的信任（这些软件包确实是你自定义编译的）。这样，机器会检查编译机的公钥是否与它们持有的记录匹配，确保软件包来自真实源。下面开始相关设置。
 
-为了给其他机器提供软件包，我们安装 nginx 作为 web 服务器。其他 web 服务器只要能向客户端共享 URL 作为文档根目录，也可以使用。“poudriere bulk”运行期间，我们还可以共享编译日志，查看当前编译的进度并调试失败的 ports。
+为了给其他机器提供软件包，我们安装 nginx 作为 web 服务器。其他 web 服务器只要能向客户端共享 URL 作为文档根目录，也可以使用。`poudriere bulk` 运行期间，我们还可以共享编译日志，查看当前编译的进度并调试失败的 ports。
 
 ```sh
 poudriere# pkg install nginx
@@ -412,7 +412,7 @@ URL_BASE=http://my.domain.or.IP
 
 `URL_BASE` 定义的网站显示过去和当前软件包编译的许多统计信息。编译过程中它会自动刷新，显示编译状态。你还可以深入了解每次编译，查看哪些 ports 已成功编译、被跳过或被忽略。非常不错！
 
-添加这些行后，poudriere 就能签署新编译的软件包。在下一次
+添加这些行后，poudriere 就能签名新编译的软件包。在下一次
 
 ```sh
 poudriere# poudriere bulk \
@@ -440,11 +440,11 @@ Packing files for repository: 100%
 
 ```sh
 Poudriere: {
-        url: “file:///usr/local/poudriere/data/packages/132x64-default”,
+        url: "file:///usr/local/poudriere/data/packages/132x64-default",
         priority: 23,
-        mirror_type: “srv”,
-        signature_type: “pubkey”,
-        pubkey: “/usr/local/etc/ssl/certs/poudriere.cert”,
+        mirror_type: "srv",
+        signature_type: "pubkey",
+        pubkey: "/usr/local/etc/ssl/certs/poudriere.cert",
         enabled: yes
 }
 ```
@@ -470,10 +470,10 @@ clienthost:/usr/local/etc/ssl/certs/
 
 ```sh
 Poudriere: {
-        url: “http://my.domain.or.ip/packages/132x64-default”,
-        mirror_type: “http”,
-        signature_type: “pubkey”,
-        pubkey: “/usr/local/etc/ssl/certs/poudriere.cert”,
+        url: "http://my.domain.or.ip/packages/132x64-default",
+        mirror_type: "http",
+        signature_type: "pubkey",
+        pubkey: "/usr/local/etc/ssl/certs/poudriere.cert",
         priority: 23,
         enabled: yes
 }
@@ -531,7 +531,7 @@ New packages to be INSTALLED:
 
 请注意，混合这两类软件包可能因彼此交互方式带来一些麻烦。某个软件包期望另一个软件包具有特定选项，但该选项不在另一个存储库的特定软件包中，可能引发编译或安装错误，导致应用程序无法按预期工作。理想情况下，应使用单一存储库源，要么是上游存储库，要么是自己内部的存储库。
 
-另外，如果你为“latest”分支编译软件包并分发到客户端，要确保这些客户端在 **/etc/pkg/freebsd.conf** 中也使用 latest。否则，软件包版本会比季度版更新。我遇到过这种情况：上面的软件包顺利更新和安装，但运行“pkg autoremove”时它们又被列为需要删除的软件包。然后我再升级它们，恶性循环就此完成。
+另外，如果你为 `latest` 分支编译软件包并分发到客户端，要确保这些客户端在 **/etc/pkg/freebsd.conf** 中也使用 `latest`。否则，软件包版本会比季度版更新。我遇到过这种情况：上面的软件包顺利更新和安装，但运行 `pkg autoremove` 时它们又被列为需要删除的软件包。然后我再升级它们，恶性循环就此完成。
 
 如果只是简单地把存储库加到某台机器而没有证书，`pkg update` 会抱怨缺少证书：
 
@@ -549,13 +549,13 @@ Unable to update repository Poudriere
 Error updating repositories!
 ```
 
-编译服务器上还可以做的最后一步是创建 cron 任务来更新 poudriere 的 ports：
+编译服务器上还可以做的最后一步是创建 cron 任务来更新 poudriere 的 ports 树：
 
 ```sh
 poudriere# poudriere ports -u -p default
 ```
 
-这次我们用 `-u` 而不是 `-c`，表示要更新现有 ports。我们可以每天执行一次，甚至更早，取决于你希望软件包多新。然后让 poudriere 运行批量编译：
+这次我们用 `-u` 而不是 `-c`，表示要更新现有 ports 树。我们可以每天执行一次，甚至更早，取决于你希望软件包多新。然后让 poudriere 运行批量编译：
 
 ```sh
 poudriere# poudriere bulk \

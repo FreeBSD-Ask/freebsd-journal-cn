@@ -2,7 +2,7 @@
 
 ## 新任 Ports 提交者
 
-业内有句老话：如果你提交了太多 PR、修复了太多 ports，并在邮件列表中持续热心贡献，就会被“惩罚”——给一个 commit 权限。最近几个月，我们“惩罚”了以下诸位：John Marino（`marino@`），许多 BSD 项目的贡献者，尤为著名的是他在 DragonFlyBSD 中负责 DPorts；Rusmir Dusko（`nemysis@`），同时为 FreeBSD Ports 和 PC-BSD PBI 工作；David Chisnall（`theraven@`），近年担任 src 提交者，凭其丰富经验将在 FreeBSD 10 发布周期中为 ports 工作提供关键助力；以及 Danilo Gondolfo，长期为 ports 树作贡献。
+业内有句老话：如果你提交了太多 PR、修复了太多 Ports，并在邮件列表中持续热心贡献，就会被“惩罚”——给一个 commit 权限。最近几个月，我们“惩罚”了以下诸位：John Marino（`marino@`），许多 BSD 项目的贡献者，尤为著名的是他在 DragonFlyBSD 中负责 DPorts；Rusmir Dusko（`nemysis@`），同时为 FreeBSD Ports 和 PC-BSD PBI 工作；David Chisnall（`theraven@`），近年担任 src 提交者，凭其丰富经验将在 FreeBSD 10 发布周期中为 Ports 工作提供关键助力；以及 Danilo Gondolfo，长期为 Ports 树作贡献。
 
 **Thomas Abthorpe** 是一名服务器管理员，在行业内拥有逾 20 年经验。他于 2007 年 8 月获得 Ports commit 权限，2010 年 3 月加入 Ports 管理团队，2012 年 7 月当选 FreeBSD 核心团队成员。在忙完 FreeBSD 事务之余，他在“Bicycles for Humanity”担任见习自行车技师。
 

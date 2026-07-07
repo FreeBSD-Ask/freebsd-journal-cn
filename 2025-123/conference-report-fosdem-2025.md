@@ -3,7 +3,7 @@
 - 原文链接：[Conference Report: FOSDEM 2025](https://freebsdfoundation.org/our-work/journal/browser-based-edition/downstreams/conference-report-fosdem-2025)
 - 作者：Tom Jones
 
-![布鲁塞尔街景](https://freebsdfoundation.org/wp-content/uploads/2025/04/brussels.png)
+![布鲁塞尔街景](../png/2025-123/conference-report-fosdem-2025-01.png)
 
 参与开源软件有很多方式。开发是大家首先想到的显而易见的方式，但许多人并不是开发者，还有其他贡献方式。
 

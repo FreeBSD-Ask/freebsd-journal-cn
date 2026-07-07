@@ -3,7 +3,7 @@
 - [BSD Now and Then](https://freebsdfoundation.org/our-work/journal/browser-based-edition/downstreams/bsd-now-and-then)
 - 作者：Benedict Reuschling
 
-![BSD Now 与将来](https://freebsdfoundation.org/wp-content/uploads/2025/04/nowandthenarrows.png)
+![BSD Now 与将来](../png/2025-123/now-01.png)
 
 BSD Now 播客最近庆祝了其第 600 集，这似乎是一个绝佳的机会，让 FreeBSD 期刊的读者深入了解这个长期运行的 BSD 节目的幕后故事。
 

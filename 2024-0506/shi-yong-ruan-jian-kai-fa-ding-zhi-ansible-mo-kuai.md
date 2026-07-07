@@ -3,7 +3,7 @@
 - 原文链接：[Practical Ports: Developing Custom Ansible Modules](https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/practical-ports-developing-custom-ansible-modules/)
 - 作者：Benedict Reuschling
 
-![实用软件](https://freebsdfoundation.org/wp-content/uploads/2024/07/practical_ports_header.png)
+![实用软件](../png/2024-0506/shi-yong-ruan-jian-kai-fa-ding-zhi-ansible-mo-kuai-1.png)
 
 Ansible 提供了许多不同的模块，普通用户通常可以直接使用这些模块，而无需编写自己的模块，因为现有模块的数量庞大。即使在模块 `ansible.builtin` 中未提供所需的功能，Ansible Galaxy 也有大量来自爱好者的第三方模块，这些模块进一步丰富了模块的数量。
 
@@ -79,10 +79,10 @@ changed: [localhost]
 
 TASK [debug] *********************************************
 ok: [localhost] => {
-    “changed”: true,
-    “result”: {
-        “failed”: false,
-        “msg”: “/tmp/BSD.txt created”
+    "changed": true,
+    "result": {
+        "failed": false,
+        "msg": "/tmp/BSD.txt created"
     }
 }
 ```
@@ -97,10 +97,10 @@ ok: [localhost]
 
 TASK [debug] *********************************************
 ok: [localhost] => {
-“result”: {
-        “changed”: false,
-        “failed”: false,
-        “msg”: “”
+"result": {
+        "changed": false,
+        "failed": false,
+        "msg": ""
     }
 }
 ```
@@ -171,11 +171,11 @@ ok: [localhost]
 
 TASK [debug] *********************************************
 ok: [localhost] => {
-“result”: {
-        “changed”: false,
-        “failed”: false,
-        “meta”: {
-            “hello”: “world!”
+"result": {
+        "changed": false,
+        "failed": false,
+        "meta": {
+            "hello": "world!"
         }
     }
 }
@@ -191,9 +191,9 @@ ok: [localhost] => {
 
 ```python
 parameters = {
-    'name': {“required”: True, “type”: 'str'},
-'age': {“required”: False, “type”: 'int', “default”: 0},
-    'homedir': {“required”: False, “type”: 'path'}
+    'name': {"required": True, "type": 'str'},
+'age': {"required": False, "type": 'int', "default": 0},
+    'homedir': {"required": False, "type": 'path'}
 }
 ```
 
@@ -205,27 +205,27 @@ from ansible.module_utils.basic import AnsibleModule
 
 def main():
     parameters = {
-       “number1”: {“required”: True, “type”: “int”},
-“number2”: {“required”: True, “type”: “int”},
-        “math_op”: {“required”: False, “type”: “str”, “default”: “+”},
+       "number1": {"required": True, "type": "int"},
+"number2": {"required": True, "type": "int"},
+        "math_op": {"required": False, "type": "str", "default": "+"},
     }
 
     module = AnsibleModule(argument_spec=parameters)
 
-    number1 = module.params[“number1”]
-    number2 = module.params[“number2”]
-    math_op = module.params[“math_op”]
+    number1 = module.params["number1"]
+    number2 = module.params["number2"]
+    math_op = module.params["math_op"]
 
-    if math_op == “+”:
+    if math_op == "+":
         result = number1 + number2
 
     output = {
-        “result”: result,
+        "result": result,
     }
 
     module.exit_json(changed=False, **output)
 
-if __name__ == “__main__”:
+if __name__ == "__main__":
     main()
 ```
 
@@ -252,10 +252,10 @@ playbook 执行的相关输出如下：
 
 ```ini
 ok: [localhost] => {
-    “result”: {
-        “changed”: false,
-        “failed”: false,
-“result”: 7
+    "result": {
+        "changed": false,
+        "failed": false,
+"result": 7
     }
 }
 ```
@@ -268,39 +268,39 @@ from ansible.module_utils.basic import AnsibleModule
 
 def main():
     parameters = {
-        “number1”: {“required”: True, “type”: “int”},
-“number2”: {“required”: True, “type”: “int”},
-        “operation”: {“required”: False, “type”: “str”, “default”: “+”},
+        "number1": {"required": True, "type": "int"},
+"number2": {"required": True, "type": "int"},
+        "operation": {"required": False, "type": "str", "default": "+"},
 }
 
     module = AnsibleModule(argument_spec=parameters)
 
-number1 = module.params[“number1”]
-    number2 = module.params[“number2”]
-    operation = module.params[“operation”]
-    result = “”
+number1 = module.params["number1"]
+    number2 = module.params["number2"]
+    operation = module.params["operation"]
+    result = ""
 
-    if operation == “+”:
+    if operation == "+":
         result = number1 + number2
-    elif operation == “-”:
+    elif operation == "-":
         result = number1 - number2
-    elif operation == “*”:
+    elif operation == "*":
         result = number1 * number2
-    elif operation == “/”:
+    elif operation == "/":
         if number2 == 0:
-            module.fail_json(msg=”Invalid Operation”)
+            module.fail_json(msg="Invalid Operation")
         else:
             result = number1 / number2
     else:
         result = False
 
     output = {
-        “result”: result,
+        "result": result,
     }
 
     module.exit_json(changed=False, **output)
 
-if __name__ == “__main__”:
+if __name__ == "__main__":
 main()
 ```
 
@@ -315,7 +315,7 @@ main()
       calc:
         number1: 4
         number2: 0
-        map_op: ‘/’
+        map_op: '/'
       register: result
 
     - debug: var=result
@@ -325,7 +325,7 @@ main()
 
 ```ini
 TASK [Testing the calc module] **********************************************
-fatal: [localhost]: FAILED! => {“changed”: false, “msg”: “Invalid Operation”}
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Invalid Operation"}
 ```
 
 ## 结论

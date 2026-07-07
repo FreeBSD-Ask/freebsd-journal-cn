@@ -1,6 +1,6 @@
 # 读者来信
 
-![mailbox graphic](https://freebsdfoundation.org/wp-content/uploads/2025/04/FreeBSD_mailbox.png)
+![mailbox graphic](../png/2025-123/we-get-letters-01.png)
 
 回信先生：
 

@@ -21,7 +21,7 @@
 
 在工作环境中，更常见的是在实验室里有专用的开发和测试服务器，与开发人员的工作站分离。服务器级系统比桌面系统规格更高，更适合构建源代码和运行虚拟机。它们还提供了更多种类的 PCIe 扩展槽，非常适合 PCIe 设备驱动开发。
 
-![FreeBSD 内核开发工作流示意图](https://freebsdfoundation.org/wp-content/uploads/2024/05/dev_workflow_redrawn.png)
+![FreeBSD 内核开发工作流示意图](../png/2024-0304/freebsd-nei-he-kai-fa-gong-zuo-liu-1.png)
 
 ## 配置
 
@@ -64,7 +64,7 @@ desktop$ cat ~/work/ws/dev/sys/amd64/conf/DEBUG0
 include GENERIC
 ident DEBUG0
 nomakeoptions DEBUG
-makeoptions DEBUG=”-g -O0”
+makeoptions DEBUG="-g -O0"
 options KSTACK_PAGES=16
 ```
 
@@ -87,7 +87,7 @@ desktop$ rsync -azO --del --no-o --no-g ~/work/ws/dev root@builder:/ws/src/
 
 ```sh
 builder# kldload -n filemon
-builder# sysrc kld_list+=”filemon”
+builder# sysrc kld_list+="filemon"
 
 builder# mkdir -p $WSDIR/src $WSDIR/obj $WSDIR/sysroot
 builder# mkdir -p /ws/src /ws/obj /ws/sysroot
@@ -95,7 +95,7 @@ builder# mkdir -p /ws/src /ws/obj /ws/sysroot
 builder# cat $WSDIR/src/src-env.conf
 builder# cat /ws/src/src-env.conf
 MAKEOBJDIRPREFIX?=/ws/obj
-WITH_META_MODE=”YES”
+WITH_META_MODE="YES"
 ```
 
 ```sh
@@ -106,7 +106,7 @@ INSTKERNNAME?=dev
 
 ```sh
 builder# cat /ws/src/src.conf
-WITHOUT_REPRODUCIBLE_BUILD=”YES”
+WITHOUT_REPRODUCIBLE_BUILD="YES"
 ```
 
 ### 网络配置
@@ -190,12 +190,12 @@ vm-bhyve 是一款易于使用的 bhyve 前端工具。
 ```sh
 builder# kldload -n vmm
 builder# kldload -n nmdm
-builder# sysrc kld_list+=”vmm nmdm”
+builder# sysrc kld_list+="vmm nmdm"
 builder# pkg install vm-bhyve
 builder# zfs create rpool/vm
-builder# sysrc vm_dir=”zfs:rpool/vm”
+builder# sysrc vm_dir="zfs:rpool/vm"
 builder# vm init
-builder# sysrc vm_enable=”YES”
+builder# sysrc vm_enable="YES"
 builder# service vm start
 ```
 
@@ -216,15 +216,15 @@ builder# vm switch create -t manual -b bridge0 vmlan
 
 ```sh
 builder# vim /rpool/vm/.templates/default.conf
-loader=”uefi”
+loader="uefi"
 cpu=2
 memory=2G
-comports=”com1 com2”
-network0_type=”virtio-net”
-network0_switch=”vmlan”
-disk0_size=”20G”
-disk0_type=”virtio-blk”
-disk0_name=”disk0.img”
+comports="com1 com2"
+network0_type="virtio-net"
+network0_switch="vmlan"
+disk0_size="20G"
+disk0_type="virtio-blk"
+disk0_name="disk0.img"
 ```
 
 ### 镜像种子
@@ -276,10 +276,10 @@ md0
 ```sh
 # sysrc -R /mnt -x hostname
 # sysrc -R /mnt -x ifconfig_DEFAULT
-# sysrc -R /mnt ifconfig_vtnet0=”SYNCDHCP”
-# sysrc -R /mnt ntpd_enable=”YES”
-# sysrc -R /mnt ntpd_sync_on_start=”YES”
-# sysrc -R /mnt kld_list+=”filemon”
+# sysrc -R /mnt ifconfig_vtnet0="SYNCDHCP"
+# sysrc -R /mnt ntpd_enable="YES"
+# sysrc -R /mnt ntpd_sync_on_start="YES"
+# sysrc -R /mnt kld_list+="filemon"
 ```
 
 启用开箱即用的 SSH 访问虚拟机。请注意，这是位于实验室网络内的开发环境，并且不担心作为 root 用户运行或重用相同的主机密钥。将主机密钥和 root 用户的 `.ssh` 目录复制到正确的位置。在所有虚拟机上使用相同的密钥很方便。更新 SSH 配置以允许 root 登录并启用 SSH 服务。
@@ -289,16 +289,16 @@ md0
 # cp -a .../vm-root-dotssh /mnt/root/.ssh
 # vim /mnt/etc/sshd_config
 PermitRootLogin yes
-# sysrc -R /mnt sshd_enable=”YES”
+# sysrc -R /mnt sshd_enable="YES"
 ```
 
 将第一个串口配置为潜在控制台，将第二个串口配置为远程内核调试端口。
 
 ```sh
 # vim /mnt/boot/loader.conf
-kern.msgbuf_show_timestamp=”2”
-hint.uart.0.flags=”0x10”
-hint.uart.1.flags=”0x80”
+kern.msgbuf_show_timestamp="2"
+hint.uart.0.flags="0x10"
+hint.uart.1.flags="0x80"
 ```
 
 创建工作区的挂载点，并在 fstab 中添加条目，以便在启动时挂载。**/dev/fd** 和 **/proc** 一般是有用的。
@@ -330,7 +330,7 @@ vmhost:/ /ws nfs ro,nfsv4 0 0
 ```sh
 builder# vm create vm0
 builder# vm info vm0 | grep fixed-mac-address
-builder# echo ‘vm0,58:9c:fc:03:40:dc,192.168.200.10’ >> /ws/vm-dhcp.conf
+builder# echo 'vm0,58:9c:fc:03:40:dc,192.168.200.10' >> /ws/vm-dhcp.conf
 builder# service dnsmasq reload
 ```
 
@@ -428,7 +428,7 @@ builder# devctl set driver pci0:136:0:4 ppt
 builder# pciconf -ll | grep ppt
 ppt0@pci0:136:0:4:      020000   00   00   1425   640d   1425   0000
 ppt1@pci0:137:0:4:      020000   00   00   1425   640d   1425   0000
-builder# vm passthru | awk ‘NR == 1 || $3 != “No” {print}’
+builder# vm passthru | awk 'NR == 1 || $3 != "No" {print}'
 DEVICE     BHYVE ID     READY        DESCRIPTION
 ppt0       136/0/4      Yes         T62100-CR Unified Wire Ethernet Controller
 ppt1       137/0/4      Yes          T62100-CR Unified Wire Ethernet Controller
@@ -468,8 +468,8 @@ desktop$ rsync -azO --del --no-o --no-g ~/work/ws/dev root@builder:/ws/src/
 ### 构建
 
 ```sh
-builder# alias wsmake=’__MAKE_CONF=${WSDIR}/src/make.conf SRC_ENV_CONF=${WSDIR}/src/src-env.conf SRCCONF=${WSDIR}/src/src.conf make -j1C’
-builder# alias wsmake=’__MAKE_CONF=/ws/src/make.conf SRC_ENV_CONF=/ws/src/src-env.conf SRCCONF=/ws/src/src.conf make -j1C’
+builder# alias wsmake='__MAKE_CONF=${WSDIR}/src/make.conf SRC_ENV_CONF=${WSDIR}/src/src-env.conf SRCCONF=${WSDIR}/src/src.conf make -j1C'
+builder# alias wsmake='__MAKE_CONF=/ws/src/make.conf SRC_ENV_CONF=/ws/src/src-env.conf SRCCONF=/ws/src/src.conf make -j1C'
 
 builder# cd ${WSDIR}/src/${WS}
 builder# cd /ws/src/dev
@@ -506,8 +506,8 @@ vm0# nextboot -k ${WS}
 vm0# nextboot -k dev
 vm0# shutdown -r now
 
-vm0# sysrc -f /boot/loader.conf kernel=”${WS}”
-vm0# sysrc -f /boot/loader.conf kernel=”dev”
+vm0# sysrc -f /boot/loader.conf kernel="${WS}"
+vm0# sysrc -f /boot/loader.conf kernel="dev"
 vm0# shutdown -r now
 ```
 
@@ -573,8 +573,8 @@ db> gdb
 当内核进入调试器时，内核中的远程 gdb 存根会激活。从主机连接到 gdb 存根。连接通过虚拟空调制解调器电缆进行，连接到虚拟机的第二个串口（虚拟机内部的 uart1）。
 
 ```sh
-builder# gdb -iex ‘set sysroot ${WSDIR}/sysroot’ -ex ‘target remote /dev/nmdm-${VM}.2B’ ${WSDIR}/sysroot/boot/${INSTKERNNAME}/kernel
-builder# gdb -iex ‘set sysroot /ws/sysroot’ -ex ‘target remote /dev/nmdm-vm0.2B’ /ws/sysroot/boot/dev/kernel
+builder# gdb -iex 'set sysroot ${WSDIR}/sysroot' -ex 'target remote /dev/nmdm-${VM}.2B' ${WSDIR}/sysroot/boot/${INSTKERNNAME}/kernel
+builder# gdb -iex 'set sysroot /ws/sysroot' -ex 'target remote /dev/nmdm-vm0.2B' /ws/sysroot/boot/dev/kernel
 ```
 
 ### 核心转储分析
@@ -582,10 +582,10 @@ builder# gdb -iex ‘set sysroot /ws/sysroot’ -ex ‘target remote /dev/nmdm-v
 与实时调试相同，只是目标是 vmcore，而非远程调试。
 
 ```sh
-builder# gdb -iex ‘set sysroot ${WSDIR}/sysroot’ -ex ‘target vmcore ${VMCORE}’ ${WSDIR}/sysroot/boot/${INSTKERNNAME}/kernel
+builder# gdb -iex 'set sysroot ${WSDIR}/sysroot' -ex 'target vmcore ${VMCORE}' ${WSDIR}/sysroot/boot/${INSTKERNNAME}/kernel
 
 builder# scp root@vm0:/var/crash/vmcore.0 /ws/tmp/
-builder# gdb -iex ‘set sysroot /ws/sysroot’ -ex ‘target vmcore /ws/tmp/vmcore.0’ /ws/sysroot/boot/dev/kernel
+builder# gdb -iex 'set sysroot /ws/sysroot' -ex 'target vmcore /ws/tmp/vmcore.0' /ws/sysroot/boot/dev/kernel
 ```
 
 ---

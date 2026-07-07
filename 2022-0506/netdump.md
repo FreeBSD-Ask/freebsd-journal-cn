@@ -29,7 +29,7 @@ netdump 历史悠久：它大约在 2000 年由杜克大学的 Darrell Anderson 
 
 debugnet 协议符合 netdump 的要求，非常简单且专门用于其任务。它基于 UDP 协议实现，目前仅支持 IPv4；尽管也可以支持 IPv6，但尚未实现。netdump 由发生 Panic 的系统启动，该系统充当客户端，服务器由 netdumpd 实现。debugnet 协议有两种数据包类型：客户端消息和确认消息。
 
-![debugnet 协议消息交互示意图](https://github.com/user-attachments/assets/5716a0c8-0178-4043-bcea-5b6d0abf5319)
+![debugnet 协议消息交互示意图](../png/2022-0506/netdump-01.png)
 
 启动 netdump 时，客户端首先需要发现下一跳路由器的 MAC 地址。为此，其配置中包含“网关”IP，debugnet 通过广播 ARP 请求获取路由器地址。确定路由器地址后，客户端首先向服务器发送类型为 NETDUMP_HERALD (1) 的消息，目标端口为 20023。此操作与服务器建立会话，服务器绑定到一个临时端口，并向客户端的 20024 端口发送确认消息。客户端后续所有消息都发送到这个临时端口。所有客户端消息都会收到服务器的确认。
 

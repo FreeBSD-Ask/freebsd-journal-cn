@@ -190,7 +190,7 @@ Walnut Creek CD-ROM 计划在 1994 年 12 月发布 FreeBSD 2.0 版本的 CD-ROM
 
 > **他们生产了一批带有“1995 年 1 月”日期的新 CD-ROM，并在封面上为 Beastie（BSD 系统的吉祥物）穿上鲜艳的绿色运动鞋，从那时起，在 FreeBSD 的相关领域里 Beastie 就一直穿着这双鞋。**
 
-![Daemon-phk svg](https://github.com/FreeBSD-Ask/freebsd-journal-cn/assets/10327999/20100f50-4b6e-403b-b37c-76ca0d1ca074)
+![Daemon-phk svg](../png/2023-0506/Promise-1.png)
 
 ## Critter 始终运行 FreeBSD-current 版本
 

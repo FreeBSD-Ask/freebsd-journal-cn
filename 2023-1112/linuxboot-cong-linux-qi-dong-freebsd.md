@@ -31,7 +31,7 @@
 
 最终，LinuxBoot 成为模块化的系统，支持多种引导加载程序。特定于 CPU 和引导加载程序的代码处理 CPU 最早的初始化阶段。LinuxBoot 定义了哪些部分由这些代码初始化，哪些部分推迟到 Linux 内核初始化。这种设置能让 CPU 厂商继续发布二进制 blob，用于初始化现代 CPU 所需的底层时钟、内存控制器、辅助核心等。EDK2、coreboot、U-Boot 和 slimboot 都支持这些协议，因此 Linux 内核能够与它们一起引导，而无需为每种方案编写专门的代码。LinuxBoot 还提供了 u-root，一款用 Go 编写的 ramfs 构建工具，用于查找和加载最终的操作系统，和一些其他用来操作固件镜像的工具。在第二部分中，我将讨论这些工具及其使用方法。
 
-![Source:](https://freebsdfoundation.org/wp-content/uploads/2024/01/losh_graphic.jpg)
+![Source:](../png/2023-1112/linuxboot-cong-linux-qi-dong-freebsd-1.jpg)
 
 来源：[https://www.linuxboot.org](https://www.linuxboot.org/)
 

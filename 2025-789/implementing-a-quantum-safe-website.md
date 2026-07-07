@@ -299,7 +299,7 @@ security.tls.enable_kyber
 * `mlkem768x25519`（Firefox）
 * `X25519MLKEM768`（Chrome）
 
-![浏览器 PQC 密钥交换结果图](https://freebsdfoundation.org/wp-content/uploads/2025/10/poor_chart1.png)
+![浏览器 PQC 密钥交换结果图](../png/2025-789/implementing-a-quantum-safe-website-01.png)
 
 如果看到了上述结果，那么恭喜你！你已经成功在 FreeBSD 上部署了一个带有 PQC 支持、同时兼容传统加密的安全网站。欢迎来到未来！
 

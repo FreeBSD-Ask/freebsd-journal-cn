@@ -248,7 +248,7 @@ LAN 2 上的 **IPv6 主机** 将接收来自路由器的 **RA 消息** 并执行
 
 **DHCP** 也适用于 **IPv6**，被称为 **DHCPv6**。然而，它不如在 IPv4 中那样广泛使用，因为通过 **RA 消息** 和 **SLAAC** 的自动配置已经足够应付小型网络。图 **3a** 显示了一个 ISP 使用 **DHCPv6** 的示例。虽然你可以使用 **FreeBSD** 来实现包含 **DHCPv6 服务器和客户端** 的网络，但与配置细节相关的话题将在后续文章中讨论。这里关注的是 **使用 DHCPv6 的网络如何工作**。
 
-![图 3a：通过 SLAAC 和 DHCPv6 IA-NA 配置](https://github.com/user-attachments/assets/11365908-8b16-42f2-b548-0cd2ca0d7c4f)
+![图 3a：通过 SLAAC 和 DHCPv6 IA-NA 配置](../png/2022-0708/ipv6-05.png)
 
 **图 3a：通过 SLAAC 和 DHCPv6 IA-NA 配置**
 
@@ -283,7 +283,7 @@ rtsold(8) 守护进程将处理 RA 消息中的标志，该标志指示是否部
 
 图 4 是常见的 PPPoE 配置。这里有两个路由器，PPPoE 路由器和 IPv6 路由器，但在实践中，通常是物理设备实现这两种功能。在这种情况下，IPv6 路由器和 ISP 网络通过以太网连接，但网络接口没有 IPv6 地址。路由器和 ISP 侧的端点之间通过以太网连接建立了虚拟点对点链路，所有数据包都通过这个链路传输。身份验证可在链路协商期间完成。
 
-![图 4：提供 IPv6 可达性的 PPPoE 隧道](https://github.com/user-attachments/assets/7674e4b7-771c-4eef-9de2-6320b887317d)
+![图 4：提供 IPv6 可达性的 PPPoE 隧道](../png/2022-0708/ipv6-07.png)
 
 **图 4：提供 IPv6 可达性的 PPPoE 隧道。**
 

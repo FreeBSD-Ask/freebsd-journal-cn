@@ -3,7 +3,7 @@
 - 原文链接：[FreeBSD Release Engineering: A New Sheriff is in Town](https://freebsdfoundation.org/our-work/journal/browser-based-edition/downstreams/freebsd-release-engineering-a-new-sheriff-is-in-town)
 - 作者：Colin Percival
 
-![新主管上任](https://freebsdfoundation.org/wp-content/uploads/2025/04/canadiansheriff.png)
+![新主管上任](../png/2025-123/release-01.png)
 
 2023 年 11 月 17 日，Glen Barber 在管理 FreeBSD 发布的十年后，正式卸任了 FreeBSD 发布工程主管一职。在 FreeBSD 核心团队的认可下，我接替了这一角色。
 

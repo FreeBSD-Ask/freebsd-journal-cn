@@ -2,7 +2,7 @@
 
 作者：Michael W Lucas
 
-![FreeBSD mailbox](https://freebsdfoundation.org/wp-content/uploads/2024/05/FreeBSD_mailbox-1.png)
+![FreeBSD mailbox](../png/2024-0304/2024-nian-3-yue-4-yue-lai-xin-1.png)
 
 >噢，夸夸其谈的 BSD 支持者，
 >

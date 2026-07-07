@@ -1,10 +1,13 @@
 # IPFW 概述
 
-作者：ALLAN JUDE
+- 原文：[IPFW: An Overview](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking/ipfw-an-overview/)
+- 作者：**Allan Jude**
 
-纵观其历史，BSD 操作系统家族一直以出色的防火墙著称。IPFW 不如 PF 包过滤器那样广受关注，但功能完备且优势众多。IPFW 最早于 1994 年随 FreeBSD 2.0 引入，dummynet 功能则于 2.2.8（1998 年）加入。
+纵观其历史，BSD 操作系统家族一直以出色的防火墙著称。IPFW 不如 PF 包过滤器那样广受关注，但功能完备且优势众多。IPFW 最早于 1994 年随 FreeBSD 2.0 引入，`dummynet(4)` 功能则于 2.2.8（1998 年）加入。
 
-IPFW 当前的形态是一次彻底重写后的版本，称为 IPFW2，于 2002 年夏完成并引入。IPFW 速度极快，SMP 可扩展性也极为出色。本文介绍启用和配置 IPFW 的基础知识，然后讨论若干高级话题，包括规则编号建议、模拟真实网络环境、流量优先级与整形，以及使用内核内 NAT 实现——包括与 Jail 配合配置端口转发。文章最后概述 IPFW 的一些其他特性。
+IPFW 当前的形态是一次彻底重写后的版本，称为 IPFW2，于 2002 年夏完成并引入。IPFW 速度极快，SMP 可扩展性也极为出色。IPFW 是"首次匹配"型防火墙，意思是每个数据包都按编号规则列表进行比对，一旦某条规则匹配，搜索即告结束。这使得管理员可以按特定顺序编写规则以获得最高速度，并避免把某些数据包与更复杂的规则进行比对。带宽和质量可通过管道和队列定义，由规则强制执行。IPFW 还具有内核内 NAT 实现，对既有的用户态 natd 形成补充；完整支持 VIMAGE/VNET，从而在每个 VNET Jail 中创建独立的防火墙实例；支持多规则集、动态规则，并与操作系统紧密集成，提供包括按生成数据包的用户或 Jail 进行规则匹配等功能。
+
+本文介绍启用和配置 IPFW 的基础知识，然后讨论若干高级话题，包括规则编号建议、模拟真实网络环境、流量优先级与整形，以及使用内核内 NAT 实现——包括与 Jail 配合配置端口转发。文章最后概述 IPFW 的一些其他特性。
 
 ## 加载防火墙
 
@@ -22,8 +25,8 @@ firewall_type="OPEN"
 ```sh
 firewall_enable="YES"
 firewall_type="CLIENT"
-firewall_client_net="192.168.0.0/24" #Use the IP for your internal network
-firewall_client_net_ipv6="" #Specify the internal IPv6 net if you have one
+firewall_client_net="192.168.0.0/24" # 使用你内部网络的 IP
+firewall_client_net_ipv6="" # 如有内部 IPv6 网络请在此指定
 ```
 
 另一种方式是将自定义规则集文件的完整路径作为 `firewall_type` 指定，IPFW 会读取该文件并将每一行解释为 `ipfw` 命令的参数。IPFW 还支持对指定文件使用预处理器（如 m4），通过 `-p` 标志指定。这使管理员可以创建单一模板，经预处理后生成适用于不同主机的防火墙规则。
@@ -71,15 +74,15 @@ IPFW 规则相当直观，易于编写。下面简要演示 OPEN 防火墙的基
 
 ## 模拟真实网络
 
-在真实世界条件下测试应用往往是必要的——真实世界的网络并非没有延迟和拥塞的安静局域网。IPFW 提供了一个名为 `dummynet` 的功能，用于模拟公共互联网的真实世界条件。dummynet 提供人工限制、排队、延迟或丢弃数据包的能力，以创建所需的模拟网络条件。
+在真实世界条件下测试应用往往是必要的——真实世界的网络并非没有延迟和拥塞的安静局域网。IPFW 提供了一个名为 `dummynet(4)` 的功能，用于模拟公共互联网的真实世界条件。`dummynet(4)` 提供人工限制、排队、延迟或丢弃数据包的能力，以创建所需的模拟网络条件。
 
-要启用 dummynet 功能，必须加载内核模块。这可以通过在 **/etc/rc.conf** 中加入以下内容来自动完成：
+要启用 `dummynet(4)` 功能，必须加载内核模块。这可以通过在 **/etc/rc.conf** 中加入以下内容来自动完成：
 
 ```sh
 dummynet_enable="YES"
 ```
 
-`dummynet` 最基本的示例是创建带宽受限的管道：
+`dummynet(4)` 最基本的示例是创建带宽受限的管道：
 
 ```sh
 # ipfw pipe 30003 config bw 5Mbit/s
@@ -175,7 +178,7 @@ gateway_enable="YES"
 firewall_enable="YES"
 firewall_type="OPEN"
 firewall_nat_enable="YES"
-firewall_nat_interface="em0" #public interface
+firewall_nat_interface="em0" # 公共接口
 firewall_nat_flags="redirect_port tcp 10.99.0.2:80 80 redirect_port tcp 10.99.0.2:443 443"
 ```
 
@@ -183,10 +186,10 @@ firewall_nat_flags="redirect_port tcp 10.99.0.2:80 80 redirect_port tcp 10.99.0.
 
 ## 附加功能
 
-IPFW 还有许多其他关键字可用于创建高级规则集。`prob` 关键字作为规则动作的一部分，决定一个数据包匹配该规则的概率。借此，管理员可以构造规则将部分流量以不同方式引导，用于分流测试、负载均衡或模拟故障。数据包也可以被打上数字 ID 标签，供后续规则使用，例如在接口之间建立信任关系。IPFW 还包含转发能力；`fwd` 关键字会在数据包通过防火墙时改变其内部的下一跳字段。它不修改数据包头部，但会改变内核路由该数据包的方式，非常适合用于基于 IP 或端口的负载均衡。IPFW 可用 `tee` 关键字创建一个软件监控端口，将每个匹配数据包的副本通过 `divert` 套接字发送到用户态。IPFW 还可用于给数据包打上特定 FIB（转发信息库）标记，使匹配的数据包按特定内核路由表路由。
+IPFW 还有许多其他关键字可用于创建高级规则集。`prob` 关键字作为规则动作的一部分，决定一个数据包匹配该规则的概率。借此，管理员可以构造规则将部分流量以不同方式引导，用于分流测试、负载均衡或模拟故障。数据包也可以被打上数字 ID 标签，供后续规则使用，例如在接口之间建立信任关系。IPFW 还包含转发能力；`fwd` 关键字会在数据包通过防火墙时改变其内部的下一跳字段。它不修改数据包头部，但会改变内核路由该数据包的方式，非常适合用于基于 IP 或端口的负载均衡。IPFW 可用 `tee` 关键字创建一个软件监控端口，将每个匹配数据包的副本通过 `divert(4)` 套接字发送到用户态。IPFW 还可用于给数据包打上特定 FIB（转发信息库）标记，使匹配的数据包按特定内核路由表路由。
 
 ## 结论
 
-本文仅触及 IPFW 能力和特性的皮毛。`ipfw` 手册页为每个特性提供了详尽的文档和丰富示例。FreeBSD 手册中也包含一章对 IPFW 的附加说明和示例。有疑问的用户可发送至 freebsd-questions 邮件列表或在 FreeBSD 论坛发帖。
+本文仅触及 IPFW 能力和特性的皮毛。`ipfw(8)` 手册页为每个特性提供了详尽的文档和丰富示例。FreeBSD 手册中也包含一章对 IPFW 的附加说明和示例。有疑问的用户可发送至 freebsd-questions 邮件列表或在 FreeBSD 论坛发帖。
 
 Allan Jude 是 ScaleEngine Inc. 的运营副总裁，该公司是一家全球性 HTTP 和视频流内容分发网络，他在其中大量使用 FreeBSD 上的 ZFS。他还是 JupiterBroadcasting.com 上视频播客“BSD Now”（与 Kris Moore 主持）和“TechSNAP”的主持人。Allan 目前正在争取 FreeBSD 文档 commit 权限，改进手册并撰写 ZFS 文档。他于 2007 至 2010 年间在加拿大汉密尔顿的 Mohawk College 教授 FreeBSD 和 NetBSD，拥有 12 年 BSD Unix 系统管理员经验。

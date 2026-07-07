@@ -3,7 +3,7 @@
 - 采访者：**TOM JONES**
 - 原文链接：[New Ports Committer: Joel Bodenmann (jbo@freebsd.org)](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/new-ports-committer-joel-bodenmann/)
 
-![oel Bodenmann](https://freebsdfoundation.org/wp-content/uploads/2024/01/Bodenmann.jpg)
+![oel Bodenmann](../png/2023-1112/xin-de-port-ti-jiao-zhe-1.jpg)
 
  **TJ：** 你好，Joel，欢迎你加入 FreeBSD 项目。能否介绍一下你自己和你喜欢从事的技术项目？
 

@@ -1,6 +1,6 @@
 # 悼念 Mike Karels
 
-![Mike Karels 照片](https://freebsdfoundation.org/wp-content/uploads/2024/07/MikeKarels.jpg)
+![Mike Karels 照片](../png/2024-0506/dao-nian-mike-karels-1.jpg)
 
 我们对 Mike Karels 的离世深感悲痛，[他是 BSD UNIX 历史上的一个重要人物](https://www.bilibili.com/video/BV1Fh4y1e7AA/)，更是在 FreeBSD 社区中备受尊重的成员，同时也是 FreeBSD 项目的副发布工程师。Mike 在 BSD 系统开发和发展方面做出了卓越贡献，并在 FreeBSD 项目留下了不可磨灭的印记。
 

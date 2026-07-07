@@ -3,7 +3,7 @@
 - 作者：Dave Cottlehuber
 - 原文链接：<https://freebsdfoundation.org/our-work/journal/browser-based-edition/configuration-management-2/hashicorp-vault/>
 
-![Vault 文章配图](https://freebsdfoundation.org/wp-content/uploads/2024/07/threequartersopenvault1.png)
+![Vault 文章配图](../png/2024-0506/hashicorp-vault-bao-xian-ku-1.png)
 
 居家工作已成为新常态。但从安全性角度看，事情变得更为复杂。安全的办公室不复存在，那些精心维护的安全边界和全天候的物理安全亦已消失。
 
@@ -95,22 +95,22 @@ vault_config=/usr/local/etc/vault/vault.hcl
 
 ```sh
 # /usr/local/etc/vault/vault.hcl
-default_lease_ttl = “72h”
-max_lease_ttl = “168h”
+default_lease_ttl = "72h"
+max_lease_ttl = "168h"
 
 ui = true
 disable_mlock = false
 
-listener “tcp” {
-address = “127.0.0.1:8200”
+listener "tcp" {
+address = "127.0.0.1:8200"
 tls_disable = 1
-tls_min_version = “tls12”
-tls_key_file = “/usr/local/etc/vault/vault.key”
-tls_cert_file = “/usr/local/etc/vault/vault.all”
+tls_min_version = "tls12"
+tls_key_file = "/usr/local/etc/vault/vault.key"
+tls_cert_file = "/usr/local/etc/vault/vault.all"
 }
 
-storage “file” {
-path = “/var/db/vault”
+storage "file" {
+path = "/var/db/vault"
 }
 ```
 
@@ -222,7 +222,7 @@ Success! Enabled the kv secrets engine at: kv/
 从这儿开始，我们需要指定引擎类型及其挂载路径。可以将数据检索为 JSON 或 yaml 格式，甚至可以直接存储文件。
 
 ```sh
-$ vault kv put -mount=kv blackadder scarlet_pimpernel=”we do not know”
+$ vault kv put -mount=kv blackadder scarlet_pimpernel="we do not know"
 === Secret Path ===
 kv/data/blackadder
 
@@ -237,26 +237,26 @@ version 1
 
 $ vault kv get -mount=kv -format=json blackadder
 {
-“request_id”: “48141452-8f8f-b497-9c53-1af71e24e2a5”,
-“lease_id”: “”,
-“lease_duration”: 0,
-“renewable”: false,
-“data”: {
-“data”: {
-“scarlet_pimpernel”: “we do not know”
+"request_id": "48141452-8f8f-b497-9c53-1af71e24e2a5",
+"lease_id": "",
+"lease_duration": 0,
+"renewable": false,
+"data": {
+"data": {
+"scarlet_pimpernel": "we do not know"
 },
-“metadata”: {
-“created_time”: “2024-05-12T23:04:50.283028044Z”,
-“custom_metadata”: null,
-“deletion_time”: “”,
-“destroyed”: false,
-“version”: 1
+"metadata": {
+"created_time": "2024-05-12T23:04:50.283028044Z",
+"custom_metadata": null,
+"deletion_time": "",
+"destroyed": false,
+"version": 1
 }
 },
-“warnings”: null
+"warnings": null
 }
 
-$ vault kv put -mount=kv blackadder scarlet_pimpernel=”comte de frou frou”
+$ vault kv put -mount=kv blackadder scarlet_pimpernel="comte de frou frou"
 === Secret Path ===
 kv/data/blackadder
 
@@ -274,13 +274,13 @@ data:
 data:
 scarlet_pimpernel: comte de frou frou
 metadata:
-created_time: “2024-05-12T23:08:22.369551931Z”
+created_time: "2024-05-12T23:08:22.369551931Z"
 custom_metadata: null
-deletion_time: “”
+deletion_time: ""
 destroyed: false
 version: 2
 lease_duration: 0
-lease_id: “”
+lease_id: ""
 renewable: false
 request_id: 686965d9-811f-8689-d75f-a02f7dded9a7
 warnings: null
@@ -308,8 +308,8 @@ Success! Data written to: auth/github/map/teams/admin
 
 ```sh
 # 授予 GitHub 管理员组成员在 `kv/` 挂载点中的所有权限
-path “kv/*” {
-capabilities = [“create”, “read”, “update”, “delete”, “list”]
+path "kv/*" {
+capabilities = ["create", "read", "update", "delete", "list"]
 }
 ```
 
@@ -329,7 +329,7 @@ Success! Uploaded policy: admins
 ```sh
 $ vault login -method=github token=$GITHUB
 Success! You are now authenticated. The token information displayed below
-is already stored in the token helper. You do NOT need to run “vault login”
+is already stored in the token helper. You do NOT need to run "vault login"
 again. Future Vault requests will automatically use this token.
 
 Key Value
@@ -338,9 +338,9 @@ token hvs....
 token_accessor ...
 token_duration 72h
 token_renewable true
-token_policies [“admins” “default”]
+token_policies ["admins" "default"]
 identity_policies []
-policies [“admins” “default”]
+policies ["admins" "default"]
 token_meta_org skunkwerks
 token_meta_username dch
 
@@ -368,7 +368,7 @@ $ vault kv get -mount=kv -format=yaml blackadder
 安装插件，并使用典型的 lookup 功能：
 
 ```yaml
-super_secret: “{{lookup('hashivault', 'kv', 'blackadder', version=2)}}”
+super_secret: "{{lookup('hashivault', 'kv', 'blackadder', version=2)}}"
 ```
 
 ### rc.d App Roles
@@ -389,7 +389,7 @@ token_num_uses=10 \
 token_ttl=1h \
 token_max_ttl=4h \
 secret_id_num_uses=40 \
-policies=”default,admins”
+policies="default,admins"
 Success! Data written to: auth/approle/role/beastie
 
 $ vault read auth/approle/role/beastie/role-id
@@ -410,12 +410,12 @@ secret_id_ttl 0s
 
 ```sh
 beastie_enable=YES
-beastie_env=”
+beastie_env="
 ROLE_ID=6caaeac3-d8fa-a0e3-83ba-7d37750603c2
 SECRET_ID=8dd54c92-fe54-0d6d-bee6-e433e815aaa1
 SECRET_PATH=kv/beastie
 VAULT_ADDR=http://localhost:8200/
-“
+"
 ```
 
 脚本 **/usr/local/etc/rc.d/beastie** 会运行一个预命令，以 root 身份获取秘密，并将其注入子环境。
@@ -424,8 +424,8 @@ VAULT_ADDR=http://localhost:8200/
 start_precmd=${name}_vault
 beastie_vault() {
 # 使用 Vault 中的 approle 进行身份验证
-VAULT_TOKEN=$(vault write auth/approle/login role_id=”$ROLE_ID” \
-secret_id=”$SECRET_ID” \
+VAULT_TOKEN=$(vault write auth/approle/login role_id="$ROLE_ID" \
+secret_id="$SECRET_ID" \
 -format=json | jq -r '.auth.client_token')
 
 # 从 Vault 中提取秘密

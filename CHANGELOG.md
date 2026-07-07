@@ -33,3 +33,14 @@
   - 校对《从零开始的 ZFS 镜像及 makefs -t zfs》
   - 校对《if_ovpn 还是 OpenVPN》
 - 2024.11.16 校对《实用软件：开发定制 Ansible 模块》
+- 2026.7.8
+  - 校对 2023-0910 期（Ports and Packages）全部 8 篇文章
+  - 校对《基金会来信》
+  - 校对《活动日历》
+  - 校对《回忆录：与 Warner Losh（@imp）的访谈》
+  - 校对《在你自己的仓库中定制 Poudriere 源》
+  - 校对《Wazuh 和 MITRE Caldera 在 FreeBSD Jail 中的使用》
+  - 校对《PEP 517》
+  - 校对《CCCamp 2023 旅行报告》
+  - 校对《读者来信》
+  - 归档英文原文至 en/2023-0910-ports-and-packages/

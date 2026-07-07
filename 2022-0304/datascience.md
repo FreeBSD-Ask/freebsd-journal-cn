@@ -9,7 +9,7 @@
 
 本次实验中使用的 ThunderX2 是一款双插槽、56 核的 ARM64 平台。单个 CPU 芯片拥有 28 个核心，这些核心分布在八个核心复合体中，通过环形互连相连，并共享一个横截带宽超过 6TB/s 的 L3 缓存。每个核心最多可支持 4 个 SMT 线程，整个系统的线程总数达到 224 个。每个芯片的 8 通道 DDR4 接口为整个系统提供了超过 200GB/s 的内存带宽。各个 CPU 芯片之间则通过 CCPIv2 互连连接，提供 600 Gb/s 的带宽。从这些规格来看，它似乎是内存密集型工作负载的理想目标。
 
-![ThunderX2 设备架构图](https://github.com/user-attachments/assets/3de1f087-3fbd-4322-9349-5c308c604ce1)
+![ThunderX2 设备架构图](../png/2022-0304/datascience-01.png)
 
 **图 1. ThunderX2 系统架构。**
 
@@ -27,7 +27,7 @@
 
 如果说部署 Python 堆栈如此繁琐，那是否真的值得呢？归根结底——是的——这主要得益于并行计算。默认情况下，DataFrame 对象的计算是单线程的。然而，Pandarallel 包通过多进程方式实现了无缝并行化。尽管这种方式并不完美（因为它要求复制数据），但对于 CPU 密集型计算来说，其加速效果仍然十分显著。
 
-![Make 监督的并行化方案示意图](https://github.com/user-attachments/assets/403adffa-d2f2-4398-858d-d79b9db770b4)
+![Make 监督的并行化方案示意图](../png/2022-0304/datascience-03.png)
 
 **图 3. Make 监督的并行化方案**
 

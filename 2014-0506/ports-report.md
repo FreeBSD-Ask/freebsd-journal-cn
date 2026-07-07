@@ -1,6 +1,7 @@
 # Ports 报告
 
-作者：THOMAS ABTHORPE
+- 原文：[Ports Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking/ports-report/)
+- 作者：**Thomas Abthorpe**
 
 Ports 报告是对 Ports 基础设施近期活动的汇总，涵盖 Ports 领域的新闻、技巧与窍门。
 
@@ -14,16 +15,16 @@ Ports 报告是对 Ports 基础设施近期活动的汇总，涵盖 Ports 领域
 
 ## Ports 树的第二条分支
 
-由于第一条分支——2014Q1——是试验性的，你可能尚未耳闻。2014 年 1 月发布了首个季度 portmgr-lurker 分支，旨在提供一个稳定且高质量的 Ports 树。这些稳定分支每三个月从主 Ports 树截取一次快照，目前支持期为三个月，期间会接收安全修复以及构建与运行时修复。包会定期（每周）在该分支上构建，并照常通过 `pkg.FreeBSD.org` 发布（路径为 `/quarterly`，而非通常的 `/latest`）。4 月 1 日（并非玩笑），2014Q2 分支创建完成，首批基于该分支的构建随后不久便开始。
+由于第一条分支——2014Q1——是试验性的，你可能尚未耳闻。2014 年 1 月发布了首个季度分支，旨在提供一个稳定且高质量的 Ports 树。这些稳定分支每三个月从主 Ports 树截取一次快照，目前支持期为三个月，期间会接收安全修复以及构建与运行时修复。包会定期（每周）在该分支上构建，并照常通过 `pkg.FreeBSD.org` 发布（路径为 `/quarterly`，而非通常的 `/latest`）。4 月 1 日（并非玩笑），2014Q2 分支创建完成，首批基于该分支的构建随后不久便开始。
 
 ## 为改进 Ports 树出一份力
 
-前文提到的 `ports-mgmt/tinderbox` 和 `ports-mgmt/poudriere` 构建系统还有配套工具 `ports-mgmt/porttools`。借助这些工具，你可以创建一个新 Port，通过 `send-pr` 为更新提交一份 PR，甚至发出 `port test` 命令把它当作简易构建系统使用。更多内容可阅读 `http://www.freebsd.org/doc/en/books/porters-handbook/testing-porttools.html`。
+前文提到的 `ports-mgmt/tinderbox` 和 `ports-mgmt/poudriere` 构建系统还有配套工具 `ports-mgmt/porttools`。借助这些工具，你可以创建一个新 Port，通过 `send-pr(1)` 为更新提交一份 PR，甚至发出 `port test` 命令把它当作简易构建系统使用。更多内容可阅读 `http://www.freebsd.org/doc/en/books/porters-handbook/testing-porttools.html`。
 
-安装该工具包时，你还会得到一个叫 `portlint` 的优秀 porter 工具。正如 `lint` 帮你去除 C 程序中的“绒毛”，`portlint` 用启发式方法帮你发现错误的空白、错位的指令，以及其他大量改进 Port 的提示与建议。例如运行：
+安装该工具包时，你还会得到一个叫 `portlint(1)` 的优秀 porter 工具。正如 `lint(1)` 帮你去除 C 程序中的“绒毛”，`portlint(1)` 用启发式方法帮你发现错误的空白、错位的指令，以及其他大量改进 Port 的提示与建议。例如运行：
 
 ```sh
-portlint -C /usr/ports/devel/fakeport # this is an example only
+portlint -C /usr/ports/devel/fakeport # 这只是一个示例
 ```
 
 可能得到类似下面的输出：

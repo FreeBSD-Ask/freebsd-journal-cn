@@ -3,7 +3,7 @@
 - 原文链接：[We Get Letters](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/we-get-letters/)
 - 作者：Michael W Lucas
 
-![mailbox graphic](https://freebsdfoundation.org/wp-content/uploads/2024/09/FreeBSD_mailbox.png)
+![mailbox graphic](../png/2024-0708/we-get-letters-1.png)
 
 **亲爱的最没用的科技专栏作家：**
 

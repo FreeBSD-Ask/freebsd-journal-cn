@@ -53,8 +53,8 @@ BeagleBone 和 Raspberry Pi 等新兴 ARM 系统引发了开发者对 FreeBSD/AR
 
 下面将介绍如何自行构建 FreeBSD 镜像。要快速上手，可从 FreeBSD.org 网站下载镜像：
 
-- <https://ftp.freebsd.org/pub/FreeBSD/snapshots/>
-- <https://ftp.freebsd.org/pub/FreeBSD/snapshots/>
+- <ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/>
+- <http://ftp.freebsd.org/pub/FreeBSD/snapshots/>
 
 > **注意**：“快照”镜像是用当时 FreeBSD 开发分支中的源码构建的。FreeBSD 10 最终确定后（预计 2013 年底前），会发布稳定镜像。下载的镜像通常是压缩的，需要先解压才能写入 micro-SD 卡。
 
@@ -71,7 +71,7 @@ $ ls -l /dev
 然后连接 SD 卡后再执行一次：
 
 ```sh
-$ ls -l
+$ ls -l /dev
 ```
 
 新增的条目应一目了然。

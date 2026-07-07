@@ -15,7 +15,7 @@
 
 top 可能是我们在想知道系统上发生了什么时，首先使用的工具。尽管它非常实用，top 其实是个非常简单的程序，它能够在屏幕上漂亮地显示信息，并且在机器上做了一些抽象层处理，使得代码更加可移植。CPU 利用率接口由 FreeBSD 提供，以两个 sysctl 节点的形式呈现：
 
-![FreeBSD CPU 利用率 sysctl 节点示意图](https://github.com/user-attachments/assets/e25b847c-5b9d-42ba-9812-44ac1c9c757e)
+![FreeBSD CPU 利用率 sysctl 节点示意图](../png/2022-1112/act-01.png)
 
 ```sh
 $ sysctl hw.ncpu
@@ -93,9 +93,9 @@ then
  loadavg=$(sysctl -n vm.loadavg)
  lastpid=$(sysctl -n kern.lastpid)
  hostname=$(sysctl -n kern.hostname)
- system=$(printf ‘{"hostname":"%s",
+ system=$(printf '{"hostname":"%s",
  "cp_time":"%s", "cp_times":"%s", "ncpu":"%s",
- "loadavg":"%s", "lastpid":"%s"}’ "$hostname"
+ "loadavg":"%s", "lastpid":"%s"}' "$hostname"
  "$totalcputime" "$percputime" "$ncpu"
  "$loadavg" "$lastpid")
  log $system
@@ -110,7 +110,7 @@ pagecount=$(sysctl -n vm.stats.vm.v_page_count)
  memory=$(printf '{"physmem":"%s", "pagesize":"%s",
  "pagecount":"%s", "wirecount":"%s",
  "activecout":"%s", "inactivecount":"%s",
- "cachecount":"%s", "freecount":"%s" }’
+ "cachecount":"%s", "freecount":"%s" }'
  "$physmem" "$pagesize" "$pagecount"
  "$wirecount" "$activecout" "$inactivecount"
  "$cachecount" "$freecount")

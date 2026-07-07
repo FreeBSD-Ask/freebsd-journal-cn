@@ -109,7 +109,7 @@ FILES = ( /bin /lib /usr/bin /usr/games )
 ```sh
 install-ipf: ipf.conf -> ${HOSTS}
 install /etc/ipf.conf ;
-special “chown root:wheel /etc/ipf.conf; chmod 0400 /etc/ipf,conf” ;
+special "chown root:wheel /etc/ipf.conf; chmod 0400 /etc/ipf,conf" ;
 ```
 
 这将要求 `rdist` 把 `ipf.conf` 安装到 HOSTS 变量中列出的节点。install 命令告诉 rdist 文件的安装位置是 /etc/ipf.conf。
@@ -163,7 +163,7 @@ rsync -aHW --delete /t/tmp /home/cy/freebsd/rdist
                        install -oremove,chknfs ;
                        except /usr/lib/${EXLIB} ;
                        except /usr/games/lib ;
-                       special /usr/lib/sendmail “/usr/lib/sendmail -bz” ;
+                       special /usr/lib/sendmail "/usr/lib/sendmail -bz" ;
 
               srcs:
               /usr/src/bin -> arpa

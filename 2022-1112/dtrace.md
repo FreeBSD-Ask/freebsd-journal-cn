@@ -38,7 +38,7 @@ FreeBSD 自带的一些示例 **provider** 包括：
 下面是一个简单的 DTrace **监视脚本（snooper script）**，用于检测 **用户正在运行的程序**。我们在执行时使用 `-x quiet` 选项，以避免 DTrace 输出额外的信息。
 
 ```sh
-# dtrace -x quiet -n 'proc:::exec { printf(“user = %u, gid = %u: %s\n”, uid, gid,
+# dtrace -x quiet -n 'proc:::exec { printf("user = %u, gid = %u: %s\n", uid, gid,
 stringof(args[0])); }'
 user = 1001, gid = 1001: /usr/sbin/service
 user = 1001, gid = 1001: /bin/kenv
@@ -253,8 +253,8 @@ Mateusz Piotrowski (<0mp@FreeBSD.org>) 一直在研究 FreeBSD 上 DTrace 的性
 HyperTrace 是建立在 DTrace 之上的一个框架，允许用户使用 D 编程语言应用类似 DTrace 的追踪技术来追踪虚拟机。它源自英国剑桥大学的 CADETS 项目。作为一个简单的例子，我们来看一下最初的 snooper 脚本，并扩展它以使用 HyperTrace：
 
 ```c
-# dtrace -x quiet -En 'FreeBSD-14*:proc:::exec { printf(“%s: user = %u, gid = %u:
-%s\n”, vmname, uid, gid, stringof(args[0])); }'
+# dtrace -x quiet -En 'FreeBSD-14*:proc:::exec { printf("%s: user = %u, gid = %u:
+%s\n", vmname, uid, gid, stringof(args[0])); }'
 scylla1-webserver-0: user = 0, gid = 0: /usr/sbin/dtrace
 scylla1-webserver-0: user = 0, gid = 0: /sbin/ls
 scylla1-webserver-0: user = 0, gid = 0: /bin/ls

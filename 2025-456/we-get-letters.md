@@ -2,7 +2,7 @@
 
 作者：Michael W Lucas
 
-![邮箱插图](https://freebsdfoundation.org/wp-content/uploads/2025/07/FreeBSD_mailbox.png)
+![邮箱插图](../png/2025-456/we-get-letters-01.png)
 
 亲爱的"摸电脑的"建议专栏作家：
 FreeBSD 的 Jail 有几种不同的联网方式。我该如何决定用哪一种？
