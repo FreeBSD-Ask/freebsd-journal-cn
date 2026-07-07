@@ -104,8 +104,8 @@ got_fileindex_entry_update(struct got_fileindex_entry *ie,
 + if (fstatat(wt_fd, ondisk_path, &sb, AT_SYMLINK_NOFOLLOW) != 0) {
  if (!((ie->flags & GOT_FILEIDX_F_NO_FILE_ON_DISK) &&
  errno == ENOENT))
-- return got_error_from_errno2(“lstat”, ondisk_path);
-+ return got_error_from_errno2(“fstatat”, ondisk_path);
+- return got_error_from_errno2("lstat", ondisk_path);
++ return got_error_from_errno2("fstatat", ondisk_path);
  sb.st_mode = GOT_DEFAULT_FILE_MODE;
  } else {
 ...
