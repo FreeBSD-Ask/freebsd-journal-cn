@@ -751,7 +751,7 @@ root@jailhost:~ #
 
 遗憾的是，这只对 VM 有效，所以如果将 `iocage` jail 连接到交换机，必须在每次 jail 启动时手动设置 private 标志。
 
-当前配置中，“vnetcage” 可以 ssh 到”guest”：
+当前配置中，“vnetcage”可以 ssh 到”guest”：
 
 ```sh
 root@jailhost:~ # vm Stop guest
