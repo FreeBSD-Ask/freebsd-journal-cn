@@ -17,6 +17,7 @@
 
 2023 年 9 月的 FreeBSD 开发者峰会将与 EuroBSDCon 2023 同地举办，地点在葡萄牙科英布拉。本次活动为邀请制。FreeBSD committer 可自行报名，非 committer 须由 committer 担保方可参加。参会者还须参加 EuroBSDCon 2023，才能参与全部开发者峰会活动。
 
+
 ## EuroBSDCon 2023
 
 2023 年 9 月 14-17 日
