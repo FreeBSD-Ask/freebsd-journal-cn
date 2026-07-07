@@ -28,7 +28,7 @@
 
 许多人更喜欢“移动计算”而不是传统的 PC。总体而言，IBM 和联想 ThinkPad 笔记本电脑对 FreeBSD 的支持相当不错。我个人偏爱经典的 7 排 IBM 键盘，因此我使用的是 2011 年（是的，一台十年前的电脑）推出的 ThinkPad W520，在这台设备上，一切都运行得非常顺畅。其他配备该经典键盘的机型包括 X220、T420、T420s 和 T520。  
 
-![ThinkPad 笔记本电脑](https://github.com/user-attachments/assets/ad1f2407-72f9-42b9-84d3-59bbf59cb08f)
+![ThinkPad 笔记本电脑](../png/2021-0708/Desktop-02.png)
 
 不过，你不必回溯那么久的时间。例如，ThinkPad X1 Carbon 第 5 代和第 6 代运行 FreeBSD 非常稳定。ThinkPad X460、X470、T460 和 T470 也表现良好。实际上，有一个完整的笔记本测试列表，其中包含针对 FreeBSD 的有用说明，此外，还有一个 BSD 硬件数据库。在购买设备之前，我建议你查看这两个资源：  
 
