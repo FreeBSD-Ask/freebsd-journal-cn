@@ -53,8 +53,8 @@ update_blob( struct got_worktree *worktree,
 	unsigned char		status = GOT_STATUS_NO_CHANGE;
 
 	truct stat sb;
-	if ( asprintf( &ondisk_path, “ % s / % s ”, worktree->root_path, path ) == -1 )
-		return(got_error_from_errno( “ asprintf ” ) );
+	if ( asprintf( &ondisk_path, " % s / % s ", worktree->root_path, path ) == -1 )
+		return(got_error_from_errno( " asprintf " ) );
 
 	/* 使用示例 */
 	int opened_file_fd = open( ondisk_path, 0 );

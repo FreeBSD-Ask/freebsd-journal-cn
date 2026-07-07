@@ -29,7 +29,7 @@ SCALE 22X——第 22 届年度南加州 Linux 大会——将于 2025 年 3 月
 
 SCALE 是北美规模最大的社区主办的开源和自由软件大会。
 
-![FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2025/01/freeBDS_logo.png)
+![FreeBSD](../png/2024-1112/events-calendar-3.png)
 
 ## AsiaBSDCon 2025
 

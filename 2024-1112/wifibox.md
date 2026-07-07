@@ -3,7 +3,7 @@
 - 原文链接：[Wifibox: An Embedded Virtualized Wireless Router](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/wifibox-an-embedded-virtualized-wireless-router/)
 - 作者：**Gábor Páli**
 
-![Wifibox 文章配图](https://freebsdfoundation.org/wp-content/uploads/2025/01/wifi_art.png)
+![Wifibox 文章配图](../png/2024-1112/wifibox-1.png)
 
 由于生活优先级的变化，我在 2017 年左右远离了 FreeBSD 几年。后来我重新回归，开始为自己构建一台新的基于 FreeBSD 的工作站，是一台联想 ThinkPad X220。我注意到，尽管它能够工作，但无线支持仍然远未达到最佳状态，驱动程序 `iwm` 既不稳定，性能也不足以日常使用。
 

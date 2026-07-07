@@ -1,7 +1,7 @@
 # USE 方法
 
-- 原文标题：The USE Method
-- 作者：Brendan Gregg
+- 原文：[The USE Method](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization/the-use-method/)
+- 作者：**Brendan Gregg**
 
 性能调查中最难的部分可能是知道从哪里入手：先运行哪些分析工具、读哪些指标、以及如何解读输出。FreeBSD 上的选择众多，标准工具包括 `top(1)`、`vmstat(8)`、`iostat(8)`、`netstat(1)`，更高级的选项如 `pmcstat(8)` 和 DTrace。这些工具共同提供数百个指标，并可定制提供数千个。然而，我们大多数人并非全职性能工程师，可能只有时间检查熟悉的工具和指标，从而忽视许多潜在的问题区域。
 
