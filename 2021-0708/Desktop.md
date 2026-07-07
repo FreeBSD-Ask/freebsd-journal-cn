@@ -43,7 +43,7 @@
 
 ### 显卡
 
-![显卡设备](https://github.com/user-attachments/assets/057aa3f5-7840-4d74-b38b-007393408aa8)
+![显卡设备](../png/2021-0708/Desktop-03.png)
 
 在 FreeBSD 下运行良好的显卡大致可以分为三类：  
 
