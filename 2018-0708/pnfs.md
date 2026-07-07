@@ -136,9 +136,9 @@ nfscbd_enable="YES"
 # mount -t nfs nfsv4-server:/ /mnt
 ```
 
-现在，如果在 nfsv4-server 上执行 “nfsstat -E -s”，你会看到很多读和写操作，因为它们都通过 MDS 完成，MDS 充当 DSs 的代理。
+现在，如果在 nfsv4-server 上执行“nfsstat -E -s”，你会看到很多读和写操作，因为它们都通过 MDS 完成，MDS 充当 DSs 的代理。
 
-假设你在 /mnt 上创建一个名为 “abc.c” 的文件，大小为 274 字节。在 /mnt 中执行 “ls -l” 会显示如下行：
+假设你在 /mnt 上创建一个名为“abc.c”的文件，大小为 274 字节。在 /mnt 中执行“ls -l”会显示如下行：
 
 ```sh
 -rw-r--r--   1 ricktst  wheel  274 Jun  5 18:02 abc.c
