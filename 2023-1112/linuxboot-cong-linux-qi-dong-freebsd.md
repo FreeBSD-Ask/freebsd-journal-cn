@@ -35,7 +35,7 @@
 
 来源：[https://www.linuxboot.org](https://www.linuxboot.org/)
 
-尽管 LinuxBoot 未完全用 Linux 替代整个引导加载程序，但它最大程度减少了残留的部分。例如，在 UEFI 中，只有 Pre-EFI 初始化（PEI）阶段负责初始化处理器、缓存和 RAM，而 UEFI 的运行时服务依然存在。
+尽管 LinuxBoot 未完全用 Linux 替代整个引导加载程序，但它最大程度减少了残留的部分。例如，在 UEFI 中，只有 Pre-EFI 初始化（PEI）阶段负责初始化处理器、缓存和 RAM，以及 UEFI 的运行时服务依然存在。
 
 LinuxBoot 消除了所有测试不充分的 UEFI DEX 驱动程序。Linux 内核接管了内存和基础硬件的初始化，但未初始化其他更传统固件可能会初始化的内容，例如 PCI 设备的资源。
 
