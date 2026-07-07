@@ -29,7 +29,7 @@
 
 ## UFS 架构
 
-![UFS 系统模型示意图](https://freebsdfoundation.org/wp-content/uploads/2026/01/choi_fig2.png)
+![UFS 系统模型示意图](../png/2025-101112/universal-flash-storage-on-freebsd-01.png)
 
 图 1. UFS 系统模型
 
