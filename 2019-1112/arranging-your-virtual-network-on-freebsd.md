@@ -952,7 +952,7 @@ VXLAN（虚拟可扩展局域网接口）是一种隧道协议，旨在将虚拟
 
 ### VXLAN 示例概览
 
-示例设置包含同一局域网上的三台主机：一台网关主机（局域网 IP **192.168.0.1**），以及两台 jailhost（“jailhost-a” 和”jailhost-b”），局域网 IP 地址分别为 **192.168.0.10** 和 **192.168.0.20**。jailhost 托管 VNET jail 和 VM；“jailhost-b” 还托管一个普通 jail。
+示例设置包含同一局域网上的三台主机：一台网关主机（局域网 IP **192.168.0.1**），以及两台 jailhost（“jailhost-a”和”jailhost-b”），局域网 IP 地址分别为 **192.168.0.10** 和 **192.168.0.20**。jailhost 托管 VNET jail 和 VM；“jailhost-b”还托管一个普通 jail。
 
 三台主机通过两个 VXLAN（VXLAN id 111 和 222）连接；网关主机通过专用上行链路使用 NAT 提供互联网访问。
 
