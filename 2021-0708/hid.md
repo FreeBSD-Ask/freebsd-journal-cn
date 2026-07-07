@@ -177,7 +177,7 @@ static int
 my_mouse_probe( device_t dev )
 {
 	return(HIDMAP_PROBE( device_get_softc( dev ), dev,
-			     my_mouse_devs, my_mouse_map, “ My mouse ” ) );
+			     my_mouse_devs, my_mouse_map, " My mouse " ) );
 }
 
 
