@@ -3,11 +3,11 @@
 - 原文地址：[Adventures in TCP/IP: Pacing in the FreeBSD TCP Stack](https://freebsdfoundation.org/our-work/journal/browser-based-edition/kernel-development/adventures-in-tcp-ip-pacing-in-the-freebsd-tcp-stack/)
 - 作者：Randall Stewart、Michael Tüxen
 
-![TCP/IP 历险记](https://freebsdfoundation.org/wp-content/uploads/2024/11/adventures_in_TCP_logo.png)
+![TCP/IP 历险记](../png/2024-0910/TCP-1.png)
 
 TCP 的发送和接收行为已经经历了 40 多年发展。在这期间，许多进展帮助 TCP 能够以非常高的速度传输可靠的数据流。然而，一些增强功能（无论是在协议栈中还是在网络中）也带来了负面影响。最初，TCP 协议栈会响应接收到的 TCP 段（ACK 应答）、上层提供的新数据或定时器到期时发送一个 TCP 段。TCP 发送方还实现了拥塞控制，以防止过快地向网络发送数据。这些特性结合在一起，可能会使得 TCP 端点大多数时间都受到"ACK 时钟"的影响，如下图所示。
 
-![image](https://freebsdfoundation.org/wp-content/uploads/2024/11/stewart_chart1.png)
+![image](../png/2024-0910/TCP-2.png)
 
 **图 1：ACK 时钟的示例**
 

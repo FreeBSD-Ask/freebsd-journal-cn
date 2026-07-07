@@ -17,7 +17,7 @@
 
 FOSDEM 是由志愿者组织的为期两天的活动，旨在推动自由和开源软件的广泛应用。FOSDEM 于 2025 年 2 月 1-2 日举办，为开源和自由软件开发者提供一个相聚、交流想法、协作的平台。
 
-![SCALE 22X](https://freebsdfoundation.org/wp-content/uploads/2024/02/scale.png)
+![SCALE 22X](../png/2024-0910/events-calendar-2.png)
 
 ## SCALE 22X
 
@@ -29,7 +29,7 @@ SCALE 22X——第 22 届年度南加州 Linux 大会——将于 2025 年 3 月
 
 SCALE 是北美规模最大的社区主办的开源和自由软件大会。
 
-![FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2024/09/freebsd_logo.png)
+![FreeBSD](../png/2024-0910/events-calendar-3.png)
 
 ## AsiaBSDCon 2025
 
