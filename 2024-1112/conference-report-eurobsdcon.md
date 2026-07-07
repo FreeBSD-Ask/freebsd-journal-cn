@@ -31,7 +31,7 @@
 
 ## 会场和初步印象
 
-![EuroBSDCon 讲者胸卡](https://freebsdfoundation.org/wp-content/uploads/2025/01/02_badge.jpg)
+![EuroBSDCon 讲者胸卡](../png/2024-1112/conference-report-eurobsdcon-4.jpg)
 
 EuroBSDCon 在 [都柏林大学学院（UCD）的 O'Reilly Hall](https://www.ucd.ie/universityclub/conferenceandbanqueting/theoreillyhall/) 举办——我觉得这个场地非常合适、舒适。入口处有两个区域：右边是签到和注册（胸卡分三种颜色：橙色给组织者和工作人员，白色给参与者，绿色给讲者）；左边是 T 恤区，也有几位工作人员和朋友。抵达后，我一自我介绍，就得到了温暖友好的欢迎。Henning Brauer 把胸卡递给我们——看到那枚绿色胸卡，我满心自豪。和他在一起的还有 Katie McMillan，我之前从未与她有过互动，连网上也没有，但我看过她在 BSDCan 的演讲视频，所以见到她本人真是荣幸。另一张桌子旁有几位朋友，包括 Mischa Peters（他送我一件 [OpenBSD.Amsterdam](https://openbsd.amsterdam/) T 恤）、我的"同事" Jeroen Janssen（网名 h3artbl33d，Mastodon 实例 [exquisite.social](https://exquisite.social) 的管理员之一）、Peter Hansteen、Paul de Weerd、René Ladan、Janne Johansson、Guido Van Rooij、Michael Reim、Benny Siegert 等人。都是我敬重多年的人，全都聚集在那里。我们聊了一个多小时，期间有人加入有人离开。我早就知道 BSD 社区氛围积极，但各小组之间如此融洽还是让我吃惊。我立即感到自在，那种身处熟悉之地、被挚友环绕的感觉。
 
