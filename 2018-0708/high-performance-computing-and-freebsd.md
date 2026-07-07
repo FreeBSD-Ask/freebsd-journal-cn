@@ -104,9 +104,9 @@ FreeBSD 上的持续维护或开发简单。尽管没有用于分析、调试等
 
 [6] MPI forum: <https://www.mpi-forum.org/>
 
-[7] FLAME 项目: <https://github.com/flame>
+[7] FLAME 项目：<https://github.com/flame>
 
-[8] Linuxism 讨论: <https://wiki.freebsd.org/AvoidingLinuxisms>
+[8] Linuxism 讨论：<https://wiki.freebsd.org/AvoidingLinuxisms>
 
 [9] Radeon Open Compute: <https://github.com/RadeonOpenCompute/>
 

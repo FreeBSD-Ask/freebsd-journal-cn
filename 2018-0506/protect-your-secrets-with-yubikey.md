@@ -116,7 +116,7 @@ key: h:c621245c5f05eefec1d9f2960f34b865849dd074
 ...
 ```
 
-我们需要将用户名和密钥存储在目标机器上的 pam_oath 数据库文件中（当然 “alice” 和密钥应替换为真实值）：
+我们需要将用户名和密钥存储在目标机器上的 pam_oath 数据库文件中（当然“alice”和密钥应替换为真实值）：
 
 ```sh
 $ echo "HOTP alice - c621245c5f05eefec1d9f2960f34b865849dd074" >> /usr/local/etc/users.oath
