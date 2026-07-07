@@ -3,7 +3,7 @@
 - 原文链接：[Dynamic Goodput Pacing: A New Approach to Packet Pacing](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/dynamic-goodput-pacing-a-new-approach-to-packet-pacing/)
 - 作者：**Randall Stewart**
 
-![TCP/IP 历险记](https://freebsdfoundation.org/wp-content/uploads/2025/01/adventures_in_TCP_logo.png)
+![TCP/IP 历险记](../png/2024-1112/dgp-1.png)
 
 本系列的上一篇文章集中讨论了支持 TCP 堆栈的 FreeBSD 基础设施中的 pacing。本篇文章继续探讨 FreeBSD 中的 pacing，重点介绍目前在 FreeBSD 开发版本中的 RACK 堆栈中可用的 pacing 方法。这种 pacing 方法被称为动态有效吞吐量 pacing（Dynamic Goodput Pacing，DGP），它代表了一种新的 pacing 形式，可以提供良好的性能，同时仍然保证网络的公平性。为了理解 DGP，我们首先需要讨论拥塞控制，因为 DGP 是通过结合两种传统上没有一起使用的拥塞控制形式来工作的。因此，本篇文章将首先讨论拥塞控制是什么，以及 DGP 结合的两种拥塞控制方式，这两种方式共同构成一个无缝的 pacing 机制。
 
