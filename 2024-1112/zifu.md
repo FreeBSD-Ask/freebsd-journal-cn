@@ -58,7 +58,7 @@ echo_write(struct cdev *dev, struct uio *uio, int ioflag)
 ```sh
 # hd < /dev/echo
 
-# echo “foo” > /dev/echo
+# echo "foo" > /dev/echo
 # cat /dev/echo
 foo
 # echo “12345678” > /dev/echo
