@@ -64,7 +64,7 @@ OpenCrypto 框架的更新由 FreeBSD 基金会赞助。
 
 `gre(4)` 驱动提供通用路由封装接口，现已拆分为两个独立模块——`gre(4)` 和 `me(4)`。`gre(4)` 模块本身进行了大幅改写，其对应模块 `me(4)` 则提供三层内更精简的封装接口。
 
-感谢读者们支持 FreeBSD 社区、FreeBSD 期刊，当然还有 FreeBSD 基金会。
+感谢读者支持 FreeBSD 社区、FreeBSD 期刊，当然还有 FreeBSD 基金会。
 
 别忘了，FreeBSD-CURRENT 和 FreeBSD-STABLE 分支的开发版 ISO 和预装虚拟机镜像（VHD、VMDK、QCOW2 和 RAW 格式）可在 FTP 镜像上找到，每周构建：ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/。一如既往，开发版快照不适用于生产环境；但我们鼓励定期测试，这样我们才能让下一个 FreeBSD 发布版本如你所期待的那样出色。
 
