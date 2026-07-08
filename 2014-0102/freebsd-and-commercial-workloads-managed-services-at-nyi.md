@@ -86,7 +86,7 @@ NYI 还在内部使用 jails 来实现硬件高效的域名系统（DNS）服务
 
 ## 结论
 
-1996 年 NYI 成立时，FreeBSD 是唯一可用的开源 Unix。如今，出于本文所述的种种原因及其他，FreeBSD 继续驱动着 NYI。NYI 的首席严谨官 Boris Kochergin 对 NYI 使用 FreeBSD 的原因作了以下补充：
+1996 年 NYI 成立时，FreeBSD 是唯一可用的开源 Unix。如今，出于本文所述的种种原因等，FreeBSD 继续驱动着 NYI。NYI 的首席严谨官 Boris Kochergin 对 NYI 使用 FreeBSD 的原因作了以下补充：
 
 > FreeBSD 文档优秀。《FreeBSD Handbook》涵盖 FreeBSD 的日常使用，清晰、简洁，为管理员学习系统提供了便捷途径。FreeBSD 是开源的，代码组织良好，因此理解和全面掌握它既容易也可行。最后，FreeBSD 延续了 BSD 赋能互联网的传统！<sup>9</sup>
 
