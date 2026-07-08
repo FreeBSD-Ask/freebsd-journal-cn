@@ -1,49 +1,5 @@
 # 编辑日志
 
-- 2024.7.9 机器翻译 2024-0506、2024-0102、2024-0304、2023-1112。校对《悼念 Mike Karels》
-- 2024.7.29 校对《基本系统中的 mfsBSD》
-- 2024.7.30 校对《rdist》
-- 2024.8.12 校对《Hashicorp Vault》、《在 GitHub 上向 FreeBSD 提交 PR》
-- 2024.8.14 校对《2024 年 5-6 月来信》
-- 2024.8.15 校对《嵌入式 FreeBSD 面包板》
-- 2024.8.16 校对《提升 Git 使用体验》、重命名为“期刊”，杂志不符合原意。
-- 2024.11.10
-  - 校对《新的 Port 提交者：oel Bodenmann (<jbo@freebsd.org>)》
-  - 重新机器翻译 2024-0708、2024-0506、2024-0102、2024-0304、2023-1112
-  - 校对《现在用 Webhook 触发我》
-- 2024.11.14
-  - 校对《FreeBSD 与 KDE 持续集成（CI）》
-  - 校对《实用软件：使用 Zabbix 监控主机》
-  - 校对《BATMAN：更优的可移动热点网络方式》
-  - 校对《FreeBSD 接口 API（IfAPI）》
-  - 校对《FreeBSD 内核开发工作流程》
-  - 校对《更现代的内核调试工具》
-  - 校对《配置自己的 VPN——内置 FreeBSD、Wireguard、IPv6 和广告拦截（基于 FreeBSD）》
-  - 校对《SR-IOV 已成为 FreeBSD 的重要功能》
-  - 校对《FreeBSD iSCSI 入门》
-- 2024.11.15
-  - 校对《TCP LRO 简介》
-  - 校对《TCP/IP 历险记：TCP BBLog》
-  - 校对《FreeBSD 中的 RACK 栈和替代 TCP 栈》
-  - 校对《FreeBSD 14 中有关 TCP 的更新》
-  - 校对《FreeBSD 中的 NVMe-oF》
-  - 校对《使用 ZFS 原生加密保护数据》
-  - 校对《嵌入式 FreeBSD：打造自己的镜像》
-  - 校对《基于 Samba 的时间机器备份》
-  - 校对《从零开始的 ZFS 镜像及 makefs -t zfs》
-  - 校对《if_ovpn 还是 OpenVPN》
-- 2024.11.16 校对《实用软件：开发定制 Ansible 模块》
-- 2026.7.8
-  - 校对 2023-0910 期（Ports and Packages）全部 8 篇文章
-  - 校对《基金会来信》
-  - 校对《活动日历》
-  - 校对《回忆录：与 Warner Losh（@imp）的访谈》
-  - 校对《在你自己的仓库中定制 Poudriere 源》
-  - 校对《Wazuh 和 MITRE Caldera 在 FreeBSD Jail 中的使用》
-  - 校对《PEP 517》
-  - 校对《CCCamp 2023 旅行报告》
-  - 校对《读者来信》
-  - 归档英文原文至 en/2023-0910-ports-and-packages/
 - 2026.7.9
   - 校对 2023-0708 期（容器与云）全部 9 篇文章
   - 校对《基金会来信》（3 处欧化修正）
@@ -55,3 +11,48 @@
   - 校对《抒怀之旅：与 Doug Rabson 的访谈》（约 45 处修正）
   - 校对《基于 Jail 的广告拦截教程》（15 处修正）
   - 校对《我们收到的来信》（9 处修正）
+  - 英文原文已归档至 en/2023-0708-containers-and-cloud/
+- 2026.7.8
+  - 校对 2023-0910 期（Ports and Packages）全部 8 篇文章
+  - 校对《基金会来信》
+  - 校对《活动日历》
+  - 校对《回忆录：与 Warner Losh（@imp）的访谈》
+  - 校对《在你自己的仓库中定制 Poudriere 源》
+  - 校对《Wazuh 和 MITRE Caldera 在 FreeBSD Jail 中的使用》
+  - 校对《PEP 517》
+  - 校对《CCCamp 2023 旅行报告》
+  - 校对《读者来信》
+  - 归档英文原文至 en/2023-0910-ports-and-packages/
+- 2024.11.16 校对《实用软件：开发定制 Ansible 模块》
+- 2024.11.15
+  - 校对《TCP LRO 简介》
+  - 校对《TCP/IP 历险记：TCP BBLog》
+  - 校对《FreeBSD 中的 RACK 栈和替代 TCP 栈》
+  - 校对《FreeBSD 14 中有关 TCP 的更新》
+  - 校对《FreeBSD 中的 NVMe-oF》
+  - 校对《使用 ZFS 原生加密保护数据》
+  - 校对《嵌入式 FreeBSD：打造自己的镜像》
+  - 校对《基于 Samba 的时间机器备份》
+  - 校对《从零开始的 ZFS 镜像及 makefs -t zfs》
+  - 校对《if_ovpn 还是 OpenVPN》
+- 2024.11.14
+  - 校对《FreeBSD 与 KDE 持续集成（CI）》
+  - 校对《实用软件：使用 Zabbix 监控主机》
+  - 校对《BATMAN：更优的可移动热点网络方式》
+  - 校对《FreeBSD 接口 API（IfAPI）》
+  - 校对《FreeBSD 内核开发工作流程》
+  - 校对《更现代的内核调试工具》
+  - 校对《配置自己的 VPN——内置 FreeBSD、Wireguard、IPv6 和广告拦截（基于 FreeBSD）》
+  - 校对《SR-IOV 已成为 FreeBSD 的重要功能》
+  - 校对《FreeBSD iSCSI 入门》
+- 2024.11.10
+  - 校对《新的 Port 提交者：oel Bodenmann (<jbo@freebsd.org>)》
+  - 重新机器翻译 2024-0708、2024-0506、2024-0102、2024-0304、2023-1112
+  - 校对《现在用 Webhook 触发我》
+- 2024.8.16 校对《提升 Git 使用体验》、重命名为“期刊”，杂志不符合原意。
+- 2024.8.15 校对《嵌入式 FreeBSD 面包板》
+- 2024.8.14 校对《2024 年 5-6 月来信》
+- 2024.8.12 校对《Hashicorp Vault》、《在 GitHub 上向 FreeBSD 提交 PR》
+- 2024.7.30 校对《rdist》
+- 2024.7.29 校对《基本系统中的 mfsBSD》
+- 2024.7.9 机器翻译 2024-0506、2024-0102、2024-0304、2023-1112。校对《悼念 Mike Karels》
