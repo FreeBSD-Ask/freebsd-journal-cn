@@ -15,7 +15,7 @@ APRICOT • 3 月 1-4 日 • 线上
 FOSSASIA • 3 月 13-21 日 • 线上
 <https://summit.fossasia.org/>
 
-加入 FreeBSD 基金会，参加 2021 年 FOSSASIA 线上峰会。会议于 2021 年 3 月 13-21 日举办，FOSSASIA 提供了解开源技术、与全球自由开源软件（FOSS）和开源硬件项目的顶尖开发者及技术人员交流的机会。注册免费。
+加入 FreeBSD 基金会，参加 2021 年 FOSSASIA 线上峰会。会议于 2021 年 3 月 13-21 日举办，FOSSASIA 让你有机会了解开源技术，并与全球自由开源软件（FOSS）和开源硬件项目的顶尖开发者及技术人员交流。注册免费。
 
 FreeBSD Fridays
 <https://freebsdfoundation.org/freebsd-fridays/>
