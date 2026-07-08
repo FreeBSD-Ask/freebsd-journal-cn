@@ -66,6 +66,6 @@ OpenCrypto 框架的更新由 FreeBSD 基金会赞助。
 
 感谢读者支持 FreeBSD 社区、FreeBSD 期刊，当然还有 FreeBSD 基金会。
 
-别忘了，FreeBSD-CURRENT 和 FreeBSD-STABLE 分支的开发版 ISO 和预装虚拟机镜像（VHD、VMDK、QCOW2 和 RAW 格式）可在 FTP 镜像上找到，每周构建：ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/。一如既往，开发版快照不适用于生产环境；但我们鼓励定期测试，这样我们才能让下一个 FreeBSD 发布版本如你所期待的那样出色。
+别忘了，FreeBSD-CURRENT 和 FreeBSD-STABLE 分支的开发版 ISO 和预装虚拟机镜像（VHD、VMDK、QCOW2 和 RAW 格式）可在 FTP 镜像上找到，每周构建：<ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/>。一如既往，开发版快照不适用于生产环境；但我们鼓励定期测试，这样我们才能让下一个 FreeBSD 发布版本如你所期待的那样出色。
 
 Glen Barber 以业余爱好者身份于 2007 年前后深度参与 FreeBSD 项目。此后他参与了多项工作，最近的职位让他专注于项目中的系统管理和发布工程。Glen 居住在美国宾夕法尼亚州。
