@@ -39,7 +39,7 @@ WatchedEvent state:SyncConnected type:None path:null
 [zookeeper]
 ```
 
-我们先创建一个名为 “test” 的新 zNode，并写入数据 “hello_world”。然后列出根 zNode 的内容，就能看到新建的 “test” zNode 了。
+我们先创建一个名为“test”的新 zNode，并写入数据“hello_world”。然后列出根 zNode 的内容，就能看到新建的“test”zNode 了。
 
 ```sh
 [zk: localhost:2181(CONNECTED) 1] create /test hello_world
