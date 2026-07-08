@@ -287,8 +287,8 @@ security.tls.enable_kyber
 
 接下来，按 `F12` 打开开发者工具：
 
-* 在 Firefox 中切换到 "network" 选项卡
-* 在 Chrome 中进入 "隐私和安全"
+* Firefox 切换到 "network" 选项卡
+* Chrome 进入 "隐私和安全"
 
 然后输入你的 FreeBSD 安装的 IP 地址并按回车。屏幕上应该只显示一个 IP 地址（即请求的来源）。在开发者工具中，点击对应你 FreeBSD IP 地址的请求条目：
 
