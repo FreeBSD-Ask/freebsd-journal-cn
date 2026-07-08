@@ -23,7 +23,7 @@
 
 在本期专栏结尾，我们想给出一些统计数据，让大家更直观地了解志愿者们完成的出色工作量。2015 年前两个月，ports 树共应用了 4046 次提交，关闭了 1182 个 PR，portmgr@ 共收到 1002 封邮件（尚未计入垃圾邮件……）。而这一切，是由平均仅 130 名活跃的 ports 开发者完成的！
 
-**Frederic Culot** 在 IT 行业工作了 10 年。业余时间他学习商业与管理，刚完成一个 MBA 学位。Frederic 于 2010 年作为 ports 提交者加入 FreeBSD，此后完成约 2000 次提交，指导了六位新提交者，现担任 portmgr-secretary。
+**Frederic Culot** 在 IT 行业工作了 10 年。业余时间他学习商业与管理，刚取得 MBA 学位。Frederic 于 2010 年作为 ports 提交者加入 FreeBSD，此后完成约 2000 次提交，指导了六位新提交者，现担任 portmgr-secretary。
 
 ## 活动
 
