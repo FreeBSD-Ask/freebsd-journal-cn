@@ -135,7 +135,7 @@ $ mdo -u www /usr/local/bin/occ
 
 需要注意的是，`uid=10001>uid=80,gid=80,+gid=80` 这条规则相当严格，例如，如果用户 www 还属于除 www 之外的其他组，`mdo -u www` 就无法成功执行，因为 `mdo -u www` 会尝试安装密码[11](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor013)和组数据库中要求的附加组，而该其他组未出现在规则中。
 
-它同样禁止例如 `mdo -u www -i` 的操作，即切换到用户 www 但保留当前组（假设这些组是与 unprivileged_user 关联的，且中间未被更改）。如果管理员希望这种操作可以生效，就需要放宽对组的检查。假设 unprivileged_user 仅属于一个与其同名且 GID 为 10001 的组，则可以使用：
+它同样禁止例如 `mdo -u www -i` 的操作，即切换到用户 www 但保留当前组（假设这些组是与 unprivileged_user 关联的，且中间未被更改）。如果管理员希望这种操作可以生效，就需要放宽对组的检查。假设 unprivileged_user 仅属于与其同名且 GID 为 10001 的组，则可以使用：
 
 ```sh
 # sysctl security.mac.do.rules='uid=10001>uid=80,gid=80,gid=10001,+gid=80,+gid=10001'
@@ -143,7 +143,7 @@ $ mdo -u www /usr/local/bin/occ
 
 从这个示例中你大概可以推断出，指定多个目标子条款并使用 `gid` 和 `+gid`，意味着目标凭据中可以存在任意一个指定的组[12](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor014)。
 
-除了前面提到的两个 mdo(1) 使用场景外，这条规则还允许 unprivileged_user 在切换到 www 的同时，同时认可组 80 和 10001[29](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor031)。如果完全不希望出现这种情况，则可以使用以下设置替代：
+除了前面提到的两个 `mdo(1)` 使用场景外，这条规则还允许 unprivileged_user 在切换到 www 的同时，认可组 80 和 10001[29](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor031)。如果完全不希望出现这种情况，则可以使用以下设置替代：
 
 ```sh
 # sysctl security.mac.do.rules='uid=10001>uid=80,gid=80,+gid=80;uid=10001>uid=80,gid=10001,+gid=10001'
@@ -157,7 +157,7 @@ $ mdo -u www /usr/local/bin/occ
 # sysctl security.mac.do.rules='uid=10001>uid=80,gid=80,+gid=80;uid=10001>uid=80'
 ```
 
-上面第二条规则 `uid=10001>uid=80` 允许在不改变当前组的情况下切换用户 ID，因此非常适合在使用 mdo(1) 的 `-i` 选项时保留任意当前组。实际上，这条规则是 `uid=10001>uid=80,gid=.,!gid=.` 的简写，其中 `.` 在 gid 的情况下表示当前主组，在 `!gid` 的情况下表示当前附加组，更广泛地说，gid 前带其他标志时亦同。需要注意的是，这个默认部分 `gid=.,!gid=.` 仅在没有目标子条款以 gid 为类型（无论是否带标志）时才被隐含使用。特别地，以下规则 `uid=10001>uid=80,gid=.` 会阻止任何未删除所有附加组的切换，因为规则中没有带标志的 gid 子条款。
+上面第二条规则 `uid=10001>uid=80` 允许在不改变当前组的情况下切换用户 ID，因此非常适合在使用 `mdo(1)` 的 `-i` 选项时保留任意当前组。实际上，这条规则是 `uid=10001>uid=80,gid=.,!gid=.` 的简写，其中 `.` 在 gid 的情况下表示当前主组，在 `!gid` 的情况下表示当前附加组，更广泛地说，gid 前带其他标志时亦同。需要注意的是，这个默认部分 `gid=.,!gid=.` 仅在没有目标子条款以 gid 为类型（无论是否带标志）时才被隐含使用。特别地，以下规则 `uid=10001>uid=80,gid=.` 会阻止任何未删除所有附加组的切换，因为规则中没有带标志的 gid 子条款。
 
 另一个 gid 标志 `-` 可用于表示某个组不应包含在最终附加组中。乍一看可能会觉得奇怪，因为允许的组必须在规则中显式指定（除了上一段解释的默认情况）。实际上，这在与 `.` 配合 `+gid` 或 `!gid` 使用时非常有用，可用于排除当前的一些组。例如，如果希望允许 unprivileged_user 切换到用户 www 并保留其当前组，同时确保 wheel 不出现在最终附加组中，则可以使用：
 
@@ -185,7 +185,7 @@ gid=0>uid=*,gid=*,+gid=*
 gid=0>any
 ```
 
-需要提醒的是，目前 mdo(1) 面向基于角色的方案，因此在任何情况下，即使目标用户是 root，也不会要求输入密码来切换用户。
+需要提醒的是，目前 `mdo(1)` 面向基于角色的方案，因此在任何情况下，即使目标用户是 root，也不会要求输入密码来切换用户。
 
 我们刚刚展示了 mac_do(4) 规则提供的丰富实用可能性，如你所见，它们非常灵活，能够精确表达允许的目标凭据[15](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor017)。在设计时，我们努力保持语法尽可能易于理解，同时受限于 sysctl(8) 值本质上为单行的特性，这要求语法简洁、表达能力足够，并且内核只处理数值 ID，不访问密码和组数据库。即便你一开始不完全理解 `security.mac.do.rules` 的某个具体设置，也不必担心，稍加研究很快就能掌握，因此不要被示例淹没，根据需要花时间学习即可。
 
