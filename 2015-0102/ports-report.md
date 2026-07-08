@@ -19,7 +19,7 @@
 
 照例，如果更新特定 ports 需要手动步骤，这些步骤会在 **/usr/ports/UPDATING** 文件中清楚说明。强烈建议在对 ports 树执行任何更新前先检查此文件！
 
-另外请注意，有多个版本的 ports 的默认版本在 **/usr/ports/Mk/bsd.default-versions.mk** 文件中设置。如果出于某些原因某个 port 的默认版本不符合你的需求，可以在 `make.conf` 中加入 `DEFAULT_VERSIONS` 变量来覆盖，如下所示：
+另外请注意，存在多个版本的 ports，其默认版本在 **/usr/ports/Mk/bsd.default-versions.mk** 文件中设置。如果出于某些原因某个 port 的默认版本不符合你的需求，可以在 `make.conf` 中加入 `DEFAULT_VERSIONS` 变量来覆盖，如下所示：
 
 - `DEFAULT_VERSIONS=       perl5=5.16 ruby=1.9`
 
@@ -27,7 +27,7 @@
 
 过去两个月，几位已拥有 src 提交权限的开发者加入我们的社区，并获得了 ports 提交权限。他们是：jmg@、jmmv@ 和 truckman@。此外，Muhammad Rahman 获得了 ports 提交权限，将由 marino@ 和 bapt@ 指导。
 
-过去两个月只有一位提交者的权限被代管（motoyuki@），但我们也收到了来自 miwi@ 的遗憾消息，他决定卸下 FreeBSD 的职责，把更多精力放在家庭和职业生活上。除非你过去十年一直躲在石头下面，否则你很可能听说过 Martin (miwi@) Wilke。简而言之，Martin 是向 ports 树贡献提交数量最多的开发者，自 2006 年以来超过 20,000 次提交！
+过去两个月只有一位提交者的权限被代管（motoyuki@），但我们也收到了来自 miwi@ 的遗憾消息，他决定卸下 FreeBSD 的职责，把更多精力放在家庭和职业生活上。除非你过去十年一直与世隔绝，否则你很可能听说过 Martin (miwi@) Wilke。简而言之，Martin 是向 ports 树贡献提交数量最多的开发者，自 2006 年以来超过 20,000 次提交！
 
 ## 年度数据
 
@@ -35,7 +35,7 @@
 
 ## 新的 portmgr lurker
 
-每四个月，port 管理团队都会迎来一对新的 lurker，即两位 ports 提交者，他们有机会在更高层面做出贡献、了解 portmgr@ 的内部运作，并分担工作量。这两位 lurker 被加入 portmgr@ 邮件列表，可以接触到机密通信。我们鼓励他们参与所有讨论，并对 portmgr@ 的决策结果发表意见。
+每四个月，Ports 管理团队都会迎来一对新的 lurker，即两位 ports 提交者，他们有机会在更高层面贡献、了解 portmgr@ 的内部运作，并分担工作量。这两位 lurker 加入 portmgr@ 邮件列表，可以接触到机密通信。我们鼓励他们参与所有讨论，并对 portmgr@ 的决策结果发表意见。
 
 新一届任期于 11 月开始，我们的两位 lurker 是 ak@ 和 sunpoet@。按照传统，他们被邀请回答一份问卷，以便大家更好地了解他们。以下是 Alex [http://blogs.freebsdish.org/portmgr/2014/11/04/getting-to-know-your-portmgr-lurker-ak/] 和 Po-Chuan [http://blogs.freebsdish.org/portmgr/2014/12/03/getting-to-know-your-portmgr-lurker-sunpoet/] 回答的问卷链接。
 
