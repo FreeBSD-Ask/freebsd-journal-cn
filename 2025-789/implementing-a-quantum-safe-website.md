@@ -160,7 +160,7 @@ http{
 # pkg install -y py311-certbot
 ```
 
-之后，按照 Certbot 的使用说明进行操作。
+之后，按照 Certbot 的使用说明操作。
 
 如果要创建自签名证书，可以使用下面这行命令（记得将 DNS 和 IP 字段改为与你的环境相匹配）：
 
