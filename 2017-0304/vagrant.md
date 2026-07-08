@@ -18,7 +18,7 @@ Vagrant 一般由软件开发者或测试者使用，对运维人员也有用，
 
 ## Vagrant 项目的组成
 
-Vagrant 环境有两个主要组件。第一个是所谓的 Vagrant “box”。这是包含一个已安装客户机操作系统的磁盘镜像以及该磁盘镜像和操作系统的元数据的封装。用户可以自己——手动——创建并分享它们，或使用其他用户或团队创建好的 box。预构建的 box 可在 <https://atlas.hashicorp.com/boxes/search> 找到。`vagrant` 命令会默认在此位置搜索本地尚不存在的 box。可以用 `vagrant box add` 命令手动将 box 添加到本地 Vagrant 缓存，例如：
+Vagrant 环境有两个主要组件。第一个是所谓的 Vagrant“box”。这是包含一个已安装客户机操作系统的磁盘镜像以及该磁盘镜像和操作系统的元数据的封装。用户可以自己——手动——创建并分享它们，或使用其他用户或团队创建好的 box。预构建的 box 可在 <https://atlas.hashicorp.com/boxes/search> 找到。`vagrant` 命令会默认在此位置搜索本地尚不存在的 box。可以用 `vagrant box add` 命令手动将 box 添加到本地 Vagrant 缓存，例如：
 
 ```sh
 vagrant box add hashicorp/precise64
