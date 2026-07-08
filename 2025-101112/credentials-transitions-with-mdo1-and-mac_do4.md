@@ -200,35 +200,35 @@ FreeBSD 中的 Jail 形成一个层级结构[16](https://freebsdfoundation.org/o
 * `mac.do`：每个 jail 的模块模式。
 * `mac.do.rules`：适用于该 jail 的规则。
 
-参数 `mac.do.rules` 包含适用规则，其格式与上一节中看到的 sysctl(8) 项 `security.mac.do.rules` 完全相同。
+参数 `mac.do.rules` 包含适用规则，其格式与上一节中看到的 `sysctl(8)` 项 `security.mac.do.rules` 完全相同。
 
-通常，希望能够从 jail 外部控制安全参数，这实际上也是创建 jail 时唯一可行的方法。不过，也希望 jail 的行为尽可能接近宿主系统。mac_do(4) 是管理员用来授权凭据转换的工具，jail 中的管理员也应能使用它。
+通常，希望能够从 jail 外部控制安全参数，这实际上也是创建 jail 时唯一可行的方法。不过，也希望 jail 的行为尽可能接近宿主系统。`mac_do(4)` 是管理员用来授权凭据转换的工具，jail 中的管理员也应能使用它。
 
-为此，sysctl(8) 项 `security.mac.do.rules` 被设计为感知 jail，即它反映当前 jail 的设置，并且可以从 jail 内部进行设置。jail 内的 `security.mac.do.rules` 与对应 jail 的 `mac.do.rules` 参数实际上是同一个变量，因此它们的值始终一致。外部修改 `mac.do.rules` 会立即在 jail 内生效，反之，从 jail 内读取参数也会反映对 `security.mac.do.rules` 的任何内部修改。
+为此，`sysctl(8)` 项 `security.mac.do.rules` 被设计为感知 jail，即它反映当前 jail 的设置，并且可以从 jail 内部设置。jail 内的 `security.mac.do.rules` 与对应 jail 的 `mac.do.rules` 参数实际上是同一个变量，因此它们的值始终一致。外部修改 `mac.do.rules` 会立即在 jail 内生效，反之，从 jail 内读取参数也会反映对 `security.mac.do.rules` 的任何内部修改。
 
-参数 `mac.do` 指示 mac_do(4) 在 jail 中的工作方式。对于支持 jail 的模块的主控参数来说，通常接受或报告以下值：
+参数 `mac.do` 指示 `mac_do(4)` 在 jail 中的工作方式。对于支持 jail 的模块的主控参数来说，通常接受或报告以下值：
 
 * `new`：jail 的配置独立于父 jail。
 * `inherit`：jail 的配置继承自父 jail。
-* `disable`：在该 jail 中禁用 mac_do(4)。
+* `disable`：在该 jail 中禁用 `mac_do(4)`。
 
 出于显而易见的安全原因，默认值为 `disable`，除非显式设置了 `mac.do.rules`。
 
-你可能会想，这个参数与 `mac.do.rules` 的具体交互关系如何，因为两者似乎有些冗余。如本节开头所述，将 rules 设置为空字符串会导致 mac_do(4) 忽略凭据更改请求，并且 rules 是每个 jail 独立的，这也可以作为每个 jail 的开关来禁用 mac_do(4)，类似于 `disable` 的作用。反之，从 jail 外部设置 `mac.do.rules`，或在 jail 内部设置 `security.mac.do.rules`，总是会建立每个 jail 的设置，从概念上对应于 `new`。
+你可能会想，这个参数与 `mac.do.rules` 的具体交互关系如何，因为两者似乎有些冗余。如本节开头所述，将 rules 设置为空字符串会导致 `mac_do(4)` 忽略凭据更改请求，并且 rules 是每个 jail 独立的，这也可以作为每个 jail 的开关来禁用 `mac_do(4)`，类似于 `disable` 的作用。反之，从 jail 外部设置 `mac.do.rules`，或在 jail 内部设置 `security.mac.do.rules`，总是会建立每个 jail 的设置，从概念上对应于 `new`。
 
-我们引入[18](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor020) `mac.do` jail 参数有两个原因。首先，大多数支持 jail 的内核模块都会提供一个单一的开关来启用或禁用其在 jail 内的功能，我们认为设置这样一个开关既有利于系统一致性，也提供了比将 rules 设置为空字符串更自然的方式来禁用 mac_do(4)。其次，它提供了引入新的继承模式的机会，即 `inherit` 值，这对于希望一组 jail 行为一致的管理员非常有用。
+我们引入[18](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor020) `mac.do` jail 参数有两个原因。首先，大多数支持 jail 的内核模块都会提供一个单一的开关来启用或禁用其在 jail 内的功能，我们认为设置这样一个开关既有利于系统一致性，也提供了比将 rules 设置为空字符串更自然的方式来禁用 `mac_do(4)`。其次，它提供了引入新的继承模式的机会，即 `inherit` 值，这对于希望一组 jail 行为一致的管理员非常有用。
 
-在探讨继承的具体含义之前，先看看 `mac.do` 与 `mac.do.rules` 如何保持一致。内部上，每个 jail 都有一个标志，用于指示它是否继承自父 jail；如果不继承，则会保存一份规则设置（`mac.do.rules`）及其内部表示，从而避免信息冗余[19](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor021)。实际上，我们并不存储任何直接对应 `mac.do` 参数的值。该参数在读取时是根据现有数据生成的。由此可知，当继承标志被设置时，读取 `mac.do` 返回 `inherit`；否则，如果没有指定规则（空字符串）返回 `disable`；否则返回 `new`。在显式设置 `mac.do` 时，mac_do(4) 会检查其值是否与 `mac.do.rules` 一致。如果 `mac.do` 设置为 `new`，则必须指定 `mac.do.rules`。对于其他情况，我们应用鲁棒性原则[20](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor022)，即使严格来说 jail 参数中不应存在空字符串的 `mac.do.rules`，也会容忍其存在。
+在探讨继承的具体含义之前，先看看 `mac.do` 与 `mac.do.rules` 如何保持一致。内部上，每个 jail 都有一个标志，用于指示它是否继承自父 jail；如果不继承，则会保存一份规则设置（`mac.do.rules`）及其内部表示，从而避免信息冗余[19](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor021)。实际上，我们并不存储任何直接对应 `mac.do` 参数的值。该参数在读取时是根据现有数据生成的。由此可知，当继承标志被设置时，读取 `mac.do` 返回 `inherit`；否则，如果没有指定规则（空字符串）返回 `disable`；否则返回 `new`。在显式设置 `mac.do` 时，`mac_do(4)` 会检查其值是否与 `mac.do.rules` 一致。如果 `mac.do` 设置为 `new`，则必须指定 `mac.do.rules`。对于其他情况，我们应用鲁棒性原则[20](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor022)，即使严格来说 jail 参数中不应存在空字符串的 `mac.do.rules`，也会容忍其存在。
 
-当 `mac.do` 设置为 `inherit` 时，mac_do(4) 会直接使用适用于父 jail 的配置，而父 jail 本身可能继承自更高层的 jail。主要结果是，对父 jail 中任意规则的更改（直到第一个不继承的父 jail）会自动且立即在继承的 jail 中生效。这减轻了管理员在树状结构中保持多个 jail 配置同步时的工作量。如前所述，在 jail 上显式设置规则（无论通过 `mac.do.rules` 还是 `security.mac.do.rules`）会建立独立的 per-jail 配置，有效地打破继承。之后随时可以重新启用继承，只需再次将 `mac.do` 设置为 `inherit`。
+当 `mac.do` 设置为 `inherit` 时，`mac_do(4)` 会直接使用适用于父 jail 的配置，而父 jail 本身可能继承自更高层的 jail。主要结果是，对父 jail 中任意规则的更改（直到第一个不继承的父 jail）会自动且立即在继承的 jail 中生效。这减轻了管理员在树状结构中保持多个 jail 配置同步时的工作量。如前所述，在 jail 上显式设置规则（无论通过 `mac.do.rules` 还是 `security.mac.do.rules`）会建立独立的 per-jail 配置，有效地打破继承。之后随时可以重新启用继承，只需再次将 `mac.do` 设置为 `inherit`。
 
-与其他 jail 参数一样，你可以在创建 jail 时轻松使用这些参数进行配置，例如直接在 jail(8) 命令行上：
+与其他 jail 参数一样，你可以在创建 jail 时轻松使用这些参数配置，例如直接在 `jail(8)` 命令行上：
 
 ```sh
 jail -c name=test_jail path=/ mac.do=inherit
 ```
 
-或者通过 jail.conf(5) 配置。在 jail 运行时修改某些参数，可照常使用 jail -m，例如：
+或者通过 `jail.conf(5)` 配置。在 jail 运行时修改某些参数，可照常使用 `jail -m`，例如：
 
 ```sh
 jail -m name=test_jail mac.do=disable
@@ -236,33 +236,33 @@ jail -m name=test_jail mac.do=disable
 
 ## 启动配置
 
-宿主系统上的 mac_do(4) 配置通过 sysctl(8) knob（同时也是可调参数）完成，可以使用基本系统提供的两种机制之一在启动时进行设置。
+宿主系统上的 `mac_do(4)` 配置通过 `sysctl(8)` knob（同时也是可调参数）完成，可以使用基本系统提供的两种机制之一在启动时设置。
 
-第一种方式是调整 loader.conf(5) 配置，添加如下行：
+第一种方式是调整 `loader.conf(5)` 配置，添加如下行：
 
 ```sh
 security.mac.do.rules='uid=10001>uid=80,gid=80,+gid=80;uid=10001>uid=80'
 ```
 
-这种方式适用于规则必须在启动早期就可用的情况，或者例如你没有使用基本系统的 rc(8) 启动框架时。
+这种方式适用于规则必须在启动早期就可用的情况，或者例如你没有使用基本系统的 `rc(8)` 启动框架时。
 
-否则，你也可以将完全相同的行添加到 sysctl.conf(5) 中，当 rc(8) 执行时，sysctl(8) knob 会相应设置[21](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor023)。
+否则，你也可以将完全相同的行添加到 `sysctl.conf(5)` 中，当 `rc(8)` 执行时，`sysctl(8)` knob 会相应设置[21](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor023)。
 
-我们收到一些有限反馈，有少数人觉得 mac_do(4) 仅处理数值 ID 并且 sysctl(8) knob 语法过于简洁，不够实用。这本质上是由于将转换规则放在内核中，以应对某些用户态组件可能被破坏的强威胁模型。然而，我们理解大多数人并不需要如此高的安全级别，从密码和组数据库内容生成最终规则的用户态工具对他们可能更有用。曾有人提议设计专用可执行文件和配置文件来支持 mac_do(8)，但目前处于搁置状态，因为我们仍在反思整体设计，包括如何组织可执行文件、未来可能的配置文件以及如何避免冲突。如果更多人对此功能感兴趣，这一方向可能会尽快取得进展。
+我们收到一些有限反馈，有少数人觉得 `mac_do(4)` 仅处理数值 ID 并且 `sysctl(8)` knob 语法过于简洁，不够实用。这本质上是由于将转换规则放在内核中，以应对某些用户态组件可能被破坏的强威胁模型。然而，我们理解大多数人并不需要如此高的安全级别，从密码和组数据库内容生成最终规则的用户态工具对他们可能更有用。曾有人提议设计专用可执行文件和配置文件来支持 `mac_do(8)`，但目前处于搁置状态，因为我们仍在反思整体设计，包括如何组织可执行文件、未来可能的配置文件和如何避免冲突。如果更多人对此功能感兴趣，这一方向可能会尽快取得进展。
 
-另见本文最后一节，我们计划在 mdo(1) 中添加的短期功能，其中之一将弥补这一差距的重要部分。
+另见本文最后一节，我们计划在 `mdo(1)` 中添加的短期功能，其中之一将弥补这一差距的重要部分。
 
-## 关于 mac_do(4) 设计的一些说明
+## 关于 `mac_do(4)` 设计的一些说明
 
-Baptiste Daroussin 最初启动 mac_do(4)/mdo(1) 项目的目标，是在不使用“setuid 可执行文件”的情况下实现基于角色的凭据转换。在高安全性、规范严格的环境中，即便可以安装这些可执行文件，也可能需要经历冗长复杂的安全审计，而且随着可执行文件的升级，这些审计通常需要重新进行。因此，mac_do(4) 被设计为基于内核的替代方案，借助 MAC 框架[5]，能够授权非特权进程成功更改凭据。除了减少对“setuid 可执行文件”的依赖，这种架构还能立即降低凭据更改程序被攻击或出现编程漏洞时的潜在影响。
+Baptiste Daroussin 最初启动 `mac_do(4)`/`mdo(1)` 项目的目标，是在不使用“setuid 可执行文件”的情况下实现基于角色的凭据转换。在高安全性、规范严格的环境中，即便可以安装这些可执行文件，也可能需要经历冗长复杂的安全审计，而且随着可执行文件的升级，这些审计通常需要重新进行。因此，`mac_do(4)` 被设计为基于内核的替代方案，借助 MAC 框架[5]，能够授权非特权进程成功更改凭据。除了减少对“setuid 可执行文件”的依赖，这种架构还能立即降低凭据更改程序被攻击或出现编程漏洞时的潜在影响。
 
-mac_do(4) 的最初实现仅监控 `setuid()` 系统调用，根据匹配原始用户和目标用户的规则授权特定调用。为了让 mdo(1) 按目标用户的密码和组数据库修改组信息，mac_do(4) 必须接受任何 `setgroups()` 和 `setgid()` 系统调用。为了避免任意程序独立利用这些调用，mac_do(4) 仅授权来自 mdo(1) 程序生成的进程提出的凭据转换请求。
+`mac_do(4)` 的最初实现仅监控 `setuid()` 系统调用，根据匹配原始用户和目标用户的规则授权特定调用。为了让 `mdo(1)` 按目标用户的密码和组数据库修改组信息，`mac_do(4)` 必须接受任何 `setgroups()` 和 `setgid()` 系统调用。为了避免任意程序独立利用这些调用，`mac_do(4)` 仅授权来自 `mdo(1)` 程序生成的进程提出的凭据转换请求。
 
-因为允许 `setgroups()` 和 `setgid()` 的任意请求，会严重削弱减少攻击或漏洞影响的效果，我们修改了 mac_do(4)，对完整的凭据转换进行验证，并通过规则指定哪些组可以出现在最终凭据中。
+因为允许 `setgroups()` 和 `setgid()` 的任意请求，会严重削弱减少攻击或漏洞影响的效果，我们修改了 `mac_do(4)`，验证完整的凭据转换，并通过规则指定哪些组可以出现在最终凭据中。
 
-验证或拒绝完整转换从根本上要求原子性，这意味着需要对传统 UNIX 的安全 API 进行修改。一种自然的方法是为其添加事务模式，在该模式下连续修改凭据的调用不会立即生效，而是累积这些更改，最终在“提交”时一次性应用。这种方法在一定程度上可以简化对现有程序的修改，以及可能的凭据属性扩展，但对内核代码的侵入性较大，并且改变了现有系统调用 MAC 钩子的范式[22](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor024)。因此，我们采用了另一种方案：新增独立系统调用 setcred(2)，能够一次性设置所有凭据属性。这些属性通过一个结构体传递，并可根据需要通过标志进行扩展或版本控制。新增的 MAC 钩子会传入当前凭据和请求的凭据，使 mac_do(4) 能一次性看到当前状态和目标状态，并据此做出决策。
+验证或拒绝完整转换从根本上要求原子性，这意味着需要修改传统 UNIX 的安全 API。一种自然的方法是为其添加事务模式，在该模式下连续修改凭据的调用不会立即生效，而是累积这些更改，最终在“提交”时一次性应用。这种方法在一定程度上可以简化对现有程序的修改，和可能的凭据属性扩展，但对内核代码的侵入性较大，并且改变了现有系统调用 MAC 钩子的范式[22](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor024)。因此，我们采用了另一种方案：新增独立系统调用 `setcred(2)`，能够一次性设置所有凭据属性。这些属性通过一个结构体传递，并可根据需要通过标志扩展或版本控制。新增的 MAC 钩子会传入当前凭据和请求的凭据，使 `mac_do(4)` 能一次性看到当前状态和目标状态，并据此做出决策。
 
-即便在这些修改之后，我们仍保留了 mac_do(4) 只能授权由 mdo(1) 可执行文件生成的进程的限制，因为这可能允许在 mdo(1) 内实现额外的转换限制。2025 年 Google Summer of Code（GSoC 2025）的一名学生 Kushagra Srivastava 负责包括引入对该限制的可配置性，使管理员能够指定 mac_do(4) 可以授权哪些可执行文件。
+即便在这些修改之后，我们仍保留了 `mac_do(4)` 只能授权由 `mdo(1)` 可执行文件生成的进程的限制，因为这可能允许在 `mdo(1)` 内实现额外的转换限制。2025 年 Google Summer of Code（GSoC 2025）的一名学生 Kushagra Srivastava 被委派的任务之一是引入对该限制的可配置性，使管理员能够指定 `mac_do(4)` 可以授权哪些可执行文件。
 
 有些人可能会觉得，将根据规则检查并决定凭据转换的代码移入内核而不是在用户态执行，这一做法显得奇怪，甚至可能构成安全隐患。诚然，一旦内核被攻破，其后果无疑比“setuid 可执行文件”更加灾难性，但我们认为，前者发生的可能性远低于后者，原因如下。
 
