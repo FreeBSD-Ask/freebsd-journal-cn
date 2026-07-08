@@ -180,7 +180,7 @@ http{
 # service nginx start
 ```
 
-它会在启动之前先验证 **nginx.conf** 的语法，并对配置进行一次简单测试。如果一切正常，你应该会看到如下输出：
+它会在启动之前先验证 **nginx.conf** 的语法，并简单测试配置。如果一切正常，你应该会看到如下输出：
 
 ```sh
 Performing sanity check on nginx configuration:
