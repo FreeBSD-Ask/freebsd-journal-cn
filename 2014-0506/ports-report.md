@@ -7,7 +7,7 @@ Ports 报告是对 Ports 基础设施近期活动的汇总，涵盖 Ports 领域
 
 ## 新增 Ports Committers
 
-作为对 Ports 树的专注贡献者，其他 committer 会注意到你，进而提议授予你 commit 权限，这样他们就不再需要替你做工作 [sic]。我们最近加入 Ports Committers 行列的是 Jost Meixner。Jost 的众多兴趣之一是维护 FreeBSD 的 Linux Ports。
+只要你专注贡献 Ports 树，其他 committer 就会注意到你，进而提议授予你 commit 权限，这样他们就不再需要替你做工作 [sic]。我们最近加入 Ports Committers 行列的是 Jost Meixner。Jost 兴趣广泛，包括维护 FreeBSD 的 Linux Ports。
 
 ## portmgr-lurker 项目的新成员
 
@@ -15,13 +15,13 @@ Ports 报告是对 Ports 基础设施近期活动的汇总，涵盖 Ports 领域
 
 ## Ports 树的第二条分支
 
-由于第一条分支——2014Q1——是试验性的，你可能尚未耳闻。2014 年 1 月发布了首个季度分支，旨在提供一个稳定且高质量的 Ports 树。这些稳定分支每三个月从主 Ports 树截取一次快照，目前支持期为三个月，期间会接收安全修复以及构建与运行时修复。包会定期（每周）在该分支上构建，并照常通过 `pkg.FreeBSD.org` 发布（路径为 **/quarterly**，而非通常的 **/latest**）。4 月 1 日（并非玩笑），2014Q2 分支创建完成，首批基于该分支的构建随后不久便开始。
+第一条分支——2014Q1——是试验性的，你可能尚未耳闻。2014 年 1 月发布了首个季度分支，旨在提供一个稳定且高质量的 Ports 树。这些稳定分支每三个月从主 Ports 树截取一次快照，目前支持期为三个月，期间会接收安全修复以及构建与运行时修复。包会定期（每周）在该分支上构建，并照常通过 `pkg.FreeBSD.org` 发布（路径为 **/quarterly**，而非通常的 **/latest**）。4 月 1 日（并非玩笑），2014Q2 分支创建完成，首批基于该分支的构建随后不久便开始。
 
 ## 为改进 Ports 树出一份力
 
-前文提到的 **ports-mgmt/tinderbox** 和 **ports-mgmt/poudriere** 构建系统还有配套工具 **ports-mgmt/porttools**。借助这些工具，你可以创建一个新 Port，通过 `send-pr(1)` 为更新提交一份 PR，甚至发出 `port test` 命令把它当作简易构建系统使用。更多内容可阅读 <http://www.freebsd.org/doc/en/books/porters-handbook/testing-porttools.html>。
+前文提到的 **ports-mgmt/tinderbox** 和 **ports-mgmt/poudriere** 构建系统还有配套工具 **ports-mgmt/porttools**。借助这些工具，你可以创建新 Port，通过 `send-pr(1)` 为更新提交一份 PR，甚至发出 `port test` 命令把它当作简易构建系统使用。更多内容可阅读 <http://www.freebsd.org/doc/en/books/porters-handbook/testing-porttools.html>。
 
-安装该工具包时，你还会得到一个叫 `portlint(1)` 的优秀 porter 工具。正如 `lint(1)` 帮你去除 C 程序中的“绒毛”，`portlint(1)` 用启发式方法帮你发现错误的空白、错位的指令，以及其他大量改进 Port 的提示与建议。例如运行：
+安装该工具包时，你还会得到名叫 `portlint(1)` 的优秀 porter 工具。正如 `lint(1)` 帮你去除 C 程序中的“绒毛”，`portlint(1)` 用启发式方法帮你发现错误的空白、错位的指令，以及其他大量改进 Port 的提示与建议。例如运行：
 
 ```sh
 portlint -C /usr/ports/devel/fakeport # 这只是一个示例
@@ -46,8 +46,8 @@ WARN: Consider to set DEVELOPER=yes in /etc/make.conf
 
 ## 给准 Porter 的提示
 
-使用（半）自动化构建系统测试你的 Port。在上一期中，我们推荐订阅 <http://redports.org> 来测试 Port。该服务对所有人开放、为公共利益服务。有些人拥有必要的硬件资源来构建自己的构建系统。如果你正是其中一员，那么 Ports 树里有些工具可以一试。最初的构建系统是老牌的 Tinderbox，在树中以 **ports-mgmt/tinderbox** 出现，还有其前沿版本 **ports-mgmt/tinderbox-devel**。可阅读其网站 <http://tinderbox.marcuscom.com/> 了解更多。近年来出现了一个名为 Poudriere 的较新构建系统，译自法语大致就是“tinderbox”。可在 Ports 树中找到 **ports-mgmt/poudriere**，以及其前沿版本 **ports-mgmt/poudriere-devel**。更多信息见 <http://fossil.etoilebsd.net/poudriere>。`poudriere` 构建系统现已成为 Ports 管理团队执行 `-exp` 测试运行和包构建的基础。
+使用（半）自动化构建系统测试你的 Port。在上一期中，我们推荐订阅 <http://redports.org> 来测试 Port。该服务对所有人开放、为公共利益服务。有些人拥有必要的硬件资源来构建自己的构建系统。如果你正是其中一员，那么 Ports 树里有些工具可以一试。最初的构建系统是老牌的 Tinderbox，在树中以 **ports-mgmt/tinderbox** 出现，还有其前沿版本 **ports-mgmt/tinderbox-devel**。可阅读其网站 <http://tinderbox.marcuscom.com/> 了解更多。近年来出现了名为 Poudriere 的较新构建系统，译自法语大致就是“tinderbox”。可在 Ports 树中找到 **ports-mgmt/poudriere**，以及其前沿版本 **ports-mgmt/poudriere-devel**。更多信息见 <http://fossil.etoilebsd.net/poudriere>。`poudriere` 构建系统现已成为 Ports 管理团队执行 `-exp` 测试运行和包构建的基础。
 
-选择一个适合你的构建系统，利用它测试 Port 构建，验证其能干净地安装和卸载，甚至搭建你自己的私有打包系统。
+选择适合你的构建系统，利用它测试 Port 构建，验证其能干净地安装和卸载，甚至搭建你自己的私有打包系统。
 
 Ports 树是 FreeBSD 的增值软件集合。它是全球贡献者共同协作的成果，每个人都做了一点点让它变得更好的事情。向所有伸出援手的人致以诚挚的谢意。
