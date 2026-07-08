@@ -3,7 +3,7 @@
 - 原文：[Understanding Application and System Performance with hwpmc(4)](https://freebsdfoundation.org/wp-content/uploads/2014/03/Understanding-Application-and-System-Performance-with-HWPMC4.pdf)
 - 作者：**George Neville-Neil**
 
-过去几年里，体系结构与内存变得越来越复杂。这种增加的复杂度让理解软件性能比以往任何时候都更困难。幸运的是，CPU 设计者在芯片中加入了特性，让开发者和管理员能以极小的开销更好地理解软件性能。FreeBSD 上的硬件性能监控计数器（Hardware Performance Monitoring Counters）hwpmc(4) 驱动及其相关工具，为软件开发者——以及对系统性能感兴趣的任何人——提供了一种方式，更好地理解他们的软件在多大程度上高效利用了底层硬件、应用以及操作系统本身。hwpmc 子系统利用了 CPU 设计者专门预留的硬件特定寄存器，唯一目的就是理解系统的运行时性能。
+过去几年里，体系结构与内存变得越来越复杂。这种增加的复杂度让理解软件性能比以往任何时候都更困难。幸运的是，CPU 设计者在芯片中加入了特性，让开发者和管理员能以极小的开销更好地理解软件性能。FreeBSD 上的硬件性能监控计数器（Hardware Performance Monitoring Counters）hwpmc(4) 驱动及其相关工具，为软件开发者——以及对系统性能感兴趣的任何人——提供了一种方式，更好地理解他们的软件在多大程度上高效利用了底层硬件、应用、操作系统本身。hwpmc 子系统利用了 CPU 设计者专门预留的硬件特定寄存器，唯一目的就是理解系统的运行时性能。
 
 ## 那是 20 年前……
 
@@ -13,7 +13,7 @@
 
 第二个问题是，基于软件的性能分析方案改变了最终二进制程序的执行流，意味着被分析的代码与最终交付给客户的软件并非一一对应。虽然可以把性能分析过的二进制交付给客户，但分析过的二进制引入的开销会导致整体系统性能下降，这不可接受。
 
-基于软件的性能分析带来的第三个问题是，终端用户无法自行测量自己系统的性能。客户拿到未做性能分析的二进制应用，无法给二进制加上性能分析以发现该程序是否是系统低效的来源。基于硬件的性能方案改善了这些问题。
+基于软件的性能分析带来的第三个问题是，终端用户无法自行测量自己系统的性能。客户拿到未做性能分析的二进制应用，无法给二进制加上性能分析以发现该程序是否是系统低效的来源。基于硬件的性能方案改善了其中一些问题。
 
 ## 基于硬件的性能监控计数器
 
@@ -124,7 +124,7 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 > pmcstat -R /tmp/hanoi.log -G /tmp/hanoi.graph
 ```
 
-图 7 的输出显示 mov() 例程（见列表 X 中的代码）占据了最大数量的样本，而程序的 main() 例程样本很少。结果正如我们对该程序的预期。
+图 7 的输出显示 `mov()` 例程（见列表 X 中的代码）占据了最大数量的样本，而程序的 `main()` 例程样本很少。结果正如我们对该程序的预期。
 
 **图 7**
 
@@ -141,7 +141,7 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 100.0% [1429] _start
 ```
 
-pmcstat 的输出还可以另一种方式展示，作为 gprof(1) 输出 `pmcstat -R /tmp/hanoi.log -g`（图 7）。用 `-g` 参数处理同一日志会创建一个按事件分的目录 `INSTR_RETIRED_ANY/`，其中包含采样时使用中的每个程序、库和内核的输出文件。处理 hanoi.gmon 文件得到图 8 所示输出。这种情况下，时间具有误导性。seconds 列中的数字代表被计数的事件，而非秒，但这样的输出便于简短阅读。我们仍然看到 mov() 例程是事件的最大消费者，占据了与该程序相关的所有事件的 99.8%。
+pmcstat 的输出还可以另一种方式展示，作为 gprof(1) 输出 `pmcstat -R /tmp/hanoi.log -g`（图 7）。用 `-g` 参数处理同一日志会创建按事件分的目录 **INSTR_RETIRED_ANY/**，其中包含采样时使用中的每个程序、库和内核的输出文件。处理 hanoi.gmon 文件得到图 8 所示输出。这种情况下，时间具有误导性。seconds 列中的数字代表被计数的事件，而非秒，但这样的输出便于简短阅读。我们仍然看到 `mov()` 例程是事件的最大消费者，占据了与该程序相关的所有事件的 99.8%。
 
 **图 8**
 
@@ -179,9 +179,9 @@ while (1) {
 **图 9**
 
 ```sh
-> sudo pmcstat -O /tmp/syscall.log -S INSTR_RETIRED_ANY ./syscall 10
+# pmcstat -O /tmp/syscall.log -S INSTR_RETIRED_ANY ./syscall 10
 3232709 loops
-> sudo pmcstat -R /tmp/syscall.log -G /tmp/syscall.graph
+# pmcstat -R /tmp/syscall.log -G /tmp/syscall.graph
 CONVERSION STATISTICS:
 #exec/elf 1
 #samples/total 262735
@@ -190,7 +190,7 @@ CONVERSION STATISTICS:
 #callchain/dubious-frames 6
 ```
 
-最大数量的样本——10%——来自 `witness_unlock()` 内核例程。沿图向下，我们看到构成针对 `witness_unlock()` 记录的 12263 个事件的组成成分，包括 `do_dup()`、`closefp()` 和 `sys_umask()`，它们是被 `dup()`、`close()` 和 `umask()` 系统调用调用的内核侧例程。最便宜的系统调用 `getuid()` 和 `getpid()` 直到文件靠后才出现。有趣的对比是 libc 上计数的事件数与内核上计数的事件数。图 11 展示了针对库版 getuid 与系统调用内核侧 sys_getuid 计数的事件数。C 库中的样板代码与内核中的相比微不足道，这告诉我们此代码最大的提速空间在于改进内核侧代码。`getpid()` 和 `getuid()` 都是琐碎调用，但在基准测试中用于确定系统调用的开销。
+最大数量的样本——10%——来自 `witness_unlock()` 内核例程。沿图向下，我们看到构成针对 `witness_unlock()` 记录的 12263 个事件的组成成分，包括 `do_dup()`、`closefp()` 和 `sys_umask()`，它们是被 `dup()`、`close()` 和 `umask()` 系统调用调用的内核侧例程。最便宜的系统调用 `getuid()` 和 `getpid()` 直到文件靠后才出现。有趣的对比是 libc 上计数的事件数与内核上计数的事件数。图 11 展示了针对库版 `getuid` 与系统调用内核侧 `sys_getuid` 计数的事件数。C 库中的样板代码与内核中的相比微不足道，这告诉我们此代码最大的提速空间在于改进内核侧代码。`getpid()` 和 `getuid()` 都是琐碎调用，但在基准测试中用于确定系统调用的开销。
 
 **图 10**
 
