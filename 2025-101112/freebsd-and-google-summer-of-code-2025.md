@@ -126,7 +126,7 @@ Pau Sum 的项目旨在为 FreeBSD 的 ext2fs 文件系统实现 Linux 兼容的
 * **ext2fs_journal_transaction**：分组原子元数据更新
 * **ext2fs_journal_buf**：跟踪每个块的状态
 
-核心文件系统操作（如 `ext2_link`、`ext2_mkdir`、`ext2_write`）扩展了日志钩子，用于开始事务、标记脏数据和结束事务。提交事务时会写入描述符块、元数据块、撤销块和提交块，并进行检查点操作以刷新磁盘更新。恢复分三步进行：验证事务范围、收集撤销块、重放未撤销的元数据。
+核心文件系统操作（如 `ext2_link`、`ext2_mkdir`、`ext2_write`）扩展了日志钩子，用于开始事务、标记脏数据和结束事务。提交事务时会写入描述符块、元数据块、撤销块和提交块，并检查点操作以刷新磁盘更新。恢复分三步进行：验证事务范围、收集撤销块、重放未撤销的元数据。
 
 项目结束时，12 个日志钩子中已有 11 个完成，正进行截断和基于 extents 的操作开发。计划的扩展包括对 extents 和截断的日志支持、日志完整性校验、更全面的崩溃模拟和文档清理。已通过 [fsx](https://www.freshports.org/devel/fsx/) 和 [dirconc](https://www.netbsd.org/~riastradh/tmp/dirconc.c) 测试该实现。可在 [他 Fork 的 FreeBSD src 仓库](https://github.com/pxsum/freebsd-ext34/tree/extfs-journaling) 获取 Pau 的代码。
 
