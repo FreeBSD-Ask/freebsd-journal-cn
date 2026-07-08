@@ -3,7 +3,7 @@
 - 原文：[svn update](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)
 - 作者：**Glen Barber**
 
-又到了这个时候——新年伊始，正是回顾 FreeBSD 开发者过去一年中带来的新功能和改进的好时机。坐下来，放松，看看这些亮点。
+又到了这个时候——新年伊始，正是回顾 FreeBSD 开发者过去一年中带来的新功能和改进的好时机。坐下来，放松，欣赏这些亮点。
 
 无论你是 FreeBSD 系统管理员、应用开发者还是业余爱好者，系统的变化，尤其是工具和配置的变化，都是需要密切关注的重要内容。以下是即将发布的 FreeBSD 版本中可以期待的一些变化。
 
