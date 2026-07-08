@@ -187,9 +187,9 @@ gid=0>any
 
 需要提醒的是，目前 `mdo(1)` 面向基于角色的方案，因此在任何情况下，即使目标用户是 root，也不会要求输入密码来切换用户。
 
-我们刚刚展示了 mac_do(4) 规则提供的丰富实用可能性，如你所见，它们非常灵活，能够精确表达允许的目标凭据[15](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor017)。在设计时，我们努力保持语法尽可能易于理解，同时受限于 sysctl(8) 值本质上为单行的特性，这要求语法简洁、表达能力足够，并且内核只处理数值 ID，不访问密码和组数据库。即便你一开始不完全理解 `security.mac.do.rules` 的某个具体设置，也不必担心，稍加研究很快就能掌握，因此不要被示例淹没，根据需要花时间学习即可。
+我们刚刚展示了 `mac_do(4)` 规则提供的丰富实用可能性，如你所见，它们非常灵活，能够精确表达允许的目标凭据[15](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor017)。在设计时，我们努力保持语法尽可能易于理解，同时受限于 `sysctl(8)` 值本质上为单行的特性，这要求语法简洁、表达能力足够，并且内核只处理数值 ID，不访问密码和组数据库。即便你一开始不完全理解 `security.mac.do.rules` 的某个具体设置，也不必担心，稍加研究很快就能掌握，因此不要被示例淹没，根据需要花时间学习即可。
 
-规则的更完整和正式的规范，请参见 mac_do(4) 手册页。
+规则的更完整和正式的规范，请参见 `mac_do(4)` 手册页。
 
 ## Jail
 
