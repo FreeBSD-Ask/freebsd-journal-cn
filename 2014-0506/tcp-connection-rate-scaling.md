@@ -5,15 +5,15 @@
 
 当今的商品服务器，单块网卡（NIC）端口带宽达 10+ 吉比特、处理器核数达数十，其网络与处理能力足以在最小型服务器上承载最严苛的网络服务。
 
-随着基于 Web 的服务的流行，人们对扩展这类服务给予了大量关注，以应对上一个十年中诸如 C10K 问题（`http://en.wikipedia.org/wiki/C10k_problem`）的挑战——即在单台服务器上同时处理 10,000 条连接。使用非阻塞 I/O 和事件通知（如 `kqueue()`）实现的现代服务器软件可处理数万条并发连接。如今的新挑战瞄准在单台服务器上同时服务多达一百万条连接。当前的 NIC 硬件足以支持，但要把连接数继续推高，剩余的挑战之一便是扩展单台服务器可服务的 TCP 连接速率（`http://blog.whatsapp.com/index.php/2012/01/1-million-is-so-2011/`）。本文考察若干类型的基于 TCP 的服务，其中首要的扩展问题是处理现代服务器硬件上最高速率的 TCP 连接建立。这与向数百万条已建立的 TCP 连接提供内容是不同的挑战。此类服务包括：
+随着基于 Web 的服务的流行，人们对扩展这类服务给予了大量关注，以应对上一个十年中诸如 C10K 问题（<http://en.wikipedia.org/wiki/C10k_problem>）的挑战——即在单台服务器上同时处理 10,000 条连接。使用非阻塞 I/O 和事件通知（如 `kqueue()`）实现的现代服务器软件可处理数万条并发连接。如今的新挑战瞄准在单台服务器上同时服务多达一百万条连接。当前的 NIC 硬件足以支持，但要把连接数继续推高，剩余的挑战之一便是扩展单台服务器可服务的 TCP 连接速率（<http://blog.whatsapp.com/index.php/2012/01/1-million-is-so-2011/>）。本文考察若干类型的基于 TCP 的服务，其中首要的扩展问题是处理现代服务器硬件上最高速率的 TCP 连接建立。这与向数百万条已建立的 TCP 连接提供内容是不同的挑战。此类服务包括：
 
-- 基于 TCP 的 DNS 服务（`http://tools.ietf.org/html/rfc5966`）
+- 基于 TCP 的 DNS 服务（<http://tools.ietf.org/html/rfc5966>）
 - 单次请求与响应的 HTTP 服务，例如在线证书状态协议（OCSP）服务
 - 域名注册局的 Whois 服务
 
 ## FreeBSD 中的扩展
 
-在上述示例中，TCP 上的 DNS 是我们预期会在互联网上增长的那种流量——随着 DNSSEC 的采用导致 DNS 响应变大（`https://www.dns-oarc.net/node/199`），且服务提供商使用 TCP 以减少与无连接协议（如用户数据报协议 UDP）相关的攻击向量。为深入这一扩展挑战，图 1 展示了与建立 TCP 连接、交换请求与响应数据以及拆除该 TCP 连接相关联的数据包。
+在上述示例中，TCP 上的 DNS 是我们预期会在互联网上增长的那种流量——随着 DNSSEC 的采用导致 DNS 响应变大（<https://www.dns-oarc.net/node/199>），且服务提供商使用 TCP 以减少与无连接协议（如用户数据报协议 UDP）相关的攻击向量。为深入这一扩展挑战，图 1 展示了与建立 TCP 连接、交换请求与响应数据以及拆除该 TCP 连接相关联的数据包。
 
 图 1. 典型数据包，小型 TCP 请求
 
@@ -124,7 +124,7 @@ PID USERNAME PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 ...
 ```
 
-按此性能剖析，该核超过 50% 的 CPU 时间花在 `__rw_wlock_hard()` 上，而这个内核函数主要由 `tcp_input()` 调用。`__rw_wlock_hard()` 是读者/写者内核锁实现的一部分，更确切地说，该函数的目标是获取该锁的独占访问。运行内核锁性能分析（`LOCK_LOCK_PROFILING(9)`）并按每个锁的累计等待时间（`wait_total`，单位微秒）排序，可得到竞争锁的详细信息，见图 5。
+按此性能剖析，该核超过 50% 的 CPU 时间花在 `__rw_wlock_hard()` 上，而这个内核函数主要由 `tcp_input()` 调用。`__rw_wlock_hard()` 是读者/写者内核锁实现（`rwlock(9)`）的一部分，更确切地说，该函数的目标是获取该锁的独占访问。运行内核锁性能分析（`LOCK_LOCK_PROFILING(9)`）并按每个锁的累计等待时间（`wait_total`，单位微秒）排序，可得到竞争锁的详细信息，见图 5。
 
 图 5. TCP 负载的锁性能分析
 
@@ -181,9 +181,9 @@ max wait_max total wait_total count avg wait_avg cnt_hold cnt_lock name
 2. 在当前使用 `rw:tcp` 锁之处新增更细粒度的锁。
 3. 切换为 `rw:tcp` 读锁，以允许关键代码路径中的并发。
 
-作为第一种缓解手段的示例，避免在 `accept()` 系统调用中加 `rw:tcp` 锁的实现已被采纳，将出现在未来版本的 FreeBSD 中（`http://www.freebsd.org/cgi/query-pr.cgi?pr=183659`）。似乎还有其他类似机会。
+作为第一种缓解手段的示例，避免在 `accept()` 系统调用中加 `rw:tcp` 锁的实现已被采纳，将出现在未来版本的 FreeBSD 中（<http://www.freebsd.org/cgi/query-pr.cgi?pr=183659>）。似乎还有其他类似机会。
 
-作为第二种缓解手段的示例，针对公司大规模网络服务上 TIME-WAIT 状态连接的过期处理，一种替代实现也正被采纳（`http://svnweb.freebsd.org/base?view=revision&revision=264321`）。该实现不通过锁 `rw:tcp` 来管理全局 TIME-WAIT 列表，而是创建了一把新锁 `rw:tcptw`。虽然 `rw:tcp` 锁仍被用于最终销毁 `inpcb` 结构体，但它只被短暂持有，且不会在遍历过期列表期间持有。
+作为第二种缓解手段的示例，针对公司大规模网络服务上 TIME-WAIT 状态连接的过期处理，一种替代实现也正被采纳（<http://svnweb.freebsd.org/base?view=revision&revision=264321>）。该实现不通过锁 `rw:tcp` 来管理全局 TIME-WAIT 列表，而是创建了一把新锁 `rw:tcptw`。虽然 `rw:tcp` 锁仍被用于最终销毁 `inpcb` 结构体，但它只被短暂持有，且不会在遍历过期列表期间持有。
 
 使用上述两个补丁的早期性能结果显示，这些技术有助于扩展连接速率。借助 `accept()` 系统调用避免和 TIME-WAIT 单独细粒度锁，我们看到连接速率从每秒 62,000 条提升到每秒 69,000 条。提升幅度虽不算大，但看来这两种技术还有进一步应用空间。
 
