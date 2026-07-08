@@ -41,7 +41,7 @@ Starting node_exporter.
 
 ```sh
 $ sudo vim /usr/local/etc/prometheus.yml
-# 在 “scrape_configs” 下添加以下条目：
+# 在“scrape_configs”下添加以下条目：
   - job_name: 'node_exporter'
     static_configs:
       - targets: ['localhost:9100']
