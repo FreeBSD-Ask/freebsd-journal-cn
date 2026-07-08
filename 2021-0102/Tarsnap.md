@@ -13,11 +13,11 @@ Tarsnap 是一项在线备份服务，注重安全性——事实上，当我在
 
 为了创建一个“Tarsnap FreeBSD 12.2-RELEASE”镜像，我首先启动上述的 AMI Builder，然后大约等待 20 分钟，直到虚拟机启动并将（标准的）FreeBSD 12.2-RELEASE 安装到其虚拟磁盘上。然后将该磁盘挂载到 /mnt/，同时运行在内存磁盘上的 FreeBSD 系统从 / 启动并启动一个 sshd 进程。
 
-待我可以通过 SSH 连接到 AMI Builder（像其他 EC2 中的 FreeBSD 镜像一样，使用我提供给 EC2 的 SSH 密钥和用户名 ec2-user），我就开始进行一些我希望在所有 Tarsnap 系统中使用的标准配置：
+待我可以通过 SSH 连接到 AMI Builder（像其他 EC2 中的 FreeBSD 镜像一样，使用我提供给 EC2 的 SSH 密钥和用户名 ec2-user），我就开始设置一些我希望在所有 Tarsnap 系统中使用的标准配置：
 
-- 我从 FreeBSD ports 树中构建并安装一些软件包：pkg、djbdns、qmail、spiped 和 tarsnap。
-- 我启用一些我需要的守护进程（svscan 和 spiped），禁用其他我不需要的代码（sendmail 和 firstboot pkg 安装），并在 `/etc/rc.conf` 中锁定一些设置（禁用 syslogd 中的网络监听并限制 sshd 只使用 IPv4）。
-- 我指示 pkg 使用我自己构建的包，而不是 FreeBSD 项目发布的包，方法是在 `/usr/local/etc/pkg/repos/` 中创建配置文件。
+- 我从 FreeBSD Ports 树中构建并安装一些软件包：pkg、djbdns、qmail、spiped 和 tarsnap。
+- 我启用一些我需要的守护进程（svscan 和 spiped），禁用其他我不需要的代码（sendmail 和 firstboot pkg 安装），并在 **/etc/rc.conf** 中锁定一些设置（禁用 syslogd 中的网络监听并限制 sshd 只使用 IPv4）。
+- 我指示 pkg 使用我自己构建的包，而不是 FreeBSD 项目发布的包，方法是在 **/usr/local/etc/pkg/repos/** 中创建配置文件。
 - 我添加定时任务每天早上运行 `freebsd-update cron` 和 `pkg upgrade -qn`——我不希望自动安装更新，但我绝对希望在更新可用时收到电子邮件通知。
 - 我设置 djbdns 提供本地 DNS 缓存，并将 `resolv.conf` 指向它。
 - 我设置 qmail 通过我的邮件服务器发送外发邮件。
