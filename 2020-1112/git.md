@@ -100,8 +100,8 @@ GitHub 代码库地址：
 执行后，您会看到类似以下的提示信息：  
 
 ```sh
-Note: checking out ‘08b8197a742a96964d2924391bf9fdfeb788865d’.
-You are in ‘detached HEAD’ state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without  
+Note: checking out '08b8197a742a96964d2924391bf9fdfeb788865d'.
+You are in 'detached HEAD' state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without  
 impacting any branches by performing another checkout.  
 If you want to create a new branch to retain commits you create, you may do so  
 (now or later) by using -b with the checkout command again. Example:  
