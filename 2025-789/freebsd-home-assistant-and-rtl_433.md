@@ -67,7 +67,7 @@ URL_IMG="https://download.freebsd.org/releases/arm/armv7/ISO-IMAGES/$VERSION/Fre
 URL_CHECKSUM="https://download.freebsd.org/releases/arm/armv7/ISO-IMAGES/$VERSION/CHECKSUM.SHA512-FreeBSD-$RELEASE_VERSION-arm-armv7-GENERICSD"
 ```
 
-接下来，我们定义目标镜像名称、目录树、所需软件包、u-boot 引导加载程序位置、时区、要在目标镜像上安装的软件包，以及初始目标镜像大小。
+接下来，我们定义目标镜像名称、目录树、所需软件包、u-boot 引导加载程序位置、时区、要在目标镜像上安装的软件包，和初始目标镜像大小。
 
 ```sh
 TARGET_IMG="nanopi-rtl-433-FreeBSD-$RELEASE_VERSION.img"
