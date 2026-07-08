@@ -1,5 +1,8 @@
 # 基金会来信
 
+- 原文：[Foundation Letter](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)
+- 作者：**FreeBSD 期刊编辑委员会**
+
 ## 欢迎来到 2015 年的 FreeBSD 期刊！
 
 新年伊始，我们为 FreeBSD 期刊订阅者带来一批全新文章，还有几项新举措。首先是新增了关于参与 FreeBSD 项目的文章。本期中，Dru Lavigne 介绍了多种参与方式，Rick Miller 和 Julien Charbon 则讲述了他们如何在 Verisign 内部采用 FreeBSD，进而成为 FreeBSD 源码库活跃贡献者。

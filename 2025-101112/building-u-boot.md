@@ -11,7 +11,7 @@
 
 在 AMD/Xilinx Zynq 芯片上，第一阶段引导加载程序存放在 Zynq 芯片本身的 BootROM 中。Zynq 的启动流程可参考 [Zynq 7000 SoC 技术参考手册](https://docs.u-boot.org/en/latest/index.html) 第 6 章“Boot and Configuration”。简要描述是：设备上电时，会采样一些引脚，根据其状态选择多种启动方式之一。这允许开发板上的跳线（根据 [Zybo Z7 参考手册](https://digilent.com/reference/programmable-logic/zybo-z7/reference-manual?redirect=1) 图 2.1 的 JP5）选择启动方式，其中之一是从 SD 卡启动。如果选择这种方式，BootROM 代码会在 SD 卡的 FAT16 或 FAT32 分区上寻找名为 `boot.bin` 的文件。这就是 U-boot 所称的二级程序加载器（SPL）。Zynq 芯片包含少量板载 RAM，因此 BootROM 能加载的程序大小受到限制。在非裸机应用中，SPL 必须包含足够的代码来配置 Zynq 芯片（PLL、内存接口等），以便启动内存系统并加载完整的 U-boot。完整的 U-boot 是功能更丰富的版本（支持文件系统等）。
 
-我们非常幸运，因为 Zybo Z7 已经在 U-boot 中得到支持。所以，我们只需要让编译流程能够正常运行即可。U-boot 通常是在主机系统上为目标系统构建的。前面提到的 U-boot 文档建议，我们应通过环境变量来设置用于交叉编译的编译器。我们将使用 GCC 编译器和 GNU 工具交叉编译，因此需要安装这些软件包并设置交叉编译器。U-boot 还使用 `gmake` 构建，而不是标准的 BSD `make`，因此我们需要安装 `gmake`，以及其他一些软件包：
+我们非常幸运，因为 Zybo Z7 已经在 U-boot 中得到支持。所以，我们只需要让编译流程能够正常运行即可。U-boot 通常是在主机系统上为目标系统构建的。前面提到的 U-boot 文档建议，我们应通过环境变量来设置用于交叉编译的编译器。我们将使用 GCC 编译器和 GNU 工具交叉编译，因此需要安装这些软件包并设置交叉编译器。U-boot 还使用 `gmake` 构建，而不是标准的 BSD `make`，因此我们需要安装 `gmake`，和其他一些软件包：
 
 ```sh
 pkg install gmake
