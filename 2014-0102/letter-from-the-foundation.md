@@ -1,24 +1,12 @@
 # 基金会致辞
 
-**FreeBSD 期刊 编辑委员会**
-
-- **John Baldwin**——FreeBSD 核心团队成员
-- **Daichi Goto**——BSD Consulting Inc.（东京）董事
-- **Joseph Kong**——《FreeBSD Device Drivers》作者
-- **Dru Lavigne**——FreeBSD Foundation 主任、BSD 认证小组主席
-- **Michael W. Lucas**——《Absolute FreeBSD》作者
-- **Kirk McKusick**——FreeBSD Foundation 主任、《The Design and Implementation of the FreeBSD Operating System》首席作者
-- **George Neville-Neil**——FreeBSD Foundation 主任、《The Design and Implementation of the FreeBSD Operating System》合著者
-- **Hiroki Sato**——FreeBSD Foundation 主任、AsiaBSDCon 主席、FreeBSD 核心团队成员、东京工业大学助理教授
-- **Robert Watson**——FreeBSD Foundation 主任、TrustedBSD 项目创始人、剑桥大学讲师
-
 ## 欢迎致辞
 
 向整个 FreeBSD 社区致以问候！
 
 欢迎阅读《FreeBSD Journal》创刊号——这是我们全新制作的专业在线杂志系列，可通过订阅或单期购买，在 Apple iTunes、Google Play 和 Amazon Kindle 等各大应用商店获取。
 
-在后续各期中，你将看到覆盖 FreeBSD 社区各个方面的长篇文章和专栏。我们的编辑覆盖面广泛，涵盖以下主题：大规模系统部署管理、应用开发、系统编程、嵌入式系统、学术研究以及通用软件开发——全部围绕 FreeBSD 展开。
+在后续各期中，你将看到覆盖 FreeBSD 社区各个方面的长篇文章和专栏。我们的编辑覆盖面广泛，涵盖以下主题：大规模系统部署管理、应用开发、系统编程、嵌入式系统、学术研究、通用软件开发——全部围绕 FreeBSD 展开。
 
 本期（第 1 期）聚焦 FreeBSD 10——FreeBSD 项目主线最新主版本。FreeBSD 10 带来许多其他开源操作系统中尚未出现的新特性，包括基于 LLVM 的全新编译器工具链，以及成熟的、作为一等公民的内核级 ZFS 文件系统支持。
 
