@@ -3,37 +3,37 @@
 - 原文：[Credentials Transitions with mdo(1) and mac_do(4)](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/)
 - 作者：Olivier Certner
 
-在本文中，我们探讨如何使用 mdo(1) 程序，轻松且快速地以不同的凭据启动新进程，以及系统管理员如何通过利用内核模块 mac_do(4)，使非特权用户能够发起凭据转换，从而在简单的基于角色的场景中，无需安装诸如 sudo(8) 或 doas(1) 等第三方程序。
+在本文中，我们探讨如何使用 `mdo(1)` 程序，轻松且快速地以不同的凭据启动新进程，和系统管理员如何利用内核模块 `mac_do(4)`，使非特权用户能够发起凭据转换，从而在简单的基于角色的场景中，无需安装诸如 `sudo(8)` 或 `doas(1)` 等第三方程序。
 
 传统的 UNIX 访问控制方法，本质上依赖于以下概念和组件：
 
-* 用户与组。组旨在通过在某些方面对组内所有用户进行统一处理，从而简化管理。
+* 用户与组。组旨在通过在某些方面对组内所有用户统一处理，从而简化管理。
 * 进程，作为代表某个用户和组行事的主体，这些用户和组被称为其凭据。
 * 文件所有权（一个用户、一个组）与权限，它们分别控制所有者、文件所属组的成员以及其他用户的访问。
 * 特殊的 root 用户[1](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor003)，其拥有全部特权，尤其是不受访问控制约束。
-* set-user-ID / set-group-ID 可执行文件，这类程序在启动时，其进程会分别将可执行文件的所有者作为用户、将可执行文件的组作为“主”组加以认可[2](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor000)。
+* set-user-ID / set-group-ID 可执行文件，这类程序在启动时，其进程会分别将可执行文件的所有者作为用户、将可执行文件的组作为“主”组认可[2](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor000)。
 
 系统管理员的一项主要职责，是为其用户提供对系统各类资源的适当访问权限。在大多数情况下，这意味着定义用户和组，并确保文件权限符合预期的安全策略。
 
-UNIX 访问控制模型具有这样的灵活性：用户不必对应真实的、具体的人，而也可以表示角色，由多个需要访问特定资源和信息的真实用户来扮演。事实上，在除最简单的文件共享场景之外的所有情况下，这种依赖 UNIX 用户而不仅仅是组的基于角色的方法都是必要的。这使得临时采用另一组凭据——即基于目标用户建立的凭据——成为系统的一项重要功能，而这一功能传统上由程序 su(1) 来完成。
+UNIX 访问控制模型具有这样的灵活性：用户不必对应真实的、具体的人，而也可以表示角色，由多个需要访问特定资源和信息的真实用户来扮演。事实上，在除最简单的文件共享场景之外的所有情况下，这种依赖 UNIX 用户而不仅仅是组的基于角色的方法都是必要的。这使得临时采用另一组凭据——即基于目标用户建立的凭据——成为系统的一项重要功能，而这一功能传统上由程序 `su(1)` 来完成。
 
-然而，su(1) 在切换到新用户的凭据之前，需要对该用户进行身份验证，通常是要求输入该用户的密码[3](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor005)。这对于已经被分配了角色且本身已经完成认证的人类用户来说并不方便，对于自动化场景而言同样如此。它还必然会启动目标用户的 shell，这使其无法用于那些没有有效登录 shell 的用户，而这正是角色用户通常所期望的设置——任何人都不应当能够直接以其身份登录。此外，它还使得以指定参数启动某个特定程序变得比应有的更加繁琐[4](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor006)。
+然而，`su(1)` 在切换到新用户的凭据之前，需要对该用户身份验证，通常是要求输入该用户的密码[3](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor005)。这对于已经被分配了角色且本身已经完成认证的人类用户来说并不方便，对于自动化场景而言同样如此。它还必然会启动目标用户的 shell，这使其无法用于那些没有有效登录 shell 的用户，而这正是角色用户通常所期望的设置——任何人都不应当能够直接以其身份登录。此外，它还使得以指定参数启动某个特定程序变得比应有的更加繁琐[4](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor006)。
 
-为克服这些限制，系统管理员通常会安装其他用于代表其他用户运行命令的程序，例如 sudo(8) 或 doas(1)。然而，像 sudo(8) 这样的程序具有不可忽视的攻击面，部分原因在于其包含大量不常用的功能，尤其是其模块化设计，从安全角度看可能是危险的。更一般地说，安装可执行文件所有者为 root 且设置了 set-user-ID 模式位的程序，本身就是一项安全隐患，因为一旦这些程序被攻破，就可能通过以 root 用户身份执行代码而获得完整的管理权限。但传统的 UNIX 并未提供其他更改凭据的方式，这也是 su(1) 和 login(1) 等程序必须以这种方式安装的原因。
+为克服这些限制，系统管理员通常会安装其他用于代表其他用户运行命令的程序，例如 `sudo(8)` 或 `doas(1)`。然而，像 `sudo(8)` 这样的程序具有不可忽视的攻击面，部分原因在于其包含大量不常用的功能，尤其是其模块化设计，从安全角度看可能是危险的。更一般地说，安装可执行文件所有者为 root 且设置了 set-user-ID 模式位的程序，本身就是一项安全隐患，因为一旦这些程序被攻破，就可能通过以 root 用户身份执行代码而获得完整的管理权限。但传统的 UNIX 并未提供其他更改凭据的方式，这也是 `su(1)` 和 `login(1)` 等程序必须以这种方式安装的原因。
 
-作为设置了 set-user-ID 模式位的可执行文件（通常称为“setuid 可执行文件”）的替代方案，我们提供了内核模块 mac_do(4)，它构建于 FreeBSD 的 MAC 框架之上[5](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor007)。其目的在于仅允许来自非特权进程的特定凭据转换，从而无需将相应的可执行镜像安装为“setuid”。
+作为设置了 set-user-ID 模式位的可执行文件（通常称为“setuid 可执行文件”）的替代方案，我们提供了内核模块 `mac_do(4)`，它构建于 FreeBSD 的 MAC 框架之上[5](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor007)。其目的在于仅允许来自非特权进程的特定凭据转换，从而无需将相应的可执行镜像安装为“setuid”。
 
-mdo(1) 是 mac_do(4) 的配套程序，负责向内核实际请求所需的凭据转换。mdo(1) 可以由拥有全部特权的 root 用户单独使用；否则，其请求将根据管理员的配置，由内核模块 mac_do(4) 进行审核。
+`mdo(1)` 是 `mac_do(4)` 的配套程序，负责向内核实际请求所需的凭据转换。`mdo(1)` 可以由拥有全部特权的 root 用户单独使用；否则，其请求将根据管理员的配置，由内核模块 `mac_do(4)` 审核。
 
-在本文中，我们首先通过一系列示例，说明如何使用 mdo(1) 在新的凭据下启动命令。随后，我们解释如何配置 mac_do(4)，以在宿主系统以及 jail 中启用对特定凭据转换的支持，从而实现基于角色的方案，并对当前设计提供一些见解。最后，我们征求用户反馈，了解短期内应当提供的内容，以及可能的长期未来规划。
+在本文中，我们首先通过一系列示例，说明如何使用 `mdo(1)` 在新的凭据下启动命令。随后，我们解释如何配置 `mac_do(4)`，以在宿主系统和 jail 中启用对特定凭据转换的支持，从而实现基于角色的方案，并对当前设计提供一些见解。最后，我们征求用户反馈，了解短期内应当提供的内容，和可能的长期未来规划。
 
 ## 使用 mdo(1)
 
-mdo(1) 的设计目标，是以任意一组凭据运行任意命令。如果你尚未配置 mac_do(4)（将在下节介绍），仍然可以以 root 身份运行下面的所有示例。对于大多数示例，需要 FreeBSD 15.0，因为 FreeBSD 14.3 中的 mdo(1) 仅支持选项 `-u` 和 `-i` [6](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor008)。
+`mdo(1)` 的设计目标，是以任意一组凭据运行任意命令。如果你尚未配置 `mac_do(4)`（将在下节介绍），仍然可以以 root 身份运行下面的所有示例。对于大多数示例，需要 FreeBSD 15.0，因为 FreeBSD 14.3 中的 `mdo(1)` 仅支持选项 `-u` 和 `-i` [6](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor008)。
 
-出于安全原因，目标进程的凭据必须被完整指定：要么通过显式列出所有用户和组及其所请求的值，要么通过建立一个基线，为每一项提供默认值，然后再通过附加选项进行修订。
+出于安全原因，目标进程的凭据必须被完整指定：要么通过显式列出所有用户和组及其所请求的值，要么通过建立基线，为每一项提供默认值，然后再通过附加选项修订。
 
-在基于角色的设置中，最常见的使用场景，可以说是认可某个用户的凭据，就好像该用户刚刚登录一样。因此，mdo(1) 以尽可能简单的形式支持这一点，唯一需要的选项是 `-u`（表示“user”），用于基于指定用户建立一个基线，例如：
+在基于角色的设置中，最常见的使用场景，可以说是认可某个用户的凭据，就好像该用户刚刚登录一样。因此，`mdo(1)` 以尽可能简单的形式支持这一点，唯一需要的选项是 `-u`（表示“user”），用于基于指定用户建立基线，例如：
 
 ```sh
 $ mdo -u www /usr/local/bin/occ
