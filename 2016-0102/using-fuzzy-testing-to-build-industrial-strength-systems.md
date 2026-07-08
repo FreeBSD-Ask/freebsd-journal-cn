@@ -90,7 +90,7 @@ panic: vmspace_fork: entry 0xfffff80019793d00 eflags 50c
 
 ### md8.sh
 
-这是一个针对 vnode 后端 md(4) 卷上未对齐未映射 IO 的回归测试。在缓冲区 “data” 页对齐的情况下，测试为：
+这是一个针对 vnode 后端 md(4) 卷上未对齐未映射 IO 的回归测试。在缓冲区“data”页对齐的情况下，测试为：
 
 ```c
 read(fd, data + 512, MAXPHYS)
