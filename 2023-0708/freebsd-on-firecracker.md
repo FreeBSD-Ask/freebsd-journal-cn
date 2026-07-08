@@ -38,15 +38,15 @@ FreeBSD 具有出色的调试功能，但如果内核在调试器初始化或串
 
 在 x86 平台上，FreeBSD 通常使用 ACPI 来了解（并在某些情况下控制）其运行的硬件。除了通过 ACPI 发现我们通常视为“设备”的组件——如磁盘、网络适配器等——FreeBSD 还通过 ACPI 了解 CPU 和中断控制器等基本组件。
 
-Firecracker 有意保持极简，不去实现 ACPI，当 FreeBSD 无法确定有多少个 CPU 或者如何找到它们的中断控制器时，会感到不安。幸运的是，FreeBSD 支持历史悠久的 Intel 多处理器规范，通过“MPTable”结构提供了这些关键信息；尽管它不是 GENERIC 内核配置的一部分，但在 Firecracker 中运行时，我们会使用经过精简的内核配置，因此很容易添加 device mptable 以利用 Firecracker 提供的信息。
+Firecracker 有意保持极简，不去实现 ACPI，当 FreeBSD 无法确定有多少个 CPU 或者如何找到它们的中断控制器时，会感到不安。幸运的是，FreeBSD 支持历史悠久的 Intel 多处理器规范，通过“MPTable”结构提供了这些关键信息；尽管它不是 GENERIC 内核配置的一部分，但在 Firecracker 中运行时，我们会使用经过精简的内核配置，因此很容易添加 `device mptable` 以利用 Firecracker 提供的信息。
 
 然而……这并没有奏效。FreeBSD 仍然无法找到所需的信息！事实证明，Linux 在查找和解析 MPTable 结构时存在 bug——而 Firecracker 设计用于引导 Linux，以 Linux 支持的方式提供 MPTable，但实际上并不符合标准。FreeBSD 的实现独立编写以遵循标准，既未能找到（位置不正确的）MPTable，也未能解析（无效的）MPTable。
 
-因此，FreeBSD 现在有了新的内核选项：如果你需要与 Linux 的 MPTable 处理保持逐 bug 兼容，可以在内核配置中添加选项 `MPTABLE_LINUX_BUG_COMPAT`。有了这个选项，FreeBSD 能在 Firecracker 中进一步引导。
+因此，FreeBSD 现在有了新的内核选项：如果你需要与 Linux 的 MPTable 处理保持逐 bug 兼容，可以在内核配置中添加 `options MPTABLE_LINUX_BUG_COMPAT`。有了这个选项，FreeBSD 能在 Firecracker 中进一步引导。
 
 ## 串行控制台
 
-Firecracker 提供的少数模拟设备之一（与 Virtio 块和网络设备等虚拟化设备相对）是串口。实际上，在常见的配置中，当你启动 Firecracker 时，Firecracker 进程的标准输入和输出会成为虚拟机的串口输入和输出，使其看起来像是客户机操作系统只是在你 shell 内部运行的另一个进程（从某种意义上讲，确实如此）。至少，这是它应该工作的方式。
+Firecracker 提供的少数模拟设备之一（与 Virtio 块和网络设备等虚拟化设备相对）是串口。实际上，在常见的配置中，当你启动 Firecracker 时，Firecracker 进程的标准输入和输出会成为虚拟机的串口输入和输出，使其看起来像是客户机操作系统只是在你的 shell 内部运行的另一个进程（从某种意义上讲，确实如此）。至少，这是它应该工作的方式。
 
 在让 FreeBSD 在 Firecracker 中运行起来的过程中，我能够启动已将根磁盘编译到内核映像中的 FreeBSD 内核——虚拟磁盘驱动程序尚未工作——并读取了内核的所有控制台输出。然而，在所有内核控制台输出之后，FreeBSD 进入了引导过程的用户空间部分，我看到 16 个字符的控制台输出，然后就停止了。
 
@@ -60,7 +60,7 @@ Firecracker 提供的少数模拟设备之一（与 Virtio 块和网络设备等
 
 接下来，我们需要告诉 FreeBSD 如何找到虚拟化的设备。FreeBSD 期望通过 FDT（扁平化设备树）发现 mmio 设备，这在嵌入式系统上是常用机制；但是，Firecracker 通过内核命令行传递设备参数，比如 `virtio_mmio.device=4K@0x1001e000:5`。让这些设备在 FreeBSD 中工作的第二步：编写解析此类指令并创建 virtio_mmio 设备节点的代码。（创建设备节点后，FreeBSD 的常规设备探测过程就会启动，内核将自动确定 Virtio 设备的类型并连接适当的驱动程序。）
 
-然而，如果我们有多个设备，例如，一个磁盘设备和一个网络设备——则会出现另一个问题：Firecracker 以 Linux 所期望的方式传递指令，即作为内核命令行上的键值对序列，而 FreeBSD 将内核命令行解析为环境变量……这意味着如果在命令行上传递了两个 `virtio_mmio.device=` 指令，只会保留一个。为了解决这个问题，我重新编写了早期的内核环境解析代码，通过附加带编号的后缀来处理重复变量：我们会得到一个设备的 `virtio_mmio.device=`，而第二个设备则为 `virtio_mmio.device_1=`。
+然而，如果我们有多个设备，例如磁盘设备和网络设备——则会出现另一个问题：Firecracker 以 Linux 所期望的方式传递指令，即作为内核命令行上的键值对序列，而 FreeBSD 将内核命令行解析为环境变量……这意味着如果在命令行上传递了两个 `virtio_mmio.device=` 指令，只会保留一个。为了解决这个问题，我重新编写了早期的内核环境解析代码，通过附加带编号的后缀来处理重复变量：我们会得到一个设备的 `virtio_mmio.device=`，而第二个设备则为 `virtio_mmio.device_1=`。
 
 有了这个，我终于让 FreeBSD 能够引导并发现所有设备了，但磁盘设备还出现了另一个问题：如果我未正常关闭虚拟机，在下一次引导时，系统会在文件系统上运行 fsck，并且内核会 panic。事实证明，fsck 是 FreeBSD 中极少数会导致非页面对齐磁盘 I/O 的操作之一，而 FreeBSD 的 Virtio 块驱动在尝试将非对齐的 I/O 传递给 Firecracker 时会导致内核 panic。
 
