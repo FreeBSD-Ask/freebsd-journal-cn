@@ -81,7 +81,7 @@ UFS 驱动与 CAM 子系统紧密集成。在初始化过程中，驱动向 CAM 
 * **配置档位与通道：** 协商档位和通道数量，然后配置链路以实现最大带宽运行。
 * **UAP（UFS 应用层）：** 向 CAM 注册以开始基于 SCSI 的初始化；CAM 扫描总线上的目标设备和 LUN，并将 SCSI 命令传递给驱动。
 
-CAM（Common Access Method）是 FreeBSD 的存储子系统，分为三个层次：CAM 外设层、CAM 传输层（XPT）和 CAM SIM 层。初始化完成后，UFS 驱动通过 `cam_sim_alloc()` 创建 SIM 对象，并通过 `xpt_bus_register()` 向 XPT 注册。随后，XPT 扫描总线上的目标设备和 LUN，以发现 SCSI 设备。当找到有效 LUN 时，它调用 `cam_periph_alloc()` 在 CAM 外设层创建并注册一个 Direct Access（da）外设。
+CAM（Common Access Method）是 FreeBSD 的存储子系统，分为三个层次：CAM 外设层、CAM 传输层（XPT）和 CAM SIM 层。初始化完成后，UFS 驱动通过 `cam_sim_alloc()` 创建 SIM 对象，并通过 `xpt_bus_register()` 向 XPT 注册。随后，XPT 扫描总线上的目标设备和 LUN，以发现 SCSI 设备。当找到有效 LUN 时，它调用 `cam_periph_alloc()` 在 CAM 外设层创建并注册 Direct Access（da）外设。
 
 在 Direct Access（da）外设注册后，当对 UFS 磁盘发起 I/O 请求时，CAM 外设层会自动构建 SCSI 命令。驱动注册在 SIM 上的 `ufshci_cam_action()` 处理函数接收携带这些命令的 CCB，将其封装到 UPIU 中，入队到 UTP 队列，并在完成后调用 `xpt_done()` 通知 XPT。
 
@@ -106,7 +106,7 @@ $ wget https://download.freebsd.org/releases/VM-IMAGES/15.0-RELEASE/amd64/Latest
 $ xz -d FreeBSD-15.0-RELEASE-amd64-zfs.qcow2.xz
 ```
 
-创建一个 1 GiB 文件，用作 UFS 逻辑单元的后端设备：
+创建 1 GiB 文件，用作 UFS 逻辑单元的后端设备：
 
 ```sh
 $ qemu-img create -f raw blk1g.bin 1G
