@@ -19,20 +19,20 @@ Kyua 的核心概念层次结构如下：测试套件 > 测试程序 > 测试用
        2
        3  syntax(2)
        4
-       5  test_suite(“FreeBSD”)
+       5  test_suite("FreeBSD")
        6
-       7  atf_test_program{name=”basic_signal”, }
+       7  atf_test_program{name="basic_signal", }
 [skipped]
-       34  atf_test_program{name=”sonewconn_overflow”, required_programs=”python”, required_user=”root”, is_exclusive=”true”}
-       35  atf_test_program{name=”subr_physmem_test”, }
-       36  plain_test_program{name=”subr_unit_test”, }
+       34  atf_test_program{name="sonewconn_overflow", required_programs="python", required_user="root", is_exclusive="true"}
+       35  atf_test_program{name="subr_physmem_test", }
+       36  plain_test_program{name="subr_unit_test", }
 [skipped]
-       45  atf_test_program{name=”unix_seqpacket_test”, timeout=”15”}
-       46  atf_test_program{name=”unix_stream”, }
-       47  atf_test_program{name=”waitpid_nohang”, }
-       48  include(“acct/Kyuafile”)
-       49  include(“execve/Kyuafile”)
-       50  include(“pipe/Kyuafile”)
+       45  atf_test_program{name="unix_seqpacket_test", timeout="15"}
+       46  atf_test_program{name="unix_stream", }
+       47  atf_test_program{name="waitpid_nohang", }
+       48  include("acct/Kyuafile")
+       49  include("execve/Kyuafile")
+       50  include("pipe/Kyuafile")
 ```
 
 第 3 行指定了所使用语法的必要版本。第 5 行为测试套件设置了名称。通常，所有位于 **/usr/tests/\*\*/Kyuafile** 的描述都会被收集到一个名为 FreeBSD 的测试套件中。如果某个二进制文件基于 ATF 库，它会通过 `atf_test_program` 注册，从而使 Kyua 能够利用 ATF 提供的功能和特性。如果测试程序不基于 Kyua 支持的库，而仅通过退出码传递结果，则会使用 `plain_test_program` 构造。此外，还有 `tap_test_program`，用于那些通过经典的 [Test Anything Protocol](https://en.wikipedia.org/wiki/Test_Anything_Protocol)（TAP）协议传递结果的测试程序。
@@ -87,13 +87,13 @@ Kyua 可以通过配置实现测试用例的并行运行。默认情况下，`pa
 目前，Kyua 仅支持一种额外的执行环境——jail 环境。虽然可以为单个测试用例配置该环境，但以下示例展示了如何将 `execenv` 元数据属性应用于测试程序中的所有测试用例：
 
 ```ini
-atf_test_program{name=”test_program”, execenv=”jail”}
+atf_test_program{name="test_program", execenv="jail"}
 ```
 
 此配置使 Kyua 为 `test_program` 中的每个测试用例提供临时 jail 来执行。如果某个测试用例声明了清理例程，该例程也将在相同的 jail 中执行。Kyua 使用 [`jail(8)`](https://man.freebsd.org/cgi/man.cgi?query=jail&sektion=8) 创建这些 jail，测试用例可以通过名为 `execenv_jail_params` 的新元数据属性传递额外的参数：
 
 ```ini
-atf_test_program{name=”test_program”, execenv=”jail”, execenv_jail_params=”vnet allow.raw_sockets”}
+atf_test_program{name="test_program", execenv="jail", execenv_jail_params="vnet allow.raw_sockets"}
 ```
 
 只要不同父 jail 中的子 jail 名称不冲突，并且每个 jail 都能拥有自己的 VNET 堆栈，我们就可以轻松将测试（例如前面提到的网络测试）隔离到独立的 jail 中运行，并通过移除 `is_exclusive` 标志实现并行运行。具体效果取决于环境和配置，但有报告显示，在相同环境下，`netpfil/pf` 测试套件的运行速度提高了 4 至 5 倍，仅需几分钟就能完成，而非原来的半小时。
@@ -163,7 +163,7 @@ unprivileged_user = tests
 
 ```sh
 # cat /usr/src/tests/sys/kern/test_program.sh
-atf_test_case “case1” “cleanup”
+atf_test_case "case1" "cleanup"
 case1_head()
 {
 atf_set descr 'Test that X does Y'
@@ -174,7 +174,7 @@ atf_set descr 'Test that X does Y'
 case1_body()
 {
        if ! kldstat -q -m tesseract; then
-               atf_skip “This test requires tesseract”
+               atf_skip "This test requires tesseract"
        fi
 
        # 测试代码……
@@ -186,7 +186,7 @@ case1_cleanup()
 
 atf_init_test_cases()
 {
-       atf_add_test_case “case1”
+       atf_add_test_case "case1"
 }
 ```
 
@@ -201,14 +201,14 @@ ATF_TESTS_SH+= test_program
 
 ```c
 # grep test_program /usr/tests/sys/kern/Kyuafile
-atf_test_program{name=”test_program”, }
+atf_test_program{name="test_program", }
 ```
 
 在单个测试程序中包含多个测试用例可能会导致“不要重复你自己”（Don’t Repeat Yourself, DRY）的问题。为了解决这个问题，可以将通用的元数据提升到 Kyuafile 中的测试套件级别，从而使其适用于整个测试程序，而无需为每个测试用例重复设置。然而，个别测试用例仍然可以在必要时覆盖这些属性：
 
 ```sh
 # cat /usr/src/tests/sys/kern/test_program2.sh
-atf_test_case “case2”
+atf_test_case "case2"
 case2_head()
 {
        atf_set descr 'Test that A does B'
@@ -216,7 +216,7 @@ case2_head()
 case2_body()
 {...}
 
-atf_test_case “case3”
+atf_test_case "case3"
 case3_head()
 {
        atf_set descr 'Test that Foo does Bar'
@@ -227,8 +227,8 @@ case3_body()
 
 atf_init_test_cases()
 {
-       atf_add_test_case “case2”
-       atf_add_test_case “case3”
+       atf_add_test_case "case2"
+       atf_add_test_case "case3"
 }
 ```
 
@@ -237,7 +237,7 @@ atf_init_test_cases()
 ```c
 # grep test_program2 /usr/src/tests/sys/kern/Makefile
 ATF_TESTS_SH+= test_program2
-TEST_METADATA.test_program2+= execenv=”jail”,execenv_jail_params=”vnet”
+TEST_METADATA.test_program2+= execenv="jail",execenv_jail_params="vnet"
 ```
 
 因此，Kyua 将在不同级别定义的元数据合并为以下内容：

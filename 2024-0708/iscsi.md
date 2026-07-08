@@ -38,12 +38,12 @@ zfs create -o volmode=dev -V 50G tank/wblock0
 
 ```ini
 auth-group ag0 {
-    chap-mutual “inituser1” “secretpassw0rd” “targetuser1” “topspassw0rd”
+    chap-mutual "inituser1" "secretpassw0rd" "targetuser1" "topspassw0rd"
 initiator-portal [2001:db8:1::1]
 }
 
 auth-group ag1 {
-    chap-mutual “inituser2” “hiddenpassw0rd” “targetuser2” “freepassw0rd”
+    chap-mutual "inituser2" "hiddenpassw0rd" "targetuser2" "freepassw0rd"
     initiator-portal [2001:db8:1::2]
 }
 
@@ -53,7 +53,7 @@ portal-group pg0        {
 }
 
 target iqn.2012-06.org.example.iscsi:target1 {
-    alias “Target for FreeBSD”
+    alias "Target for FreeBSD"
     auth-group ag0
     portal-group pg0
     lun 0 {
@@ -66,7 +66,7 @@ target iqn.2012-06.org.example.iscsi:target1 {
 }
 
 target iqn.2012-06.org.example.iscsi:target2 {
-    alias “Target for Windows”
+    alias "Target for Windows"
     auth-group ag1
     portal-group pg0
     lun 1 {
@@ -81,7 +81,7 @@ target iqn.2012-06.org.example.iscsi:target2 {
 
 ```ini
 auth-group ag0 {
-    chap-mutual “inituser1” “secretpassw0rd” “targetuser1” “topspassw0rd”
+    chap-mutual "inituser1" "secretpassw0rd" "targetuser1" "topspassw0rd"
 initiator-portal [2001:db8:1::1]
 }
 ```
@@ -101,7 +101,7 @@ portal-group pg0        {
 
 ```ini
 target iqn.2012-06.org.example.iscsi:target1 {
-    alias “Target for FreeBSD”
+    alias "Target for FreeBSD"
     auth-group ag0
     portal-group pg0
     lun 0 {
@@ -160,10 +160,10 @@ targetaddress   = [2001:db8:1::a];
 targetname      = iqn.2012-06.org.example.iscsi:target1;
 initiatorname   = iqn.2012-06.org.example.freebsd:nobody;
 authmethod      = CHAP;
-chapiname       = “inituser1”;
-chapsecret      = “secretpassw0rd”;
-tgtChapName     = “targetuser1”;
-tgtChapSecret   = “topspassw0rd”;
+chapiname       = "inituser1";
+chapsecret      = "secretpassw0rd";
+tgtChapName     = "targetuser1";
+tgtChapSecret   = "topspassw0rd";
 }
 ```
 

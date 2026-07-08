@@ -217,7 +217,7 @@ CPU     ID                    FUNCTION:NAME
 5  37374                         :receive swi1: netisr 0
 ```
 
-到这里，你可能想放弃了。从“udp” provider 探测点的上下文确实无法直接找到关联的进程。但我们可以利用一个事实：`udp:::send` 和 `udp:::receive` 第二个参数的 `cs_cid` 字段是指向该数据包关联的 `struct inpcb`（互联网协议控制块）的指针。该结构保存 TCP 和 UDP 套接字的连接状态，其中特别包含指向套接字的指针。借助 FBT 探测点，我们可以在进程创建 UDP 套接字时执行动作，用关联数组把 PCB 映射到进程的 PID。然后在 UDP 探测点中用 PCB 地址查找 PID：
+到这里，你可能想放弃了。从“udp”provider 探测点的上下文确实无法直接找到关联的进程。但我们可以利用一个事实：`udp:::send` 和 `udp:::receive` 第二个参数的 `cs_cid` 字段是指向该数据包关联的 `struct inpcb`（互联网协议控制块）的指针。该结构保存 TCP 和 UDP 套接字的连接状态，其中特别包含指向套接字的指针。借助 FBT 探测点，我们可以在进程创建 UDP 套接字时执行动作，用关联数组把 PCB 映射到进程的 PID。然后在 UDP 探测点中用 PCB 地址查找 PID：
 
 ```d
 fbt::udp_attach:entry

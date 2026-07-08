@@ -6,7 +6,7 @@
   
 容器是很好的工具，可在多台服务器上分发水平可扩展的应用。当应用数量和其实例数增长时，容器数量很容易变得难以手工管理。
 
-容器编排器是一类应用，旨在简化大量容器的管理，隐藏复杂性并提高可靠性，尤其是在自动伸缩和持续部署造成的动态环境中。在本文中，我们将讨论基于 FreeBSD 的配置，使用 pot（支持 Jail 镜像的 Jail 框架）和 nomad（由 HashiCorp 开发的与容器无关的编排器）。
+容器编排器是一类应用，旨在简化大量容器的管理，隐藏复杂性并提高可靠性，尤其是在自动伸缩和持续部署带来的动态环境中。在本文中，我们将讨论基于 FreeBSD 的配置，使用 pot（支持 Jail 镜像的 Jail 框架）和 nomad（由 HashiCorp 开发的与容器无关的编排器）。
 
 ## 系统架构
 
@@ -78,9 +78,9 @@ Nomad 有插件架构，允许扩展以支持新的容器技术。Esteban Barrio
 
 图片：**架构概述和不同服务的角色。**
 
-![R%(G0Z M53 6`KY9Y2 M(70](../png/2023-0708/jail-orchestration-with-pot-and-nomad-1.png)
+![架构概述和不同服务的角色](../png/2023-0708/jail-orchestration-with-pot-and-nomad-1.png)
 
-### 精简的 pot 容器
+### Minipot
 
 Minipot 是软件包，在一台 FreeBSD 机器上安装并配置上述所有服务，也是展示示例所用的参考安装。
 
@@ -192,7 +192,7 @@ $ sudo pot show
 
 作为命令行的替代方案，nomad 服务器也配置为提供功能强大的 web UI，可以通过 **localhost:4646** 访问。在 UI 中可以看到“nginx-minipot”任务，并导航查看集群、分配、客户端等所有信息。
 
-通过 nomad，我们可以直接看到所有容器的状态。进入分配页面后，点击“exec”按钮即可在运行中的容器里启动 /bin/sh shell。
+通过 nomad，我们可以直接看到所有容器的状态。进入分配页面后，点击"exec"按钮即可在运行中的容器里启动 **/bin/sh** shell。
 
 ### 检查 consul
 
@@ -252,10 +252,10 @@ $ nomad run nginx.job
 
 为了停止我们的示例，我们建议执行以下拆除操作：
 
-- 停止 nomad 任务（**$ nomad stop nginx-minipot**）
-- 停止 traefik（**$ sudo service traefik stop**）
-- 停止 nomad（**$ sudo service nomad stop**）
-- 停止 consul（**$ sudo service consul stop**）
+- 停止 nomad 任务（`$ nomad stop nginx-minipot`）
+- 停止 traefik（`$ sudo service traefik stop`）
+- 停止 nomad（`$ sudo service nomad stop`）
+- 停止 consul（`$ sudo service consul stop`）
 
 ### 从试验场到生产
 

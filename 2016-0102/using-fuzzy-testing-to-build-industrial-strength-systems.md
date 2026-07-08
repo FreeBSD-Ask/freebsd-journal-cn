@@ -82,7 +82,7 @@ panic: vmspace_fork: entry 0xfffff80019793d00 eflags 50c
 
 ### isofs2.sh
 
-这是最新的一个测试，非常简单。创建一个包含 date(1) 副本的 isofs 文件系统。挂载该文件系统并运行 “date” 副本。这会触发 “panic: witness_warn”，报告见：<https://people.freebsd.org/~pho/stress/log/isofs2.txt>
+这是最新的一个测试，非常简单。创建一个包含 date(1) 副本的 isofs 文件系统。挂载该文件系统并运行“date”副本。这会触发“panic: witness_warn”，报告见：<https://people.freebsd.org/~pho/stress/log/isofs2.txt>
 
 ### marcus5.sh
 
@@ -107,7 +107,7 @@ cd stress2
 make
 ```
 
-这会在子目录 “testcases” 中构建一些基础测试程序。所有新开发都在 “misc” 目录进行，目前那里有约 400 个测试场景。这些测试常被称为回归测试。其真正价值在于它们能从不同角度压力测试内核。“misc” 目录中的测试可以单独运行，也可以由 “all.sh” 脚本统一控制。例如，运行所有 tmpfs(5) 场景一次：
+这会在子目录“testcases”中构建一些基础测试程序。所有新开发都在“misc”目录进行，目前那里有约 400 个测试场景。这些测试常被称为回归测试。其真正价值在于它们能从不同角度压力测试内核。“misc”目录中的测试可以单独运行，也可以由“all.sh”脚本统一控制。例如，运行所有 tmpfs(5) 场景一次：
 
 ```sh
 $ ./all.sh -o tmpfs*

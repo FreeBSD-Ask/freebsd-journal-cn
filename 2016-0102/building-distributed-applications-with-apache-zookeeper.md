@@ -48,7 +48,7 @@ Created /test
 [test, zookeeper]
 ```
 
-对 zNode 执行 get 即可读取 “test” zNode 的内容。在本例中，将返回字符串 “hello_world” 以及该 zNode 自身的一些元数据。
+对 zNode 执行 get 即可读取“test”zNode 的内容。在本例中，将返回字符串“hello_world”以及该 zNode 自身的一些元数据。
 
 ```sh
 [zk: localhost:2181(CONNECTED) 3] get /test
@@ -66,7 +66,7 @@ dataLength = 11
 numChildren = 0
 ```
 
-“test” zNode 的内容也可以使用 `set` 命令更新。你会注意到命令执行后，`mtime`、`dataVersion` 等元数据也会自动更新。更新完成后，可以再执行一次 `get` 来确认 zNode 内容已被修改。
+“test”zNode 的内容也可以使用 `set` 命令更新。你会注意到命令执行后，`mtime`、`dataVersion` 等元数据也会自动更新。更新完成后，可以再执行一次 `get` 来确认 zNode 内容已被修改。
 
 ```sh
 [zk: localhost:2181(CONNECTED) 4] set /test freebsd_journal
@@ -128,7 +128,7 @@ server.2=zook2:2888:3888
 server.3=zook3:2888:3888
 ```
 
-在 ensemble 中，每个节点必须被分配一个 1 到 255 之间的唯一 ID。节点通过读取存储在 `dataDir` 指令所定义目录下的 “myid” 文件来获知自己的 ID。该文件只有一行，仅包含该机器的 ID 文本。例如，名为 zook2 的节点在配置文件中的 ID 定义为 2，那么在该节点上可以使用命令 `echo 2 > /var/db/zookeeper/myid` 创建 myid 文件。在 ensemble 中的每个节点都执行此操作后，你只需像独立模式那样启动 Zookeeper 即可。ensemble 中的每个节点会相互联络以进行选举，选出领导者，其它所有节点则成为 follower。
+在 ensemble 中，每个节点必须被分配一个 1 到 255 之间的唯一 ID。节点通过读取存储在 `dataDir` 指令所定义目录下的“myid”文件来获知自己的 ID。该文件只有一行，仅包含该机器的 ID 文本。例如，名为 zook2 的节点在配置文件中的 ID 定义为 2，那么在该节点上可以使用命令 `echo 2 > /var/db/zookeeper/myid` 创建 myid 文件。在 ensemble 中的每个节点都执行此操作后，你只需像独立模式那样启动 Zookeeper 即可。ensemble 中的每个节点会相互联络以进行选举，选出领导者，其它所有节点则成为 follower。
 
 一大优势在于，从单机的独立模式扩展到环境中跨多台机器的高度容错仲裁模式，所需的工作量并不大。更妙的是，从开发者角度来看，所有接口都保持不变，因此应用无需额外改动。Zookeeper 最吸引人的特点之一是，系统设计上在初始设置后几乎不需要维护，所有复杂性对终端用户都是隐藏的，因此集成起来非常容易。
 

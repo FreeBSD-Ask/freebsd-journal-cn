@@ -1,5 +1,9 @@
 # 活动日历
 
+**作者：Anne Dickison**
+
+本文列出了截至 2026 年 6 月的 BSD 相关活动。如有任何未在此列出的 FreeBSD 相关活动或对 FreeBSD 用户感兴趣的活动，请发送至 freebsd-doc@FreeBSD.org。
+
 ![FreeBSD logo](../png/2026-010203/events-calendar-01.png)
 
 ## 202604 黑客马拉松
@@ -8,7 +12,7 @@
 德国威斯巴登
 <https://wiki.freebsd.org/Hackathon/202604>
 
-我们很高兴地宣布，今年 4 月将在威斯巴登举办一场区域性 FreeBSD 黑客马拉松。本次活动面向本地社区成员，同时也欢迎所有对 FreeBSD 贡献感兴趣的人参与。活动目标是协作、交流，在专注且友好的环境中推动 FreeBSD 取得实质性进展。
+我们很高兴地宣布，今年 4 月将在威斯巴登举办一场区域性 FreeBSD 黑客马拉松，目前正处于规划阶段。本次活动面向本地社区成员，同时也欢迎所有对 FreeBSD 贡献感兴趣的人参与。活动目标是协作、交流，在专注且友好的环境中推动 FreeBSD 取得实质性进展。
 
 ![Open Source Summit](../png/2026-010203/events-calendar-02.png)
 

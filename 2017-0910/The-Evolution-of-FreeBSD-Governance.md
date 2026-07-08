@@ -49,7 +49,7 @@ Warner Losh 与 Poul-Henning Kamp、Wes Peters 等人一起起草了一套章程
 
 ## FreeBSD 源代码控制
 
-当 FreeBSD 项目刚开始时，创始人选择使用 CVS 源代码控制系统。随着 2000 年Subversion 等较新的源代码管理工具的发布，迁移到更现代工具的压力开始增加。随着 Git 和 Mercurial 等新一波工具的出现，这种压力进一步加大。这些工具的分支模型和提交原子性都极具吸引力，而且它们在整体使用上通常也比 CVS 更容易。最终，在经过大量讨论、测试转换和验证之后，项目迁移到了 Subversion，其理由是它在操作方式上与 CVS 系统相当接近，并且在需要时，Git 和 Mercurial 都可以构建在其之上运行。
+当 FreeBSD 项目刚开始时，创始人选择使用 CVS 源代码控制系统。随着 2000 年 Subversion 等较新的源代码管理工具的发布，迁移到更现代工具的压力开始增加。随着 Git 和 Mercurial 等新一波工具的出现，这种压力进一步加大。这些工具的分支模型和提交原子性都极具吸引力，而且它们在整体使用上通常也比 CVS 更容易。最终，在经过大量讨论、测试转换和验证之后，项目迁移到了 Subversion，其理由是它在操作方式上与 CVS 系统相当接近，并且在需要时，Git 和 Mercurial 都可以构建在其之上运行。
 
 尽管已经转换到 Subversion，关于迁移到更新工具的讨论仍在持续。许多 FreeBSD 开发者正在积极使用 Git，而随着 GitHub 及其 pull request 模型的出现，也不断有人讨论 FreeBSD 是否应该采用 GitHub 或类似的平台。FreeBSD 项目在 GitHub 上存在，但它完全是只读的。在 GitHub 上打开的 pull requests 和 issues 只能在被转移到 Phabricator 或 Bugzilla 之后，才能提交到 Subversion 中。
 
@@ -120,6 +120,6 @@ FreeBSD 基金会的成立同样在确保 FreeBSD 项目拥有所需资源、取
 
 ---
 
-**MARSHALL KIRK McKUSICK** 博士撰写书籍和文章，教授与 UNIX 和 BSD 相关的课程，并在软件专利、商业机密以及版权问题上提供专家证人证词，尤其侧重于与操作系统和文件系统相关的议题。自 1993 年FreeBSD 项目创立以来，他一直是该项目的开发者和 committer。在加利福尼亚大学伯克利分校任职期间，他实现了 4.2BSD fast filesystem，并担任 Berkeley Computer Systems Research Group（CSRG）的 Research Computer Scientist，负责监督 4.3BSD 和 4.4BSD 的开发与发布。
+**MARSHALL KIRK McKUSICK** 博士撰写书籍和文章，教授与 UNIX 和 BSD 相关的课程，并在软件专利、商业机密以及版权问题上提供专家证人证词，尤其侧重于与操作系统和文件系统相关的议题。自 1993 年 FreeBSD 项目创立以来，他一直是该项目的开发者和 committer。在加利福尼亚大学伯克利分校任职期间，他实现了 4.2BSD fast filesystem，并担任 Berkeley Computer Systems Research Group（CSRG）的 Research Computer Scientist，负责监督 4.3BSD 和 4.4BSD 的开发与发布。
 
 **BENNO RICE** 是 Dell EMC Isilon 部门的软件工程师，同时也是 FreeBSD 的 committer 以及核心团队成员。

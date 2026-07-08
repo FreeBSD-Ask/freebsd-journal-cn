@@ -43,13 +43,13 @@ CBSD 不仅是面向最终用户的产品，也是参与构建复杂解决方案
 
 cbsd jconstruct
 
-![jconstruct 命令行对话格式截图](https://github.com/user-attachments/assets/b9e1bac1-1b99-4dd1-9a99-fbc4761f7a9b)
+![jconstruct 命令行对话格式截图](../png/2022-0102/cbsd-01.png)
 
 **选项 2**：通过 TUI 的对话格式。这种方式也适合初学者，因为与第一种选项一样，不需要了解可能的参数和命令：
 
 cbsd jconstruct-tui
 
-![jconstruct-tui 对话格式截图](https://github.com/user-attachments/assets/3add189e-d5e8-4672-b4a9-e14cbece2fcf)
+![jconstruct-tui 对话格式截图](../png/2022-0102/cbsd-02.png)
 
 这两种对话框的输出是生成文本配置文件，其中包含 jcreate 脚本的参数集合，你可以直接从 TUI 界面或命令行调用该脚本。
 

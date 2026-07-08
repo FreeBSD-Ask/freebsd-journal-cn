@@ -14,7 +14,7 @@ FreeBSD 9.0-RELEASE 于 2013 年 1 月 6 日发布。作为“点零”版本，
 
 Foundation 与 OMCnet Internet Service GmbH 和 TransIP BV 合作实现了高可用存储（HAST）框架，允许通过 TCP/IP 网络对任何存储介质进行同步块级复制。Foundation 还资助了用户态 DTrace 的移植。
 
-无论好坏，此版本最终替换了 Jordan Hubbard 在 1995 年中为 2.0.5-RELEASE 引入的“interim” sysinstall 框架。
+无论好坏，此版本最终替换了 Jordan Hubbard 在 1995 年中为 2.0.5-RELEASE 引入的“interim”sysinstall 框架。
 
 FreeBSD 项目将此版本献给 Dennis M. Ritchie——UNIX 操作系统的奠基人之一、C 语言的创造者——以示纪念。
 

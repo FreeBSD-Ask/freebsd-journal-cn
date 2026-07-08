@@ -63,7 +63,7 @@ UMA 在其他操作系统中也称为 zone 或 slab 分配器。可为某个 str
 
 ### 3.2 带 UMA_ZONE_PCPU 标志的 zone
 
-这些 zone 分配给每 CPU 计数器使用。例如，zone “64 pcpu” 创建时大小为 8 字节。除计数器外，每个 CPU 还有一个 struct pcpu。当该 zone 受 MemGuard 保护时，仅分配计数器本身，因而会误报内存溢出。应将大小加上 `sizeof(pcpu) * mp_ncpu`。
+这些 zone 分配给每 CPU 计数器使用。例如，zone“64 pcpu”创建时大小为 8 字节。除计数器外，每个 CPU 还有一个 struct pcpu。当该 zone 受 MemGuard 保护时，仅分配计数器本身，因而会误报内存溢出。应将大小加上 `sizeof(pcpu) * mp_ncpu`。
 
 ### 3.3 带 M_WAIT_OK 的 realloc()
 

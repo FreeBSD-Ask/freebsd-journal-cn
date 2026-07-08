@@ -366,7 +366,7 @@ struct thread *td)
 Returned events: POLLIN|POLLOUT
 0 bytes available to read
 room to write 64 bytes
-# echo “foo” > /dev/echo
+# echo "foo" > /dev/echo
 # echoctl poll
 Returned events: POLLIN|POLLOUT
 4 bytes available to read

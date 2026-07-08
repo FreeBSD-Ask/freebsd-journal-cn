@@ -559,7 +559,7 @@
 
 ## 2018-0304 桌面/笔记本
 
-* [书评：《凤凰项目：一个IT运维的传奇故事》](2018-0304/book-review.md)
+* [书评：《凤凰项目：一个 IT 运维的传奇故事》](2018-0304/book-review.md)
 * [会议报告](2018-0304/conference-report.md)
 * [活动日历](2018-0304/events-calendar.md)
 * [基金会来信](2018-0304/foundation-letter.md)
