@@ -3,7 +3,7 @@
 - 原文链接：[Network Monitoring on the Console](https://freebsdfoundation.org/wp-content/uploads/2021/01/Book-Review.pdf)
 - 作者：**BENEDICT REUSCHLING**
 
-![《Mastering Vim Quickly》封面](https://github.com/user-attachments/assets/777319ef-bc71-4123-a6f3-66e04309d1d6)
+![《Mastering Vim Quickly》封面](../png/2020-1112/book-01.png)
 
 毫无疑问，vi 是 Unix 上最常见的文本编辑器。它无处不在，但对于不理解其基本哲学的初学者来说，使用起来颇为困难。Vim（vi 的改进版）是对 vi 的增强，它保留了编辑器中的基本功能，但更容易上手。你可能见过某些人在 vim 中用几个按键做出惊人的操作——你可能会好奇那是怎么做到的。
 
