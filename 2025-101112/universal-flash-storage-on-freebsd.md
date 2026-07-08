@@ -33,7 +33,7 @@
 
 图 1. UFS 系统模型
 
-典型的 UFS 系统由 UFS 目标设备（通常为 PCB 上的 BGA 封装）和集成在应用处理器 SoC 中的 UFS 主控器组成。两者通过高速串行链路进行通信。
+典型的 UFS 系统由 UFS 目标设备（通常为 PCB 上的 BGA 封装）和集成在应用处理器 SoC 中的 UFS 主控器组成。两者通过高速串行链路通信。
 
 当 I/O 请求到达时，FreeBSD 的 CAM（Common Access Method）子系统会在 CCB（CAM 控制块）中构建 SCSI 命令，并将其传递给驱动程序。驱动程序将 SCSI 命令封装到 UPIU（UFS 协议信息单元）中，并将其加入 UFS 主控器的队列。
 
