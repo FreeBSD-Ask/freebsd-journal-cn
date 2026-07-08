@@ -77,7 +77,7 @@ $ mdo -u unprivileged_user -g wheel -G wheel,staff,operator
 $ mdo -u unprivileged_user -s +wheel
 ```
 
-或者，相反地，如果需要临时撤销某个组的成员资格，例如当该组被用作通过 ugidfw(8)（以及 mac_bsdextended(4)）进行访问控制的标记时：
+或者，相反地，如果需要临时撤销某个组的成员资格，例如当该组被用作通过 `ugidfw(8)`（和 `mac_bsdextended(4)`）访问控制的标记时：
 
 ```sh
 $ mdo -u unprivileged_user -s -tag_group
