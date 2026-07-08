@@ -290,7 +290,7 @@ security.tls.enable_kyber
 * Firefox 切换到 "network" 选项卡
 * Chrome 进入 "隐私和安全"
 
-然后输入你的 FreeBSD 安装的 IP 地址并按回车。屏幕上应该只显示一个 IP 地址（即请求的来源）。在开发者工具中，点击对应你 FreeBSD IP 地址的请求条目：
+然后输入你的 FreeBSD 安装的 IP 地址并按回车。屏幕上应该只显示 IP 地址（即请求的来源）。在开发者工具中，点击对应你 FreeBSD IP 地址的请求条目：
 
 * 如果使用 Firefox，还需要点击右侧的 "Security" 标签页。
 
@@ -301,7 +301,7 @@ security.tls.enable_kyber
 
 ![浏览器 PQC 密钥交换结果图](../png/2025-789/implementing-a-quantum-safe-website-01.png)
 
-如果看到了上述结果，那么恭喜你！你已经成功在 FreeBSD 上部署了一个带有 PQC 支持、同时兼容传统加密的安全网站。欢迎来到未来！
+如果看到了上述结果，那么恭喜你！你已经成功在 FreeBSD 上部署了带有 PQC 支持、同时兼容传统加密的安全网站。欢迎来到未来！
 
 ## 总结
 
