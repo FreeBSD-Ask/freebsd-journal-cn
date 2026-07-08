@@ -3,7 +3,7 @@
 - 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2014/03/events-calendar.pdf)
 - 作者：**Dru Lavigne**
 
-以下 BSD 相关会议安排在 2014 年第二季度。这些活动以及本地用户组会议的更多信息，可访问 bsdevents.org。
+以下 BSD 相关会议安排在 2014 年第二季度。这些活动和本地用户组会议的更多信息，可访问 <bsdevents.org>。
 
 **LinuxTag** • 2014 年 5 月 8-10 日，德国柏林
 <http://linuxtag.org/2014/> • LinuxTag 是欧洲面向开源专业用户与开发者的领先会议与展览。展览区将设有多个 BSD 展位，通常还会有若干 BSD 专题演讲。
