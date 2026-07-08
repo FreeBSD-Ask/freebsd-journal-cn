@@ -22,7 +22,7 @@
 
 ## 扁平设备树
 
-BERI 主板配置的多数方面用扁平设备树（Flat Device Tree，FDT）描述，这在 PowerPC 和基于 ARM 的系统上很常见 [3]。目前，每个 FreeBSD 内核内嵌一个设备树二进制（DTB），描述特定的硬件配置。每个 DTB 由设备树编译器 `dtc` 从设备树语法（DTS）文件构建，再嵌入内核。图 2 节选自 **boot/fdt/dts/mips/beripad-de4.dts**——该 DTS 文件——包含 BERI CPU、1GB DRAM、可编程中断控制器（PIC）、硬件串口、JTAG UART、SD 卡读卡器、闪存分区表、千兆以太网和触摸屏。
+BERI 主板配置的多数方面用扁平设备树（Flat Device Tree，FDT）描述，这在 PowerPC 和基于 ARM 的系统上很常见 [3]。目前，每个 FreeBSD 内核内嵌一个设备树二进制（DTB），描述特定的硬件配置。每个 DTB 由设备树编译器 `dtc`(1) 从设备树语法（DTS）文件构建，再嵌入内核。图 2 节选自 **boot/fdt/dts/mips/beripad-de4.dts**——该 DTS 文件——包含 BERI CPU、1GB DRAM、可编程中断控制器（PIC）、硬件串口、JTAG UART、SD 卡读卡器、闪存分区表、千兆以太网和触摸屏。
 
 ```dts
 model  =  "SRI/Cambridge  BeriPad  (DE4)";
