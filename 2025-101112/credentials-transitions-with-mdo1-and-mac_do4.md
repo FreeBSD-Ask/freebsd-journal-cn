@@ -99,31 +99,31 @@ $ mdo -u unprivileged_user -s -tag_group
 
 非 root 用户要使用 `mdo(1)`，必须配置 `mac_do(4)`，因为 `mdo(1)` 设计上并未以“setuid”方式安装。
 
-mac_do(4) 默认不会编译进内核，但可以很容易地以模块方式加载：
+`mac_do(4)` 默认不会编译进内核，但可以很容易地以模块方式加载：
 
 ```sh
 # kldload mac_do
 ```
 
-然后，你可以通过 sysctl(8) 项 `security.mac.do` 访问其参数。目前（FreeBSD 14.3 和 15.0）可用的参数如下：
+然后，你可以通过 `sysctl(8)` 项 `security.mac.do` 访问其参数。目前（FreeBSD 14.3 和 15.0）可用的参数如下：
 
-* `enabled`：模块是否启用（默认值为 true）。这是一个全局开关。也可以通过规则（下一个选项）或 jail 参数（见下文对应小节）在宿主系统或任意 jail 中选择性地停用 mac_do(4)。
-* `rules`：规则列表，用于指示允许哪些凭据转换。我们将在下一小节中研究多个示例。`rules` 默认值为空，意味着 mac_do(4) 本身不会允许任何凭据更改。
+* `enabled`：模块是否启用（默认值为 true）。这是一个全局开关。也可以通过规则（下一个选项）或 jail 参数（见下文对应小节）在宿主系统或任意 jail 中选择性地停用 `mac_do(4)`。
+* `rules`：规则列表，用于指示允许哪些凭据转换。我们将在下一小节中研究多个示例。`rules` 默认值为空，意味着 `mac_do(4)` 本身不会允许任何凭据更改。
 * `print_parse_error`：当设置规则失败时，是否在控制台和系统日志中打印解析错误。
 
 下面我们先通过示例说明规则，然后再讲如何配置 jail。
 
 ## 规则
 
-结合上文给出的 mdo 示例，我们这里授权用户 unprivileged_user（UID 10001）认可 www 用户（UID 80），代表网站管理员角色：
+结合上文给出的 `mdo(1)` 示例，我们这里授权用户 unprivileged_user（UID 10001）认可 www 用户（UID 80），代表网站管理员角色：
 
 ```sh
 # sysctl security.mac.do.rules='uid=10001>uid=80,gid=80,+gid=80'
 ```
 
-在这个示例中，只有一条规则。规则的 `>` 符号用于分隔两部分，左边是“from”部分，也称为“match”，右边是“to”部分，也称为“target”。历史上使用 `:` 作为分隔符，现在仍然可用，但我们认为 `>` 更易读，尤其对于习惯 UNIX 的用户来说，容易将 `:` 误解为类似元素之间的列表分隔符。`>` 是 shell 特殊字符，需要以某种方式进行引用。为简便起见，我们建议总是将传给 sysctl(8) 的值加引号。两个 token 之间可以使用任意数量的空格，这对人工阅读也有帮助，同时也需要 shell 引号以确保正确解析。
+在这个示例中，只有一条规则。规则的 `>` 符号用于分隔两部分，左边是“from”部分，也称为“match”，右边是“to”部分，也称为“target”。历史上使用 `:` 作为分隔符，现在仍然可用，但我们认为 `>` 更易读，尤其对于习惯 UNIX 的用户来说，容易将 `:` 误解为类似元素之间的列表分隔符。`>` 是 shell 特殊字符，需要以某种方式引用。为简便起见，我们建议总是将传给 `sysctl(8)` 的值加引号。两个 token 之间可以使用任意数量的空格，这对人工阅读也有帮助，同时也需要 shell 引号以确保正确解析。
 
-“from”部分（上述规则中的 uid=10001）非常直接，用于匹配用户 ID[10](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor012) 为 10001 的进程，从而匹配 unprivileged_user（以及可能其他具有相同用户 ID 的用户）。注意，这里只能使用数值 ID，不能使用用户名。内核确实不识别用户名，从凭据角度看无关紧要。
+“from”部分（上述规则中的 uid=10001）非常直接，用于匹配用户 ID[10](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor012) 为 10001 的进程，从而匹配 unprivileged_user（和可能其他具有相同用户 ID 的用户）。注意，这里只能使用数值 ID，不能使用用户名。内核确实不识别用户名，从凭据角度看无关紧要。
 
 “to”部分（`uid=80,gid=80,+gid=80`）稍微复杂一些。它包含三条由逗号分隔的子条款。`uid=80` 和 `gid=80` 非常直观：允许在用户 ID 和初始（“主”）组 ID 方面切换到 `www`。最后一条子条款 `+gid=80` 与附加组有关，表示附加组 ID 80 是允许的，但不是强制的。通常，带标志的 gid（这里是 `+`）应用于附加组。其他可能的标志包括 `!` 和 `-`，将在下面示例中说明。
 
