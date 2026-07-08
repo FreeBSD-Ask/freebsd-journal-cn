@@ -129,13 +129,13 @@ $ qemu-system-x86_64 -smp 4 -m 4G \
 device          ufshci                  # UFS host controller
 ```
 
-如需显式加载该模块，请编辑 `/boot/loader.conf`：
+如需显式加载该模块，请编辑 **/boot/loader.conf**：
 
 ```sh
 ufshci_load="YES"
 ```
 
-重启后，通过 `camcontrol` 验证 UFS 设备是否附加为 `ufshci0/da0`：
+重启后，通过 `camcontrol` 验证 UFS 设备是否附加为 `ufshci0`/`da0`：
 
 ```sh
 $ camcontrol devlist -v
@@ -189,7 +189,7 @@ UFS 是一项快速发展的接口标准。FreeBSD 的 UFS 驱动同样在不断
 
 希望本文能促进 UFS 在 FreeBSD 上的更广泛使用。欢迎为 UFS 驱动贡献代码。我感谢所有帮助实现这一工作的评审人员，并将继续为社区做出贡献。
 
-ufshci(4) UFS 设备驱动的开发得到了三星电子的支持。
+`ufshci(4)` UFS 设备驱动的开发得到了三星电子的支持。
 
 ---
 
