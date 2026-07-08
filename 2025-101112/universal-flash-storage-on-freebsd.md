@@ -3,7 +3,7 @@
 - 原文：[Universal Flash Storage on FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/universal-flash-storage-on-freebsd/)
 - 作者：Jaeyoon Choi
 
-通用闪存存储（UFS）是一种高性能、低功耗的存储接口，专为移动设备、汽车以及嵌入式环境设计。如今，UFS 已被广泛应用，并在大多数 Android 旗舰智能手机中取代了 eMMC 成为主流存储方案。它还出现在部分平板电脑、笔记本电脑和汽车系统中。Linux 自约 2012 年起支持 UFS，OpenBSD 自 7.3 版本起支持，Windows 自 Windows 10 起支持。
+通用闪存存储（UFS）是一种高性能、低功耗的存储接口，专为移动设备、汽车和嵌入式环境设计。如今，UFS 已被广泛应用，并在大多数 Android 旗舰智能手机中取代了 eMMC 成为主流存储方案。它还出现在部分平板电脑、笔记本电脑和汽车系统中。Linux 自约 2012 年起支持 UFS，OpenBSD 自 7.3 版本起支持，Windows 自 Windows 10 起支持。
 
 然而，FreeBSD 之前并没有 UFS 驱动。如果将 UFS 在其他生态系统中经过验证的成熟技术引入 FreeBSD 存储架构，FreeBSD 将在许多移动和嵌入式领域成为可行方案。“为什么 FreeBSD 还没有 UFS 驱动？”这个问题成为了我个人的动力，而本文将说明我为解决这一问题所走的路径。
 

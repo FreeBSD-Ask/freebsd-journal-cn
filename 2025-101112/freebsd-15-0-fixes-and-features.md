@@ -29,7 +29,7 @@ FreeBSD 社区持续推进 15.0 的发布。相较于 2023 年 11 月发布的 1
 
 即将发布的版本中包含了多项新的存储特性。三星贡献了用于通用闪存存储（Universal Flash Storage, UFS）标准的驱动，这是嵌入式闪存存储中使用的 eMMC 标准的替代方案。该驱动的作者 Jaeyoon Choi 在本期的《Universal Flash Storage on FreeBSD》中对此有更为详细的介绍。15.0 还包含了对基于 TCP 传输的 NVMe over Fabrics（NVMe-oF）的支持，此前已有相关文章介绍：[journal article](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-and-filesystems/nvme-over-fabrics-in-freebsd-2/) 。自该文章发布以来，对 NVMe-oF 的支持已经合并进了守护进程 [ctld(8)](https://man.freebsd.org/ctld/8)，而 `nvmfd` 守护进程已被移除。
 
-15.0 还包含了 [inotify(2)](https://man.freebsd.org/inotify/2) 系列系统调用的原生实现。该实现与 Linux 中相同系统调用在 API 层面保持兼容，并可用于原生 FreeBSD 二进制程序以及在 [Linux 兼容层](https://man.freebsd.org/linux/4) 下运行的 Linux 二进制程序。对于许多使用场景而言，`inotify(2)` 相比通过 [kevent(2)](https://man.freebsd.org/kevent/2) 提供的 EVFILT_VNODE 内核事件更加可靠且效率更高。它也是现有桌面软件（如 KDE）中广泛使用的 API。
+15.0 还包含了 [inotify(2)](https://man.freebsd.org/inotify/2) 系列系统调用的原生实现。该实现与 Linux 中相同系统调用在 API 层面保持兼容，并可用于原生 FreeBSD 二进制程序和在 [Linux 兼容层](https://man.freebsd.org/linux/4) 下运行的 Linux 二进制程序。对于许多使用场景而言，`inotify(2)` 相比通过 [kevent(2)](https://man.freebsd.org/kevent/2) 提供的 EVFILT_VNODE 内核事件更加可靠且效率更高。它也是现有桌面软件（如 KDE）中广泛使用的 API。
 
 ## 虚拟化
 
