@@ -5,7 +5,7 @@
 
 请将未在此处列出的任何 FreeBSD 相关活动或对 FreeBSD 用户有意义的活动详情发送至 <freebsd-doc@FreeBSD.org>。
 
-使用支持 iCalendar 格式的组织软件的用户，可订阅 FreeBSD 活动日历，其中包含此处列出的所有活动。
+如果你的日程管理软件支持 iCalendar 格式，可订阅 FreeBSD 活动日历，其中包含此处列出的所有活动。
 
 APRICOT • 3 月 1-4 日 • 线上
 <https://apricot2021.apricot.net/>
