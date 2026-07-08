@@ -97,7 +97,7 @@ $ mdo -u unprivileged_user -s -tag_group
 
 ## 配置 mac_do(4)
 
-非 root 用户要使用 mdo(1)，必须配置 mac_do(4)，因为 mdo(1) 设计上并未以“setuid”方式安装。
+非 root 用户要使用 `mdo(1)`，必须配置 `mac_do(4)`，因为 `mdo(1)` 设计上并未以“setuid”方式安装。
 
 mac_do(4) 默认不会编译进内核，但可以很容易地以模块方式加载：
 
