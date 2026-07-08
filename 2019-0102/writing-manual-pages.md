@@ -219,13 +219,13 @@ information.
 
 ## 参考文献
 
-- Dzonsons, Kristaps. “man(7).” FreeBSD, 2018 年 4 月 5 日，<www.freebsd.org/cgi/man.cgi?query=man&sektion=7>。
+- Dzonsons, Kristaps. “man(7).”FreeBSD, 2018 年 4 月 5 日，<www.freebsd.org/cgi/man.cgi?query=man&sektion=7>。
 - “Manual Pages.” FreeBSD，<www.freebsd.org/doc/en_US.ISO8859-1/books/fdp-primer/manpages.html>。
-- “man page.” Wikipedia，Wikimedia Foundation，2019 年 1 月 5 日，<en.wikipedia.org/wiki/Man_page>。
-- Wirzenius, Lars. “Writing Manual Pages.” Writing Manual Pages, 2010 年 11 月 10 日，<liw.fi/manpages/>。
-- Dzonsons, Kristaps. “mdoc(7).” FreeBSD，2018 年 7 月 28 日，<www.freebsd.org/cgi/man.cgi?query=mdoc&sektion=7&manpath=freebsd-release-ports>。
-- Toth, Peter，与 Brandon Schneider. “iocage(8).” FreeBSD，2017 年 4 月 20 日，<www.freebsd.org/cgi/man.cgi?query=iocage&sektion=8>。
-- Dzonsons, Kristaps，与 Ingo Schwarze. “roff(7).” FreeBSD，2018 年 4 月 10 日，<www.freebsd.org/cgi/man.cgi?query=roff&apropos=0&sektion=0>。
+- “man page.”Wikipedia，Wikimedia Foundation，2019 年 1 月 5 日，<en.wikipedia.org/wiki/Man_page>。
+- Wirzenius, Lars. “Writing Manual Pages.”Writing Manual Pages, 2010 年 11 月 10 日，<liw.fi/manpages/>。
+- Dzonsons, Kristaps. “mdoc(7).”FreeBSD，2018 年 7 月 28 日，<www.freebsd.org/cgi/man.cgi?query=mdoc&sektion=7&manpath=freebsd-release-ports>。
+- Toth, Peter，与 Brandon Schneider. “iocage(8).”FreeBSD，2017 年 4 月 20 日，<www.freebsd.org/cgi/man.cgi?query=iocage&sektion=8>。
+- Dzonsons, Kristaps，与 Ingo Schwarze. “roff(7).”FreeBSD，2018 年 4 月 10 日，<www.freebsd.org/cgi/man.cgi?query=roff&apropos=0&sektion=0>。
 
 ## 结论
 
