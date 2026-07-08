@@ -10,7 +10,7 @@ FreeBSD 9.0-RELEASE 于 2013 年 1 月 6 日发布。作为“点零”版本，
 
 例如，用于应用沙箱的 Capsicum 框架是剑桥大学计算机实验室、Google 和 FreeBSD Foundation 合作的成果，FreeBSD 成为应用安全新研究的参考实现。
 
-可插拔拥塞控制框架及五种新的压缩控制算法，是 Foundation 与斯威本科技大学的先进互联网架构中心合作的成果，代表了 TCP 压缩控制研究的前沿，这在不断变化的网络技术世界中是必需的。
+可插拔拥塞控制框架及五种新的拥塞控制算法，是 Foundation 与斯威本科技大学的先进互联网架构中心合作的成果，代表了 TCP 拥塞控制研究的前沿，这在不断变化的网络技术世界中是必需的。
 
 Foundation 与 OMCnet Internet Service GmbH 和 TransIP BV 合作实现了高可用存储（HAST）框架，允许通过 TCP/IP 网络对任何存储介质进行同步块级复制。Foundation 还资助了用户态 DTrace 的移植。
 
