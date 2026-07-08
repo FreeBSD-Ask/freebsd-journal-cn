@@ -39,9 +39,9 @@ UNIX 访问控制模型具有这样的灵活性：用户不必对应真实的、
 $ mdo -u www /usr/local/bin/occ
 ```
 
-对于那些 sudo(8) 和 doas(1) 用户来说，这条命令行看起来应该与你使用这些工具时的方式极为相似：基本上，mdo 取代了 sudo 或 doas，其余部分完全一致。
+对于那些 `sudo(8)` 和 `doas(1)` 用户来说，这条命令行看起来应该与你使用这些工具时的方式极为相似：基本上，`mdo` 取代了 `sudo` 或 `doas`，其余部分完全一致。
 
-显然，如果传递的是某个用户的数值 ID 而不是用户名，这种方式就无法奏效，因为完整的登录凭据是由密码数据库和组数据库确定的，而这些数据库是按名称进行索引的[7](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor009)。使用 `-u` 并指定用户数值 ID 时，只会指定用户本身（实际上是实际、有效以及保存的用户 ID），此时还需要告知 mdo(1) 所有目标组。这要么像下面将看到的那样显式指定，要么通过 `-i` 来完成，`-i` 表示以当前的组作为基线；否则，mdo(1) 将直接报错。
+显然，如果传递的是某个用户的数值 ID 而不是用户名，这种方式就无法奏效，因为完整的登录凭据是由密码数据库和组数据库确定的，而这些数据库是按名称索引的[7](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor009)。使用 `-u` 并指定用户数值 ID 时，只会指定用户本身（实际上是实际、有效和保存的用户 ID），此时还需要告知 `mdo(1)` 所有目标组。这要么像下面将看到的那样显式指定，要么通过 `-i` 来完成，`-i` 表示以当前的组作为基线；否则，`mdo(1)` 将直接报错。
 
 保留当前的组，例如：
 
