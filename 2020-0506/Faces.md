@@ -7,7 +7,7 @@
 
 ## 请简要介绍一下自己、你的背景和兴趣
 
-![Nick O'Brien 照片](https://github.com/user-attachments/assets/1665a636-a98d-46ed-a9bb-bc868dc600bc)
+![Nick O'Brien 照片](../png/2020-0506/Faces-01.png)
 
 **Nick：** 我出生，成长于华盛顿州的西雅图，但自 2017 年底以来，大部分时间都住在加利福尼亚州的圣何塞。目前，我在 Axiado 从事嵌入式软件工作，我们使用 FreeBSD 来做 RISC-V 相关的工作。
 

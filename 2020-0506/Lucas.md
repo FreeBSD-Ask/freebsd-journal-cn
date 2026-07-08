@@ -5,13 +5,13 @@
 
 摘自 BSDNow，第 329 集，录制于 2019 年 12 月。Allan Jude 和 Benedict Reuschling 采访了 Michael W Lucas。
 
-![Michael W Lucas 照片](https://github.com/user-attachments/assets/3671ca6a-c18c-4e61-950c-f1e9ffb1e7a0)
+![Michael W Lucas 照片](../png/2020-0506/Lucas-01.png)
 
 **BENEDICT REUSCHLING**：Michael W Lucas 曾在这个节目中接受过几次采访。他上回接受采访是几个月前，我们认为您可能想了解他最近在做什么，以及他接下来的计划。以下是这次采访，享受吧！
 
 **REUSCHLING**：欢迎，Michael！您最近发布了本新书，我相信听众们会想了解一下。能告诉我们这本书的内容吗？我听说它是关于 sudo 的。
 
-![《Sudo Mastery》封面](https://github.com/user-attachments/assets/0b55cfc3-6fbd-4998-9af1-508f26982164)
+![《Sudo Mastery》封面](../png/2020-0506/Lucas-02.png)
 
 **MICHAEL W LUCAS**：感谢邀请我参加。是的，这本新书是《Sudo Mastery》的第二版。除非您使用 LDAP，否则 sudo 并没有进行过重大变化。但它做了很多小改动，因此，基本上这第二版就是为了跟上这些变化，确保信息准确反映今天的 sudo。我还深入探讨了一些推荐的配置更改。例如，sudo 现在有像校验和验证这样的功能，以确保二进制文件没有被篡改。当然，没人会手动计算每个二进制文件的校验和，更别提每次修补时还要更新它们了。所以，我为流行操作系统编写了一些脚本，用于自动计算所有文件的校验和。
 
