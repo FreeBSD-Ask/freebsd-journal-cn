@@ -195,7 +195,7 @@ gid=0>any
 
 FreeBSD 中的 Jail 形成一个层级结构[16](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor018)，其顶层是宿主系统[17](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor019)。每个单独的 jail 都有参数，其中一些只能在创建时设置，另一些则可以在 jail 运行时从外部修改。
 
-mac_do(4) 支持每个 jail 的配置，通过以下参数实现：
+`mac_do(4)` 支持每个 jail 的配置，通过以下参数实现：
 
 * `mac.do`：每个 jail 的模块模式。
 * `mac.do.rules`：适用于该 jail 的规则。
