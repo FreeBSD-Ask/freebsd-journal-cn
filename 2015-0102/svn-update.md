@@ -1,6 +1,7 @@
 # SVN 动态
 
-作者：Glen Barber
+- 原文：[svn update](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)
+- 作者：**Glen Barber**
 
 又到了这个时候——新年伊始，正是回顾 FreeBSD 开发者们在过去一年中开发的新功能和改进的好时机。坐下来，放松，看看这些亮点。
 

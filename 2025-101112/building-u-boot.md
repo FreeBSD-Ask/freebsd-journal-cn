@@ -96,7 +96,7 @@ status = "okay";
 &scutimer {clock-frequency = <50000000>;};
 ```
 
-既然我们已经学会了如何构建 U-boot，现在看看是否可以将其做成一个 Port。U-boot 有一整套 Ports，它们都是基于 Port `U-boot-master` 构建的。要使用这些 Ports，我们需要包含 master Port 的 Makefile。我们必须指定开发板、型号以及应使用的配置。对于上面所做的修改，我们还有一些补丁，最终可以得到如下内容。
+既然我们已经学会了如何构建 U-boot，现在看看是否可以将其做成 Port。U-boot 有一整套 Ports，它们都是基于 Port `U-boot-master` 构建的。要使用这些 Ports，我们需要包含 master Port 的 Makefile。我们必须指定开发板、型号和应使用的配置。对于上面所做的修改，我们还有一些补丁，最终可以得到如下内容。
 
 ```sh
 MASTERDIR=      ${.CURDIR}/../U-boot-master

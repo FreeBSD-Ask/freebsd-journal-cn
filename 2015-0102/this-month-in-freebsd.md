@@ -1,6 +1,7 @@
 # FreeBSD 本月动态
 
-作者：Dru Lavigne
+- 原文：[This Month in FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)
+- 作者：**Dru Lavigne**
 
 作为一个成熟的开源项目，FreeBSD 项目拥有定义明确、文档完善的发布管理流程，以及发布工程团队和首席发布工程师。本月，我们有机会采访 Glen Barber，他自 2013 年 1 月起加入 FreeBSD 发布工程团队，自 2014 年 3 月起担任首席发布工程师。
 

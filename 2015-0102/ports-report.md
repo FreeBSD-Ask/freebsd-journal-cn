@@ -1,6 +1,7 @@
 # Ports 报告
 
-作者：Frederic Culot
+- 原文：[Ports Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)
+- 作者：**Frederic Culot**
 
 11 月和 12 月 ports 树的活动不算多，主要原因是年底的节庆。不过数字仍然可观：ports 树上有 3,778 次提交！在 bug 方面，关闭的问题报告比上一周期更多，共修复 1,157 个问题。感谢所有提供反馈、花时间让 FreeBSD ports 更好的人！
 
