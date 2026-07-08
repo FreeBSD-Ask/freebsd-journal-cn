@@ -3,7 +3,7 @@
 - 原文：[Credentials Transitions with mdo(1) and mac_do(4)](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/)
 - 作者：Olivier Certner
 
-在本文中，我们探讨如何使用 `mdo(1)` 程序，轻松且快速地以不同的凭据启动新进程，和系统管理员如何利用内核模块 `mac_do(4)`，使非特权用户能够发起凭据转换，从而在简单的基于角色的场景中，无需安装诸如 `sudo(8)` 或 `doas(1)` 等第三方程序。
+在本文中，我们探讨如何使用 `mdo(1)` 程序，轻松快速地以不同的凭据启动新进程，和系统管理员如何利用内核模块 `mac_do(4)`，使非特权用户能够发起凭据转换，从而在简单的基于角色的场景中，无需安装诸如 `sudo(8)` 或 `doas(1)` 等第三方程序。
 
 传统的 UNIX 访问控制方法，本质上依赖于以下概念和组件：
 
@@ -99,7 +99,7 @@ $ mdo -u unprivileged_user -s -tag_group
 
 非 root 用户要使用 `mdo(1)`，必须配置 `mac_do(4)`，因为 `mdo(1)` 设计上并未以“setuid”方式安装。
 
-`mac_do(4)` 默认不会编译进内核，但可以很容易地以模块方式加载：
+`mac_do(4)` 默认不会编译进内核，但可以很容易以模块方式加载：
 
 ```sh
 # kldload mac_do
@@ -220,7 +220,7 @@ FreeBSD 中的 Jail 形成一个层级结构[16](https://freebsdfoundation.org/o
 
 在探讨继承的具体含义之前，先看看 `mac.do` 与 `mac.do.rules` 如何保持一致。内部上，每个 jail 都有一个标志，用于指示它是否继承自父 jail；如果不继承，则会保存一份规则设置（`mac.do.rules`）及其内部表示，从而避免信息冗余[19](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor021)。实际上，我们并不存储任何直接对应 `mac.do` 参数的值。该参数在读取时是根据现有数据生成的。由此可知，当继承标志被设置时，读取 `mac.do` 返回 `inherit`；否则，如果没有指定规则（空字符串）返回 `disable`；否则返回 `new`。在显式设置 `mac.do` 时，`mac_do(4)` 会检查其值是否与 `mac.do.rules` 一致。如果 `mac.do` 设置为 `new`，则必须指定 `mac.do.rules`。对于其他情况，我们应用鲁棒性原则[20](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor022)，即使严格来说 jail 参数中不应存在空字符串的 `mac.do.rules`，也会容忍其存在。
 
-当 `mac.do` 设置为 `inherit` 时，`mac_do(4)` 会直接使用适用于父 jail 的配置，而父 jail 本身可能继承自更高层的 jail。主要结果是，对父 jail 中任意规则的更改（直到第一个不继承的父 jail）会自动且立即在继承的 jail 中生效。这减轻了管理员在树状结构中保持多个 jail 配置同步时的工作量。如前所述，在 jail 上显式设置规则（无论通过 `mac.do.rules` 还是 `security.mac.do.rules`）会建立独立的 per-jail 配置，有效地打破继承。之后随时可以重新启用继承，只需再次将 `mac.do` 设置为 `inherit`。
+当 `mac.do` 设置为 `inherit` 时，`mac_do(4)` 会直接使用适用于父 jail 的配置，而父 jail 本身可能继承自更高层的 jail。主要结果是，对父 jail 中任意规则的更改（直到第一个不继承的父 jail）会自动且立即在继承的 jail 中生效。这减轻了管理员在树状结构中保持多个 jail 配置同步时的工作量。如前所述，在 jail 上显式设置规则（无论通过 `mac.do.rules` 还是 `security.mac.do.rules`）会建立独立的 per-jail 配置，有效打破继承。之后随时可以重新启用继承，只需再次将 `mac.do` 设置为 `inherit`。
 
 与其他 jail 参数一样，你可以在创建 jail 时轻松使用这些参数配置，例如直接在 `jail(8)` 命令行上：
 
@@ -276,9 +276,9 @@ Baptiste Daroussin 最初启动 `mac_do(4)`/`mdo(1)` 项目的目标，是在不
 
 这里的核心信息是，尽管我们有一些简单的短期计划，和更宽泛的长期设想，未来方向在很大程度上将取决于当前或潜在用户的反馈。我们渴望听取对小改进或全新功能的建议，无论你是已经在使用 `mac_do(4)`/`mdo(1)`、计划使用，还是希望使用但现有功能无法满足需求。这将帮助我们在保持整体设计合理性的前提下，选择优先开发的内容。即便仅仅告知你正在使用这些工具，也属于有价值的反馈，因为了解用户数量和使用方式同样重要。
 
-短期内，我们计划为 `mac_do(4)`/`mdo(1)` 增加类似审计的功能。显示传递给内核的最终凭据有助于检查调用是否符合预期目标。生成 `mac_do(4)` 规则中授权特定 `mdo(1)` 调用的目标部分，可以帮助管理员构建 `mac_do(4)` 配置，或更好地理解为何某些规则未按预期工作。与 `audit(4)` 子系统集成将允许事后跟踪凭据变更。通过 `syslog(3)` 记录失败尝试，将与 `login(1)` 和其他凭据变更程序的行为保持一致。`mac_do(4)` 很快还将允许配置它所考虑的可执行文件，以支持 thin-jails 场景和其他用户态程序[24](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor026)。此外，它还将监控传统系统调用，如 `setuid(2)`，而不仅仅是 `setcred(2)`，每个调用都被视为一次完整的凭据转换。
+短期内，我们计划为 `mac_do(4)`/`mdo(1)` 增加类似审计的功能。显示传递给内核的最终凭据有助于检查调用是否符合预期目标。生成 `mac_do(4)` 规则中授权特定 `mdo(1)` 调用的目标部分，可以帮助管理员构建 `mac_do(4)` 配置，或更好理解为何某些规则未按预期工作。与 `audit(4)` 子系统集成将允许事后跟踪凭据变更。通过 `syslog(3)` 记录失败尝试，将与 `login(1)` 和其他凭据变更程序的行为保持一致。`mac_do(4)` 很快还将允许配置它所考虑的可执行文件，以支持 thin-jails 场景和其他用户态程序[24](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor026)。此外，它还将监控传统系统调用，如 `setuid(2)`，而不仅仅是 `setcred(2)`，每个调用都被视为一次完整的凭据转换。
 
-长期来看，我们可能考虑提供类似 `su` 或 `doas` 的功能，例如要求输入密码，或者更广泛地利用 `pam(3)`、设置资源限制和其他属性（如完整登录过程），或仅允许启动特定命令。然而，目前尚不清楚这些功能如何整合到 `mdo(1)` 中，因为它并非“setuid 可执行文件”，也不确定是否应走不同的实现路径。
+长期来看，我们可能考虑提供类似 `su` 或 `doas` 的功能，例如要求输入密码，或者更广泛利用 `pam(3)`、设置资源限制和其他属性（如完整登录过程），或仅允许启动特定命令。然而，目前尚不清楚这些功能如何整合到 `mdo(1)` 中，因为它并非“setuid 可执行文件”，也不确定是否应走不同的实现路径。
 
 例如，我们做过初步研究，探讨如何为某些凭据转换增加密码请求支持。`mdo(1)` 可以被任何用户启动，需要一种机制来检查密码，而密码数据库并非所有人都可直接读取[25](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor027)。这种情况类似于使用 CAPSICUM 能力模式[26](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/credentials-transitions-with-mdo1-and-mac_do4/centner.html#_idTextAnchor028)的程序，有时需要访问比其直接权限更高的数据。这可以通过让一个不受限制的进程代表能力模式下的进程执行必要的访问来解决。`libcasper(3)` 是 FreeBSD 针对多个服务实现这一思路的方案，包括提供 `cap_pwd(3)` 服务以访问密码和组数据库。不幸的是，直接使用 libcasper 不可行，因为 `cap_enter()` 会创建并连接到一个使用相同凭据启动的进程。`mdo(1)` 将需要一个具有特权的外部守护进程来提供 `cap_pwd(3)` 服务。
 
@@ -294,7 +294,7 @@ Baptiste Daroussin 最初启动 `mac_do(4)`/`mdo(1)` 项目的目标，是在不
 4. 传递给 `su(1)` 的附加参数会被交给目标用户的 shell，因此程序及其参数必须通过 shell 的 `-c` 参数（或等价方式）传递。对于 `sh(1)` 及其后代，它们必须被组合为一个单一参数，由启动的 shell 解释，有时还需要额外一层引用。
 5. Mandatory Access Control。参见 `mac(4)`。
 6. 此处描述的更新版 `mdo(1)` 通常会随 FreeBSD 14.4 一同发布。
-7. 可能存在多个用户映射到同一个数值 ID。`doas(1)` 的一个缺陷是它会静默地采用第一个匹配的用户名。`mdo(1)` 通常采取更为保守的做法，不会静默执行非显而易见的操作，这里即使只有一个匹配的用户名，也不会尝试使用它。
+7. 可能存在多个用户映射到同一个数值 ID。`doas(1)` 的一个缺陷是它会静默采用第一个匹配的用户名。`mdo(1)` 通常采取更为保守的做法，不会静默执行非显而易见的操作，这里即使只有一个匹配的用户名，也不会尝试使用它。
 8. 即真实、有效和保存的组 ID，相对于补充组而言。
 9. 为方便脚本使用，`-s` 实际上与 `-G` 兼容，可用于修改它，因此实际上在处理顺序上会在 `-G` 之后生效，即便它在命令行中出现在 `-G` 之前。不过，目前同时使用 `@` 和 `-G` 会被视为错误（重复指定），这一限制未来可能会被解除。
 10. 匹配真实用户 ID，因为它代表用户身份，而非有效用户 ID，从而默认防止另一套规则应用于“setuid 可执行文件”。也就是说，由于在 FreeBSD 上允许非特权用户将真实用户 ID 设置为有效用户 ID，这一区别目前不是绝对限制。
@@ -302,7 +302,7 @@ Baptiste Daroussin 最初启动 `mac_do(4)`/`mdo(1)` 项目的目标，是在不
 12. 更正式的说法，`gid` 和 `+gid` 目标子句构成逻辑“或”关系。
 13. 更正式的说法，规则构成逻辑“或”关系。
 14. 如果将 `+gid=.` 替换为 `!gid=.`，规则仅在当前补充组不包含 0 时允许转换，而不是允许转换到除 0 外的所有当前组。后续可能放宽此限制。
-15. 有一些例外。我们在前一个脚注中已经看到一个。另一个是：一方面，真实、有效和保存的用户 ID；另一方面，真实、有效和保存的组 ID，会被不加区分地对待。将它们分别处理会引入额外复杂性，而收益甚微，因为 FreeBSD 当前的 `setresuid(2)` 允许非特权进程将其任一用户 ID 设置为其他任一用户 ID 的值。我们未来可能会禁止这种行为。
+15. 有一些例外。我们在前一个脚注中已经看到一个。另一个是：一方面，真实、有效和保存的用户 ID；另一方面，真实、有效和保存的组 ID，会被不加区分对待。将它们分别处理会引入额外复杂性，而收益甚微，因为 FreeBSD 当前的 `setresuid(2)` 允许非特权进程将其任一用户 ID 设置为其他任一用户 ID 的值。我们未来可能会禁止这种行为。
 16. 自 FreeBSD 8.0 起。
 17. 其全局 jail ID 始终为 0。jail ID 是全局的，但每个进程都会将其直接所属的 jail 的 ID 视为 0。
 18. 在较早的实现中，该参数名为 `mdo`，本意是按此处描述的方式工作，但由于 bug 并未实现。
