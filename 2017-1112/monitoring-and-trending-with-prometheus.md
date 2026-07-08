@@ -81,7 +81,7 @@ $ sudo /usr/local/etc/rc.d/grafana forcestart
 Starting grafana.
 ```
 
-按默认设置，Grafana 会启动一个监听 3000 端口的 Web 服务器。用浏览器访问它并以默认凭据（用户名 `admin`，密码 `admin`）登录后，我们便看到 Grafana 的主界面。我们想做的第一件事是点击 “Add data source” 配置 Grafana 应使用的 Prometheus 服务器地址——本例中是 <http://localhost:9090/>。
+按默认设置，Grafana 会启动一个监听 3000 端口的 Web 服务器。用浏览器访问它并以默认凭据（用户名 `admin`，密码 `admin`）登录后，我们便看到 Grafana 的主界面。我们想做的第一件事是点击“Add data source”配置 Grafana 应使用的 Prometheus 服务器地址——本例中是 <http://localhost:9090/>。
 
 完成后，我们可以点击主界面上的下一个按钮，标题为“Create your first dashboard”。随后我们会看到一个空的仪表盘页面，可以在上面放置面板，例如图形、表格、热力图和列表。对于 Prometheus，大多数情况下使用图形最为合理。创建图形时，我们可以使用与之前相同的查询语法。通过页面顶部的保存图标，仪表盘会保存在 Grafana 服务器上。
 
