@@ -96,7 +96,7 @@ Firecracker 提供的少数模拟设备之一（与 Virtio 块和网络设备等
 
 FreeBSD 在 Firecracker 下引导——并且非常迅速。包括未提交的补丁（对 FreeBSD 和 Firecracker 都是如此），在具有 1 CPU 和 128 MB RAM 的虚拟机上，FreeBSD 内核可以在不到 20 毫秒的时间内引导；下面是引导过程的火焰图。
 
-![GLD 8~GA{A 3W SW(H)9$Q](../png/2023-0708/freebsd-on-firecracker-1.png)
+![FreeBSD 14.0-CURRENT 引导火焰图](../png/2023-0708/freebsd-on-firecracker-1.png)
 
 仍然有工作要做：除了提交上述补丁，并将 PVH 引导模式支持合并到 Firecracker 主线中，还有大量的“清理”工作要做。由于 PVH 引导模式起源于 Xen，用于 PVH 引导的代码仍与 Xen 支持混合在一起；将它们分开会大大简化工作。同样，目前无法在没有 PCI 或 ACPI 支持的情况下构建 FreeBSD arm64 内核；找出虚假的依赖项并删除它们，就能使用更小的 FreeBSD/Firecracker 内核（并将启动时间再减少几微秒——我们花 25 微秒检查是否需要为 Intel GPU 保留内存）。
 

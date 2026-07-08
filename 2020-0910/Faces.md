@@ -7,7 +7,7 @@
 
 ## 请简要介绍一下自己、背景和兴趣爱好
 
-![Rainer Hurling 照片](https://github.com/user-attachments/assets/da323975-9d52-4d2f-8f53-f051eb6b6d91)
+![Rainer Hurling 照片](../png/2020-0910/Faces-01.png)
 
 **Rainer:** 我是 Rainer Hurling，成长于德国北部。自从完成学业后，我一直住在德国中部，靠近哥廷根。我从青少年时期起就对计算机产生了浓厚的兴趣。在 1977 年的学校实习中，我初次接触了 Siemens TR 440 主机，这让我对软硬件有了更深入的理解，后来我还使用了一台基于 SC/MP CPU 的自制计算机。1980 年代初，我购买了我的第一台真正的计算机系统——一块来自 Eltec Elektronik（德国美因茨）的 Eurocom II 主板，配有 6809 CPU。随附的 FLEX 操作系统包括汇编语言、反汇编器、Pascal、Forth 和 Fortran（当然，还有 Sargon Chess），所有软件都存储在 8 英寸软盘中。1983 年，我又购置了一台 Apple IIe，并主要用 UCSD Pascal 进行编程。
 
@@ -15,7 +15,7 @@
 
 在个人生活中，我也对天体物理学感兴趣，尝试改进现有的软件，同时还是 astro/astrometry 和 astro/py-ephem 的维护者。自 1981 年以来，我就持有业余无线电执照（DH6BAG）。很高兴看到业余无线电软件在 FreeBSD 上不断发展壮大。
 
-![Gordon Bergling 照片](https://github.com/user-attachments/assets/cef27227-b40c-41a9-b7c1-4bcf2555db45)
+![Gordon Bergling 照片](../png/2020-0910/Faces-02.png)
 
 **Gordon:** 我目前是一名自由职业软件开发人员，居住在德国莱比锡。我自 1990 年代末以来一直从事 IT 行业工作，拥有跨越多个行业领域的经验，从电子商务、制药业到金融业都有涉猎。我的工作重点是分布式系统和商业应用程序。我对物联网（IoT）和边缘计算非常感兴趣，但至今还没有找到时间在实际环境中进行相关探索。除了软件开发，我还对摄影和与音乐相关的一切都很感兴趣。我喜欢旅行，结识新文化和新朋友。
 
