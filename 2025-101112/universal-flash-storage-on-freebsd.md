@@ -55,7 +55,7 @@
 
 * **性能：** 相比 eMMC 的半双工并行接口，UFS 的全双工高速串行接口提供更高带宽和更低延迟。提交路径轻量化，基于队列、DMA 和中断构建。因此，即使仅使用单队列，性能也很稳定，多循环队列（MCQ）在多核系统上进一步提高了可扩展性。WriteBooster 利用 NAND 的 SLC 区域进一步提升突发写入性能。
 * **功耗效率：** UIC 链路仅在 I/O 活跃时提升档位，空闲时迅速降至低功耗状态。标准定义了电源状态切换，从而在热量和功耗受限的移动设备中延长电池寿命。实际上，有报道显示，使用 UFS 而非 NVMe 的平板电脑可额外延长[约 30-90 分钟的续航](https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Duet_3_11IAN8/IdeaPad_Duet_3_11IAN8_Spec.pdf)。
-* **兼容性：** 由于 UFS 使用 SCSI 命令子集，现有 SCSI 基础设施可以复用。在 FreeBSD 中，CAM 处理 SCSI 命令，而 UFS 驱动将 CAM 生成的 SCSI 命令封装到 UPIU 中传递给 UTP，使其与 CAM 的集成十分简便。
+* **兼容性：** UFS 使用 SCSI 命令子集，现有 SCSI 基础设施可以复用。在 FreeBSD 中，CAM 处理 SCSI 命令，而 UFS 驱动将 CAM 生成的 SCSI 命令封装到 UPIU 中传递给 UTP，使其与 CAM 的集成十分简便。
 
 ## UFS 的历史与后续
 
