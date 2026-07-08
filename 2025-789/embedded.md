@@ -208,7 +208,7 @@ Simulation done: 106508 instructions in 0.2 sec (0.5 MIPS)
 Exporting counters
 ```
 
-你可以在 FreeBSD 上进行开发，只在容器中运行模拟器；也可以选择在容器中完成所有开发。在其他平台上，大多数开发者会使用带有 dev container 集成功能的编辑器（例如 Visual Studio Code）。在 FreeBSD 上同样也可以这样做，只需配置 Podman 来运行容器的 Linux 版本即可。
+你可以在 FreeBSD 上开发，只在容器中运行模拟器；也可以选择在容器中完成所有开发。在其他平台上，大多数开发者会使用带有 dev container 集成功能的编辑器（例如 Visual Studio Code）。在 FreeBSD 上同样也可以这样做，只需配置 Podman 来运行容器的 Linux 版本即可。
 
 另外，你也可以在 FreeBSD 上原生构建所有模拟器。相关的操作步骤过长，无法在本文中全部展开，但你可以参考 RTOS 仓库中的文档说明。它们所需的所有依赖已经在 ports 中，模拟器本身也有望很快进入 ports。
 
