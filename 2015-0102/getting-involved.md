@@ -1,6 +1,7 @@
 # 参与其中
 
-作者：Dru Lavigne
+- 原文：[Getting Involved](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)
+- 作者：**Dru Lavigne**
 
 作为开源项目，FreeBSD 依靠活跃社区源源不断的贡献和多元技能，才能打造并维护满足用户需求的软件。或许你曾想过为 FreeBSD 项目出力，却不知从何入手；又或许你已是贡献者，希望带动更多人加入。
 
@@ -66,7 +67,7 @@ FreeBSD 项目确实有许多在各自领域造诣深厚、被誉为专家的贡
 
 此外，FreeBSD 项目在若干非技术领域也表现出色：
 
-**许可证：** 两句 BSD 许可证鼓励代码复用。这让商业产品厂商可以专注于自身的“独门秘方”，并促进新标准的广泛采用。
+**许可证：** 两条款 BSD 许可证鼓励代码复用。这让商业产品厂商可以专注于自身的“独门秘方”，并促进新标准的广泛采用。
 
 **文档：** 项目提供多种文档资源，帮助新用户和新贡献者快速上手。包括 FreeBSD Handbook、FAQ、开发者手册、Porter's Handbook、文档项目入门指南，以及内置的 man 页。
 
