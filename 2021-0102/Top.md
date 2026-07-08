@@ -39,11 +39,11 @@ pkg install bpytop
 
 我还发现一个尚未移植、与进程查看器无关的工具——topgrade <https://github.com/r-darwish/topgrade>。它不仅能从一个包管理器升级，还能从系统上的所有包管理器升级。做这件事时或许可以播放《壮志凌云》主题曲，那个 logo 确实让人联想到这一点。我运行这个工具的服务器没有声卡，所以我无法确认。想象一下数据中心所有工作人员忙成一团，想弄清这声音来自机架中的哪台机器！
 
-我还记得（当然是我随口记起的）一些尚未移植到 FreeBSD 的其他 top 类程序。电影《创：战纪》似乎启发了 eDEX-UI <https://github.com/GitSquared/edex-ui> 的未来感设计。我们能把它移植过来吗？拜托了（撒点糖在上面）？
+我还记得（当然是我随口想起的）一些尚未移植到 FreeBSD 的其他 top 类程序。电影《创：战纪》似乎启发了 eDEX-UI <https://github.com/GitSquared/edex-ui> 的未来感设计。我们能把它移植过来吗？拜托了（撒点糖在上面）？
 
-有一个名为 tui-rs <https://github.com/fdehau/tui-rs> 的基础 RUST 库，为终端中许多其他灵活而动态的类窗口显示提供了构建模块。这里我只提其中一个，它之于 top，就像 tail(1) 之于 head(1)：bottom <https://github.com/ClementTsang/bottom>。同时，sysutils/gotop 可能会引起你的兴趣，它用波浪线显示 CPU 使用情况。在笔记本和服务器上，它还尝试确定 CPU 温度。
+有一个名为 tui-rs <https://github.com/fdehau/tui-rs> 的基础 RUST 库，为终端中许多其他灵活而动态的类窗口显示提供了构建模块。这里我只提其中一个，它之于 top，就像 tail(1) 之于 head(1)：bottom <https://github.com/ClementTsang/bottom>。顺便说一下，sysutils/gotop 可能引起你的兴趣，它用波浪线显示 CPU 使用情况。在笔记本和服务器上，它还尝试确定 CPU 温度。
 
-如果 <www.unixtop.org> 没有下线的话，我会推荐你去那里了解这个工具的历史。幸运的是，archive.org 有 2017 年的存档，可以使用。维基百科也有启发性的信息，所以我就把它留给你了。希望这篇专栏不会太过火，你能将一些实用工具加入你的 Unix 工具箱。
+如果 <www.unixtop.org> 没有下线的话，我会推荐你去那里了解这个工具的历史。幸运的是，archive.org 有 2017 年的存档，可以使用。维基百科也有启发性的信息，所以我就留给你自己去查吧。希望这篇专栏不会太过火，你能将一些实用工具加入你的 Unix 工具箱。
 
 ---
 
