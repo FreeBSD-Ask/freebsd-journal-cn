@@ -2,7 +2,7 @@
 
 NAND 闪存固态硬盘广泛用作主要存储设备，因其低功耗和高性能。然而，固态硬盘存在不可预测的 IO 延迟、日志重叠问题以及资源利用不足等问题。
 
-- 原文链接：[Open Channel 固态硬盘](https://freebsdfoundation.org/wp-content/uploads/2022/01/Open-Channel-SSD.pdf)
+- 原文链接：[Open Channel SSD](https://freebsdfoundation.org/wp-content/uploads/2022/01/Open-Channel-SSD.pdf)
 - 作者：**ARKA SHARMA、AMIT KUMAR、ASHUTOSH SHARMA**
 
 随着固态硬盘的普及，对更可预测的 IO 延迟的需求也在增长。传统的固态硬盘通常向主机暴露一个块接口，但常常无法满足这一需求。原因在于 NAND 闪存的工作方式。通常，在固态硬盘内部，闪存被划分为由多个芯片组成的单元。每个芯片包含若干个 die，每个 die 可以独立执行闪存命令（读/写/擦除）。这些 die 内部包含多个 plane，多个 plane 可以一次性执行相同的闪存命令，从而提高效率。每个 plane 内包含多个块，块是擦除单位，而块内包含的页则是读写单位。

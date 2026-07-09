@@ -2,7 +2,7 @@
 
 作者：Thomas Abthorpe
 
-欢迎来到全新《FreeBSD Journal》的首期 Ports Report 专栏。我是 Thomas Abthorpe，FreeBSD Ports 管理团队秘书，即 `portmgr-secretary@`。让我来撰写这个专栏似乎顺理成章，因为我负责团队的大部分通信事务。
+欢迎来到全新《FreeBSD 期刊》的首期 Ports Report 专栏。我是 Thomas Abthorpe，FreeBSD Ports 管理团队秘书，即 `portmgr-secretary@`。让我来撰写这个专栏似乎顺理成章，因为我负责团队的大部分通信事务。
 
 那么你可以在 Ports Report 中期待读到什么？它将是 Ports 基础设施近期活动的汇总、Ports 领域的新闻、提示与技巧，以及我能塞进来的各种零星知识。
 

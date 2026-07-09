@@ -15,7 +15,7 @@
 
 就我而言，我正在重新利用一些笔记本电脑。一台笔记本电脑有一个可用的无线网卡，用来连接互联网。这是一台来自 2010 年代初期的老款 Asus ROG 笔记本，它也内置了以太网口。我的 X1 Carbon 7 代 ThinkPad 没有内置的以太网口，我只使用 USB 端口和 Android USB 网络共享。然而，最让我兴奋的是 Dell Precision 笔记本电脑。它是一台很棒的实验室主机，配备 Intel Xeon 处理器，能够支持 128GB 内存和多块 NVME 固态硬盘。笔记本背面有一个内置的以太网端口，第二个则是一个 USB-C 转接器，上面有一个 Intel igb0 以太网端口，我用它作为实验室网络的专用接口。最后，旧的塔式机箱也是很好的主机选择，你可以安装一些带有多个以太网端口的出色 PCI 网卡。
 
-关键是找到适合你的方案，安装 FreeBSD，然后开始我们的虚拟实验室。如果你想了解一些安装和配置 FreeBSD 的技巧，请查看 2022 年 7/8 月号 FreeBSD Journal 中的《Getting Started With FreeBSD Workshop》。
+关键是找到适合你的方案，安装 FreeBSD，然后开始我们的虚拟实验室。如果你想了解一些安装和配置 FreeBSD 的技巧，请查看 2022 年 7/8 月号《FreeBSD 期刊》中的《Getting Started With FreeBSD Workshop》。
 
 ## 虚拟网络设计
 
