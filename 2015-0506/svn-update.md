@@ -1,5 +1,8 @@
 # SVN 动态
 
+- 原文：[SVN Update](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
+- 作者：**Glen Barber**
+
 本期 svn update 介绍若干虚拟化更新，以及 `xz`(1) 压缩工具的一次令人瞩目的更新。
 
 ## stable/10@r280632（<https://svnweb.freebsd.org/changeset/base/r280632>）
@@ -55,17 +58,17 @@ FreeBSD 基金会最近为支持发布工程团队而购置的发布构建机器
 
 ## head@r280259（<https://svnweb.freebsd.org/changeset/base/r280259>）
 
-FreeBSD 基金会与 ARM、Cavium 及 Semihalf sp.j. 合作，资助 FreeBSD 开发者 Andrew Turner 将 FreeBSD 移植到 64 位 ARM 平台（即 aarch64）。
+FreeBSD 基金会与 ARM、Cavium、Semihalf sp.j. 合作，资助 FreeBSD 开发者 Andrew Turner 将 FreeBSD 移植到 64 位 ARM 平台（即 aarch64）。
 
 FreeBSD/aarch64 的初始支持在 r280259 中加入 11-CURRENT，此后持续开发。该项目的目标是将 FreeBSD/aarch64 提升至 Tier-1 支持状态，包括发行安装介质与第三方 package。
 
-制作 FreeBSD/aarch64 发行介质的初始支持在 r281802 中加入 11-CURRENT，该工作由 FreeBSD 基金会资助。目前，FreeBSD FTP 镜像上提供了用于 Qemu 模拟器的虚拟机镜像以及内存棒安装镜像。
+制作 FreeBSD/aarch64 发行介质的初始支持在 r281802 中加入 11-CURRENT，该工作由 FreeBSD 基金会资助。目前，FreeBSD FTP 镜像上提供了用于 Qemu 模拟器的虚拟机镜像、内存棒安装镜像。
 
 请注意，启动虚拟机镜像需要一个 Qemu EFI loader 文件。更多细节（以及 EFI loader 文件的校验和），请参见 snapshots 公告邮件列表归档，其中包含了一个如何启动镜像的示例（<https://lists.freebsd.org/pipermail/freebsd-snapshots/2015-May/000147.html>）。
 
 感谢各位读者支持 FreeBSD 社区、FreeBSD 期刊，当然还有 FreeBSD 基金会。
 
-别忘了，FreeBSD-CURRENT 与 FreeBSD-STABLE 分支的开发 ISO 与预装虚拟机镜像（VHD、VMDK、QCOW2 与 RAW 格式）可在 FTP 镜像上找到，每周构建：ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/。
+别忘了，FreeBSD-CURRENT 与 FreeBSD-STABLE 分支的开发 ISO 与预装虚拟机镜像（VHD、VMDK、QCOW2 与 RAW 格式）可在 FTP 镜像上找到，每周构建：<ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/>。
 
 一如既往，开发快照不用于生产环境；但我们鼓励定期测试，这样我们才能让下一个 FreeBSD 发行版如你所期望的那般出色。
 

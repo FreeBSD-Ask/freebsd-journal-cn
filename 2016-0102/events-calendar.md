@@ -1,12 +1,13 @@
 # 活动日历
 
-## 截至 2016 年 4 月
+- 原文：[Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/performance-tuning/)
+- 作者：**Dru Lavigne**
 
-作者：Dru Lavigne
+## 截至 2016 年 4 月
 
 以下 BSD 相关会议将于 2016 年 3 月和 4 月举行。
 
-关于这些活动的更多信息，以及本地用户组会议，可在 <www.bsdevents.org> 查询。
+这些活动的更多信息，以及本地用户组会议，可在 <www.bsdevents.org> 查询。
 
 **AsiaBSDCon** • 3 月 10–13 日 • 日本东京
 

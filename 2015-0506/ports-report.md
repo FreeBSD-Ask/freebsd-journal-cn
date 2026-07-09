@@ -1,5 +1,8 @@
 # Ports 报告
 
+- 原文：[Ports Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
+- 作者：**Frederic Culot**
+
 3–4 月期间，Ports 方面的活动保持高水平，志愿者带来了重要变更，尤其是在 package 构建基础设施方面。我们也很高兴在此期间迎来了一位新开发者。
 
 ## 新的 Ports 提交者与保管
@@ -25,4 +28,4 @@
 
 3 月与 4 月两个月间，ports 树共应用了 4602 次提交，较上一周期增长超过 10%。在缺陷报告方面，关闭了 1324 个 PR，相较 1–2 月也有小幅增长。让我们希望这些数字继续增长，未来几个月有更多新开发者加入我们的行列！
 
-**Frederic Culot** 在 IT 行业工作了 10 年。业余时间他学习商业与管理，刚完成了一个 MBA 学位。Frederic 于 2010 年作为 ports 提交者加入 FreeBSD，此后完成了约 2000 次提交，指导了六位新提交者，现担任 portmgr-secretary。
+**Frederic Culot** 在 IT 行业工作了 10 年。业余时间他学习商业与管理，刚取得 MBA 学位。Frederic 于 2010 年作为 ports 提交者加入 FreeBSD，此后完成了约 2000 次提交，指导了六位新提交者，现担任 portmgr-secretary。
