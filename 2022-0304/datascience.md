@@ -1,9 +1,9 @@
 # FreeBSD/ARM64 上的数据科学
 
-- 原文链接：[Datascience on FreeBSD/ARM64](https://freebsdfoundation.org/wp-content/uploads/2022/04/Data-Science-on-FreeBSDARM64.pdf)
+- 原文：[Datascience on FreeBSD/ARM64](https://freebsdfoundation.org/wp-content/uploads/2022/04/Data-Science-on-FreeBSDARM64.pdf)
 - 作者：**MACIEJ CZEKAJ**
 
-最近，ARM64 成为了 FreeBSD 的一级平台。Semihalf 在支持所有基于 ARM 的 FreeBSD 系统方面历史悠久，在生产环境中采用 ARM64 是顺理成章的选择。然而，这次的测试平台有些不同，因为它不仅仅是另一个 Web 服务器和 NFS 存储阵列（我们已经有很多了），而是功能完备的数据科学实验室。
+最近，ARM64 成为了 FreeBSD 的一级平台。Semihalf 在各种 ARM 平台上支持 FreeBSD 方面历史悠久，在生产环境中采用 ARM64 是顺理成章的选择。然而，这次的测试平台有些不同，因为它不是又一个 Web 服务器或 NFS 存储阵列（我们已经有很多了），而是功能完备的数据科学实验室。
 
 此次任务是在 Marvell ThunderX2 ARM 服务器上运行一项大规模的模拟实验。该模拟实验最终促成了一篇科学论文的发表和博士论文中的一个章节。工作负载涵盖了数百个 CPU 小时的定制模拟软件运行，同时还使用了诸如 SciPy、Pandas 和 Jupyter 等标准的开源科学工具包。模拟系统的主要瓶颈是内存，同时对磁盘 I/O 和数据完整性施加了同样的压力。该软件套件最初是为 Linux 开发的，因此必须遵循 POSIX 标准将其移植到 FreeBSD 上。
 

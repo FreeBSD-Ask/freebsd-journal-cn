@@ -1,5 +1,7 @@
 # 基金会来信
 
+- 原文：[Foundation Letter](https://freebsdfoundation.org/our-work/journal/browser-based-edition/cloudabi/)
+
 **编委会来信**
 
 **订阅人数突破五位数！**
