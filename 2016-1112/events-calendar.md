@@ -1,6 +1,7 @@
 # 活动日历
 
-**作者：Dru Lavigne**
+- 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2016/12/Events-Calendar.pdf)
+- 作者：**Dru Lavigne**
 
 以下 BSD 相关会议将于 2017 年第一季度举行。这些活动的更多信息及本地用户组会议，可在 <www.bsdevents.org> 查询。
 

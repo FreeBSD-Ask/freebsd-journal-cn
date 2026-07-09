@@ -3,7 +3,7 @@
 - 原文：[GELI and ZFS Improvements](https://freebsdfoundation.org/wp-content/uploads/2016/10/GELI-and-ZFS-Improvements.pdf)
 - 作者：**Allan Jude**
 
-FreeBSD 11 带来了许多新内容，但本文将聚焦于我亲身参与的若干贡献。这些改动的重点在于改进 FreeBSD 系统的启动方式以及系统更新的管理方式。
+FreeBSD 11 带来了许多新内容，但本文将聚焦于我亲身参与的若干贡献。这些改动的重点在于改进 FreeBSD 系统的启动方式和系统更新的管理方式。
 
 ## BCache 改进
 
