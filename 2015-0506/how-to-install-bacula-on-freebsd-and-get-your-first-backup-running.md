@@ -470,7 +470,7 @@ FileSet {
 
 ### Job
 
-Job 标识要备份什么、它位于哪个 Client 上，以及将存储此备份的 `bacula-sd`。这是我加到 `client-myclient.conf` 中的内容：
+Job 标识要备份什么、它位于哪个 Client 上、将存储此备份的 `bacula-sd`。这是我加到 `client-myclient.conf` 中的内容：
 
 ```sh
 Job {
@@ -617,7 +617,7 @@ Pool 文档中还有许多此类选项。
 
 ### Retention
 
-当你初次想到 Retention 时，多数人会考虑备份保留多久。就 Bacula 而言，这并非严格正确的定义。Bacula Retention 指的是 Catalog，指定元数据在数据库中保留多久。Catalog 记录哪个 Job 备份了哪个 File 以及它位于哪个 Volume。
+当你初次想到 Retention 时，多数人会考虑备份保留多久。就 Bacula 而言，这并非严格正确的定义。Bacula Retention 指的是 Catalog，指定元数据在数据库中保留多久。Catalog 记录哪个 Job 备份了哪个 File、它位于哪个 Volume。
 
 Bacula 使用三个 Retention 周期：
 
