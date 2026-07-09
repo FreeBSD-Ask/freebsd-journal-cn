@@ -44,7 +44,7 @@ mfsBSD 的作者是 Martin Matuška（`mm@FreeBSD.org`）。回顾 mfsBSD 存储
 
 自那时起，随着 mfsBSD 知名度不断增长，Matuška 维护着 <https://mfsbsd.vx.sk/> 用于分发 mfsBSD 的镜像。他已经在 GitHub④ 上维护了十七年的 mfsBSD 源代码，一路修复了无数 bug，并添加了对 zfsinstall、**/usr** tar 压缩包的支持等。
 
-2023 年 5 月（即此篇文章写作的前一年），谷歌编程之夏（谷歌 Summer of Code，GSoC）项目开始了将 mfsBSD 集成到基本系统的尝试。
+2023 年 5 月（即此篇文章写作的前一年），谷歌 Summer of Code（GSoC）项目开始了将 mfsBSD 集成到基本系统的尝试。
 
 ## 谷歌编程之夏
 
