@@ -12,7 +12,7 @@
 
 **EuroBSDCon** • 10 月 1–4 日 • 瑞典斯德哥尔摩 <https://2015eurobsdcon.org/> • 欧洲主要的 BSD 大会今年在斯德哥尔摩大学举行。将有为期两天的开发者峰会、两天的教程、两天的演讲，以及参加 BSDA 认证考试的机会。此活动需要注册。Paul Vixie 将发表今年的主题演讲。
 
-**OhioLinuxFest** • 10 月 2 日和 3 日 • 俄亥俄州哥伦布 <https://ohiolinux.org/> • 这是第 13 届年度 Ohio LinuxFest。博览会区设有 FreeBSD 展位，并有若干与 FreeBSD 相关的演讲。此活动需要注册，但免费。
+**OhioLinuxFest** • 10 月 2 日和 3 日 • 俄亥俄州哥伦布 <https://ohiolinux.org/> • 这是第 13 届年度 Ohio LinuxFest。博览会区将设有 FreeBSD 展位，并有若干与 FreeBSD 相关的演讲。此活动需要注册，但免费。
 
 **BSDCon Brasil** • 10 月 9 日和 10 日 • 巴西福塔莱萨 <http://www.bsdcon.com.br/> • 本会议由巴西 FreeBSD 用户组组织，将面向 FreeBSD、OpenBSD、NetBSD、DragonflyBSD 以及其他 BSD 衍生操作系统的用户、爱好者和开发者举办演讲。本次活动也将提供 BSDA 考试（英文）。此活动需要注册，学生和教师享有折扣。
 

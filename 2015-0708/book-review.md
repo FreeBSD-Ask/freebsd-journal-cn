@@ -1,12 +1,14 @@
 # 书评
 
-《系统与网络管理实践》
+- 原文：[Book Review](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
+- 作者：**Greg Lehey**
 
-作者：Thomas A. Limoncelli、Christina J. Hogan、Strata R. Chalup
+《The Practice of System and Network Administration》
 
-- Pearson/Addison-Wesley Professional • 1,056 页
-- ISBN：9780321492661
-- 纸质书定价：$59.99* 电子书定价（含 EPUB、MOBI、PDF）：$47.99*
+Thomas A. Limoncelli、Christina J. Hogan、Strata R. Chalup
+
+Pearson/Addison-Wesley Professional • ISBN 9780321492661 • 1,056 页
+纸质书定价：$59.99* 电子书定价（含 EPUB、MOBI、PDF）：$47.99*
 
 *FreeBSD 期刊读者专享：Limoncelli 两本著作可享 35% 折扣，请访问出版商页面 <http://informit.com/tposa>，结账时输入优惠码：TPOSA35
 
@@ -16,7 +18,7 @@
 
 要回答这个问题，值得退一步想想你希望从一本系统管理书中获得什么。尽管我十分推崇 Nemeth 一书，却几乎从未真正用过它。我有许多书，查找信息时可能选其中一本，或者越来越多地在网络上查找。脚本语言或 Unix 文件系统导航这类问题尤其如此，它们并非系统管理独有，虽然 Nemeth 对这些内容有详尽描述。即便是系统管理部分，也主要局限于几个特定的非 BSD 系统。即便我使用他们描述的某个系统，其他系统的内容对我用处不大，而且我所关心的信息很可能已经过时，因为这类书大约每五年才出一个版本，远低于软件更新频率。
 
-Limoncelli 的作者们选择描述一套完全不同的技能。他们描绘了全景：如何在大公司或至少中型公司中作为一名系统管理员生存下来。他们眼中”小公司”是指有 100 名员工的企业。书中这里那里会提到具体软件，但内容同样适用于 BSD、Solaris、Linux 甚至 Microsoft。他们没有重复造轮子。即便没有这些细节，他们汇集的内容也已足够庞大，超过 1,000 页，而且更多内容对普通读者来说是切题的。
+Limoncelli 的作者们选择描述一套完全不同的技能。他们描绘了全景：如何在大公司或至少中型公司中作为系统管理员生存下来。他们眼中”小公司”是指有 100 名员工的企业。书中这里那里会提到具体软件，但内容同样适用于 BSD、Solaris、Linux 甚至 Microsoft。他们没有重复造轮子。即便没有这些细节，他们汇集的内容也已足够庞大，超过 1,000 页，而且更多内容对普通读者来说是切题的。
 
 一个小批评：我认为书名起错了。这是一本关于（大型）系统管理的书，而非系统维护。对我而言，第 364 页讨论客户服务接口基本原理时豁然开朗。本书的核心是人际互动，而非琐碎的技术细节。相比之下，Nemeth 把这个问题作为书末一个小小支线处理。
 
