@@ -7,7 +7,7 @@
 
 * [目录](mu-lu.md)
 
-## 2026-456 改进软件质量
+## 2026-040506 改进软件质量
 
 * [基金会来信](2026-456/letter-from-the-foundation.md)
 * [活动日历](2026-456/events-calendar.md)
@@ -40,7 +40,7 @@
 * [嵌入式 FreeBSD：构建 U-boot](2025-101112/building-u-boot.md)
 * [读者来信](2025-101112/we-get-letters.md)
 
-## 2025-789 嵌入式
+## 2025-070809 嵌入式
 
 * [基金会来信](2025-789/letter-from-the-foundation.md)
 * [活动日历](2025-789/events-calendar.md)
@@ -54,7 +54,7 @@
 * [会议报告：2025 BSDCan](2025-789/BSD.md)
 * [读者来信](2025-789/we-get-letters.md)
 
-## 2025-456 网络
+## 2025-040506 网络
 
 * [基金会来信](2025-456/letter-from-the-foundation.md)
 * [活动日历](2025-456/events-calendar.md)
@@ -67,7 +67,7 @@
 * [TCP/IP 探险记：静态 Pacing](2025-456/Pacing.md)
 * [读者来信](2025-456/we-get-letters.md)
 
-## 2025-123 下游项目
+## 2025-010203 下游项目
 
 * [活动日历](2025-123/events-calendar.md)
 * [FreeBSD 发布工程：新主管上任](2025-123/release.md)
