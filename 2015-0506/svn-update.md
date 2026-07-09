@@ -3,7 +3,7 @@
 - 原文：[SVN Update](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
 - 作者：**Glen Barber**
 
-本期 svn update 介绍若干虚拟化更新，以及 `xz`(1) 压缩工具的一次令人瞩目的更新。
+本期 svn update 介绍若干虚拟化更新、`xz`(1) 压缩工具的一次令人瞩目的更新。
 
 ## stable/10@r280632（<https://svnweb.freebsd.org/changeset/base/r280632>）
 
