@@ -26,6 +26,6 @@
 **有问题想问 Michael？
 请发送至 <letters@freebsdjournal.org>**
 
-Michael W Lucas 著有五十多本书，包括即将出版的《Run Your Own Mail Server》。他想金盆洗手去做铅笔走私贩，但他那套残缺的应对策略不允许。更多信息见 <https://mwl.io>。
+---
 
-——《FreeBSD 期刊》，2023 年 11/12 月
+**Michael W Lucas** 著有五十多本书，包括即将出版的《Run Your Own Mail Server》。他想金盆洗手去做铅笔走私贩，但他那套残缺的应对策略不允许。更多信息见 <https://mwl.io>。
