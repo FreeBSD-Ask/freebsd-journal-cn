@@ -1,5 +1,8 @@
 # 如何构建 Port
 
+- 原文：[How to Build a Port](https://freebsdfoundation.org/our-work/journal/browser-based-edition/zfs-best-practices/)
+- 作者：**Erwin Lansing**
+
 与 FreeBSD 项目互动
 
 简要介绍 ports 系统的结构，并带你入门编写一个简单的 port。
