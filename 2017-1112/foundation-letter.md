@@ -7,7 +7,7 @@
 - **Bryan Drewery** — EMC Isilon 高级软件工程师，FreeBSD Portmgr Team 成员，FreeBSD 提交者
 - **Justin Gibbs** — FreeBSD 基金会创始人兼主席，Spectra Logic Corporation 高级软件架构师
 - **Daichi Goto** — BSD Consulting Inc.（东京）董事
-- **Joseph Kong** — EMC 高级软件工程师，《FreeBSD Device Drivers》作者
+- **Joseph Kong** — EMC 高级软件工程师，《FreeBSD 设备驱动程序开发》作者
 - **Steven Kreuzer** — FreeBSD Ports Team 成员
 - **Dru Lavigne** — FreeBSD 基金会董事，BSD 认证小组主席，《BSD Hacks》作者
 - **Michael W Lucas** — 《Absolute FreeBSD》作者

@@ -29,4 +29,4 @@ Lucas 用自己的域名详细讲解了 DNSSEC 的工作原理、搭建方法、
 
 总之，如果你打算部署 DNSSEC，就读读这本书。它会替你省下时间，免去不少头疼。
 
-**Joseph Kong** 是一位自学成才的计算机爱好者，涉猎漏洞利用开发、逆向代码工程、rootkit 开发和系统编程（FreeBSD、Linux 和 Windows）。他是广受好评的《Designing BSD Rootkits》和《FreeBSD Device Drivers》的作者。Joseph Kong 的更多信息请访问 <http://www.thestackframe.org>。
+**Joseph Kong** 是一位自学成才的计算机爱好者，涉猎漏洞利用开发、逆向代码工程、rootkit 开发和系统编程（FreeBSD、Linux 和 Windows）。他是广受好评的《Designing BSD Rootkits》和《FreeBSD 设备驱动程序开发》的作者。Joseph Kong 的更多信息请访问 <http://www.thestackframe.org>。

@@ -8,7 +8,7 @@ Justin Gibbs • FreeBSD Foundation 创始人兼主席，Spectra Logic Corporati
 
 Daichi Goto • BSD Consulting Inc.（东京）董事
 
-Joseph Kong • 《FreeBSD Device Drivers》作者
+Joseph Kong • 《FreeBSD 设备驱动程序开发》作者
 
 Dru Lavigne • FreeBSD Foundation 董事，BSD Certification Group 主席，《Absolute FreeBSD》作者
 
