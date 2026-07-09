@@ -120,4 +120,4 @@ FreeBSD 的优势之一是我们学会了如何对话，为不同的立场辩护
 
 ---
 
-TOM JONES 是 FreeBSD 提交者，关注保持网络栈的高效运行。
+**TOM JONES** 是 FreeBSD 提交者，关注保持网络栈的高效运行。
