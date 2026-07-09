@@ -1,6 +1,7 @@
 # 书评：《人月神话》
 
-**作者：John Baldwin**
+- 原文：[Book Review](https://freebsdfoundation.org/wp-content/uploads/2016/12/Book-Review.pdf)
+- 作者：**John Baldwin**
 
 **《人月神话》及其对 FreeBSD 项目的现实意义**
 
