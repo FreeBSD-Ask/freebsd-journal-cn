@@ -1,6 +1,7 @@
 # 在 FreeBSD 上使用 Vagrant 进行测试
 
-**作者**：Brad Davis
+- 原文：[Using Vagrant to Test on FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/migrating-jail-management-from-warden-to-iocage/)
+- 作者：**Brad Davis**
 
 随着持续集成在全球开发领域日益普及，让相关团队能够快速拉起一个操作系统（OS）容器、针对该容器进行测试、然后迅速回收这些资源，变得愈发必要。
 
@@ -10,7 +11,7 @@
 
 对测试环境快速访问的需求，催生了若干旨在让敏捷开发者能按需快速创建、测试并回收测试环境的工具与工具集。Vagrant 让任何人都能轻松下载一个 OS 镜像，并迅速在虚拟机（VM）中拉起用于测试。
 
-正如 Vagrant 官网（<http://www.vagrantup.com/about.html）所述：>
+正如 Vagrant 官网（<http://www.vagrantup.com/about.html>）所述：
 
 > Vagrant 是一款用于构建完整开发环境的工具。凭借易用的工作流和对自动化的专注，Vagrant 缩短了开发与环境的搭建时间，提升了开发与生产环境的一致性，并让“在我机器上能跑”这类借口成为历史。
 
@@ -28,21 +29,21 @@ Vagrant 可用于 Windows、Mac OS X、CentOS、Debian 系统，可从 <https://
 
 如前所述，Vagrant 在测试各类配置变更时非常有用。许多在不同企业和开发团队工作的同事每天都在使用它。我最初接触 Vagrant 是通过 Packer。Packer 是 HashiCorp 的另一个项目，旨在通过虚拟机中的虚拟键盘执行命令来编排安装程序。Packer 支持 Amazon Web Services（AWS）、Digital Ocean、VMware、QEMU、Oracle VirtualBox 等众多虚拟化环境中的虚拟机。
 
-HashiCorp 在其网站（<http://www.packer.io）上对> Packer 的定义是：
+HashiCorp 在其网站（<http://www.packer.io>）上对 Packer 的定义是：
 
 > Packer 是一款从单一源配置为多个平台创建机器镜像和容器镜像的工具。
 
-简而言之，Packer 提供了一个进入虚拟机的接口，命令可以像操作员坐在键盘前一样被输入。因此，Packer 脚本主要由键盘命令和等待语句构成。Packer 的输出通过模拟的 VGA 控制台产生，因此脚本无法判断某条命令是否已完成。
+简而言之，Packer 提供了一个进入虚拟机的接口，命令可以像操作员坐在键盘前一样输入。因此，Packer 脚本主要由键盘命令和等待语句构成。Packer 的输出通过模拟的 VGA 控制台产生，因此脚本无法判断某条命令是否已完成。
 
 这一自动化层带来了一些困难，因为 Packer 要求操作员理解所输入命令的时序。如果一条命令在下一命令执行前未能完成，可能无法正确缓冲，导致脚本彻底失败，或之后的每条命令各自失败。因此建议把等待时间留得充裕些。
 
 操作员还必须根据虚拟机所建硬件类型理解系统时序。是用 SSD？机械盘？5400 还是 7200 转 SATA？10K 还是 15K 的 SAS/SCSI？系统的整体健康状况和负载如何？这些因素都会影响所运行命令的时序。
 
-幸运的是，借助 Packer 和 Vagrant，设置和测试这些配置非常轻松，可按需调整。最终，一份 Packer 脚本可以被调优，用于为多个平台构建 VM 镜像。
+幸运的是，借助 Packer 和 Vagrant，设置和测试这些配置非常轻松，可按需调整。最终，一份 Packer 脚本可以调优，用于为多个平台构建 VM 镜像。
 
 ## Packer 与 Vagrant
 
-借助 Packer，我开发出了一套 recipe，能够创建虚拟机、安装 FreeBSD，再将其打包供 Vagrant 使用。该脚本随后可被修改和调优，以支持传统裸金属硬件以及基于固态硬盘的系统。由于 Packer 让构建虚拟机变得如此轻松高效，做实验其实并不痛苦。
+借助 Packer，我开发出了一套 recipe，能够创建虚拟机、安装 FreeBSD，再将其打包供 Vagrant 使用。该脚本随后可以修改和调优，以支持传统裸金属硬件以及基于固态硬盘的系统。由于 Packer 让构建虚拟机变得如此轻松高效，做实验其实并不痛苦。
 
 ## 发布 Vagrant 镜像
 
@@ -61,7 +62,7 @@ HashiCorp 在其网站（<http://www.packer.io）上对> Packer 的定义是：
 
 ### 前置条件
 
-第一步，如果尚未安装 Oracle VirtualBox（<https://www.virtualbox.org/wiki/Downloads）或> VMWare（<https://www.vmware.com/products/desktop-virtualization.html），请先在你的机器上安装。>
+第一步，如果尚未安装 Oracle VirtualBox（<https://www.virtualbox.org/wiki/Downloads>）或 VMWare（<https://www.vmware.com/products/desktop-virtualization.html>），请先在你的机器上安装。
 
 然后从 <http://www.vagrantup.com/downloads.html> 下载 Vagrant。
 
@@ -90,7 +91,7 @@ brad@penelope:~> vagrant ssh
 
 默认情况下，所有 Vagrant base box 都有一个名为“vagrant”的用户，并预装了 ssh 密钥。通常在一个系统上存在已知用户和公开可用的 ssh 密钥是重大的安全漏洞。Vagrant 试图通过把 VM 配置为 NAT 模式、将 VM 隐藏在你本机 IP 地址之后来回应这一顾虑。这能阻止本机以外的任何人直接访问该虚拟机。虽然还可以采取其他安全措施更好地保护本地系统，但这已超出本文范围，此处不做讨论。
 
-关于 Vagrant 系统中 root 用户的另一重要提示：通常会包含 sudo 软件包并配置成允许“vagrant”用户做任何它需要做的事。但如果出于某种原因需要 root 密码，默认的 root 密码是“vagrant”。最新信息请始终参考 Vagrant 文档站点：<https://docs.vagrantup.com/v2/boxes/base.html。>
+关于 Vagrant 系统中 root 用户的另一重要提示：通常会包含 sudo 软件包并配置成允许“vagrant”用户做任何它需要做的事。但如果出于某种原因需要 root 密码，默认的 root 密码是“vagrant”。最新信息请始终参考 Vagrant 文档站点：<https://docs.vagrantup.com/v2/boxes/base.html>。
 
 好了，该装些工具开始了。首先安装 NGINX 和 VIM 软件包（以下命令需以 root 身份执行）：
 
@@ -117,7 +118,7 @@ media: Ethernet autoselect (1000baseT <full-duplex>)
 status: active
 ```
 
-如上所示，这台 Vagrant 机器的 IP 当前是 **172.16.245.130**。打开浏览器访问 <http://172.16.245.130，正常运行> NGINX 实例应返回默认页面。恭喜！NGINX 工作正常。
+如上所示，这台 Vagrant 机器的 IP 当前是 **172.16.245.130**。打开浏览器访问 <http://172.16.245.130>，正常运行的 NGINX 实例应返回默认页面。恭喜！NGINX 工作正常。
 
 ### Vagrant 的威力
 
@@ -179,8 +180,8 @@ brad@penelope:~> vagrant box destroy FreeBSD/FreeBSD-10.2-RELEASE
 
 ## 总结
 
-本文介绍了 Vagrant，以及如何用它拉起虚拟机进行测试。希望这能为你简化工作流、让软件或基础设施的测试与开发更轻松提供一些思路。更多信息请访问 Vagrant 官网：<http://www.vagrantup.com。HashiCorp> 维护着一个名为 Atlas 的 Vagrant box 仓库，用于测试和运行各种操作系统与配置。官方 FreeBSD Vagrant box 列表可在 Atlas 的 FreeBSD 区块查看：<https://atlas.hashicorp.com/freebsd/。>
+本文介绍了 Vagrant，以及如何用它拉起虚拟机进行测试。希望这能为你简化工作流、让软件或基础设施的测试与开发更轻松提供一些思路。更多信息请访问 Vagrant 官网：<http://www.vagrantup.com>。HashiCorp 维护着一个名为 Atlas 的 Vagrant box 仓库，用于测试和运行各种操作系统与配置。官方 FreeBSD Vagrant box 列表可在 Atlas 的 FreeBSD 区块查看：<https://atlas.hashicorp.com/freebsd/>。
 
 **作者简介**
 
-BRAD DAVIS 曾担任系统架构师、开发者和顾问。作为 FreeBSD committer 已逾 10 年，参与项目的许多不同领域。他从文档 committer 起步，并以此知识协助集群管理和 Postmaster 团队。从这些项目退休后，他涉猎过 pkg 和 poudriere 项目。目前 Brad 从事文档、ports 以及 RaspBSD 项目的工作，该项目将为 FreeBSD 在 BeagleBone Black 和 树莓派 等 ARM 系统上提供额外工具。难得有空闲时，Brad 喜欢滑雪和骑摩托车。
+BRAD DAVIS 曾担任系统架构师、开发者和顾问。作为 FreeBSD committer 已逾 10 年，参与项目的许多不同领域。他从文档 committer 起步，并以此知识协助集群管理和 Postmaster 团队。从这些项目退休后，他涉猎过 pkg 和 poudriere 项目。目前 Brad 从事文档、Ports 以及 RaspBSD 项目的工作，该项目将为 FreeBSD 在 BeagleBone Black 和树莓派等 ARM 系统上提供额外工具。难得有空闲时，Brad 喜欢滑雪和骑摩托车。

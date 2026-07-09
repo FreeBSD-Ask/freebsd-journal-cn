@@ -1,6 +1,24 @@
 # 编辑日志
 
 - 2026.7.9
+  - 三工具全书清理（AutoCorrect、md-padding@latest、markdownlint），spec：three-tools-full-sweep-rerun
+  - 重新生成三工具全量清单：markdownlint 1 处违规（MD009）、AutoCorrect 109 条建议、md-padding 209 文件 +1209/-1188 行
+  - markdownlint 逐项审核：采纳 1 处（2018-0102/book-review.md:12 MD009 行尾空格删除）
+  - AutoCorrect 逐项审核：采纳 1 条（2017-0506/book-review-designing-bsd-rootkits.md:12 删除全角冒号前多余空格），拒绝 108 条（全角标点转半角、连字符加空格、书名号转引号、`+`加空格等）
+  - md-padding 逐项审核：采纳 0 条，拒绝全部 1209 条（代码块内加空格、sup 标签加空格、全角引号加空格、加粗标记加空格等）
+  - 总复核：原 MD009 已修复；AutoCorrect 105 条建议均为已拒绝类别；md-padding 211 文件（原 209 + 2 新 spec 文件）0 采纳；无批量接受、无 `--fix`、无脚本/sed/awk
+- 2026.7.9
+  - 校对 2022-0304 期（ARM64 是一级架构）全部 8 篇文章
+  - 校对《基金会来信》（`- 原文链接`→`- 原文`、URL 修正 2022/03→2022/04、作者改为 **Ed Maste** 去除"编辑委员会"、删除"已"字"已获得"→"获得"、调整工具链描述句式）
+  - 校对《活动日历》（`- 原文链接`→`- 原文`、URL 修正 2022/03→2022/04、作者加粗为 **Anne Dickison**、Office Hours 段落末尾添加 YouTube 链接）
+  - 校对《FreeBSD/ARM64 上的数据科学》（`- 原文链接`→`- 原文`、"所有基于 ARM 的 FreeBSD 系统"→"各种 ARM 平台上支持 FreeBSD"、"不仅仅是另一个 Web 服务器"→"不是又一个 Web 服务器或 NFS 存储阵列"）
+  - 校对《Pinebook Pro 上的 FreeBSD》（`- 原文链接`→`- 原文`、多处 `ports`→`Ports` 首字母大写 4 处、"原版 Manjaro 和 Debian"→"原版 Manjaro 或 Debian"、"Port 和修改后的软件包"→"Ports 和修改后的软件包"、RockPRO64 注意事项中 `u-boot`→"U-Boot"）
+  - 校对《嵌入式控制器的 ACPI 支持》（`- 原文链接`→`- 原文`、"FreeBSD ARM64 端口"→"FreeBSD ARM64 移植"事实性错误修正、"已允许"→"现在允许"避免"已"字滥用、"已在 FreeBSD 内核中实现"→"FreeBSD 内核已实现该方案"、"已探测到的驱动程序"→"探测到的驱动程序"、"这种灵活性经常被厂商滥用"→"厂商经常滥用这种灵活性"被动句改主动句）
+  - 校对《进行中的工作/征求反馈：Lumina 桌面征集开发人员》（`- 原文链接`→`- 原文`、链接文本改为英文原标题、作者加粗为 **TOM JONES** 和 **JT PENNINGTON**）
+  - 校对《实用 Port：如何设置 Apple 时间机器》（`- 原文链接`→`- 原文`、"一切最新 ARM 板"→"任何较新的 ARM 板"翻译修正、代码块 `grouadd`→`groupadd` 和 `groumod`→`groupmod` 拼写修正 3 处、路径格式去除反引号 `/usr/local/etc/afp.conf` 和 `/var/log/afp.log`、补全漏译段落"unix charset"和"zeroconf"两段、`\$u`→`` `$u` `` 转义字符修正）
+  - 校对《读者来信》（`- 原文链接`→`- 原文`、URL 修正 2022/03/letters.pdf→2022/04/MarchApril-Letters.pdf、作者加粗为 **Michael W Lucas**、"花了太多十年"→"花了太多个十年"量词缺失修正）
+  - 英文原文已归档至 en/2022-0304-arm64-is-a-tier-1-architecture/（全部 8 篇）
+- 2026.7.9
   - 校对 2025-789 期（嵌入式）全部 11 篇文章
   - 校对《基金会来信》（添加格式头部：原文链接+作者 **John Baldwin**）
   - 校对《活动日历》（添加格式头部：原文链接+作者 **Anne Dickison**、修正日期 en-dash 为连字符：25–28→25-28、6–7→6-7）

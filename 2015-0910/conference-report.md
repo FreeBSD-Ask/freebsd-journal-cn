@@ -50,11 +50,11 @@ George Neville-Neil 主持了网络协议栈会议，涉及广泛议题。重点
 
 Ed Maste 主持了工具链与 LLVM 会议，回顾了工具链现状与该领域的持续开发。讨论花了相当时间探讨 LLVM 集成的程度与仍需改进的领域（例如 64 位 MIPS）、LLVM 如今如何促进研究（如 SRI、剑桥、Memorial 与 BAE）——包括通过补丁在 FreeBSD 构建过程中生成 LLVM IR 输出。BSD ELF 工具链的状态也得到讨论——既肯定了其成熟度的巨大提升，也指出了一些持续存在的差距，如对 objcopy 与 objdump 功能的完整支持。LLVM 链接器领域似乎开始向 LLD 收敛，FreeBSD 社区已开始更实质性地贡献。LLDB 移植持续改进，上游 LLDB 进行结构性变更以更好地支持多操作系统。还讨论了是否继续使用 CTF 用于 DTrace，还是尝试直接使用 DWARF——现状似乎会维持，但 BSD 授权的 CTF 生成工具会很有用。Ports 集合中的 LLVM 支持由 arm64 移植驱动，它只使用 LLVM 而非 gcc——但对 Fortran 等编程语言有影响。
 
-Allan Jude 与 Johannes Meixner 主持了 ABI 会议，聚焦 Linux 仿真器的当前工作与其他 ABI 兼容性工作。Linuxulator 开发者继续推进对 Centos 6.7（32 位与 64 位）的支持。对 inotify 缺乏支持似乎仍是 Dropbox 等 Ports 的持续阻碍，其他功能缺失影响了 Google Hangouts 等工具，也影响 Xilinx 与 Altera FPGA 工具链。Ed Schouten 介绍了他为 Capsicum 设计的系统调用接口 CloudABI，如今已进入 FreeBSD。Brooks Davis 介绍了他为 CHERI 处理器中用户态胖指针设计的系统调用 ABI——CheriABI。
+Allan Jude 与 Johannes Meixner 主持了 ABI 会议，聚焦 Linux 仿真器的当前工作与其他 ABI 兼容性工作。Linuxulator 开发者继续推进对 Centos 6.7（32 位与 64 位）的支持。对 inotify 缺乏支持似乎仍是 Dropbox 等 Ports 的持续阻碍，其他功能缺失影响了谷歌 Hangouts 等工具，也影响 Xilinx 与 Altera FPGA 工具链。Ed Schouten 介绍了他为 Capsicum 设计的系统调用接口 CloudABI，如今已进入 FreeBSD。Brooks Davis 介绍了他为 CHERI 处理器中用户态胖指针设计的系统调用 ABI——CheriABI。
 
 ## Capsicum、CloudABI 与安全
 
-Robert Watson 与 Ed Schouten 主持了 Capsicum 会议，Memorial 的 Jon Anderson 与 Google 的 Ben Laurie 也通过电话会议加入。讨论议题包括 Google 的 Linux Capsicum 项目、Apple 的 launchd 与运行时链接器等概念的趋同、需要为开发者提供更好（更教程式）的文档、Alex Richardson 关于 KDE 支持 Capsicum 的工作、缺乏合适的 RPC 框架。Jon Anderson 介绍了 SOAAP 项目，该项目使用 LLVM 静态分析对应用中的沙箱进行建模，帮助描绘潜在改进并发现 bug——该工作将在 ACM CCS 2015 发表。还讨论了能力“具象化”——从能力派生出文件系统中的持久条目的能力，与 `linkat()` 需要两个权限（from、to）类似 `rename()` 而非如今单一权限的问题，以避免绕过目录能力权限。
+Robert Watson 与 Ed Schouten 主持了 Capsicum 会议，Memorial 的 Jon Anderson 与谷歌的 Ben Laurie 也通过电话会议加入。讨论议题包括谷歌的 Linux Capsicum 项目、Apple 的 launchd 与运行时链接器等概念的趋同、需要为开发者提供更好（更教程式）的文档、Alex Richardson 关于 KDE 支持 Capsicum 的工作、缺乏合适的 RPC 框架。Jon Anderson 介绍了 SOAAP 项目，该项目使用 LLVM 静态分析对应用中的沙箱进行建模，帮助描绘潜在改进并发现 bug——该工作将在 ACM CCS 2015 发表。还讨论了能力“具象化”——从能力派生出文件系统中的持久条目的能力，与 `linkat()` 需要两个权限（from、to）类似 `rename()` 而非如今单一权限的问题，以避免绕过目录能力权限。
 
 由 Robert Watson 主持的安全会议主要聚焦 FreeBSD 新的基于 Fortuna 的随机数生成器的多核可扩展性改进。对熵收集的性能开销一直有担忧，也关注如何避免随机数生成管道中各处的多核通信。Mark Murray 主持讨论了多种模型与限制，最终结论是需要每 socket（甚至每核）一个 Fortuna 实例。这确实需要解决一些难题，如怎样处理不同 socket 或核之间熵源的不对称分布——可能需要再平衡机制。无论如何，目标是继续降低内核随机数生成器的开销，尤其是在熵收集方面。
 

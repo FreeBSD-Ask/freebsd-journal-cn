@@ -2,7 +2,7 @@
 
 ——本案例研究展示了托管服务提供商的基础设施，使用了 FreeBSD 基本系统中的工具。
 
-- 原文链接：[Building a Resilient Private Cloud With FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2022/06/bell_private_cloud.pdf)
+- 原文：[Building a Resilient Private Cloud With FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2022/06/bell_private_cloud.pdf)
 - 作者：**DANIEL J. BELL**
 
 哦，当然。我们也经历过数据泄露，我见过客户丢失数据。一位潜在客户在询问我所在组织的数据保护记录时，将我那支只有六个人左右的小 IT 团队与规模更大的服务商进行比较，对我的回答显然并不满意。显然，在曼哈顿，大型托管服务提供商常在销售辞令中说“我们从未遭受过数据泄露，也从未丢失客户数据”这样一句常见而有些愚蠢的话。我接着解释说，我们多次帮助客户从数据丢失中恢复，每个组织早晚都会遇到数据泄露和系统故障。正如经验丰富的系统管理员所知，从未经历数据丢失只意味着你的从业时间还不够长，没机会遇到一次。最重要的是做好充分准备。  
@@ -47,7 +47,7 @@ fs1.waynecorp.gtm2 has address 10.20.20.200
 我们始终使用 FreeBSD 安装器默认的 zpool 根结构，并配备 SSD 启动镜像，同时避免在根存储池上安装客户机。对于数据 zpool，我们会创建几个代表主要主机功能的卷：
 
 - **datapool/jail**：我们的 jail 通常包含一个 FreeBSD 基本系统，但有时也会使用较简单的 chroot 环境或 Linux 基本系统。
-- **datapool/vm**：bhyve 虚拟机。每个数据集都包含配置注释和 bhyve 日志，子数据集则包括表示虚拟机虚拟驱动器的 zvol，例如 `datapool/vm/guest.client/c-drive`。这种直观的结构与 vm-bhyve 兼容。
+- **datapool/vm**：bhyve 虚拟机。每个数据集都包含配置注释和 bhyve 日志，子数据集则包括表示虚拟机虚拟驱动器的 zvol，例如 **datapool/vm/guest.client/c-drive**。这种直观的结构与 vm-bhyve 兼容。
 - **datapool/Backup**：这些是备份伙伴的 ZFS 复制，每天至少更新一次。我们还可能包含 rsync 和 rclone 备份（例如来自 Microsoft OneDrive 或其他非 ZFS 环境的备份），并对它们进行快照。
 - **datapool/Archive**：如果一个数据集中没有活跃的复制任务，我们会将其移至'Archive'。例如，当某个实例退役后，我们会使用 `zfs rename` 命令将其转移到这里。
 
@@ -170,8 +170,8 @@ tmp/target-snap
 
 如果虚拟接口名称已经与源系统保持一致，我们只需要检查并启动实例即可。以下是我们的检查清单，以确保备份服务器在需要时能够随时接管：
 
-✓ 备份服务器的虚拟网络已准备就绪，能够接管客户端，同时还运行所需的网络管理软件，例如 VPN 或 `dhcpd`。  
-✓ 其他客户端配置文件均为最新并可随时使用。对于 jails，我们喜欢使用 `/etc/jail.guest_name.conf` 格式，因此当配置缺失时，通常可以一目了然地发现问题。  
+✓ 备份服务器的虚拟网络已准备就绪，能够接管客户机，同时还运行所需的网络管理软件，例如 VPN 或 `dhcpd`。  
+✓ 其他客户机配置文件均为最新并可随时使用。对于 jails，我们喜欢使用 **/etc/jail.guest_name.conf** 格式，因此当配置缺失时，通常可以一目了然地发现问题。  
 ✓ 备份服务器已配置正确的资源和 `sysctl` 设置，例如 Linux 兼容支持。  
 ✓ 复制任务按照正确的计划运行：每日、每小时或每 15 分钟一次。  
 ✓ 迁移和恢复流程已经过文档记录和测试，并且团队成员知道如何操作。  
@@ -179,26 +179,26 @@ tmp/target-snap
 如果一切准备就绪并经过测试，恢复或迁移过程将会非常顺利：
 
 - **如果源系统仍然可用**，先关闭它，执行最后一次快照，并进行最终复制。我们为这些紧急时刻编写了一个专门优化的脚本，以实现最快速的复制，同时避免生成中间快照。详见'技巧与窍门'部分。  
-- **然后，我们复制、移动或克隆快照到生产环境**。对于活跃的客户端，最快捷的方式是直接重命名快照至生产位置，例如：
+- **然后，我们复制、移动或克隆快照到生产环境**。对于活跃的客户机，最快捷的方式是直接重命名快照至生产位置，例如：
 
   ```sh
   zfs rename data1pool/Backup/guest.client data1pool/vm/guest.client
   zfs mount data1pool/vm/guest.client
   ```
 
-- **最后，检查客户端配置并启动实例**。  
+- **最后，检查客户机配置并启动实例**。  
 
-我们经常使用 ZFS 克隆来恢复数据，同时它也是测试客户端迭代更改的好方法，例如，在正式执行数据库升级前进行测试。如果克隆实例需要投入生产，我们总会尽快执行 `zfs promote`，以避免后续可能出现的依赖问题。在本文开头提到的勒索软件恢复案例中，我们使用了克隆，以确保在恢复快照的时间点之后不会丢失任何正常数据。
+我们经常使用 ZFS 克隆来恢复数据，同时它也是测试客户机迭代更改的好方法，例如，在正式执行数据库升级前进行测试。如果克隆实例需要投入生产，我们总会尽快执行 `zfs promote`，以避免后续可能出现的依赖问题。在本文开头提到的勒索软件恢复案例中，我们使用了克隆，以确保在恢复快照的时间点之后不会丢失任何正常数据。
 
 ```sh
 zfs rename data1pool/vm/fs.cli/d-drive data1pool/Backup/fs.cli-d-drive-ransom.
 zfs clone data1pool/Recovery/fs.cli-d-drive-ransom@last-night data1pool/vm/fs.cli/
 d-drive
-[…after hours…]
+[…数小时后…]
 zfs promote data1pool/vm/fs.cli/d-drive
 ```
 
-如果旧的主机仍然可访问，我们可以将迁移的数据集重命名到 `pool/Backup` 数据集中，并切换备份过程。
+如果旧的主机仍然可访问，我们可以将迁移的数据集重命名到 **pool/Backup** 数据集中，并切换备份过程。
 
 ## 小贴士与技巧
 
@@ -255,12 +255,12 @@ nc -N source 60042 | zstdcat | dd of=ada.img bs=1m status=progress
 ```sh
 echo '(hd0) /dev/zvol/ssd11/vm/pbx.bts/vda' > device.map
 grub-bhyve -m device.map -M 8G -r hd0,1 -d /grub2 -g grub.cfg pbx3.bts
-[usual bhyve commands]
+[常规 bhyve 命令]
 ```
 
 ## 结论  
 
-你的灾难恢复计划来自于你的团队，而不是任何数量的云资源；我们必须雇佣、保留并培训合适的人才。在我看来，我们可以做到两者兼得。将大型云提供商保留用于它们擅长的轻量级扩展解决方案，其他方面则使用 FreeBSD 独立服务器，配合 ZFS、bhyve 和 jail，打造坚如磐石的基础。认真对待你的数据，同时还能节省资金。  
+你的灾难恢复计划来自于你的团队，而不是任何数量的云资源；我们必须雇佣、保留并培训合适的人才。在我看来，我们可以做到两者兼得。将大型云提供商保留用于它们擅长的轻量级扩展解决方案，其他方面则使用 FreeBSD 裸金属服务器，配合 ZFS、bhyve 和 jail，打造坚如磐石的基础。认真对待你的数据，同时还能节省资金。  
 
 ---
 
