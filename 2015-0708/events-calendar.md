@@ -14,7 +14,7 @@
 
 **OhioLinuxFest** • 10 月 2 日和 3 日 • 俄亥俄州哥伦布 <https://ohiolinux.org/> • 这是第 13 届年度 Ohio LinuxFest。博览会区设有 FreeBSD 展位，并有若干与 FreeBSD 相关的演讲。此活动需要注册，但免费。
 
-**BSDCon Brasil** • 10 月 9 日和 10 日 • 巴西福塔莱萨 <http://www.bsdcon.com.br/> • 本会议由巴西 FreeBSD 用户组组织，将面向 FreeBSD、OpenBSD、NetBSD、DragonflyBSD、其他 BSD 衍生操作系统的用户、爱好者和开发者举办演讲。本次活动也将提供 BSDA 考试（英文）。此活动需要注册，学生和教师享有折扣。
+**BSDCon Brasil** • 10 月 9 日和 10 日 • 巴西福塔莱萨 <http://www.bsdcon.com.br/> • 本会议由巴西 FreeBSD 用户组组织，将面向 FreeBSD、OpenBSD、NetBSD、DragonflyBSD 以及其他 BSD 衍生操作系统的用户、爱好者和开发者举办演讲。本次活动也将提供 BSDA 考试（英文）。此活动需要注册，学生和教师享有折扣。
 
 **Grace Hopper** • 10 月 14–16 日 • 得克萨斯州休斯顿 <http://gracehopper.org/> • Grace Hopper 计算机领域女性大会是世界上规模最大的女性技术从业者聚会。博览会区将设有 FreeBSD 基金会展位。此活动需要注册。
 
