@@ -25,7 +25,7 @@
 
 这些仓库的哈希值是不同的。要从旧仓库迁移到新仓库，请参阅 <https://github.com/freebsd/freebsd-legacy/commit/de1aa3dab-23c06fec962a14da3e7b4755c5880cf>
 
-在以下命令中，使用您选择的仓库替换 `$URL`。
+在以下命令中，使用你选择的仓库替换 `$URL`。
 
 #### 1.2.1 从 Ports/Pkg 安装 git
 
