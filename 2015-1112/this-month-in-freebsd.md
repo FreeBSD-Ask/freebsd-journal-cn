@@ -3,11 +3,11 @@
 - 原文：[This Month in FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/migrating-jail-management-from-warden-to-iocage/)
 - 作者：**Dru Lavigne**
 
-在未来几个月里，我们将更深入地关注即将进入 2016 年版本的一些新特性及其背后的开发者。本月，我有机会采访了 EDWARD TOMASZ NAPIERALA，听他讲述自己从 FreeBSD 用户、到 ports committer、到 Google Summer of Code 学生、再到 src committer 的历程。他还谈到了 FreeBSD root 重挂载（root remount）特性的开发。你可以在他的 FreeBSD wiki 页面（<https://wiki.freebsd.org/EdwardTomaszNapierala>）上了解更多关于他过往项目的信息。
+在未来几个月里，我们将更深入地关注即将进入 2016 年版本的一些新特性及其背后的开发者。本月，我有机会采访了 EDWARD TOMASZ NAPIERALA，听他讲述自己从 FreeBSD 用户、到 Ports committer、到 Google Summer of Code 学生、再到 src committer 的历程。他还谈到了 FreeBSD root 重挂载（root remount）特性的开发。你可以在他的 FreeBSD wiki 页面（<https://wiki.freebsd.org/EdwardTomaszNapierala>）上了解更多关于他过往项目的信息。
 
 **问**：请简单介绍一下你自己。你是如何开始接触 FreeBSD 的？在 FreeBSD 项目中担任什么角色？
 
-**答**：我是物理专业出身，但实际工作一直与软件相关。高中时我决定尝试 FreeBSD，那时 Linux 第 N 次把我的文件搞丢了（哦，2.3.X 开发内核的美好年代）。很长一段时间里我只是用户和偶尔的系统管理员。之后我加入了 ports，并最终拿到了 ports 的 commit 权限。2008 年我决定参加 Google Summer of Code（GSoC），从事 NFSv4 ACL 的工作。不久后我获得了 FreeBSD src 的 commit 权限，并一直使用至今。
+**答**：我是物理专业出身，但实际工作一直与软件相关。高中时我决定尝试 FreeBSD，那时 Linux 第 N 次把我的文件搞丢了（哦，2.3.X 开发内核的美好年代）。很长一段时间里我只是用户和偶尔的系统管理员。之后我加入了 Ports，并最终拿到了 Ports 的 commit 权限。2008 年我决定参加 Google Summer of Code（GSoC），从事 NFSv4 ACL 的工作。不久后我获得了 FreeBSD src 的 commit 权限，并一直使用至今。
 
 **问**：你目前在做 root 重挂载项目。root 重挂载能带来什么好处？用户何时会用到这一特性？
 
@@ -43,7 +43,7 @@ root 重挂载支持已合入 11-CURRENT，并将合并到 **stable/10**。reroo
 
 **问**：你在 FreeBSD 项目中还做过哪些类型的开发工作？
 
-**答**：我先从 ports 入手，既修复既有 port——当时因为 GCC 升级，数以百计的 port 需要修构建——也添加新的 port。之后我转向 src，实现了 rctl(8)、活动文件系统扩容、原生 iSCSI 协议栈、autofs(5)，最后是 root 重挂载。我也修过不少 bug，从 ZFS 到 iwn(4) WiFi 驱动。
+**答**：我先从 Ports 入手，既修复既有 port——当时因为 GCC 升级，数以百计的 port 需要修构建——也添加新的 port。之后我转向 src，实现了 rctl(8)、活动文件系统扩容、原生 iSCSI 协议栈、autofs(5)，最后是 root 重挂载。我也修过不少 bug，从 ZFS 到 iwn(4) WiFi 驱动。
 
 **问**：除了曾是 Summer of Code 学生，你还作为 FreeBSD 导师参与过 Summer of Code 项目。你对 Summer of Code 项目在新开发者和开源项目中的作用怎么看？
 
