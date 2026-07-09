@@ -40,7 +40,7 @@ jobd 是一种在单个操作系统实例中启动和监控”作业”（job）
 | ---- | ---- | ---- |
 | 程序（Program） | 运行什么 | **/usr/local/sbin/httpd** |
 | 上下文（Context） | 如何运行程序 | setuid(2) 为 'httpd' |
-| 属性（Property） | 告诉程序的信息 | 监听 80 端口 |
+| 属性（Property） | 告诉程序的信息 | 在 80 端口监听 |
 | 方法（Method） | 用户可调用以与程序交互的命令 | 运行 'jobctl httpd status' 显示服务器状态信息 |
 | 资源（Resource） | 程序运行前需要的东西 | 从 Ports 树安装 'httpd' 软件包 |
 | 依赖（Dependency） | 程序何时运行 | 当有客户端连接到 80 端口时 |
