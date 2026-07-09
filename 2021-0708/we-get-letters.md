@@ -36,4 +36,4 @@ KV？是 Kode Vicious 的 KV？
 
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
-MICHAEL W LUCAS 是《Absolute FreeBSD》、《TLS Mastery》、《$ git sync murder》以及即将出版的《Domesticate Your Badgers》和《DNSSEC Mastery》的作者。他完全相信笔记本最好用作钝器。
+**MICHAEL W LUCAS** 是《Absolute FreeBSD》、《TLS Mastery》、《$ git sync murder》以及即将出版的《Domesticate Your Badgers》和《DNSSEC Mastery》的作者。他完全相信笔记本最好用作钝器。
