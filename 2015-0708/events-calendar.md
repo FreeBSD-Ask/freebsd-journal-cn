@@ -1,6 +1,8 @@
 # 活动日历
 
-未来两个月将举办以下 BSD 相关会议。关于这些活动的更多信息以及本地用户组会议，请访问 <www.bsdevents.org。>
+- 原文：[Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
+
+未来两个月将举办以下 BSD 相关会议。关于这些活动的更多信息以及本地用户组会议，请访问 <www.bsdevents.org>。
 
 **vBSDCon** • 9 月 11–13 日 • 弗吉尼亚州雷斯顿 <http://vBSDcon.com> • 第二届两年一度的 vBSDCon 大会将在雷斯顿的 Sheraton 酒店举行。本次活动以一天 FreeBSD 开发者峰会开始，随后是两天的演讲和 BOF 会议。本次活动期间还提供 BSDA 认证考试和 BSDP 实验 beta 考试。此活动需要注册。
 
