@@ -9,7 +9,7 @@
 
 对于这些情况，首选是依靠 Tarsnap，因为它易于使用且简单，使恢复与备份一样容易。但某些情况需要不同的方法。也许你公司有严格的防火墙，不允许 Tarsnap 数据流从公司网络流出，或者你可以方便地访问内部存储端点，例如兼容 S3 的对象存储或具有 SFTP 访问权限的大文件存储位置。
 
-当你面临后者时，duplicity（ports 中的 sysutils/duplicity）工具可以作为易于安装的软件包安装到你的 FreeBSD 系统上：
+当你面临后者时，duplicity（Ports 中的 sysutils/duplicity）工具可以作为易于安装的软件包安装到你的 FreeBSD 系统上：
 
 ```sh
 # pkg install duplicity par2cmdline
@@ -121,7 +121,7 @@ Sat Mar  7 15:55:14 2026 .shrc
 
 duplicity 中的 list (ls) 命令显示存档，类似于 tar -t。同样，这里已经使用 par2 包装器连接到 mybucket-s3backup，以验证每个块的一致性并实时修复。
 
-现在是时候在我们的主目录中开始工作了。让我们先克隆 ports 分支：
+现在是时候在我们的主目录中开始工作了。让我们先克隆 Ports 分支：
 
 ```sh
 $ git clone –depth 1 https://git.freebsd.org/ports.git
@@ -150,7 +150,7 @@ TotalDestinationSizeChange 224163465 (214 MB)
 ————————————————-
 ```
 
-如你所见，duplicity 非常高效。我们的备份仅增长了 214MB，即使当 ports 树被检出时，我们的系统报告为 1GB。
+如你所见，duplicity 非常高效。我们的备份仅增长了 214MB，即使当 Ports 树被检出时，我们的系统报告为 1GB。
 
 恢复备份与备份一样简单：
 
