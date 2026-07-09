@@ -1,6 +1,7 @@
 # 基金会来信：外联与支持
 
-**作者：George Neville-Neil**
+- 原文：[Foundation Letter: Outreach and Support](https://freebsdfoundation.org/wp-content/uploads/2016/12/Letter-From-the-Foundation.pdf)
+- 作者：**George Neville-Neil**
 
 又到了 FreeBSD 基金会（FreeBSD 期刊的赞助方）呼吁大家为年终筹款活动捐款的时节。正如读者所知，FreeBSD 基金会支持 FreeBSD 项目的方方面面，而不仅是本刊。2016 年我们赞助了 BSD 会议，包括 AsiaBSDCon、BSDCan、EuroBSD，并在非 BSD 活动上开展了大量外联工作，使我们不仅能触及已知 FreeBSD 的人，也能触及应该更多了解 FreeBSD 的人。谈到外联，我想鼓励本刊每位读者把本期拿给朋友和同事看，并鼓励他们订阅，这也是壮大 FreeBSD 项目的另一种方式。
 

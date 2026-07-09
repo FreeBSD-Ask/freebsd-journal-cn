@@ -1,6 +1,7 @@
 # 创办 BSD 用户组
 
-**作者：George Rosamond**
+- 原文：[Starting a BSD User Group](https://freebsdfoundation.org/wp-content/uploads/2016/12/Starting-a-BSD-User-Group.pdf)
+- 作者：**George Rosamond**
 
 2003 年，几位志同道合的 BSD 用户创办了纽约市 BSD 用户组（NYC*BUG）。NYC*BUG 每月开会，托管多个邮件列表，并为 BSD 项目及其他用户组提供服务。
 
