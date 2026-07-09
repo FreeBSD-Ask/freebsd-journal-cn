@@ -1,6 +1,6 @@
 # Pinebook Pro 上的 FreeBSD
 
-- 原文链接：[FreeBSD on the Pinebook Pro](https://freebsdfoundation.org/wp-content/uploads/2022/04/FreeBSD-on-the-Pinebook-Pro.pdf)
+- 原文：[FreeBSD on the Pinebook Pro](https://freebsdfoundation.org/wp-content/uploads/2022/04/FreeBSD-on-the-Pinebook-Pro.pdf)
 - 作者：**JESPER SCHMITZ MOURIDSEN**
 
 Pinebook Pro 是一款基于 Rockchip rk3399 的 ARM64 笔记本电脑。由于全球元件短缺（据 Pine64 称），目前它尚未开售。不过，你可能已经有了，却错过了在其上运行 FreeBSD 的机会。本文将介绍如何让 FreeBSD 在 Pinebook Pro 上作为实用的桌面系统运行。如果你没有 Pinebook Pro，我提供的测试镜像和构建步骤同样适用于 RockPRO64 开发板。（唯一例外的是 U-Boot，对于 RockPRO64 请使用 FreeBSD 自带的版本。）
