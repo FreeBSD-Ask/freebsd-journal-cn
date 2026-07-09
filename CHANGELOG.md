@@ -1,6 +1,18 @@
 # 编辑日志
 
 - 2026.7.9
+  - 校对 2021-0708 期（桌面/无线网）全部 9 篇文章
+  - 校对《基金会来信》（补译"recent"、添加作者元数据）
+  - 校对《活动日历》（作者元数据格式规范）
+  - 校对《通往 FreeBSD 桌面的直接路径》（误加"之一"删除、误加"可能"删除）
+  - 校对《FreeBSD 13 中的 HID 支持》（"later in 2000"误译修正、驱动名 cons→hcons、漏译 game controllers 补全、item 误译修正）
+  - 校对《FreeBSD 上的 Panfrost 驱动》（tiling/tiler/tile 混淆修正、Vulcan→Vulkan、缺陷→怪癖、路径加粗、补冒号、FDT 语序修正、您→你）
+  - 校对《用 Git 更新 FreeBSD》（您→你 3 处、补译漏译 -CURRENT、语序修正、URL 拼写修正 gitstash→git-stash 和 gitmerge→git-merge、修复重复代码块）
+  - 校对《FreeBSD 的新面孔》（补译漏译句"我在 Linux 上曾用过一段时间"、作者名加粗）
+  - 校对《想给你的桌面加点佐料？》（翻译质量高，逐段对照后无需修改）
+  - 校对《读者来信》（作者署名 MICHAEL W LUCAS 加粗，与本 issue 其他文章格式一致）
+  - 英文原文已归档至 en/2021-0708-desktop-wireless/
+- 2026.7.9
   - 校对 2021-0506 期（安全）全部 8 篇文章
   - 校对《基金会来信》
   - 校对《活动日历》
