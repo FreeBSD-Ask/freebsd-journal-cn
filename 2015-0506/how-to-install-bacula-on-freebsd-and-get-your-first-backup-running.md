@@ -53,7 +53,7 @@ Bacula 是一款基于网络客户端-服务器模型的备份解决方案。它
 
 Director 联系 Client，告诉它：把这个 **FileSet** 备份到这个 **Storage**。然后 Client 照办，备份文件。之后，那个备份作业可能被复制或迁移到另一个 Storage，可以是本地的也可以是远程的。例如，你可能备份到磁盘，然后希望把该作业复制到磁带。或复制到远程位置。
 
-无论你对备份做什么，**Catalog** 都会跟踪备份了什么、何时备份、来自哪个 Client 以及现在位于何处。Catalog 也用于保留目的以及清理与清除。
+无论你对备份做什么，**Catalog** 都会跟踪备份了什么、何时备份、来自哪个 Client、现在位于何处。Catalog 也用于保留目的、清理与清除。
 
 ### 主要组件
 
@@ -419,7 +419,7 @@ client-myclient.conf: Password = "the bacula-fd password"
 
 第一处告诉 `bacula-fd` 接受什么密码。第二处告诉 `bacula-dir` 联系那个 `bacula-fd` 时使用什么凭据。
 
-请注意：每当 Director 联系 Client 时，它必须使用的凭据是 Director 的 **Name**（不是 Client 的 Name）以及 `bacula-dir.conf` 中 Client 资源里指定的 **Password**。需要说明的是，在我们的示例中，Director 必须传给 Client 的正确值是：
+请注意：每当 Director 联系 Client 时，它必须使用的凭据是 Director 的 **Name**（不是 Client 的 Name）和 `bacula-dir.conf` 中 Client 资源里指定的 **Password**。需要说明的是，在我们的示例中，Director 必须传给 Client 的正确值是：
 
 1. `MyBaculaDirector`
 2. `the bacula-fd password`
