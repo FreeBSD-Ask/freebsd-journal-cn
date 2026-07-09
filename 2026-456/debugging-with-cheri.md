@@ -197,7 +197,7 @@ at /usr/home/john/work/git/cheribsd/sys/netinet/libalias/alias_nbt.c:805
 
 图 10：pmax 的计算
 
-```
+```sh
 (gdb) l AliasHandleUdpNbtNS
 ...
 776
