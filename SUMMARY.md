@@ -632,7 +632,7 @@
 ## 2017-0304 配置管理
 
 * [配置管理的白日梦](2017-0304/the-configuration-management-pipe-dream.md)
-* [书评：《DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD》](2017-0304/book-review.md)
+* [书评：*DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD*](2017-0304/book-review.md)
 * [基金会致信](2017-0304/letter-from-the-foundation.md)
 * [会议报告：FOSDEM 2017](2017-0304/conference-report.md)
 * [没错，CFEngine 能管那个](2017-0304/yes-cfengine-can-manage-that.md)
