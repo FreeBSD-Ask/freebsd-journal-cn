@@ -8,7 +8,7 @@
 
 本文中，我们将演示在 FreeBSD 上搭建 Icinga 和 Icinga Web 2 来监控主机。配置数据、事件和用户认证将存储在 PostgreSQL 数据库中（默认也提供 MySQL 支持）。NGINX 将为 Icinga Web 2 提供 Web 页面服务。
 
-假设已有一份 FreeBSD 基本安装并已连接网络、能下载 package 且能通过 ping 和 ssh 访问其他主机。这套设置已在 Raspberry Pi 3 上测试过，也在普通服务器上测试过，不需要任何特殊硬件或调优参数。
+假设已有一份 FreeBSD 基本安装并已连接网络、能下载 package 且能通过 ping 和 ssh 访问其他主机。这套设置已在 树莓派 3 上测试过，也在普通服务器上测试过，不需要任何特殊硬件或调优参数。
 
 Icinga 文档（<https://docs.icinga.com>）对必要的 Icinga 安装步骤有出色描述，甚至还提供了 FreeBSD 专属说明（例如路径不同时）。FreeBSD port/package 也可用，并已包含一些在其他 Unix 发行版上用户仍需手动执行的步骤。
 

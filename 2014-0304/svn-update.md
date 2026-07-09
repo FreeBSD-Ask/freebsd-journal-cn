@@ -3,7 +3,7 @@
 - 原文：[SVN Update](https://freebsdfoundation.org/wp-content/uploads/2014/03/svn-update.pdf)
 - 作者：**Glen Barber**
 
-又到了一年中的这个时候——FreeBSD 发布工程团队已启动 9.3-RELEASE 的发布周期。本期 svn update 涵盖了 9.3-RELEASE 中可期待的内容和 FreeBSD 源码树中其他活跃分支的亮点。
+又到了一年中的这个时候——FreeBSD 发布工程团队已启动 9.3-RELEASE 的发布周期。本期 SVN 动态涵盖了 9.3-RELEASE 中可期待的内容和 FreeBSD 源码树中其他活跃分支的亮点。
 
 ## bhyve 的 ZFS 引导支持
 
