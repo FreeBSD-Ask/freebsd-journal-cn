@@ -115,8 +115,8 @@ wlroots-0.14.1_2
 
 ## 给 RockPRO64 用户的注意事项  
 
-请不要忘记在测试镜像上重新安装来自 `ports` 的 RockPRO64 `u-boot`，另外请注意，音频尚未打入补丁。  
+请不要忘记在测试镜像上重新安装来自 Ports 的 RockPRO64 U-Boot，另外请注意，音频尚未打入补丁。  
 
 ---
 
-**JESPER SCHMITZ MOURIDSEN** 是自学成才的系统管理员和开发者，目前担任系统管理员，主要从事 OpenStack 相关工作。他是 FreeBSD `ports` 的提交者，主要关注 `LXQt`，并且是 `rtsx(4)` 的合著者。工作之余，他喜欢骑自行车，是骑行爱好者。
+**JESPER SCHMITZ MOURIDSEN** 是自学成才的系统管理员和开发者，目前担任系统管理员，主要从事 OpenStack 相关工作。他是 FreeBSD Ports 的提交者，主要关注 `LXQt`，并且是 `rtsx(4)` 的合著者。工作之余，他喜欢骑自行车，是骑行爱好者。
