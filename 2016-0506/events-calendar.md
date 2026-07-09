@@ -13,7 +13,7 @@
 
 **SouthEast LinuxFest** • 6 月 10–12 日 • 美国北卡罗来纳州夏洛特
 
-<http://www.southeastlinuxfest.org/> • 第八届年度 SouthEast LinuxFest 是面向所有想进一步了解开源软件的社区活动。会有数场与 FreeBSD 相关的演讲，以及博览区中的 FreeBSD 展位。此会议需缴纳少量注册费。
+<http://www.southeastlinuxfest.org/> • 第八届年度 SouthEast LinuxFest 是社区活动，面向所有想进一步了解开源软件的人。会有数场与 FreeBSD 相关的演讲，以及博览区中的 FreeBSD 展位。此会议需缴纳少量注册费。
 
 **Texas LinuxFest** • 7 月 8–9 日 • 美国得克萨斯州奥斯汀
 
