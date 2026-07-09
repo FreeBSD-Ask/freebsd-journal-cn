@@ -34,7 +34,7 @@ Limoncelli 的作者们选择描述一套完全不同的技能。他们描绘了
 
 “Customer Care”是本书方法论的一个好例子。我经常抱怨帮助台。你常常被转接到一个除了照本宣科、确认你按指示操作（无论是否必要）之外所知甚少的人。本书特别警告不要使用过于机械的脚本，那只会让客户沮丧。另一个例子：“escalation”（升级）在许多帮助台似乎是禁忌词，但书中从双方角度进行了讨论。“Customer Care”一章提出并阐述了解决问题的九步流程，包括多种迭代选项。
 
-第二部分”Change Processes”（变更流程）有些杂糅。最明显相关的章节是”Change Management”（变更管理）和”Server Upgrades”（服务器升级）。前者讲规划，后者讲执行。机器升级这个话题贴近我的心，敢写的书不多。但还有”Centralization and Decentralization”（集中与分散）和”Debugging”（调试）这类主题。尤其是后者（本部分第一章）似乎并不适合放在这里。正如作者所说，它与上一部分”Customer Care”一章相关。
+第二部分”Change Processes”（变更流程）有些杂糅。最明显相关的章节是”Change Management”（变更管理）和”Server Upgrades”（服务器升级）。前者讲规划，后者讲执行。机器升级这个话题我特别在意，敢写的书不多。但还有”Centralization and Decentralization”（集中与分散）和”Debugging”（调试）这类主题。尤其是后者（本部分第一章）似乎并不适合放在这里。正如作者所说，它与上一部分”Customer Care”一章相关。
 
 下一部分”Providing Services”（提供服务）是本书最接近传统系统管理的内容。这里有关于电子邮件、打印和备份的建议。但即便在这里，侧重点也与其他书不同。第一章是”Service Monitoring”（服务监控），传达的信息是：如果你无法监控，就无法管理。电子邮件？Nemeth 讨论如何搭建 sendmail、exim、postfix。Limoncelli 几乎不提单个软件，更关注可靠性、可维护性和可扩展性。你对电子邮件地址有什么策略？如果有人加入公司，与已有员工同名怎么办？两家公司合并时，如何合并电子邮件地址？
 
