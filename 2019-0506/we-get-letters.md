@@ -70,4 +70,4 @@ Not Stupid, Just Bored
 
 ---
 
-**Michael W Lucas** 是《Absolute FreeBSD》《FreeBSD Mastery: Jails》以及一堆其他书的作者。他仍在为人生找点有用的事做。如果你也无聊得发疯，把问题发到 <letters@freebsdjournal.com>。
+****Michael W Lucas** 是《Absolute FreeBSD》《FreeBSD Mastery: Jails》以及一堆其他书的作者。他仍在为人生找点有用的事做。如果你也无聊得发疯，把问题发到 <letters@freebsdjournal.com>。
