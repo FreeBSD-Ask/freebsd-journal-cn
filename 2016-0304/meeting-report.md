@@ -10,9 +10,9 @@
 
 我做了第二场演讲，对 FreeBSD 项目做了概览介绍，并讲解如何贡献代码、成为 FreeBSD 提交者。我的演讲幻灯片位于 <http://www.slideshare.net/araujobsd/portscamp-taiwan>。
 
-我还提供了一台运行 bhyve(8) 的服务器，预装最新的 FreeBSD-HEAD、ports 树和 poudriere(8)，与会者可以通过 ssh 访问并动手实验 FreeBSD ports。提供这台服务器是个非常好的主意——环境开箱即用，节省了大量配置时间。这台服务器是 i7 处理器配 16G 内存，托管了 25 个虚拟机，性能相当不错。
+我还提供了一台运行 bhyve(8) 的服务器，预装最新的 FreeBSD-HEAD、Ports 树和 poudriere(8)，与会者可以通过 ssh 访问并动手实验 FreeBSD ports。提供这台服务器是个非常好的主意——环境开箱即用，节省了大量配置时间。这台服务器是 i7 处理器配 16G 内存，托管了 25 个虚拟机，性能相当不错。
 
-我们在 ports 树中进行了 193 次提交，历史日志标记为：Sponsored by: PortsCamp Taiwan。
+我们在 Ports 树中进行了 193 次提交，历史日志标记为：Sponsored by: PortsCamp Taiwan。
 
 与会者把大部分时间花在理解如何使用 poudriere(8) 上。一些人已经在做项目，例如有人测试 glusterfs 补丁，还有一位牙医在做文档中文化工作。所有提交者都很热心，把大部分时间用来回答问题和与大家交流。
 
