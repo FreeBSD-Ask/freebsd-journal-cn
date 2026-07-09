@@ -260,4 +260,4 @@ puppet help <cmd>
 
 **ANDREW FENGLER** 是加拿大汉密尔顿 ScaleEngine Inc. 的 Unix 管理员，用 Puppet 管理大量 Unix 系统。他有两年大规模管理 FreeBSD 系统的经验。
 
-**BRAD DAVIS** 职业生涯中曾担任基础设施系统架构师、开发者，现职为顾问。他是超过 10 年资历的 FreeBSD 提交者，参与了项目的多个不同领域。最初从文档提交者起步，并以此切入，帮助集群管理和 Postmaster 团队。从这些团队退役后，他涉足 pkg 和 poudriere。如今他致力于各种 ports、打包 FreeBSD 基本系统，以及一个名为 RaspBSD 的项目，把 FreeBSD 和一些额外工具优雅地打包给 BeagleBone Black 和 Raspberry Pi 等 ARM 开发板。
+**BRAD DAVIS** 职业生涯中曾担任基础设施系统架构师、开发者，现职为顾问。他是超过 10 年资历的 FreeBSD 提交者，参与了项目的多个不同领域。最初从文档提交者起步，并以此切入，帮助集群管理和 Postmaster 团队。从这些团队退役后，他涉足 pkg 和 poudriere。如今他致力于各种 ports、打包 FreeBSD 基本系统，以及一个名为 RaspBSD 的项目，把 FreeBSD 和一些额外工具优雅地打包给 BeagleBone Black 和 树莓派 等 ARM 开发板。

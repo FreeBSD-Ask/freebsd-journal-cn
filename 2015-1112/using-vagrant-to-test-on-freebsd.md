@@ -183,4 +183,4 @@ brad@penelope:~> vagrant box destroy FreeBSD/FreeBSD-10.2-RELEASE
 
 **作者简介**
 
-BRAD DAVIS 曾担任系统架构师、开发者和顾问。作为 FreeBSD committer 已逾 10 年，参与项目的许多不同领域。他从文档 committer 起步，并以此知识协助集群管理和 Postmaster 团队。从这些项目退休后，他涉猎过 pkg 和 poudriere 项目。目前 Brad 从事文档、ports 以及 RaspBSD 项目的工作，该项目将为 FreeBSD 在 BeagleBone Black 和 Raspberry Pi 等 ARM 系统上提供额外工具。难得有空闲时，Brad 喜欢滑雪和骑摩托车。
+BRAD DAVIS 曾担任系统架构师、开发者和顾问。作为 FreeBSD committer 已逾 10 年，参与项目的许多不同领域。他从文档 committer 起步，并以此知识协助集群管理和 Postmaster 团队。从这些项目退休后，他涉猎过 pkg 和 poudriere 项目。目前 Brad 从事文档、ports 以及 RaspBSD 项目的工作，该项目将为 FreeBSD 在 BeagleBone Black 和 树莓派 等 ARM 系统上提供额外工具。难得有空闲时，Brad 喜欢滑雪和骑摩托车。

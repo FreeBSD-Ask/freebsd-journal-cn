@@ -28,7 +28,7 @@
 
 ## 向世界普及 FreeBSD
 
-上述会议也证实了对教学资料和 FreeBSD 课程的需求。为了让更多年轻人接触到 FreeBSD，我们支持开发课堂课程，并改善在廉价平台（Raspberry Pi、BeagleBone Black 等）上运行 FreeBSD 的“开箱”体验，以加强动手实践与课堂学习。
+上述会议也证实了对教学资料和 FreeBSD 课程的需求。为了让更多年轻人接触到 FreeBSD，我们支持开发课堂课程，并改善在廉价平台（树莓派、BeagleBone Black 等）上运行 FreeBSD 的“开箱”体验，以加强动手实践与课堂学习。
 
 基金会董事 George Neville-Neil 和 Robert Watson 近日宣布，由基金会部分资助的教学资料现已可服务于他们的“Teaching Operating Systems with Tracing”课程。该课程旨在为大学生和资深软件从业者培养关键系统能力。有关资料和课程的更多信息可在 <www.teachbsd.org> 查阅。
 

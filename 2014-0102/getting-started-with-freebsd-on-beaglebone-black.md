@@ -14,7 +14,7 @@ BeagleBone Black（BBB）是一款售价 45 美元、可放进 Altoids 薄荷糖
 
 ## FreeBSD 在 BBB 上的现状
 
-BeagleBone 和 Raspberry Pi 等新兴 ARM 系统引发了开发者对 FreeBSD/ARM 的浓厚兴趣。过去一年中，FreeBSD 的大部分组件——引导加载器、内核、工具链、驱动、用户态和 ports——在 ARM 平台上都有显著改进。
+BeagleBone 和树莓派等新兴 ARM 系统引发了开发者对 FreeBSD/ARM 的浓厚兴趣。过去一年中，FreeBSD 的大部分组件——引导加载器、内核、工具链、驱动、用户态和 ports——在 ARM 平台上都有显著改进。
 
 目前，FreeBSD 开发分支对 BBB 的支持相当完善：
 
@@ -392,4 +392,4 @@ FREEBSD_SRC=${TOPDIR}/src
 
 ---
 
-**Tim Kientzle** 担任 FreeBSD 提交者 10 年，使用 FreeBSD 的时间更长。最近他在为 BeagleBone 和 Raspberry Pi 开发镜像构建工具和启动支持。
+**Tim Kientzle** 担任 FreeBSD 提交者 10 年，使用 FreeBSD 的时间更长。最近他在为 BeagleBone 和树莓派开发镜像构建工具和启动支持。

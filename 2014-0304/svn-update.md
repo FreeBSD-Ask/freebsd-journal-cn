@@ -53,7 +53,7 @@ VT 驱动由 Aleksandr Rybalko 在 FreeBSD 基金会赞助下开发。
 
 stable/10@r264106（<http://svnweb.freebsd.org/base?view=revision&revision=r264106>）
 
-将 FreeBSD/arm 镜像构建纳入发布流程的初始支持已合并到 stable/10。这一变更使 FreeBSD 发布工程团队能够发布可通过 `dd(1)` 工具写入 SD 卡的 ARM 镜像。目前支持 BeagleBone Black、Raspberry Pi、PandaBoard、WandBoard Quad 和 ZedBoard。
+将 FreeBSD/arm 镜像构建纳入发布流程的初始支持已合并到 stable/10。这一变更使 FreeBSD 发布工程团队能够发布可通过 `dd(1)` 工具写入 SD 卡的 ARM 镜像。目前支持 BeagleBone Black、树莓派、PandaBoard、WandBoard Quad 和 ZedBoard。
 
 FreeBSD/arm 镜像构建支持在 head/ 中通过修订 r262810 加入，并使用由 Tim Kientzle 编写的 Crochet 作为后端构建系统。head/ 和 stable/10 分支每周发布镜像，可在 FreeBSD FTP 镜像获取：
 

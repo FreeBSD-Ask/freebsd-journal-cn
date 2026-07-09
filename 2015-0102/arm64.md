@@ -3,7 +3,7 @@
 - 原文：[arm64](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)
 - 作者：**Andrew Turner**
 
-历史上，ARM 主要为大量嵌入式和移动设备中使用的芯片提供 CPU 核心设计。FreeBSD 用户很可能熟悉使用 ARM 芯片的开发板，例如 Raspberry Pi 和 PandaBoard。这些 CPU 此前都是 32 位的；但在过去几年里，ARM 发布了新的 64 位架构。新架构称为 AArch64，包含全新的指令集 A64，首批 AArch64 处理器遵循 ARMv8 规范设计。熟悉 32 位 ARM 和 Thumb 指令集的开发者应该能很快上手 A64。
+历史上，ARM 主要为大量嵌入式和移动设备中使用的芯片提供 CPU 核心设计。FreeBSD 用户很可能熟悉使用 ARM 芯片的开发板，例如 树莓派 和 PandaBoard。这些 CPU 此前都是 32 位的；但在过去几年里，ARM 发布了新的 64 位架构。新架构称为 AArch64，包含全新的指令集 A64，首批 AArch64 处理器遵循 ARMv8 规范设计。熟悉 32 位 ARM 和 Thumb 指令集的开发者应该能很快上手 A64。
 
 ## ARMv8 规范
 
