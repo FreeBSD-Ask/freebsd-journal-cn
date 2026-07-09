@@ -3,7 +3,7 @@
 - 原文链接：[FreeBSD Friday](<https://freebsdfoundation.org/wp-> content/uploads/2020/09/FreeBSD- Friday.pdf)
 - 作者：**DEB GOODKIN**
 
-这是几场入门讲座和 101 课程中的第一场，旨在帮助您入门 FreeBSD。本系列由 Deb Goodkin 主讲的《FreeBSD 简介》拉开序幕。
+这是几场入门讲座和 101 课程中的第一场，旨在帮助你入门 FreeBSD。本系列由 Deb Goodkin 主讲的《FreeBSD 简介》拉开序幕。
 
 我是 Deb Goodkin，FreeBSD 基金会的执行董事。欢迎来到我们的 FreeBSD Friday 讲座，这是后续几个月内我们将涵盖的众多入门主题中的第一场。
 
@@ -11,7 +11,7 @@
 
 我自己也在不断学习 FreeBSD，所以我会观看这些讲座，并与你们一起学习。感谢你们和我一起踏上这段旅程。
 
-今天的讲座是对 FreeBSD 的一个非常基础的介绍。接下来的两场 FreeBSD Friday 讲座将专注于 FreeBSD 入门，包括由 Roller Angel 主讲的“安装章节”（Installfest）第 1 和第 2 部分。您可以观看他一小时的演示，该内容将被录制。之后，当您准备在自己的系统上安装 FreeBSD 时，可以随时访问这些课程，并按照自己的节奏学习。
+今天的讲座是对 FreeBSD 的一个非常基础的介绍。接下来的两场 FreeBSD Friday 讲座将专注于 FreeBSD 入门，包括由 Roller Angel 主讲的“安装章节”（Installfest）第 1 和第 2 部分。你可以观看他一小时的演示，该内容将被录制。之后，当你准备在自己的系统上安装 FreeBSD 时，可以随时访问这些课程，并按照自己的节奏学习。
 
 在 Roller Angel 的课程之后，我们将迎来 Dr. Marshall Kirk McKusick（《BSD 快速文件系统的历史》）。大多数人认识他是因为他创造了 Fast Filesystem。这将是一场录播讲座，但 Kirk McKusick 会在最后进行问答互动。然后，我们计划的最后一场讲座是 Dan Langille 主讲的《ZFS 简介》。您可能不仅在社区中认识 Dan，还知道他是 BSDCan 的组织者。
 
