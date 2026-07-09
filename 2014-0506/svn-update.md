@@ -9,7 +9,7 @@
 
 <http://svnweb.freebsd.org/base?view=revision&revision=r262706>
 
-stable/9 基础系统中的 BIND DNS 服务器更新至 9.9.5 版本。该软件更新的发布说明见：<https://lists.isc.org/pipermail/bind-announce/2014-January/000896.html>。
+stable/9 基本系统中的 BIND DNS 服务器更新至 9.9.5 版本。该软件更新的发布说明见：<https://lists.isc.org/pipermail/bind-announce/2014-January/000896.html>。
 
 ## Bhyve 的 ZFS 引导支持：head@r262331
 
@@ -33,7 +33,7 @@ stable/9 基础系统中的 BIND DNS 服务器更新至 9.9.5 版本。该软件
 
 <http://svnweb.freebsd.org/base?view=revision&revision=r263038>
 
-最初在 10.0-RELEASE 中可用的 `pkg(8)` 引导签名校验代码已合并至 stable/9。有了这一变更，当管理员发出 `pkg bootstrap` 命令时，下载的 `pkg(8)` 二进制发行包会直接用基础系统中包含的密钥校验，为不愿构建 **ports-mgmt/pkg** Port 来安装 `pkg(8)` 包管理工具的管理员提供了巨大的安全收益。
+最初在 10.0-RELEASE 中可用的 `pkg(8)` 引导签名校验代码已合并至 stable/9。有了这一变更，当管理员发出 `pkg bootstrap` 命令时，下载的 `pkg(8)` 二进制发行包会直接用基本系统中包含的密钥校验，为不愿构建 **ports-mgmt/pkg** Port 来安装 `pkg(8)` 包管理工具的管理员提供了巨大的安全收益。
 
 ## Radeon KMS 驱动支持：stable/9@r263170
 
