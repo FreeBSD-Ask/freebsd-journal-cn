@@ -20,7 +20,7 @@ FreeBSD 为我们提供了支持信息安全控制实施的各种活动的应用
 
 [Wazuh](https://wazuh.com/) 是用于威胁预防、检测和响应的免费开源平台。它能够在本地、虚拟化、容器化和基于云的环境中保护工作负载。Wazuh 解决方案包括部署到受监视系统的端点安全代理，以及收集和分析代理所采集数据的管理服务器。Wazuh 的特点包括与 [Elastic Stack](https://www.elastic.co/elastic-stack/) 和 [OpenSearch](https://opensearch.org/) 的完全集成，提供搜索引擎和数据可视化工具，用户可通过这些工具浏览安全警报。
 
-Wazuh 在 FreeBSD 上的移植由 [Michael Muenz](mailto:m.muenz@gmail.com) 发起。他在 2021 年 9 月首次将 Wazuh 添加到 ports 中，即 [security/wazuh-agent](https://cgit.freebsd.org/ports/tree/security/wazuh-agent/)。在 2022 年 7 月，我接手了该 port 的维护，并开始移植其他 Wazuh 组件。
+Wazuh 在 FreeBSD 上的移植由 [Michael Muenz](mailto:m.muenz@gmail.com) 发起。他在 2021 年 9 月首次将 Wazuh 添加到 Ports 中，即 [security/wazuh-agent](https://cgit.freebsd.org/ports/tree/security/wazuh-agent/)。在 2022 年 7 月，我接手了该 port 的维护，并开始移植其他 Wazuh 组件。
 
 目前，所有 Wazuh 组件全部移植或适配完成：[security/wazuh-manager](https://cgit.freebsd.org/ports/tree/security/wazuh-manager/)、[security/wazuh-agent](https://cgit.freebsd.org/ports/tree/security/wazuh-agent/)、[security/wazuh-server](https://cgit.freebsd.org/ports/tree/security/wazuh-server/)、[security/wazuh-indexer](https://cgit.freebsd.org/ports/tree/security/wazuh-indexer/) 和 [security/wazuh-dashboard](https://cgit.freebsd.org/ports/tree/security/wazuh-dashboard/)。
 
