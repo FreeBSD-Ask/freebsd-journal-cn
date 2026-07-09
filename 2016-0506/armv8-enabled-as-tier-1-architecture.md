@@ -71,7 +71,7 @@ PSCI 定义了标准的电源管理接口，可供操作系统厂商用于在不
 
 各方共同取得了巨大进展。为持续改进，各方仍在协作巩固和完善早期工作。ARM 和 Cavium 继续与合作伙伴及 FreeBSD 社区合作，并资助 FreeBSD 基金会。
 
-FreeBSD 基金会董事会成员 George Neville-Neil 表示：“将 ARMv8 引入 FreeBSD 是一项重大工程，若没有 ARM 和 Cavium 的支持将无法完成。他们与 FreeBSD 基金会合作，以创纪录的速度让一个全新架构运转起来。ARMv8 现已成为 FreeBSD 生态系统中的重要架构，并将与操作系统及其工具的其余部分一同持续发展。“
+FreeBSD 基金会董事会成员 George Neville-Neil 表示：“将 ARMv8 引入 FreeBSD 是一项重大工程，若没有 ARM 和 Cavium 的支持将无法完成。他们与 FreeBSD 基金会合作，以创纪录的速度让一个全新架构运转起来。ARMv8 现已成为 FreeBSD 生态系统中的重要架构，并与操作系统的其余部分及其工具一同持续发展。”
 
 ## 通往 FreeBSD 11 之路
 
