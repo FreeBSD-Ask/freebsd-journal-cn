@@ -173,7 +173,7 @@ total 18
 9 drwxr-xr-x  70 jtubnor jtubnor 82 Mar 14 15:18 ports
 ```
 
-上面的输出显示，我们的 1GB ports 目录现在已被恢复到 /tmp/temp 目录。如果你遇到了完整的机器故障，恢复你的主目录就像这样简单：
+上面的输出显示，我们的 1GB Ports 目录现在已被恢复到 /tmp/temp 目录。如果你遇到了完整的机器故障，恢复你的主目录就像这样简单：
 
 ```sh
 $ cd / && duplicity restore par2+s3:///mybucket-s3backup/computer /home/jtubnor/
