@@ -1,13 +1,13 @@
 # FreeBSD 14 中有关 TCP 的更新
 
-- 原文链接：[Updates on TCP  in FreeBSD 14](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/updates-on-tcp-in-freebsd-14/)
-- 作者：Richard Scheffenegger
+- 原文链接：[Updates on TCP in FreeBSD 14](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/updates-on-tcp-in-freebsd-14/)
+- 作者：**Richard Scheffenegger**
 
-自从上次报告我关注的 FreeBSD 项目领域以来已经过去了近 3 年半，具体来说，是有关 TCP 协议实现的内容。对于那些不太了解的读者来说，FreeBSD 并非仅一种 TCP 栈，而是有多款 TCP 栈，并且主要的开发工作集中在 RACK 栈和基础栈上。目前，默认使用的是基础栈，它是一款长期开发、由 BSD4.4 演变而来的栈。而自 2018 年起，我们拥有了一款完全重构的栈（即“RACK 栈”——以 *R*ecent *ACK*nowledgement 机制为名），它提供了许多在基础栈中缺失的高级功能。例如，RACK 栈提供了细粒度的发送节奏控制能力。也就是说，RACK 栈能够精确地控制数据包的发送时机，从而使网络资源的消耗更均匀。相对而言，当应用程序向基础栈发送突发数据时，有时会在网络接口的接近线路速率（假设 CPU 和内部总线不是瓶颈）的情况下将数据以大块突发的方式发送出去。尤其在应用程序在 IO 操作后短暂停顿几十毫秒时，这种现象最为常见。（关于 RACK 栈的更多细节超出了本文的范围，可以参考 Michael Tuexen 和 Randall Stewart 的附带文章。）
+自从上次报告我关注的 FreeBSD 项目领域以来已经过去了近 3 年半，具体来说，是有关 TCP 协议实现的内容。对于那些不太了解的读者来说，FreeBSD 并非仅一种 TCP 栈，而是有多款 TCP 栈，并且主要的开发工作集中在 RACK 栈和基础栈上。目前，默认使用的是基础栈，它是一款长期开发、由 BSD4.4 演变而来的栈。而自 2018 年起，我们拥有了一款完全重构的栈（即“RACK 栈”——以 *R*ecent *ACK*nowledgement 机制为名），它提供了许多在基础栈中缺失的高级功能。例如，RACK 栈提供了细粒度的发送节奏控制能力。也就是说，RACK 栈能够精确地控制数据包的发送时机，从而使网络资源的消耗更均匀。相对而言，当应用程序向基础栈发送突发数据时，有时会在网络接口的接近线路速率（假设 CPU 和内部总线不是瓶颈）的情况下将数据以大块突发的方式发送出去。尤其在应用程序在 IO 操作后短暂停顿几十毫秒时，这种现象最为常见。（关于 RACK 栈的更多细节超出了本文的范围，可以参考 Michael Tüxen 和 Randall Stewart 的附带文章。）
 
 在本文中，我想重点介绍一些新功能，这些功能已经被引入到基础栈中——其中许多功能默认已启用，而有些功能则可能需要专门开启。每个功能都将详细描述，以帮助改善网络体验。
 
-总体而言，自 FreeBSD 13.0 发布以来，`sys/netinet` 目录下（传统上所有传输协议所在的地方）已经有约 1033 次提交。这为基础栈的部分变更提供了一个概述，改善了以下几个功能：
+总体而言，自 FreeBSD 13.0 发布以来，**sys/netinet** 目录下（传统上所有传输协议所在的地方）已经有约 1033 次提交。这为基础栈的部分变更提供了一个概述，改善了以下几个功能：
 
 ## 比例速率降低（Proportional Rate Reduction，PRR）
 
@@ -77,7 +77,7 @@ BlackBox Logging 是在 RACK 栈中引入的，并扩展到涵盖更多的基础
 
 最近，RACK 栈获得了完全处理 TCP 数据包 MD5 认证的能力。这一改进使得 RACK 栈可以与 BGP 一起使用——这是使 RACK 栈更加完备并可在各种通用场景中使用的又一进步。
 
-长期以来，RFC7323（RFC1323）中的两个特性——窗口缩放（Window Scaling）和时间戳（Timestamp）参数——是紧密耦合的。在这方面，现在能单独启用这两个选项，而默认设置仍然允许两个选项都处于启用状态。现在，可以通过设置 `net.inet.tcp.rfc1323` 不仅启用（1）或禁用（0），还可以设置为 2（仅窗口缩放）或 3（仅时间戳）。此外，按照 RFC7323，现在可以通过要求在所有情况下正确使用 TCP 时间戳，进一步增强 TCP 会话的安全性。这可以用设置 `net.inet.tcp.tolerate_missing_ts` 为 0 来实现。
+长期以来，RFC7323（RFC1323）中的两个特性——窗口缩放（Window Scaling）和时间戳（Timestamp）参数——是紧密耦合的。在这方面，现在能单独启用这两个选项，而默认设置仍然允许两个选项都处于启用状态。现在，可以通过设置 `net.inet.tcp.rfc1323` 不仅启用（1）或禁用（0），还可以设置为 2（仅窗口缩放）或 3（仅时间戳）。此外，按照 RFC7323，现在可以通过要求在所有情况下正确使用 TCP 时间戳，进一步增强 TCP 会话的安全性。这可以通过将 `net.inet.tcp.tolerate_missing_ts` 设置为 0 来实现。
 
 ## 下一步？
 

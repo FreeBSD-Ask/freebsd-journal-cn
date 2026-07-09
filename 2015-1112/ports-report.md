@@ -1,23 +1,24 @@
 # Ports 报道
 
-**作者**：Frederic Culot
+- 原文：[Ports Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/migrating-jail-management-from-warden-to-iocage/)
+- 作者：**Frederic Culot**
 
 9 月至 10 月期间，ports 领域的活跃度与夏季基本持平，整体并不算高。话虽如此，我们很高兴看到几位新 committer 加入项目。此外，本期内一些主要的 port 也得到更新，升级时可能需要按后文所述谨慎处理。
 
 ## 新任 Ports Committer 与代为保管
 
-我们很高兴地欢迎三位新老面孔加入 ports committer 的行列。
+我们很高兴欢迎三位新老面孔加入 ports committer 的行列。
 
 - Soren Straarup（xride@）在时隔一年多之后，得以重新参与 ports 工作。garga@ 与 mat@ 将担任其导师，在 xride@ 需要追上近期基础设施变化时提供帮助。
 
 另有两位新 committer 加入我们：
 
 - Kenji Takefu，由 hrs@ 与 mat@ 担任导师；
-- Carlos Puga Medina，由 junovitch@、amdmi3@ 和 feld@ 担任导师。
+- Carlos Puga Medina，由 junovitch@、amdmi3@、feld@ 担任导师。
 
-两人都已为 FreeBSD 做出不少贡献：Kenji 自 2006 年以来提交了 300 多份问题报告，Carlos 维护着 30 多个 port。两份实至名归的 commit 权限——恭喜二位！
+两人都已为 FreeBSD 贡献不少：Kenji 自 2006 年以来提交了 300 多份问题报告，Carlos 维护着 30 多个 port。两份实至名归的 commit 权限——恭喜二位！
 
-此外，部分 commit 权限因超过 18 个月未活跃而被代为保管（fluffy@、lioux@、lippe@ 和 simon@）。
+此外，部分 commit 权限因超过 18 个月未活跃而被代为保管（fluffy@、lioux@、lippe@、simon@）。
 
 ## 数据统计
 
