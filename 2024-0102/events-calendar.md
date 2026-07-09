@@ -1,6 +1,7 @@
 # 活动日历
 
-作者：Anne Dickison
+- 原文链接：[2024 Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-10th-anniversary/2024-events-calendar/)
+- 作者：**Anne Dickison**
 
 ## 截至 2024 年 5 月的 BSD 活动
 

@@ -1,6 +1,13 @@
 # 编辑日志
 
 - 2026.7.9
+  - 三工具全书清理第二轮（AutoCorrect、md-padding@latest、markdownlint），spec：three-tools-full-sweep-rerun-2
+  - 重新生成三工具全量清单：markdownlint 28 处违规、AutoCorrect 112 条建议、md-padding 212 文件 +1496/-1475 行
+  - markdownlint 逐项审核：采纳 0 处（27 处 spec 文件 + 1 处 prometheus.md 裸 URL 均为预存问题）
+  - AutoCorrect 逐项审核：采纳 1 条（2023-0506/Promise.md:63 全角引号前后删空格），拒绝 111 条
+  - md-padding 逐项审核：采纳 0 条，拒绝全部 1496 条
+  - 总复核：无新错误，无批量接受，无 `--fix`，无脚本/sed/awk
+- 2026.7.9
   - 校对 2023-0506 期（FreeBSD 三十周年纪念特刊）全部 13 篇文章
   - 子批次 1（5 篇，早期会话已完成）：基金会来信、CheriBSD、AArch64、Timeline、Installing
   - 子批次 2（4 篇）：ZFS、Promise（早期会话已完成）、Recollections、Unix

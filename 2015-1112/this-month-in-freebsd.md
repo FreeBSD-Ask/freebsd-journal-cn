@@ -1,20 +1,21 @@
 # FreeBSD 本月动态
 
-**作者**：Dru Lavigne
+- 原文：[This Month in FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/migrating-jail-management-from-warden-to-iocage/)
+- 作者：**Dru Lavigne**
 
-在未来几个月里，我们将更深入地关注即将进入 2016 年版本的一些新特性及其背后的开发者。本月，我有机会采访了 EDWARD TOMASZ NAPIERALA，听他讲述自己从 FreeBSD 用户、到 ports committer、到 谷歌 Summer of Code 学生、再到 src committer 的历程。他还谈到了 FreeBSD root 重挂载（root remount）特性的开发。你可以在他的 FreeBSD wiki 页面（<https://wiki.freebsd.org/EdwardTomaszNapierala）上了解更多关于他过往项目的信息。>
+在未来几个月里，我们将更深入地关注即将进入 2016 年版本的一些新特性及其背后的开发者。本月，我有机会采访了 EDWARD TOMASZ NAPIERALA，听他讲述自己从 FreeBSD 用户、到 ports committer、到 Google Summer of Code 学生、再到 src committer 的历程。他还谈到了 FreeBSD root 重挂载（root remount）特性的开发。你可以在他的 FreeBSD wiki 页面（<https://wiki.freebsd.org/EdwardTomaszNapierala>）上了解更多关于他过往项目的信息。
 
 **问**：请简单介绍一下你自己。你是如何开始接触 FreeBSD 的？在 FreeBSD 项目中担任什么角色？
 
-**答**：我是物理专业出身，但实际工作一直与软件相关。高中时我决定尝试 FreeBSD，那时 Linux 第 N 次把我的文件搞丢了（哦，2.3.X 开发内核的美好年代）。很长一段时间里我只是用户和偶尔的系统管理员。之后我加入了 ports，并最终拿到了 ports 的 commit 权限。2008 年我决定参加 谷歌 Summer of Code（GSoC），从事 NFSv4 ACL 的工作。不久后我获得了 FreeBSD src 的 commit 权限，并一直使用至今。
+**答**：我是物理专业出身，但实际工作一直与软件相关。高中时我决定尝试 FreeBSD，那时 Linux 第 N 次把我的文件搞丢了（哦，2.3.X 开发内核的美好年代）。很长一段时间里我只是用户和偶尔的系统管理员。之后我加入了 ports，并最终拿到了 ports 的 commit 权限。2008 年我决定参加 Google Summer of Code（GSoC），从事 NFSv4 ACL 的工作。不久后我获得了 FreeBSD src 的 commit 权限，并一直使用至今。
 
 **问**：你目前在做 root 重挂载项目。root 重挂载能带来什么好处？用户何时会用到这一特性？
 
-**答**：它让你能以一个临时文件系统引导——例如由 loader(8) 预载入的内存盘镜像——然后再用真正的文件系统把它替换掉。一个典型的例子是 iSCSI 引导，这存在一个先有鸡还是先有蛋的问题：建立 iSCSI 会话需要运行 iscsid(8)，因此需要先挂载 rootfs，因为 rootfs 里才有 iscsid。借助 reroot，你提供一个含有必要二进制文件（如 **/rescue**）的内存盘和一个用于建立 iSCSI 会话的脚本，并在真正的根设备可访问后调用 `reboot -r`。内核会切换根设备，init(8) 继续执行通常的启动脚本。
+**答**：它让你能以临时文件系统引导——例如由 loader(8) 预载入的内存盘镜像——然后再用真正的文件系统把它替换掉。典型的例子是 iSCSI 引导，这存在先有鸡还是先有蛋的问题：建立 iSCSI 会话需要运行 iscsid(8)，因此需要先挂载 rootfs，因为 rootfs 里才有 iscsid。借助 reroot，你提供一个含有必要二进制文件（如 **/rescue**）的内存盘和一个用于建立 iSCSI 会话的脚本，并在真正的根设备可访问后调用 `reboot -r`。内核会切换根设备，init(8) 继续执行通常的启动脚本。
 
-你可以把它看作 FreeBSD 中类似于 Linux 上 pivot_root() 和 initrd 的对应物。注意，你也可以把 root 重挂载当作一种快速重置用户态的方式，这在试验启动脚本和配置改动时很有用。
+你可以把它看作 FreeBSD 中类似于 Linux 上 pivot_root() 和 initrd 的对应物。注意，你也可以把 root 重挂载当作快速重置用户态的方式，这在试验启动脚本和配置改动时很有用。
 
-root 重挂载支持已合入 11-CURRENT，并将合并到 stable/10。reroot 支持计划纳入 FreeBSD 10.3，该版本目前定于 2016 年 3 月发布。
+root 重挂载支持已合入 11-CURRENT，并将合并到 **stable/10**。reroot 支持计划纳入 FreeBSD 10.3，该版本目前定于 2016 年 3 月发布。
 
 **问**：从开发者的角度看，实现 root 重挂载特性有多难？
 

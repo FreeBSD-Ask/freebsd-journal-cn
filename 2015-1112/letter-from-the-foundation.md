@@ -9,4 +9,6 @@
 
 此致，
 
-**George Neville-Neil** 代表 FreeBSD 期刊敬上
+**George Neville-Neil**
+
+代表《FreeBSD 期刊》敬上
