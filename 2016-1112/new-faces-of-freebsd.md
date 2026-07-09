@@ -12,7 +12,7 @@
 
 我尽量不囤积电脑，但小型电脑收藏还是在不断增长。我喜欢摆弄不同操作系统、听电子音乐。我想多了解函数式与面向对象编程语言，特别是 Lisp 与 Smalltalk。
 
-**Ruey-Cherng：** 我是台湾的一名牙医。我并非计算机专业出身，但对计算机很感兴趣。父亲在我 10 岁时买了一台 80286 PC。我记得操作系统是 DOS 3.3，我用它玩了很多 DOS 游戏。随着硬件要求越来越高，父亲把我的电脑从 80386、80486DX2-66、Pentium 等一路升级。过了一阵，我决定搞懂这些游戏怎么运作。高中一年级时，我在台湾大学资讯工程系参加了 C 语言与数据结构课程，当时用的编译器是 Borland C++ 2.0。课程结束后我意识到调试太难，于是改学医。
+**Ruey-Cherng：** 我是台湾牙医。我并非计算机专业出身，但对计算机很感兴趣。父亲在我 10 岁时买了一台 80286 PC。我记得操作系统是 DOS 3.3，我用它玩了很多 DOS 游戏。随着硬件要求越来越高，父亲把我的电脑从 80386、80486DX2-66、Pentium 等一路升级。过了一阵，我决定搞懂这些游戏怎么运作。高中一年级时，我在台湾大学资讯工程系参加了 C 语言与数据结构课程，当时用的编译器是 Borland C++ 2.0。课程结束后我意识到调试太难，于是改学医。
 
 大学期间，我通过 Redhat Linux 5.2 开始了解类 UNIX 操作系统，也用过 Mandrake Linux 与 Debian。我的兴趣是计算机科学、骑车、经济学，陪伴两个女儿。
 
@@ -36,7 +36,7 @@
 
 **Ruey-Cherng：** 收集 FreeBSD 9.0 安装所需资料时，我发现繁体中文文档匮乏，能找到的也过时，多为 FreeBSD 5.X。zh_TW 版 FreeBSD Handbook 最后更新在 2008 年。FreeBSD 官网没有指向 zh_TW 版的链接，因为内容过时。于是我决定更新 FreeBSD Handbook 的翻译。
 
-我给 freebsd-doc 邮件列表发了封自我介绍并求助的邮件。共同导师 lwhsu@ 联系我，帮我将旧的 BIG-5 编码转换为 UTF-8。然后我开始翻译。delphij@ 帮我解决 PDF 渲染中的乱码问题。我在 Raspberry Pi 2B 上搭了台 FreeBSD 服务器，这样可以从牙科诊所 ssh 上去，有空就翻译。当时 FreeBSD ARM 包仓库还没建立，我安装常用程序时遇到一些问题。我在 FreeBSD 台湾用户组 Facebook 群组认识了导师 kevlo@。他耐心地回答了我许多愚蠢的问题，帮我解决问题并鼓励我继续翻译。我挣扎于 xml 标签，进度很慢。幸好测试与练习 po 翻译那晚，我遇到 po 翻译转 UTF-8 的问题，共同导师 wblock@ 热心帮我解决。把旧翻译方式转换为 po 翻译是劳动密集型工作，必须逐条把字符串复制粘贴到 po 文件，需要更多人参与。为吸引新鲜血液，7 月我在台北本地 BSDDay 做了关于 FreeBSD 文档繁体中文翻译的演讲（见 <https://lists.freebsd.org/pipermail/freebsdtranslators/2016-August/000141.html>）。对无法到场的人，我也写了篇文章介绍 FreeBSD 文档繁体中文翻译。一位贡献者 cwlin 通过 subversion 日志联系我，他把 zh_TW 版 Handbook 转成了 po 翻译，工作量很大！之后，kevlo@ 提议我成为提交者以方便翻译工作。如今在 kevlo@ 与 ryusuke@ 帮助下，我已复兴了 zh_TW 版 FreeBSD 网站。
+我给 freebsd-doc 邮件列表发了封自我介绍并求助的邮件。共同导师 lwhsu@ 联系我，帮我将旧的 BIG-5 编码转换为 UTF-8。然后我开始翻译。delphij@ 帮我解决 PDF 渲染中的乱码问题。我在 Raspberry Pi 2B 上搭了台 FreeBSD 服务器，这样可以从牙科诊所 ssh 上去，有空就翻译。当时 FreeBSD ARM 包仓库还没建立，我安装常用程序时遇到一些问题。我在 FreeBSD 台湾用户组 Facebook 群组认识了导师 kevlo@。他耐心回答了我许多愚蠢的问题，帮我解决问题并鼓励我继续翻译。我挣扎于 xml 标签，进度很慢。幸好测试与练习 po 翻译那晚，我遇到 po 翻译转 UTF-8 的问题，共同导师 wblock@ 热心帮我解决。把旧翻译方式转换为 po 翻译是劳动密集型工作，必须逐条把字符串复制粘贴到 po 文件，需要更多人参与。为吸引新鲜血液，7 月我在台北本地 BSDDay 做了关于 FreeBSD 文档繁体中文翻译的演讲（见 <https://lists.freebsd.org/pipermail/freebsdtranslators/2016-August/000141.html>）。对无法到场的人，我也写了篇文章介绍 FreeBSD 文档繁体中文翻译。一位贡献者 cwlin 通过 subversion 日志联系我，他把 zh_TW 版 Handbook 转成了 po 翻译，工作量很大！之后，kevlo@ 提议我成为提交者以方便翻译工作。如今在 kevlo@ 与 ryusuke@ 帮助下，我复兴了 zh_TW 版 FreeBSD 网站。
 
 **Joseph：** 像大多数提交者一样，我只是开始提交补丁。我通过潜伏在 IRC 与邮件列表、参加 BSDCan 结识 FreeBSD 人。BSDCan 的黑客休息室是结识 FreeBSD、OpenBSD 乃至一些 DragonFlyBSD 社区成员的好方式。这些联系激发了我更多贡献的动机。
 
@@ -66,7 +66,7 @@
 
 如果你的硬件 FreeBSD 暂不支持，别失望。你也许有机会参与驱动测试！在相关邮件列表找驱动方案，看看是否有最新且未发布的驱动，帮开发者测试。
 
-你的所有努力都会受到感激。看到别人“激烈”讨论也别怕，这只是个像现实世界一样的小社会。
+你的所有努力都会受到赞赏。看到别人“激烈”讨论也别怕，这只是个像现实世界一样的小社会。
 
 **Joseph：** 我的体验相当积极。我有很棒的导师（swills 与 AMDmi3），在我跑偏时把我引回正轨。其他更资深的 Ports 开发者（尤其是 mat）也给了很多有用提示。对任何想为 Ports 树贡献的人我想说：超过 25000 个 Ports，我们需要你！《Porter's Handbook》及 poudriere、portlint 等工具让参与变得平易，即便经验不多的人也行。•
 
