@@ -306,4 +306,4 @@ Pitch bend              channel=1, change=1
 
 ---
 
-Christos Margiolis 是来自希腊的独立承包人，同时也是 FreeBSD 源代码提交者（src committer）。
+**Christos Margiolis** 是来自希腊的独立承包人，同时也是 FreeBSD 源代码提交者（src committer）。
