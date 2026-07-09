@@ -1,6 +1,6 @@
 # 基金会来信
 
-欢迎阅读本期 FreeBSD 期刊。本期我们深入探讨如何在我们最爱的开源操作系统上使用全球最流行的教育计算平台之一——Raspberry Pi。
+欢迎阅读本期 FreeBSD 期刊。本期我们深入探讨如何在我们最爱的开源操作系统上使用全球最流行的教育计算平台之一——树莓派。
 
 Tom Jones 以《Introduction to Hardware Hacking on FreeBSD》开篇，随后是 Benedict Reuschling 的《Running Icinga2》，介绍如何使用 FreeBSD 和 RPi 做系统监控。最后，FreeBSD Foundation 的 Roller Angel 暂时放下 RPi，讲解如何使用 FreeBSD 搭建媒体服务器。
 
