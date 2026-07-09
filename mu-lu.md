@@ -1,6 +1,6 @@
-# 目录
+# Table of contents
 
-* [FreeBSD 中文期刊](README.md)
+* [FreeBSD 期刊](README.md)
 * [编辑日志](CHANGELOG.md)
 
 ***
