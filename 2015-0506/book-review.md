@@ -1,4 +1,4 @@
-# 书评 *The Book of PF: A No-Nonsense Guide to the OpenBSD Firewall*
+# 书评：*The Book of PF: A No-Nonsense Guide to the OpenBSD Firewall*
 
 - 原文：[Book Review](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
 - 作者：**Steven Kreuzer**
