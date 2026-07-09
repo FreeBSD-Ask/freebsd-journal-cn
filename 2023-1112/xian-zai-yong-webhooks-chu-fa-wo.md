@@ -1,75 +1,75 @@
 # 现在用 Webhook 触发我
 
-- 原文链接：[Kick Me Now with Webhooks](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/kick-me-now-with-webhooks/)
-- 作者：Dave Cottlehuber
+- 原文：[Kick Me Now with Webhooks](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/kick-me-now-with-webhooks/)
+- 作者：**Dave Cottlehuber**
 
-## 什么是 Webhook，为什么我需要它？
+## 什么是 Webhook，为什么需要它？
 
-Webhook 是一种基于 HTTP 事件驱动的远程回调协议，几乎可通过所有编程语言和工具轻松调用脚本和任务。Webhook 的优点在于普及和简单。只需简单的 HTTP 链接，你就可以请求远程服务器执行任务，如调暗灯光、部署代码和代表你运行任意命令。
+Webhook 是一种基于 HTTP 的事件驱动远程回调协议，允许从几乎任何编程语言或工具轻松调用脚本和任务。Webhook 的优势在于其普及性和简洁性。只需一个简单的 HTTP URL，你就能请求远程服务器调暗灯光、部署代码或代为执行任意命令。
 
-最简单的 Webhook 可能只是智能手机浏览器中的书签链接；更为复杂的版本，则可能需要强认证和授权。
+最简单的 Webhook 可以只是智能手机浏览器中一个加书签的链接，较复杂的版本可能需要强认证和授权。
 
-尽管有像 Ansible 和 Puppet 这样较大型的自动化工具集，但有时，简单的方案足以满足需求。Webhook 就是这种方案，它能让你在远程计算机上安全执行任务，仅需发出请求即可。调用 Webhook 即是“触发”操作，因此本篇文章的标题亦如此。
+虽然 Ansible 和 Puppet 等大型自动化工具集已经存在，但有时候更简单的方案就够了。Webhook 正是如此，让你能够按需安全地在远程计算机上执行任务。调用 webhook 可以看作是"踢一脚"，这也是本文标题的由来。
 
 ## 集成
 
-目前尚无官方标准，但通常情况下，Webhook 是通过 POST 请求发送，并使用 JSON 对象作为消息体，一般会启用 TLS 加密，并通过签名防止篡改、网络伪造和重放攻击。
+目前还没有官方标准，但通常 webhook 通过 POST 请求发送 JSON 对象体，使用 TLS 加密，并常用签名来防止篡改、网络伪造和重放攻击。
 
-常见的集成有聊天服务如 Mattermost、Slack 和 IRC；软件仓库如 Github 和 Gitlab；通用托管服务如 Zapier 或 IFTT；许多家居自动化系统如 Home Assistant 等。几乎在所有地方，Webhook 都能收发，因此 Webhook 的应用范围几乎是无限的。
+常见的集成包括 Mattermost、Slack 和 IRC 等聊天服务，GitHub 和 GitLab 等软件代码仓库，Zapier 或 IFTTT 等通用托管服务，以及 Home Assistant 等家庭自动化套件。webhook 的应用无处不在，可能性无限。
 
-虽然你可以在一小时内编写最简单的 Webhook 客户端或服务器，但如今，几乎每种编程语言中都有不少现成的选择。聊天软件通常提供了内置的 Webhook 触发器，用户可以通过类似 `/command` 的语法来调用。IRC 服务器也不例外，一般由守护进程和插件实现。
+虽然你可以在一小时内写出一个最小的 webhook 客户端或服务器，但目前几乎每种编程语言都有许多现成选项。聊天软件通常提供内置的 webhook 触发器，用户可以通过 `/命令` 风格的语法来调用。IRC 服务器也没有被遗忘，主要通过守护进程或插件实现。
 
-Webhook 另一不太明显的优势是它能够明确划分安全性和权限。低权限用户可以调用远程系统上的 Webhook。远程 Webhook 服务也可以低权限运行，先完成验证和基本语法检查，验证通过后再调用高权限任务。也许最终的任务有权限访问某个特权令牌，来重启服务、部署新代码，或者让孩子们再享受一个小时的电子娱乐时间。
+webhook 的一个不太明显的优势是能够划分安全和权限。低权限用户可以在远程系统上调用 webhook。远程 webhook 服务也可以低权限运行，负责验证和基本语法检查，待条件满足后再调用更高权限的任务。或许最终任务拥有访问特权令牌的权限，可以重启服务、部署新代码，或者让孩子们多玩一小时屏幕时间。
 
-像 GitHub、GitLab 和自托管选项等常见的软件仓库也提供这类功能，触发时可以包括分支名、提交记录和提交更改的用户。
+GitHub、GitLab 等常见软件代码仓库以及自托管方案也提供 webhook，可以在触发时包含分支名称、提交和做出更改的用户信息。
 
-这样就能相对轻松构建工具，用于更新网站、重启系统，或根据需要触发更复杂的工具链。
+这使得构建工具来更新网站、重启系统或按需触发更复杂的工具链变得相对容易。
 
 ## 架构
 
-典型的 Webhook 架构由监听传入请求的服务器和提交请求的客户端组成，客户端可能还会带上一些参数，包括认证和授权信息。
+典型的部署方式包括一个监听传入请求的服务器和一个提交请求及参数的客户端，可能还包含某些认证和授权。
 
-## 服务器端
+## 服务器
 
-首先讨论服务器端。服务器端一般是守护进程，来监听 HTTP 请求，并根据特定条件处理请求。如果请求不符合这些条件，服务器会拒绝该请求，并返回适当的 HTTP 状态码。如果请求成功提交，服务器可以从批准的请求中提取参数，然后根据需要执行自定义操作。
+首先讨论服务器端。通常，这是一个监听 HTTP 请求的守护进程，当请求匹配某些条件时才处理。如果条件不满足，请求将以相应的 HTTP 状态码拒绝；对于成功的提交，可以从已批准的请求中提取参数，然后按需调用自定义操作。
 
 ## 客户端
 
-因为服务器使用 HTTP，几乎所有客户端都能用来发送请求。[cURL](https://curl.se/) 是非常普遍的选择，但我们会使用更加友好的工具——[gurl](https://github.com/skunkwerks/gurl)，它内置了对 HMAC 签名的支持。
+由于服务器使用 HTTP，几乎任何客户端都可以使用。[cURL](https://curl.se/) 是一个非常流行的选择，但我们将使用一个更顺手的工具 [gurl](https://github.com/skunkwerks/gurl)，它内置了对 HMAC 签名的支持。
 
 ## 消息
 
-消息通常是 JSON 对象。如果关注重放/时间攻击，你应该在消息体中包含时间戳，并在进一步处理前验证该时间戳。如果你的 Webhook 工具包能够对特定的头部签名和验证，那也是一个可选方案，但大多数工具包不支持该功能。
+消息通常是 JSON 对象。如果你关心重放或时序攻击，应该在消息体中包含时间戳，并在进一步处理前验证它。如果你的 webhook 工具包可以签名和验证特定的 header，那也是一种选择，但大多数工具包不支持。
 
 ## 安全性
 
-可以使用共享的密钥对 HTTP 请求的主体签名，生成的签名作为消息头部提供。这既提供了身份验证的手段，又证明了请求在传输过程中未被篡改。它依赖于共享密钥，使两端可以独立验证消息签名，通过附加的 HTTP 头部和消息体来完成验证。
+HTTP 请求的正文可以用共享密钥签名，然后将此签名作为消息 header 提供。这既提供了认证手段，也证明了请求在传输过程中未被篡改。它依赖共享密钥让两端都能使用附加的 HTTP header 和消息正文独立验证消息签名。
 
-最常见的签名方法是 HMAC-SHA256。这是两种加密算法的组合——我们熟悉的 SHA256 哈希算法可以对较大信息进行安全摘要，在这里是指 HTTP 的主体，另外 HMAC 方法使用密钥与信息结合生成唯一的代码，也即数字签名。
+最常见的签名方法是 HMAC-SHA256。这是两种加密算法的组合——我们熟悉的 SHA256 哈希算法，它为更大的消息（在我们的场景中是 HTTP 正文）提供安全摘要；以及 HMAC 方法，它将密钥与消息混合产生唯一码，即数字签名。
 
-这两种功能结合起来，用于检测信息是否被篡改。它就像是对内容的数字印章，确认信息必定是由知道共享密钥的一方发送的。
+这些函数组合在一起，可对消息是否被篡改提供高完整性校验。它就像内容上的数字封印，确认消息必定来自知道共享密钥的一方。
 
-请注意，使用 TLS 加密和签名能够提供信息的机密性和完整性，但不能保证可用性。精心策划的攻击者可能会中断或淹没网络，从而导致信息丢失而没有任何通知。
+注意，同时使用 TLS 加密和签名可提供消息的机密性和完整性，但不提供可用性。位置得当的攻击者可以中断或涌入中间网络，消息将在无通知的情况下丢失。
 
-一般做法是，在 Webhook 的主体中包含时间戳，且有 HMAC 签名保护，可以有效抵御时间攻击和重放攻击。
+通常做法是在 webhook 正文中包含时间戳，由于这被 HMAC 签名覆盖，可以缓解时序和重放攻击。
 
-请注意，不含时间戳的主体总是会有相同的签名。这在某些情况下是有用的。例如，可以预先计算 HMAC 签名，并使用不变的 HTTP 请求来触发远程操作，而无需在发起 Webhook 请求的系统上公开 HMAC 密钥。
+注意，不含时间戳的正文将始终具有相同的签名。这可能很有用。例如，这允许预计算 HMAC 签名，并使用不变的 HTTP 请求来触发远程操作，而无需在发出 webhook 请求的系统上提供 HMAC 密钥。
 
-## 整合实现
+## 动手实践
 
-我们将安装一些实用工具，包括 [Webhook 服务器](https://github.com/adnanh/webhook)、常用工具 [curl](https://github.com/skunkwerks/gurl)，还有 gurl——使 Webhook 签名变得轻松的工具。
+我们将安装几个辅助包：一个 [webhook 服务器](https://github.com/adnanh/webhook)、知名工具 [curl](https://github.com/skunkwerks/gurl)，以及 gurl——一个让 webhook 签名变得简单的工具。
 
 ```sh
 $ sudo pkg install -r FreeBSD www/webhook ftp/curl www/gurl
 ```
 
-启动服务器，运行一个简单的例子，将其保存为 `webhooks.yaml`。
+让我们用这个最小示例启动服务器，将其保存为 webhooks.yaml。
 
-它将使用命令 `logger(1)`，在 **/var/log/messages** 中写入一个短条目，记录成功调用 Webhook 的 HTTP User-Agent 头。
+它将使用 `logger.1` 命令向 **/var/log/messages** 写入一条简短记录，包含成功 webhook 的 HTTP User-Agent header。
 
-注意，这里有一个 `trigger-rule` 键，确保 HTTP 查询参数 `secret` 与字符串 `squirrel` 匹配。
+注意，有一个 trigger-rule 键确保 HTTP 查询参数 `secret` 与单词 `squirrel` 匹配。
 
-目前我们没有 TLS 安全性，也没有 HMAC 签名，因此系统的安全性还不高。
+目前我们既没有 TLS 安全也没有 HMAC 签名，所以这还不是一个非常安全的系统。
 
 ```yaml
 ---
@@ -87,78 +87,82 @@ $ sudo pkg install -r FreeBSD www/webhook ftp/curl www/gurl
   response-message: |
     webhook executed
   trigger-rule-mismatch-http-response-code: 400
-&nbs;&nbs;trigger-rule:
+  trigger-rule:
     match:
       type: value
       value: squirrel
-    &nbs; parameter:
+    parameter:
        source: url
        name: secret
 ```
 
-然后在终端运行 `webhook -debug -hotreload -hooks webhook.yaml`。上述参数浅显易懂。
+在一个终端中运行 `webhook -debug -hotreload -hooks webhook.yaml`。使用的标志含义不言自明。
 
-在另一个终端里，运行 `tail -qF /var/log/messages | grep webhook`，这样我们就可以实时查看结果。
+在另一个终端中运行 `tail -qF /var/log/messages | grep webhook` 以便实时查看结果。
 
-最后，我们使用 `curl` 来触发 Webhook，首先不带查询参数，然后再带上查询参数：
+最后，让我们用 curl 触发 webhook，先不带查询参数，再带上：
 
 ```sh
 $ curl -4v 'http://localhost:9000/hooks/logger'
-* Trying 127.0.0.1:9000…
+
+*   Trying 127.0.0.1:9000...
 * Connected to localhost (127.0.0.1) port 9000
-› GET /hooks/logger HTTP/1.1
-› Host: localhost:9000
-› User-Agent: curl/8.3.0
-› Accept: */*
-›
-‹ HTTP/1.1 400 Bad Request
-‹ Date: Fri, 20 Oct 2023 12:50:35 GMT|
-‹ Content-Length: 30
-‹ Content-Type: text/plain; charset=utf-8
-‹
+> GET /hooks/logger HTTP/1.1
+> Host: localhost:9000
+> User-Agent: curl/8.3.0
+> Accept: */*
+>
+
+< HTTP/1.1 400 Bad Request
+< Date: Fri, 20 Oct 2023 12:50:35 GMT
+< Content-Length: 30
+< Content-Type: text/plain; charset=utf-8
+<
+
 * Connection #0 to host localhost left intact
 Hook rules were not satisfied.
 ```
 
-可以看到，失败的请求被拒绝，并以 `webhooks.yaml` 配置文件中指定的 HTTP 状态码返回，HTTP 响应体解释了失败的原因。
+注意失败的请求如何使用 webhooks.yaml 配置文件中指定的 HTTP 状态码拒绝，返回的 HTTP 正文解释了原因。
 
-提供所需的查询和 `secret` 参数：
+提供必需的查询参数 `secret`：
 
 ```sh
 $ curl -4v 'http://localhost:9000/hooks/logger?secret=squirrel'
-* Trying 127.0.0.1:9000...
+*   Trying 127.0.0.1:9000...
 * Connected to localhost (127.0.0.1) port 9000
-› GET /hooks/logger?secret=squirrel HTTP/1.1
-› Host: localhost:9000
-› User-Agent: curl/8.3.0
-› Accept: */*
-›
-‹ HTTP/1.1 200 OK
-‹ Date: Fri, 20 Oct 2023 12:50:39 GMT
-‹ Content-Length: 17
-‹ Content-Type: text/plain; charset=utf-8
-‹
+> GET /hooks/logger?secret=squirrel HTTP/1.1
+> Host: localhost:9000
+> User-Agent: curl/8.3.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Date: Fri, 20 Oct 2023 12:50:39 GMT
+< Content-Length: 17
+< Content-Type: text/plain; charset=utf-8
+<
+
 webhook executed
 * Connection #0 to host localhost left intact
 ```
 
-Webhook 成功执行后，我们可以在 syslog 输出中看到结果：
+hook 已执行，我们可以在 syslog 输出中看到结果：
 
 ```sh
 Oct 20 12:50:39 akai webhook[67758]: invoked with HTTP User Agent: curl/8.3.0
 ```
 
-## 使用 HMAC 来保护 Webhook
+## 使用 HMAC 保护 Webhook
 
-前面提到的 HMAC 签名，当应用于 HTTP 正文并作为签名发送时，可以防止篡改，提供认证和完整性保护，但只针对正文，而不包括头部。接下来实现这一点。第一步是生成简短的密钥，并修改 `webhook.yaml` 以要求验证。
+前面描述的 HMAC 签名应用于 HTTP 正文并作为签名发送，是防篡改的，提供了认证和完整性，但仅限于正文，不包括 header。让我们实现它。第一步是生成一个简短的密钥并修改 webhook.yaml 以要求验证。
 
 ```sh
 $ export HMAC_SECRET=$(head /dev/random | sha256)
 ```
 
-为方便记忆，本文中我们使用 `n0decaf` 作为密钥，但你应使用强密码。
+本文中我们将使用一个更好记的密钥 `n0decaf`，但你应该使用一个强健的密钥。
 
-替换 `webhook.yml` 文件为以下内容，这将从负载中提取两个 JSON 值（负载是经签名的，因此可信），并将它们传给我们的命令以执行。
+用以下内容替换 webhook.yml 文件，它将从 payload（已签名，因此可信）中提取两个 JSON 值，并传递给命令执行。
 
 ```yaml
 ---
@@ -168,7 +172,7 @@ $ export HMAC_SECRET=$(head /dev/random | sha256)
   trigger-rule-mismatch-http-response-code: 400
   trigger-rule:
     and:
-    # ensures payload is secure -- headers are not trusted
+    # 确保 payload 安全——header 不受信任
     - match:
         type: payload-hmac-sha256
         secret: n0decaf
@@ -190,7 +194,7 @@ $ echo -n '{"os":"freebsd","town":"vienna"}' \
 SHA2-256(stdin)= f8cb13e906bcb2592a13f5d4b80d521a894e0f422a9e697bc68bc34554394032
 ```
 
-现在，带上正文和签名，发出第一个签名请求：
+有了正文和签名，现在让我们发起第一个签名请求：
 
 ```sh
 $ curl -v http://localhost:9000/hooks/echo \
@@ -199,42 +203,43 @@ $ curl -v http://localhost:9000/hooks/echo \
 
 *  Trying [::1]:9000...
 * Connected to localhost (::1) port 9000
-› POST /hooks/echo HTTP/1.1
-› Host: localhost:9000
-› User-Agent: curl/8.3.0
-› x-hmac-sig:sha256=f8cb13e906bcb2592a13f5d4b80d521a894e0f422a9e697bc68bc34554394032
-› Content-Type: application/json
-› Accept: application/json
-› Content-Length: 32
-›
-‹ HTTP/1.1 200 OK
-‹ Date: Sat, 21 Oct 2023 00:41:57 GMT
-‹ Content-Length: 15
-‹ Content-Type: text/plain; charset=utf-8
-‹
+> POST /hooks/echo HTTP/1.1
+> Host: localhost:9000
+> User-Agent: curl/8.3.0
+> x-hmac-sig:sha256=f8cb13e906bcb2592a13f5d4b80d521a894e0f422a9e697bc68bc34554394032
+> Content-Type: application/json
+> Accept: application/json
+> Content-Length: 32
+>
+< HTTP/1.1 200 OK
+< Date: Sat, 21 Oct 2023 00:41:57 GMT
+< Content-Length: 15
+< Content-Type: text/plain; charset=utf-8
+<
+
 freebsd vienna
 * Connection #0 to host localhost left intact
 ```
 
-在服务器端，运行 `-debug` 模式时，输出如下：
+在服务器端，`-debug` 模式正在运行：
 
 ```sh
 [webhook] 2023/10/21 00:41:57 [9d5040] incoming HTTP POST request from [::1]:11747
 [webhook] 2023/10/21 00:41:57 [9d5040] echo got matched
 [webhook] 2023/10/21 00:41:57 [9d5040] echo hook triggered successfully
-[webhook] 2023/10/21 00:41:57 [9d5040] executing /bin/echo (/bin/echo) with arguments ["/bin/echo" "freebsd" "vienna"] and environment [] using as cwd
+[webhook] 2023/10/21 00:41:57 [9d5040] executing /bin/echo (/bin/echo) with arguments ["/bin/echo" "freebsd" "vienna"] and environment [] using  as cwd
 [webhook] 2023/10/21 00:41:57 [9d5040] command output: freebsd vienna
 
 [webhook] 2023/10/21 00:41:57 [9d5040] finished handling echo
-‹ [9d5040] 0
-‹ [9d5040]
-‹ [9d5040] freebsd vienna
+< [9d5040] 0
+< [9d5040]
+< [9d5040] freebsd vienna
 [webhook] 2023/10/21 00:41:57 [9d5040] 200 | 15 B | 1.277959ms | localhost:9000 | POST /hooks/echo
 ```
 
-每次单独计算签名是容易出错的。`gurl` 是早期项目的分支，它自动生成 HMAC 签名，并且简化了 JSON 处理。
+每次单独计算签名容易出错。gurl 是一个早期项目的分支，增加了自动 HMAC 生成以及一些处理 JSON 的便利功能。
 
-签名类型和签名头部名称会加到密钥前面，用 `:` 连接。它作为环境变量导出，这样它就不会直接显示在 shell 历史中。
+签名类型和签名 header 名称前置于密钥并以 `:` 连接。这作为环境变量导出，使其不会直接出现在 shell 历史记录中。
 
 ```sh
 $ export HMAC_SECRET=sha256:x-hmac-sig:n0decaf
@@ -253,9 +258,9 @@ X-Hmac-Sig: sha256=f634363faff03deed8fbcef8b10952592d43c8abbb6b4a540ef16af0acaff
 {"os":"freebsd","town":"otutahi"}
 ```
 
-如上所示，签名会自动生成，并且添加 JSON 键=值对时无需引号和转义。
+如上所示，签名自动为我们生成，添加 JSON 键值对也很简单，不需要引号和转义。
 
-返回的响应也经过了美化格式化：服务器已验证 HMAC，两个键的值已提取并作为参数传递给我们的 `echo` 命令，结果已捕获并返回到 HTTP 响应体中。
+响应返回，为我们格式化打印：HMAC 已被服务器验证，两个键的值被提取并作为参数传递给 echo 命令，结果被捕获并返回在 HTTP 响应正文中。
 
 ```sh
 HTTP/1.1 200 OK
@@ -266,13 +271,13 @@ Content-Type : text/plain; charset=utf-8
 freebsd otutahi
 ```
 
-可以在 Port 的 [sample webhook.yaml](https://cgit.freebsd.org/ports/tree/www/webhook/files/webhook.yaml) 和 [详细文档](https://github.com/adnanh/webhook/tree/master/docs)中找到更复杂的示例。
+更复杂的示例可在 port 的 [webhook.yaml 示例](https://cgit.freebsd.org/ports/tree/www/webhook/files/webhook.yaml) 或[详细文档](https://github.com/adnanh/webhook/tree/master/docs)中找到。
 
 ## 保护 Webhook 内容
 
-虽然使用 HMAC 可以防止篡改信息正文，但它仍然是明文，黑客依然可以看到内容。
+虽然使用 HMAC 可以防止消息正文被篡改，但那些卑劣的黑客仍能看到明文内容。
 
-我们可以通过添加传输层安全性（TLS）来进一步保护，使用自签名的 TLS 密钥和证书，为本地的 webhook 服务器提升安全性，并重启 webhook 服务器：
+让我们为 localhost 上的 webhooks 服务器添加一些传输层安全，使用自签名 TLS 密钥和证书，然后重新启动 webhook 服务器：
 
 ```sh
 $ openssl req -newkey rsa:2048 -keyout hooks.key \
@@ -283,12 +288,12 @@ $ webhook -debug -hotreload \
   -hooks webhook.yaml
 ```
 
-因为使用的是自签名证书，`curl` 命令需要额外加上参数 `-k` 来忽略证书验证，其他步骤与之前相同：
+curl 命令需要额外的 `-k` 参数来忽略自签名证书，但其余过程与之前相同：
 
 ```sh
 curl -4vk https://localhost:9000/hooks/logger?secret=squirrel
-'
-* Trying 127.0.0.1:9000...
+
+*   Trying 127.0.0.1:9000...
 * Connected to localhost (127.0.0.1) port 9000
 * ALPN: curl offers h2,http/1.1
 * TLSv1.3 (OUT), TLS handshake, Client hello (1):
@@ -304,41 +309,44 @@ curl -4vk https://localhost:9000/hooks/logger?secret=squirrel
 * SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256
 * ALPN: server accepted http/1.1
 * Server certificate:
-* subject: CN=localhost
-* start date: Oct 20 13:05:09 2023 GMT
-* expire date: Oct 19 13:05:09 2024 GMT
-* issuer: CN=localhost
-* SSL certificate verify result: self-signed certificate (18), continuing anyway.
+*  subject: CN=localhost
+*  start date: Oct 20 13:05:09 2023 GMT
+*  expire date: Oct 19 13:05:09 2024 GMT
+*  issuer: CN=localhost
+*  SSL certificate verify result: self-signed certificate (18), continuing anyway.
 * using HTTP/1.1
-› GET /hooks/logger?secret=squirrel HTTP/1.1
-› Host: localhost:9000
-› User-Agent: curl/8.3.0
-› Accept: */*
-›
+> GET /hooks/logger?secret=squirrel HTTP/1.1
+> Host: localhost:9000
+> User-Agent: curl/8.3.0
+> Accept: */*
+>
 * TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
-› HTTP/1.1 200 OK
-› Date: Fri, 20 Oct 2023 13:12:07 GMT
-› Content-Length: 17
-› Content-Type: text/plain; charset=utf-8
-›
+> HTTP/1.1 200 OK
+> Date: Fri, 20 Oct 2023 13:12:07 GMT
+> Content-Length: 17
+> Content-Type: text/plain; charset=utf-8
+>
+
 webhook executed
 * Connection #0 to host localhost left intact
 ```
 
-[gurl](https://github.com/skunkwerks/gurl) 不提供类似的参数，并且要求你正确配置。对于生产环境，建议使用反向代理服务器，如 [nginx](https://nginx.org/) 和 [haproxy](https://haproxy.org/)，提供稳健的 TLS 终止，并通过 Let's Encrypt 等服务使用公共 TLS 证书。
+[gurl](https://github.com/skunkwerks/gurl) 没有此选项，期望你以正规方式操作。对于生产环境，最好使用反向代理如 [nginx](https://nginx.org/) 或 [haproxy](https://haproxy.org/) 来提供可靠的 TLS 终止，并允许通过 Let's Encrypt 等类似服务使用公共 TLS 证书。
 
-## 使用 Github 和 Webhook 更新网站
+## 用 GitHub 和 Webhook 更新网站
 
-要成功完成此操作，你需要有自己的域名和一台小型服务器或虚拟机来托管 daemon。虽然本文无法覆盖所有细节，如设置自己的网站、TLS 加密证书和 DNS 配置，但以下步骤大致适用于任何代码托管平台。
+要成功实现此功能，你需要拥有自己的域名和一台小型服务器或虚拟机来托管守护进程。
 
-你需要设置一台代理服务器，例如 Caddy、nginx、haproxy 或类似的，确保启用有效的 TLS。一个好选择是通过 Let's Encrypt 使用 ACME 协议自动管理证书。
+虽然本文无法涵盖设置自己的网站、TLS 加密证书和 DNS 的全部细节，但以下步骤对于任何软件代码仓库都大致相似。
 
-调整你的代理服务器，使其将适当的请求路由到 webhook daemon。你可以限制可访问的 IP 地址，也限制 HTTP 方法。GitHub 的 API 提供了 `/meta` 端点用于检索其 IP 地址，但需要保持更新。
+你需要设置代理服务器，如 Caddy、nginx、haproxy 等，并配置可用的 TLS。通过 Let's Encrypt 使用 ACME 协议来维护是一个很好的选择。
 
-启用 webhook 服务，使用与之前相同的参数，并通过 `service webhook start` 启动 daemon：
+你需要调整代理服务器，将适当的请求路由到 webhook 守护进程。考虑限制可访问的 IP 地址，以及限制 HTTP 方法。GitHub 的 API 有一个 `/meta` 端点可获取其 IP 地址，但你需要保持更新。
+
+使用与之前相同的选项启用 webhook 服务，并通过 `sudo service webhook start` 启动守护进程：
 
 ```sh
-# /etc/rc.conf.d/webhook
+# 文件：/etc/rc.conf.d/webhook
 webhook_enable=YES
 webhook_facility=daemon
 webhook_user=www
@@ -354,18 +362,14 @@ webhook_options=" \
   "
 ```
 
-从外部验证该 URL 和 webhook daemon 是否可访问。
+你需要从外部验证 URL 和 webhook 守护进程是否可访问。
 
-在你的代码托管平台（如 GitHub）创建新的 JSON 格式 webhook，并使用共享的 HMAC 密钥，在每次推送到仓库时触发它。
+在软件代码仓库端，创建一个新的 JSON 格式 webhook，使用共享的 HMAC 密钥，在每次推送到仓库时调用。
 
-例如，在 GitHub 中，你需要提供：
+例如，使用 GitHub 时你必须提供：
 
-- Payload URL，指向你的代理 webhook daemon 的外部 URL
-- Content-Type 设置为 `application/json`
-- 共享密钥（如示例中的 `n0decaf`）
+- payload URL，指向代理后的内部 webhook 守护进程的外部 URL
+- content-type application/json
+- 共享密钥，如示例中的 `n0decaf`
 
-![GitHub 添加 webhook 界面](../png/2023-1112/xian-zai-yong-webhooks-1.png)
-
-在 GitHub 上创建 webhook 后，你应该能够确认接收到了成功的事件。在你下次推送代码时，可以查看 GitHub 网站，了解 GitHub 发送的请求和 daemon 返回的响应。
-
-![GitHub webhook 请求响应记录](../png/2023-1112/xian-zai-yong-webhooks-2.png)
+在 GitHub 端创建 webhook 后，你应该能够确认成功接收到事件，然后在下次推送代码时，可以在 GitHub 网站上查看 GitHub 发送的请求以及你的守护进程提供的响应。
