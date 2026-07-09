@@ -6,19 +6,19 @@
 
 ## 对 RISC-V 指令集架构（ISA）的支持
 
-i386 和 amd64 虽最流行，但 FreeBSD 支持众多架构，让你可以在从嵌入式 ARM 微控制器到大型 SPARC 工作站等异构硬件上安装自己喜欢的操作系统。近期一次更新加入了对一种全新的、完全开放的 ISA 的支持——RISC-V，它以 BSD 许可证向任何人开放。RISC-V 最初在加州大学伯克利分校开发，用于支持计算机架构研究与教育，现在正成为业界实现的标准开放架构。FreeBSD 是首个为 RISC-V 提供可启动的树内支持的操作系统，由于 FreeBSD 的历史也可追溯至伯克利，支持这一激动人心的新架构可谓顺理成章。（<https://svnweb.freebsd.org/changeset/base/295041）>
+i386 和 amd64 虽最流行，但 FreeBSD 支持众多架构，让你可以在从嵌入式 ARM 微控制器到大型 SPARC 工作站等异构硬件上安装自己喜欢的操作系统。近期一次更新加入了对一种全新的、完全开放的 ISA 的支持——RISC-V，它以 BSD 许可证向任何人开放。RISC-V 最初在加州大学伯克利分校开发，用于支持计算机架构研究与教育，现在正成为业界实现的标准开放架构。FreeBSD 是首个为 RISC-V 提供可启动的树内支持的操作系统，由于 FreeBSD 的历史也可追溯至伯克利，支持这一激动人心的新架构可谓顺理成章。（<https://svnweb.freebsd.org/changeset/base/295041>）
 
 ## 对 POWER7 和 POWER8 上 Vector-Scalar eXtension（VSX）的内核支持
 
-IBM POWER 架构通过 VMX 和 VSX 指令集提供向量和向量标量运算，它们是 2.06 版 POWER ISA 的一部分。FreeBSD/powerpc 移植版已加入对该指令集的支持，把 32 个 64 位标量浮点寄存器与 32 个 128 位向量寄存器统一为 64 个 128 位寄存器的单一寄存器组。（<https://svnweb.freebsd.org/changeset/base/279189）>
+IBM POWER 架构通过 VMX 和 VSX 指令集提供向量和向量标量运算，它们是 2.06 版 POWER ISA 的一部分。FreeBSD/powerpc 移植版已加入对该指令集的支持，把 32 个 64 位标量浮点寄存器与 32 个 128 位向量寄存器统一为 64 个 128 位寄存器的单一寄存器组。（<https://svnweb.freebsd.org/changeset/base/279189>）
 
 ## Xen Netfront 驱动获得多队列支持
 
-在 Citrix Systems R&D 的持续支持下，FreeBSD 上的 Xen 正在积极开发中，近期一次更新将帮助缓解虚拟化环境中性能下降的主要来源之一。除了大规模重构外，netfront 驱动还加入了支持多对 TX/RX 队列的能力。网络负载沉重的客户机虚拟机将看到显著改善，因为虚拟化 I/O 时最大的成本之一是如何高效地让多个虚拟机安全共享对单一设备的访问。（<https://svnweb.freebsd.org/changeset/base/294442）>
+在 Citrix Systems R&D 的持续支持下，FreeBSD 上的 Xen 正在积极开发中，近期一次更新将帮助缓解虚拟化环境中性能下降的一个主要来源。除了大规模重构外，netfront 驱动还加入了支持多对 TX/RX 队列的能力。网络负载沉重的客户机将看到显著改善，因为虚拟化 I/O 时最大的成本之一是如何高效地让多个虚拟机安全共享单一设备的访问。（<https://svnweb.freebsd.org/changeset/base/294442>）
 
 ## OpenSSH 升级至 7.1p2
 
-最新版本的 OpenSSH 已提交到树中。新版本解决了最近的 Use Roaming 安全问题（详见 CVE-2016-0777 和 CVE-2016-0778），并修复了包处理代码中的越界读访问。此外，还在多处缓冲处理代码路径中增加了对 `explicit_bzero` 的使用，以防范编译器激进做死存储消除。（<https://svnweb.freebsd.org/changeset/base/294496）>
+最新版本的 OpenSSH 已提交到树中。新版本解决了最近的 Use Roaming 安全问题（详见 CVE-2016-0777 和 CVE-2016-0778），并修复了包处理代码中的越界读访问。此外，还在多处缓冲处理代码路径中增加了对 `explicit_bzero` 的使用，以防范编译器激进做死存储消除。（<https://svnweb.freebsd.org/changeset/base/294496>）
 
 ## HPN 已从 OpenSSH 中移除
 

@@ -2,7 +2,7 @@
 
 - 原文：[Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
 
-未来 4 个月内将举办以下 BSD 相关会议。关于这些活动的更多信息以及本地用户组聚会，请访问 <http://www.bsdevents.org>。
+未来 4 个月内将举办以下 BSD 相关会议。关于这些活动与本地用户组聚会的更多信息，请访问 <http://www.bsdevents.org>。
 
 **OSCON** • 7 月 21–23 日 • 俄勒冈州波特兰
 
