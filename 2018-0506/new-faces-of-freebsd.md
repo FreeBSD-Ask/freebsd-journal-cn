@@ -76,7 +76,7 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 实际上，直到 3 月伦敦 IETF 会议我才和 Jonathan 说话并询问启动流程需要哪些步骤。两周后我收到了 Core 的出色邮件。
 
-**Eric**：我有时间时尝试帮助 Koop 处理 MATE 和 Gnome。当我在 iXsystems 开始工作时，我更活跃一些，试图在 ports 中推出 MATE 1.20，但 Koop 没空，所以 Baptiste 提供了 commit bit，我说好。由于 Baptiste 和我在不同时区，Baptiste 让我在同一时区有了第二位导师。我在工作聊天中提到这一点，William Grzybowski 主动提出成为我的共同导师。我被投票成为 Ports committer，其余就是待书写的历史了。
+**Eric**：我有时间时尝试帮助 Koop 处理 MATE 和 Gnome。当我在 iXsystems 开始工作时，我更活跃一些，试图在 Ports 中推出 MATE 1.20，但 Koop 没空，所以 Baptiste 提供了 commit bit，我说好。由于 Baptiste 和我在不同时区，Baptiste 让我在同一时区有了第二位导师。我在工作聊天中提到这一点，William Grzybowski 主动提出成为我的共同导师。我被投票成为 Ports committer，其余就是待书写的历史了。
 
 ## 加入 FreeBSD 项目后体验如何？对想成为 FreeBSD committer 的读者有什么建议？
 
@@ -84,7 +84,7 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 不要犹豫加入团队。你投入向其他开发者学习的时间是一项长期回报丰厚的投资。你将从许多前辈的丰富经验中学习如何更高效地解决问题，并产生不太可能崩溃、不会在未来给你制造更多工作的解决方案。这是在世界级优秀开发者团队中磨练技能的绝佳机会。
 
-**Koichiro**：到目前为止没什么变化，除了我可以自己提交更改。我继续像以前一样贡献给 ports 树。如果你想成为 committer，继续贡献并建立良好的记录。当你自愿成为 FreeBSD 开发者时，这会证明你有足够的经验和知识。
+**Koichiro**：到目前为止没什么变化，除了我可以自己提交更改。我继续像以前一样贡献给 Ports 树。如果你想成为 committer，继续贡献并建立良好的记录。当你自愿成为 FreeBSD 开发者时，这会证明你有足够的经验和知识。
 
 **Sean**：读提交日志，读邮件列表。提问。提交代码——无论是补丁还是应该加入系统的新代码。找导师。学 subversion。
 
@@ -94,7 +94,7 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 **Tom**：社区非常欢迎。对我来说，加入项目是一段漫长的旅程。写代码只是第一部分，让代码被上游接受需要同样甚至更多的努力。最大的进步来自与人面对面见面。去年我在 FOSDEM 遇到 Sevan Janiyan（sevan@），他邀请我参加 BSDCam。你的第一次贡献应该小；邮件列表上没有潜伏的怪物等着喊倒你的 diff。所以，修复一些东西、一个命令、man 页面或一些文档，参与进来！
 
-**Eric**：到目前为止还不错。我对最近学到的一切感到满意，在 Baptist、William 和 Koop 的帮助下，我在创建和维护 ports 方面越来越好。我在 ports 中发布了 MATE 1.20。我还有更多要学，由于我参与了很多项目，一切进展缓慢。对于任何有兴趣参与 FreeBSD 的人，参与你感兴趣的项目的任何部分都很简单。加入论坛、FreeBSD IRC 频道和与你兴趣相关的邮件列表。开始帮助和工作，把你的工作发送给相关的人，迟早你会得到 commit bit。
+**Eric**：到目前为止还不错。我对最近学到的一切感到满意，在 Baptist、William 和 Koop 的帮助下，我在创建和维护 ports 方面越来越好。我在 Ports 中发布了 MATE 1.20。我还有更多要学，由于我参与了很多项目，一切进展缓慢。对于任何有兴趣参与 FreeBSD 的人，参与你感兴趣的项目的任何部分都很简单。加入论坛、FreeBSD IRC 频道和与你兴趣相关的邮件列表。开始帮助和工作，把你的工作发送给相关的人，迟早你会得到 commit bit。
 
 ---
 
