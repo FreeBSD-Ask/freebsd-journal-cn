@@ -94,4 +94,4 @@ Clang/LLVM 3.9 近期导入 FreeBSD 开发分支，该工作包括 LLD 3.9。LLD
 
 ---
 
-ED MASTE 任职于 FreeBSD 基金会管理项目开发，并在剑桥大学计算机实验室担任工程支持角色。他也是经选举产生的 FreeBSD 核心团队成员。除 FreeBSD 与 LLVM 项目外，他还是若干其他开源项目的贡献者。他与妻子 Anna 及儿子 Pieter、Daniel 居于加拿大基奇纳。
+**ED MASTE** 任职于 FreeBSD 基金会管理项目开发，并在剑桥大学计算机实验室担任工程支持角色。他也是经选举产生的 FreeBSD 核心团队成员。除 FreeBSD 与 LLVM 项目外，他还是若干其他开源项目的贡献者。他与妻子 Anna 及儿子 Pieter、Daniel 居于加拿大基奇纳。

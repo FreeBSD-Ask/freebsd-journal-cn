@@ -82,4 +82,4 @@ FreeBSD 社区和上游 Clang/LLVM 项目正在持续推进，试图将 Clang、
 
 ---
 
-ED MASTE 为 FreeBSD 基金会管理项目开发，并在剑桥大学计算机实验室担任工程支持职务。他也是选举产生的 FreeBSD Core Team 成员。除 FreeBSD 和 ELF Tool Chain 外，他还是 LLVM、QEMU 和 Open vSwitch 等其他若干开源项目的贡献者。他与妻子 Anna 和儿子 Pieter、Daniel 居住在加拿大基奇纳。
+**ED MASTE** 为 FreeBSD 基金会管理项目开发，并在剑桥大学计算机实验室担任工程支持职务。他也是选举产生的 FreeBSD Core Team 成员。除 FreeBSD 和 ELF Tool Chain 外，他还是 LLVM、QEMU 和 Open vSwitch 等其他若干开源项目的贡献者。他与妻子 Anna 和儿子 Pieter、Daniel 居住在加拿大基奇纳。

@@ -17,7 +17,7 @@ git-arc 工具是 arc 的一个封装，主要用于解决这些限制。git-arc
 
 ## 安装 git-arc  
 
-git-arc 存储在 FreeBSD 源代码库的 `tools/tools/git` 目录中。可以在该目录下运行 `make install` 来安装该脚本及其 man 手册页。请注意，git-arc 默认安装到 `/usr/local/bin`。  
+git-arc 存储在 FreeBSD 源代码库的 **tools/tools/git** 目录中。可以在该目录下运行 `make install` 来安装该脚本及其 man 手册页。请注意，git-arc 默认安装到 **/usr/local/bin**。  
 
 ```sh
 > git clone https://git.freebsd.org/src.git
@@ -33,7 +33,7 @@ install -o root -g wheel -m 555
 install -o root -g wheel -m 444 git-arc.1.gz /usr/share/man/man1/
 ```
 
-此外，git-arc 需要安装以下软件包：arcanist（[devel/arcanist](https://www.freshports.org/devel/arcanist)）、git（[devel/git](https://www.freshports.org/devel/git)）和 jq（textproc/jq）。  
+此外，git-arc 需要安装以下软件包：arcanist（[devel/arcanist](https://www.freshports.org/devel/arcanist)）、git（[devel/git](https://www.freshports.org/devel/git)）和 jq（[textproc/jq](https://www.freshports.org/textproc/jq)）。  
 
 由于 git-arc 是 arcanist 的封装，因此必须先初始化 arcanist。首先，在 [https://reviews.freebsd.org](https://reviews.freebsd.org) 创建一个账户。其次，为 arcanist 安装 API 令牌：  
 
@@ -126,7 +126,7 @@ Does this look OK? [y/N] y
 
 对于分支，`git-arc` 会为每个提交创建一个审查，并在 Phabricator 中将这些提交链接成一个堆栈。分支中的第一个提交的审查被标记为第二个提交审查的父修订，依此类推。这使得在 Phabricator UI 中查看分支中任意提交的审查时，都可以通过 **Stack** 选项卡找到该分支的所有提交。  
 
-默认情况下，`create` 子命令会逐个显示每个提交的日志消息和补丁，并在每个提交后提示用户确认。对于包含许多提交的分支，这个步骤可能会很繁琐，因此 `create` 提供了可选的 `-l` 参数。如果使用该参数，`create` 将列出所有待提交的审查，并只进行一次确认提示。如果用户在提示时输入 `y`，则整个审查堆栈会一次性创建，而不会进一步提示。以下示例展示了如何为当前目录中检出的分支创建所有提交的审查。该分支是基于 `main` 分支创建的：
+默认情况下，`create` 子命令会逐个显示每个提交的日志消息和补丁，并在每个提交后提示用户确认。对于包含许多提交的分支，这个步骤可能会很繁琐，因此 `create` 提供了可选的 `-l` 参数。如果使用该参数，`create` 将列出所有候选提交，并只进行一次确认提示。如果用户在提示时输入 `y`，则整个审查堆栈会一次性创建，而不会进一步提示。以下示例展示了如何为当前目录中检出的分支创建所有提交的审查。该分支是基于 `main` 分支创建的：
 
 ```sh
 > git arc create -l -s emaste main..

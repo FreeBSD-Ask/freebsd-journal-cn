@@ -101,6 +101,6 @@ George，
 
 ---
 
-Michael W. Lucas 担任系统管理员超过 20 年。他的最新著作包括 SSH Mastery 第二版、Ed Mastery、Absolute FreeBSD 第三版和《git commit murder》。
+**Michael W. Lucas** 担任系统管理员超过 20 年。他的最新著作包括 SSH Mastery 第二版、Ed Mastery、Absolute FreeBSD 第三版和《git commit murder》。
 
 了解更多，请访问 <https://mwl.io>。

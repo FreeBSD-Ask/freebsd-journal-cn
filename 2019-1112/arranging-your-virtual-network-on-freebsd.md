@@ -1716,7 +1716,7 @@ root@jailhost-b:~ # ifconfig vxlan222 vxlanflush
 
 ---
 
-Michael Gmelin 在巴伐利亚乡村长大，90 年代在一家用户友好的 rural userfriendly.org 风格 ISP 开始使用 FreeBSD。本世纪头十年大部分时间在开发软件以自动化 ISP 和网络运营商流程，接近十年末开始为项目贡献。后来投身新兴金融科技行业构建支付系统，最终在 2014 年成为 FreeBSD committer。他用多种语言写过软件，最近喜欢上 Rust。业余时间他喜欢玩经典电子游戏和运行 demoscene 作品。离开键盘时，他享受（制作）音乐、骑行、木工和烹饪。Perl 在他心里永远有一席之地。
+**Michael Gmelin** 在巴伐利亚乡村长大，90 年代在一家用户友好的 rural userfriendly.org 风格 ISP 开始使用 FreeBSD。本世纪头十年大部分时间在开发软件以自动化 ISP 和网络运营商流程，接近十年末开始为项目贡献。后来投身新兴金融科技行业构建支付系统，最终在 2014 年成为 FreeBSD committer。他用多种语言写过软件，最近喜欢上 Rust。业余时间他喜欢玩经典电子游戏和运行 demoscene 作品。离开键盘时，他享受（制作）音乐、骑行、木工和烹饪。Perl 在他心里永远有一席之地。
 
 ## 一些主题信息的优秀来源
 

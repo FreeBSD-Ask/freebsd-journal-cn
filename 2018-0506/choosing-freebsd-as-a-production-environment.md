@@ -83,6 +83,6 @@ Accordium 是一家 Java 和 Javascript 商店。OpenJDK 8 在 FreeBSD 上运行
 
 ---
 
-ASHIK SALAHUDEEN 已经在计算机领域工作了大约 18 年，大部分时间与类 UNIX 操作系统和开源技术打交道。他在 Accordium 运营工程团队，业余时间参与其他 FOSS 社区，主要是印度语言计算组 Swathanthra Malayalam Computing。
+**ASHIK SALAHUDEEN** 已经在计算机领域工作了大约 18 年，大部分时间与类 UNIX 操作系统和开源技术打交道。他在 Accordium 运营工程团队，业余时间参与其他 FOSS 社区，主要是印度语言计算组 Swathanthra Malayalam Computing。
 
-AHMAD UWAYS ZULKURNAIN 在 2005 年发现开源软件。此后他探索了与计算相关的广泛领域，主要集中在信息安全领域。他目前是 Accordium 的全栈软件开发者。他喜欢扭计谜题和象棋。
+**AHMAD UWAYS ZULKURNAIN** 在 2005 年发现开源软件。此后他探索了与计算相关的广泛领域，主要集中在信息安全领域。他目前是 Accordium 的全栈软件开发者。他喜欢扭计谜题和象棋。

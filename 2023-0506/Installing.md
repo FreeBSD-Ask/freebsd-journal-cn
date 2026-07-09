@@ -267,4 +267,4 @@ biomask 4040 ttymask 3a netmask 3a
 
 ---
 
-Tom Jones 是 Klara Inc 的 FreeBSD 工程经理，在业余时间，他只能玩一些有趣的老式计算机。
+**Tom Jones** 是 Klara Inc 的 FreeBSD 工程经理，在业余时间，他只能玩一些有趣的老式计算机。

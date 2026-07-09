@@ -42,4 +42,4 @@ Allan Jude 和 Michael W. Lucas 合著的 *FreeBSD Mastery: Advanced ZFS* 清晰
 
 ---
 
-**JOSEPH KONG** 是自学成才的计算机爱好者，涉猎漏洞利用开发、逆向代码工程、rootkit 开发和系统编程（FreeBSD、Linux 和 Windows）。他是广受好评的《Designing BSD Rootkits》和《FreeBSD 设备驱动程序》的作者。目前是 EMC Isilon 部门的高级软件工程师。关于 Joseph Kong 的更多信息，请访问 <www.thestackframe.org> 或在 Twitter 上关注 @JosephJKong。
+**JOSEPH KONG** 是自学成才的计算机爱好者，涉猎漏洞利用开发、逆向代码工程、rootkit 开发和系统编程（FreeBSD、Linux 和 Windows）。他是广受好评的《Designing BSD Rootkits》和《FreeBSD 设备驱动程序开发》的作者。目前是 EMC Isilon 部门的高级软件工程师。关于 Joseph Kong 的更多信息，请访问 <www.thestackframe.org> 或在 Twitter 上关注 @JosephJKong。

@@ -44,6 +44,6 @@ Tom Jones 的“制作 FreeBSD QUIC”和 Marshall Kirk McKusick 的“Gunion(8)
 
 ---
 
-COREY STEPHAN 博士是休斯顿圣托马斯大学的神学助理教授和核心研究员。他自豪地专门使用自由和开源软件工具，包括 **\*BSD** 操作系统，来协助他的天主教历史神学研究以及他的传统博雅教学。他的专业网站是 <coreystephan.com>。
+**COREY STEPHAN** 博士是休斯顿圣托马斯大学的神学助理教授和核心研究员。他自豪地专门使用自由和开源软件工具，包括 **\*BSD** 操作系统，来协助他的天主教历史神学研究以及他的传统博雅教学。他的专业网站是 <coreystephan.com>。
 
 照片由 Tom Jones 提供。
