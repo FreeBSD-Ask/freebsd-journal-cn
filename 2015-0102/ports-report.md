@@ -3,7 +3,7 @@
 - 原文：[Ports Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)
 - 作者：**Frederic Culot**
 
-11 月和 12 月 ports 树的活动不算多，主要原因是年底的节庆。不过数字仍然可观：ports 树上有 3,778 次提交！在 bug 方面，关闭的问题报告比上一周期更多，共修复 1,157 个问题。感谢所有提供反馈、花时间让 FreeBSD ports 更好的人！
+11 月和 12 月 Ports 树的活动不算多，主要原因是年底的节庆。不过数字仍然可观：Ports 树上有 3,778 次提交！在 bug 方面，关闭的问题报告比上一周期更多，共修复 1,157 个问题。感谢所有提供反馈、花时间让 FreeBSD Ports 更好的人！
 
 ## 重要 Ports 更新
 
@@ -17,7 +17,7 @@
 - 默认 Perl 版本设为 5.18
 - 默认 PostgreSQL 版本设为 9.3
 
-照例，如果更新特定 ports 需要手动步骤，这些步骤会在 **/usr/ports/UPDATING** 文件中清楚说明。强烈建议在对 ports 树执行任何更新前先检查此文件！
+照例，如果更新特定 ports 需要手动步骤，这些步骤会在 **/usr/ports/UPDATING** 文件中清楚说明。强烈建议在对 Ports 树执行任何更新前先检查此文件！
 
 另外请注意，存在多个版本的 ports，其默认版本在 **/usr/ports/Mk/bsd.default-versions.mk** 文件中设置。如果出于某些原因某个 port 的默认版本不符合你的需求，可以在 `make.conf` 中加入 `DEFAULT_VERSIONS` 变量来覆盖，如下所示：
 
@@ -27,11 +27,11 @@
 
 过去两个月，几位已拥有 src 提交权限的开发者加入我们的社区，并获得了 ports 提交权限。他们是：jmg@、jmmv@ 和 truckman@。此外，Muhammad Rahman 获得了 ports 提交权限，将由 marino@ 和 bapt@ 指导。
 
-过去两个月只有一位提交者的权限被代管（motoyuki@），但我们也收到了来自 miwi@ 的遗憾消息，他决定卸下 FreeBSD 的职责，把更多精力放在家庭和职业生活上。除非你过去十年一直与世隔绝，否则你很可能听说过 Martin（miwi@）Wilke。简而言之，Martin 是向 ports 树贡献提交数量最多的开发者，自 2006 年以来超过 20,000 次提交！
+过去两个月只有一位提交者的权限被代管（motoyuki@），但我们也收到了来自 miwi@ 的遗憾消息，他决定卸下 FreeBSD 的职责，把更多精力放在家庭和职业生活上。除非你过去十年一直与世隔绝，否则你很可能听说过 Martin（miwi@）Wilke。简而言之，Martin 是向 Ports 树贡献提交数量最多的开发者，自 2006 年以来超过 20,000 次提交！
 
 ## 年度数据
 
-2014 年是我们 ports 树历史上提交数量最多的一年！此前我们从未超过 30,000 次提交，而 2014 年几乎达到 37,500 次 [https://people.freebsd.org/~eadler/datum/ports/commits_by_year.png]。因此我们借此机会感谢所有开发者和贡献者，并希望在 2015 年也能看到这样的奉献！
+2014 年是我们 Ports 树历史上提交数量最多的一年！此前我们从未超过 30,000 次提交，而 2014 年几乎达到 37,500 次 [https://people.freebsd.org/~eadler/datum/ports/commits_by_year.png]。因此我们借此机会感谢所有开发者和贡献者，并希望在 2015 年也能看到这样的奉献！
 
 ## 新的 portmgr lurker
 
