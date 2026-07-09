@@ -1,6 +1,7 @@
 # 书评：《算法设计手册》
 
-**作者：Joseph Kong**
+- 原文：[Book Review: The Algorithm Design Manual](https://freebsdfoundation.org/wp-content/uploads/2016/04/Book-Review-The-Algorithm-Design-Manual.pdf)
+- 作者：**Joseph Kong**
 
 《算法设计手册》
 

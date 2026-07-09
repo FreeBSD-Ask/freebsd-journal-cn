@@ -193,13 +193,13 @@ dummy@entry=0x0 <nullfs_init>)
 # kyua report
 ```
 
-可以设置 bhyve 虚拟机，在启动时自动运行测试套件。一种简单的方法是添加一个脚本 `/etc/rc.local`，该脚本运行测试套件，将结果打印到控制台，并关闭虚拟机。可以使用一个单独的磁盘来存储 `kyua report` 的输出，这样结果就可以轻松地在主机上恢复。
+可以设置 bhyve 虚拟机，在启动时自动运行测试套件。一种简单的方法是添加一个脚本 **/etc/rc.local**，该脚本运行测试套件，将结果打印到控制台，并关闭虚拟机。可以使用一个单独的磁盘来存储 `kyua report` 的输出，这样结果就可以轻松地在主机上恢复。
 
-回归测试套件涵盖了大量的 FreeBSD 特性，但设计上能够快速完成。因此，尽管它可以通过相对较少的工作帮助找到错误，但可能需要进行更为密集的压力测试。FreeBSD 提供了几种进一步测试内核更改的方法。
+回归测试套件涵盖了大量的 FreeBSD 特性，但设计上能够快速完成。因此，尽管它可以通过相对较少的工作帮助找到错误，但可能需要更为密集的压力测试。FreeBSD 提供了几种进一步测试内核更改的方法。
 
 ## stress2
 
-stress2 是一个由 Peter Holm 维护的大型压力测试套件。它包含数百个针对内核核心的文件系统和内存管理子系统的回归测试。stress2 套件包含在 FreeBSD 源代码树中，位于 `tools/test/stress2`，但并不包含在安装中。要运行这些测试，假设测试系统中有源代码树，可以运行：
+stress2 是一个由 Peter Holm 维护的大型压力测试套件。它包含数百个针对内核核心的文件系统和内存管理子系统的回归测试。stress2 套件包含在 FreeBSD 源代码树中，位于 **tools/test/stress2**，但并不包含在安装中。要运行这些测试，假设测试系统中有源代码树，可以运行：
 
 ```sh
 # cp -R ${SRCDIR}/tools/test/stress2 /tmp/stress2
@@ -235,7 +235,7 @@ syzkaller 的详细概述出现在之前的 [FreeBSD 期刊文章](https://freeb
 # bastille service syzkaller syz-manager onestart
 ```
 
-通常，\${SRCDIR} 将是一个 git worktree，引用要构建和测试的分支；该 worktree 被通过 nullfs 挂载到 jail 中。syzkaller 测试的内核可以通过模板在 jail 根用户的主目录中安装的 build.sh 脚本重新构建：
+通常，**${SRCDIR}** 将是一个 git worktree，引用要构建和测试的分支；该 worktree 被通过 nullfs 挂载到 jail 中。syzkaller 测试的内核可以通过模板在 jail 根用户的主目录中安装的 build.sh 脚本重新构建：
 
 ```sh
 # bastille console syzkaller
