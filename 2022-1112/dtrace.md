@@ -163,7 +163,7 @@ bin:/usr/sbin:/usr/bin /etc/rc.d/sendmail onestop
 
 ## kinst —— 用于指令级跟踪的全新 DTrace 提供程序  
 
-在 **2022 年 Google 夏季编程大赛（GSoC）** 中，**Christos Margiolis（<christos@freebsd.org>）** 在 **Mark Johnston（<markj@freebsd.org>）** 的指导下成功完成了一项项目，并将 **指令级跟踪（Instruction-level Tracing）** 功能合并到 **FreeBSD**。实现该功能的提供程序被称为 **kinst**。
+在 **2022 年 谷歌 夏季编程大赛（GSoC）** 中，**Christos Margiolis（<christos@freebsd.org>）** 在 **Mark Johnston（<markj@freebsd.org>）** 的指导下成功完成了一项项目，并将 **指令级跟踪（Instruction-level Tracing）** 功能合并到 **FreeBSD**。实现该功能的提供程序被称为 **kinst**。
 
 **kinst** 复用了 **fbt** 机制的部分内容，并扩展了它，使其能够对 **内核函数的任意位置** 进行插桩（Instrumentation），而不仅仅是入口和出口点。对于熟悉 **内核开发** 的读者而言，**kinst** 在分析某些分支的调用栈时所带来的潜力不言而喻。因此，**kinst** 可以帮助更快地发现和修复 **FreeBSD** 中的 **bug** 及 **性能问题**。
 

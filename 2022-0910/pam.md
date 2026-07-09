@@ -101,7 +101,7 @@ auth required pam_unix.so no_warn try_first_pass
 
 ## 添加认证方法
 
-人们通常是在组织开始要求两因素认证时才接触到 PAM。可能是 Google Authenticator、Yubikey 或 Cisco 的 Duo。也许你还有专用的认证硬件，可以读取声纹、指纹或嗅觉特征。接下来，我们将使用后面三种构建一些不太常见的认证规则。下面是一个相当简单的例子。由于我还没看过这些不存在模块的文档，所以我将忽略那些选项。
+人们通常是在组织开始要求两因素认证时才接触到 PAM。可能是 谷歌 Authenticator、Yubikey 或 Cisco 的 Duo。也许你还有专用的认证硬件，可以读取声纹、指纹或嗅觉特征。接下来，我们将使用后面三种构建一些不太常见的认证规则。下面是一个相当简单的例子。由于我还没看过这些不存在模块的文档，所以我将忽略那些选项。
 
 ```sh
 auth required pam_voice.so

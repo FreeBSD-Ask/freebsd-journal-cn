@@ -27,7 +27,7 @@
 
 ## 秘密管理平台
 
-秘密管理平台（SMP）有时也被称为密钥管理系统（KMS），通常被云供应商集成。Azure、Amazon、Google、Oracle 都为其平台提供了紧密耦合且良好集成的工具。
+秘密管理平台（SMP）有时也被称为密钥管理系统（KMS），通常被云供应商集成。Azure、Amazon、谷歌、Oracle 都为其平台提供了紧密耦合且良好集成的工具。
 
 但是，如果你正在阅读这本 FreeBSD 杂志，你极有可能对把所有秘密交给商业公司的做法感到极度不安。在理想情况下，我们希望自己来管理秘密，而不依赖外国的第三方。
 
@@ -212,7 +212,7 @@ Success! Enabled the file audit device at: file/
 
 ### 存储秘密
 
-Vault 有引擎的概念——包括简单的键值存储，还有用于 ssh 证书、AWS 和 Google Cloud 集成、RabbitMQ、PostgreSQL 等的引擎。每个引擎都需要单独启用。
+Vault 有引擎的概念——包括简单的键值存储，还有用于 ssh 证书、AWS 和 谷歌 Cloud 集成、RabbitMQ、PostgreSQL 等的引擎。每个引擎都需要单独启用。
 
 ```sh
 $ vault secrets enable -version=2 kv

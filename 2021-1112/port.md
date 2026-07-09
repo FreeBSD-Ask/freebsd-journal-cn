@@ -1,6 +1,6 @@
 # 通过 iSCSI 导入 ZFS ZIL——不要在工作中这样做——就像我做的那样
 
-- 原文链接：[Importing a ZFS ZIL via iSCSI  Don’t do this at work — like I did](https://freebsdfoundation.org/wp-content/uploads/2022/01/Importing-a-ZFS-ZIL-via-iSCSI.pdf)
+- 原文链接：[Importing a ZFS ZIL via iSCSI: Don’t do this at work — like I did](https://freebsdfoundation.org/wp-content/uploads/2022/01/Importing-a-ZFS-ZIL-via-iSCSI.pdf)
 - 作者：**BENEDICT REUSCHLING**
 
 ---
@@ -13,7 +13,7 @@
 
 最近，托管这台虚拟化服务器的部门将其底层存储更改为 Ceph。通过在校园内三个不同建筑之间同步 I/O，这为他们增加了更多的容量和冗余。与此同时，数据库课程的教授设计了新的实验，帮助学生熟悉大量数据集。一个实验要求创建大量数据并将其插入到数据库表中，测量有无表索引的执行时间。一切看起来很好，但在该实验开始不久后，教授和学生开始抱怨性能不佳。在某些情况下，学生笔记本上的本地 PostgreSQL 安装运行速度比我们服务器上的速度还快，尽管我们的服务器有更多的 CPU 和内存。例如，执行一个大约 1000 万行的“SELECT COUNT(\*) from bigtable;”查询，平均耗时 2 分 5 秒。而一台本地笔记本仅需约 1 秒。第二次执行相同的查询时，服务器耗时仅 1 秒，证明查询是从更快的主内存缓存中提供的。
 
-我开始调查 PostgreSQL，调整了一些 postgresql.conf 配置文件中的参数并重启了服务器。这只是取得了有限的成功，大家仍然抱怨插入和查询时间过长。由于有证据表明 PostgreSQL 的默认设置性能更好，问题必定与存储或 I/O 相关。当虚拟机创建时，其底层的 Ceph 存储被转化为 ZFS 池，并将其中的大部分作为 PostgreSQL 数据库的数据集提供。由于很多学生插入了相同的数据并进行了查询，ZFS ARC 将这些数据直接从内存中提供。并不是所有的数据都能适应 ARC，或者某些数据被其他查询驱逐出 ARC。待我们开始对磁盘进行写操作，随着用户生成的大量数据，性能下降变得显而易见。
+我开始调查 PostgreSQL，调整了一些 postgresql.conf 配置文件中的参数并重启了服务器。这只是取得了有限的成功，大家仍然抱怨插入和查询时间过长。由于有证据表明 PostgreSQL 的默认设置性能更好，问题必定与存储或 I/O 相关。当虚拟机创建时，其底层的 Ceph 存储被转化为 ZFS 池，并将其中的大部分作为 PostgreSQL 数据库的数据集提供。由于很多学生插入了相同的数据并进行了查询，ZFS ARC 将这些数据直接从内存中提供。并不是所有的数据都能放入 ARC，或者某些数据被其他查询驱逐出 ARC。一旦我们开始对磁盘进行写操作，随着用户生成的大量数据，性能下降变得显而易见。
 
 为了确认我们对底层存储存在问题的怀疑，我从我们的大数据集群中选择了一台有 64 个 CPU、384 GB 内存和 4 个 512 GB NVMe 的服务器，并在其上安装了 FreeBSD。然后，我使用“zfs send”将托管 PostgreSQL 服务器的数据集复制到这台新服务器上。启动 postgres 服务后，我得到了在更强硬件上可以操作的完整服务器副本。在新服务器上运行相同的 COUNT(\*) 查询，证明它们和学生的笔记本电脑一样快（如果不是更快的话），即使学生的笔记本也有 SSD。显然，虚拟服务器上的性能是问题所在。然而，解决这个问题并不容易，因为我们的 IT 部门不能简单地为这个虚拟机附加一个 SSD 或 NVMe 来加速它。购买并将其安装到服务器上（这意味着停机）将比剩余的学期时间还要长。
 
@@ -27,7 +27,7 @@ FreeBSD 默认内置 iSCSI，只需要在配置文件中进行一些更改即可
 # zfs create -V 200g nvme/iscsi_export
 ```
 
-接下来，我编辑了 /etc/ctl.conf 文件，使其包含以下内容：
+接下来，我编辑了 **/etc/ctl.conf** 文件，使其包含以下内容：
 
 ```ini
 portal-group pg0 {
@@ -47,7 +47,7 @@ target iqn.dns-name-of-initiator:nvme {
 
 我将这个文件的所有权和权限更改为 root，因为它包含了明文密码。
 
-在服务器重启后，iSCSI 发起器应该再次启动，因此我在 /etc/rc.conf 中加入了 `ctld_enable="YES"`：
+在服务器重启后，iSCSI 发起器应该再次启动，因此我在 **/etc/rc.conf** 中加入了 `ctld_enable="YES"`：
 
 ```sh
 # sysrc ctld_enable=yes
@@ -59,7 +59,7 @@ target iqn.dns-name-of-initiator:nvme {
 # service ctld start
 ```
 
-这大致遵循了 FreeBSD 手册中 iSCSI 部分的描述。在导入存储磁盘的虚拟机上，我在 /etc/iscsi.conf 中加入了以下内容：
+这大致遵循了 FreeBSD 手册中 iSCSI 部分的描述。在导入存储磁盘的虚拟机上，我在 **/etc/iscsi.conf** 中加入了以下内容：
 
 ```ini
 TargetAddress = ip.address.of.initiator
@@ -70,7 +70,7 @@ chapSecret = verysecurepasswordgoeshere
 }
 ```
 
-由于 postgres 用户通过 SSH 登录到该服务器以运行 PostgreSQL 的命令行工具 psql，确保该文件中的密码不被窥探非常重要。通过将文件权限设置为 `chmod 0700`，并将文件所有者和组设置为 root 和 wheel，可以解决这个问题。为了在重启时启动存储导入，必须在 /etc/rc.conf 中加入一个条目（稍后会详细说明）：
+由于 postgres 用户通过 SSH 登录到该服务器以运行 PostgreSQL 的命令行工具 psql，确保该文件中的密码不被窥探非常重要。通过将文件权限设置为 `chmod 0700`，并将文件所有者和组设置为 root 和 wheel，可以解决这个问题。为了在重启时启动存储导入，必须在 **/etc/rc.conf** 中加入一个条目（稍后会详细说明）：
 
 ```sh
 # sysctl iscsid_enable=yes
@@ -82,7 +82,7 @@ chapSecret = verysecurepasswordgoeshere
 # service iscsid start
 ```
 
-成功导入后，一个新设备（可能是 da0 或类似的）出现在 /dev 中。在该设备上创建了一个独立的 ZFS 池：
+成功导入后，一个新设备（可能是 da0 或类似的）出现在 **/dev** 中。在该设备上创建了一个独立的 ZFS 池：
 
 ```sh
 # zpool create nvme_ts /dev/da0
@@ -94,7 +94,7 @@ chapSecret = verysecurepasswordgoeshere
 psql#>CREATE TABLESPACE nvme LOCATION '/nvme';
 ```
 
-再次检查访问权限，但命令完成后，postgres 数据库用户可以使用该表空间并在其上放置数据库对象（如表）。可以通过显式定义数据应存储的位置：
+再次检查访问权限，但命令完成后，postgres 数据库用户可以使用该表空间并在其上放置数据库对象（如表）。要么显式定义数据应存储的位置：
 
 ```sql
 psql#>CREATE TABLE nvme_powered_table(i int) TABLESPACE nvme_ts;

@@ -62,4 +62,4 @@ FreeBSD 留下的深远影响就是真正自由软件的概念。
 
 ---
 
-Tom Jones 是一个对保持网络栈快速感兴趣的 FreeBSD 提交者，在白天他在 Klara 公司负责 FreeBSD 的开发管理工作。
+**Tom Jones** 是一个对保持网络栈快速感兴趣的 FreeBSD 提交者，在白天他在 Klara 公司负责 FreeBSD 的开发管理工作。

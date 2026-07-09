@@ -20,7 +20,7 @@ FUSE 守护进程
 
 ## FreeBSD 的 FUSE 移植
 
-FreeBSD 的 FUSE 驱动最初是 Csaba Henk 在 2005 年 Google 编程之夏（GSoC）项目中编写的，但未进入基本系统。Ilya Putsikau 在 2011 年的另一个 GSoC 项目中完成了移植，Attilio Rao 随即将其合并。然而，2011 年版本仍落后于当时的协议若干年，且有一些未解决的 bug。此后 8 年间，许多 bug 未得到处理，缺乏维护和新特性，直到现在。
+FreeBSD 的 FUSE 驱动最初是 Csaba Henk 在 2005 年 谷歌 编程之夏（GSoC）项目中编写的，但未进入基本系统。Ilya Putsikau 在 2011 年的另一个 GSoC 项目中完成了移植，Attilio Rao 随即将其合并。然而，2011 年版本仍落后于当时的协议若干年，且有一些未解决的 bug。此后 8 年间，许多 bug 未得到处理，缺乏维护和新特性，直到现在。
 
 FUSE
 
