@@ -1,20 +1,21 @@
-# 书评
+# 书评：《系统管理与网络管理技术实践》
 
 - 原文：[Book Review](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
 - 作者：**Greg Lehey**
 
-《The Practice of System and Network Administration》
+系统管理与网络管理技术实践（*The Practice of System and Network Administration*）
 
-Thomas A. Limoncelli、Christina J. Hogan、Strata R. Chalup
-
-Pearson/Addison-Wesley Professional • ISBN 9780321492661 • 1,056 页
-纸质书定价：$59.99* 电子书定价（含 EPUB、MOBI、PDF）：$47.99*
-
-*FreeBSD 期刊读者专享：Limoncelli 两本著作可享 35% 折扣，请访问出版商页面 <http://informit.com/tposa>，结账时输入优惠码：TPOSA35
+- Thomas A. Limoncelli、Christina J. Hogan、Strata R. Chalup
+- Pearson/Addison-Wesley Professional
+- ISBN 9780321492661
+- 1,056 页
+- 纸质书定价：$59.99
+- 电子书定价（含 EPUB、MOBI、PDF）：$47.99
+- FreeBSD 期刊读者专享：Limoncelli 两本著作可享 35% 折扣，请访问出版商页面 <http://informit.com/tposa>，结账时输入优惠码：TPOSA35
 
 出版商注：第 3 版计划于 2016 年春季发行。
 
-在系统管理类书籍中，你期望看到什么？我对这类书籍的衡量基准是 Evi Nemeth、Garth Snyder、Trent R. Hein 和 Ben Whaley 合著的《Unix® and Linux® System Administration Handbook》（下文简称 Nemeth）。而 Thomas A. Limoncelli、Christina J. Hogan 和 Strata R. Chalup 合著的《The Practice of System and Network Administration》（下文简称 Limoncelli）则截然不同。为什么？
+在系统管理类书籍中，你期望看到什么？我对这类书籍的衡量基准是 Evi Nemeth、Garth Snyder、Trent R. Hein 和 Ben Whaley 合著的《UNIX/Linux 系统管理技术手册》（下文简称 Nemeth）。而 Thomas A. Limoncelli、Christina J. Hogan 和 Strata R. Chalup 合著的《系统管理与网络管理技术实践》（下文简称 Limoncelli）则截然不同。为什么？
 
 要回答这个问题，值得退一步想想你希望从一本系统管理书中获得什么。尽管我十分推崇 Nemeth 一书，却几乎从未真正用过它。我有许多书，查找信息时可能选其中一本，或者越来越多地在网络上查找。脚本语言或 Unix 文件系统导航这类问题尤其如此，它们并非系统管理独有，虽然 Nemeth 对这些内容有详尽描述。即便是系统管理部分，也主要局限于几个特定的非 BSD 系统。即便我使用他们描述的某个系统，其他系统的内容对我用处不大，而且我所关心的信息很可能已经过时，因为这类书大约每五年才出一个版本，远低于软件更新频率。
 
