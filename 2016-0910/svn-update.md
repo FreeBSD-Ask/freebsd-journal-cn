@@ -31,7 +31,7 @@ MFH r297023（<https://svnweb.freebsd.org/base?view=revision&revision=302800>）
 
 MFC r302402（<https://svnweb.freebsd.org/base?view=revision&revision=302791>）
 
-`ahci`(4) 驱动现在能够附加到具备 32 个端口的控制器。由于符号错误，本应是位域的变量扩展导致无限循环。修复此问题后，系统能够正确检测 bhyve 中 AHCI HBA 上配置的 32 个设备。
+`ahci(4)` 驱动现在能够附加到具备 32 个端口的控制器。由于符号错误，本应是位域的变量扩展导致无限循环。修复此问题后，系统能够正确检测 bhyve 中 AHCI HBA 上配置的 32 个设备。
 
 ## MFC r302714
 
