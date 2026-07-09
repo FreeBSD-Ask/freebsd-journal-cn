@@ -2,7 +2,7 @@
 
 FreeBSD 新面孔  作者：Dru Lavigne
 
-本栏目旨在聚焦近期获得提交权限的贡献者，并向 FreeBSD 社区介绍他们。过去的一个季度对新提交者来说十分繁忙。在本期栏目中，焦点是 Fedor Uporov（8 月获得 src 提交权）和 Luca Pizzamiglio（8 月获得 ports 提交权）；Adriaan de Groot 和 Craig Leres（9 月各获得 ports 提交权）；Ilya Bakulin 和 Chuck Tuffli（9 月各获得 src 提交权）；以及 Yuri Victorovich（10 月获得 ports 提交权）。
+本栏目旨在聚焦近期获得提交权限的贡献者，并向 FreeBSD 社区介绍他们。过去的一个季度对新提交者来说十分繁忙。在本期栏目中，焦点是 Fedor Uporov（8 月获得 src 提交权）和 Luca Pizzamiglio（8 月获得 Ports 提交权）；Adriaan de Groot 和 Craig Leres（9 月各获得 Ports 提交权）；Ilya Bakulin 和 Chuck Tuffli（9 月各获得 src 提交权）；以及 Yuri Victorovich（10 月获得 Ports 提交权）。
 
 ## 请介绍一下你自己、背景和兴趣。
 
@@ -60,7 +60,7 @@ FreeBSD 新面孔  作者：Dru Lavigne
 
   如果开源许可证是 FreeBSD 所提供的全部，我也不会留到今天。套用一句旧电视广告词：“为许可证而来，为设计而留”。当时在 FreeBSD 上开发设备驱动比 Linux 高出一个数量级。无论是文档、高级存储功能（如 SCSI target 模式），还是其他经过深思熟虑并实现良好的子系统，它都曾是——至今仍是——一个出色的开发环境。
 
-- **Yuri**：1998 年一位朋友提到了 FreeBSD，我决定试试。从那以后，我再也没回到 Windows。吸引我的是能够深入其中、了解其各部分如何运作和交互、并在各层面修改它。FreeBSD 结构良好、设计清晰。FreeBSD 让我能了解操作系统内部如何运作，这是任何商业操作系统都无法提供的机会。FreeBSD 拥有所有操作系统中最好的软件打包系统（ports），它允许任何用户用清晰简便的流程随时重建任何包。作为一项政策，ports 的所有源码下载都经过指纹校验。这消除了 MITM 攻击的可能性，其他系统都没有做到。其他系统对自身打包系统中一些安全问题视而不见，而这些在 FreeBSD 中早已解决。
+- **Yuri**：1998 年一位朋友提到了 FreeBSD，我决定试试。从那以后，我再也没回到 Windows。吸引我的是能够深入其中、了解其各部分如何运作和交互、并在各层面修改它。FreeBSD 结构良好、设计清晰。FreeBSD 让我能了解操作系统内部如何运作，这是任何商业操作系统都无法提供的机会。FreeBSD 拥有所有操作系统中最好的软件打包系统（ports），它允许任何用户用清晰简便的流程随时重建任何包。作为一项政策，Ports 的所有源码下载都经过指纹校验。这消除了 MITM 攻击的可能性，其他系统都没有做到。其他系统对自身打包系统中一些安全问题视而不见，而这些在 FreeBSD 中早已解决。
 
 ## 你是如何成为提交者的？
 
@@ -68,11 +68,11 @@ FreeBSD 新面孔  作者：Dru Lavigne
 
 - **Luca**：我自从学生时代起就被开源这一概念所吸引。那时我没什么自信，觉得自己技术不够，做不出有价值的贡献。后来我开始做 FreeBSD，devel/gdb 的线程支持有严重问题。我提交了一些补丁，突然就成了 gdb 的端口维护者。
 
-  加入 Trivago 后，我有更多机会在 ports 树中提交补丁，于是 Lars（lme@）和 Olivier（olivier@）推荐我成为 ports 提交者。
+  加入 Trivago 后，我有更多机会在 Ports 树中提交补丁，于是 Lars（lme@）和 Olivier（olivier@）推荐我成为 ports 提交者。
 
-- **Adriaan**：2017 年初，tcberner@ 和 rakuco@ 找到我，说我应该争取一个 ports 提交权；部分原因是 kde@ 的 ports 应该分散到更多人身上，这样我们就更有韧性——大家都有工作、有繁忙期和现实生活中的责任。毕竟我已断断续续使用（并为 FreeBSD 贡献）至少 15 年，可能 20 年了，这感觉就像是”戴上戒指”。
+- **Adriaan**：2017 年初，tcberner@ 和 rakuco@ 找到我，说我应该争取一个 Ports 提交权；部分原因是 kde@ 的 ports 应该分散到更多人身上，这样我们就更有韧性——大家都有工作、有繁忙期和现实生活中的责任。毕竟我已断断续续使用（并为 FreeBSD 贡献）至少 15 年，可能 20 年了，这感觉就像是”戴上戒指”。
 
-- **Craig**：我长期以来一直为 Unix 和 FreeBSD 贡献，1999 年提交了第一个 FreeBSD PR。2008 年成为 ports 维护者（sysutils/lbl-hf），此后几年创建或接手了更多 ports 的维护。可能就是这时我把成为提交者定为个人目标。去年夏天我在一次聚会上遇到 Kirk McKusick，提及我对成为提交者的兴趣。我们从我作为 CSRG 志愿者时就认识，他立即主动提出帮我了解流程。Larry Rosenman 和 Matthew Seaman 友善地自愿担任我的导师。不久后，我受邀以 ports 提交者身份加入 FreeBSD。
+- **Craig**：我长期以来一直为 Unix 和 FreeBSD 贡献，1999 年提交了第一个 FreeBSD PR。2008 年成为 Ports 维护者（sysutils/lbl-hf），此后几年创建或接手了更多 ports 的维护。可能就是这时我把成为提交者定为个人目标。去年夏天我在一次聚会上遇到 Kirk McKusick，提及我对成为提交者的兴趣。我们从我作为 CSRG 志愿者时就认识，他立即主动提出帮我了解流程。Larry Rosenman 和 Matthew Seaman 友善地自愿担任我的导师。不久后，我受邀以 ports 提交者身份加入 FreeBSD。
 
 - **Ilya**：我曾买过一台有点贵的基于 ARM 的家用服务器，GlobalScale DreamPlug。它上面可以跑 FreeBSD；不过设置好之后，我发现板载 WiFi 是通过 SDIO 总线连接到系统的。那时我甚至不知道 SDIO 是什么，读了些文档后，我决定试着为 SDIO 总线添加支持会是个有趣的项目。结果它成了一个”兔子洞”。实现了最初的几块并与 Warner Losh（imp@）和 Adrian Chadd（adrian@）讨论了遇到的问题后，在 2013 年马耳他 EuroBSDCon 期间，我开始实现一个全新的、基于 CAM 框架的 SD/MMC 栈。它最终成为一个出色的项目，让我深入了解了 FreeBSD 内核内部，并与项目中不同的人合作解决问题。然后 Warner 自愿担任我的导师，让我改进 FreeBSD 的 MMC 和 SDIO 支持！
 
@@ -92,7 +92,7 @@ FreeBSD 新面孔  作者：Dru Lavigne
 
 - **Adriaan**：某种程度上，事情没怎么变：我仍跑同样的系统，仍把大部分时间花在 ports 上，把东西推进 KDE-FreeBSD 的 ports github 树。我自己也捡了几个 ports，纯粹是因为喜欢（比如 sayonara，因为我想要比 mpg123 略强一点、但又不要强太多的东西）。
 
-  对新人，我会说”继续做你喜欢的事”。而且，既然我在头几个月犯过自己的错，“注意细节”。ports 领域可以非常苛刻，在某个时刻漏掉一些小细节是自然的。你的导师在那里帮你，但他们也是人。你收到的第一封来自 mat@ 指出遗漏的“RE: svn commit”邮件是一种成年礼，只是提醒大家都在关注，共同打造最好的系统。
+  对新人，我会说”继续做你喜欢的事”。而且，既然我在头几个月犯过自己的错，“注意细节”。Ports 领域可以非常苛刻，在某个时刻漏掉一些小细节是自然的。你的导师在那里帮你，但他们也是人。你收到的第一封来自 mat@ 指出遗漏的“RE: svn commit”邮件是一种成年礼，只是提醒大家都在关注，共同打造最好的系统。
 
 - **Craig**：看到幕后、访问内部资源、学习流程，以及了解整个项目如何更详细地组合在一起，非常有趣。我互动过的每个人都乐于助人、礼貌有加。当我做出第一次”生产”提交（与成为提交者相关的提交相对）时，非常令人满足。作为提交者，显然是维护一个 port 最有效的方式，无论对维护者/提交者还是 FreeBSD 项目的其他成员都是如此。
 

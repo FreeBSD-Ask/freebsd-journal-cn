@@ -282,7 +282,7 @@ sudo mount_glusterfs server1:/gv0 /mnt
 
 ### Poudriere
 
-最后，对任何对 FreeBSD ports 开发感兴趣的人而言可能特别有用：有一套 Vagrantfile 和 Ansible 脚本，可以搭建一个完整的 poudriere 开发环境。它包括一个完整的 Ports 树用于 ports 开发，以及多个 jail 用于测试构建。注意，由于 jail 构建过程和 Ports 树检出，这一个的 provision 时间会明显更长，也需要更多磁盘空间。
+最后，对任何对 FreeBSD Ports 开发感兴趣的人而言可能特别有用：有一套 Vagrantfile 和 Ansible 脚本，可以搭建一个完整的 poudriere 开发环境。它包括一个完整的 Ports 树用于 Ports 开发，以及多个 jail 用于测试构建。注意，由于 jail 构建过程和 Ports 树检出，这一个的 provision 时间会明显更长，也需要更多磁盘空间。
 
 ```sh
 mkdir poudriere_vagrant
@@ -344,4 +344,4 @@ vagrant up --provider bhyve
 
 ---
 
-**STEVE WILLS** 是一位丈夫和父亲，住在美国北卡罗来纳州。他是 FreeBSD ports 提交者，专注于 Ruby 和其他编程语言。
+**STEVE WILLS** 是一位丈夫和父亲，住在美国北卡罗来纳州。他是 FreeBSD Ports 提交者，专注于 Ruby 和其他编程语言。
