@@ -1,7 +1,7 @@
 # 读者来信
 
-- 原文链接：[We Get Letters](https://freebsdfoundation.org/wp-content/uploads/2022/05/letters.pdf)
-- 作者：Michael W Lucas
+- 原文：[We Get Letters](https://freebsdfoundation.org/wp-content/uploads/2022/05/letters.pdf)
+- 作者：**Michael W Lucas**
 
 亲爱的科技界最诚实建议专栏作家：
 

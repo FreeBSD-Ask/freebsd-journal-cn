@@ -1,6 +1,6 @@
 # 实用 Port：在 OpenZFS 上设置 NFSv4 文件服务器
 
-- 原文链接：[Setting up an NFSv4 Fileserver on OpenZFS](https://freebsdfoundation.org/wp-content/uploads/2022/06/Practicalports.pdf)
+- 原文：[Setting up an NFSv4 Fileserver on OpenZFS](https://freebsdfoundation.org/wp-content/uploads/2022/06/Practicalports.pdf)
 - 作者：**BENEDICT REUSCHLING**
 
 我们最近在工作中经历了一次小型灾难，这让我重新思考了当前的文件服务策略。我们通过 Ansible 部署 MongoDB、Hadoop、Spark 等分布式应用程序。这些应用程序的二进制文件并不来自软件仓库，而是从供应商网站下载，因为需要进行前期注册才能获取带有额外功能的企业版。包含这些二进制文件的归档文件非常大（即使经过压缩），并且通常需要一些时间才能通过网络将它们从 Ansible 控制器复制到目标机器。
@@ -17,11 +17,11 @@
 
 我更新了 playbooks，在卸载任务之后增加了额外的检查，以确认共享是否确实已经卸载。如果没有，它将执行强制卸载操作；如果强制卸载也失败，playbook 执行将在此时停止。网络共享无法正确卸载通常是有正当原因的（通常是某些文件仍在被访问），但不继续执行总比冒险再次发生数据丢失更好。
 
-由于我没有完全控制 Ceph 共享，并且我的网络共享需求并不大，我决定自己搭建共享。于是我选择了 FreeBSD 的 ZFS，并使用其集成的 NFSv4 共享。这样，我可以定期创建快照，在没有变化的情况下，快照不会增长太多，因为大部分时间共享的文件都是只读的。而且，不再依赖于简单地将共享挂载为只读，我可以将 ZFS 的相同属性设置为“开启”。使用 readonly=on 后，即使是 root 用户也无法在具有该属性的数据集上删除文件。此外，我还可以获得 ZFS 提供的常规数据完整性检查，并可能通过压缩数据集来节省空间。
+由于我没有完全控制 Ceph 共享，并且我的网络共享需求并不大，我决定自己搭建共享。于是我选择了 FreeBSD 的 ZFS，并使用其集成的 NFSv4 共享。这样，我可以定期创建快照，在没有变化的情况下，快照不会增长太多，因为大部分时间共享的文件都是只读的。而且，不再依赖于简单地将共享挂载为只读，我可以将 ZFS 的相同属性设置为“开启”。使用 `readonly=on` 后，即使是 root 用户也无法在具有该属性的数据集上删除文件。此外，我还可以获得 ZFS 提供的常规数据完整性检查，并可能通过压缩数据集来节省空间。
 
 ## 实现解决方案  
 
-以下是我在 FreeBSD 系统上设置 NFSv4 服务器的笔记。首先，我去了 `/etc/rc.conf` 文件并添加了以下行：
+以下是我在 FreeBSD 系统上设置 NFSv4 服务器的笔记。首先，我去了 **/etc/rc.conf** 文件并添加了以下行：
 
 ```sh
 nfs_server_enable="YES"
@@ -34,7 +34,7 @@ rpc_lockd_enable="YES"
 rpc_statd_enable="YES"
 ```
 
-这启用了 NFS 服务器，确保通过 nfsuserd 设置正确的权限，并为 NFS 发出的 RPC 调用提供正确的锁定。接下来，我检查了 `/etc/exports` 文件，确保它只包含以下行：
+这启用了 NFS 服务器，确保通过 `nfsuserd` 设置正确的权限，并为 NFS 发出的 RPC 调用提供正确的锁定。接下来，我检查了 **/etc/exports** 文件，确保它只包含以下行：
 
 ```sh
 V4: /
@@ -51,7 +51,7 @@ zfs set mountpoint=/fileshare zroot/fileshare
 
 ZFS 的一个优点是它的继承性。如果我决定在 `fileshare` 下创建一个子数据集，并且这个子数据集也应该提供 NFS 服务，我不需要单独配置它，因为它已经从父数据集继承了所有的属性（除了 `mountpoint`）。如果我不想共享这个子数据集，那么我可以通过将 `sharenfs` 属性设置为 `off`（这是默认值）来轻松禁用共享。
 
-首先，我们将一些文件复制到 NFS 共享目录，然后将 `readonly` 属性设置为 "on"（这就是我们来这里的初衷）：
+首先，我们将一些文件复制到 NFS 共享目录，然后将 `readonly` 属性设置为 `on`（这就是我们来这里的初衷）：
 
 ```sh
 cp /some/important/files /fileshare
@@ -69,9 +69,9 @@ zfs set sharenfs="-network 192.168.0.0 -mask 255.255.255.0
 -maproot=user,-alldirs" zroot/fileshare
 ```
 
-`maproot=user` 部分定义了，如果用户访问共享并且文件拥有该用户的权限，则服务器会将其映射到相同的本地权限，即使它们在服务器上可能不同。例如，Joe 可能在本地的 uid/gid 是 2000，而在 NFS 服务器上，所有用户的 uid/gid 都从 3000 开始。NFS 服务器会将 Joe 的文件设置为 uid/gid 为 3000，但当 Joe 访问共享时，他会看到本地系统上熟悉的 2000，而不会感到困惑。`-alldirs` 选项允许在 `/fileshare` 下的任何目录中进行挂载。通过阅读 `exports(5)` 可以了解更多这些及其他选项。
+`maproot=user` 部分定义了，如果用户访问共享并且文件拥有该用户的权限，则服务器会将其映射到相同的本地权限，即使它们在服务器上可能不同。例如，Joe 可能在本地的 uid/gid 是 2000，而在 NFS 服务器上，所有用户的 uid/gid 都从 3000 开始。NFS 服务器会将 Joe 的文件设置为 uid/gid 为 3000，但当 Joe 访问共享时，他会看到本地系统上熟悉的 2000，而不会感到困惑。`-alldirs` 选项允许在 **/fileshare** 下的任何目录中进行挂载。通过阅读 `exports(5)` 可以了解更多这些及其他选项。
 
-至此，服务器部分完成。我们需要启动 /etc/rc.conf 中列出的所有服务，以开始共享挂载的数据集。
+至此，服务器部分完成。我们需要启动 **/etc/rc.conf** 中列出的所有服务，以开始共享挂载的数据集。
 
 ```sh
 service nfsd start
@@ -95,7 +95,7 @@ cat /etc/zfs/exports
 
 这将显示整个列表。
 
-接下来，我们看一下客户端。我使用 FreeBSD 和 Ubuntu Linux 系统来挂载共享，并描述每个系统需要什么才能访问它。从 FreeBSD 客户端开始，它只需要在 `/etc/rc.conf` 中添加几行配置：
+接下来，我们看一下客户端。我使用 FreeBSD 和 Ubuntu Linux 系统来挂载共享，并描述每个系统需要什么才能访问它。从 FreeBSD 客户端开始，它只需要在 **/etc/rc.conf** 中添加几行配置：
 
 ```sh
 nfsuserd_enable="yes"
@@ -117,7 +117,7 @@ showmount -e myfiler
 mount -t nfs -o nfsv4 myfiler:/fileshare /media
 ```
 
-如果你希望每次系统启动时都挂载此共享，可以将其添加到 /etc/fstab，如下所示：
+如果你希望每次系统启动时都挂载此共享，可以将其添加到 **/etc/fstab**，如下所示：
 
 ```sh
 myfiler:/fileshare /media nfs rw,tcp,noatime,nfsv4 0 0
@@ -139,7 +139,7 @@ apt install nfs-common
 mount -t nfs -onfsvers=4 myfiler:/fileshare /media
 ```
 
-当然，挂载可以发生在任何其他已存在的本地目录，而不仅仅是 `/media`。我之所以使用它，是因为它已经存在并且通常是空的。挂载在现有目录上会隐藏其内容，直到下一次卸载 NFS 共享。确保不要在系统运行所需的任何重要目录上进行挂载。无论你选择哪个目录，如果你还希望每次 Linux 系统启动时都挂载该共享，请将以下行添加到 `/etc/fstab`：
+当然，挂载可以发生在任何其他已存在的本地目录，而不仅仅是 **/media**。我之所以使用它，是因为它已经存在并且通常是空的。挂载在现有目录上会隐藏其内容，直到下一次卸载 NFS 共享。确保不要在系统运行所需的任何重要目录上进行挂载。无论你选择哪个目录，如果你还希望每次 Linux 系统启动时都挂载该共享，请将以下行添加到 **/etc/fstab**：
 
 ```sh
 myfiler:/fileshare /media nfs rw,nfsvers=4 0 0

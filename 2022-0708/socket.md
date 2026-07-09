@@ -1,7 +1,7 @@
 # 进行中的工作/征求反馈：Socket 缓冲区
 
-- 原文链接：[WPT/CFT: Socket Buffers](https://freebsdfoundation.org/wp-content/uploads/2022/08/WIP-CFT_sockets.pdf)
-- 作者：**TOM JONES** & **GLEB SMIRNOFF**
+- 原文：[WPT/CFT: Socket Buffers](https://freebsdfoundation.org/wp-content/uploads/2022/08/WIP-CFT_sockets.pdf)
+- 作者：**Tom Jones**、**Gleb Smirnoff**
 
 在过去，BSD 网络堆栈有一个通用的套接字缓冲区实现，既用于 TCP、UDP、本地 IPC 套接字（即 UNIX 套接字）等。这些缓冲区当然有一些相似之处——它们用于缓冲数据，但也有一些根本性的区别。
 
@@ -40,6 +40,6 @@
 
 ---
 
-**TOM JONES** 希望基于 FreeBSD 的项目能获得应有的关注。他住在苏格兰东北部，提供 FreeBSD 咨询服务。
+**Tom Jones** 希望基于 FreeBSD 的项目能获得应有的关注。他住在苏格兰东北部，提供 FreeBSD 咨询服务。
 
-**GLEB SMIRNOFF** 在 17 岁时第一次接触 FreeBSD，并对其一见钟情。他曾在大大小小的公司工作，总是寻找一个能让他为开源贡献的工作。现在，他在奈飞 OpenConnect 团队工作，正在用前所未有的强大 FreeBSD 服务器流量填满互联网。
+**Gleb Smirnoff** 在 17 岁时第一次接触 FreeBSD，并对其一见钟情。他曾在大大小小的公司工作，总是寻找能让他为开源贡献的工作。现在，他在奈飞 OpenConnect 团队工作，正在用前所未有的强大 FreeBSD 服务器流量填满互联网。

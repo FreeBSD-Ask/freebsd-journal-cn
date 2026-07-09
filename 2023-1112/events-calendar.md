@@ -1,7 +1,7 @@
 # 活动日历
 
-- 原文链接：[Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/events-calendar/)
-- 作者：Anne Dickison
+- 原文：[Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/events-calendar/)
+- 作者：**Anne Dickison**
 
 ## 截至 2024 年 3 月的 BSD 活动
 

@@ -1,6 +1,6 @@
 # 实用 IPv6（第二部分）
 
-- 原文链接：[Pragmatic IPv6 (Part 2)](https://freebsdfoundation.org/wp-content/uploads/2022/08/sato_IPv6.pdf)
+- 原文：[Pragmatic IPv6 (Part 2)](https://freebsdfoundation.org/wp-content/uploads/2022/08/sato_IPv6.pdf)
 - 作者：**佐藤広生**
 
 第一部分解释了 IPv6 协议的基础知识，以及如何在 FreeBSD 设备上开始使用它。阅读完后，你应该能够使用自动配置的链路本地（link-local scope）IPv6 地址。尽管这些地址仅限于你的局域网（LAN），但它们仍然十分强大和有用——如果你只是想与同一网络上的另一台设备通信，那么根本不需要全局 IP 地址。链路本地地址是不可路由的，因此不太可能成为来自互联网恶意用户的攻击面。  

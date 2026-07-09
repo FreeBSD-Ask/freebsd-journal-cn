@@ -1,7 +1,7 @@
 # 活动日历
 
-- 原文链接：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2022/07/events.pdf)
-- 作者：Anne Dickison
+- 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2022/07/events.pdf)
+- 作者：**Anne Dickison**
 
 ## 截至 2022 年 11 月的 BSD 活动
 
@@ -25,13 +25,13 @@
 
 这场年度大会提供了了解 BSD 世界最新动态的绝佳机会。
 
-## 落基山庆祝女性计算机科学家 2022
+## 落基山庆祝计算领域女性 2022
 
 2022 年 9 月 29-30 日
 
 美国科罗拉多州博尔德
 
-落基山庆祝女性计算机科学家大会（RMCWiC）是一场区域性会议，类似 Grace Hopper 大会，规模较小。RMCWiC 的目标是鼓励当地女性在计算领域的研究与职业兴趣。FreeBSD 基金会期待参与即将到来的此次活动。
+落基山庆祝计算领域女性大会（RMCWiC）是一场区域性会议，类似 Grace Hopper 大会，规模较小。RMCWiC 的目标是鼓励当地女性在计算领域的研究与职业兴趣。FreeBSD 基金会期待参与即将到来的此次活动。
 
 ## All Things Open
 

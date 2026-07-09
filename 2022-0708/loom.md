@@ -1,7 +1,7 @@
 # 在 FreeBSD 上构建 Loom 框架
 
-- 原文链接：[Building the Loom Framework on FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2022/08/kidney_loom.pdf)
-- 作者：**BRIAN KIDNEY**
+- 原文：[Building the Loom Framework on FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2022/08/kidney_loom.pdf)
+- 作者：**Brian Kidney**
 
 在试图理解生产环境中的代码时，开发者会记录信息以便离线分析。这通常需要事先决定记录什么以及何时记录。对此问题的回答往往基于对系统中可能出现错误的情况或以往问题的判断。而在开发过程中，确切地知道需要哪些信息并不总是可能的，特别是在试图追踪与安全有关的数据时。
 

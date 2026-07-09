@@ -1,7 +1,7 @@
 # 教授本科生 Unix 课程
 
-- 原文链接：[Teaching an Undergraduate Unix Course](https://freebsdfoundation.org/wp-content/uploads/2022/08/reuschling_teaching_unix.pdf)
-- 作者：**BENEDICT REUSCHLING**
+- 原文：[Teaching an Undergraduate Unix Course](https://freebsdfoundation.org/wp-content/uploads/2022/08/reuschling_teaching_unix.pdf)
+- 作者：**Benedict Reuschling**
 
 ## 背景故事——接手 Unix 课程  
 

@@ -1,6 +1,6 @@
 # ZFS 的原子 I/O 与 PostgreSQL
 
-- 原文链接：[ZFS’s Atomic I/O and PostgreSQL](https://freebsdfoundation.org/wp-content/uploads/2023/02/munro_ZFS.pdf)
+- 原文：[ZFS’s Atomic I/O and PostgreSQL](https://freebsdfoundation.org/wp-content/uploads/2023/02/munro_ZFS.pdf)
 - 作者：**THOMAS MUNRO**
 
 PostgreSQL 是关系型数据库管理系统，符合 SQL 标准，使用类 BSD 许可证。其 SQL 之前的前身 POSTGRES 始于 1980 年代中期的伯克利大学。它在 FreeBSD 上很受欢迎，通常部署在 ZFS 存储上。许多有关 PostgreSQL 在 ZFS 上的文章都建议调整 ZFS 的 `recordsize` 设置和 PostgreSQL 的 `full_page_writes` 设置。然而，后一个设置对性能和崩溃安全性的真正影响往往没有得到充分解释，可能是因为在大多数流行的文件系统上调整这个设置通常不安全。在本文中，我将总结这个神秘机制背后的逻辑和权衡——但在此之前，我们先简单讨论一下块大小。

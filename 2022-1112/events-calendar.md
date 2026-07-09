@@ -1,6 +1,6 @@
 # 活动日历
 
-- 原文链接：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2023/01/events.pdf)
+- 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2023/01/events.pdf)
 - 作者：Anne Dickison
 
 ## 截至 2023 年 4 月的 BSD 活动

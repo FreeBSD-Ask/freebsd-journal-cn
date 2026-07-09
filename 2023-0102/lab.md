@@ -1,6 +1,6 @@
 # 虚拟实验室——BSD 编程研讨会
 
-- 原文链接：[Virtual Lab – BSD Programming Workshop](https://freebsdfoundation.org/wp-content/uploads/2023/02/angel_virtuallab.pdf)
+- 原文：[Virtual Lab – BSD Programming Workshop](https://freebsdfoundation.org/wp-content/uploads/2023/02/angel_virtuallab.pdf)
 - 作者：**ROLLER ANGEL**
 
 我们的虚拟实验室将由一台 FreeBSD 主机系统组成，该系统利用 FreeBSD Jail 技术为实验室中我们想要安装的每个系统提供独立的环境，以运行服务并执行其任务。这些任务可以是多种多样的事情，比如提供网页、存储和检索数据库记录、查询和应答 DNS 请求、缓存系统更新文件等。我们的目标是建立一个坚实的基础，以支持虚拟实验室未来的扩展。考虑到 FreeBSD Jail 的本质是为容纳我们的服务而提供轻量级系统，我们可以放心，无论我们发现多少个“兔子洞”，都不会因为达到资源限制而约束我们的创造力或探索。我们可以为每个想法创建一个独立的环境，而不必担心为支持该想法所需服务而部署另一套操作系统所产生的费用。
@@ -411,8 +411,8 @@ jexec -l client1 login -f root
 
 ```sh
 host bsd.pw
-ping -c 3 bsd.pw
 ping -c 3 10.66.6.1
+ping -c 3 bsd.pw
 ```
 
 获取示例的 tcsh 配置文件：

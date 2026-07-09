@@ -1,7 +1,7 @@
 # FreeBSD 开发者峰会报告
 
-- 原文链接：[FreeBSD Developer Summit Report](https://freebsdfoundation.org/wp-content/uploads/2022/08/developer_summit_report.pdf)
-- 作者：**ANNE DICKISON**
+- 原文：[FreeBSD Developer Summit Report](https://freebsdfoundation.org/wp-content/uploads/2022/08/developer_summit_report.pdf)
+- 作者：**Anne Dickison**
 
 每年夏天，FreeBSD 开发者社区的成员及其嘉宾都会聚集在 FreeBSD 开发者峰会上。规划委员会从 2022 年初开始筹备，怀着能将大家 —— 现场见面 —— 两年来首次连接在一起的美好愿望。然而，不幸的是，疫情改变了计划，我们很快意识到又将举行一次虚拟活动。委员会成员共同努力，招募讲者和工作小组，并寻找新的方式让虚拟活动显得更加个性化。首先，增加了一个扩展的走廊环节。通过使用 SpatialChat 虚拟会议服务，参与者可以在虚拟房间里四处游走，与周围的人交谈。我们还将休息时间延长至 30 分钟，以便参与者之间有更多的交流时间。开发者峰会由 FreeBSD 基金会赞助，于 6 月 16 日和 17 日举行。活动全程录制并通过 YouTube 直播。你可以在[这里](https://youtube.com/playlist?list=PLugwS7L7NMXwVfBq5eDRky450jp7LTRJj)找到完整的内容和单个讲座。幻灯片可以在 [Wiki](https://wiki.freebsd.org/DevSummit/202206) 上找到。
 
@@ -27,4 +27,4 @@
 
 ---
 
-**ANNE DICKISON** 于 2015 年加入基金会，拥有 20 余年的技术营销和传播经验。特别是她在 USENIX 协会担任市场总监和联合执行董事期间，帮助她树立了传播自由和开源技术重要性的信念。
+**Anne Dickison** 于 2015 年加入基金会，拥有 20 余年的技术营销和传播经验。特别是她在 USENIX 协会担任市场总监和联合执行董事的工作经历，使她更加坚定地宣传自由和开源技术的重要性。

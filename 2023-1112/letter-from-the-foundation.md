@@ -1,17 +1,17 @@
 # 基金会来信
 
-- 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/foundation-letter/)
-- 作者：John Baldwin
+- 原文：[Letter from the Foundation](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/foundation-letter/)
+- 作者：**John Baldwin**
 
 欢迎阅读 9/10 月刊。在我撰写这篇致辞时，FreeBSD 正在为下一个主版本 14.0 做最后的收尾工作。敬请关注，11/12 月刊将带来 14.0 诸多令人兴奋的新特性。
 
 与此同时，在 14.0 抵达你附近的 CDN 服务器之前，本期提供了精彩的阅读内容供你消遣。
 
-Tom Jones 继续撰写他那栏目名恰如其分的“回忆录”。本期中，Tom 采访了 Warner Losh——一位资深的 FreeBSD 贡献者，以烧毁笔记本电脑等趣闻闻名。
+Tom Jones 继续撰写他的“回忆录”专栏，栏目名恰如其分。本期中，Tom 采访了 Warner Losh——一位资深的 FreeBSD 贡献者，以烧毁笔记本电脑等趣闻闻名。
 
-Benedict Reuschling 为读者详细讲解了如何使用 `poudriere(8)` 构建本地软件包——从设置自定义选项到向多台客户端机器部署已签名的软件包仓库。此外，在软件包方面，Charlie Li 介绍了 Python 生态中打包扩展的简史，和让 FreeBSD 的 Ports 树适配最新迭代版本的工作。
+Benedict Reuschling 为读者详细讲解了如何使用 `poudriere.8` 构建本地软件包——从设置自定义选项到向多台客户端机器部署已签名的软件包仓库。此外，在软件包方面，Charlie Li 介绍了 Python 生态中打包扩展的简史，并讲述如何让 FreeBSD 的 Ports 树适配最新迭代版本。
 
-此外，在 Jail 方面，Alonso Cárdenas 详细介绍了如何以 FreeBSD Jail 为基础，借助现有的开源工具 Wazuh 和 Caldera 构建网络安全训练平台。
+在 Jail 方面，Alonso Cárdenas 详细介绍了如何以 FreeBSD Jail 为基础，借助现有的开源工具 Wazuh 和 Caldera 构建网络安全训练平台。
 
 FreeBSD 社区的一大乐事，便是在世界各地的活动中与成员相聚。本期收录了一篇 CCCamp 2023 的旅行报告，11/12 月刊则会带来 EuroBSDCon 2023 的报道。
 

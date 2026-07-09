@@ -1,7 +1,7 @@
 # FreeBSD 入门研讨会
 
-- 原文链接：[Getting Started with FreeBSD Workshop](https://freebsdfoundation.org/wp-content/uploads/2022/08/angel_workshop.pdf)
-- 作者：**ROLLER ANGEL**
+- 原文：[Getting Started with FreeBSD Workshop](https://freebsdfoundation.org/wp-content/uploads/2022/08/angel_workshop.pdf)
+- 作者：**Roller Angel**
 
 ## 与 Front Range BSD 用户组的合作
 
@@ -122,6 +122,6 @@
 
 ---
 
-**ROLLER ANGEL** 主要致力于帮助人们通过技术实现目标，他是一名经验丰富的 FreeBSD 系统管理员和 Python 开发者，热衷于探索开源技术（尤其是 FreeBSD 和 Python）在解决实际问题中的应用。他坚信，只要有心学习，就能掌握任何知识。  
+**Roller Angel** 主要致力于帮助人们通过技术实现目标，他是一名经验丰富的 FreeBSD 系统管理员和 Python 开发者，热衷于探索开源技术（尤其是 FreeBSD 和 Python）在解决实际问题中的应用。他坚信，只要有心学习，就能掌握任何知识。  
 
 他喜欢挑战问题，善于寻找创造性解决方案，不断学习新技术，保持技能敏锐。此外，他还活跃于研究社区，乐于分享自己的想法。

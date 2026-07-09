@@ -1,7 +1,7 @@
 # 基金会来信
 
-- 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2022/07/foundation_letter.pdf)
-- 作者：John Baldwin、编辑委员会
+- 原文：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2022/07/foundation_letter.pdf)
+- 作者：**John Baldwin**
 
 ## 欢迎阅读《FreeBSD 期刊》七/八月刊！
 

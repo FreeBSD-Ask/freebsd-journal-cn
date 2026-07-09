@@ -1,7 +1,7 @@
 # 基金会来信
 
-- 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2023/01/foundation_letter.pdf)
-- 作者：Anne Dickison、编辑委员会
+- 原文：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2023/01/NovDec_foundation_letter.pdf)
+- 作者：**Deb Goodkin**
 
 ## 亲爱的读者们：
 
@@ -9,7 +9,7 @@
 
 《FreeBSD 期刊》每两个月发行一期，为我们的社区乃至更广泛的读者群提供富有信息量又有趣味的内容。它触及所有对 Unix、操作系统、系统管理、研究、产品开发等领域感兴趣的人。FreeBSD 基金会资助这份专业制作的出版物，并让它广泛可读，因为我们把它视为一种投资——任何把所学应用于推动 FreeBSD 操作系统和社区发展的人，都能从中受益。
 
-最后，我要感谢你热情地阅读每一期！希望你在过去一年里享受了《FreeBSD 期刊》的文章和专栏，期待未来多年继续为你呈现。
+最后，我要感谢你热情阅读每一期！希望你在过去一年里喜欢《FreeBSD 期刊》的文章和专栏，我们期待未来多年继续为你呈现。
 
 无论你如何庆祝这个假期，我们都祝你年终愉快。
 

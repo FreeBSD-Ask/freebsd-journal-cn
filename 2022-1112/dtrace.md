@@ -1,6 +1,6 @@
 # DTrace：老式跟踪系统的新扩展
 
-- 原文地址：[DTrace: New Additions to an Old Tracing System](https://freebsdfoundation.org/wp-content/uploads/2023/01/stolfa_dtrace.pdf)
+- 原文：[DTrace: New Additions to an Old Tracing System](https://freebsdfoundation.org/wp-content/uploads/2023/01/stolfa_dtrace.pdf)
 - 作者：**DOMAGOJ STOLFA**
 
 ## DTrace 简介  
@@ -163,9 +163,9 @@ bin:/usr/sbin:/usr/bin /etc/rc.d/sendmail onestop
 
 ## kinst —— 用于指令级跟踪的全新 DTrace 提供程序  
 
-在 **2022 年 谷歌 夏季编程大赛（GSoC）** 中，**Christos Margiolis（<christos@freebsd.org>）** 在 **Mark Johnston（<markj@freebsd.org>）** 的指导下成功完成了一项项目，并将 **指令级跟踪（Instruction-level Tracing）** 功能合并到 **FreeBSD**。实现该功能的提供程序被称为 **kinst**。
+在 2022 年谷歌编程之夏（GSoC）中，**Christos Margiolis（<christos@freebsd.org>）** 在 **Mark Johnston（<markj@freebsd.org>）** 的指导下成功完成了一项项目，并将 **指令级跟踪（Instruction-level Tracing）** 功能合并到 **FreeBSD**。实现该功能的提供程序被称为 **kinst**。
 
-**kinst** 复用了 **fbt** 机制的部分内容，并扩展了它，使其能够对 **内核函数的任意位置** 进行插桩（Instrumentation），而不仅仅是入口和出口点。对于熟悉 **内核开发** 的读者而言，**kinst** 在分析某些分支的调用栈时所带来的潜力不言而喻。因此，**kinst** 可以帮助更快地发现和修复 **FreeBSD** 中的 **bug** 及 **性能问题**。
+**kinst** 复用了 **fbt** 机制的部分内容，并扩展了它，使其能够对 **内核函数的任意位置** 进行插桩（Instrumentation），而不仅仅是入口和出口点。对于熟悉 **内核开发** 的读者而言，**kinst** 在分析某些分支的调用栈时所带来的潜力不言而喻。因此，**kinst** 可以帮助更快地发现 **FreeBSD** 中的 **bug** 及 **性能问题**。
 
 以下是一个类似 **C 语言** 伪代码的示例场景：
 
@@ -240,7 +240,8 @@ probename] = count(); }'
  138 8
 ```
 
-熟悉 DTrace 的人可能会注意到，这本可以通过使用推测性追踪而不需要使用 kinst 来轻松实现。然而，人们可以很容易地想象出一些场景，其中“慢路径”或其等效物并不是一个简单的函数调用，或者相同的函数调用可能出现在所有的分支中。kinst 对 FreeBSD 上的 DTrace 生态系统也有其他影响。历史上，使用 fbt 对内联函数的内核进行插桩存在一个问题。用于实现 kinst 的机制可以帮助扩展 fbt，以支持可靠地追踪内联函数。
+熟悉 DTrace 的人可能会注意到，这本可以通过使用推测性追踪而不需要使用 kinst 来轻松实现。然而，可以很容易地想象出一些场景，其中"慢路径"或其等效物并不是一个简单的函数调用，或者相同的函数调用可能出现在所有的分支中。
+kinst 对 FreeBSD 上的 DTrace 生态系统也有其他影响。历史上，使用 fbt 对内核中的内联函数进行插桩存在一个问题。用于实现 kinst 的机制可以帮助扩展 fbt，以支持可靠地追踪内联函数。
 
 ## 正在进行的工作
 
@@ -329,7 +330,7 @@ g_io_request+0x2d7
  10605
 ```
 
-在这里，使用了一个新的 DTrace 动作 `immstack()`，它与 `stack()` 类似，但符号解析发生在内核中，而不是在打印输出时。HyperTrace 的工作原理是旨在在主机内核上执行整个 D 脚本，而不是在客户端内部运行 DTrace，同时每个客户机负责自行插桩，并在客户机执行探针时向主机发出同步的超调用（类似于操作系统中的系统调用）。这种设计使得能够在一个地方保持跨所有客户机和主机的全局状态——提高了在追踪虚拟机时 D 的整体表现力。该工作仍在进行中，可以在 GitHub 上查看。
+在这里，使用了一个新的 DTrace 动作 `immstack()`，它与 `stack()` 类似，但符号解析发生在内核中，而不是在打印输出时。HyperTrace 的工作原理是旨在主机内核上执行整个 D 脚本，而不是在客户机内部运行 DTrace，同时每个客户机负责自行插桩，并在客户机执行探针时向主机发出同步的超调用（类似于操作系统中的系统调用）。这种设计使得能够在一个地方保持跨所有客户机和主机的全局状态——提高了在追踪虚拟机时 D 的整体表现力。该工作仍在进行中，可以在 GitHub 上查看。
 
 ## 进一步阅读
 

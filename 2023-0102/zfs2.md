@@ -1,6 +1,6 @@
 # ZFS 简介
 
-- 原文链接：[An Introduction to ZFS](https://freebsdfoundation.org/wp-content/uploads/2023/02/gurkowski_zfs_guide.pdf)
+- 原文：[An Introduction to ZFS](https://freebsdfoundation.org/wp-content/uploads/2023/02/gurkowski_zfs_guide.pdf)
 - 作者：**DREW GURKOWSKI**
 
 ZFS 将卷管理器和独立文件系统的功能结合为一体，相较于独立的文件系统，它具有多个优势。它以速度、灵活性而著称，最重要的是，它非常注重防止数据丢失。虽然许多传统的文件系统一次只能存在于单块磁盘上，但 ZFS 了解磁盘的底层结构，并创建可用存储池，即使是在多个磁盘上。当向存储池添加额外磁盘时，现有的文件系统会自动扩展，新增空间立即可供文件系统使用。
@@ -24,7 +24,7 @@ zfs_enable="YES"
 在设置 ZFS 之前，识别与系统关联的磁盘设备名称。一种比较快的方法是使用以下命令：
 
 ```sh
-# egrep "da[0-9]|cd[0-9]" /var/run/dmesg.boot
+# egrep 'da[0-9]|cd[0-9]' /var/run/dmesg.boot
 ```
 
 输出应该会显示设备名称，本指南中的示例将使用默认的 SCSI 名称：`da0`、`da1` 和 `da2`。如果硬件不同，请确保使用正确的设备名称。
