@@ -1,7 +1,7 @@
 # 读者来信
 
-- 原文链接：[We Get Letters: The .0 Release is a Metaphorical Tire Change](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/we-get-letters/)
-- 作者：Michael W Lucas
+- 原文：[We Get Letters: The .0 Release is a Metaphorical Tire Change](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/we-get-letters/)
+- 作者：**Michael W Lucas**
 
 本月《期刊》收到了雪片般的来信。把那些抱怨“读者来信”专栏作者的投诉拿去堆肥之后，还剩下两封。没错，你的投诉都被堆肥了。本刊是高度负责任的出版物，因此我坚持要把所有贬损性的邮件打印出来，供我个人仔细研读、启迪和受教育。我在办公室墙上专门留了地方，用来张贴那些最有创意、论证最充分的投诉，让它们时时提醒我“做得更好”。不过迄今为止，只有一封投诉信获此殊荣，而且还是我自己写给自己的。你对我了解得不够，骂也骂不到点子上，更谈不上文采斐然。
 
