@@ -1,13 +1,14 @@
-# 书评
+# 书评 *The Book of PF: A No-Nonsense Guide to the OpenBSD Firewall*
 
 - 原文：[Book Review](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
 - 作者：**Steven Kreuzer**
 
-《The Book of PF: A No-Nonsense Guide to the OpenBSD Firewall》
+*The Book of PF: A No-Nonsense Guide to the OpenBSD Firewall*
 
-Peter N.M. Hansteen
-
-2014 No Starch Press • ISBN 159-3275897 • 248 页
+- Peter N.M. Hansteen
+- 2014 No Starch Press
+- ISBN 159-3275897
+- 248 页
 
 常常有人问我，为什么我更喜欢用 FreeBSD，它相比 Linux 又有什么优势。原因之一是 FreeBSD 自带了一款现代化、高性能的防火墙，并且由专注安全开发的开发者持续维护。自 2001 年发布以来，OpenBSD 的 PF 包过滤器为系统和网络管理员提供了一套设计严谨、有状态的防火墙，其语法极为简洁，规则编写与调试都十分轻松。如果到目前为止还不明显的话——我是 PF 的铁杆粉丝，因此我对《The Book of PF：OpenBSD 防火墙实战指南》的书评可能略显偏颇。但如果你从未接触过 PF，却不幸在 Linux 上用过 `iptables`，你很快就能理解我偏爱的由来。
 
