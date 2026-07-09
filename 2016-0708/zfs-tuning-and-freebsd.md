@@ -103,12 +103,9 @@ PostgreSQL 默认对所有内容使用 8 KB 存储块。如果改了 PostgreSQL 
 PostgreSQL 把数据库存在 **/usr/local/pgsql/data/base**。预写日志（WAL）位于 **/usr/local/pgsql/data/pg_xlog**。把这两者都移开。
 
 ```sh
-# 进入 PostgreSQL 数据目录
-cd /usr/local/pgsql/data
-# 把 base 目录改名为 base-old
-mv base base-old
-# 把 pg_xlog 目录改名为 pg_xlog-old
-mv pg_xlog pg_xlog-old
+# cd /usr/local/pgsql/data
+# mv base base-old
+# mv pg_xlog pg_xlog-old
 ```
 
 两者都使用 8 KB 块尺寸，你希望分别对它们做快照，因此为每个创建一个 dataset。与 MySQL 一样，告知 ARC 仅缓存元数据。还通过 `logbias` 属性告知这些 dataset 在吞吐量与延迟之间偏向吞吐量。
