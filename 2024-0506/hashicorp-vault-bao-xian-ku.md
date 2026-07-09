@@ -451,8 +451,8 @@ Success! Vault is sealed.
 在过去二十年间， **DAVE COTTLEHUBER** 一直致力于领先于网络上的恶意者至少一步。他从 OpenBSD 2.8 起步，过去 9 年使用 FreeBSD（自 9.3 起），在此期间获得了 Ports 提交权限。他偏好使用 jail 和晦涩的函数式编程语言，这与他喜欢分布式系统和刃口非常锋利的电动工具的喜好相符。
 
 - 职业牦牛牧人，自 2000 年以来剃 BSD 色的牦牛（**译者注：即一直在开发使用 FreeBSD，解决相关故障**）
-- FreeBSD ports@ 提交者  
+- FreeBSD ports@ 提交者
 - Ansible DevOops 大师
-- Elixir 开发者  
-- 使用 RabbitMQ 和 Apache CouchDB 构建分布式系统  
+- Elixir 开发者
+- 使用 RabbitMQ 和 Apache CouchDB 构建分布式系统
 - 喜欢越野滑雪，并用各种乐器演奏凯尔特民间音乐

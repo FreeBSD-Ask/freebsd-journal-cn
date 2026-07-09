@@ -115,12 +115,12 @@ for HD in $HDD; do
         gpart add -t freebsd-swap -l swap${COUNTER} -s ${SWAP} -a 4k "${HD}"
         echo "Setting ${SWAP} of swap space on disk ${HD}."
         SERIAL=$(camcontrol inquiry "${HD}" -S|sed -e 's/^[[:space:]]*//')
-        
+
         if [ $((COUNTER%2)) -eq 0 ]; then
                 SERIALS="${SERIALS} mirror"
         fi
         SERIALS="$SERIALS /dev/gpt/${SERIAL}"
-        
+
         gpart add -t freebsd-zfs -l "${SERIAL}" -a 4k "${HD}"
         COUNTER=$((COUNTER+1))
 done
@@ -166,7 +166,7 @@ for disk in "${disks[@]}"; do
     
     # 创建 ZFS 分区
     gpart add -t freebsd-zfs -l "$serial" -a 4k "$disk"
-    
+
     # 添加到序列号列表并增加计数器
     if [ $((counter%2)) -eq 0 ]; then
         serials="$serials mirror"
@@ -209,12 +209,12 @@ setup_partitions() {
     is_hdd="$3"
     counter=1
     serials=""
-    
+
 for disk in $disks; do
     # 创建交换分区
     gpart add -t freebsd-swap -l swap$counter -s $swap_size -a 4k "$disk"
     echo "Setting $swap_size of swap space on disk ${disk}."
-    
+
     # 确定磁盘序列号
     if [ "$is_hdd" = "true" ]; then
         serial=$(camcontrol inquiry "$disk" -S | sed -e 's/^[[:space:]]*//')
@@ -224,7 +224,7 @@ fi
 
     # 创建 ZFS 分区
     gpart add -t freebsd-zfs -l "$serial" -a 4k "$disk"
-    
+
     # 添加到序列号列表并增加计数器
     if [ $((counter%2)) -eq 0 ]; then
         serials="$serials mirror"
@@ -329,7 +329,7 @@ for disk in $disks; do
     
     # 创建 ZFS 分区
     gpart add -t freebsd-zfs -l "$serial" -a 4k "$disk"
-    
+
     # 添加到序列号列表并增加计数器
     if [ $((counter%2)) -eq 0 ]; then
         serials="$serials mirror"

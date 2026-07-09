@@ -48,7 +48,7 @@ touch library/touch
 接着，在与 `library` 目录相同的位置创建一个名为 `touch.yml` 的 playbook，内容如下：
 
 ```yaml
----- 
+----
 hosts: localhost
   gather_facts: false
   tasks:
@@ -232,15 +232,15 @@ if __name__ == "__main__":
 ## 模块的 Playbook
 
 ```yaml
----- 
-hosts: localhost  
-gather_facts: false  
+----
+hosts: localhost
+gather_facts: false
 tasks:
-  - name: Testing the calc module      
+  - name: Testing the calc module
     calc:
       number1: 4
       number2: 3
-    register: result  
+    register: result
   - debug: var=result
 ```
 

@@ -3,7 +3,7 @@
 - 原链接：<https://freebsdfoundation.org/wp-content/uploads/2023/08/Pizzamiglio.pdf>
 - 作者：LUCA PIZZAMIGLIO
 - 译者：段龙甫
-  
+
 容器是很好的工具，可在多台服务器上分发水平可扩展的应用。当应用数量和其实例数增长时，容器数量很容易变得难以手工管理。
 
 容器编排器是一类应用，旨在简化大量容器的管理，隐藏复杂性并提高可靠性，尤其是在自动伸缩和持续部署带来的动态环境中。在本文中，我们将讨论基于 FreeBSD 的配置，使用 pot（支持 Jail 镜像的 Jail 框架）和 nomad（由 HashiCorp 开发的与容器无关的编排器）。

@@ -81,6 +81,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - "拷贝" → "复制"，"壳/外壳" → "shell"。禁止机械替换。
 - 第二人称一律使用"你"而非"您"
 - 所有术语翻译见 `yi-zhe-shuo-ming.md` 对照表
+- "Google Summer of Code"（GSoC）三种译法等价：**谷歌 Summer of Code**、**谷歌编程之夏**、**编程之夏**（"Google"已单独翻译为"谷歌"，"GSoC"为英文缩写）。**避免重复**：同一句或同一段中"谷歌"只能出现一次，禁止"谷歌编程之夏（谷歌 Summer of Code）"这类"谷歌"重复形式；首次提及可用"谷歌 Summer of Code（GSoC）"或"谷歌编程之夏（GSoC）"引入 GSoC 缩写，后续提及择一使用。禁止机械替换，需根据上下文选择形式。
 
 ### CJK 空格
 
