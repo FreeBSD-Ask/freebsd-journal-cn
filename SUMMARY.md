@@ -571,7 +571,7 @@
 ## 2018-0102 存储
 
 * [存储多路径综述](2018-0102/a-review-of-storage-multipathing.md)
-* [书评：《FreeBSD Mastery: Specialty Filesystems》](2018-0102/book-review.md)
+* [书评：*FreeBSD Mastery: Specialty Filesystems*](2018-0102/book-review.md)
 * [会议报告：BSDTW 2017](2018-0102/conference-report.md)
 * [活动日历](2018-0102/events-calendar.md)
 * [基金会来信](2018-0102/foundation-letter.md)

@@ -301,7 +301,7 @@ Could not apply 646e0f9cda11... no color ls
 
 如果在 rebase 过程中遇到困难，不要慌张。使用 `git rebase --abort` 可以让你回到干净的状态。然而，重要的是要从未修改的树开始。
 
-关于这个主题的更多信息，可以参考 [freeCodeCamp 的最终指南](https://www.freecodecamp.org/news/the-ultimate-guide-to-gitmerge-and-git-rebase/)，它对这个话题进行了非常详细的讲解。它涵盖了我为了简化而没有涉及的很多案例，这些案例是非常有用的，因为它们时常会出现。
+关于这个主题的更多信息，可以参考 [freeCodeCamp 的最终指南](https://www.freecodecamp.org/news/the-ultimate-guide-to-git-merge-and-git-rebase/)，它对这个话题进行了非常详细的讲解。它涵盖了我为了简化而没有涉及的很多案例，这些案例是非常有用的，因为它们时常会出现。
 
 ### 5.2 更新到新的 FreeBSD 分支
 
