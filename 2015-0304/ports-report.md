@@ -1,6 +1,9 @@
 # Ports 报告
 
-新年伊始，PR 方面的活动持续活跃，2 月更是收尾关闭了 600 多份问题报告！感谢所有为此出力的贡献者和开发者。就 ports 树而言，1 月与 2 月两个月间共有 4000 多次提交。这成绩不算差，但按这个速度，去年超过 37,500 次提交的纪录依然未被打破，因此 2015 年欢迎任何有意参与 ports 工作的志愿者加入我们的行列！
+- 原文：[Ports Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/zfs-best-practices/)
+- 作者：**Frederic Culot**
+
+新年伊始，PR 方面的活动持续活跃，2 月更是收尾关闭了 600 多份问题报告！感谢所有为此出力的贡献者、开发者。就 ports 树而言，1 月与 2 月两个月间共有 4000 多次提交。这成绩不算差，但按这个速度，去年超过 37,500 次提交的纪录依然未被打破，因此 2015 年欢迎任何有意参与 ports 工作的志愿者加入我们的行列！
 
 ## 重要的 Ports 更新
 
@@ -17,7 +20,7 @@
 
 ## 新的 Ports 提交者与保管
 
-1 月与 2 月间有两位新提交者获得 ports 提交权限：Jan Beich，由 bapt@ 和 flo@ 担任导师；Brad Davis，他此前已拥有 doc 提交权限，由 bdrewery@、swills@ 和 zi@ 担任导师。
+1 月与 2 月间有两位新提交者获得 ports 提交权限：Jan Beich，由 bapt@、flo@ 担任导师；Brad Davis，他此前已拥有 doc 提交权限，由 bdrewery@、swills@、zi@ 担任导师。
 
 过去两个月仅有一位提交者的权限被收回保管（rafan@），但也有令人惋惜的消息：decke@ 决定辞去在 FreeBSD 的职务，转而专注于家庭与职业生活。decke@ 对 FreeBSD 项目贡献卓著，他是 redports.org、QAT 的创建者，也是为 FreeBSD 移植并维护 VirtualBox 的开发者。衷心感谢他的所有辛勤工作。想进一步了解 Bernhard，可阅读他的访谈：<http://blogs.freebsdish.org/portmgr/2013/10/29/getting-to-knowyour-portmgr-bernhardfroehlich/>。
 
