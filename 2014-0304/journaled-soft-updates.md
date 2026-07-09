@@ -1,4 +1,4 @@
-# 日志化 Soft Updates
+# 日志化软更新
 
 - 原文：[Journaled Soft Updates](https://freebsdfoundation.org/wp-content/uploads/2014/03/Journaled-Soft-Updates.pdf)
 - 作者：**Marshall Kirk McKusick**、**Jeff Roberson**

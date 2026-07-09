@@ -870,7 +870,7 @@
 ## 2014-0304 pkg(8)
 
 * [用 hwpmc(4) 理解应用与系统性能](2014-0304/understanding-application-and-system-performance-with-hwpmc4.md)
-* [日志化 Soft Updates](2014-0304/journaled-soft-updates.md)
+* [日志化软更新](2014-0304/journaled-soft-updates.md)
 * [从 1.x 到 11.x：PBI 格式的持续演进](2014-0304/from-1-x-to-11-x-the-ongoing-evolution-of-the-pbi-format.md)
 * [Poudriere](2014-0304/poudriere.md)
 * [SVN 动态](2014-0304/svn-update.md)

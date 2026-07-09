@@ -40,14 +40,14 @@ BeagleBone 和 Raspberry Pi 等新兴 ARM 系统引发了开发者对 FreeBSD/AR
 
 ## 你的第一次 FreeBSD 启动
 
-要启动 FreeBSD，首先需要构建一张装有 FreeBSD 的 micro-SD 卡，然后从该卡启动 BBB。
+要启动 FreeBSD，首先需要构建一张装有 FreeBSD 的存储卡，然后从该卡启动 BBB。
 
 需要准备：
 
 - BeagleBone Black。
 - 5V 电源或 Mini-USB 线。
-- 4GB 或更大的 Micro-SDHC 卡。
-- 串口线缆，如 Adafruit #954 或 FTDI TTL-232R-3V3（可选但强烈推荐）。
+- 4GB 或更大的容量的存储卡。
+- 串口线缆，如 Adafruit #954 或 FTDI TTL-232R-3V3（可选但强烈建议）。
 
 ### 1. 构建或下载 FreeBSD 镜像
 
@@ -284,11 +284,11 @@ BBB 运行完全标准的 FreeBSD 系统，如果你熟悉 i386 或 amd64 上的
 - `mmcsd0s1` 是包含 U-Boot 和其他启动文件的 FAT 切片
 - `mmcsd0s2` 是 FreeBSD 使用的切片
 
-`mmcsd0s2a` 上的根分区通常使用 Soft Updates + Journaling（SU+J）格式化。SU+J 让系统在断电恢复后能快速重启。
+`mmcsd0s2a` 上的根分区通常使用带日志的软更新（SU+J）格式化。SU+J 让系统在断电恢复后能快速重启。
 
 **eMMC**：2GB 内置 eMMC 芯片可用作 `mmcsd1`。通过支持 8 位传输，它比 micro-SD 接口快得多。BBB 出厂时 eMMC 预装了 Linux 发行版，但你可以轻松重新格式化并用作 FreeBSD 的额外驱动器。我们预计很快就能直接在 eMMC 上安装并启动 FreeBSD。
 
-**SU+J**：BBB 没有关机按钮；通常直接断电。如果在断电时有软件正在运行，这会导致数据丢失。使用“UFS Soft Updates with Journaling”（UFS SU+J）虽不能防止数据丢失，但似乎能很好地避免致命的文件系统损坏。
+**SU+J**：BBB 没有关机按钮；通常直接断电。如果在断电时有软件正在运行，这会导致数据丢失。使用“UFS 带日志的软更新”（UFS SU+J）虽不能防止数据丢失，但似乎能很好地避免致命的文件系统损坏。
 
 **Swap**：虽然 512MB 内存足以应对许多用途，但你可能希望启用一些 swap。出于多种原因，人们通常在根分区上使用 swap 文件而非单独的 swap 分区。可用 `swapctl -l` 查看你使用的镜像是否已配置 swap。若未配置，添加 swap 文件很简单：
 
