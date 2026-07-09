@@ -12,7 +12,7 @@ RISC-V 指令集在设计上是模块化的。其理念是：RISC-V 实现只需
 
 ## FreeBSD 与 RISC-V
 
-RISC-V 是 FreeBSD 最新、最具实验性的支持架构。该移植工作始于 2015 年，由 Ruslan Bukin（br@）主导。2016 年正式导入 FreeBSD 源码树。目前 FreeBSD 的 RISC-V 支持被归类为 Tier-3，意味着它仍处于开发阶段。因此，对功能可用性、ABI 稳定性或安全、Ports 与发布工程团队的支持不作保证。这并不是说 RISC-V 移植不可用；相反，过去几年取得了缓慢但稳步的改进，基础系统的大部分功能完全正常。
+RISC-V 是 FreeBSD 最新、最具实验性的支持架构。该移植工作始于 2015 年，由 Ruslan Bukin（br@）主导。2016 年正式导入 FreeBSD 源码树。目前 FreeBSD 的 RISC-V 支持被归类为 Tier-3，意味着它仍处于开发阶段。因此，对功能可用性、ABI 稳定性或安全、Ports 与发布工程团队的支持不作保证。这并不是说 RISC-V 移植不可用；相反，过去几年取得了缓慢但稳步的改进，基本系统的大部分功能完全正常。
 
 特别是 RISC-V 硬件生态仍处于早期阶段，能运行 Unix 的 RISC-V SoC 尚不易获得。FreeBSD 支持 SiFive 的 HiFive Unleashed，这是当今市场上少有的此类开发板之一，但其高昂的价格与稀缺的供货使其对大多数消费者而言不切实际。目前，FreeBSD/RISC-V 的大部分开发与测试都使用 QEMU 或 Spike 等模拟器完成。随着 RISC-V 成熟与采用率提升，FreeBSD 对它的支持也将有改善的机会。
 
