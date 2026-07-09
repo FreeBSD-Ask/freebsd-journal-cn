@@ -4,7 +4,7 @@
 
 未来两个月将举办以下 BSD 相关会议。关于这些活动的更多信息以及本地用户组会议，请访问 <www.bsdevents.org>。
 
-**vBSDCon** • 9 月 11–13 日 • 弗吉尼亚州雷斯顿 <http://vBSDcon.com> • 第二届两年一度的 vBSDCon 大会将在雷斯顿的 Sheraton 酒店举行。本次活动以一天 FreeBSD 开发者峰会开始，随后是两天的演讲和 BOF 会议。本次活动期间还提供 BSDA 认证考试和 BSDP 实验 beta 考试。此活动需要注册。
+**vBSDCon** • 9 月 11–13 日 • 弗吉尼亚州雷斯顿 <http://vBSDcon.com> • 第二届两年一度的 vBSDCon 大会将在雷斯顿的 Sheraton 酒店举行。本次活动以一天的 FreeBSD 开发者峰会开始，随后是两天的演讲和 BOF 会议。本次活动期间还提供 BSDA 认证考试和 BSDP 实验 beta 考试。此活动需要注册。
 
 **womENcourage** • 9 月 24–26 日 • 瑞典乌普萨拉 <http://womencourage.acm.org/> • 本会议旨在为计算机科学及相关领域的女性提供网络交流和探索职业机会的平台。男性和女性均欢迎参加。FreeBSD 项目的若干成员将参加一个关于开源益处的专题讨论，其中一位还将举办一场入门开源的研讨会。招聘会现场还将设有 FreeBSD 展位。此活动需要注册。
 
