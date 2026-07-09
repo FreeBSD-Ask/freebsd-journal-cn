@@ -1,7 +1,9 @@
 # 活动日历
 
+- 原文链接：[Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/storage-2/events-calendar/)
+- 作者：**ANNE DICKISON**
+
 截至 2022 年 3 月的 BSD 活动
-作者：ANNE DICKISON
 
 请将未在此处列出的任何 FreeBSD 相关活动或对 FreeBSD 用户有意义的活动详情发送至 <freebsd-doc@FreeBSD.org>。
 
@@ -18,11 +20,11 @@ SCALE 19x • 3 月 3-6 日 • 美国加州帕萨迪纳
 FreeBSD Fridays
 <https://freebsdfoundation.org/freebsd-fridays/>
 
-2022 年初将有新一期 FreeBSD Fridays 敬请关注。往期 FreeBSD Fridays 内容可在以下地址查看：<https://freebsdfoundation.org/freebsd-fridays/>
+2022 年初将有新一期 FreeBSD Fridays，敬请关注。往期 FreeBSD Fridays 内容可在以下地址查看：<https://freebsdfoundation.org/freebsd-fridays/>
 
 FreeBSD Office Hours
 <https://wiki.freebsd.org/OfficeHours>
 
-加入 FreeBSD 社区成员参加 FreeBSD Office Hours。从综合问答到基于主题的演示和教程，Office Hours 是解答你 FreeBSD 相关问题的好去处。
+与 FreeBSD 社区成员一起参加 FreeBSD Office Hours。从综合问答到基于主题的演示和教程，Office Hours 是解答你 FreeBSD 相关问题的好去处。
 
 往期内容可在 FreeBSD YouTube 频道查看：<https://www.youtube.com/c/FreeBSDProject>。
