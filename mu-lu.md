@@ -571,7 +571,7 @@
 ## 2018-0102 存储
 
 * [存储多路径综述](2018-0102/a-review-of-storage-multipathing.md)
-* [书评：《FreeBSD Mastery: Specialty Filesystems》](2018-0102/book-review.md)
+* [书评：*FreeBSD Mastery: Specialty Filesystems*](2018-0102/book-review.md)
 * [会议报告：BSDTW 2017](2018-0102/conference-report.md)
 * [活动日历](2018-0102/events-calendar.md)
 * [基金会来信](2018-0102/foundation-letter.md)
@@ -627,12 +627,12 @@
 * [游戏中的 BSD](2017-0506/gaming-bsd.md)
 * [FreeBSD 的防火墙盛宴](2017-0506/freebsds-firewall-feast.md)
 * [CADETS：在 FreeBSD 上融合追踪与安全](2017-0506/cadets-blending-tracing-and-security-on-freebsd.md)
-* [书评：《Designing BSD Rootkits: An Introduction to Kernel Hacking》](2017-0506/book-review-designing-bsd-rootkits.md)
+* [书评：*Designing BSD Rootkits: An Introduction to Kernel Hacking*](2017-0506/book-review-designing-bsd-rootkits.md)
 
 ## 2017-0304 配置管理
 
 * [配置管理的白日梦](2017-0304/the-configuration-management-pipe-dream.md)
-* [书评：《DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD》](2017-0304/book-review.md)
+* [书评：*DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD*](2017-0304/book-review.md)
 * [基金会致信](2017-0304/letter-from-the-foundation.md)
 * [会议报告：FOSDEM 2017](2017-0304/conference-report.md)
 * [没错，CFEngine 能管那个](2017-0304/yes-cfengine-can-manage-that.md)
@@ -772,7 +772,7 @@
 * [基金会来信](2015-0708/foundation-letter.md)
 * [活动日历](2015-0708/events-calendar.md)
 * [会议报告](2015-0708/conference-report.md)
-* [书评](2015-0708/book-review.md)
+* [书评：《系统管理与网络管理技术实践》](2015-0708/book-review.md)
 
 ## 2015-0506 测量两次，代码一次写好
 
