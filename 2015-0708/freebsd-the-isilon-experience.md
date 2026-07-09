@@ -1,5 +1,8 @@
 # FreeBSD：Isilon 经验
 
+- 原文：[FreeBSD: The Isilon EXPERIENCE](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
+- 作者：**Benno Rice**
+
 从前有一家叫 Isilon 的公司，由一些人创办，他们想要找到一种方法构建一种存储阵列，不仅在 GB 容量上易于扩展，在 IOPS 上也易于扩展。
 
 传统存储阵列往往由某种头设备构建，可选配热备、冷备或温备，外加一堆装满硬盘的托架。这是传统的块存储模型。当 NetApp 等较新的面向文件的产品出现时，它们复制了这个模型。问题在于如何随时间推移扩展它。
