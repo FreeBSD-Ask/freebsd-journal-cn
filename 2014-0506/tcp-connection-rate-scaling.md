@@ -15,6 +15,8 @@
 
 在上述示例中，TCP 上的 DNS 是我们预期会在互联网上增长的那种流量——随着 DNSSEC 的采用导致 DNS 响应变大（<https://www.dns-oarc.net/node/199>），且服务提供商使用 TCP 以减少与无连接协议（如用户数据报协议 UDP）相关的攻击向量。为深入这一扩展挑战，图 1 展示了与建立 TCP 连接、交换请求与响应数据以及拆除该 TCP 连接相关联的数据包。
 
+![图 1：典型数据包，小型 TCP 请求](../png/2014-0506/tcp-connection-rate-scaling-01.png)
+
 图 1. 典型数据包，小型 TCP 请求
 
 在本用例中，客户端发起连接 SYN（1），服务器以 SYN/ACK（2）响应，客户端以 ACK（3）建立连接。客户端到服务器的请求数据包在（4）中发送，服务器到客户端的响应数据包在（5）中。这代表向服务器发送请求并向客户端返回响应。服务器在（6）中发起连接拆除，响应在（7）中被确认。客户端拆除其侧连接（8），服务器最终确认客户端的 FIN（9）。任一端都可以发起连接拆除，因此（6）、（7）和（8）的次序可能略有不同。
@@ -53,6 +55,8 @@
 
 在大约每秒 56,000 条连接——即 225 – 450 Mbits/sec 的带宽——时，我们看到的 CPU 利用率见图 2。CPU 0 上的瓶颈源于 NIC 收发数据包的中断处理。幸运的是，这一瓶颈可以通过使用 NIC 的接收端扩展（RSS）特性克服——它把流量分发到多个队列，并通过消息信号中断（MSI 或 MSI-X）把中断处理派发到多个 CPU。
 
+![图 2：CPU 利用率，单队列](../png/2014-0506/tcp-connection-rate-scaling-02.png)
+
 图 2. CPU 利用率，单队列
 
 ```sh
@@ -71,6 +75,8 @@ PID USERNAME PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 启用 RSS 后，NIC 被配置为拥有多个接收硬件队列，MSI 允许来自 NIC 的中断被定向到负载较轻的特定 CPU 核。NIC 基于数据包的哈希函数（通常是源和目的 IP 与端口的哈希）将数据包分发到接收队列。在 FreeBSD 中，此配置部分在设备驱动程序初始化中设置，然后中断处理可通过 `cpuset` 钉到特定核。经过合理配置的驱动以及对处理中断的 CPU 的明智选择，我们应当看到处理负载更多地转移到负载较轻的核上。
 
 如果所有数据包处理都能并行进行，我们预期容量随接收队列数和专用接收处理 CPU 数线性扩展，直到遇到下一个瓶颈。然而，图 3 所示的测试结果与此不符：每秒 62,000 条连接，或 250 到 500 Mbits/sec 带宽。在该配置中有四个 NIC 队列分别亲和到四个 CPU。由于图 2 提示 CPU 5 负载很高，我们在用户态应用中又加了一个线程处理请求。我们注意到中断处理已经耗尽了四个专用 CPU，并且迹象表明接受新连接的线程和处理请求的两个线程都消耗了大量系统时间。
+
+![图 3：CPU 利用率，多队列](../png/2014-0506/tcp-connection-rate-scaling-03.png)
 
 图 3. CPU 利用率，多队列
 
@@ -100,6 +106,8 @@ PID USERNAME PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 
 为分析为什么把 TCP 输入处理负载分发到多个 MSI 接收队列没有按预期扩展，我们在其中一个处理中断的 CPU 上使用性能监控计数器（PMC）做了性能剖析，见图 4。
 
+![图 4：PMC 性能剖析，中断 CPU](../png/2014-0506/tcp-connection-rate-scaling-04.png)
+
 图 4. PMC 性能剖析，中断 CPU
 
 ```sh
@@ -125,6 +133,8 @@ PID USERNAME PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 ```
 
 按此性能剖析，该核超过 50% 的 CPU 时间花在 `__rw_wlock_hard()` 上，而这个内核函数主要由 `tcp_input()` 调用。`__rw_wlock_hard()` 是读者/写者内核锁实现（`rwlock(9)`）的一部分，更确切地说，该函数的目标是获取该锁的独占访问。运行内核锁性能分析（`LOCK_LOCK_PROFILING(9)`）并按每个锁的累计等待时间（`wait_total`，单位微秒）排序，可得到竞争锁的详细信息，见图 5。
+
+![图 5：TCP 负载的锁性能分析](../png/2014-0506/tcp-connection-rate-scaling-05.png)
 
 图 5. TCP 负载的锁性能分析
 
@@ -186,6 +196,8 @@ max wait_max total wait_total count avg wait_avg cnt_hold cnt_lock name
 作为第二种缓解手段的示例，针对公司大规模网络服务上 TIME-WAIT 状态连接的过期处理，一种替代实现也正被采纳（<http://svnweb.freebsd.org/base?view=revision&revision=264321>）。该实现不通过锁 `rw:tcp` 来管理全局 TIME-WAIT 列表，而是创建了一把新锁 `rw:tcptw`。虽然 `rw:tcp` 锁仍被用于最终销毁 `inpcb` 结构体，但它只被短暂持有，且不会在遍历过期列表期间持有。
 
 使用上述两个补丁的早期性能结果显示，这些技术有助于扩展连接速率。借助 `accept()` 系统调用避免和 TIME-WAIT 单独细粒度锁，我们看到连接速率从每秒 62,000 条提升到每秒 69,000 条。提升幅度虽不算大，但看来这两种技术还有进一步应用空间。
+
+![图 6：rw:tcp 的锁竞争点](../png/2014-0506/tcp-connection-rate-scaling-06.png)
 
 图 6. `rw:tcp` 的锁竞争点
 
