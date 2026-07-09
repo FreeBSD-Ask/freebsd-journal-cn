@@ -1,6 +1,7 @@
 # 书评：*FreeBSD Mastery: Advanced ZFS*
 
-**作者：Joseph Kong**
+- 原文：[Book Review](https://freebsdfoundation.org/wp-content/uploads/2016/10/Book-Review.pdf)
+- 作者：**Joseph Kong**
 
 *FreeBSD Mastery: Advanced ZFS*
 
@@ -24,7 +25,7 @@ Allan Jude 和 Michael W. Lucas 合著的 *FreeBSD Mastery: Advanced ZFS* 清晰
 
 第 5 章”ZFS 卷”概述 ZFS 卷（zvol）的基础知识，然后深入探讨一些常见陷阱。
 
-第 6 章”高级硬件”涵盖不同类型的硬件及其与 ZFS 的交互，包括 SCSI 机箱、主机总线适配器（HBA）、SAS 多路径、固态硬盘（SSD）和非易失性内存 express（NVMe）。
+第 6 章”高级硬件”涵盖不同类型的硬件及其与 ZFS 的交互，包括 SCSI 机箱、主机总线适配器（HBA）、SAS 多路径、固态硬盘（SSD）和非易失性内存 Express（NVMe）。
 
 第 7 章”缓存”介绍 ZFS 的缓存机制，包括对 ZFS 自适应替换缓存（ARC）的深入讨论，这也是本章的主要篇幅。
 

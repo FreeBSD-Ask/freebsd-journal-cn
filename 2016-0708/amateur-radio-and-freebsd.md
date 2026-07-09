@@ -15,11 +15,13 @@
 
 这催生了大量面向业余无线电的应用，其中许多是为 Linux 操作系统编写的。我们这些（<https://wiki.freebsd.org/Hamradio> On FreeBSD）从事 FreeBSD 业余无线电 Ports 工作的人，很想改变这种局面，把 BSD 也带进这一领域。幸运的是，许多通用或专门为 Linux 编写的应用很容易移植到 FreeBSD 上。
 
-> 图为在 FreeBSD 桌面上运行的 fldigi。
+![图为在 FreeBSD 桌面上运行的 fldigi](../png/2016-0708/amateur-radio-and-freebsd-01.jpeg)
 
 业余无线电操作员最早把个人计算机用于收发无线电传打字信号。早期 ham 的无线电传打字（RTTY）使用过剩的、淘汰的打字机（如 model 15）外接调制解调器。可以想象，这些笨重的机器让 RTTY 对许多 ham 来说并不实用。这些机器使用现代 8 位 ASCII 码的前身——通常称为 Baudot（学究一点叫 Murray 码），是一种 5 位（5 电平）加起止位的编码。这些机器再接上一台为无线电用途设计的调制解调器，对音频信号进行大量滤波以减少其他信号的干扰。RTTY 天生适合早期的家用个人计算机，是最早的数字模式之一。用 Apple II 这样的早期 8 位计算机生成和解码 5 电平码非常容易，但仍然要外接调制解调器。如今计算机性能足以用信号处理代替外接调制解调器，直接解码空中的无线电传打字并显示文本。FreeBSD 上常用的程序是 fldigi。fldigi 本身是解码 RTTY、Hellschreiber 等许多短波信号和 PSK31 等现代协议的现代瑞士军刀。
 
-> 图为二战时期的 Hellschreiber 机器。它用音调在旋转的滚筒上绘出字符。更多信息见维基百科 <https://en.wikipedia.org/wiki/Hellschreiber>。
+![图为二战时期的 Hellschreiber 机器](../png/2016-0708/amateur-radio-and-freebsd-02.jpeg)
+
+它用音调在旋转的滚筒上绘出字符。更多信息见维基百科 <https://en.wikipedia.org/wiki/Hellschreiber>。
 
 随着现代计算机性能的提升，利用现代数字信号处理进行的弱信号检测能力大幅提高。Joe Taylor 是一位获诺贝尔奖的物理学家，业余无线电呼号为 K1JT，他希望找到一种把信号发送到月球再反射回来的方法（地月地通信，简称 EME，即月面反射），借助月球把信号传遍全球。他运用射电天文学专长，采用现代高级信号处理开发了 Weak Signal JT（WSJT），引入了新的 JT65 模式。早期 ham 的 EME 通信需要非常昂贵、庞大的天线阵列和大功率放大器。WSJT 让 ham 用更普通、便宜得多的电台就能进行 EME 通信。
 

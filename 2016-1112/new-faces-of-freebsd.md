@@ -22,7 +22,7 @@
 
 **Sevan：** 很久以前，我弄到一台 Sun3/60 工作站（Sun Microsystems 1980 年代生产、采用 Motorola 68000 CPU 的工作站），想给它找个操作系统。在这个过程中我了解到 BSD 家族，但确实分不清谁是谁。大约 1997 年前后，我访问过三大 BSD 变种的网站。
 
-第一次真正试用 FreeBSD，我记得清清楚楚。5.0 发布消息在 Slashdot 上线那晚我看到。又是同样的情况：我又弄到一台老硬件，这次是 DEC AlphaStation 250。Linux 在这台机器上不太好用，我看到 Alpha CPU 是受支持架构，于是试了 FreeBSD，没让我失望。首先系统比我之前试过的 Linux 发行版快得多；其次，多亏 Handbook，我无需先验知识就能在系统上做很多事情。这让我很有成就感，从此入坑。
+第一次真正试用 FreeBSD，我记得清清楚楚。5.0 发布消息在 Slashdot 上线那晚我就看到了。又是同样的情况：我又弄到一台老硬件，这次是 DEC AlphaStation 250。Linux 在这台机器上不太好用，我看到 Alpha CPU 是受支持架构，于是试了 FreeBSD，没让我失望。首先系统比我之前试过的 Linux 发行版快得多；其次，多亏 Handbook，我无需先验知识就能在系统上做很多事情。这让我很有成就感，从此入坑。
 
 **Ruey-Cherng：** 我用 Redhat 5.2 时觉得依赖问题非常烦人。换到 Debian 后有改善。在解决 RPM 文件依赖、上网找方案时，我发现了 FreeBSD 的特性：Ports 系统。Ports 的便利吸引了我。但那时硬件兼容性不佳，我只短暂试用过 FreeBSD。2014 年 5 月，FreeBSD 再次吸引我。我在富士通 T2010 上装了 FreeBSD 9.0，调校一番后运行良好。
 
