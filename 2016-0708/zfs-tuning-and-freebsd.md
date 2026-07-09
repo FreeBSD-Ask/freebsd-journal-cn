@@ -1,6 +1,7 @@
 # ZFS 调优与 FreeBSD
 
-作者：Michael W. Lucas
+- 原文：[ZFS Tuning and FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2016/08/ZFS-Tuning-and-FreeBSD.pdf)
+- 作者：**Michael W. Lucas**
 
 系统管理员学习 ZFS 时，通常会对 ZFS 的空间使用感到困惑。把存储池、dataset、快照和克隆组合在一起，让 ZFS 的空间利用率变得非常复杂。当你开始调整 dataset 的 `recordsize` 属性时，空间使用会直接进入迷离境界。
 
@@ -47,15 +48,13 @@ InnoDB 在 MySQL 5.5 中成为默认存储引擎，特征与之前使用的 MyIS
 把不同类型的文件放在不同 dataset 上。数据文件需要 16 KB 块尺寸、lz4 压缩和精简元数据。仅缓存元数据可能带来性能提升，但也会禁用预取。多做实验，看看你的环境如何表现。
 
 ```sh
-# 创建用于 MySQL 数据的 dataset，记录尺寸 16K、lz4 压缩、元数据冗余降为 most、主缓存仅元数据
-zfs create -o recordsize=16k -o compress=lz4 -o redundant_metadata=most -o primarycache=metadata mypool/var/db/mysql
+# zfs create -o recordsize=16k -o compress=lz4 -o redundant_metadata=most -o primarycache=metadata mypool/var/db/mysql
 ```
 
 MySQL 的主日志用 gzip 压缩效果最好，且不需要在内存中缓存。
 
 ```sh
-# 创建用于 MySQL 日志的 dataset，使用 gzip1 压缩、不缓存
-zfs create -o compress=gzip1 -o primarycache=none mysql/var/log/mysql
+# zfs create -o compress=gzip1 -o primarycache=none mysql/var/log/mysql
 ```
 
 复制日志用 lz4 压缩效果最好。

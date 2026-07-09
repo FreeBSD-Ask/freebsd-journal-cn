@@ -627,7 +627,7 @@
 * [游戏中的 BSD](2017-0506/gaming-bsd.md)
 * [FreeBSD 的防火墙盛宴](2017-0506/freebsds-firewall-feast.md)
 * [CADETS：在 FreeBSD 上融合追踪与安全](2017-0506/cadets-blending-tracing-and-security-on-freebsd.md)
-* [书评：《Designing BSD Rootkits: An Introduction to Kernel Hacking》](2017-0506/book-review-designing-bsd-rootkits.md)
+* [书评：*Designing BSD Rootkits: An Introduction to Kernel Hacking*](2017-0506/book-review-designing-bsd-rootkits.md)
 
 ## 2017-0304 配置管理
 
