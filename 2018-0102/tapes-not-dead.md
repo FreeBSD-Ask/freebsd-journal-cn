@@ -44,7 +44,7 @@ FreeBSD 自 386BSD patchkit 起就支持磁带。最初的 FreeBSD SCSI 层由 J
 
 FreeBSD 自 1998 年从原始 SCSI 层过渡到 CAM 起就通过 `ch`(4) 驱动和 `chio`(1) 工具内置支持磁带库。我将 `ch`(4) 驱动和 `chio`(1)（由 Jason Thorpe 编写）从 NetBSD 移植到 FreeBSD/CAM。`ch`(4) 驱动支持从非常旧的磁带库到最新磁带库的一切设备。
 
-`mtx`(1) 工具（位于 ports/misc）也可控制磁带库，通过 SCSI passthrough 操作。
+`mtx`(1) 工具（位于 Ports/misc）也可控制磁带库，通过 SCSI passthrough 操作。
 
 虽然 `chio`(1) 和 `mtx`(1) 适合命令行控制磁带库，但具有磁带库级支持的备份应用（如 Bacula 或 Amanda）会使用 `chio`(1) 或 `mtx`(1) 在磁带库的槽位和磁带机之间移动磁带。
 
