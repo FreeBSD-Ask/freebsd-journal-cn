@@ -1,6 +1,7 @@
 # ZFS 与启动环境
 
-**作者**：Michael W. Lucas
+- 原文：[ZFS and Boot Environments](https://freebsdfoundation.org/our-work/journal/browser-based-edition/cloudabi/)
+- 作者：**Michael W. Lucas**
 
 升级主机的操作系统或软件包伴随着各种风险。新内核或许会在 NFS 客户端中暴露一个隐蔽 bug，新版 Web 服务器可能无法处理你的 PHP 代码。修复这些问题需要大量经验、周密计划、调试技巧，外加一些运气。升级失败会引出那个最棘手的问题：修复问题，还是回滚？两者都意味着一大堆工作，而且多半发生在你还有别的事要做的时候。
 
