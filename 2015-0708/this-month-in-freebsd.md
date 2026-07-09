@@ -7,7 +7,7 @@
 
 **问：** 请介绍一下你自己。你是如何开始接触 FreeBSD 的？你在 FreeBSD 项目中参与哪些工作？
 
-**答：** 在与几个 Linux 发行版斗争之后，我发现了 FreeBSD 4.7 或 4.8。在出色的 FreeBSD Handbook 和德国 BSD 邮件列表的帮助下，我安装了 FreeBSD 并学到了很多。不久后，我把同一块硬盘上的 Windows 安装搞坏了，又懒得修，所以就一直用 FreeBSD，它满足了我桌面使用的大部分需求。从那以后，我大部分时间在笔记本、台式机和服务器上使用它。当我在 Windows 上使用的一些程序（主要是 Java 程序）不属于 FreeBSD ports 树时，我开始深入 ports 系统，创建了我的第一批 ports。空闲时间太多之后，我开始寻找未维护但有新上游版本的 ports，更新它们并接手维护。2007 年，Martin Wilke（miwi@）问我是否愿意成为 ports 提交者，我愉快地接受了。
+**答：** 折腾过几个 Linux 发行版后，我发现了 FreeBSD 4.7 或 4.8。借助出色的 FreeBSD Handbook 和德国 BSD 邮件列表，我安装了 FreeBSD 并学到了很多。不久后，我把同一块硬盘上的 Windows 安装搞坏了，又懒得修，所以就一直用 FreeBSD，它满足了我桌面使用的大部分需求。从那以后，我大部分时间在笔记本、台式机和服务器上使用它。当我在 Windows 上使用的一些程序（主要是 Java 程序）不属于 FreeBSD Ports 树时，我开始深入 Ports 系统，创建了我的第一批 Ports。空闲时间多了，我开始寻找未维护但有新上游版本的 Ports，更新它们并接手维护。2007 年，Martin Wilke（miwi@）问我是否愿意成为 Ports 提交者，我愉快地接受了。
 
 此外，我还是 FreeBSD 论坛管理团队的成员，做了一些这里那里的琐碎修复，将 Handbook 的一章翻译成德语，你经常可以在 FOSDEM、FrOSCon 等活动的 FreeBSD 展位找到我。
 
