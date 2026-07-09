@@ -1,6 +1,7 @@
 # 会议报告
 
-作者：Tim Moore
+- 原文：[Conference Report](https://freebsdfoundation.org/wp-content/uploads/2016/08/Conference-Report.pdf)
+- 作者：**Tim Moore**
 
 ## BSDCan——教育、社交与开源
 

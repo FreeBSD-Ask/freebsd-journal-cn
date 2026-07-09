@@ -1,8 +1,9 @@
 # SVN 动态
 
-作者：Steven Kreuzer
+- 原文：[svn Update](https://freebsdfoundation.org/wp-content/uploads/2016/10/svn-Update.pdf)
+- 作者：**Steven Kreuzer**
 
-7 月 8 日，svn 的 head 合并到 **stable/11** 分支，次日源代码仓库解冻后，FreeBSD-CURRENT 可以亲昵地称作 FreeBSD 12。开发者和终端用户都在忙着测试并协助清除最后时刻的 bug，确保 11-RELEASE 像其他任何版本一样坚如磐石；与此同时 FreeBSD 10 仍在积极开发中，不少聚焦于改进性能和兼容性的提交从 head 流入了 **stable/10**。
+7 月 8 日，svn 的 head 合并到 **stable/11** 分支，次日源代码仓库解冻后，FreeBSD-CURRENT 可以亲切地称作 FreeBSD 12。开发者和终端用户都在忙着测试并协助清除最后时刻的 bug，确保 11-RELEASE 像其他版本一样坚如磐石；与此同时 FreeBSD 10 仍在积极开发中，不少有意思的提交从 head 流入了 **stable/10**，聚焦于改进性能和兼容性。
 
 ## MFC r302931
 

@@ -1,8 +1,9 @@
 # 活动日历
 
-截至 2016 年 10 月
+- 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2016/08/Events-Calendar.pdf)
+- 作者：**DRU LAVIGNE**
 
-作者：DRU LAVIGNE
+截至 2016 年 10 月
 
 以下 BSD 相关会议将于 2016 年 9 月和 10 月举行。这些活动和本地用户组会议的更多信息，请访问 <https://www.bsdevents.org/>。
 
