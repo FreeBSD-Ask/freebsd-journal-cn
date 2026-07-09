@@ -10,7 +10,10 @@ Joseph Kong 评介了 Brendan Gregg 和 Jim Mauro 的《DTrace: Dynamic Tracing 
 
 会议季已至，今年第一篇会议报告出自 Benedict Reuschling 之手，他在 FOSDEM 做了志愿服务——FOSDEM 是欧洲最大的开源会议。要在两天内涵盖一场有 5000 名参会者、多条精彩议题轨道的会议绝非易事，但 Benedict 让我们仿佛置身那锅开源浓汤的正中央。顺便说一句，现在还有充足的时间报名 6 月在加拿大渥太华举行的 BSDCan。希望你加入我们，到我们的展台打个招呼。FreeBSD 期刊团队的许多成员都会到场，我们很乐意与你聊聊期刊或你心里的任何话题。
 
-此致，George Neville-Neil
+此致，
+
+**George Neville-Neil**
 
 FreeBSD 期刊主编
+
 FreeBSD 基金会董事

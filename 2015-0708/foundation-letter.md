@@ -17,5 +17,6 @@ FreeBSD 项目的一些新人只通过代码库认识我们，但要支撑这个
 
 此致，
 
-George Neville-Neil
+**George Neville-Neil**
+
 代表 FreeBSD 期刊编辑委员会

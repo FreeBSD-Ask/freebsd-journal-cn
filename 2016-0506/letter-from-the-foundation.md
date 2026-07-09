@@ -18,5 +18,7 @@ Dru Lavigne 采访了 Benedict Reuschling。Benedict 多年来以多种方式为
 最后，无论是邮件还是当面交流，我们都很乐意听到读者的反馈。如果在接下来的会议上遇到编辑委员会的成员——2016 年还有数场会议将举办——请务必告诉我们你对期刊的看法，以及它如何更好地服务 FreeBSD 和更广泛的计算社区。
 
 此致
-George Neville-Neil
+
+**George Neville-Neil**
+
 FreeBSD 期刊编辑委员会

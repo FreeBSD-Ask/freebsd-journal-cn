@@ -28,4 +28,4 @@ Robert Watson • FreeBSD Foundation 董事，TrustedBSD Project 创始人，剑
 
 此致，
 
-George Neville-Neil 代表 FreeBSD 期刊敬上
+**George Neville-Neil** 代表 FreeBSD 期刊敬上

@@ -16,5 +16,6 @@
 
 此致，
 
-George Neville-Neil
+**George Neville-Neil**
+
 代表 FreeBSD 期刊编委会

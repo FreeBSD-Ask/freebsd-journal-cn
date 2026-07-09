@@ -8,7 +8,8 @@
 
 此致，
 
-George V Neville-Neil
+**George V Neville-Neil**
+
 FreeBSD Foundation 主席
 
 嗨 George，
