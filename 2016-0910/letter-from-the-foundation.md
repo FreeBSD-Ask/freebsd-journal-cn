@@ -3,7 +3,7 @@
 - 原文：[Letter From the Foundation](https://freebsdfoundation.org/wp-content/uploads/2016/10/Letter-from-the-Foundation.pdf)
 - 作者：**George Neville-Neil**
 
-有些代际梗我们无法回避。对于我们这些看着（或至少看过）电影《This is Spinal Tap》长大的人来说，数字 11 总会让人想到本月来信标题那句台词：“这个调到 11。“
+有些代际梗我们无法回避。对于我们这些看着（或至少看过）电影《This is Spinal Tap》长大的人来说，数字 11 总会让人想到本月来信标题那句台词：“这个调到 11。”
 
 FreeBSD 的第 11 个主版本现已发布，John Baldwin 在本期文章中介绍了 11 中的新内容与亮点。23 年间发布 11 个完整操作系统的主版本是一项重大成就。多年来，数以千计的人参与了文档、Ports 和源代码树的工作，更多的人则在桌面、服务器、笔记本电脑和嵌入式系统上使用、改造和部署这些代码。能走到今天这一步，对于我们这些持续为 FreeBSD 工作的人来说堪称奇迹。这就是为什么我想略微偏离通常的来信主题，谈谈一群正致力于帮助 FreeBSD 项目并需要你帮助的人。
 
