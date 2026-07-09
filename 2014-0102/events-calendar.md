@@ -6,7 +6,7 @@
 
 **Thomas Abthorpe** 是服务器管理员，在行业内拥有逾 20 年经验。他于 2007 年 8 月获得 Ports commit 权限，2010 年 3 月加入 Ports 管理团队，2012 年 7 月当选 FreeBSD 核心团队成员。在忙完 FreeBSD 事务之余，他在“Bicycles for Humanity”担任见习自行车技师。
 
-## 给准 Porters 的建议
+## 给准 Port 开发者的建议
 
 作者：Dru Lavigne
 
