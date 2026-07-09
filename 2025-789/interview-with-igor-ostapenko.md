@@ -15,9 +15,9 @@
 
 **IO:** 第一步是准备。我希望能完善自己已有的 FreeBSD 知识，填补空白，形成更系统的认知。一本非常著名的参考书是《The Design and Implementation of the FreeBSD Operating System》（《FreeBSD 操作系统设计与实现》），作者是 Marshall Kirk McKusick、George V. Neville-Neil 和 Robert N.M. Watson。
 
-FreeBSD 源码对我来说并不完全陌生，多年来我已经对其结构有了整体印象。但我想要专业的指导，避免错过关键概念、风格细节或结构要点。幸运的是，有 McKusick 主讲的 FreeBSD 内核课程，它帮我节省了很多时间，解答了我的问题，并且在最佳的方式下提供了历史背景来回答“为什么”。另外，George Neville-Neil 的《FreeBSD Networking from the Bottom Up》（FreeBSD 网络体系结构自底向上）课程则进一步完善了我在网络栈方面的理解。
+FreeBSD 源码对我来说并不完全陌生，多年来我已经对其结构有了整体印象。但我想要专业的指导，避免错过关键概念、风格细节或结构要点。世界有幸拥有 Marshall Kirk McKusick 主讲的 FreeBSD Kernel Internals: An Intensive Code Walkthrough 课程，它帮我节省了很多时间，解答了我的问题，并以最佳方式提供了历史背景来回答“为什么”。另外，George V. Neville-Neil 的《FreeBSD Networking from the Bottom Up》（FreeBSD 网络体系结构自底向上）课程则进一步完善了我在网络栈方面的理解。
 
-我考虑过先做大项目还是小项目，并和 `mckusick@` 以及 `kib@` 讨论过。Konstantin Belousov 建议我从小任务入手，比如修复 bug，这事实证明是最有效的方法。我最初处理的是一些最新报告的 pf 漏洞，这又衍生出对 jail 子系统的改进、对 Kyua 的 `execenv=jail` 测试工具的改进，甚至还开发了一个新的模块 `dummymbuf` 用于特定的网络测试。结果是，我继续和 Kristof Provost、Mark Johnston 以及其他 FreeBSD 开发者一起推动项目改进。
+我考虑过先做大项目还是小项目，并和 `mckusick@` 以及 `kib@` 讨论过。Konstantin Belousov 建议我从小任务入手，比如修复 bug，事实证明这是最有效的方法。我最初处理的是一些最新报告的 pf 漏洞，这又衍生出对 jail 子系统的改进、对 Kyua 的 `execenv=jail` 测试工具的改进，甚至还开发了一个新的模块 `dummymbuf` 用于特定的网络测试。因此，我继续和 Kristof Provost、Mark Johnston 和其他 FreeBSD 开发者一起推动项目改进。
 
 **TJ:** 修 bug 是新手进入一个项目的好办法。你对 2025 年的新 FreeBSD 贡献者有没有推荐的入门方向？
 

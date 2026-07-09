@@ -14,4 +14,4 @@
 
 Deb Goodkin
 执行董事
-FreeBSD Foundation
+FreeBSD 基金会
