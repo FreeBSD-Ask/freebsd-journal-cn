@@ -1282,7 +1282,7 @@ metadata:
 
     SYSRC haproxy_enable=YES
     SYSRC haproxy_config=/haproxy.conf
-    
+
     SERVICE haproxy start
 
     STOP
