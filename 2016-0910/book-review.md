@@ -19,7 +19,7 @@ Allan Jude 和 Michael W. Lucas 合著的 *FreeBSD Mastery: Advanced ZFS* 清晰
 
 第 2 章“委派与 Jail”介绍 ZFS 的委派系统，允许你指定用户或组在每个数据集上可以执行的命令。还讨论了该委派系统如何与 FreeBSD Jail 协同工作。
 
-第 3 章“共享数据集”讨论 ZFS 的网络文件共享特性，带你了解 FreeBSD 的 iSCSI 和 NFS 实现及其与 ZFS 的关系。
+第 3 章“共享数据集”讨论 ZFS 的网络文件共享特性，带你了解 FreeBSD 的 iSCSI 和 NFS 实现，并讨论它们与 ZFS 的关系。
 
 第 4 章“复制”介绍如何在别处创建文件系统的精确副本——例如存储池中的另一个数据集、系统上的第二个存储池、外部驱动器、远程系统、磁带，或仅一个文件。
 
