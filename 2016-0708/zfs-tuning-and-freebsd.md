@@ -118,10 +118,8 @@ PostgreSQL 把数据库存在 **/usr/local/pgsql/data/base**。预写日志（WA
 把原始目录的内容复制到新 dataset 中。
 
 ```sh
-# 递归保留属性复制 base-old 内容到 base
-cp -Rp base-old/* base
-# 递归保留属性复制 pg_xlog-old 内容到 pg_xlog
-cp -Rp pg_xlog-old/* pg_xlog
+# cp -Rp base-old/* base
+# cp -Rp pg_xlog-old/* pg_xlog
 ```
 
 现在可以启动 PostgreSQL 了。

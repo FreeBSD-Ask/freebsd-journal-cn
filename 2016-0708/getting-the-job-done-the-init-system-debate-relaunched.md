@@ -68,7 +68,7 @@ jobd 源于一次实验，最初想克隆 MacOS X 中的 launchd(8) 系统。它
 
 我写 jobd 的动机之一，是回应引发 Linux 社区重大分裂的 systemd 风波。systemd 的采用是我把个人计算机从 Linux 切换到 PC-BSD 的重要因素。切换之后，我开始寻找可以回馈 FreeBSD 项目的小项目。
 
-创建新 init 系统的愿望一直存在，但需要一个火花来推动。巧合的是，在我切换到 PC-BSD 前后，NextBSD 项目宣布，听了 Jordan Hubbard 几场关于 launchd 优势的演讲后，我已准备好帮忙。
+创建新 init 系统的愿望一直存在，但需要一个火花来推动。巧合的是，在我切换到 PC-BSD 前后，NextBSD 项目宣布，听了 Jordan Hubbard 几场关于 launchd 优势的演讲后，我准备好帮忙。
 
 可惜，进一步审视后，我并不认同 NextBSD 移植 launchd 所用的技术路线——即决定编写 Mach 微内核的部分实现作为兼容层，本质上让 FreeBSD 假装自己是 MacOS X 的半成品变种。
 
