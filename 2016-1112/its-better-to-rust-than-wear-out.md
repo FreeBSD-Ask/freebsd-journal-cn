@@ -119,7 +119,7 @@ fn main() {
 
 ## 在 FreeBSD 上起步
 
-Rust 的平台支持分为三层，各提供不同保证。x86_64 上的 FreeBSD 目前是 Tier 2 平台，即保证能构建，但不保证能用。尽管没有保证，实践中通常都挺好用。Tier 2 平台提供 Rust 编译器 rustc 与标准库 std（`pkg install rust`）以及包管理器 cargo（`pkg install cargo`）的官方发布。FreeBSD 的 Rust 二进制包目前（撰文时）为 v1.12，而最新稳定版是 v1.13。安装后，可执行 rustup 脚本将 Rust 更新到最新版本：
+Rust 的平台支持分为三层，各提供不同保证。x86_64 上的 FreeBSD 目前是 Tier 2 平台，即保证能构建，但不保证能用。尽管没有保证，实践中通常都挺好用。Tier 2 平台提供 Rust 编译器 rustc 与标准库 std（`pkg install rust`）、包管理器 cargo（`pkg install cargo`）的官方发布。FreeBSD 的 Rust 二进制包目前（撰文时）为 v1.12，而最新稳定版是 v1.13。安装后，可执行 rustup 脚本将 Rust 更新到最新版本：
 
 ```sh
 curl -sSf https://static.rust-lang.org/rustup.sh | sh
