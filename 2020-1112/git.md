@@ -155,9 +155,9 @@ Bisecting: 1722 revisions left to test after this (roughly 11 steps)
 
 然后，你需要构建并安装该版本。如果该版本是好的，输入 `git bisect good`，否则输入 `git bisect bad`。每执行一步，你都会看到类似上面的消息。当找到问题的提交后，将 `bad` 版本报告给开发者（或者自己修复 bug 并提交补丁）。使用 `git bisect reset` 结束二分查找过程，并返回到最初的位置（通常是 `main` 分支的最新提交）。如前所述，[Git bisect 官方手册](https://git-scm.com/docs/git-bisect) 是一个很好的参考，尤其是当遇到问题或特殊情况时。  
 
-## 关于 ports 树  
+## 关于 Ports 树  
 
-ports 树的操作方式相同，只是分支名称不同，仓库位置也不同。  
+Ports 树的操作方式相同，只是分支名称不同，仓库位置也不同。  
 
 GitHub 镜像地址为：  
 [https://github.com/freebsd/freebsd-ports.git](https://github.com/freebsd/freebsd-ports.git)  
@@ -169,9 +169,9 @@ cgit 镜像地址目前为：
 [https://git.freebsd.org/ports.git](https://git.freebsd.org/ports.git) 或  
 `ssh://anonssh@git.freebsd.org/ports.git`（视你选择的传输方式而定）。  
 
-计划在 2021 年第一季度末将 ports 仓库从 Subversion 迁移到 Git。  
+计划在 2021 年第一季度末将 Ports 仓库从 Subversion 迁移到 Git。  
 
-和 ports 一样，当前的分支分别是 `master` 和 `main`。每个季度的分支命名方式与 FreeBSD 的 svn 仓库相同。由于转换工具的 bug，在 ports svn 仓库迁移到 Git 时，可能会像 src 和 doc 仓库一样重新计算提交哈希值。  
+和 Ports 一样，当前的分支分别是 `master` 和 `main`。每个季度的分支命名方式与 FreeBSD 的 svn 仓库相同。由于转换工具的 bug，在 Ports svn 仓库迁移到 Git 时，可能会像 src 和 doc 仓库一样重新计算提交哈希值。  
 
 ## 处理本地更改  
 

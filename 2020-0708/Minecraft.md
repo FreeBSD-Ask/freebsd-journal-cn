@@ -42,7 +42,7 @@
 
 ![minecraft-server Port 截图](../png/2020-0708/Minecraft-02.png)
 
-FreeBSD ports 中有各种各样的游戏 Port，其中包括一个很好的选项，用于运行基本的 Minecraft 服务器：Port minecraft-server。
+FreeBSD Ports 中有各种各样的游戏 Port，其中包括一个很好的选项，用于运行基本的 Minecraft 服务器：Port minecraft-server。
 
 第一步是安装该 Port；现在已经添加 port，可以通过以下命令简单安装：
 

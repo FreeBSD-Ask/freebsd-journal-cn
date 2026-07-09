@@ -40,7 +40,7 @@ tp->t_badrxtwin = ticks + (tp->t_srtt >> (TCP_RTT_SHIFT + 1));
 
 导入 netdump 客户端代码 — <https://svnweb.freebsd.org/changeset/base/333283>
 
-这是一种系统组件，允许内核在 panic 后将核心转储到远程主机，而不是本地存储设备。服务器组件在 ports 树中可用。netdump 在无盘系统上特别有用。netdump(4) 手册页包含一些描述协议的详细信息。要使用 netdump，内核必须使用 NETDUMP 选项编译。
+这是一种系统组件，允许内核在 panic 后将核心转储到远程主机，而不是本地存储设备。服务器组件在 Ports 树中可用。netdump 在无盘系统上特别有用。netdump(4) 手册页包含一些描述协议的详细信息。要使用 netdump，内核必须使用 NETDUMP 选项编译。
 
 改善 VM 页队列可扩展性 — <https://svnweb.freebsd.org/changeset/base/332974>
 

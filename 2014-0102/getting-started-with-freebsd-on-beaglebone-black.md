@@ -14,7 +14,7 @@ BeagleBone Black（BBB）是一款售价 45 美元、可放进 Altoids 薄荷糖
 
 ## FreeBSD 在 BBB 上的现状
 
-BeagleBone 和树莓派等新兴 ARM 系统引发了开发者对 FreeBSD/ARM 的浓厚兴趣。过去一年中，FreeBSD 的大部分组件——引导加载器、内核、工具链、驱动、用户态和 ports——在 ARM 平台上都有显著改进。
+BeagleBone 和树莓派等新兴 ARM 系统引发了开发者对 FreeBSD/ARM 的浓厚兴趣。过去一年中，FreeBSD 的大部分组件——引导加载器、内核、工具链、驱动、用户态和 Ports——在 ARM 平台上都有显著改进。
 
 目前，FreeBSD 开发分支对 BBB 的支持相当完善：
 
@@ -28,7 +28,7 @@ BeagleBone 和树莓派等新兴 ARM 系统引发了开发者对 FreeBSD/ARM 的
 - FreeBSD/ARM 现在使用 clang 作为默认编译器。
 - FreeBSD/ARM 现在使用 EABI 调用约定，性能略好且与其他编译器兼容性更佳；如果你有此变更前编译的二进制或库，需要重新编译。
 - FreeBSD 可以在 BBB 上原生重新构建和升级。
-- 越来越多的 ports 可在 BBB 上构建和运行。
+- 越来越多的 Ports 可在 BBB 上构建和运行。
 
 > **作者提醒**：本文基于 2013 年 9 月时 FreeBSD 开发分支的状态撰写。到 FreeBSD 10 最终发布时，许多内容可能发生变化。如需最新信息，请到 FreeBSD/ARM 或 FreeBSD current 邮件列表询问。
 
@@ -304,14 +304,14 @@ BBB 运行完全标准的 FreeBSD 系统，如果你熟悉 i386 或 amd64 上的
 md none swap sw,file=/usr/swap0 0 0
 ```
 
-**Ports**：如果有网络访问，安装 ports 树相当简单：
+**Ports**：如果有网络访问，安装 Ports 树相当简单：
 
 ```sh
 $ portsnap fetch
 $ portsnap extract
 ```
 
-然后就可以像往常一样构建并安装 ports。例如，安装 Apache Web 服务器：
+然后就可以像往常一样构建并安装 Ports。例如，安装 Apache Web 服务器：
 
 ```sh
 $ cd /usr/ports/www/apache24
@@ -380,7 +380,7 @@ option UsrPorts
 FREEBSD_SRC=${TOPDIR}/src
 ```
 
-此处的 `option` 行会在 **/usr/src** 预装完整 FreeBSD 源代码树，在 **/usr/ports** 预装完整 ports 树。省略这些行会得到更小的镜像。
+此处的 `option` 行会在 **/usr/src** 预装完整 FreeBSD 源代码树，在 **/usr/ports** 预装完整 Ports 树。省略这些行会得到更小的镜像。
 
 3. 构建镜像：
 

@@ -33,7 +33,7 @@ CloudABI 已完整移植到 FreeBSD 与 NetBSD。两份移植都仅约 5,000 行
 
 既然知道 CloudABI 是什么了，该动手看看如何构建并运行自己的 CloudABI 程序。先从一个简单的“Hello, world”应用开始。我们会看到，即便如此简单的应用，也能让我们对 CloudABI 在实践中如何运作有诸多洞察。
 
-由于 CloudABI 的运行时与 FreeBSD 原生编程环境相互独立，第一步是安装一套交叉编译工具链，用来生成 CloudABI ELF 可执行文件。为此，只需从 FreeBSD ports 树安装 cloudabi-toolchain 软件包。该软件包安装一份未经修改的 LLVM 3.7，并创建一个从 x86_64-unknown-cloudabi-cc 指向 Clang 可执行文件的符号链接。通过此符号链接调用时，Clang 足够聪明，能自动检测到它正作为 CloudABI 的交叉编译器被调用。它还安装了一份针对 CloudABI 的 GNU Binutils 副本。
+由于 CloudABI 的运行时与 FreeBSD 原生编程环境相互独立，第一步是安装一套交叉编译工具链，用来生成 CloudABI ELF 可执行文件。为此，只需从 FreeBSD Ports 树安装 cloudabi-toolchain 软件包。该软件包安装一份未经修改的 LLVM 3.7，并创建一个从 x86_64-unknown-cloudabi-cc 指向 Clang 可执行文件的符号链接。通过此符号链接调用时，Clang 足够聪明，能自动检测到它正作为 CloudABI 的交叉编译器被调用。它还安装了一份针对 CloudABI 的 GNU Binutils 副本。
 
 目前 cloudabi-toolchain 软件包仅安装 x86-64 的交叉编译器。待 CloudABI 移植到更多硬件平台后，该软件包会扩展，设置更多符号链接，方便为任意架构构建软件。
 
@@ -49,9 +49,9 @@ $ x86_64-unknown-cloudabi-cc -o hello hello.c
 hello.c:1:10: fatal error: 'stdio.h' file not found
 ```
 
-安装工具链软件包后，尝试编译我们的简单程序，会发现构建仍失败，因为编译器找不到 `<stdio.h>` 头文件。原因是 FreeBSD ports 树中的 CloudABI 工具链并不附带任何为 CloudABI 构建的库。它只包含你想在 FreeBSD 系统上运行的开发工具。但别担心，我们无需手动交叉编译任何 CloudABI 核心库。
+安装工具链软件包后，尝试编译我们的简单程序，会发现构建仍失败，因为编译器找不到 `<stdio.h>` 头文件。原因是 FreeBSD Ports 树中的 CloudABI 工具链并不附带任何为 CloudABI 构建的库。它只包含你想在 FreeBSD 系统上运行的开发工具。但别担心，我们无需手动交叉编译任何 CloudABI 核心库。
 
-CloudABI 项目有自己的 ports 集合，名为 CloudABI Ports。为 CloudABI 单独维护一套 ports 集合的初衷在于：它让我们不仅能生成 FreeBSD 的软件包，也能生成其他 BSD 与各种 Linux 发行版的软件包。这些软件包含有完全相同的交叉编译二进制与库，但被打包成可由系统原生包管理器安装与升级的形式。即便你的操作系统不运行 CloudABI 可执行文件，也应当能在其上开发 CloudABI 软件。
+CloudABI 项目有自己的 Ports 集合，名为 CloudABI Ports。为 CloudABI 单独维护一套 Ports 集合的初衷在于：它让我们不仅能生成 FreeBSD 的软件包，也能生成其他 BSD 与各种 Linux 发行版的软件包。这些软件包含有完全相同的交叉编译二进制与库，但被打包成可由系统原生包管理器安装与升级的形式。即便你的操作系统不运行 CloudABI 可执行文件，也应当能在其上开发 CloudABI 软件。
 
 如何把 CloudABI 软件包仓库加入 `pkg` 配置，可在 CloudABI Ports 的 GitHub 页面（<https://github.com/NuxiNL/cloudabi-ports>）找到。这里不展开描述这一过程，免得你照抄那串用于校验软件包的 PEM 文件。添加仓库后，便应能安装 x86_64-unknown-cloudabi-c-runtime 软件包，获得一组 C 编程的基础库，例如 CloudABI 的 C 库。C++ 开发则可安装 x86_64-unknown-cloudabi-cxx-runtime 软件包。
 

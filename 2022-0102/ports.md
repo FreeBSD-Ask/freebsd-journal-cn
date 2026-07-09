@@ -96,7 +96,7 @@ $ ls
 Makefile
 ```
 
-啊哈！对于那些刚接触 ports 的读者来说：我们这里看到的并不像一个典型的 port。通常，你会期望看到其他文件，比如 `distinfo`，其中包含源代码归档的校验和；`pkg-descr`，它包含 port 的详细描述；以及 `pkg-plist`，列出了这个 port 安装的所有文件。看看 `Makefile` 里面有什么内容：
+啊哈！对于那些刚接触 Ports 的读者来说：我们这里看到的并不像一个典型的 port。通常，你会期望看到其他文件，比如 `distinfo`，其中包含源代码归档的校验和；`pkg-descr`，它包含 port 的详细描述；以及 `pkg-plist`，列出了这个 port 安装的所有文件。看看 `Makefile` 里面有什么内容：
 
 ```sh
 $ cat -n Makefile
@@ -126,7 +126,7 @@ make extract
 
 >**技巧**
 >
->最好也运行 `patch` 目标。原因是我们希望将所有本地的 FreeBSD ports 补丁应用到新解压的、未修改的源代码上。
+>最好也运行 `patch` 目标。原因是我们希望将所有本地的 FreeBSD Ports 补丁应用到新解压的、未修改的源代码上。
 
 ```sh
 make patch
@@ -197,7 +197,7 @@ index e6cd3e15dd75..7eee2ae85bc6 100644
 
 列表中的路径是相对于 `${PREFIX}`（默认情况下是 **/usr/local**）的。行首的 `%%GUI%%` 表示这些文件只有在启用 GUI 选项时才会被安装（显然，有些人喜欢将他们的 Xpdf 软件设置为无头模式）。
 
-我们需要处理的最后一件事是增加 port 的修订号。一旦更改进入 ports 树，port 构建者必须知道重新构建带有我们修改的包。增加修订号最简单的方法是使用 `portedit`（它是 `portfmt` 包的一部分）：
+我们需要处理的最后一件事是增加 port 的修订号。一旦更改进入 Ports 树，port 构建者必须知道重新构建带有我们修改的包。增加修订号最简单的方法是使用 `portedit`（它是 `portfmt` 包的一部分）：
 
 ```sh
 $ portedit bump-revision -i Makefile
@@ -243,14 +243,14 @@ Poudriere 的设置可以在 FreeBSD Porter’s Handbook 的“测试 Port”章
 
 FreeBSD Bugzilla 是贡献者上传补丁并建议更改的服务：[https://bugs.freebsd.org](https://bugs.freebsd.org)。整个过程相当简单。首先，创建账户并登录。然后通过点击顶部导航栏中的“New”来打开一个新的问题报告（PR）。记得在摘要前加上“graphics/xpdf4”作为前缀，这样 port 的维护者就会收到关于 PR 的通知（更多关于如何撰写好 PR 的建议可以参考这里：[https://wiki.freebsd.org/Bugzilla/DosAndDonts](https://wiki.freebsd.org/Bugzilla/DosAndDonts)）。有时候，除了在 Bugzilla 上打开 PR，人们还会将补丁提交到 Phabricator。这项服务有更好的界面用于代码审查。
 
-哦，顺便说一下，Xpdf 图标缺失的问题确实是基于真实的故事。我已经在 Bugzilla 上报告了这个 Xpdf 的问题（[https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=261376](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=261376)），并将我的补丁发布到 Phabricator（[https://reviews.freebsd.org/D33984](https://reviews.freebsd.org/D33984)）。Xpdf 的维护者审查了我的补丁并批准了提交更改。由于我是 ports 提交者，我自己提交了这个更改。
+哦，顺便说一下，Xpdf 图标缺失的问题确实是基于真实的故事。我已经在 Bugzilla 上报告了这个 Xpdf 的问题（[https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=261376](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=261376)），并将我的补丁发布到 Phabricator（[https://reviews.freebsd.org/D33984](https://reviews.freebsd.org/D33984)）。Xpdf 的维护者审查了我的补丁并批准了提交更改。由于我是 Ports 提交者，我自己提交了这个更改。
 
 ## 获取帮助
 
-有一天，你也会踏上自己为 FreeBSD ports 树贡献代码的旅程。许多人在面对这个挑战时会感到不知所措和害怕，但不要怕！FreeBSD 社区总是乐于帮助你。IRC 频道、邮件列表、论坛，最近还有 Discord，都是与其他 FreeBSD 朋友交流和提问的好地方。
+有一天，你也会踏上自己为 FreeBSD Ports 树贡献代码的旅程。许多人在面对这个挑战时会感到不知所措和害怕，但不要怕！FreeBSD 社区总是乐于帮助你。IRC 频道、邮件列表、论坛，最近还有 Discord，都是与其他 FreeBSD 朋友交流和提问的好地方。
 
 最重要的是，折腾 FreeBSD 时要享受其中的乐趣，享受与 FreeBSD 朋友共度的时光。我们在动物园见！
 
 ---
 
-**MATEUSZ PIOTROWSKI** 是 FreeBSD ports 和文档提交者，现居柏林。他喜欢调试 bug、编写自动化脚本以及设计健壮的软件系统（在此过程中总是详细记录一切）。最近，他的兴趣转向了追踪和性能工程。当他不在折腾现代软件所谓的确定性电路时，他正在探索社会和文化中不断变化的动态。
+**MATEUSZ PIOTROWSKI** 是 FreeBSD Ports 和文档提交者，现居柏林。他喜欢调试 bug、编写自动化脚本以及设计健壮的软件系统（在此过程中总是详细记录一切）。最近，他的兴趣转向了追踪和性能工程。当他不在折腾现代软件所谓的确定性电路时，他正在探索社会和文化中不断变化的动态。
