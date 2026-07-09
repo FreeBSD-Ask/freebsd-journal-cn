@@ -55,7 +55,7 @@ FreeBSD 操作系统中，通过基础网络栈、各种防火墙转发数据包
 
 转发场景下，从 lynx1 经 rabbit3 向 lynx3 发送单流 UDP/IP 数据包并在 lynx3 处计数。Rabbit3 上除操作系统外不运行任何软件，其唯一工作就是在图 1 所示的 cxl0 与 cxl1 接口间转发数据包。
 
-我们的第二组测量使用多种数据包尺寸，包括 64、256、512 和 1500 字节。每次测量运行 30 秒，然后数据通过 ministat 处理以找出中位转发速率。Jumbo frame（大于 1500 字节的数据包）未测试。数据包转发以每秒数据包数（PPS）衡量，与原始带宽的关系是 PPS 乘以数据包大小。
+我们的第二组测量使用多种数据包尺寸，包括 64、256、512 和 1500 字节。每次测量运行 30 秒，然后数据通过 `ministat` 处理以找出中位转发速率。Jumbo frame（大于 1500 字节的数据包）未测试。数据包转发以每秒数据包数（PPS）衡量，与原始带宽的关系是 PPS 乘以数据包大小。
 
 数据包转发实验结果见表 2。我们观察到，一旦操作系统参与数据包转发，除全尺寸以太网帧外，我们的 PPS 测量值都急剧下降。对于最小尺寸的帧（64 字节），操作系统内核只能转发发给它的数据包的 7%。很少有网络只处理最小尺寸的帧，因为使用 UDP 与 IPv4 时此类帧最多只能承载 10 字节数据。最小尺寸的帧通常只作为 TCP ACK 包出现，不含数据。网络测试常用最小尺寸的帧来展示某款软件或硬件在最坏情况下的表现。随着数据包尺寸增大，系统最终能以线速转发数据包。
 
@@ -75,7 +75,7 @@ FreeBSD 操作系统中，通过基础网络栈、各种防火墙转发数据包
 
 ## 防火墙测试
 
-为比较各种防火墙解决方案，我们进行了若干组测量。测试了四个软件栈：FreeBSD 11-CURRENT、pfSense 2.2（基于 FreeBSD 10.1）、OpenBSD 5.6 与 CentOS 7。FreeBSD（<http://www.freebsd.org>）、pfSense（<http://www.pfsense.org>）和 OpenBSD（<http://www.openbsd.org>）都使用 pf 数据包过滤器，CentOS 7 使用 Linux 的 iptables。所有测量都在与“内核数据包转发”一节不同的硬件上进行。这组测试选择了通常用于企业防火墙的硬件，以给出更切实际的示例，展示开源防火墙软件能达成什么。DUT 是 C2758，1U 系统，配备单颗 8 核 2.4 GHz Atom 处理器、8G 内存和一块基于 Intel 82599 的 10G 网络接口。源与汇系统是 Xeon HC 机箱 X5680 @ 3.33GHz，配备基于 Intel 82599 的 10G 网络接口，源运行 Linux 与 DPDK 的 pktgen，汇运行 FreeBSD 11-CURRENT（NODEBUG 内核）。DUT 故意选了较慢的机器，以确保源能超过它并在测试中给它足够压力。
+为比较各种防火墙解决方案，我们进行了若干组测量。测试了四个软件栈：FreeBSD 11-CURRENT、pfSense 2.2（基于 FreeBSD 10.1）、OpenBSD 5.6 与 CentOS 7。FreeBSD（<http://www.freebsd.org>）、pfSense（<http://www.pfsense.org>）和 OpenBSD（<http://www.openbsd.org>）都使用 pf 数据包过滤器，CentOS 7 使用 Linux 的 `iptables`。所有测量都在与“内核数据包转发”一节不同的硬件上进行。这组测试选择了通常用于企业防火墙的硬件，以给出更切实际的示例，展示开源防火墙软件能达成什么。DUT 是 C2758，1U 系统，配备单颗 8 核 2.4 GHz Atom 处理器、8G 内存和一块基于 Intel 82599 的 10G 网络接口。源与汇系统是 Xeon HC 机箱 X5680 @ 3.33GHz，配备基于 Intel 82599 的 10G 网络接口，源运行 Linux 与 DPDK 的 `pktgen`，汇运行 FreeBSD 11-CURRENT（NODEBUG 内核）。DUT 故意选了较慢的机器，以确保源能超过它并在测试中给它足够压力。
 
 DUT 以背靠背方式置于源与汇之间，与图 1 中 lynx1、rabbit3、lynx3 的设置类似。所选操作系统内核不含昂贵的调试开销。特别是 FreeBSD 11——这是开发中的活跃主干——使用了 GENERIC-NODEBUG 内核，以便关闭那些有助于调试 SMP 系统的特性（如用于跟踪锁序反转的 WITNESS 系统）。随后通过每个 DUT 发送一系列数据包，并在汇主机处测量（图 8）。
 
