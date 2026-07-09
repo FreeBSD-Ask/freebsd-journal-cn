@@ -17,11 +17,11 @@
 
 FreeBSD 源码对我来说并不完全陌生，多年来我已经对其结构有了整体印象。但我想要专业的指导，避免错过关键概念、风格细节或结构要点。世界有幸拥有 Marshall Kirk McKusick 主讲的 FreeBSD Kernel Internals: An Intensive Code Walkthrough 课程，它帮我节省了很多时间，解答了我的问题，并以最佳方式提供了历史背景来回答“为什么”。另外，George V. Neville-Neil 的《FreeBSD Networking from the Bottom Up》（FreeBSD 网络体系结构自底向上）课程则进一步完善了我在网络栈方面的理解。
 
-我考虑过先做大项目还是小项目，并和 `mckusick@` 以及 `kib@` 讨论过。Konstantin Belousov 建议我从小任务入手，比如修复 bug，事实证明这是最有效的方法。我最初处理的是一些最新报告的 pf 漏洞，这又衍生出对 jail 子系统的改进、对 Kyua 的 `execenv=jail` 测试工具的改进，甚至还开发了一个新的模块 `dummymbuf` 用于特定的网络测试。因此，我继续和 Kristof Provost、Mark Johnston 和其他 FreeBSD 开发者一起推动项目改进。
+我考虑过先做大项目还是小项目的利弊，并和 `mckusick@` 以及 `kib@` 讨论过。Konstantin Belousov 建议我从小任务入手，比如修复 bug，事实证明这是最有效的方法。我最初处理的是一些最新报告的 pf 漏洞，这又衍生出对 jail 子系统的改进、对 Kyua 的 `execenv=jail` 测试工具的改进，甚至还开发了一个新的模块 `dummymbuf` 用于特定的网络测试。因此，我继续和 Kristof Provost、Mark Johnston 和其他 FreeBSD 开发者一起推动项目改进。
 
 **TJ:** 修 bug 是新手进入一个项目的好办法。你对 2025 年的新 FreeBSD 贡献者有没有推荐的入门方向？
 
-**IO:** 项目官网已经提供了正式的指导和具体方向，例如 [IdeasPage](https://wiki.freebsd.org/IdeasPage)。我更愿意提出一种替代思路：通往贡献的路径有很多种，最好的往往和个人兴趣一致。
+**IO:** 项目官网已经提供了针对新贡献者的正式指导和具体方向，例如 [IdeasPage](https://wiki.freebsd.org/IdeasPage)。我更愿意提出一种替代思路：通往贡献的路径有很多种，最好的往往和个人兴趣一致。
 
 比如，如果有人对学习或使用 FreeBSD 的网络工具或内核模块（如 `netstat`、`route`、`pf`、`ipfw`、`netgraph` 等）感兴趣，那么阅读相关文档和手册页的同时，可能会发现可以通过补充示例、重写复杂概念或补充缺失部分来改进它们。如果 FreeBSD 里没有相应工具或模块，那么将有用的程序加入 Ports 或保持其更新，也是非常重要的参与方式。这类项目通常既有趣又有教育意义，因为可能需要更深入地理解 FreeBSD 内核接口。
 

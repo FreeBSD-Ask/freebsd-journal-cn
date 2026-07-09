@@ -11,4 +11,4 @@
 一如既往，感谢你持续支持 FreeBSD 期刊。请考虑捐款支持这项工作，每一份微小的帮助都很重要。我们会继续为你带来 FreeBSD 期刊及时而有价值的文章，也希望你将喜欢的文章分享给同事和朋友。
 
 Anne Dickison
-FreeBSD Foundation
+FreeBSD 基金会

@@ -11,7 +11,7 @@
 
 ## OpenZFS 用户与开发者峰会 2025
 
-2025 年 10 月 25–28 日
+2025 年 10 月 25-28 日
 美国俄勒冈州波特兰
 <https://openzfs.org/wiki/OpenZFS_Developer_Summit_2025>
 
@@ -21,7 +21,7 @@
 
 ## 2025 年 11 月 FreeBSD 厂商峰会
 
-2025 年 11 月 6–7 日
+2025 年 11 月 6-7 日
 美国加州圣何塞
 <https://freebsdfoundation.org/news-and-events/event-calendar/fall-2025-freebsd-summit/>
 

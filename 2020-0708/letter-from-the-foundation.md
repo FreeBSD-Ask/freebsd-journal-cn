@@ -16,4 +16,4 @@
 
 Justin T. Gibbs
 创始人/主席
-FreeBSD Foundation
+FreeBSD 基金会

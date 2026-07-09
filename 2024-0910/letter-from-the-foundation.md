@@ -13,7 +13,7 @@
 
 **Anne Dickison**
 副执行董事
-FreeBSD Foundation
+FreeBSD 基金会
 
 **John Baldwin**
 《FreeBSD 期刊》编辑委员会主席

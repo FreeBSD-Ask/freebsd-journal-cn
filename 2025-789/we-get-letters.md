@@ -1,5 +1,8 @@
 # 读者来信
 
+- 原文：[We Get Letters](https://freebsdfoundation.org/our-work/journal/browser-based-edition/embedded-2/we-get-letters-5/)
+- 作者：**Michael W Lucas**
+
 ![邮箱插图](../png/2025-789/we-get-letters-01.png)
 
 来信专栏作家，你好：
@@ -12,7 +15,7 @@
 
 亲爱的 BAD：
 
-英勇的尝试。不过，你的邮件被 greylisting 拦了一下，所以送货卡车之后才到。我不知道你在哪儿找到腌三文鱼和榴莲口味的意式冰淇淋，但我钦佩你为达到新的恶俗高度所付出的努力。干得漂亮。你天生就是当系统管理员的料。
+英勇的尝试。不过，你的邮件被 greylisting 拦了一下，所以邮件在送货卡车之后才到。我不知道你在哪儿找到腌三文鱼和榴莲口味的意式冰淇淋，但我钦佩你为达到新的恶俗高度所付出的努力。干得漂亮。你天生就是当系统管理员的料。
 
 系统管理员对嵌入式系统需要了解什么？嵌入式系统就是计算机。嵌入式系统和普通主机有什么不同？毫无不同，只是你必须把每件事都做对。
 
@@ -22,7 +25,7 @@
 
 一切都是嵌入式系统。一路向下都是。
 
-你的 RAID 控制器？它运行一个嵌入式操作系统，让它能模拟一个完全不同的 1980 年代 RAID 控制器，因为系统管理员坚持要能设置一个“条带大小”，而这个大小与实际存储介质中的任何东西都对不上。开机时按 F1 或 DELETE，你就进入了主板的嵌入式系统。顺便说一句，“BIOS Log”是满的。满了好多年了。自从你的前任入职以来，没记过任何有用的东西。你计算机里的一切都是独立的嵌入式系统，支撑着你的非嵌入式系统。你的“裸金属”服务器并不是裸金属，因为“裸金属”根本不存在。
+你的 RAID 控制器？它运行一个嵌入式操作系统，让它能模拟一个完全不同的 1980 年代 RAID 控制器，因为系统管理员坚持要能设置一个“条带大小”，而这个大小与实际存储介质中的任何东西都对不上。开机时按 F1 或 DELETE，你就进入了主板的嵌入式系统。顺便说一句，“BIOS Log”是满的。满了好多年了。自从你的前任入职以来，没有记录过任何有用的东西。你计算机里的一切都是独立的嵌入式系统，支撑着你的非嵌入式系统。你的“裸金属”服务器并不是裸金属，因为“裸金属”根本不存在。
 
 我抱怨过虚拟化许多次，但一切都是虚拟的，整个世界都值得同样的鄙夷。
 
@@ -43,6 +46,6 @@
 那么，你对嵌入式系统应该了解什么？如果你摊上一台嵌入式系统，它坏了，就装傻，打电话给技术支持。否则，你会钻进系统里，发现设计师为了所谓的系统稳定犯下了哪些暴行。那不会通向任何美好的地方。
 
 有问题想问 Michael？
-发送至 [letters@freebsdjournal.](mailto:letters@freebsdjournal.org)org
+发送至 <letters@freebsdjournal.org>
 
-Michael W Lucas 是《Absolute FreeBSD》《Dear Abyss》《SSH Mastery》等书的作者。《Networking for System Administrators》的新版刚刚逃出牢笼。<https://mwl.io>
+**Michael W Lucas** 是《Absolute FreeBSD》《Dear Abyss》《SSH Mastery》等书的作者。《Networking for System Administrators》的新版刚刚逃出牢笼。<https://mwl.io>

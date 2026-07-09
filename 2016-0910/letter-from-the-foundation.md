@@ -31,4 +31,4 @@ FreeBSD 基金会通过资助 FreeBSD 生态系统的多个不同部分来支持
 
 FreeBSD 期刊主编
 
-FreeBSD 基金会 董事会理事
+FreeBSD 基金会董事会理事

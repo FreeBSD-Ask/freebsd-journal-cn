@@ -9,4 +9,4 @@
 本期主题是 FreeBSD 入门。还有比让 FreeBSD 期刊免费开放更好的方式来传达这一信息吗！我们期待将 FreeBSD 期刊及时而富有信息量的文章带给更多读者，也期待你把喜爱的文章分享给同事与朋友。
 
 Anne Dickison
-FreeBSD Foundation
+FreeBSD 基金会
