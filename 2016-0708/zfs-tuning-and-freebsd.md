@@ -111,10 +111,8 @@ PostgreSQL 把数据库存在 **/usr/local/pgsql/data/base**。预写日志（WA
 两者都使用 8 KB 块尺寸，你希望分别对它们做快照，因此为每个创建一个 dataset。与 MySQL 一样，告知 ARC 仅缓存元数据。还通过 `logbias` 属性告知这些 dataset 在吞吐量与延迟之间偏向吞吐量。
 
 ```sh
-# 创建 pg_xlog dataset：8K 记录、元数据冗余 most、主缓存仅元数据、logbias 偏向吞吐量
-zfs create -o recordsize=8k -o redundant_metadata=most -o primarycache=metadata logbias=throughput pgsql/data/pg_xlog
-# 创建 base dataset：8K 记录、元数据冗余 most、主缓存仅元数据、logbias 偏向吞吐量
-zfs create -o recordsize=8k -o redundant_metadata=most -o primarycache=metadata logbias=throughput pgsql/data/base
+# zfs create -o recordsize=8k -o redundant_metadata=most -o primarycache=metadata logbias=throughput pgsql/data/pg_xlog
+# zfs create -o recordsize=8k -o redundant_metadata=most -o primarycache=metadata logbias=throughput pgsql/data/base
 ```
 
 把原始目录的内容复制到新 dataset 中。
