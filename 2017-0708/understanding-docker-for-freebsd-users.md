@@ -217,7 +217,7 @@ Docker 与 Jail 在控制方面差异很大。Docker 有许多命令和选项，
 
 ## Docker 的未来方向
 
-Docker 系统正在相当快速地演进。一个由公司组成的联盟成立了 Open Container Initiative（OCI）。OCI 的重要成员包括 Amazon、AT&T、Cisco、Docker Inc.、Facebook、Google、IBM、Microsoft、Oracle、RedHat 和 VMware。OCI 试图标准化容器运行时系统（“runtime-spec”）和镜像规范（“image-spec”）。作为标准化过程的起点，Docker Inc. 把自己的容器规范和运行时系统（“runC”）捐给了 OCI。OCI 中有些成员在支持不止 Linux syscall ABI 容器上有既得利益，规范明确指出需要支持多种 ABI 以及多种托管容器运行时的操作系统。标准化过程中的一个近期进展是 Oracle 发布了用 Rust 编写的 oci-runtime 开源实现 Railcar。
+Docker 系统正在相当快速地演进。一个由公司组成的联盟成立了 Open Container Initiative（OCI）。OCI 的重要成员包括 Amazon、AT&T、Cisco、Docker Inc.、Facebook、谷歌、IBM、Microsoft、Oracle、RedHat 和 VMware。OCI 试图标准化容器运行时系统（“runtime-spec”）和镜像规范（“image-spec”）。作为标准化过程的起点，Docker Inc. 把自己的容器规范和运行时系统（“runC”）捐给了 OCI。OCI 中有些成员在支持不止 Linux syscall ABI 容器上有既得利益，规范明确指出需要支持多种 ABI 以及多种托管容器运行时的操作系统。标准化过程中的一个近期进展是 Oracle 发布了用 Rust 编写的 oci-runtime 开源实现 Railcar。
 
 OCI 中的多 ABI 支持让使用 Docker 部署不再是 Linux/amd64 的单一文化。目前 Docker 实际上只在 amd64 硬件上运行 Linux ABI。Docker 社区通过 OCI 已初步同意一个多架构系统，其中 Linux 和 Windows 都将作为一等公民 ABI 环境得到支持，并跨多种硬件平台。这种跨系统支持在 IBM 的 Z-System 硬件上对 Linux ABI 已有限度可用，对 arm64 架构的支持也初具雏形。把这种多 ABI 未来扩展到 FreeBSD 应当是可能的。
 
