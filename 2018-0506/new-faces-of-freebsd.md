@@ -4,7 +4,7 @@
 
 此专栏旨在聚焦最近获得 commit bit 的贡献者，并向 FreeBSD 社区介绍他们。
 
-本期聚焦：Jason Bacon（11 月获得 Ports bit）、Koichiro Iwao（3 月获得 Ports bit）、Sean Fagan（4 月获得 src bit）、Vincenzo Maffione（3 月获得 src bit）、Fernando Apesteguía（3 月获得 ports commit）、Tom Jones（4 月获得 src bit）和 Eric Turgeon（3 月获得 Ports bit）。
+本期聚焦：Jason Bacon（11 月获得 Ports bit）、Koichiro Iwao（3 月获得 Ports bit）、Sean Fagan（4 月获得 src bit）、Vincenzo Maffione（3 月获得 src bit）、Fernando Apesteguía（3 月获得 Ports commit）、Tom Jones（4 月获得 src bit）和 Eric Turgeon（3 月获得 Ports bit）。
 
 ## 介绍一下你自己、背景和兴趣
 
@@ -62,7 +62,7 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 大约同一时间我也成为 pkgsrc 开发者，比较两个项目的优缺点很有趣。我希望在未来几年帮助弥合两者，使双方受益。我们广泛使用 pkgsrc 在 CentOS 系统上安装最新的开源软件包。
 
-**Koichiro**：我多年来一直在为 FreeBSD 项目做贡献，特别是作为 xrdp 的 port 维护者。有一天，我自愿成为 ports committer。Hiroki Sato（一位日本 FreeBSD 核心开发者）提名我为 ports committer，最终我成为了 committer。
+**Koichiro**：我多年来一直在为 FreeBSD 项目做贡献，特别是作为 xrdp 的 port 维护者。有一天，我自愿成为 Ports committer。Hiroki Sato（一位日本 FreeBSD 核心开发者）提名我为 Ports committer，最终我成为了 committer。
 
 **Sean**：我在早期就曾是 committer。然而，2001 年我开始在 Apple 工作，可以说，他们不赞成我继续那样做。所以，有十年期间我几乎没做任何公开可见的事。离开 Apple 后，我去了 iXsystems，在那里我第一次全职与 FreeBSD 工作。然而，前几年我做的大部分涉及非操作系统代码（主要是安装程序和更新程序）。偶尔，我会遇到一些我想做的事情需要操作系统更改，其中大部分我通过邮件发回给最后修改相关文件的人。有些补丁目前仍在 iX，需要回去。
 
@@ -70,13 +70,13 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 **Vincenzo**：我是开源 Netmap 项目的维护者，该项目为应用提供从用户态执行快速网络 I/O 的 API。Netmap 在 FreeBSD 和 Linux 上运行，其源代码目前托管在 GitHub 上。虽然 Netmap 已经包含在 FreeBSD 树中，但其中的代码并没有真正维护，且相对于上游版本不断过时。因此，在上次 AsiaBSDCon 上我被邀请成为 committer，以保持 FreeBSD Netmap 代码的良好状态并与上游对齐。我非常高兴地接受了。
 
-**Fernando**：成为全职 FreeBSD 用户后，我开始贡献一些 port PR。2011 年，我发了几个 PR，移植了 wiki 的 WantedPorts 页面中列出的一些 ports。这是一件有趣的事，让我学到了很多，得益于所有提交我补丁的人的提示。我甚至在母校（Universidad de Valladolid）做了几次关于 FreeBSD 和如何创建 ports 的演讲。一段时间后，我觉得应该更深入地参与项目，所以我开始用“嘿，如果有人能指导我完成导师过程，我愿意提升”之类的话结束所有 PR。一段时间后，tz@ 回应了我的请求。tz@ 和 tcberner@ 是我耐心的导师。我仍在愉快地学习如何成为一名好的 ports committer。
+**Fernando**：成为全职 FreeBSD 用户后，我开始贡献一些 port PR。2011 年，我发了几个 PR，移植了 wiki 的 WantedPorts 页面中列出的一些 ports。这是一件有趣的事，让我学到了很多，得益于所有提交我补丁的人的提示。我甚至在母校（Universidad de Valladolid）做了几次关于 FreeBSD 和如何创建 ports 的演讲。一段时间后，我觉得应该更深入地参与项目，所以我开始用“嘿，如果有人能指导我完成导师过程，我愿意提升”之类的话结束所有 PR。一段时间后，tz@ 回应了我的请求。tz@ 和 tcberner@ 是我耐心的导师。我仍在愉快地学习如何成为一名好的 Ports committer。
 
 **Tom**：去年在布拉格的 IETF 上，约我吃午餐的人放了我鸽子，反而邀请我加入一位同事和 Netflix 团队。吃鲁本三明治时，我和 Jonathan Looney（我的导师）聊起我迄今为止在 FreeBSD 上做的工作。几周后在剑桥的 BSDCam，Jonathan 问我是否有兴趣成为 committer。
 
 实际上，直到 3 月伦敦 IETF 会议我才和 Jonathan 说话并询问启动流程需要哪些步骤。两周后我收到了 Core 的出色邮件。
 
-**Eric**：我有时间时尝试帮助 Koop 处理 MATE 和 Gnome。当我在 iXsystems 开始工作时，我更活跃一些，试图在 ports 中推出 MATE 1.20，但 Koop 没空，所以 Baptiste 提供了 commit bit，我说好。由于 Baptiste 和我在不同时区，Baptiste 让我在同一时区有了第二位导师。我在工作聊天中提到这一点，William Grzybowski 主动提出成为我的共同导师。我被投票成为 ports committer，其余就是待书写的历史了。
+**Eric**：我有时间时尝试帮助 Koop 处理 MATE 和 Gnome。当我在 iXsystems 开始工作时，我更活跃一些，试图在 ports 中推出 MATE 1.20，但 Koop 没空，所以 Baptiste 提供了 commit bit，我说好。由于 Baptiste 和我在不同时区，Baptiste 让我在同一时区有了第二位导师。我在工作聊天中提到这一点，William Grzybowski 主动提出成为我的共同导师。我被投票成为 Ports committer，其余就是待书写的历史了。
 
 ## 加入 FreeBSD 项目后体验如何？对想成为 FreeBSD committer 的读者有什么建议？
 
