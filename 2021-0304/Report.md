@@ -13,4 +13,4 @@
 
 ---
 
-ANNE DICKISON 是 FreeBSD 基金会的营销总监。
+**ANNE DICKISON** 是 FreeBSD 基金会的营销总监。

@@ -261,4 +261,4 @@ ZFS 有两个主要的管理工具：
 
 ---
 
-DREW GURKOWSKI，FreeBSD 基金会
+**DREW GURKOWSKI**，FreeBSD 基金会
