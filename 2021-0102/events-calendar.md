@@ -25,6 +25,6 @@ FreeBSD Fridays
 FreeBSD Office Hours
 <https://wiki.freebsd.org/OfficeHours>
 
-加入 FreeBSD 社区成员参加 FreeBSD Office Hours。从综合问答到基于主题的演示和教程，Office Hours 是解答你 FreeBSD 相关问题的好去处。3 月 17 日将有一场 FreeBSD Core Team Office Hours 专场。
+与 FreeBSD 社区成员一同参加 FreeBSD Office Hours。从综合问答到基于主题的演示和教程，Office Hours 是解答你 FreeBSD 相关问题的好去处。3 月 17 日将有一场 FreeBSD Core Team Office Hours 专场。
 
 往期内容可在 FreeBSD YouTube 频道查看：<https://www.youtube.com/c/FreeBSDProject>。
