@@ -1,6 +1,7 @@
 # GELI 与 ZFS 改进
 
-作者：Allan Jude
+- 原文：[GELI and ZFS Improvements](https://freebsdfoundation.org/wp-content/uploads/2016/10/GELI-and-ZFS-Improvements.pdf)
+- 作者：**Allan Jude**
 
 FreeBSD 11 带来了许多新内容，但本文将聚焦于我亲身参与的若干贡献。这些改动的重点在于改进 FreeBSD 系统的启动方式以及系统更新的管理方式。
 
@@ -34,7 +35,7 @@ zroot/ROOT/default 8.95G 2.51T 3.42G
 
 如你所见，我把这台机器就地升级，从 9.0-RELEASE 一路到 11-CURRENT。甚至还有一个来自我在 11-CURRENT 中调试 ZFS 内存消耗问题时的 BE。在这个 BE 中，内核包含大量额外的 DTrace 探针，用于追踪问题源头。调试结束后，我可以重启回到标准系统，即 10-STABLE。只需重启就能在两者之间切换，同时维护共同的 **/home** 目录，且不需要将剩余磁盘空间分散到不同分区，这非常强大。
 
-最初，管理 BE 的唯一方法是使用 `beadm`(1) 工具。这带来了一个明显的问题——如果系统无法启动，如何运行 beadm 工具将活动启动环境切换回先前可用的系统？PC-BSD 采用了类似 Illumos 的方案，beadm 工具生成 BE 列表并存入一个配置文件，由 GRUB 启动加载器读取。虽然这大体上能工作，但它需要使用非标准的启动加载器，且当配置文件与现实不同步时会出问题。GRUB 配置文件从设置 GRUB 时活动的原始启动环境加载模块，如果该 BE 被删除而配置文件未正确更新，可能导致系统无法启动。
+最初，管理 BE 的唯一方法是使用 `beadm`(1) 工具。这带来了一个明显的问题——如果系统无法启动，如何运行 `beadm` 工具将活动启动环境切换回先前可用的系统？PC-BSD 采用了类似 Illumos 的方案，`beadm` 工具生成 BE 列表并存入一个配置文件，由 GRUB 启动加载器读取。虽然这大体上能工作，但它需要使用非标准的启动加载器，且当配置文件与现实不同步时会出问题。GRUB 配置文件从设置 GRUB 时活动的原始启动环境加载模块，如果该 BE 被删除而配置文件未正确更新，可能导致系统无法启动。
 
 需要更简单、更可靠的方案。FreeBSD 加载器已经能够从 ZFS 读取并列出可用的数据集，这是 `lszfs` 加载器命令的一部分。我以该命令为模板，创建了一个新函数，用分页的启动环境列表填充一组环境变量。这种方法的主要优势是从实时文件系统读取，因此始终准确。在 Devin Teske 的帮助下，用 forth 编写的加载器菜单系统现在能显示菜单，并允许你选择哪个启动环境作为根文件系统。在 Toomas Soome 的帮助下又做了进一步改进。一个缺点是，如果系统以 EFI 启动，则不支持加载器菜单系统，因为我们的 EFI 加载器缺少所需的串口模拟代码。又是 Toomas Soome 出手相助，实现了缺失的特性，ZFS 启动环境菜单在 FreeBSD 加载器中对 BIOS 和 EFI 启动均可用。
 
@@ -56,7 +57,7 @@ zroot/ROOT/default 8.95G 2.51T 3.42G
 
 至此系统能够启动，但会向用户索要加密口令的次数过多。测试系统是两块磁盘的 ZFS 镜像。gptzfsboot 会为两块磁盘分别提示输入密码，然后加载加载器。加载器随后为每块磁盘提示输入口令，并加载内核。在 mountroot 提示处，内核为每块磁盘提示输入口令，最后系统启动。磁盘稍多时，这很快就变得极其繁琐。
 
-Colin Percival、Devin Teske 和 Kris Moore 早已受类似问题困扰并开发了方案。Colin 实现了 `kern.geom.eli.boot_passcache` sysctl，缓存用户在 mountroot 提示处输入的密码，并在启动过程中测试每块新磁盘时尝试复用。Kris Moore 在 Colin 的帮助下扩展了该功能，允许在 GRUB2 启动加载器中输入的口令通过内核环境传递给 GELI，这样如果密码正确，就能避免在 mountroot 阶段重新提示输入密码。这避免了 mountroot 密码提示被后来的设备附加通知淹没的问题。Devin Teske 为 **loader.conf** 添加了一个选项 `geom_eli_passphrase_prompt`，使 FreeBSD 加载器提前提示用户输入 GELI 口令，并通过环境传递给内核，与 PC-BSD 的 GRUB2 的做法相同，目的同样是避免 mountroot 提示。GELI 内核模块格外小心地在单用户模式启动前将环境中的口令清零。GELIBoot 中实现的密码提示也获得了类似的缓存机制，会自动尝试先前输入的口令，只有失败时才给用户三次输入正确口令的机会。
+Colin Percival、Devin Teske 和 Kris Moore 早已受类似问题困扰并开发了方案。Colin 实现了 `kern.geom.eli.boot_passcache` sysctl，缓存用户在 mountroot 提示处输入的密码，并在启动过程中测试每块新磁盘时尝试复用。Kris Moore 在 Colin 的帮助下扩展了该功能，允许在 GRUB2 启动加载器中输入的口令通过内核环境传递给 GELI，这样如果密码正确，就能避免在 mountroot 阶段重新提示输入密码。这避免了 mountroot 密码提示被后来的设备附加通知淹没的问题。Devin Teske 为 `loader.conf` 添加了一个选项 `geom_eli_passphrase_prompt`，使 FreeBSD 加载器提前提示用户输入 GELI 口令，并通过环境传递给内核，与 PC-BSD 的 GRUB2 的做法相同，目的同样是避免 mountroot 提示。GELI 内核模块格外小心地在单用户模式启动前将环境中的口令清零。GELIBoot 中实现的密码提示也获得了类似的缓存机制，会自动尝试先前输入的口令，只有失败时才给用户三次输入正确口令的机会。
 
 GELIBoot 代码最早需要口令，以便从加密磁盘读取加载器。这引出了一个明显的问题：如何将口令从 boot2 阶段传递给加载器。答案在于 gptzfsboot，其中设置了一个标志 KARGS_FLAGS_EXTARG，告诉加载器在常规参数集之后寻找一个额外参数。在此处它会找到 struct zfs_boot_args，其中包含正在启动的存储池和根文件系统等信息。该结构的第一个成员是 `size`，设置为 sizeof(struct zfs_boot_args)。这使得加载器能安全访问结构的新成员，方法是先检查该成员的 offsetof() 不大于加载器定义的该结构的 sizeof()。这使得版本不匹配的 bootcode 和加载器仍能协同工作。当向结构末尾添加新成员时，对该成员的访问受此机制保护。利用这一设计模式，向 zfs_boot_args 结构添加了一个新成员，用于将 GELI 口令从 boot2 传递给加载器。它同样在下一个启动阶段开始时被小心清零。
 

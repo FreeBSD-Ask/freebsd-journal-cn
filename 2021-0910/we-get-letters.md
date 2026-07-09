@@ -1,5 +1,8 @@
 # 读者来信
 
+- 原文链接：[We Get Letters](https://freebsdfoundation.org/wp-content/uploads/2021/11/Weve_Got_Letters.pdf)
+- 作者：**MICHAEL W LUCAS**
+
 致敬，噢，伟大的来信专栏大师！
 
 既然我已经把"拍马屁好让你注意我"这件不可避免的事办完了，我就问：你疯了吗？你本该回答人们真诚而发自内心的来信，结果你告诉他们就算只是问一下也注定完蛋。这一期是开发专刊，我敢打赌你一定会在你的版面上痛骂开发者。
@@ -44,4 +47,4 @@ libarchive 的真正好处是它减少了使用中的代码量。原本几十个
 
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
-MICHAEL W LUCAS 是《TLS Mastery》、《Absolute FreeBSD》和《$ git commit murder》系列的作者。他的《DNSSEC Mastery》和《Domesticate Your Badgers》应在 2022 年初出版，要阻止他已经太晚了。请把你的问题提交至 <letters@freebsdjournal.org>。
+**MICHAEL W LUCAS** 是《TLS Mastery》、《Absolute FreeBSD》和《$ git commit murder》系列的作者。他的《DNSSEC Mastery》和《Domesticate Your Badgers》应在 2022 年初出版，要阻止他已经太晚了。请把你的问题提交至 <letters@freebsdjournal.org>。

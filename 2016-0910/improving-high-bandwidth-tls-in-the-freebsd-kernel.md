@@ -81,7 +81,7 @@ compile-with "/usr/local/bin/yasm -g dwarf2 -f elf64 ${INTELISAINCLUDES} -o ${.T
 
 ![Figure 4：Rev F 上使用 OpenSSL 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-04.png)
 
-图 5 是使用内核加密配合 sendfile 和 BoringSSL 的结果。这里我们能在维持 80% CPU 利用率目标的同时保持 25 到 25.5Gbps。
+图 5 是使用内核加密配合 `sendfile` 和 BoringSSL 的结果。这里我们能在维持 80% CPU 利用率目标的同时保持 25 到 25.5Gbps。
 
 ![Figure 5：Rev F 上内核 sendfile 配合 BoringSSL 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-05.png)
 

@@ -57,7 +57,7 @@
 
 ---
 
-Michael W Lucas（`https://mwl.io`）的最新著作是《Sudo Mastery, 2nd Edition》和《Terrapin Sky Tango》。
+**Michael W Lucas**（`https://mwl.io`）的最新著作是《Sudo Mastery, 2nd Edition》和《Terrapin Sky Tango》。
 
 ---
 

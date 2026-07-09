@@ -1,10 +1,13 @@
 # Groupon 在 FreeBSD 上的实践
 
+- 原文：[GROUPON's Deal on FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
+- 作者：**SEAN CHITTENDEN**
+
 熟悉的外观和手感，略有不同的装饰，效果却更佳。
 
 早上 7:27，我在上班路上排队等计量灯，手机亮了，数据库团队一位资深工程师发来消息：
 
-“你有时间帮忙调试吗？我们大概率遇到一个 BSD 问题。“
+“你有时间帮忙调试吗？我们大概率遇到一个 BSD 问题。”
 
 我皱眉，开始想他可能卡在哪里。我不太确定他们团队当前项目进展到哪一步，所以也无法轻易推测。问题是，这家伙通常不会联系我，除非他真的卡住了。所以在我第一杯咖啡还没喝到一半时听到”BSD 问题”，感觉不太好，这绝对不是我想开启一天的方式。
 

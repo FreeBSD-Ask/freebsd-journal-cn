@@ -22,7 +22,7 @@
 
 ---
 
-George Neville-Neil
+**George Neville-Neil**
 
 《FreeBSD 期刊》主编
 
