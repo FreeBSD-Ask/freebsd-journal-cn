@@ -1,6 +1,7 @@
 # FreeBSD 工具链
 
-作者：Ed Maste
+- 原文：[FreeBSD Toolchain](https://freebsdfoundation.org/wp-content/uploads/2016/10/FreeBSD-Toolchain.pdf)
+- 作者：**Ed Maste**
 
 与其他 BSD 发行版一样，FreeBSD 有基础系统的概念，即集成的内核和核心用户空间，由同一团队共同开发、测试和发布。用户空间包括 C 语言运行时、构建工具链、基本系统工具，以及一些第三方库和应用程序。工具链包括编译器和链接器，它们将源代码翻译为可执行对象，以及用于检查或修改这些对象的相关工具。
 

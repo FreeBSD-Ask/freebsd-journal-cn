@@ -1,6 +1,7 @@
 # 欢迎来到 FreeBSD 11
 
-作者：John Baldwin
+- 原文：[Welcome to FreeBSD 11](https://freebsdfoundation.org/wp-content/uploads/2016/10/Welcome-to-FreeBSD-11.pdf)
+- 作者：**John Baldwin**
 
 FreeBSD 系统在不断变化。FreeBSD 11 带来了两年半活跃开发积累的新特性与修复。其中部分改动已合并至近期的 10.x 版本（如 10.2 和 10.3），但大多数都是 11 中全新的内容。
 

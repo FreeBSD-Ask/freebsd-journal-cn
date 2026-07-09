@@ -1,6 +1,7 @@
 # FreeBSD 11 中的 TCP 改进
 
-作者：Hiren Panchasara
+- 原文：[TCP Improvements in FreeBSD 11](https://freebsdfoundation.org/wp-content/uploads/2016/10/TCP-Improvements-in-FreeBSD-11.pdf)
+- 作者：**Hiren Panchasara**
 
 阻碍我们试验 TCP 的主要障碍之一是对未知的恐惧。由于 TCP 本身复杂，且代码过去形式上非模块化，很难隔离一处修复而不影响其余代码。然而引入细微的回归却相对容易。
 

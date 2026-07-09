@@ -1,6 +1,7 @@
 # 基金会来信
 
-作者：George Neville-Neil
+- 原文：[Letter From the Foundation](https://freebsdfoundation.org/wp-content/uploads/2016/10/Letter-from-the-Foundation.pdf)
+- 作者：**George Neville-Neil**
 
 有些代际梗我们无法回避。对于我们这些看着（或至少看过）电影《This is Spinal Tap》长大的人来说，数字 11 总会让人想到本月来信标题那句台词：“这个调到 11。“
 
