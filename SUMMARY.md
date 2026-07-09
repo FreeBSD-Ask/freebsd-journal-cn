@@ -7,6 +7,15 @@
 
 * [目录](mu-lu.md)
 
+## 2026-456 改进软件质量
+
+* [基金会来信](2026-456/letter-from-the-foundation.md)
+* [活动日历](2026-456/events-calendar.md)
+* [使用 CHERI 调试](2026-456/debugging-with-cheri.md)
+* [FreeBSD 上的现代 Java](2026-456/modern-java-on-freebsd.md)
+* [来吧，友好的 SBOM](2026-456/come-friendly-sboms.md)
+* [读者来信](2026-456/we-get-letters.md)
+
 ## 2026-010203 笔记本与桌面
 
 * [基金会来信](2026-010203/letter-from-the-foundation.md)
