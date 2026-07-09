@@ -1,6 +1,6 @@
 # 会议报道：台北/台湾 PortsCamp
 
-作者：Marcelo Araujo
+- 作者：**Marcelo Araujo**
 
 2016 年 1 月 15 日
 
@@ -8,7 +8,7 @@
 
 活动安排了两场演讲：第一场由 Gandi 亚洲子公司总经理 Thomas Kuiper 介绍 Gandi 如何在其云平台中使用 FreeBSD。他还向任何想要在 Gandi 的 IaaS 环境中试用 FreeBSD 镜像的人提供了试用账户（Gandi：http://.www.gandi.net）。
 
-我做了第二场演讲，对 FreeBSD 项目做了概览介绍，并讲解如何贡献代码、成为 FreeBSD 提交者。我的演讲幻灯片位于 <http://www.slideshare.net/araujobsd/portscamp-taiwan。>
+我做了第二场演讲，对 FreeBSD 项目做了概览介绍，并讲解如何贡献代码、成为 FreeBSD 提交者。我的演讲幻灯片位于 <http://www.slideshare.net/araujobsd/portscamp-taiwan>。
 
 我还提供了一台运行 bhyve(8) 的服务器，预装最新的 FreeBSD-HEAD、ports 树和 poudriere(8)，与会者可以通过 ssh 访问并动手实验 FreeBSD ports。提供这台服务器是个非常好的主意——环境开箱即用，节省了大量配置时间。这台服务器是 i7 处理器配 16G 内存，托管了 25 个虚拟机，性能相当不错。
 
@@ -18,7 +18,7 @@
 
 我们聚得很顺利，并计划在台湾另一座城市（新竹）举办第二届 PortsCamp。可能会在今年 3 月 AsiaBSDCon 之后紧接着在台湾大学举办。我们可能把 PortsCamp 改为工作组形式，相信这样更具生产力。
 
-我要特别感谢 Mose 在 PortsCamp 前后提供的大力支持。
+我要特别感谢 Mose 在 PortsCamp 前和期间提供的大力支持。
 
 以下是关于 PortsCamp 的其他博客和帖子：
 
