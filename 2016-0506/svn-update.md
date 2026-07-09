@@ -37,7 +37,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/296963>
 
-你可能注意到最近启动加载器变胖了一点。从 GELI 加密的 UFS 和 ZFS 分区启动的支持最近添加。关于其实现方式的更多细节，可在 Allan Jude 于 AsiaBSDCon 2016 上发表的论文中找到。
+你可能注意到最近启动加载器变胖了一点。最近新增了从 GELI 加密的 UFS 和 ZFS 分区启动的支持。其实现方式的更多细节，可在 Allan Jude 于 AsiaBSDCon 2016 上发表的论文中找到。
 
 ## 启动时 DTrace 支持
 

@@ -772,7 +772,7 @@
 * [基金会来信](2015-0708/foundation-letter.md)
 * [活动日历](2015-0708/events-calendar.md)
 * [会议报告](2015-0708/conference-report.md)
-* [书评](2015-0708/book-review.md)
+* [书评：《系统管理与网络管理技术实践》](2015-0708/book-review.md)
 
 ## 2015-0506 测量两次，代码一次写好
 
