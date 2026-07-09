@@ -29,7 +29,7 @@ zroot/var/mail       128K  188G   128K  /var/mail
 zroot/var/tmp        128K  188G   128K  /var/tmp
 ```
 
-此 ZFS 安装为 **/usr**、**/var** 以及 **/var/log** 与 **/usr/ports** 等子目录创建了独立数据集。但这份列表具有欺骗性。将数据集列表与 `mount(8)` 的输出对比一下：
+此 ZFS 安装为 **/usr**、**/var**、**/var/log** 与 **/usr/ports** 等子目录创建了独立数据集。但这份列表具有欺骗性。将数据集列表与 `mount(8)` 的输出对比一下：
 
 ```sh
 # mount
