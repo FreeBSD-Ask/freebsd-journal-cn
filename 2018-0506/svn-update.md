@@ -76,4 +76,4 @@ syslogd_flags="-s -O rfc5424"
 
 ---
 
-STEVEN KREUZER 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他和妻子、女儿和狗住在纽约皇后区。
+**STEVEN KREUZER** 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他和妻子、女儿和狗住在纽约皇后区。

@@ -20,7 +20,7 @@ LLD 于 2011 年底加入 LLVM 上游源码仓库，设计主要基于 Apple 所
 
 链接 Mach-O 格式需要 atom 模型提供的灵活性，但对 ELF 与 COFF 格式而言是不必要的复杂化。这些格式中，节（section）是最小可用单位。
 
-2015 年 5 月，Google 的 Rui Ueyama 开始编写新的基于节的 COFF 链接器。两个月后的 7 月，Michael J. Spencer 提交了基于节 COFF 支持的新的 ELF 链接器实现。新的 COFF 实现于 8 月默认启用，ELF 在 11 月同样默认启用。
+2015 年 5 月，谷歌 的 Rui Ueyama 开始编写新的基于节的 COFF 链接器。两个月后的 7 月，Michael J. Spencer 提交了基于节 COFF 支持的新的 ELF 链接器实现。新的 COFF 实现于 8 月默认启用，ELF 在 11 月同样默认启用。
 
 到 2015 年底，LLD 已可成为自举 FreeBSD amd64 工具链的一部分：即可用 Clang/LLVM 与 LLD 构建 Clang/LLVM 与 LLD。2016 年间多位开发者改进了 LLD，其中与 FreeBSD 相关的值得提及的贡献来自 Rui Ueyama、Rafael Espindola、George Rimar、Davide Italiano。
 
