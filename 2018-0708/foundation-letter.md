@@ -11,4 +11,4 @@
 期刊全体同仁希望，如果你正处于夏日炎炎的地方，不妨倒上一杯最令人放松的饮料，坐在树荫下，享受这份 FreeBSD 精粹的清凉合集。
 
 George Neville-Neil
-FreeBSD Foundation 董事会主席
+FreeBSD 基金会 董事会主席

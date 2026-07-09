@@ -8,7 +8,7 @@
 
 ## FreeBSD 的测试如何运作？
 
-和所有伟大的艺术家一样，FreeBSD 开发者从别处”借鉴”了代码。这次的灵感来源是 NetBSD。ATF，即自动化测试框架，最初是一个 Google Summer of Code 项目。它于 2007 年首次导入 NetBSD，2012 年导入 FreeBSD。
+和所有伟大的艺术家一样，FreeBSD 开发者从别处”借鉴”了代码。这次的灵感来源是 NetBSD。ATF，即自动化测试框架，最初是一个 谷歌 Summer of Code 项目。它于 2007 年首次导入 NetBSD，2012 年导入 FreeBSD。
 
 ATF 是用于编写测试的框架。另一个 NetBSD 项目 Kyua 负责运行测试并汇总结果。运行测试时，你主要与 Kyua 打交道。编写测试时，通常与 ATF 打交道。不用 ATF 也能编写测试让 Kyua 执行，但本文不讨论这种情况。
 

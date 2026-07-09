@@ -106,7 +106,7 @@ Stanley Godfrey 是纽芬兰纪念大学的研究生。他的研究兴趣是 Cap
 
 本研究由纽芬兰与拉布拉多研究与发展公司（合同 5404.1822.101）、NSERC Discovery 项目（RGPIN-2015-06048）以及美国国防高级研究计划局（DARPA）和美国空军研究实验室（AFRL）资助，合同编号 FA8650-15-C-7558。本文所含的观点、意见和/或发现均为作者本人观点，不应被解读为代表美国国防部或美国政府的官方观点或政策，无论明示或暗示。
 
-Dr. Robert N. M. Watson 是剑桥大学计算机实验室的高级讲师（副教授），领导横跨操作系统、安全和计算机体系结构的研究。他是 FreeBSD 开发者、FreeBSD Foundation 董事会成员，并合著了 **The Design and Implementation of the FreeBSD Operating System**（第二版）。
+Dr. Robert N. M. Watson 是剑桥大学计算机实验室的高级讲师（副教授），领导横跨操作系统、安全和计算机体系结构的研究。他是 FreeBSD 开发者、FreeBSD 基金会 董事会成员，并合著了 **The Design and Implementation of the FreeBSD Operating System**（第二版）。
 
 [App11] Apple Inc. “Technical Q&A QA1118: Statically linked binaries on Mac OS X,” Apple Developer Guides. <https://developer.apple.com/library/content/qa/qa1118>. (2011)
 [App16] Apple Inc. “App Sandbox in Depth,” Apple Developer Guides. <https://developer.apple.com/library/content/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html>. (2016)

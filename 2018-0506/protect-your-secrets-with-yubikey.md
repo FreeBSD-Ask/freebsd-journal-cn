@@ -147,8 +147,8 @@ YubiKey 是一个非凡的设备，可用于企业或个人提高安全性。这
 
 ---
 
-JAROSLAW ZUREK 是 Wheel Systems 的软件开发者，他支持一个创建特权会话管理器的项目。他对加密、TLS 和底层/硬件编程感兴趣。
+**JAROSLAW ZUREK** 是 Wheel Systems 的软件开发者，他支持一个创建特权会话管理器的项目。他对加密、TLS 和底层/硬件编程感兴趣。
 
-MICHAL BORYSIAK 是 Wheel Systems 的软件开发者，从事集中认证系统工作。他对底层操作系统概念、网络和网络安全着迷。
+**MICHAL BORYSIAK** 是 Wheel Systems 的软件开发者，从事集中认证系统工作。他对底层操作系统概念、网络和网络安全着迷。
 
-MARIUSZ ZABORSKI 是 Wheel Systems 的首席软件开发者。他自 2015 年起自豪地拥有 FreeBSD commit bit。Mariusz 的主要兴趣领域是操作系统安全和底层编程。在 Wheel Systems，Mariusz 领导一个团队，开发监控、记录和控制 IT 基础设施流量的最先进解决方案。业余时间，他喜欢写博客（<http://oshogbo.vexillium.org>）。
+**MARIUSZ ZABORSKI** 是 Wheel Systems 的首席软件开发者。他自 2015 年起自豪地拥有 FreeBSD commit bit。Mariusz 的主要兴趣领域是操作系统安全和底层编程。在 Wheel Systems，Mariusz 领导一个团队，开发监控、记录和控制 IT 基础设施流量的最先进解决方案。业余时间，他喜欢写博客（<http://oshogbo.vexillium.org>）。

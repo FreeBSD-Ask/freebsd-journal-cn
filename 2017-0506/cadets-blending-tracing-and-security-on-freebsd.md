@@ -86,7 +86,7 @@ GEORGE V. NEVILLE-NEIL 出于兴趣和生计从事网络与操作系统代码工
 
 ARUN THOMAS 是 BAE Systems 研发部门的研究员，也是因果自适应分布式高效追踪系统（CADETS）项目的首席研究员。
 
-DR ROBERT N. M. WATSON 是剑桥大学计算机实验室的高级讲师（副教授），领导横跨操作系统、安全和计算机体系结构的研究。他是 FreeBSD 开发者、FreeBSD Foundation 董事会成员，并合著了 **The Design and Implementation of the FreeBSD Operating System**（第二版）。
+DR ROBERT N. M. WATSON 是剑桥大学计算机实验室的高级讲师（副教授），领导横跨操作系统、安全和计算机体系结构的研究。他是 FreeBSD 开发者、FreeBSD 基金会 董事会成员，并合著了 **The Design and Implementation of the FreeBSD Operating System**（第二版）。
 
 本研究由美国国防高级研究计划局（DARPA）和美国空军研究实验室（AFRL）资助，合同编号 FA8650-15-C-7558。本文所含的观点、意见和/或发现均为作者本人观点，不应被解读为代表美国国防部或美国政府的官方观点或政策，无论明示或暗示。
 

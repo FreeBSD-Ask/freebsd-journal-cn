@@ -5,7 +5,7 @@
 
 去年年底，我业余时间在写一个分布式存储服务。它没有固定模式（不像数据库服务器用表格、文件系统用树状结构），而是让用户提供一段固件，由固件为存储于其中的数据赋予结构与意义。服务器本身能安全地分发、缓存、复制、回收与修复数据，但实际的事务处理依赖固件完成。
 
-我最终放弃了这个项目——一如我多数业余项目——但它成了我尝试若干新技术的借口。我用 Raft 实现类 Paxos 的分布式共识，用 Dart 语言虚拟机解析并执行固件，用 Sodium 库做加密，用 Google Test 与 Google Mock 做单元测试，并用 FreeBSD 的 Capsicum 给服务加沙箱。
+我最终放弃了这个项目——一如我多数业余项目——但它成了我尝试若干新技术的借口。我用 Raft 实现类 Paxos 的分布式共识，用 Dart 语言虚拟机解析并执行固件，用 Sodium 库做加密，用 谷歌 Test 与 谷歌 Mock 做单元测试，并用 FreeBSD 的 Capsicum 给服务加沙箱。
 
 实现这一切时，我渐渐喜欢上 Capsicum。基于访问控制的安全框架（如 AppArmor）往往把让软件安全运行的重担推给用户，而用户未必了解应用的内部细节。AppArmor 策略一旦失灵，普通用户往往别无选择，只能将其禁用。Capsicum 把安全策略融入应用自身的设计，则解决了这一问题。应用无需任何额外配置即告安全。简洁而美好。
 
@@ -186,6 +186,6 @@ Hello, world
 
 **作者简介**
 
-ED SCHOUTEN 自 2008 年起担任 FreeBSD 项目的开发者。他的贡献包括 FreeBSD 8 的 SMP 安全 TTY 层、Clang 在 FreeBSD 9 中的初次导入、最终进入 FreeBSD 10 的 `vt(4)` 控制台驱动初始版本。
+**ED SCHOUTEN** 自 2008 年起担任 FreeBSD 项目的开发者。他的贡献包括 FreeBSD 8 的 SMP 安全 TTY 层、Clang 在 FreeBSD 9 中的初次导入、最终进入 FreeBSD 10 的 `vt(4)` 控制台驱动初始版本。
 
 CloudABI 由作者位于荷兰的公司 Nuxi 开发。它将始终作为开源软件免费提供。Nuxi 为 CloudABI 提供商业支持、咨询与培训。若你有意在产品中使用 CloudABI，请通过 <info@nuxi.nl> 与 Nuxi 联系。
