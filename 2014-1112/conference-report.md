@@ -13,7 +13,7 @@
 
 到了会场，我们先找到展览厅和招聘会，那里是赞助商展位所在，也是 Grace Hopper 2014 开源日活动举办的地方。开源日以 OpenHatch 的 Shauna Gordon-McKeon 的演讲开场，题目是“如何为开源做贡献”。她概述了开源项目如何运作——从沟通协作到为开源项目做贡献的第一步。接下来是 Dru Lavigne 的“FreeBSD 项目简介”，这场演讲让人深入了解 FreeBSD 的特定关注领域，包括文件系统、网络和安全。演讲座无虚席，看到这么多年轻大学生对开源感到好奇，我很高兴。演讲之后，我与 Python 社区的一位资深成员就指导年轻贡献者/开发者进行了一次非常有趣的对话。我对 FreeBSD 项目为指导和培养新提交者所采取的政策感到满意，她也确实印象深刻。
 
-展览厅巨大，有一百多个——也许两百个——展位，所有大公司都在——Google、Netflix、NetApp、Yahoo、Juniper 等等——许多大学也在——加州大学伯克利分校、MIT、卡内基梅隆等——悉数到场。连 NSA 都有展位！FreeBSD Foundation 展位位置便利，紧挨着供应咖啡和食物的区域，所以很多只是路过取咖啡和点心的学生会在展位前停下，询问 FreeBSD。这是 FreeBSD Foundation 首次参加 Grace Hopper 大会，Dru 和我讨论了如何在未来的 Grace Hopper 大会上提升 FreeBSD Foundation 的存在感。如果你参加了活动并且对此有想法，请告诉我们！
+展览厅巨大，有一百多个——也许两百个——展位，所有大公司都在——谷歌、Netflix、NetApp、Yahoo、Juniper 等等——许多大学也在——加州大学伯克利分校、MIT、卡内基梅隆等——悉数到场。连 NSA 都有展位！FreeBSD Foundation 展位位置便利，紧挨着供应咖啡和食物的区域，所以很多只是路过取咖啡和点心的学生会在展位前停下，询问 FreeBSD。这是 FreeBSD Foundation 首次参加 Grace Hopper 大会，Dru 和我讨论了如何在未来的 Grace Hopper 大会上提升 FreeBSD Foundation 的存在感。如果你参加了活动并且对此有想法，请告诉我们！
 
 活动也不乏争议。在“男性盟友”专题讨论中，Microsoft 的 CEO Satya Nadella 建议女性不应主动要求加薪，而应相信 HR 团队的判断。这番话激怒了与会者和社交网络上的人，Nadella 随后通过邮件向 Microsoft 员工道歉，并在 Twitter 上公开致歉。Nadella 的失言被新闻广泛报道，你可能已经读到了。
 

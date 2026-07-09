@@ -41,7 +41,7 @@ IPsec 的后端密钥守护进程从 `ipsec-tools`（racoon）换为 `strongSwan
 
 ## DNS 解析器变更
 
-防火墙上运行本地 DNS 解析器，在没有本地 DNS 服务器的网络中很有用：它提供本地 DNS 缓存，也能配置本地主机和域名覆盖以用于名称解析。pfSense 软件还能自动把 DHCP 租约及其关联主机名注册到 DNS 转发器中，对于最基础的网络，它能满足所有本地 DNS 需求，包括内部名称解析。我们 2.1.x 及更早版本使用 Dnsmasq 作为缓存 DNS 转发器，在“服务 > DNS 转发器”下配置。Dnsmasq 默认启用，使用系统配置的 DNS 服务器进行查询。Dnsmasq 严格来说是转发器，依赖递归 DNS 服务器进行查询。没有内部 DNS 服务器时，需要使用互联网上的 DNS 服务器（如 Google public DNS 或 OpenDNS），或使用 ISP 的 DNS 服务器。
+防火墙上运行本地 DNS 解析器，在没有本地 DNS 服务器的网络中很有用：它提供本地 DNS 缓存，也能配置本地主机和域名覆盖以用于名称解析。pfSense 软件还能自动把 DHCP 租约及其关联主机名注册到 DNS 转发器中，对于最基础的网络，它能满足所有本地 DNS 需求，包括内部名称解析。我们 2.1.x 及更早版本使用 Dnsmasq 作为缓存 DNS 转发器，在“服务 > DNS 转发器”下配置。Dnsmasq 默认启用，使用系统配置的 DNS 服务器进行查询。Dnsmasq 严格来说是转发器，依赖递归 DNS 服务器进行查询。没有内部 DNS 服务器时，需要使用互联网上的 DNS 服务器（如 谷歌 public DNS 或 OpenDNS），或使用 ISP 的 DNS 服务器。
 
 Unbound 能进行递归且默认启用，因此不依赖特定的 DNS 服务器列表。跟随 FreeBSD 10 的脚步，pfSense 2.2 把新安装的默认 DNS 解析器改为 Unbound。从旧版本升级或把早期版本配置恢复到 2.2 的系统会保留旧行为，继续使用 Dnsmasq 作为 DNS 转发器。Unbound 作为 DNS 解析器的好处包括：可扩展性更好、大缓存下性能更好、支持 DNSSEC，和能在 pfSense 平台上直接执行递归查询，而不必依赖其他外部 DNS 服务器。Unbound 在“服务 > DNS 解析器”下配置。
 
