@@ -1,18 +1,15 @@
-# 书评：《FreeBSD Mastery: Specialty Filesystems》
+# 书评：*FreeBSD Mastery: Specialty Filesystems*
 
 作者：MATT JORAS
 
-## FreeBSD Mastery: Specialty Filesystems
+*FreeBSD Mastery: Specialty Filesystems*
 
-作者：Michael W Lucas
-
-| 项目 | 信息 |
-| :--- | :--- |
-| 出版社 | Tilting Windmill Press（2016） |
-| 纸质书定价 | $24.99 |
-| 电子书定价 | $9.99 |
-| ISBN | 9780692610442 |
-| 页数 | 238 |
+- 作者：Michael W Lucas
+- 出版社：Tilting Windmill Press（2016）
+- 纸质书定价：$24.99
+- 电子书定价：$9.99
+- ISBN：9780692610442
+- 页数：238 
 
 为开源软件寻找实用且有用的示例常常很困难。手册页固然好，但通常在你理解软件基础后才最有用。手册页中缺少的，正是“这里有一个该软件解决的问题示例，以及如何配置它来完成”这样的基础内容。Michael W Lucas 的 Specialty Filesystems 为 FreeBSD 中某些文件系统填补了这一空白。
 
