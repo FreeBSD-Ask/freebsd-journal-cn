@@ -204,7 +204,7 @@ Linus Torvalds 退休时，谁会上去？怎么上？
 
 **Allan**：对。
 
-**Benedict**：我们谈了项目本身、社区以及社区选出的 core team。还有你参与的 FreeBSD Foundation。它在某些方面也是项目健康的关键吗？
+**Benedict**：我们谈了项目本身、社区以及社区选出的 core team。还有你参与的 FreeBSD 基金会。它在某些方面也是项目健康的关键吗？
 
 **Kirk**：无疑是。看看 FreeBSD 项目是怎么起步的。最早的发行由 Walnut Creek CD-ROM 完成。他们付钱给首批开发者，让他们全职做这件事，这是巨大进步，但不可持续，因为我们需要更多基础设施和网络连接。
 
@@ -220,7 +220,7 @@ Linus Torvalds 退休时，谁会上去？怎么上？
 
 **Benedict**：或者换盒子，或者其他什么。
 
-**Kirk**：是的，……whatever。突然我们的基础设施就没了。Justin Gibbs 把这看作了问题。他意识到 FreeBSD 项目需要某种方式资助至少基本的基础设施。于是他创办了 FreeBSD Foundation，过了五到八年才有足够收入考虑基础设施之类的基本东西，事实上我们最近四五年才完全切过去。过程很慢。但 Yahoo 今天消失了，我们也没事。
+**Kirk**：是的，……whatever。突然我们的基础设施就没了。Justin Gibbs 把这看作了问题。他意识到 FreeBSD 项目需要某种方式资助至少基本的基础设施。于是他创办了 FreeBSD 基金会，过了五到八年才有足够收入考虑基础设施之类的基本东西，事实上我们最近四五年才完全切过去。过程很慢。但 Yahoo 今天消失了，我们也没事。
 
 项目通过 GitHub 或 Apache Foundation 这类组织获取基础设施的方式有很多。FreeBSD 项目设立了自己的基金会。有自己的基金会而不是挂在 Apache 下面，我们对事情如何运作有更多控制权，这有好有坏。但总体上，Foundation 是重要的基石。
 

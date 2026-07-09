@@ -25,19 +25,21 @@ FreeBSD 源码对我来说并不完全陌生，多年来我已经对其结构有
 
 比如，如果有人对学习或使用 FreeBSD 的网络工具或内核模块（如 `netstat`、`route`、`pf`、`ipfw`、`netgraph` 等）感兴趣，那么阅读相关文档和手册页的同时，可能会发现可以通过补充示例、重写复杂概念或补充缺失部分来改进它们。如果 FreeBSD 里没有相应工具或模块，那么将有用的程序加入 Ports 或保持其更新，也是非常重要的参与方式。这类项目通常既有趣又有教育意义，因为可能需要更深入地理解 FreeBSD 内核接口。
 
-如果目标是深入理解内核代码，也可以采用类似的方法——选择自己使用或计划使用的功能，能获得更多收益。比如防火墙：理解其规则在幕后是如何运作的，可以给高级用户带来优势；或者对路由机制进行研究，以解决特定问题。可能还需要在内核中实现缺失的功能或 RFC。偶尔也会有把其他平台的方案移植到 FreeBSD 的需求，例如正在进行中的 Netlink 实现，或是 VPP 框架的移植。这些都为进一步改进留下了空间。最终，和现有代码的工作总会揭示出优化机会——减少每单位数据传输或处理的资源消耗，这对所有依赖 FreeBSD 的企业都有利。
+如果目标是深入理解内核代码，也可以采用类似的方法——选择自己使用或计划使用的功能，能获得更多收益。比如防火墙：理解其规则在幕后是如何运作的，可以给高级用户带来优势；或者对路由机制进行研究，以解决非通用问题。可能还需要在内核中实现缺失的功能或 RFC。偶尔也会有把其他平台的方案移植到 FreeBSD 的需求，例如正在进行中的 Netlink 实现（伴随现有工具的迁移工作），或是 Vector Packet Processing（VPP）框架的移植。这些都为进一步改进留下了空间。最终，使用现有代码时总会发现优化机会——减少每单位数据传输或处理所耗费的资源（如时间），这对所有依赖 FreeBSD 的企业都有利。
 
 如果贡献不止一个小补丁，我建议两个起步步骤：做好功课并沟通。与 FreeBSD 开发者联系的方式很多（见 [community 页面](https://www.freebsd.org/community/)），最基本的是邮件列表，例如 [hackers@FreeBSD.org](mailto:hackers@FreeBSD.org)。先讨论潜在项目，可以达成方向上的共识，也可以发现是否有人已经在做。对于开源项目来说，准备工作越充分，沟通效果越好。
 
 **TJ:** 开发过程往往令人望而生畏，还有很多死胡同。你能分享一些捷径，帮助新开发者更轻松地调试和开发吗？
 
-**IO:** 我认为《FreeBSD 期刊》是一项非常棒的专业经验分享渠道。我建议浏览过往期刊的目录，寻找能填补知识空白或提供新视角的文章。比如，Mark Johnston 的《Kernel Development Recipes》（内核开发秘籍）和《DeBUGGING the FreeBSD Kernel》（调试 FreeBSD 内核），Navdeep Parhar 的《FreeBSD Kernel Development Workflow》（FreeBSD 内核开发工作流），以及你写的《More Modern Kernel Debugging Tools》（更现代的内核调试工具）。这些文章可以快速概览构建系统的功能和一些技巧（比如避免耗时的完整重建），以及如何利用虚拟化或第三方软件提升效率。
+**IO:** 我认为《FreeBSD 期刊》是一项非常棒的专业经验分享渠道。我建议浏览过往期刊的目录，寻找能填补知识空白或提供新视角的文章。比如，Mark Johnston 的《Kernel Development Recipes》（内核开发秘籍）和《DeBUGGING the FreeBSD Kernel》（调试 FreeBSD 内核），Navdeep Parhar 的《FreeBSD Kernel Development Workflow》（FreeBSD 内核开发工作流），以及你写的《More Modern Kernel Debugging Tools》（更现代的内核调试工具）。这些文章可以快速概览构建系统的功能和一些技巧（比如避免耗时的完整重建），以及如何利用虚拟化或第三方软件提升效率。每篇文章都不是涵盖所有细节或列举所有可用选项的完整书籍，但它们提供了良好的起点。
 
 要养成项目推荐的良好实践，我建议阅读 Ed Maste 的《Writing Good FreeBSD Commit Messages》（撰写优质的 FreeBSD 提交信息）。迟早也该熟悉 John Baldwin 的《FreeBSD Code Review with git-arc》（使用 git-arc 进行 FreeBSD 代码审查），这个工具大大提升了补丁发布、审查、更新和合并的效率。
 
-在内核网络方面，我建议仔细研究 FreeBSD 的 Jail 和 VNET 功能。如果工作不涉及特定硬件支持，那么基于 VNET 的 Jail 可以大大简化开发时测试新网络功能的过程。它们可以当作轻量级虚拟机网络来测试特定数据包路径或网络栈行为。这比其他方式更简单，即使同一个 `mbuf` 数据包缓冲在场景中扮演了所有角色，因为数据都不会离开主机。同时，这样的实验场景也可以成为开发新自动化测试的良好起点。Kristof Provost 的《The Automated Testing Framework》（自动化测试框架）文章和相关防火墙测试代码，以及他在 YouTube 上的演讲，都能提供灵感。
+在内核网络方面，我建议仔细研究 FreeBSD 的 Jail 和 VNET 功能。如果工作不涉及特定硬件支持或其他非通用主题，那么基于 VNET 的 Jail 可以大大简化开发时测试新网络功能的过程。对于感兴趣的新开发者，基于 VNET 的 Jail 可以粗略当作轻量级虚拟机网络来测试特定数据包路径或网络栈行为。这比其他方式更简单，即使同一个 `mbuf` 数据包缓冲在场景中扮演了所有角色，因为数据都不会离开主机。同时，这样的实验场景也可以成为针对新实现的功能或修复的 bug 开发新自动化测试的良好起点。Kristof Provost 的《The Automated Testing Framework》（自动化测试框架）文章介绍了 FreeBSD 测试套件。基于 VNET Jail 的现有防火墙测试源码（**src/tests/sys/netpfil**）和 Kristof 的 [YouTube 演讲](https://www.youtube.com/watch?v=gTyt7KLz1mw) 都能提供灵感。
 
-此外，投入时间来熟悉源码环境也很重要。内核是一种特殊的软件，它支持多种架构、编译器和特殊场景，预处理器的 ifdefs 并不足以解决所有问题，有些条件甚至是在代码之外解决的。另外，源码中包含一些自动生成的代码，比如系统调用或 VFS 操作的模板。因此，单靠 grep 或编辑器默认功能是不够的。我个人的配置是 `Neovim + clangd + intercept-build`，效果不错，但最好先了解有哪些可选方案。[这篇文档](https://docs.freebsd.org/en/articles/freebsd-src-lsp/) 介绍了如何利用 LSP 来简化代码理解和导航，这对新开发者来说至关重要。
+不过，投入时间来熟悉源码环境也很重要。内核是一种特殊的软件，它支持多种架构、编译器和特殊场景，预处理器的 ifdefs 并不足以解决所有问题，有些条件甚至是在代码之外解决的。另外，源码中包含一些自动生成的代码，比如系统调用或 VFS 操作的模板。因此，单靠 grep 或使用默认设置的编辑器/IDE 是不够的。我个人的配置是 `Neovim + clangd + intercept-build`，效果不错，但最好先了解有哪些可选方案：[https://docs.freebsd.org/en/articles/freebsd-src-lsp/](https://docs.freebsd.org/en/articles/freebsd-src-lsp/)
+
+使用语言服务器协议（LSP）可以大大简化代码理解和导航，这对新开发者来说至关重要。
 
 **TJ:** 感谢你接受采访。最后你有没有给新贡献者的建议，或者想补充的内容？
 
