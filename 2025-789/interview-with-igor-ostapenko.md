@@ -51,6 +51,6 @@ FreeBSD 源码对我来说并不完全陌生，多年来我已经对其结构有
 
 ---
 
-**Tom Jones** 是一位 FreeBSD 提交者，专注于保持网络栈的高性能。
+**Tom Jones** 是 FreeBSD 提交者，专注于保持网络栈的高性能。
 
-**Igor Ostapenko** 是 FreeBSD 和 OpenZFS 的贡献者，拥有广泛的软件开发经验，涉及导航设备测试系统、企业流程优化解决方案、逆向工程，以及 B2B/B2C 创业项目等多个领域。
+**Igor Ostapenko** 是 FreeBSD 和 OpenZFS 的贡献者，拥有广泛的软件开发经验，涉及导航设备操作与测试系统、企业流程优化解决方案、逆向工程，以及 B2B/B2C 创业项目等多个领域。

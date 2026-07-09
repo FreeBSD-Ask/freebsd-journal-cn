@@ -11,4 +11,4 @@ Ayaka Koshibe 贡献了一篇关于软件定义网络（SDN）和 Mininet 的文
 请查看我们所有的专栏，特别是新的读者来信专栏，Michael Lucas 以委婉而诙谐的笔触回答你的来信。
 
 George Neville-Neil
-FreeBSD Foundation 董事会主席
+FreeBSD 基金会 董事会主席
