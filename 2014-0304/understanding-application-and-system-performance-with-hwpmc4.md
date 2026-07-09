@@ -61,8 +61,6 @@ void mov(int n, int f, int t)
 
 **图 1**
 
-![Fig. 1：kldload hwpmc 命令及其输出](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-01.png)
-
 ```sh
 # kldload hwpmc
 hwpmc: SOFT/16/64/0x67<INT,USR,SYS,REA,WRI> TSC/1/64/0x20<REA>
