@@ -40,4 +40,4 @@ ISBN：978-1907117046
 
 ---
 
-Steven Kreuzer 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他与妻子和狗住在纽约皇后区。
+**Steven Kreuzer** 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他与妻子和狗住在纽约皇后区。

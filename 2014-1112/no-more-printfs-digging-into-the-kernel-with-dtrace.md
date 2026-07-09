@@ -378,7 +378,7 @@ w   c   \   -   w   \   a   r   t   i   c   l   e   .   t   x   t   \
 
 ---
 
-Mark Johnston 是居住在西雅图的软件工程师。他来自多伦多，2013 年在滑铁卢大学取得数学学位，2010 年起成为 FreeBSD 用户。获得提交权限后，他的主要精力放在改进 FreeBSD 的 DTrace 实现上。可通过邮箱 <markj@FreeBSD.org> 联系他。
+**Mark Johnston** 是居住在西雅图的软件工程师。他来自多伦多，2013 年在滑铁卢大学取得数学学位，2010 年起成为 FreeBSD 用户。获得提交权限后，他的主要精力放在改进 FreeBSD 的 DTrace 实现上。可通过邮箱 <markj@FreeBSD.org> 联系他。
 
 ## 参考文献
 
