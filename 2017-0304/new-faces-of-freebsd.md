@@ -45,4 +45,4 @@
 
 ---
 
-DRU LAVIGNE 是 FreeBSD 项目的文档提交者，也是 BSD 认证小组的主席。
+**DRU LAVIGNE** 是 FreeBSD 项目的文档提交者，也是 BSD 认证小组的主席。
