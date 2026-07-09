@@ -43,7 +43,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/297773>
 
-现在可以在 i386 和 amd64 上，于启动早期、`dtrace(1)` 可调用之前启用 DTrace 探针。所需的启用通过 `dtrace -A` 创建，它会写入一个 **/boot/dtrace.dof** 文件，并使用 `nextboot(8)` 确保在随后的启动中加载 DTrace 内核模块，并由 `loader(8)` 加载描述此启用的 DOF 文件。追踪输出随后可通过 `dtrace -a` 获取。
+现在可在 i386 和 amd64 上，在启动早期、`dtrace(1)` 可调用之前启用 DTrace 探针。所需的启用通过 `dtrace -A` 创建，它会写入一个 **/boot/dtrace.dof** 文件，并使用 `nextboot(8)` 确保在随后的启动中加载 DTrace 内核模块，并由 `loader(8)` 加载描述此启用的 DOF 文件。追踪输出随后可通过 `dtrace -a` 获取。
 
 ## ARM64 上用户空间应用的追踪支持
 
@@ -61,7 +61,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/297914>
 
-此变更同时增加了 DMAP 区域，后者也已增至 2TiB。
+此变更同时增加了 DMAP 区域，后者也增至 2TiB。
 
 ## ARM64 上的 4 级页表支持
 
@@ -85,4 +85,4 @@ FreeBSD 基础用户空间由不少工具组成，其中一部分在项目之外
 
 ---
 
-**Steven Kreuzer** 是一名 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车有兴趣。他与妻子、女儿和狗住在纽约皇后区。
+**Steven Kreuzer** 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车有兴趣。他与妻子、女儿和狗住在纽约皇后区。
