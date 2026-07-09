@@ -75,7 +75,7 @@ BlueSpec SystemVerilog 是一种基于 Haskell 的高级硬件描述语言，使
 
 在 FreeBSD 上 LLVM 开发非常容易。FreeBSD 是 LLVM 的一等公民目标，LLVM 的构建也非常简单。在某种程度上甚至“太容易了”：当我们需要支持一些 Linux 长期支持版本的用户时，发现引导我们使用的 LLVM 版本很困难，因为它依赖的 C++ 版本比他们系统自带的工具链更新。
 
-而在前沿开发上，FreeBSD 更容易：ports 里提供多个版本的 GCC 和 LLVM。这也让我们很容易在其他系统上复现一些构建失败问题 —— 只需安装他们自带的旧版 GCC，然后配置构建使用它即可。一旦这些工作正常，交叉编译和测试 RTOS 就很容易了。
+而在前沿开发上，FreeBSD 更容易：Ports 里提供多个版本的 GCC 和 LLVM。这也让我们很容易在其他系统上复现一些构建失败问题 —— 只需安装他们自带的旧版 GCC，然后配置构建使用它即可。一旦这些工作正常，交叉编译和测试 RTOS 就很容易了。
 
 ## 从 FreeBSD 汲取的经验教训
 
@@ -123,7 +123,7 @@ FreeBSD 还在非绝对性能关键的领域（包括用户态部分、引导加
 
 ## 在 FreeBSD 上开发 CHERIoT
 
-CHERIoT 工具链已经进入 FreeBSD 的 ports，`xmake` 构建工具也同样在其中，因此你可以很简单地通过以下命令来安装：
+CHERIoT 工具链已经进入 FreeBSD 的 Ports，`xmake` 构建工具也同样在其中，因此你可以很简单地通过以下命令来安装：
 
 ```sh
 # pkg ins cheriot-llvm xmake-io git
@@ -166,7 +166,7 @@ $ xmake
 # podman run --rm -it --os linux -v path/to/cheriot-rtos:/home/cheriot/cheriot-rtos ghcr.io/cheriot-platform/devcontainer:x86_64-latest
 ```
 
-这会让你进入临时容器，其中包含挂载在 **/home/cheriot/cheriot-rtos** 的 RTOS 源代码克隆。需要注意的是，ports 中当前版本的 Podman 并不喜欢在宿主操作系统与容器 OS 不匹配时使用指向多架构容器的标签。我们提供了 `x86-64` 和 `AArch64` 的二进制文件，所以如果你是在 AArch64 上，只需把上面命令中的 `x86_64` 替换为 `aarch64` 即可。
+这会让你进入临时容器，其中包含挂载在 **/home/cheriot/cheriot-rtos** 的 RTOS 源代码克隆。需要注意的是，Ports 中当前版本的 Podman 并不喜欢在宿主操作系统与容器 OS 不匹配时使用指向多架构容器的标签。我们提供了 `x86-64` 和 `AArch64` 的二进制文件，所以如果你是在 AArch64 上，只需把上面命令中的 `x86_64` 替换为 `aarch64` 即可。
 
 开发容器在 **/cheriot-tools** 中安装了所有工具，因此你可以像之前一样再次尝试构建示例：
 
@@ -210,7 +210,7 @@ Exporting counters
 
 你可以在 FreeBSD 上开发，只在容器中运行模拟器；也可以选择在容器中完成所有开发。在其他平台上，大多数开发者会使用带有 dev container 集成功能的编辑器（例如 Visual Studio Code）。在 FreeBSD 上同样也可以这样做，只需配置 Podman 来运行容器的 Linux 版本即可。
 
-另外，你也可以在 FreeBSD 上原生构建所有模拟器。相关的操作步骤过长，无法在本文中全部展开，但你可以参考 RTOS 仓库中的文档说明。它们所需的所有依赖已经在 ports 中，模拟器本身也有望很快进入 ports。
+另外，你也可以在 FreeBSD 上原生构建所有模拟器。相关的操作步骤过长，无法在本文中全部展开，但你可以参考 RTOS 仓库中的文档说明。它们所需的所有依赖已经在 Ports 中，模拟器本身也有望很快进入 Ports。
 
 ---
 
