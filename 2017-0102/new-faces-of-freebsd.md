@@ -12,7 +12,7 @@
 
 ### 你最早是怎么了解到 FreeBSD 的？FreeBSD 哪点吸引你？
 
-**Johannes：** 大学时我做系统管理员（SuSE 和 Debian）赚生活费。我对这些系统有点失望，想知道是否有什么更适合我个人电脑的不同选择，于是遇到了 FreeBSD。我最终从一家零售商处订购了一张 FreeBSD 6.1 CD，一本 Greg Lehey 的《The Complete FreeBSD》和一本 Dru Lavigne 的《BSD Hacks》，这两本书都非常出色。经过一段涉及大量 Ports 重编译和 X11 故障的学习曲线之后，FreeBSD 成了我的工作主力。FreeBSD 当时乃至现在都透明易用，对开发者非常友好，并附带庞大的 Ports 集合。手册对初学者是绝佳资源，我也发现社区非常友好，交流起来很专业。
+**Johannes：** 大学时我做系统管理员（SuSE 和 Debian）赚生活费。我对这些系统有点失望，想知道是否有什么更适合我个人电脑的不同选择，于是遇到了 FreeBSD。我最终从一家零售商处订购了一张 FreeBSD 6.1 CD，一本 Greg Lehey 的《The Complete FreeBSD》和一本 Dru Lavigne 的《BSD Hacks》，这两本书都非常出色。经过一段涉及大量 Ports 重编译和 X11 故障的学习曲线之后，FreeBSD 成了我的工作主力。FreeBSD 当时乃至现在都透明易用，对开发者非常友好，并附带庞大的 Ports。手册对初学者是绝佳资源，我也发现社区非常友好，交流起来很专业。
 
 ### 你是怎么成为提交者的？
 

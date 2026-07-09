@@ -5,7 +5,7 @@
 
 ## 欢迎阅读《FreeBSD 期刊》一/二月刊。新年为用户和开发者都带来新机会。
 
-今年新机会的一个来源是 FreeBSD 的 Ports 集合。该集合随着第三方软件和基本系统的变化而不断变化。Mateusz Piotrowski 演示了贡献新 port 的流程，Joseph Mingrone 则介绍了从 Subversion 迁移到 Git 之后，向 ports 贡献变更的一些最佳实践。
+今年新机会的一个来源是 FreeBSD 的 Ports。它随着第三方软件和基本系统的变化而不断变化。Mateusz Piotrowski 演示了贡献新 port 的流程，Joseph Mingrone 则介绍了从 Subversion 迁移到 Git 之后，向 ports 贡献变更的一些最佳实践。
 
 CBSD 提供了在 FreeBSD 上管理 Jail 和 bhyve 虚拟机的框架。Oleg Ginzburg 提供了系列文章的第一篇，向用户介绍 CBSD 框架及其使用方法。同样主题下，Tom Jones 介绍了用于创建 Jail 的新工具。
 
