@@ -6,7 +6,7 @@
 
 防止代码出 bug 的最佳手段是好的测试，这正是 Kristof Provost 在文章中向我们阐述的内容。三篇中的第三篇是 Benedict Reuschling 的实践经历文章，讲述在运行中的系统上用 DTrace 调试问题。
 
-本期春季刊还带来了全新的专栏阵容。Dru Lavigne 介绍了新 Ports 提交者 Kai Knoblich；Michael W Lucas 回答了一些读者来信；Steven Kreuzer 在 svn Update 中向我们介绍源代码树中的最新动态。FreeBSD 基金会执行董事 Deb Goodkin 带来了 FOSDEM 报告——这是 2019 年首场大型开源会议，吸引了来自欧洲和世界各地逾 5000 名开源项目参与者，在比利时度过一个周末的会议、演讲和聚会。说到会议，如果你有兴趣参加 FreeBSD 相关活动，可以在由 Dru Lavigne 和 Anne Dickison 整理的活动日历中找到清单。
+本期春季刊还带来了全新的专栏阵容。Dru Lavigne 介绍了新 Ports 提交者 Kai Knoblich；Michael W Lucas 回答了一些读者来信；Steven Kreuzer 在 SVN 动态中向我们介绍源代码树中的最新动态。FreeBSD 基金会执行董事 Deb Goodkin 带来了 FOSDEM 报告——这是 2019 年首场大型开源会议，吸引了来自欧洲和世界各地逾 5000 名开源项目参与者，在比利时度过一个周末的会议、演讲和聚会。说到会议，如果你有兴趣参加 FreeBSD 相关活动，可以在由 Dru Lavigne 和 Anne Dickison 整理的活动日历中找到清单。
 
 我们期待在 5 月中旬于加拿大安大略省渥太华举办的 BSDCan 上见到尽可能多的读者。大多数编辑委员会成员都会到场，如果你在那里看到我们，请停下来打个招呼，告诉我们 FreeBSD 期刊做得如何。
 

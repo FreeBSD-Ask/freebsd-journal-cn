@@ -10,4 +10,4 @@ BSDTW 是台湾几位 FreeBSD 开发者的构想，他们是 Li-Wen Hsu、Ruey-C
 
 现在来看看本期的文章阵容，包括两篇关于存储的精彩文章。Alexander Motin 的文章描述了多路径如何提升 FreeBSD 存储子系统的可靠性和性能，Ken Merry 则撰文论述磁带系统——他断言磁带并未消亡。Farhan Khan 带我们了解使用 `ifconfig`(8) 命令时究竟发生了什么——这个命令控制着 FreeBSD 上的所有网络设备。追踪 `ifconfig`(8) 让 Farhan 得以展示网络代码中众多相互作用的组件，由于他的关注点是无线设备，其中有不少曲折的路径要追踪。
 
-专栏包括前述 Brooks Davis 的 BSDTW 报告、Matt Joras 的存储相关书评、Steven Kreuzer 的 svn Update 专栏、Dru Lavigne 的活动日历。说到活动，下一场 BSD 相关会议是 2018 年 3 月 8—11 日在日本东京举办的 AsiaBSDCon，期待在那里与大家相见！
+专栏包括前述 Brooks Davis 的 BSDTW 报告、Matt Joras 的存储相关书评、Steven Kreuzer 的 SVN 动态专栏、Dru Lavigne 的活动日历。说到活动，下一场 BSD 相关会议是 2018 年 3 月 8—11 日在日本东京举办的 AsiaBSDCon，期待在那里与大家相见！

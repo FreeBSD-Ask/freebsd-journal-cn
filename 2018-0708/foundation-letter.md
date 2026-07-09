@@ -6,7 +6,7 @@
 
 本期另有关于存储的两篇文章，分别是 Jim Harris 与 Warner Losh 撰写的 NVM Express 文章——他们编写了 FreeBSD 中处理这项新型、持久化、高速存储技术的大量代码——以及 Rick Macklem 介绍的 pNFS，它允许网络文件系统（NFS）在一组服务器上并行运作，这正是科学计算社区中的常见用例。
 
-最后，本月照例带来专栏文章：Steven Kreuzer 在 svn Update 中讨论 pNFS 提交到 FreeBSD 一事，Michael Lucas 负责来信专栏，Dru Lavigne 通过活动日历让你了解未来几个月即将到来的全部活动。
+最后，本月照例带来专栏文章：Steven Kreuzer 在 SVN 动态中讨论 pNFS 提交到 FreeBSD 一事，Michael Lucas 负责来信专栏，Dru Lavigne 通过活动日历让你了解未来几个月即将到来的全部活动。
 
 期刊全体同仁希望，如果你正处于夏日炎炎的地方，不妨倒上一杯最令人放松的饮料，坐在树荫下，享受这份 FreeBSD 精粹的清凉合集。
 

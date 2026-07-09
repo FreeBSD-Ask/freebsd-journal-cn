@@ -2,7 +2,7 @@
 
 - 作者：**Steven Kreuzer**
 
-10.3-RELEASE 的代码冻结已经持续了一段时间。你读到本栏目时，它应该已经可用。本期 svn update 我本打算介绍一些新特性和改进，但 11-CURRENT 最近的更新让我兴奋不已，于是临时改了主意。你们许多人也在翘首等待 10.3 的到来，stable/10 的发行说明中列出了自 10.2-RELEASE 以来的变更（<https://www.freebsd.org/relnotes/10-STABLE/relnotes/article.html>）。如果你想参与发布周期提供帮助，强烈建议试用现已可下载的 10.3-BETA 构建，并报告任何你可能遇到的回归问题。
+10.3-RELEASE 的代码冻结已经持续了一段时间。你读到本栏目时，它应该已经可用。本期 SVN 动态我本打算介绍一些新特性和改进，但 11-CURRENT 最近的更新让我兴奋不已，于是临时改了主意。你们许多人也在翘首等待 10.3 的到来，stable/10 的发行说明中列出了自 10.2-RELEASE 以来的变更（<https://www.freebsd.org/relnotes/10-STABLE/relnotes/article.html>）。如果你想参与发布周期提供帮助，强烈建议试用现已可下载的 10.3-BETA 构建，并报告任何你可能遇到的回归问题。
 
 ## 对 RISC-V 指令集架构（ISA）的支持
 

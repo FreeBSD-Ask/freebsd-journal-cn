@@ -12,7 +12,7 @@
 
 新年伊始，本期没有会议报告，但在后续各期中我们将报道几周前刚落幕的 FOSDEM 2017，以及计划于 3 月在东京举行的 AsiaBSDCon（<https://2017.asiabsdcon.org>）、6 月在加拿大渥太华举行的 BSDCan（<http://www.bsdcan.org/2017/>），以及 8 月和 9 月举行的 BSDCam、VBSDCon 和 EuroBSD。
 
-在本期中，你将欣赏到 Dru Lavigne 的专栏，她将介绍 FreeBSD 社区的新面孔；Steven Kreuzer 将评 Aditya Y. Bhargava 所著《Grokking Algorithms: An illustrated guide for programmers and other curious people》，并带来他的 svn update 专栏新一期。
+在本期中，你将欣赏到 Dru Lavigne 的专栏，她将介绍 FreeBSD 社区的新面孔；Steven Kreuzer 将评 Aditya Y. Bhargava 所著《Grokking Algorithms: An illustrated guide for programmers and other curious people》，并带来他的 SVN 动态专栏新一期。
 
 ---
 
