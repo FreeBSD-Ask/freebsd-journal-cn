@@ -51,6 +51,6 @@ Brooks 接下来在第 13 章讨论系统调试。本章开篇强调架构与设
 
 第 8 章讨论的是软件项目的规划与估算，第 14 章则关注项目启动后的管理。Brooks 的第一个建议是制定包含具体里程碑的进度表。含糊的里程碑会导致管理层之间（或管理者与开发者之间）沟通含糊。Brooks 还警告不要微观管理。管理者跳出来纠正被管理者本有能力解决的问题时，被管理者会以隐瞒问题报告作为自卫。为促进清晰沟通，管理者必须愿意接受坏消息，而非立即发号施令。
 
-<!-- 注：原文 PDF 文章在此处之后仍有内容（第 15 章及结论因 PDF 文本提取限制未包含）。完整 PDF 见 https://freebsdfoundation.org/wp-content/uploads/2016/12/Book-Review.pdf -->
+---
 
-JOHN BALDWIN 是 FreeBSD 核心团队成员，《The Design and Implementation of the FreeBSD Operating System》的合作者之一。
+JOHN BALDWIN 是 FreeBSD 核心团队成员，《FreeBSD 操作系统设计与实现》的合作者之一。
