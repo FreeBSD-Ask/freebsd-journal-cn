@@ -216,6 +216,15 @@ Git 有一个"rebase"的概念，你可以使用它来避免这些问题。`git 
 % git diff # 检查合并
 ```
 
+```sh
+% cd src
+% git checkout main
+% git checkout -b no-color-ls
+% cd bin/ls
+% vi ls.c # 将更改合并进去
+% git diff # 检查合并
+```
+
 ```c
 diff --git a/bin/ls/ls.c b/bin/ls/ls.c
 index 7378268867ef..cfc3f4342531 100644

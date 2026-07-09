@@ -1,6 +1,9 @@
 # FreeBSD 本月动态
 
-7 月 24–26 日，我有机会参加在德国埃森 Linuxhotel 举办的 FreeBSD 黑客马拉松。这次活动是一次实验，将一群 FreeBSD 提交者聚集在一起，在一个轻松的环境中进行周末编码。之后，我采访了 LARS ENGELS（lme@），黑客马拉松的组织者之一，了解他对这次活动的看法。
+- 原文：[This Month in FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
+- 作者：**Dru Lavigne**
+
+7 月 24–26 日，我参加了在德国埃森 Linuxhotel 举办的 FreeBSD 黑客马拉松。这次活动是一次实验，将一群 FreeBSD 提交者聚集在一起，在轻松环境中周末编码。之后，我采访了 LARS ENGELS（lme@），黑客马拉松的组织者之一，了解他对这次活动的看法。
 
 **问：** 请介绍一下你自己。你是如何开始接触 FreeBSD 的？你在 FreeBSD 项目中参与哪些工作？
 
