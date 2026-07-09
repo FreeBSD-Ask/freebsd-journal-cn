@@ -3,7 +3,7 @@
 - 原文：[Swift Programming Language](https://freebsdfoundation.org/wp-content/uploads/2016/12/Swift-Language.pdf)
 - 作者：**Steve Wills**
 
-Swift 是 Apple 推出的新通用编程语言，于 2014 年 Apple 年度 WWDC 活动上发布，2015 年以 Apache 许可证 2.0 版开源。它旨在替代 Objective C，但更简洁、更安全，也确已如此。Swift 主要面向 iOS 应用开发，但它是一门完整的通用系统编程语言，可用于多种任务。它处于快速开发中，可移植到多种操作系统。Swift 全面支持 Unicode。它易学、好用、运行快。Swift 支持命令式与面向对象编程，以及泛型、扩展、try/throw/catch 错误处理、动态分派、可扩展编程与晚绑定。
+Swift 是 Apple 推出的新通用编程语言，于 2014 年 Apple 年度 WWDC 活动上发布，2015 年以 Apache 许可证 2.0 版开源。它旨在替代 Objective C，但更简洁、更安全，也确已如此。Swift 主要面向 iOS 应用开发，但它是一门完整的通用系统编程语言，可用于多种任务。它处于快速开发中，可移植到多种操作系统。Swift 全面支持 Unicode。它易学、好用、运行快。Swift 支持命令式与面向对象编程、泛型、扩展、try/throw/catch 错误处理、动态分派、可扩展编程与晚绑定。
 
 ## 安全性
 
