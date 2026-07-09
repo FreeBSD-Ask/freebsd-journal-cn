@@ -1,4 +1,4 @@
-# 新的 Ports 提交者：oel Bodenmann (<jbo@freebsd.org>)
+# 新的 Ports 提交者：Joel Bodenmann (<jbo@freebsd.org>)
 
 - 原文：[New Ports Committer: Joel Bodenmann](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-14-0/new-ports-committer-joel-bodenmann/)
 - 作者：**Tom Jones**
