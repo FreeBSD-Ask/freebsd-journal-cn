@@ -138,8 +138,6 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 
 **图 7**
 
-![Fig. 7：hanoi 采样结果（pmcstat 输出）](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-07.png)
-
 ```sh
 @ INSTR_RETIRED_ANY [365189 samples]
 99.17% [362173] mov @ /usr/home/gnn/svn/headports/benchmarks/unixbench/work/unixbench-4.1.0/pgms/hanoi
