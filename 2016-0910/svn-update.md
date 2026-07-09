@@ -53,4 +53,4 @@ mlx5en 驱动新增 SR-IOV 客户机支持。这补全了在通过 SR-IOV 提供
 
 ---
 
-STEVEN KREUZER 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他与妻子、女儿和狗住在纽约皇后区。
+**STEVEN KREUZER** 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他与妻子、女儿和狗住在纽约皇后区。
