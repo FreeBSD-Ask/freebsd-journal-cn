@@ -19,7 +19,7 @@
 
 接下来涵盖的文件系统有 POSIX 消息队列文件系统、union mounts、null mounts 和内存文件系统。`mqueuefs`(5) 这个特性我甚至不知道是 POSIX 的一部分。作为一种进程间通信方式，它似乎失宠（或从未受宠），或许并无充分理由。书中对它的介绍读起来很有趣，但这种处理方式更适合专注于编程而非系统管理的书。union mounts 和 null mounts 部分对那些从未想过文件系统特性可以解决某类问题的人很有用。对两种内存文件系统 `md`(4) 和 `tmpfs`(5) 的介绍，为需要理解二者差异的人提供了概览。
 
-书中接着对老牌的 Network File System（NFS）做了全面概述。觉得各种区别令人困惑的系统管理员会从这一节受益，因为作者澄清状况的能力比 Google 引导你在 Serverfault 或 Stackoverflow 上找到的问答更强。对 Microsoft CIFS 的处理也是如此。
+书中接着对老牌的 Network File System（NFS）做了全面概述。觉得各种区别令人困惑的系统管理员会从这一节受益，因为作者澄清状况的能力比 谷歌 引导你在 Serverfault 或 Stackoverflow 上找到的问答更强。对 Microsoft CIFS 的处理也是如此。
 
 书中对如何使用 iSCSI 和 HAST 特性构建冗余存储网络做了有趣而深入的探讨。这一节几乎可作为想在 FreeBSD 上部署类似特性者的配置指南直接使用。我从中学到不少 FreeBSD“内置”的故障转移和冗余特性。尽管与其他章节相比相对专深，我认为它仍有价值，因为它用到了各种“特殊”特性。
 
