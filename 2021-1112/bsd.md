@@ -1,6 +1,6 @@
 # 进行中的工作/征求反馈：OccamBSD
 
-- 原文链接：[进行中的工作/征求反馈：OccamBSD](https://freebsdfoundation.org/wp-content/uploads/2022/01/WIP.CFT-OccamBSD.pdf)
+- 原文链接：[WIP/CFT:OccamBSD](https://freebsdfoundation.org/wp-content/uploads/2022/01/WIP.CFT-OccamBSD.pdf)
 - 作者：**TOM JONES & MICHAEL DEXTER**
 
 ---
