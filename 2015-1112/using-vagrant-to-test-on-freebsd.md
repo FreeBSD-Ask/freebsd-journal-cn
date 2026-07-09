@@ -47,7 +47,7 @@ HashiCorp 在其网站（<http://www.packer.io>）上对 Packer 的定义是：
 
 ## 发布 Vagrant 镜像
 
-在完成 Packer 相关工作后，我们发现 FreeBSD 项目已经支持构建各种类型的虚拟机，包括 Amazon EC2、谷歌 Cloud Compute、VMware 和 Oracle VirtualBox。这意味着从正常发布流程创建 FreeBSD Vagrant 镜像应当相对简单。在 FreeBSD 发布工程师 Glen Barber 的帮助下，几周内就构建出了镜像，可随 FreeBSD 10.2-RELEASE 使用。
+在完成 Packer 相关工作后，我们发现 FreeBSD 项目已经支持构建各种类型的虚拟机，包括 Amazon EC2、Google Cloud Compute、VMware 和 Oracle VirtualBox。这意味着从正常发布流程创建 FreeBSD Vagrant 镜像应当相对简单。在 FreeBSD 发布工程师 Glen Barber 的帮助下，几周内就构建出了镜像，可随 FreeBSD 10.2-RELEASE 使用。
 
 ## Vagrant 入门
 
