@@ -13,7 +13,7 @@ FreeBSD 项目的一些新人只通过代码库认识我们，但要支撑这个
 
 为本期收尾的是本刊常规的专栏阵容：Frederic Culot 的 Ports 报告、Greg Lehey 的《The Practice of System and Network Administration》书评、Glen Barber 的 `svn` 更新，以及 Dru Lavigne 的“本月 FreeBSD 动态”和活动日历。
 
-愿你享受阅读！
+祝你阅读愉快！
 
 此致，
 
