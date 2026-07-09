@@ -7,7 +7,7 @@
 
 ## 重要 Ports 更新
 
-为检查重要 ports 更新是否安全，我们执行了数次 exp-run（实际上是 22 次）。在这些重要更新中，我们提及以下亮点：
+为检查重要 Ports 更新是否安全，我们执行了数次 exp-run（实际上是 22 次）。在这些重要更新中，我们提及以下亮点：
 
 - llvm 和 clang 更新至 3.5.0
 - xorg-server 更新至 1.14
@@ -25,7 +25,7 @@
 
 ## 新的 Ports 提交者与代管
 
-过去两个月，几位已拥有 src 提交权限的开发者加入我们的社区，并获得了 ports 提交权限。他们是：jmg@、jmmv@ 和 truckman@。此外，Muhammad Rahman 获得了 ports 提交权限，将由 marino@ 和 bapt@ 指导。
+过去两个月，几位已拥有 src 提交权限的开发者加入我们的社区，并获得了 Ports 提交权限。他们是：jmg@、jmmv@ 和 truckman@。此外，Muhammad Rahman 获得了 Ports 提交权限，将由 marino@ 和 bapt@ 指导。
 
 过去两个月只有一位提交者的权限被代管（motoyuki@），但我们也收到了来自 miwi@ 的遗憾消息，他决定卸下 FreeBSD 的职责，把更多精力放在家庭和职业生活上。除非你过去十年一直与世隔绝，否则你很可能听说过 Martin（miwi@）Wilke。简而言之，Martin 是向 Ports 树贡献提交数量最多的开发者，自 2006 年以来超过 20,000 次提交！
 
