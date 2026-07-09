@@ -4,7 +4,7 @@
 
 此专栏旨在聚焦最近获得 commit bit 的贡献者，并向 FreeBSD 社区介绍他们。
 
-本期聚焦：Jason Bacon（11 月获得 ports bit）、Koichiro Iwao（3 月获得 ports bit）、Sean Fagan（4 月获得 src bit）、Vincenzo Maffione（3 月获得 src bit）、Fernando Apesteguía（3 月获得 ports commit）、Tom Jones（4 月获得 src bit）和 Eric Turgeon（3 月获得 ports bit）。
+本期聚焦：Jason Bacon（11 月获得 Ports bit）、Koichiro Iwao（3 月获得 Ports bit）、Sean Fagan（4 月获得 src bit）、Vincenzo Maffione（3 月获得 src bit）、Fernando Apesteguía（3 月获得 ports commit）、Tom Jones（4 月获得 src bit）和 Eric Turgeon（3 月获得 Ports bit）。
 
 ## 介绍一下你自己、背景和兴趣
 
