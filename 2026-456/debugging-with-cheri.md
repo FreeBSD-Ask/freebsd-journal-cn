@@ -10,7 +10,7 @@ CHERI 能将某些未定义行为（UB）转化为崩溃，从而缓解漏洞。
 
 随着时间推移，支持 CHERI 的软件库不断壮大，包括 FreeBSD 的完整移植版——[CheriBSD](https://www.cheribsd.org/)，以及若干第三方应用，其中涵盖 KDE 图形桌面环境的大部分组件。CHERI 研究团队还维护着 GNU 调试器的一个[分支](https://github.com/CTSRD-CHERI/gdb)，支持检查 CHERI 架构（包括 ARM 的 Morello 和 CHERI-RISC-V）。CHERI GDB 既支持调试 CheriBSD 用户进程，也支持调试内核。由于 CheriBSD 紧跟 FreeBSD 的开发进展，针对 FreeBSD 报告的 bug 通常也能在 CheriBSD 上复现并排查。
 
-本文将考察 FreeBSD bug 数据库中几份高质量 bug 报告在 CheriBSD 上的排查过程，借此展示在 CHERI 上调试的体验，以及使用 CHERI 时可能遇到的一些出乎意料的结果。排查期间，我使用了运行在 [ARM Morello](https://www.arm.com/architecture/cpu/morello) 系统上的 CheriBSD，以及在我 FreeBSD/amd64 桌面机上通过 QEMU 运行的 CHERI 镜像。在 Morello 系统上用 GDB 交互调试更顺手一些，尤其是排查用户态问题时。不过，QEMU 的调试服务器在排查内核 bug 时非常有用。QEMU 方案也可在任何运行 FreeBSD、Linux 或 macOS 的普通系统上使用。使用 QEMU 时，我借助 [cheribuild](https://github.com/CTSRD-CHERI/cheribuild) 工具构建 CheriBSD 磁盘镜像，以及 LLVM、GDB 和 QEMU 等所需工具。在 Morello 系统上，我使用 CheriBSD 的软件包仓库安装 LLVM 和 GDB，并使用 FreeBSD 的标准构建系统构建和测试基础系统组件的新版本。
+本文将考察 FreeBSD bug 数据库中几份高质量 bug 报告在 CheriBSD 上的排查过程，借此展示在 CHERI 上调试的体验，以及使用 CHERI 时可能遇到的一些出乎意料的结果。排查期间，我使用了运行在 [ARM Morello](https://www.arm.com/architecture/cpu/morello) 系统上的 CheriBSD，以及在我 FreeBSD/amd64 桌面机上通过 QEMU 运行的 CHERI 镜像。在 Morello 系统上用 GDB 交互调试更顺手一些，尤其是排查用户态问题时。不过，QEMU 的调试服务器在排查内核 bug 时非常有用。QEMU 方案也可在任何运行 FreeBSD、Linux 或 macOS 的普通系统上使用。使用 QEMU 时，我借助 [cheribuild](https://github.com/CTSRD-CHERI/cheribuild) 工具构建 CheriBSD 磁盘镜像，以及 LLVM、GDB 和 QEMU 等所需工具。在 Morello 系统上，我使用 CheriBSD 的软件包仓库安装 LLVM 和 GDB，并使用 FreeBSD 的标准构建系统构建和测试基本系统组件的新版本。
 
 ### 第一个 Bug
 

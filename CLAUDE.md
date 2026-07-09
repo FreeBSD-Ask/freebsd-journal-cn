@@ -81,6 +81,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `Ports` 保持英文不翻译，且保持首字母大写（注意区分真正的"端口"）禁止机械替换。
 - "Jail" 保持英文（不翻译为"监狱"、"监牢"）禁止机械替换。
 - `pkgbase` 保持英文不翻译，禁止译为"打包基系统"或类似中文。注意区分："pkgbase"是项目/工具名，保持英文；"packaged base system"（打包基本系统）是概念，可正常翻译。
+- "base system" 统一翻译为"基本系统"，禁止使用"基础系统"或其他变体。禁止机械替换，需逐个确认上下文。
 - "The FreeBSD Foundation" 翻译为"FreeBSD 基金会"，注意自动调整前后空格。代码块（启动信息、git 日志、系统输出）中的 "The FreeBSD Foundation" 不翻译。
 - "拷贝" → "复制"，"壳/外壳" → "shell"。禁止机械替换。
 - 第二人称一律使用"你"而非"您"
