@@ -1,6 +1,6 @@
 # 使用 Git 贡献到 FreeBSD Ports
 
-- 原文链接：[Contributing to FreeBSD Ports with Git](https://freebsdfoundation.org/wp-content/uploads/2022/08/mingrone_revised.pdf)
+- 原文：[Contributing to FreeBSD Ports with Git](https://freebsdfoundation.org/wp-content/uploads/2022/08/mingrone_revised.pdf)
 - 作者：**JOSEPH MINGRONE**
 
 FreeBSD Ports 树于 1994 年创建，并使用 CVS 跟踪，直到 2012 年 7 月 15 日，Subversion 接管。2021 年 4 月 6 日发生第二次代码库转换，权威源从 Subversion 迁移到 Git。CVS 和 Subversion 都是集中式版本控制系统，第一次转换所需的工作流变更没有第二次迁移到 Git 时复杂，因为 Git 是分布式版本控制系统。
@@ -36,7 +36,7 @@ pkg install git
 
 ## 克隆 Ports 树
 
-如果你希望为树贡献新 port，但还没有具体的想法，可以从 FreeBSD Wiki 上扫描请求的 port 列表开始。假设我们希望为列表中的应用程序——Nyxt 浏览器——创建新 port。第一步是克隆 FreeBSD Ports 仓库。如果你使用 ZFS，可能希望为开发 Ports 树创建专用数据集。
+如果你希望为树贡献新 Port，但还没有具体的想法，可以从 FreeBSD Wiki 上扫描请求的 Port 列表开始。假设我们希望为列表中的应用程序——Nyxt 浏览器——创建新 Port。第一步是克隆 FreeBSD Ports 仓库。如果你使用 ZFS，可能希望为开发 Ports 树创建专用数据集。
 
 ```sh
 zfs create zroot/usr/home/ashish/freebsd/ports
@@ -564,7 +564,7 @@ Reviewers: ashish rene
 arc diff --update <revision>
 ```
 
-其中 `<revision_id>` 是修订版本 ID，格式为 DXXXXX。它可以在创建修订版本时发送到你邮箱的邮件中找到。例如，如果你的修订版本位于 <https://reviews.freebsd.org/D33314>，那么就使用 D33314 作为修订 ID。
+其中 `<revision>` 是修订版本 ID，格式为 DXXXXX。它可以在创建修订版本时发送到你邮箱的邮件中找到。例如，如果你的修订版本位于 <https://reviews.freebsd.org/D33314>，那么就使用 D33314 作为 `<revision>`。
 
 ### 提交 Bugzilla 错误报告
 

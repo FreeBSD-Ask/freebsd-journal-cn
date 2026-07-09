@@ -1,6 +1,7 @@
 # Ports 报告
 
-**作者**：Frederic Culot
+- 原文：[Ports Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/cloudabi/)
+- 作者：**Frederic Culot**
 
 与往年一样，夏季（7–8 月）ports 领域相对平静。尽管按合入树中的 commit 数量计算活跃度下降了近 25%，但仍取得重大改进。
 

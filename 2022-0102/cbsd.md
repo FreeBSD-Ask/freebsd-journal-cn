@@ -1,6 +1,6 @@
 # CBSD：第一部分——生产环境
 
-- 原文链接：[CBSD: Part 1-Production](https://freebsdfoundation.org/wp-content/uploads/2022/03/CBSD-Part-1-Production.pdf)
+- 原文：[CBSD: Part 1-Production](https://freebsdfoundation.org/wp-content/uploads/2022/03/CBSD-Part-1-Production.pdf)
 - 作者：**OLEG GINZBURG**
 
 2012 年，我作为 Nevosoft 的 IT 系统管理员工作，这是一家小型游戏开发公司，所有的服务器基础设施都基于 FreeBSD 操作系统开发。当时，没人听说过 Kubernetes 和 Docker，但得益于 FreeBSD Jail，公司的服务器通过将所有组件分开，每个服务都使用独立的 Jail 容器，从而受益。如今，FreeBSD 拥有十几个（甚至更多）容器编排程序，尽管在 2012 年时，选择并不广泛。那时有 ezjail，但它是为独立服务器提供的解决方案。我们的安装环境有三十到四十台物理服务器，每台服务器上运行着十到二十个容器。除了基本的创建操作外，删除、启动和克隆容器，公司的系统管理员还需要更高级的功能，如远程服务器上的容器管理、容器从一台服务器迁移到另一台服务器的能力，以及将容器保存为可移植镜像的功能。这些结果是通过创建简单的 shell 脚本实现的。然而，2013 年，出于应用专有软件的需要，导致公司开始迁移到 Linux。因为到那时，所有创建的 shell 脚本在功能上已经与 ezjail 平起平坐，某些情况下还增加了独特的功能（例如，最初有 TUI—基于文本的用户界面），于是决定将这些脚本集合合并，并以相同的标题发布到 FreeBSD Ports Tree 中。这标志着 CBSD 项目的开始。

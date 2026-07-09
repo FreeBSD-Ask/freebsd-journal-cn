@@ -1,6 +1,6 @@
 # 将 OpenBSD 的 pf syncookie 代码移植到 FreeBSD 的 pf
 
-- 原文链接：[Porting OpenBSD’s pf syncookie Code to FreeBSD’s pf](https://freebsdfoundation.org/wp-content/uploads/2022/03/Porting-OpenBSDs-pf-syncookie-Code-to-FreeBSDs-pf.pdf)
+- 原文：[Porting OpenBSD’s pf syncookie Code to FreeBSD’s pf](https://freebsdfoundation.org/wp-content/uploads/2022/03/Porting-OpenBSDs-pf-syncookie-Code-to-FreeBSDs-pf.pdf)
 - 作者：**KRISTOF PROVOST**
 
 互联网可以是一个无序的地方，我们的在线服务可能会受到各种方式的攻击。我们运行的防火墙是我们保护系统的一部分，但事实证明它们也可能成为攻击的渠道。

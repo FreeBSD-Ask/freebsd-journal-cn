@@ -1,12 +1,13 @@
 # FreeBSD 本月动态
 
-**作者**：Dru Lavigne
+- 原文：[This Month in FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/cloudabi/)
+- 作者：**Dru Lavigne**
 
-FreeBSD 素以文档详尽著称。FreeBSD 项目提供了大量文档，包括 FreeBSD Handbook、Porter's Handbook、Developer's Handbook、Documentation Project Primer、内置与在线的 man 手册页，以及官方网站。维护并翻译如此庞大的文档自有其挑战。本月，我有机会采访 WARREN BLOCK。Warren 是资深的文档提交者，FreeBSD DocEng 团队成员，也是 igor（<http://www.wonkity.com/~wblock/igor/>）的作者。
+FreeBSD 素以文档详尽著称。FreeBSD 项目提供了大量文档，包括 FreeBSD Handbook、Porter's Handbook、Developer's Handbook、Documentation Project Primer、内置与在线的 man 手册页、官方网站。维护并翻译如此庞大的文档自有其挑战。本月，我有机会采访 WARREN BLOCK。Warren 是资深的文档提交者，FreeBSD DocEng 团队成员，也是 igor（<http://www.wonkity.com/~wblock/igor/>）的作者。
 
 **问：** 请介绍一下你自己。你是如何开始接触 FreeBSD 的？你在 FreeBSD 项目中参与哪些工作？
 
-**答：** 1998 年，我那座地下火山巢穴开始变热，爪牙们还想组建工会，说什么鲨鱼和大王乌贼的安全问题。事情全被夸大了；那道陷阱门有某种制造缺陷。Cletus 也不是最聪明的爪牙，显然并不真正理解锁屏/挂牌系统。你若问过大王乌贼饲料的价格，便知那也是一笔侵蚀利润的开销。
+**答：** 1998 年，我那座地下火山巢穴开始变热，爪牙们还想组建工会，说什么鲨鱼和大王乌贼的安全问题。事情全被夸大了；那道陷阱门有某种制造缺陷。Cletus 也不是最聪明的爪牙，显然并不真正理解锁定/挂牌系统。你若问过大王乌贼饲料的价格，便知那也是一笔侵蚀利润的开销。
 
 在寻找一种廉价又不会把我当成盗贼的巢穴操作系统时，一位朋友向我介绍了 FreeBSD 4.0。
 

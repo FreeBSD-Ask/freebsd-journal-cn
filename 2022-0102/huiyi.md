@@ -1,6 +1,6 @@
 # 会议报告：EuroBSDCon 2021 我的第一次 EuroBSDCon：一位新组织者的视角
 
-- 原文链接：[EuroBSDCon 2021 My First EuroBSDCon:  A New Organizer’s Perspective](https://freebsdfoundation.org/wp-content/uploads/2022/03/ConferenceReports.pdf)
+- 原文：[EuroBSDCon 2021 My First EuroBSDCon:  A New Organizer's Perspective](https://freebsdfoundation.org/wp-content/uploads/2022/03/ConferenceReports.pdf)
 - 作者：**KATIE MCMILLAN**
 
 我在新冠大流行期间开始参与 EuroBSDCon。那是 2020 年 9 月，我并不认识 EuroBSDCon 基金会（以下简称“基金会”）的董事会成员，只知道一些来自其他会议（如 BSDCan）的组织委员会和评审委员会的成员。EuroBSDCon 2020 已经取消，BSDCan 2021 也取消了，而 EuroBSDCon 2021 的前景也不太明朗。对于虚拟会议（或称为“线上”会议，听起来比“虚拟”稍好一点，但还是不好）并没有太多热情。
@@ -67,15 +67,11 @@ R = René
 
 **Q：你是如何参与 EuroBSDCon 基金会的？**
 
-**R**：自 2003 年起，在尝试了一些 Linux 发行版之后，我开始使用 FreeBSD。我开始为（现已不复存在的）FreeBSD 手册荷兰语翻译做贡献，因此在 2008 年获得了文档提交权限。我在 ports 领域犯了同样的错误，在 2010 年获得了 ports 提交权限。自 2016 年起，我加入了 Ports 管理团队（portmgr@），主要担任秘书职务。
-
-通常，EuroBSDCon 是一场线下活动，
+**R**：自 2003 年起，在尝试了一些 Linux 发行版之后，我开始使用 FreeBSD。我开始为（现已不复存在的）FreeBSD 手册荷兰语翻译做贡献，因此在 2008 年获得了文档提交权限。我在 Ports 领域犯了同样的错误，在 2010 年获得了 Ports 提交权限。自 2016 年起，我加入了 Ports 管理团队（portmgr@），主要担任秘书职务。
 
 **Q：好的，那 EuroBSDCon 基金会呢？**
 
 **R**：啊，是的，因为我关注一些邮件列表，我读到了关于一个在加拿大叫 BSDCan 的会议。那时我才知道开发者们其实会偶尔面对面聚会，这让我感到惊喜。所以，我在 2010 年以 BSDCan 作为我的 BSD 会议之旅的起点。不幸的是，由于工作原因，我无法参加 2010 年的 EuroBSDCon，但我在 2011 年参加了，此后从未缺席过一届 EuroBSDCon。
-
-但 COVID 疫情改变了规则。
 
 这种不间断的参与也引起了 EuroBSDCon 基金会 2016 年的注意，结果在一次晚宴上我被拉到一边，邀请参加第二天的董事会会议。在那次会议上，他们正在寻找更多的荷兰籍成员，因为（依据）章程的要求——基金会是荷兰的，而我恰好也是荷兰人。我同意加入董事会，此后一直从事秘书工作——比如提议议程和做会议记录，还帮助与会者处理大使馆的文书工作。
 
@@ -103,6 +99,6 @@ R = René
 
 **RENÉ LADAN** 在埃因霍温理工大学学习计算科学，于 2006 年毕业。之后他在多家公司工作过，包括这所大学本身。他目前在 Carapax IT 担任软件工程师。
 
-René 的开源影子生涯始于 Sourceforge 上的一些小项目，但真正起步是在他 2004 年开始参与 FreeBSD 工作时。此后，他获得了文档和 ports 提交权限，现在是 Ports 管理团队（即 portmgr@）的成员。在参加了太多次 EuroBSDCon 之后，他在 2016 年被拉入附属的基金会，此后一直担任秘书。
+René 的开源影子生涯始于 Sourceforge 上的一些小项目，但真正起步是在他 2004 年开始参与 FreeBSD 工作时。此后，他获得了文档和 Ports 提交权限，现在是 Ports 管理团队（即 portmgr@）的成员。在参加了太多次 EuroBSDCon 之后，他在 2016 年被拉入附属的基金会，此后一直担任秘书。
 
 在不做 BSD 相关事情且仍处于极客模式时，他喜欢摆弄自制的授时台接收器。在技术之外，René 喜欢远足、拼图和在父母的花园里劳作。

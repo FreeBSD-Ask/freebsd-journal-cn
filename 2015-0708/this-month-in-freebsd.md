@@ -29,15 +29,15 @@
 
 第一天，人们在下午晚些时候到深夜之间陆续到达，我们在公园碰面，享受烧烤，并处理一些文档、Ports 和 src 的 bug。
 
-周六狂风暴雨，所以我们整天待在酒店里。Sean Chittenden 做了一场关于 DTrace 和 Brendan Gregg 火焰图的有趣介绍，他在工作中用它来发现公司软件中的瓶颈。Kristof Provost 讲解了他如何在 TP-Link 路由器上刷入 FreeBSD 以及如何配置相当复杂的无线设置。酒店的无线网络正是由同样的 TP-Link 路由器提供的，但我们没有尝试用 FreeBSD 替换 Linux。后来，我们去了附近的一家餐厅，吃到了美味的炸肉排。当天余下的时间我们在酒店的壁炉间编码。
+周六狂风暴雨，所以我们整天待在酒店里。Sean Chittenden 做了一场关于 DTrace 和 Brendan Gregg 火焰图的有趣介绍，他在工作中用它来发现公司软件中的瓶颈。Kristof Provost 讲解了他如何在 TP-Link 路由器上刷入 FreeBSD、如何配置相当复杂的无线设置。酒店的无线网络正是由同样的 TP-Link 路由器提供的，但我们没有尝试用 FreeBSD 替换 Linux。后来，我们去了附近的一家餐厅，吃到了美味的炸肉排。当天余下的时间我们在酒店的壁炉间编码。
 
 周日温暖晴朗，我们整天在公园里，处理各种事情，午餐又来了一次烧烤。傍晚时分，每个人都离开了，并收到一个装有糖果的“FreeBSD Hackathon 2015”包作为礼物。
 
 整个周末我们向文档、src 和 Ports 仓库提交了 50 次，向 OpenBSM GitHub 仓库提交了 4 次，还将 BSMtrace 仓库从 Perforce 迁移到 GitHub。
 
-**问：** 请介绍一下 Linuxhotel 以及你是如何知道这个场地的。
+**问：** 请介绍一下 Linuxhotel 和你是如何知道这个场地的。
 
-**答：** Linuxhotel 是一栋带周边公园的别墅，用作开源操作系统的培训设施，包括 Linux、FreeBSD、OpenBSD，以及 Tomcat 和 MySQL 等软件，还有 Perl、C 和 Java 等语言课程。几年前，我兄弟在那里教授 Apache 课程，这让我知道了它。后来，我问 Linuxhotel 的老板是否愿意让我开设 FreeBSD 入门课程，他喜欢这个想法。所以现在该课程每半年开设一次。除此之外，Benedict 和我正计划开发一门 OpenZFS 课程。
+**答：** Linuxhotel 是一栋带周边公园的别墅，用作开源操作系统的培训设施，包括 Linux、FreeBSD、OpenBSD、Tomcat 和 MySQL 等软件，还有 Perl、C 和 Java 等语言课程。几年前，我兄弟在那里教授 Apache 课程，这让我知道了它。后来，我问 Linuxhotel 的老板是否愿意让我开设 FreeBSD 入门课程，他喜欢这个想法。所以现在该课程每半年开设一次。除此之外，Benedict 和我正计划开发一门 OpenZFS 课程。
 
 **问：** 你认为明年还会组织这样的活动吗？经历了整个过程，有什么你会做得不同？
 

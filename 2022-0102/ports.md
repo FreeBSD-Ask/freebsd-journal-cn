@@ -1,13 +1,13 @@
 # 为 FreeBSD Ports 做贡献
 
-- 原文链接：[Contributing to the FreeBSD Ports Collection](https://freebsdfoundation.org/wp-content/uploads/2022/03/Contributing-to-the-FreeBSD-Ports-Collection.pdf)
+- 原文：[Contributing to the FreeBSD Ports Collection](https://freebsdfoundation.org/wp-content/uploads/2022/03/Contributing-to-the-FreeBSD-Ports-Collection.pdf)
 - 作者：**MATEUSZ PIOTROWSKI**
 
 ## 为何要用 Ports？
 
-在数个 FreeBSD 版本之前，FreeBSD Ports 是安装第三方软件的主要方式。用户会从 ports 构建他们所需的软件。理论上，有一些二进制包可用，但它们的整体支持并不好。软件包管理工具难用，软件包仓库中的包已经过时。从 ports 构建软件是必需的。
+在数个 FreeBSD 版本之前，FreeBSD Ports 是安装第三方软件的主要方式。用户会从 Ports 构建他们所需的软件。理论上，有一些二进制包可用，但它们的整体支持并不好。软件包管理工具难用，软件包仓库中的包已经过时。从 Ports 构建软件是必需的。
 
-随着新的 pkg(8) 包管理工具的出现，情况开始发生变化。如今，FreeBSD 的软件包仓库是开源世界中最大、最新的之一（参见 repology.org 上的图表）。大多数 FreeBSD 用户使用二进制包，而不是自己编译 ports，自从我开始使用 FreeBSD（大约是 10.3 版本）以来，情况一直如此。
+随着新的 pkg(8) 包管理工具的出现，情况开始发生变化。如今，FreeBSD 的软件包仓库是开源世界中最大、最新的之一（参见 repology.org 上的图表）。大多数 FreeBSD 用户使用二进制包，而不是自己编译 Ports，自从我开始使用 FreeBSD（大约是 10.3 版本）以来，情况一直如此。
 
 虽然二进制包很棒，但人们仍然时常直接使用 FreeBSD Ports。无论是 FreeBSD 的维护者还是用户，他们都一直在使用它。那为什么 FreeBSD 用户会使用它呢？因为 ports 使得根据非常具体的需求定制二进制包变得非常简单。你想用自定义补丁重新构建 Nginx 包吗？没问题。你想为你的 collectd 守护进程添加一个不常见的后端吗？很容易。你想获得 Python 的调试版本吗？没什么大不了的。
 
@@ -31,7 +31,7 @@
 
 ## 抓住痛点（缺失 Xpdf 图标版）
 
-本文的这一部分描述了为 FreeBSD ports 开发补丁的工作流程。当我开始折腾 FreeBSD ports 时，我常常想，其他人是如何开发他们的补丁的。（现在想想，我仍然对某些 ports 提交者的高效感到着迷，也许比以往更为着迷。）出于某种原因，官方的 FreeBSD 文档很少描述精确的开发工作流程。废话少说，下面来看看制作一个 ports 补丁需要什么。
+本文的这一部分描述了为 FreeBSD Ports 开发补丁的工作流程。当我开始折腾 FreeBSD Ports 时，我常常想，其他人是如何开发他们的补丁的。（现在想想，我仍然对某些 Ports 提交者的高效感到着迷，也许比以往更为着迷。）出于某种原因，官方的 FreeBSD 文档很少描述精确的开发工作流程。废话少说，下面来看看制作一个 Ports 补丁需要什么。
 
 ### 初见
 
@@ -39,7 +39,7 @@
 
 ![Xpdf 图标缺失](../png/2022-0102/ports-01.png)
 
-在我们开始修改 ports 树之前，先来了解一下为什么 Xpdf 图标会缺失。Xfce 应用程序查找器根据位于 **/usr/local/share/applications** 的桌面文件生成条目列表。
+在我们开始修改 Ports 树之前，先来了解一下为什么 Xpdf 图标会缺失。Xfce 应用程序查找器根据位于 **/usr/local/share/applications** 的桌面文件生成条目列表。
 
 其中名为 **/usr/local/share/applications/xpdf.desktop** 的文件描述了 Xpdf 条目。看看这个文件中是否有与图标相关的内容。
 
