@@ -1,6 +1,7 @@
 # FreeBSD 新面孔
 
-作者：DRU LAVIGNE
+- 原文：[New Faces of FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2016/08/New-Faces-of-FreeBSD.pdf)
+- 作者：**DRU LAVIGNE**
 
 本专栏旨在聚焦近期获得提交权限的贡献者，并向 FreeBSD 社区介绍他们。本月聚焦的是 Eric Badger 和 Toomas Soome，他们分别在 2016 年 7 月和 8 月成为 src 提交者。
 
