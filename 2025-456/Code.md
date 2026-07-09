@@ -561,13 +561,13 @@ datacenter: http://127.0.0.1:8888
              FreeBSD repository update completed. 35950 packages processed.
              All repositories are up to date.
              The following 2 package(s) will be affected (of 0 checked):
-            
+
              New packages to be INSTALLED:
                 ca_root_nss: 3.108
                 tailscale: 1.82.5
-            
+
              Number of packages to be installed: 2
-            
+
              The process will require 35 MiB more space.
              11 MiB to be downloaded.
              [vmtest.appjail] [1/2] Fetching tailscale-1.82.5.pkg: .......... done
@@ -582,22 +582,22 @@ datacenter: http://127.0.0.1:8888
              [vmtest.appjail] [2/2] Extracting tailscale-1.82.5: ...... done
              =====
              Message from ca_root_nss-3.108:
-            
+
              --
              FreeBSD does not, and can not warrant that the certification authorities
              whose certificates are included in this package have in any way been
              audited for trustworthiness or RFC 3647 compliance.
-            
+
              Assessment and verification of trust is the complete responsibility of
              the system administrator.
-            
+
              This package installs symlinks to support root certificate discovery
              for software that either uses other cryptographic libraries than
              OpenSSL, or use OpenSSL but do not follow recommended practice.
-            
+
              If you prefer to do this manually, replace the following symlinks with
              either an empty file or your site-local certificate bundle.
-            
+
                * /etc/ssl/cert.pem
                * /usr/local/etc/ssl/cert.pem
                * /usr/local/openssl/cert.pem
@@ -1657,7 +1657,7 @@ datacenter: http://127.0.0.1:8888
         output:
          rc: 0
          stdout: {'errlevel': 0, 'message': None, 'failed': []}
-        last_update: 4 minutes and 46.3 seconds  
+        last_update: 4 minutes and 46.3 seconds
         job_id: 6
         restarted: False
         labels:
