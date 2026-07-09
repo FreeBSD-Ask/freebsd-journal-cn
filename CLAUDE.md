@@ -227,9 +227,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### 阶段 H：图片离线
 
-- 检查正文中引用的外部图片 URL，下载到本地 `.gitbook/assets/` 或对应期号目录
-- 将远程图片引用替换为本地相对路径
-- 保留原始图片说明文字
+- 检查正文中引用的外部图片 URL，下载到本地 `png/<期号>/` 子目录（不再使用 `.gitbook/assets/`）
+- 文件命名遵循 `<文章slug>-<序号或描述>.<ext>` 约定，序号按文中出现顺序递增
+- 将远程图片引用替换为本地相对路径 `../png/<期号>/<文件名>`，保留原始图片说明文字（alt）
+- 缺失图片强制获取：远程图片返回 404 时，从 `en/` 目录对应期号的 PDF 提取；`en/` 无 PDF 时从上游 `freebsdfoundation.org/our-work/journal/browser-based-edition/` 下载对应期号 PDF 兜底，用 PDF 提取工具提取所需图片；所有图片必须存在，不得以"图片缺失"占位
+- 同步执行代码块引号校正：代码块非注释部分一律使用直引号 `'` `"`，禁止弯引号 `'` `'` `"` `"`（即使英文原文使用弯引号也必须校正）；注释部分可保留全角中文标点
 
 ### 阶段 I：不可见字符与特殊字符清理
 
