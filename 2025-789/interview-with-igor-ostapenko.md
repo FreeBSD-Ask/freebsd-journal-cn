@@ -1,15 +1,15 @@
 # 开启 FreeBSD 开发之路 —— 专访 Igor Ostapenko
 
-- [Starting FreeBSD Development An Interview with with Igor Ostapenko](https://freebsdfoundation.org/our-work/journal/browser-based-edition/embedded-2/interview-with-igor-ostapenko/)
+- 原文：[Starting FreeBSD Development An Interview with with Igor Ostapenko](https://freebsdfoundation.org/our-work/journal/browser-based-edition/embedded-2/interview-with-igor-ostapenko/)
 - 作者：Tom Jones
 
 ![采访](../png/2025-789/interview-with-igor-ostapenko-01.png)
 
-**TJ:** 通往 FreeBSD 开发之路的有很多因素，有些是通过大学课程，有些是通过工作经验。你是如何了解到这个项目的？最初又是什么吸引你走向操作系统开发的？
+**TJ:** 通往 FreeBSD 开发之路有很多条，有些通过大学课程，有些通过工作经验。你是如何了解到这个项目的？最初又是什么吸引你走向操作系统开发的？
 
 **IO:** 在上世纪九十年代，我在上学期间有机会接触到了几种编程语言和技术。比如，我花了很多时间鼓捣 TR-DOS，小心规划行号（这在我开始用 ipfw 时勾起了回忆），为自己设想的另一个游戏写 DATA 和 GOTO，还尝试过在 MS-DOS 下用中断向量开发常驻程序。因为有这些经历，极简的命令行界面对我来说并不陌生。后来我在大学学习计算机科学时初次接触到 FreeBSD，当时唯一的问题就是要买哪些书。
 
-很明显，掌握 FreeBSD 会很有挑战，但也会非常值得，因为我必须一路补充基础知识。为什么是 FreeBSD？高年级同学推荐它，因为我们整个宿舍的网络都是基于 FreeBSD 搭建的。这是在千禧年初，还延续着上一个十年的惯性，当时 FreeBSD 是网络领域的事实标准。近年来，我更多专注在操作系统开发上。凭借广泛的软件开发背景，我积累了一系列想法，思考如何利用操作系统内部机制来支持更高层的解决方案。
+很明显，掌握 FreeBSD 会很有挑战，但也会非常值得，因为我必须一路补充基础知识。为什么是 FreeBSD？高年级同学推荐它，因为我们整个宿舍的网络都是基于 FreeBSD 搭建的。这是在千禧年初，还延续着上一个十年的惯性，当时 FreeBSD 是网络领域的事实标准。近年来，我更专注于操作系统开发。凭借广泛的软件开发背景，我积累了一系列想法，思考如何利用操作系统内部机制来支持更高层的解决方案。
 
 **TJ:** 你最初是如何迈出修改 FreeBSD 的第一步的？最初又是怎么决定要做什么工作的？
 

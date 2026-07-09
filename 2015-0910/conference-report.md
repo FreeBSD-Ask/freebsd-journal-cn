@@ -7,11 +7,11 @@
 
 ## BSDCam 2015
 
-BSDCam 2015 是一年一度的 FreeBSD 开发者峰会，于 2015 年 8 月 17–19 日在英国剑桥大学计算机实验室举行。BSDCam 由剑桥大学主办与组织，并得到 FreeBSD Foundation 与 Xinuos 的资助。
+BSDCam 2015 是一年一度的 FreeBSD 开发者峰会，于 2015 年 8 月 17–19 日在英国剑桥大学计算机实验室举行。BSDCam 由剑桥大学主办与组织，并得到 FreeBSD 基金会 与 Xinuos 的资助。
 
 超过 50 名 FreeBSD 开发者、剑桥当地的博士生与研究人员，以及使用（或关注）FreeBSD 的科技公司嘉宾出席了此次开发者峰会。
 
-计算机实验室在研究中广泛使用 FreeBSD，尤其在安全、网络、操作系统、程序分析与计算机体系结构研究方面——这些主题贯穿整个峰会。剑桥也是 ARM Ltd. 的所在地，该公司主导 ARM 架构开发；ARM 在 BSDCam 上派员主持了电源管理与嵌入式架构的会议，并在 ABI、工具链与基于处理器的计数器与追踪等议题中作出贡献。其他参会机构包括 BAE Systems、EMC、FreeBSD Foundation、Netflix、Neville-Neil Consulting、Nuxi、ScaleEngine、SRI International、Tarsnap、得克萨斯大学奥斯汀分校、Wheel Systems 与 Xinuos。
+计算机实验室在研究中广泛使用 FreeBSD，尤其在安全、网络、操作系统、程序分析与计算机体系结构研究方面——这些主题贯穿整个峰会。剑桥也是 ARM Ltd. 的所在地，该公司主导 ARM 架构开发；ARM 在 BSDCam 上派员主持了电源管理与嵌入式架构的会议，并在 ABI、工具链与基于处理器的计数器与追踪等议题中作出贡献。其他参会机构包括 BAE Systems、EMC、FreeBSD 基金会、Netflix、Neville-Neil Consulting、Nuxi、ScaleEngine、SRI International、Tarsnap、得克萨斯大学奥斯汀分校、Wheel Systems 与 Xinuos。
 
 计算机实验室非常适合举办开发者峰会，有多个设施齐全的会议室，既能容纳全体大会，也可进行小规模的分组讨论。BSDCam 采用"非会议"风格，首先就感兴趣的议题进行头脑风暴，随后形成议程，整个活动期间多数时段有一到两个并行会议。开发者一直聊到深夜，或在酒吧，或于第二晚在 Xinuos 赞助的 Murray Edwards 学院正式会议晚宴上继续交流。
 
@@ -60,12 +60,12 @@ Robert Watson 与 Ed Schouten 主持了 Capsicum 会议，Memorial 的 Jon Ander
 
 ## ARMv8 与 RISC-V
 
-两场会议讨论了 FreeBSD 正在开发支持的两个新指令集架构（ISA）：ARM 的 64 位 ARMv8 ISA 与加州大学伯克利分校的开源 RISC-V ISA，分别由 Andrew Turner（FreeBSD Foundation——由 ARM 与 Cavium 赞助）与 Ruslan Bukin（剑桥大学）主导。
+两场会议讨论了 FreeBSD 正在开发支持的两个新指令集架构（ISA）：ARM 的 64 位 ARMv8 ISA 与加州大学伯克利分校的开源 RISC-V ISA，分别由 Andrew Turner（FreeBSD 基金会——由 ARM 与 Cavium 赞助）与 Ruslan Bukin（剑桥大学）主导。
 
-Andrew 描述了他由 FreeBSD Foundation、ARM 与 Cavium 赞助的 FreeBSD/ARMv8 移植工作，该工作也与 Semihalf 协作进行。FreeBSD 现已在包括 ARM 与 Cavium 评估板在内的多种 64 位 ARM 设备上启动与运行良好。移植工作在稳定性与功能方面持续完善。由 ARM 赞助，Ruslan Bukin 最近基于他早先的 ARMv7 工作完成了 ARMv8 的硬件性能计数器（HWPMC）与 DTrace 初步支持。在 Cavium 对 Semihalf 的支持下，FreeBSD 也可在多核 Cavium Thunder 板上使用。
+Andrew 描述了他由 FreeBSD 基金会、ARM 与 Cavium 赞助的 FreeBSD/ARMv8 移植工作，该工作也与 Semihalf 协作进行。FreeBSD 现已在包括 ARM 与 Cavium 评估板在内的多种 64 位 ARM 设备上启动与运行良好。移植工作在稳定性与功能方面持续完善。由 ARM 赞助，Ruslan Bukin 最近基于他早先的 ARMv7 工作完成了 ARMv8 的硬件性能计数器（HWPMC）与 DTrace 初步支持。在 Cavium 对 Semihalf 的支持下，FreeBSD 也可在多核 Cavium Thunder 板上使用。
 
 Ruslan Bukin 与 Ed Maste 主持了 FreeBSD RISC-V 移植的初步会议。RISC-V 是加州大学伯克利分校 RISC-V 团队创建的全新“开源 ISA”；RISC-V 在那里用于多种处理器，也是剑桥正在开发的 LowRISC 开源 SoC 的基础。未来它将用于其他处理器研究与嵌入式系统。Ruslan 现已能让 FreeBSD/RISC-V 在伯克利的 Spike 模拟器中打印启动消息，并开始进行上下文切换与虚拟内存支持的工作。RISC-V 指令集仍在成熟中，他遇到了一些困难——例如 QEMU 实现的是一个较旧（且不兼容）的特权 ISA 版本，工具链也有问题。然而进展迅速。
 
 **作者简介**
 
-Dr. Robert N. M. Watson 是剑桥大学计算机实验室系统、安全与架构方向的大学讲师；FreeBSD 开发者与 core team 成员；FreeBSD Foundation 董事会成员。他领导多个跨越计算机体系结构、编译器、程序分析、程序转换、操作系统、网络与安全的跨层研究项目。近期工作包括 Capsicum 安全模型、用于 Junos 与 Apple iOS 等系统沙箱的 MAC Framework，以及 FreeBSD 网络协议栈的多线程。他是《The Design and Implementation of the FreeBSD Operating Systems》（第二版）的合著者。
+Dr. Robert N. M. Watson 是剑桥大学计算机实验室系统、安全与架构方向的大学讲师；FreeBSD 开发者与 core team 成员；FreeBSD 基金会 董事会成员。他领导多个跨越计算机体系结构、编译器、程序分析、程序转换、操作系统、网络与安全的跨层研究项目。近期工作包括 Capsicum 安全模型、用于 Junos 与 Apple iOS 等系统沙箱的 MAC Framework，以及 FreeBSD 网络协议栈的多线程。他是《The Design and Implementation of the FreeBSD Operating Systems》（第二版）的合著者。

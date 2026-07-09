@@ -1,6 +1,6 @@
 # FreeBSD 基金会动态
 
-- 原文：[FreeBSD Foundation Updates](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
+- 原文：[FreeBSD 基金会 Updates](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
 - 作者：**Deb Goodkin**
 
 FreeBSD 期刊的读者们，你们好！我很高兴能为我们新开辟的“基金会动态”专栏写第一篇。自 2014 年 1 月起出版这份内容丰富、令人振奋的杂志以来，我们意识到有必要让读者了解基金会在哪些方面助力 FreeBSD，于是便有了这个新栏目。
