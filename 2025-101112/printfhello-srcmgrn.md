@@ -11,7 +11,7 @@ srcmgr 是由 FreeBSD src 开发者组成的团队，其目标是帮助组织和
 
 以往，FreeBSD 核心团队（Core Team）提供后备支持：每当出现争议或树结构中被忽视的部分出现问题时，他们会介入。这种方式在历史上行之有效，因为核心团队长期主要由 src 开发者组成，尽管它代表的是整个 FreeBSD 项目。但在最近几个任期中，Ports 团队在核心团队中的代表性有所增加。因此，近期的核心团队在处理 src 相关问题上的资源相对有限，同时核心团队的注意力应更多集中于项目的长期战略方向，而非日常事务。
 
-这就是 srcmgr 的由来。srcmgr 于 2024 年 10 月 8 日在 FreeBSD 内部开发者邮件列表上正式公布，目前成员包括我（Mark Johnston）、Ed Maste、Warner Losh 和 John Baldwin。我们还有五名“潜水员”，即参加 srcmgr 会议并参与讨论但尚未正式成为成员的开发者；他们通过这种方式试水，以决定是否愿意正式加入。简而言之，srcmgr 在 src 树中的角色类似于 portmgr 和 doceng 团队在 ports 树和 doc 树中的作用：我们提供监督，并帮助解决该领域特有的挑战。
+这就是 srcmgr 的由来。srcmgr 于 2024 年 10 月 8 日在 FreeBSD 内部开发者邮件列表上正式公布，目前成员包括我（Mark Johnston）、Ed Maste、Warner Losh 和 John Baldwin。我们还有五名“潜水员”，即参加 srcmgr 会议并参与讨论但尚未正式成为成员的开发者；他们通过这种方式试水，以决定是否愿意正式加入。简而言之，srcmgr 在 src 树中的角色类似于 portmgr 和 doceng 团队在 Ports 树和 doc 树中的作用：我们提供监督，并帮助解决该领域特有的挑战。
 
 尽管早些时候已有组建 srcmgr 团队的想法，但我最初的接触是在 2023 年 BSDCan 与 John Baldwin 和 Ed Maste 的交流中。我们认识到核心团队（Core）往往负担过重，无法主动引导 src 的开发。同时，我对我们处理 bug 报告、新贡献者和代码评审的整体方式感到沮丧。作为个人开发者，要在完成常规有偿工作之余，还兼顾这些事务，实在是太耗费精力。
 
