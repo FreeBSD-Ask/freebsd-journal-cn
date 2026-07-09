@@ -33,4 +33,4 @@ Dominic Fandrey 的导师是 cs@ 和 koobs@。其次，sbruno@ 已有 src 提交
 
 ---
 
-Frederic Culot 在 IT 行业工作了 10 年。业余时间学习商业与管理，刚完成 MBA。Frederic 2010 年以 Ports 提交者身份加入 FreeBSD，至今已提交约 2000 次，指导了六位新提交者，现担任 portmgr-secretary。
+**Frederic Culot** 在 IT 行业工作了 10 年。业余时间学习商业与管理，刚完成 MBA。Frederic 2010 年以 Ports 提交者身份加入 FreeBSD，至今已提交约 2000 次，指导了六位新提交者，现担任 portmgr-secretary。
