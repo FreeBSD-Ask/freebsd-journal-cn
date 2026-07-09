@@ -315,7 +315,7 @@ dev:
 
 ---
 
-PETER WRIGHT 是一名系统架构师，目前在 Tronc Inc. 工作，为出版业构建基于 FreeBSD、SaltStack 和 AWS 的可扩展、安全系统。他是 NYCBUG 的长期成员（尽管住在圣莫尼卡），总是乐于把人引进 FreeBSD 的世界。不折腾 Unix 的时候，你多半会在他最爱的海滩上找到他正和儿子一起冲浪。
+**PETER WRIGHT** 是一名系统架构师，目前在 Tronc Inc. 工作，为出版业构建基于 FreeBSD、SaltStack 和 AWS 的可扩展、安全系统。他是 NYCBUG 的长期成员（尽管住在圣莫尼卡），总是乐于把人引进 FreeBSD 的世界。不折腾 Unix 的时候，你多半会在他最爱的海滩上找到他正和儿子一起冲浪。
 
 ## 参考链接
 

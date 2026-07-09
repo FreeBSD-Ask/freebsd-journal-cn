@@ -344,4 +344,4 @@ vagrant up --provider bhyve
 
 ---
 
-STEVE WILLS 是一位丈夫和父亲，住在美国北卡罗来纳州。他是 FreeBSD ports 提交者，专注于 Ruby 和其他编程语言。
+**STEVE WILLS** 是一位丈夫和父亲，住在美国北卡罗来纳州。他是 FreeBSD ports 提交者，专注于 Ruby 和其他编程语言。

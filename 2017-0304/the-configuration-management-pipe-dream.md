@@ -49,4 +49,4 @@ Subsystem       sftp    /usr/libexec/sftp-server
 
 ---
 
-MICHAEL W LUCAS 著有多部 FreeBSD 书籍，包括《Absolute FreeBSD》和 FreeBSD Mastery 系列。更多信息见 <www.michaelwlucas.com>。
+**MICHAEL W LUCAS** 著有多部 FreeBSD 书籍，包括《Absolute FreeBSD》和 FreeBSD Mastery 系列。更多信息见 <www.michaelwlucas.com>。
