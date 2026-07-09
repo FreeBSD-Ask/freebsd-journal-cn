@@ -11,7 +11,7 @@ FreeBSD 项目的一些新人只通过代码库认识我们，但要支撑这个
 
 2015 年是 FreeBSD 和 BSD 相关大会的丰收年；事实上，会议多到我无法全部参加。从东京的 AsiaBSDCon，到渥太华的 BSDCan、华盛顿特区附近的 vBSDCon、斯德哥尔摩的 EuroBSD 和福塔莱萨的 BSDCon Brazil，FreeBSD 真正遍布全球。每当 FreeBSD 基金会资助某人参加这些会议时，都会请与会者提交一份参会报告，本月我们将刊登 Shonali Balakrishna 的 BSDCan 2015 报告。
 
-为本期收尾的是本刊常规的专栏阵容：Frederic Culot 的 Ports 报告、Greg Lehey 的《The Practice of System and Network Administration》书评、Glen Barber 的 SVN 更新，以及 Dru Lavigne 的“本月 FreeBSD 动态”和活动日历。
+为本期收尾的是本刊常规的专栏阵容：Frederic Culot 的 Ports 报告、Greg Lehey 的《The Practice of System and Network Administration》书评、Glen Barber 的 `svn` 更新，以及 Dru Lavigne 的“本月 FreeBSD 动态”和活动日历。
 
 愿你享受阅读！
 
