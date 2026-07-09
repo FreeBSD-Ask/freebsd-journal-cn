@@ -21,4 +21,3 @@
 此致敬礼，
 George Neville-Neil
 代表 FreeBSD 期刊编辑委员会
-

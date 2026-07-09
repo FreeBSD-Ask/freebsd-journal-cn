@@ -36,7 +36,7 @@ mypool           ONLINE    0     0     0
 
 （看，gpt 无处不在，但这个 gpt 指的是 GUID 分区表）。由于每个系统的序列号都不一样，我有一小段例程，可以算出每个磁盘的序列号并创建池，确保将 mirror 关键字添加到序列号列表中，因为 ZFS 需要它来创建 RAID10。
 
-当我第一次听到 GPT 这个词时，我最初的想法是：“为什么会有人和 GUID 分区表对话？”我一定是在日常工作中与分区和磁盘设置打交道太多，所以我想，试一试吧。由于 ChatGPT 中的 GPT 代表生成式预训练变换器（generative pre-trained transformer），区别很明显。在 https://chat.openai.com/chat 创建账户后，我看到相当平淡无奇的聊天窗口。于是，我输入了以下内容：
+当我第一次听到 GPT 这个词时，我最初的想法是：“为什么会有人和 GUID 分区表对话？”我一定是在日常工作中与分区和磁盘设置打交道太多，所以我想，试一试吧。由于 ChatGPT 中的 GPT 代表生成式预训练变换器（generative pre-trained transformer），区别很明显。在 <https://chat.openai.com/chat> 创建账户后，我看到相当平淡无奇的聊天窗口。于是，我输入了以下内容：
 
 ***BCR***【作者向 ChatGPT 提问】：你将如何为这段代码创建函数：
 

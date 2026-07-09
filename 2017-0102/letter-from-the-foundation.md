@@ -27,4 +27,3 @@ George Neville-Neil
 《FreeBSD 期刊》主编
 
 FreeBSD 基金会董事
-

@@ -23,9 +23,9 @@
 
 当时，Xorg 已在 GNU/Linux 社区中引入了 kernel mode setting（KMS）机制，但 FreeBSD 尚未跟进。幸运的是，x11-drivers/xf86-video-intel29 能够在 user mode 下与 Xorg 7.5.1 以及板载 GPU 良好配合。显示模式可以平滑设置为 1920×1080p@60Hz，完全符合显示器的最佳性能要求。此外，Xorg 的 XVideo 扩展也能够正常工作。该驱动防止了在播放视频时 CPU 负载过高。
 
-<img width="322" height="199" alt="O3CI5B@ET09_J(L({KJ2F 5" src="https://github.com/user-attachments/assets/f79d72f1-4401-4829-9493-f9b18fc387ac" />
+![Figure 1：京沪高铁主线](../png/2017-0102/freebsd-powered-lcd-advertising-displays-01.png)
 
-**图 1. 京沪高速铁路主线。自 2016 年起，我的一些产品已从部分铁路车站撤除，例如南京南站。**
+**图 1. 京沪高铁主线。自 2016 年起，我的一些产品已从部分铁路车站撤除，例如南京南站。**
 
 | 组件 | 规格 |
 | :--: | :--: |
@@ -40,7 +40,7 @@
 
 **表 1. 用于京沪高速铁路线路的我方产品的硬件配置。**
 
-<img width="303" height="191" alt="OGK4FBU L$XE0O(C 1KV)QY" src="https://github.com/user-attachments/assets/f64faef7-3ae8-4e37-8d93-e923c2ca298d" />
+![Figure 2：哈大高铁沈阳-大连段](../png/2017-0102/freebsd-powered-lcd-advertising-displays-02.png)
 
 **图 2. 哈大高速铁路线路中的沈阳—大连区段。**
 

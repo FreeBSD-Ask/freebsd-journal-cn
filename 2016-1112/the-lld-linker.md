@@ -84,7 +84,7 @@ Clang/LLVM 3.9 近期导入 FreeBSD 开发分支，该工作包括 LLD 3.9。LLD
 
 下一步必须解决用 LLD 链接引导加载程序。LLD 开发者正积极处理阻碍此事的 LLD 问题，FreeBSD 端可能也需作一些改动。完成之后，更新的 LLD 快照将导入 FreeBSD，并通过构建时配置（如 `WITH_LLD_AS_LD=yes`）提供。然后将用树内 LLD 作为系统链接器对 Ports 树进行广泛测试。
 
-在 FreeBSD 所有支持的 CPU 架构上都需进行这种调查与迭代式 bug 修复。之后将对 FreeBSD 基础系统与 Ports进行链接器优化实验。
+在 FreeBSD 所有支持的 CPU 架构上都需进行这种调查与迭代式 bug 修复。之后将对 FreeBSD 基础系统与 Ports 进行链接器优化实验。
 
 ---
 

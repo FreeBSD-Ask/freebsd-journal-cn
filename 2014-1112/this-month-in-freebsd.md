@@ -4,7 +4,7 @@
 
 FreeBSD 今年迎来 21 周年——首个 RELEASE 公告于 1993 年 11 月 1 日发布。FreeBSD 1.0-RELEASE 的公告可在 <https://www.freebsd.org/releases/1.0/announce.html> 查阅。1.0 版本的发布工程师 Jordan Hubbard 在 21 周年当天的 MeetBSD 大会上做了题为《FreeBSD：接下来的 10 年》的演讲，大会在圣何塞举行。演讲录像可访问 <https://archive.org/download/bsdtalk247/bsdtalk247.ogg>。
 
-今年 11 月也有自己的发布公告：FreeBSD 10.1 于 11 月 14 日发布。本月的栏目将介绍 10.1-RELEASE 的一些特性，按兴趣领域分类。
+今年 11 月也有发布公告：FreeBSD 10.1 于 11 月 14 日发布。本月的栏目将介绍 10.1-RELEASE 的部分特性，按兴趣领域分类。
 
 ## 桌面用户
 
@@ -14,7 +14,7 @@ FreeBSD/amd64 架构加入了 UEFI 引导的初步支持，包括串口控制台
 
 系统的自动挂载设施由 `autofs(5)` 替换。新的自动挂载器是从头实现的，解决了旧 automount 系统的局限。它通过基于 autofs 文件系统实现的恰当内核支持，提供了多数其他 Unix 系统都具备的功能。新自动挂载器与轻量级目录访问协议（LDAP）服务集成，并已在若干企业和大学环境中经过测试，可支持数千条映射项。
 
-新增了 UDP Lite 支持。这种无连接协议允许将可能损坏的数据包送达应用程序，而不是自动丢弃。这样可以把数据完整性的判断交给应用程序或编解码器处理。它专为多媒体协议设计，例如流式视频——在这种情况下，收到一个负载损坏的数据包胜过完全收不到数据包。
+新增了 UDP Lite 支持。这种无连接协议允许将可能损坏的数据包送达应用程序，而不是自动丢弃。这样可以把数据完整性的判断交给应用程序或编解码器处理。它专为多媒体协议设计，例如流式视频——在这种情况下，收到负载损坏的数据包胜过完全收不到数据包。
 
 ## 虚拟化用户
 
@@ -25,7 +25,7 @@ CAM target 层 `ctl(4)` 新增了对若干 VAAI（vStorage APIs for Array Integr
 - write same：以厚配置分配虚拟机时，必要的零写入在本地完成，而非通过网络，虚拟机创建因此快得多。
 - xcopy：类似 Microsoft ODX，复制在本地完成而非通过网络。
 
-BSD Hypervisor `bhyve(8)` 是一个 Type-2 hypervisor，支持多种客户机，包括 FreeBSD、OpenBSD、NetBSD 和若干 Linux 发行版。本次发布对 bhyve 做了若干改进：
+BSD Hypervisor `bhyve(8)` 是 Type-2 hypervisor，支持多种客户机，包括 FreeBSD、OpenBSD、NetBSD 和若干 Linux 发行版。本次发布对 bhyve 做了若干改进：
 
 - 支持从 ZFS 文件系统引导。
 - 通过 `acpi(4)` S5 状态实现软关机。
@@ -33,7 +33,7 @@ BSD Hypervisor `bhyve(8)` 是一个 Type-2 hypervisor，支持多种客户机，
 
 `bhyve(8)` 新增若干选项：`-U` 用于指定客户机的 UUID，`-e` 设置 `loader(8)` 环境变量，`-C` 指定客户机控制台设备，`-H` 把宿主路径传给 `bhyveload(8)`。
 
-FreeBSD 的 VirtIO 实现 `virtio(4)` 提供了为 Linux KVM（Kernel-based Virtual Machine）开发的半虚拟化接口的 BSD 许可从头实现版本。本次发布对 VirtIO 做了若干改进：
+FreeBSD 的 VirtIO 实现 `virtio(4)` 提供了 BSD 许可的从头实现版本，实现了为 Linux KVM（Kernel-based Virtual Machine）开发的半虚拟化接口。本次发布对 VirtIO 做了若干改进：
 
 - API 从 32 位扩展到 64 位。
 - `virtio_blk(4)` 和 `virtio_scsi(4)` 驱动已更新支持未映射 I/O。未映射 I/O 大幅降低延迟，并在多处理器系统上提升 I/O 可扩展性和性能。

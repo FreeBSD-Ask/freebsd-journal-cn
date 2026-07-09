@@ -1,6 +1,7 @@
 # 告别 printf：用 DTrace 深入内核
 
-作者：Mark Johnston
+- 原文：[No More Printfs: Digging into the Kernel with DTrace](https://freebsdfoundation.org/our-work/journal/browser-based-edition/video-drivers/)
+- 作者：**Mark Johnston**
 
 DTrace 是一款通用性能分析与追踪工具，最初由 Sun Microsystems 为 Solaris 开发，后来移植到许多其他操作系统。FreeBSD 最近几个主要版本都包含了 DTrace 实现，从 FreeBSD 9.2 和 10.0 起内核已默认在 GENERIC 中启用 DTrace 支持。
 
@@ -205,7 +206,7 @@ fbt::malloc:return, fbt::contigmalloc:return
 
 ## 建立关联
 
-用 DTrace 构建监控工具时，一个常见难点是所需数据可能散落在多个探测点。考虑按进程监控 UDP 流量的任务。自然的起点是用 `udp:::send` 和 `udp:::receive` 探测点统计字节数或包数。但 FreeBSD 上这些探测点的参数无法识别负责流量的进程。`curthread` 变量在这里也帮不上忙——数据包从套接字缓冲区到网络接口之间一般由 netisr(4) 线程处理，这些是处理网络数据包协议处理的专用中断优先级线程：
+用 DTrace 构建监控工具时，一个常见难点是所需数据可能散落在多个探测点。考虑按进程监控 UDP 流量的任务。自然的起点是用 `udp:::send` 和 `udp:::receive` 探测点统计字节数或包数。但 FreeBSD 上这些探测点的参数无法识别负责流量的进程。`curthread` 变量在这里也帮不上忙——数据包从套接字缓冲区到网络接口之间一般由 `netisr(4)` 线程处理，这些是专门负责网络数据包协议处理的专用中断优先级线程：
 
 ```sh
 # dtrace -n 'udp:::receive {printf("%s", curthread->td_name);}'
@@ -266,7 +267,7 @@ fbt::sosend_dgram:entry, fbt::soreceive:entry
 
 这样我们假设的监控工具既能处理长连接，也能轻松处理简短的 DNS 查询。
 
-这种通过构建查找表来收集信息的通用技巧相当强大，不过需要你对内核及各数据结构之间的关系有一定熟悉。另一个应用是把文件路径映射到 vnode。vnode 是 FreeBSD 内核中文件在内存中的表示，用于在文件被访问时缓存各种信息。但用于查找文件的文件系统路径存储在另一个缓存——name cache 中。路径并不与 vnode 存在一起，所以给定一个 vnode，在 D 脚本中没有直接的方法找到关联路径。但我们可以挂钩 name cache 查找函数，以 vnode 地址为键构建映射表：
+这种通过构建查找表来收集信息的通用技巧相当强大，不过需要你对内核及各数据结构之间的关系有一定了解。另一个应用是把文件路径映射到 vnode。vnode 是 FreeBSD 内核中文件在内存中的表示，用于在文件被访问时缓存各种信息。但用于查找文件的文件系统路径存储在另一个缓存——name cache 中。路径并不与 vnode 存在一起，所以给定一个 vnode，在 D 脚本中没有直接的方法找到关联路径。但我们可以挂钩 name cache 查找函数，以 vnode 地址为键构建映射表：
 
 ```d
 fbt::vn_fullpath1:entry
@@ -359,14 +360,14 @@ syscall::execve:return
 }
 ```
 
-这段脚本用到了 DTrace 几个不那么常见的特性。首先是 `self->asgv` 变量与多个 D 函数配合使用，这是 DTrace 推测追踪特性的应用——它让我们能在尚不确定是否需要某份数据时先把它捕获下来。这里我们用 `kern_execve()` 的参数提取程序参数，但不能在 `fbt::kern_execve:entry` 探测点直接打印，因为系统调用可能失败。解决办法是先推测性地追踪参数；等确认系统调用成功后再打印，否则就丢弃这份字符串。
+这段脚本用到了 DTrace 几个不那么常见的特性。首先是 `self->argv` 变量与多个 D 函数配合使用，这是 DTrace 推测追踪特性的应用——它让我们能在尚不确定是否需要某份数据时先把它捕获下来。这里我们用 `kern_execve()` 的参数提取程序参数，但不能在 `fbt::kern_execve:entry` 探测点直接打印，因为系统调用可能失败。解决办法是先推测性地追踪参数；等确认系统调用成功后再打印，否则就丢弃这份字符串。
 
-推测涉及四个 D 函数。首先用 `speculation()` 分配一个推测缓冲区，把句柄存入 `self->addr` 线程局部变量，作为参数传给其他推测函数。`speculate()` 为该探测点余下部分启用推测追踪——数据采集动作的输出暂存到推测缓冲区以备后用。最后，`commit()` 和 `discard()` 分别把推测数据存入 DTrace 的输出缓冲区或丢弃。DTrace 只能分配固定数量的推测缓冲区；可用 `nspec` 选项（如上例所示）调整可用缓冲区数量。DTrace 推测追踪特性的完整文档见[4]。
+推测涉及四个 D 函数。首先用 `speculation()` 分配一个推测缓冲区，把句柄存入 `self->argv` 线程局部变量，作为参数传给其他推测函数。`speculate()` 为该探测点余下部分启用推测追踪——数据采集动作的输出暂存到推测缓冲区以备后用。最后，`commit()` 和 `discard()` 分别把推测数据存入 DTrace 的输出缓冲区或丢弃。DTrace 只能分配固定数量的推测缓冲区；可用 `nspec` 选项（如上例所示）调整可用缓冲区数量。DTrace 推测追踪特性的完整文档见[4]。
 
 本例另一个不常见之处是 `memstr()` D 函数。撰写本文时该函数为 FreeBSD 独有，专门为处理 FreeBSD 内核中参数字符串的内存布局而添加。比如字符串 `wc -w article.txt` 会被存储为：
 
 ```sh
-w   c   \   -   w   \   a   r   t   i   c   e   .   t   x   t   \
+w   c   \   -   w   \   a   r   t   i   c   l   e   .   t   x   t   \
 ```
 
 其中 `\` 表示空字节。和 C 中一样，D 字符串以空字符结尾，所以对上述字符串用 `printf()` 只会返回 `wc`。由于 D 无法遍历字符串的每个组成部分，所以添加了 `memstr()` 函数，把第一个参数中的所有空字节替换为第二个参数，从而转换为 D 字符串。第三个参数表示第一个参数的长度。

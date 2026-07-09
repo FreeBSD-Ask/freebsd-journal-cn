@@ -61,6 +61,8 @@ void mov(int n, int f, int t)
 
 **图 1**
 
+![Fig. 1：kldload hwpmc 命令及其输出](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-01.png)
+
 ```sh
 # kldload hwpmc
 hwpmc: SOFT/16/64/0x67<INT,USR,SYS,REA,WRI> TSC/1/64/0x20<REA>
@@ -78,6 +80,8 @@ hwpmc(4) 驱动加载后会报告它在 CPU 上找到的计数寄存器的数量
 
 **图 2**
 
+![Fig. 2：pmcstat 计数 hanoi 已退休指令](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-02.png)
+
 ```sh
 pmcstat -C -p INSTR_RETIRED_ANY ./hanoi 10
 # p/INSTR_RETIRED_ANY
@@ -89,6 +93,8 @@ pmcstat -C -p INSTR_RETIRED_ANY ./hanoi 10
 
 **图 3**
 
+![Fig. 3：hanoi 程序运行 10 秒（无 hwpmc）](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-03.png)
+
 ```sh
 ./hanoi 10
 1357889 loops
@@ -97,6 +103,8 @@ pmcstat -C -p INSTR_RETIRED_ANY ./hanoi 10
 代码效率的常见度量是每指令周期数（Cycles Per Instruction，CPI），通过同时计数已退休指令和测试运行期间的周期数，再相除得到。图 4 中的命令同时计数已退休指令和时钟周期。用时钟周期除以已退休指令数得到 CPI 为 0.44，根据 Intel 的优化手册，这是可接受的值。CPI 较高（比如大于 1）表示指令耗时比应有更长。关于使用 Intel PMC 事件进行 CPI 和一般性能调优的完整讨论，参见：<http://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-optimization-manual.pdf>
 
 **图 4**
+
+![Fig. 4：同时计数已退休指令和时钟周期（CPI 计算）](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-04.png)
 
 ```sh
 pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
@@ -111,6 +119,8 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 
 **图 5**
 
+![Fig. 5：采样模式运行 hanoi](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-05.png)
+
 ```sh
 > pmcstat -O /tmp/hanoi.log -P INSTR_RETIRED_ANY ./hanoi 10
 1013645 loops
@@ -120,6 +130,8 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 
 **图 6**
 
+![Fig. 6：分析 hanoi 日志生成图文件](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-06.png)
+
 ```sh
 > pmcstat -R /tmp/hanoi.log -G /tmp/hanoi.graph
 ```
@@ -127,6 +139,8 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 图 7 的输出显示 `mov()` 例程（见列表 X 中的代码）占据了最大数量的样本，而程序的 `main()` 例程样本很少。结果正如我们对该程序的预期。
 
 **图 7**
+
+![Fig. 7：hanoi 采样结果（pmcstat 输出）](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-07.png)
 
 ```sh
 @ INSTR_RETIRED_ANY [365189 samples]
@@ -144,6 +158,8 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 pmcstat 的输出还可以另一种方式展示，作为 gprof(1) 输出 `pmcstat -R /tmp/hanoi.log -g`（图 7）。用 `-g` 参数处理同一日志会创建按事件分的目录 **INSTR_RETIRED_ANY/**，其中包含采样时使用中的每个程序、库和内核的输出文件。处理 hanoi.gmon 文件得到图 8 所示输出。这种情况下，时间具有误导性。seconds 列中的数字代表被计数的事件，而非秒，但这样的输出便于简短阅读。我们仍然看到 `mov()` 例程是事件的最大消费者，占据了与该程序相关的所有事件的 99.8%。
 
 **图 8**
+
+![Fig. 8：hanoi gprof 输出](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-08.png)
 
 ```sh
 > ls
@@ -178,6 +194,8 @@ while (1) {
 
 **图 9**
 
+![Fig. 9：syscall 采样命令与统计](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-09.png)
+
 ```sh
 # pmcstat -O /tmp/syscall.log -S INSTR_RETIRED_ANY ./syscall 10
 3232709 loops
@@ -194,6 +212,8 @@ CONVERSION STATISTICS:
 
 **图 10**
 
+![Fig. 10：syscall 采样结果（witness_unlock 等）](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-10.png)
+
 ```sh
 @ INSTR_RETIRED_ANY [113032 samples]
 10.85% [12263] witness_unlock @ /boot/kernel/kernel
@@ -207,6 +227,8 @@ CONVERSION STATISTICS:
 ```
 
 **图 11**
+
+![Fig. 11：getuid 库版本与内核版本对比](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-11.png)
 
 ```sh
 01.45% [1642] sys_getuid @ /boot/kernel/kernel

@@ -1,27 +1,28 @@
 # 会议报告
 
-## Grace Hopper 女性计算大会
+- 原文标题：Conference Report — Grace Hopper Celebration of Women in Computing
+- 作者：**Shteryana Shopova**
 
-作者：Shteryana Shopova
+## Grace Hopper 女性计算大会
 
 我听说过 Grace Hopper 女性计算大会，但 Dru Lavigne 邀请我去帮忙值守 FreeBSD Foundation 展位后，我对它会是怎样一番景象只有模糊的概念。这一全球最大的女性技术人聚会于 2014 年 10 月 8 日至 10 日在美国亚利桑那州凤凰城会议中心举行。
 
-据报道，活动吸引了约 8500 名参与者，其中大多数是对技术感兴趣的女性，与会者从最知名大学的教授，到大型科技公司的高管，再到寻找职业机会的大学生和毕业生。会议活动包括专题讨论、展览厅和招聘会、开源日专题、海报展示和全体大会、电影节、学生机会实验室，可能还有很多别的。活动规模庞大、内容多样，一个人根本无法全部消化。
+据报道，活动吸引了约 8500 名参与者，其中大多数是对技术感兴趣的女性，与会者从最知名大学的教授，到大型科技公司的高管，再到寻找职业机会的大学生和毕业生。会议活动包括专题讨论、展览厅和招聘会、开源日专题、海报展示和全体大会、电影节、学生机会实验室，可能还有很多其他活动。活动规模庞大、内容多样，一个人根本无法全部消化。
 
-会议以 Shafi Goldwasser 的精彩主题演讲开场，她是 MIT 电气工程与计算机科学系 RSA 教授、2012 年 ACM A.M. 图灵奖得主。她谈到了密码学，以及焦点如何从战时用途转向计算的隐私性、在仍允许使用必要数据的同时保持足够安全。我没有亲自参加这场演讲，因为我们那天还有很多事要做，但重要会议都有直播和录像，我可以在离开酒店去会场前以及会后在家看到部分内容（<http://gracehopper.org/2014-grace-hopper-celebration-wednesday-livestream/）。>
+会议以 Shafi Goldwasser 的精彩主题演讲开场，她是 MIT 电气工程与计算机科学系 RSA 教授、2012 年 ACM A.M. 图灵奖得主。她谈到了密码学，以及焦点如何从战时用途转向计算的隐私、在仍允许使用必要数据的同时保持足够安全。我没有亲自参加这场演讲，因为我们那天还有很多事要做，但重要会议都有直播和录像，我可以在离开酒店去会场前以及会后在家看到部分内容（<http://gracehopper.org/2014-grace-hopper-celebration-wednesday-livestream/>）。
 
-到了会场，我们先找到展览厅和招聘会，那里是赞助商展位所在，也是 Grace Hopper 2014 开源日活动举办的地方。开源日以 OpenHatch 的 Shauna Gordon-McKeon 的演讲开场，题目是“如何为开源做贡献”。她概述了开源项目如何运作——从沟通协作到为开源项目做贡献的第一步。接下来是 Dru Lavigne 的“FreeBSD 项目简介”，这场演讲让人深入了解 FreeBSD 的特定关注领域，包括文件系统、网络和安全。演讲座无虚席，看到这么多年轻大学生对开源感到好奇，我很高兴。演讲之后，我与 Python 社区的一位资深成员就指导年轻贡献者/开发者进行了一次非常有趣的对话。我对 FreeBSD 项目为指导和带领新提交者所采取的政策感到满意，她也确实印象深刻。
+到了会场，我们先找到展览厅和招聘会，那里是赞助商展位所在，也是 Grace Hopper 2014 开源日活动举办的地方。开源日以 OpenHatch 的 Shauna Gordon-McKeon 的演讲开场，题目是“如何为开源做贡献”。她概述了开源项目如何运作——从沟通协作到为开源项目做贡献的第一步。接下来是 Dru Lavigne 的“FreeBSD 项目简介”，这场演讲让人深入了解 FreeBSD 的特定关注领域，包括文件系统、网络和安全。演讲座无虚席，看到这么多年轻大学生对开源感到好奇，我很高兴。演讲之后，我与 Python 社区的一位资深成员就指导年轻贡献者/开发者进行了一次非常有趣的对话。我对 FreeBSD 项目为指导和培养新提交者所采取的政策感到满意，她也确实印象深刻。
 
-展览厅巨大，可能有上百个——也许两百个——展位，所有大公司都在——Google、Netflix、NetApp、Yahoo、Juniper 等等——许多大学也在——加州大学伯克利分校、MIT、卡内基梅隆等——悉数到场。连 NSA 都有展位！FreeBSD Foundation 展位位置便利，紧挨着供应咖啡和食物的区域，所以很多只是路过取咖啡和点心的学生会在展位前停下，询问 FreeBSD。这是 FreeBSD Foundation 首次参加 Grace Hopper 大会，Dru 和我讨论了如何在未来的 Grace Hopper 大会上提升 FreeBSD Foundation 的存在感。如果你参加了活动并且对此有想法，请告诉我们！
+展览厅巨大，有一百多个——也许两百个——展位，所有大公司都在——Google、Netflix、NetApp、Yahoo、Juniper 等等——许多大学也在——加州大学伯克利分校、MIT、卡内基梅隆等——悉数到场。连 NSA 都有展位！FreeBSD Foundation 展位位置便利，紧挨着供应咖啡和食物的区域，所以很多只是路过取咖啡和点心的学生会在展位前停下，询问 FreeBSD。这是 FreeBSD Foundation 首次参加 Grace Hopper 大会，Dru 和我讨论了如何在未来的 Grace Hopper 大会上提升 FreeBSD Foundation 的存在感。如果你参加了活动并且对此有想法，请告诉我们！
 
 活动也不乏争议。在“男性盟友”专题讨论中，Microsoft 的 CEO Satya Nadella 建议女性不应主动要求加薪，而应相信 HR 团队的判断。这番话激怒了与会者和社交网络上的人，Nadella 随后通过邮件向 Microsoft 员工道歉，并在 Twitter 上公开致歉。Nadella 的失言被新闻广泛报道，你可能已经读到了。
 
-我们在 FreeBSD Foundation 展位花了大量时间与人交谈。我带了一本第二版《The Design and Implementation of the FreeBSD Operating System》，把它推荐给那些希望更深入了解操作系统的学生。同样令人鼓舞的是，Netflix、NetApp、Juniper、Cisco 等使用 FreeBSD 的公司的人特地来到展位说“嘿，我们用 FreeBSD”或“谢谢你们做 FreeBSD！”
+我们在 FreeBSD Foundation 展位花了大量时间与人交谈。我带了一本第二版《The Design and Implementation of the FreeBSD Operating System》，把它推荐给那些希望更深入了解操作系统的学生。同样令人鼓舞的是，Netflix、NetApp、Juniper、Cisco 等使用 FreeBSD 的公司的人顺道来到展位说“嘿，我们用 FreeBSD”或“谢谢你们做 FreeBSD！”
 
-Grace Hopper 大会组织者今年尝试了一种新做法，叫“午餐桌面话题”。想法是：对某个话题感兴趣的人坐在一起，边吃午餐边与一位了解该话题、能引导对话的主持人非正式地讨论该话题。像“如何参与开源”或“如何找导师”这样的话题桌最受关注。
+Grace Hopper 大会组织者今年尝试了一种新做法，叫“午餐桌面话题”。想法是：对某个话题感兴趣的人坐在一起，边吃午餐边与一位了解该话题、能引导对话的主持人非正式讨论该话题。像“如何参与开源”或“如何找导师”这样的话题桌最受关注。
 
 多年来 IT 行业的性别多样性一直是个大问题，很高兴有 Grace Hopper 大会这样的活动提高意识、讨论问题，并为女性在技术领域面临的特定问题提出解决方案。这确实是一次非常有趣的经历。
 
 ---
 
-Shteryana Shopova 是专注于嵌入式和网络应用的软件开发者。她于 2006 年加入 FreeBSD 开发团队，并以多种方式推广 FreeBSD 和开源软件，包括指导若干谷歌编程之夏项目，以及在她家乡保加利亚索菲亚组织一场本地开源软件大会。2014 年她担任 EuroBSDCon 组织委员会主席，这是欧洲最大的、专注于 BSD 操作系统家族的年度大会。
+Shteryana Shopova 是专注于嵌入式和网络应用的软件开发者。她于 2006 年加入 FreeBSD 开发团队，并以多种方式推广 FreeBSD 和开源软件，包括指导若干谷歌编程之夏项目，以及在她家乡保加利亚索菲亚组织一场本地开源软件大会。2014 年她担任 EuroBSDCon 组织委员会主席，这是欧洲最大、专注于 BSD 操作系统家族的年度大会。

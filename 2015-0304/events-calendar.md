@@ -1,8 +1,10 @@
 # 活动日历
 
+- 原文：[Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/zfs-best-practices/)
+
 直至 8 月
 
-接下来几个月将举办以下 BSD 相关会议。这些活动以及本地用户组会议的更多信息，请访问 <http://www.bsdevents.org>。
+接下来几个月将举办以下 BSD 相关会议。这些活动与本地用户组会议的更多信息，请访问 <http://www.bsdevents.org>。
 
 **LinuxFest Northwest** • 4 月 25 日与 26 日 • 华盛顿州贝灵厄姆
 

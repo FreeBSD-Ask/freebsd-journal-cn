@@ -3,7 +3,7 @@
 - 原文：[Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/mips-and-arm64/)
 - 作者：**Dru Lavigne**
 
-2015 年上半年安排了以下 BSD 相关会议。这些活动以及本地用户组会议的更多信息，请访问 www.bsdevents.org。
+2015 年上半年安排了以下 BSD 相关会议。这些活动以及本地用户组会议的更多信息，请访问 <http://www.bsdevents.org>。
 
 SCALE • 2 月 19 – 22 日 • 加利福尼亚州洛杉矶
 <http://www.socallinuxexpo.org/scale13x/> • 第 13 届年度南加州 Linux 博览会将再次提供数场与 FreeBSD 相关的演讲、展览区中的 FreeBSD 展台，以及参加 BSDA 认证考试的机会。此活动需缴纳少量费用注册。

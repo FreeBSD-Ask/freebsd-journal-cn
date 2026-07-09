@@ -46,6 +46,10 @@ MemGuard 还可在使用 MG_GUARD_AROUND 选项时检测内存越界。开启该
 
 UMA 在其他操作系统中也称为 zone 或 slab 分配器。可为某个 struct/object 创建 zone 以高效复用。如图 1 所示，`uma_zcreate()` API 可创建新 zone。创建 API 可指定 zone 名称、大小、四个函数指针、对齐与标志。四个函数指针用于自定义回调。malloc type 也从 UMA 中的 malloc-type zone 分配，但不使用这些函数指针（除非定义了 INVARIANTS）。图 2 展示了这四个函数指针及其回调时机。
 
+![图 1：UMA zone 创建 API（uma_zcreate）](../png/2015-0910/improving-memguard-support-for-uma-on-freebsd-01.png)
+
+![图 2：UMA 函数指针及其回调时机](../png/2015-0910/improving-memguard-support-for-uma-on-freebsd-02.png)
+
 - **initializer**：当 UMA 从 VM（虚拟内存）分配对象时，调用 init()。通常用于初始化锁。
 - **constructor**：当 `uma_zalloc()` 从 UMA 分配对象时，调用 ctor()。通常用于初始化对象中的其他值。正常情况下，UMA 中每块内存的 init() 只调用一次，但每次内存复用时都会调用 ctor()。
 - **destructor**：当 `uma_zfree()` 释放对象并归还 UMA 时，调用 dtor()。随后内存归还 UMA，不会立即归还 VM。UMA 中的空闲内存可高效复用。
@@ -96,19 +100,27 @@ MemGuard 是动态检测工具，需要测试用例触发 bug。内核编译是 
 
 如图 3 所示，`pipe_dtor()` 调用 `pipeclose(dpipe)` 释放 dpipe。但下一行又使用了 `dpipe->pipe_state`，导致释放后使用 bug [4]。该 bug 存在三年才被 MemGuard 发现，证明此类 bug 难以发现，而 MemGuard 能胜任。
 
+![图 3：pipe_dtor() 中的释放后使用 bug](../png/2015-0910/improving-memguard-support-for-uma-on-freebsd-03.png)
+
 ### 4.2 g_eli_auth_run() 与 g_eli_crypto_run() 中的释放后使用
 
 geli 模块中的两个函数 `g_eli_auth_run()` 与 `g_eli_crypto_run()` 存在释放后使用 bug [5]。这些函数调用 `crypto_dispatch()` 发送加密请求。此处存在竞态条件。最后一个子 bio 被服务后，bp 在 `g_vfs_done()` 中被释放。
 
 如图 4 所示，函数 `g_eli_auth_run()` 与 `g_eli_crypto_run()` 使用了已释放的 bp。向已释放的 bp 设置错误值可能导致内存损坏。
 
+![图 4：geli 中的释放后使用 bug](../png/2015-0910/improving-memguard-support-for-uma-on-freebsd-04.png)
+
 ### 4.3 seltdinit() 中的使用前未初始化
 
 如图 5 所示，`thread_init()` 是 THREAD zone 的 init 函数。当 `thread_alloc()` 从 zone 分配 struct thread 时，字段 td_sel 未初始化。随后在 `seltdinit()` 中，若 td_sel 不为 NULL，则不会分配内存，后续导致 panic。`thread->td_sel` 字段未初始化却被 `seltdinit()` 使用，这是使用前未初始化 bug [6]。
 
+![图 5：seltdinit() 中的使用前未初始化 bug](../png/2015-0910/improving-memguard-support-for-uma-on-freebsd-05.png)
+
 ### 4.4 dmu_buf_init_user() 中的使用前未初始化
 
 当 sa_cache zone 首次从 VM 分配内存时，`sa_cache_constructor()` 未初始化 dbu_evict_func，其中含有垃圾值。这将触发断言。`handle->db_buf->dbuf_evict_func` 未初始化却被 `dmu_buf_init_user()` 使用，导致使用前未初始化 bug [7]。只有当内存被释放后，`sa_cache_destructor()` 才将 dbu_evict_func 设为 NULL 并归还 zone 以备下次使用。
+
+![图 6：dmu_buf_init_user() 中的使用前未初始化 bug](../png/2015-0910/improving-memguard-support-for-uma-on-freebsd-06.png)
 
 ## 5. 结论
 

@@ -2,7 +2,7 @@
 
 **作者：Anne Dickison**
 
-本文列出了截至 2026 年 6 月的 BSD 相关活动。如有任何未在此列出的 FreeBSD 相关活动或对 FreeBSD 用户感兴趣的活动，请发送至 freebsd-doc@FreeBSD.org。
+本文列出了截至 2026 年 6 月的 BSD 相关活动。如有任何未在此列出的 FreeBSD 相关活动或对 FreeBSD 用户感兴趣的活动，请发送至 <freebsd-doc@FreeBSD.org>。
 
 ![FreeBSD logo](../png/2026-010203/events-calendar-01.png)
 

@@ -30,7 +30,7 @@ Pedro 又出现了，这次我们讨论了为我的 BSD.pw 域名搭建邮件。
 
 早晨公告由 Michai Stanek 主持，然后他介绍了来自 Politehnica University of Bucharest 的同事 Costin Raiciu。Costin 给出了关于“Lightweight Virtualization”（轻量级虚拟化）的早晨主题演讲。他展示了关于该主题的一些有趣研究，以及在机器上运行非常小的 Python 环境的示例。
 
-接下来是 Tom Jones 的“Hacking Together a FreeBSD Presentation Streaming Box for as Little as Possible”（用最少成本拼凑 FreeBSD 演示流媒体盒），提供了一些如何录制和流式传输 BSD 会议幻灯片及演讲者声音的有用示例。会议设计旨在短时间内提供大量多样化信息，因此接着我参加了 Kristaps Dz 的“OpenBSD and Diving”。这个演讲不仅幽默，充满精美照片，还充满了关于使用 OpenBSD 管理和编辑媒体的大量事实。所有媒体传输、编辑和颜色校正都在 OpenBSD 上完成。Kristaps 询问是否有人对好的媒体管理应用程序有建议，我推荐了 Plex。我告诉他我只见它在 FreeBSD Ports中可用，但他向我保证那不是问题，他会看看能否移植，看是否适合自己的工作流。我觉得可以，因为我每天都在用，它在消除媒体管理的大量复杂性的同时，提供了稳定的媒体处理界面。
+接下来是 Tom Jones 的“Hacking Together a FreeBSD Presentation Streaming Box for as Little as Possible”（用最少成本拼凑 FreeBSD 演示流媒体盒），提供了一些如何录制和流式传输 BSD 会议幻灯片及演讲者声音的有用示例。会议设计旨在短时间内提供大量多样化信息，因此接着我参加了 Kristaps Dz 的“OpenBSD and Diving”。这个演讲不仅幽默，充满精美照片，还充满了关于使用 OpenBSD 管理和编辑媒体的大量事实。所有媒体传输、编辑和颜色校正都在 OpenBSD 上完成。Kristaps 询问是否有人对好的媒体管理应用程序有建议，我推荐了 Plex。我告诉他我只见它在 FreeBSD Ports 中可用，但他向我保证那不是问题，他会看看能否移植，看是否适合自己的工作流。我觉得可以，因为我每天都在用，它在消除媒体管理的大量复杂性的同时，提供了稳定的媒体处理界面。
 
 Ingo Schwarze 在关于使用 Markdown 的一些头痛问题的演讲中，请求帮助解决控制 OpenBSD 网页上 man 页面呈现的 mandoc.css 文件中的 CSS 问题。我熟悉 CSS，主动提出查看该问题，看看能否帮忙。我看到代码的那一刻就识别出了问题，知道修复需要做什么。我只需要找时间坐下来写代码。Ingo 向我保证我可以慢慢来，有空时联系他。这里不仅有吸收信息的好机会，还有参与公共对话的机会。
 

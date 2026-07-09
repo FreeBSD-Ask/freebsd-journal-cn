@@ -2,7 +2,7 @@
 
 作者：Rodrigo Osorio
 
-FOSDEM（<https://fosdem.org）>
+FOSDEM（<https://fosdem.org>）
 
 FOSDEM 是欧洲主要的大型免费、非商业 FOSS 活动之一，2016 年 1 月 30 日至 31 日周末在比利时布鲁塞尔举办。
 

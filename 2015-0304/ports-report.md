@@ -7,7 +7,7 @@
 
 ## 重要的 Ports 更新
 
-为检查重大 ports 更新是否安全，我们进行了若干次 exp-run（确切地说是 23 次）。其中值得列出的有：
+为检查重大 ports 更新是否安全，我们执行了若干次 exp-run（确切地说是 23 次）。其中值得列出的有：
 
 - 默认 python3 版本设为 3.4
 - 默认 ruby 版本设为 2.1
@@ -30,4 +30,4 @@
 
 ## 活动
 
-欧洲有一场重要活动（FOSDEM），汇集了开源界的各路主要玩家。活动期间，bapt@ 发表了一场关于 `pkg`(8) 历史的精彩演讲——`pkg`(8) 已成为在 FreeBSD 上安装第三方软件的主要工具。幻灯片可在 <https://fosdem.org/2015/schedule/event/4yearofpkg/> 在线查阅。
+欧洲有一场重要活动（FOSDEM），汇集了开源界的各路主要玩家。活动期间，bapt@ 发表了一场精彩演讲，讲述 `pkg`(8) 的历史——`pkg`(8) 已成为在 FreeBSD 上安装第三方软件的主要工具。幻灯片可在 <https://fosdem.org/2015/schedule/event/4yearofpkg/> 在线查阅。

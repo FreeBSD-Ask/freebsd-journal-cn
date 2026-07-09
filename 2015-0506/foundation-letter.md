@@ -1,12 +1,15 @@
 # 基金会来信
 
+- 原文：[Foundation Letter](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
+- 作者：**George Neville-Neil**
+
 ## 来自董事会的信
 
 你知道吗？在亚洲，8 是个吉利的数字。
 
 而我们现在的订阅者数量已到 8800，仍在攀升。常言道，机遇青睐有准备的头脑，我深以为然。出版一份双月刊既需要辛勤工作，有时也少不了几分运气。
 
-本月我们幸运地邀请到几位新作者为期刊撰稿。Dan Langille——许多人熟知他是 BSDCan（<https://www.bsdcan.org/2015/>）和 PGCon 的负责人——写了一篇关于在 FreeBSD 上配合 ZFS 运行 Bacula 备份系统的精彩文章。如果你还没有备份系统，而你也明白应该备份，那就先读读这篇 Bacula 的文章。
+本月我们有幸邀请到几位新作者为期刊撰稿。Dan Langille——许多人熟知他是 BSDCan（<https://www.bsdcan.org/2015/>）和 PGCon 的负责人——写了一篇关于在 FreeBSD 上配合 ZFS 运行 Bacula 备份系统的精彩文章。如果你还没有备份系统，而你也明白应该备份，那就先读读这篇 Bacula 的文章。
 
 如果你还没听人称赞过 Go 编程语言，那你显然没看博客，甚至可能没看互联网。Ganbold Tsagaankhuu、Esbold Unurkhaan 和 Erdenebat Gantumur 带我们领略了在 FreeBSD 上用 Go 语言过滤互联网内容的门道、缘由与窍门。
 

@@ -68,7 +68,7 @@ M/N/K 值：128、256、512、768、1024、1280、1536
 
 有了语言和库在 FreeBSD 上的总体积极状态，移植 HPC 应用到 FreeBSD 和在其上开发有多难？典型挑战来自非标准 make 系统（通常是 shell 和其他脚本以及 make 文件的组合），Linuxism [8] 的盛行使用如硬编码系统路径和其他假设，代码通常不符合标准（例如只在特定编译器 [版本] 下编译并产生正确结果），以及我们自己的 BSD-ism 如 `rpath`。除了最后一个挑战外的所有都是移植的论据：代码库通常改进，潜伏的 bug 会暴露和修复。如果做得正确，移植到 FreeBSD 有切实优势：与任何其他应用一样，更改应上游化、解释和持续维护。同时，我们应考虑减少 BSD-ism 以减轻移植任务。
 
-FreeBSD 上的持续维护或开发简单。尽管没有用于分析、调试等的商业工具链，基础系统和 Ports包括优秀的自由替代方案。`dtrace` 和 `hwpmc` 与 `benchmarks/flamegraph` 一起使从用户到内核级别分析应用性能变得简单。`devel/gdb` 和 `lldb` 可能没有与商业替代方案相同级别的图形用户界面支持，但能完成工作。尽管大多数 HPC 代码仍使用 `vi` 或 `emacs` 开发，现代编辑器/IDE 替代品如 `java/eclipse`、`java/netbeans` 和使用 Linuxulator 的 `editors/linux-sublime3` 可用。最近，我发现 `bhyve` 为 HPC 开发者工具包提供了宝贵的补充。无论 bug 是仅出现在特定平台配置上，需要支持特定 Linux 发行版，还是需要完整、连续的集成设置，`bhyve` 为所有这些用例提供出色的解决方案。
+FreeBSD 上的持续维护或开发简单。尽管没有用于分析、调试等的商业工具链，基础系统和 Ports 包括优秀的自由替代方案。`dtrace` 和 `hwpmc` 与 `benchmarks/flamegraph` 一起使从用户到内核级别分析应用性能变得简单。`devel/gdb` 和 `lldb` 可能没有与商业替代方案相同级别的图形用户界面支持，但能完成工作。尽管大多数 HPC 代码仍使用 `vi` 或 `emacs` 开发，现代编辑器/IDE 替代品如 `java/eclipse`、`java/netbeans` 和使用 Linuxulator 的 `editors/linux-sublime3` 可用。最近，我发现 `bhyve` 为 HPC 开发者工具包提供了宝贵的补充。无论 bug 是仅出现在特定平台配置上，需要支持特定 Linux 发行版，还是需要完整、连续的集成设置，`bhyve` 为所有这些用例提供出色的解决方案。
 
 ## 加速器
 

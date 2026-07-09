@@ -12,4 +12,3 @@ Ayaka Koshibe 贡献了一篇关于软件定义网络（SDN）和 Mininet 的文
 
 George Neville-Neil
 FreeBSD Foundation 董事会主席
-

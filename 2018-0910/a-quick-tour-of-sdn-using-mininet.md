@@ -8,7 +8,7 @@
 
 ## Mininet
 
-Mininet 是相当知名的基于 SDN 的网络模拟器，因与 OpenFlow（SDN 黎明时期的网络控制协议）的关联而普及。它最近也被加入到了 Ports中。以此为契机，这里以 SDN 入门的形式快速介绍 Mininet。
+Mininet 是相当知名的基于 SDN 的网络模拟器，因与 OpenFlow（SDN 黎明时期的网络控制协议）的关联而普及。它最近也被加入到了 Ports 中。以此为契机，这里以 SDN 入门的形式快速介绍 Mininet。
 
 开始之前：Mininet 依赖 VIMAGE 来模拟网络主机，因此希望跟随操作的读者需要一台支持 VIMAGE 的主机。移植版的 Mininet 也不支持原版的全部功能，目前仍在开发中。它在清理时也比较激进，所以最好不要在用于托管其他 jail 或 Open vSwitch 实例的机器上运行。
 

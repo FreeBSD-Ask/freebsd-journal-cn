@@ -13,4 +13,3 @@ FreeBSD 期刊的编辑委员会也在经历一些变化。Brooks Davis 和 Stev
 George Neville-Neil
 
 John Baldwin
-

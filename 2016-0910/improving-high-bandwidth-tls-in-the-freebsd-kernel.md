@@ -68,19 +68,37 @@ compile-with "/usr/local/bin/yasm -g dwarf2 -f elf64 ${INTELISAINCLUDES} -o ${.T
 
 在图 1 中我们看到只使用 OpenSSL 时的情况。我们设置的 CPU 限制是标准的 80%；然而存储缓存受磁盘限制，CPU 命中 60% 到 65%，性能上限约为 12–12.5Gbps 的服务流量。sendfile 特性带来了相当大的改进，如接下来两图所示。BoringSSL 在内核中使用 sendfile 的结果见图 2。CPU 使用稍多（55%–70% CPU 利用率），总体输出性能提升至 15–16Gbps。这正是我们使用 sendfile 调用简化 I/O 所期望的。
 
+![Figure 1：Rev H 上使用 OpenSSL 的性能（基线）](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-01.png)
+
+![Figure 2：Rev H 上内核 sendfile 配合 BoringSSL 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-02.png)
+
 作为最终比较，我们部署了 ISA 库，同样在内核中使用 sendfile。结果见图 3，显示了又一次改进，使我们达到 18Gbps，但通常维持在 16–16.5Gbps 左右。
+
+![Figure 3：Rev H 上内核 sendfile 配合 ISA-L 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-03.png)
 
 图 4 是 OpenSSL，这次 CPU 达到最大值。这是因为 SSD 的 I/O 能力显著更高，我们不再遇到 Rev H 中看到的磁盘限制。我们看到平均 80% CPU 运行时，维持在 22 到 23Gbps 之间。这为我们提供了比较任何改进的基线。
 
+![Figure 4：Rev F 上使用 OpenSSL 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-04.png)
+
 图 5 是使用内核加密配合 sendfile 和 BoringSSL 的结果。这里我们能在维持 80% CPU 利用率目标的同时保持 25 到 25.5Gbps。
+
+![Figure 5：Rev F 上内核 sendfile 配合 BoringSSL 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-05.png)
 
 图 6 中的 ISA 库使我们在之前结果的基础上略有改进，同样达到约 25–25.5Gbps，但倾向于停留在范围的高端。
 
+![Figure 6：Rev F 上内核 sendfile 配合 ISA-L 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-06.png)
+
 Rev F 和 Rev H 都是 Ivy Bridge 机器（v2 CPU）。我们预期 Haswell 机器（v3 CPU）性能更好。Rev N 在下一组图中显示了有希望的结果。有趣的是，图 7 中的 OpenSSL 结果未达到 80% 的 CPU 目标。检查机器健康统计后发现，SSD 在约 29–30Gbps 达到最大值，这正是我们在图中看到维持的水平。
+
+![Figure 7：Rev N 上使用 OpenSSL 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-07.png)
 
 图 8 中我们达到了接口的最大容量 35.5–36Gbps，CPU 倾向于维持在 53% 左右，有一次突发至 57%。
 
+![Figure 8：Rev N 上内核 sendfile 配合 BoringSSL 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-08.png)
+
 ISA 库结果见图 9，与 BoringSSL 情况类似，区别在于 CPU 使用倾向于维持在 50.5% 左右。结果汇总在表 I 中。
+
+![Figure 9：Rev N 上内核 sendfile 配合 ISA-L 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-09.png)
 
 | RevF | RevH | RevN |
 | :--: | :--: | :--: |

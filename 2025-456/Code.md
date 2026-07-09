@@ -31,7 +31,7 @@ Overlord 架构被描述为一种树形链式架构。每个运行 API 服务器
 
 该架构同时抽象了项目的部署方式。想要部署项目的用户无需了解每个链的具体终端节点，只需知道第一个链（也称根链，root chain）即可。这是因为每条链都会被标记一个任意的字符串标签，用户只需在部署文件中指定根链的终端地址、访问令牌和标签即可。虽然标签本质上是主观的，但它们可以表达需求。例如，我们可以用字符串 vm-only 标记那些具备部署虚拟机能力的服务器，用 db-only 标记数据库服务器，实际上标签是完全任意的。
 
-```
+```sh
 bravo
                            /
            main <---> alpha
@@ -41,7 +41,7 @@ bravo
 
 假设只有 charlie 和 delta 拥有 `db-only` 标签。要将项目部署到带有指定标签的 API 服务器，客户端必须向 main 发起 HTTP 请求，指定链为 `alpha.charlie` 和 `alpha.charlie.delta`。这个过程是透明进行的，无需用户干预。
 
-```
+```sh
 main . alpha . charlie
                           &
              main . alpha . charlie . delta
