@@ -1,5 +1,8 @@
 # 反思 FreeBSD.org 软件包
 
+- 原文：[Reflections on FreeBSD.org PACKAGES](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
+- 作者：**BRYAN DREWERY**
+
 我上次撰写 FreeBSD.org 如何构建和提供软件包是在本刊 2014 年 3/4 月号。自那以后，我们面临许多挑战，做了许多更改，汲取了一些教训，并设想了一种以不同方式做事的未来。我们经验教训的总结是：自动化是关键，更多的 CPU 和 RAM 有助于更快地构建软件包。
 
 ## 构建频率
