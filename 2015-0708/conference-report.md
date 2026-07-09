@@ -3,7 +3,7 @@
 - 原文：[Conference Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
 - 作者：**SHONALI BALAKRISHNA**
 
-BSDCan 2015（www.BSDCan.org/2015/）
+BSDCan 2015（<www.BSDCan.org/2015/>）
 
 BSDCan 大会开幕演讲中的一张幻灯片写道：“一个房间里聚集了这么多聪明人。这就是我参加 BSD 大会的原因。”我会心一笑，开始沉浸于我第一次 BSD 大会的兴奋之中。在听完九场演讲并与上述那些聪明人多次交流之后，我彻底被说服了！BSD 大会不仅把太多太多非常聪明的人聚到了一个房间里，他们还是最和善的一群人。你常常听到 FreeBSD 社区所做的出色工作，但无论怎么说，FreeBSD 社区令人难以置信，它所带来的启发再多赞誉也不为过。
 
