@@ -5,7 +5,7 @@
 - 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2016/04/Events-Calendar.pdf)
 - 作者：**Dru Lavigne**
 
-2016 年 4 月至 6 月将举办以下 BSD 相关会议。这些活动和本地用户组会议的更多信息，请访问 www.bsdevents.org。
+2016 年 4 月至 6 月将举办以下 BSD 相关会议。这些活动和本地用户组会议的更多信息，请访问 <www.bsdevents.org。>
 
 **黑客松** • 4 月 22–24 日 • 德国埃森
 

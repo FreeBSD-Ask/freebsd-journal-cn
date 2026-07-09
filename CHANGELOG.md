@@ -1,6 +1,20 @@
 # 编辑日志
 
 - 2026.7.9
+  - 校对 2025-789 期（嵌入式）全部 11 篇文章
+  - 校对《基金会来信》（添加格式头部：原文链接+作者 **John Baldwin**）
+  - 校对《活动日历》（添加格式头部：原文链接+作者 **Anne Dickison**、修正日期 en-dash 为连字符：25–28→25-28、6–7→6-7）
+  - 校对《开启 FreeBSD 开发之路 —— 专访 Igor Ostapenko》（格式头部 `- [Starting...]`→`- 原文：[Starting...]`、"通往 FreeBSD 开发之路的有很多因素"→"通往 FreeBSD 开发之路有很多条"、"我更多专注在"→"我更专注于"、补全课程主讲人 Marshall Kirk McKusick、修正"George Neville-Neil"→"George V. Neville-Neil"、"事实证明是最有效的方法"→"事实证明这是最有效的方法"、补全 VNET Jails 针对新实现的功能或修复的 bug 的说明、补全源码路径 **src/tests/sys/netpfil**、补全 Kristof 的 YouTube 演讲链接、补全漏译段落"使用语言服务器协议（LSP）可以大大简化代码理解和导航"、"他们的积累可以"→"他们积累的知识和经验可以"、"虽然不是必须的"→"虽然不是必须的或所期望的"、"是一位 FreeBSD 提交者"→"是 FreeBSD 提交者"、"导航设备测试系统"→"导航设备操作与测试系统"、补全"这里打个基于网络的比方"、补全漏译"通往贡献的路径有很多种"、补全 Netlink 实现迁移说明"（伴随现有工具的迁移工作）"、补全 VPP 全称"Vector Packet Processing"、补全漏译段落"每篇文章都不是涵盖所有细节..."）
+  - 校对《CHERIoT》（前期已完成）
+  - 校对《FreeBSD、Home Assistant 与 rtl_433》（前期已完成）
+  - 校对《撰写有效的 Bug 报告》（前期已完成）
+  - 校对《实现量子安全网站》（前期已完成）
+  - 校对《FreeBSD WiFi 开发第二部分：驱动开发》（前期已完成）
+  - 校对《嵌入式 FreeBSD：回顾与展望》（前期已完成）
+  - 校对《会议报告：2025 BSDCan》（前期已完成）
+  - 校对《读者来信》（添加格式头部：原文链接+作者 **Michael W Lucas**、"所以送货卡车之后才到"→"所以邮件在送货卡车之后才到"补全 it 指代、"没记过任何有用的东西"→"没有记录过任何有用的东西"、修复损坏的邮箱链接 `[letters@freebsdjournal.](mailto:letters@freebsdjournal.org)org`→`<letters@freebsdjournal.org>`、作者署名加粗）
+  - 英文原文已归档至 en/2025-789-embedded-2/（全部 11 篇）
+- 2026.7.9
   - 校对 2022-0102 期（软件与系统管理）全部 10 篇文章
   - 校对《基金会来信》（`- 原文链接`→`- 原文`、作者行加粗、`贡献新 port`→`贡献新 Port`、`向 ports 贡献`→`向 Ports 贡献`、`同样主题下`→`类似地`、签名块加空行）
   - 校对《活动日历》（补全缺失 URL：SCALE、FreeBSD Fridays、Office Hours、Open Source 101 各自链接、调整段落顺序与英文原文一致、`- 原文链接`→`- 原文`）
