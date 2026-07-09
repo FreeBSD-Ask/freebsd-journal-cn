@@ -1,6 +1,15 @@
 # 编辑日志
 
 - 2026.7.10
+  - 新增 2026-456 期（改进软件质量）全部 6 篇文章翻译，英文源已归档至 `en/2026-456-improving-software-quality/`
+    - 《基金会来信》（letter-from-the-foundation.md，Deb Goodkin）：完整翻译
+    - 《活动日历》（events-calendar.md，Anne Dickison）：完整翻译；图片离线至 `png/2026-456/events-calendar-01.png`
+    - 《使用 CHERI 调试》（debugging-with-cheri.md，John Baldwin）：完整翻译；代码块标注 ```sh 语言标签
+    - 《FreeBSD 上的现代 Java》（modern-java-on-freebsd.md，Tom Jones 采访 Harald Eilertsen）：完整翻译
+    - 《来吧，友好的 SBOM》（come-friendly-sboms.md，Alice Sowerby）：完整翻译；MD060 表格分隔行对齐修复
+    - 《读者来信》（we-get-letters.md，Michael W Lucas）：完整翻译
+    - markdownlint 全部 6 篇通过（0 错误）
+- 2026.7.10
   - 校对 2023-1112 期（FreeBSD 14.0）全部 7 篇文章，英文源已归档至 `en/2023-1112-freebsd-14-0/`
   - 4 篇新翻译：
     - 《基金会来信》（letter-from-the-foundation.md，John Baldwin）：完整翻译；避免"之一"滥用（"魅力之一"→"一大魅力"）
