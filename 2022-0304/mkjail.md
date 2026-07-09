@@ -1,7 +1,7 @@
 # 进行中的工作/征求反馈：Lumina 桌面征集开发人员
 
-- 原文链接：[进行中的工作/征求反馈：Lumina Desktop Calls for Developers](https://freebsdfoundation.org/wp-content/uploads/2022/04/wipcft.pdf)
-- 作者：TOM JONES & JT PENNINGTON
+- 原文：[WIP/CFT: Lumina Desktop Calls for Developers](https://freebsdfoundation.org/wp-content/uploads/2022/04/wipcft.pdf)
+- 作者：**TOM JONES** 和 **JT PENNINGTON**
 
 在自由桌面（Free Desktop）领域，桌面环境（Desktop Environment）选择丰富多样。从仅包含窗口管理器和一些装饰性工具的极简环境，到 Mate、KDE 和 Gnome 这类可以媲美 macOS 或 Windows 的完整桌面系统，应有尽有。
 

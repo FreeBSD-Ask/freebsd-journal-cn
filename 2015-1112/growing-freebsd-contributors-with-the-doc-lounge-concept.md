@@ -1,6 +1,7 @@
 # 用 Doc Lounge 理念培养 FreeBSD 贡献者
 
-**作者**：Warren Block
+- 原文：[Growing FreeBSD Contributors with the Doc Lounge Concept](https://freebsdfoundation.org/our-work/journal/browser-based-edition/migrating-jail-management-from-warden-to-iocage/)
+- 作者：**Warren Block**
 
 许多 FreeBSD 会议和活动都设有“hacker lounge”——一个供大家协同开展项目的大房间。这类房间很受欢迎，全天任何时段都有大量参与者。但对初来乍到者而言，那里可能嘈杂且令人望而生畏。
 
@@ -14,7 +15,7 @@
 
 从零开始一项新事物，远比在已有基础上修改要难。我把这称为“门槛效应”，在许多领域都一样。新手很难判断哪些是必需的、哪些是可选的，以及如何排定顺序。这也是编程中有标准“Hello World”示例的原因——它演示了最低限度所需，省去了可能造成干扰的细节。多数人需要的只是一点帮助他们跨过这道门槛。能有人在身旁指出哪些事情重要、并帮助避开沿途的小坑，这是莫大的安慰。
 
-有些演示无非是如何检出文档、做一处小修改、生成补丁并提交。这对 committer 来说是简单的事，但对多数新用户而言至少有几分陌生。与乏味相反，新手们对此兴致盎然。在 BSDCan 2015 上，他们指出文档流程中存在的一个 bug；修复它并提交改动就成了那次演示的一部分。
+有些演示无非是如何检出文档、做一处小修改、生成补丁并提交。这对 committer 来说是简单的事，但对多数新用户而言至少有几分陌生。与乏味相反，新手对此兴致盎然。在 BSDCan 2015 上，他们指出文档流程中存在的一个 bug；修复它并提交改动就成了那次演示的一部分。
 
 潜在译者是出现在 doc lounge 的另一类人群。他们都是技艺娴熟的人，能以至少两种语言从事技术工作。他们出现是因为对翻译 FreeBSD 文档、让更多人能读到这些资料感兴趣。过去我们一直难以轻松接受他们提供的帮助：传统翻译系统对临时贡献者来说耗时费力，有时甚至连专职译者都难以承受。我们新的 PO 翻译工具链大幅降低了翻译工作量，当有人愿意贡献翻译技能时，我们现在能让他们顺利上手。
 
@@ -24,7 +25,7 @@ doc lounge 还吸引来程序员、系统管理员、学生以及其他未必对
 
 我们希望能有更多 FreeBSD 开发者和文档 committer 参加 doc lounge，这样我们才能更好地宣传它，吸引更多感兴趣的人，并有机会与所有人合作。
 
-doc lounge 在 BSDCan（<http://www.bsdcan.org）和> vBSDCon（<http://vbsdcon.com）举办，也可以在其他活动中举办。我们诚邀会议组织者提供场地，欢迎与会者前来参与或协助。> •
+doc lounge 在 BSDCan（<http://www.bsdcan.org>）和 vBSDCon（<http://vbsdcon.com>）举办，也可以在其他活动中举办。我们诚邀会议组织者提供一个房间，欢迎与会者前来参与或协助。•
 
 **作者简介**
 
