@@ -8,7 +8,7 @@
 
 ## 请介绍一下你自己、你的背景与兴趣。
 
-- **Loïc**：我的背景是历史与城市规划，职业经历从分析工具的使用者演变为工具的创建者，尤其是 graphics/qgis、databases/grass 与 databases/postgis 等 Ports。我现为 GIS/CAD 工程师，C/C++/Python/SQL 开发者，正在学习 Nim/Rust 与 Qt UI。我的专业领域是使用 PostgreSQL 的 GIS、CAD、土地测量、GNSS（GPS）数据库。
+- **Loïc**：我的背景是历史与城市规划，职业经历从分析工具的用户演变为工具的创建者，尤其是 graphics/qgis、databases/grass 与 databases/postgis 等 Ports。我现为 GIS/CAD 工程师，C/C++/Python/SQL 开发者，正在学习 Nim/Rust 与 Qt UI。我的专业领域是使用 PostgreSQL 的 GIS、CAD、土地测量、GNSS（GPS）数据库。
 
 我个人与职业上都投身开源地理（OSGEO）运动，并确保所开发的工具能在 FreeBSD 上使用。这涉及修正代码以合入上游 BSD、为我们的系统创建 Ports，并推广它们。
 
