@@ -284,7 +284,7 @@ ornata_detach( device_t self )
 
 最终，我们可以定义驱动程序模块，如清单 9 所示。我们使用 `DRIVER_MODULE` 宏来创建一个内核驱动程序。在这一部分，我们将 `probe`、`attach` 和 `detach` 函数设置到驱动程序结构中。`MODULE_DEPEND` 宏用于设置对另一个内核模块的依赖关系。它仅用于帮助操作系统在加载此模块之前加载所有必需的模块；然而，这并不规定加载顺序。
 
-**列表 9. 内核模块的定义**
+**清单 9. 内核模块的定义**
 
 ```c
 static device_method_t	ornata_methods[] = {
