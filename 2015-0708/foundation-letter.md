@@ -1,5 +1,8 @@
 # 基金会来信
 
+- 原文：[Foundation Letter](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
+- 作者：**George Neville-Neil**
+
 FreeBSD 在企业中被广泛使用，这也是本期两篇专题文章的主题。Groupon 的 Sean Chittenden 和 Isilon 的 Benno Rice 详述了他们各自公司在使用 FreeBSD 时的独特经历。由于 Isilon 和 Groupon 用 FreeBSD 构建了截然不同的系统——前者是集群存储设备，后者是 web 服务——你将从这两篇文章中获得大量信息。
 
 打造一个坚如磐石的操作系统固然重要，但这只是一个有趣且可用的系统所需软件的一小部分。软件包中维护的代码量远远超过操作系统本身的代码量，而日常与用户打交道最多的正是这些软件包。从 web 浏览器到 web 服务器，从开发工具到图形编辑器，软件包系统是 FreeBSD 社区获取数以万计开源软件的途径。在本刊第二期中，Bryan Drewery 介绍了首次亮相的更新版软件包系统。现在他再次执笔，讲述所汲取的经验教训，以及这些经验如何塑造了今天的 `pkg`。
