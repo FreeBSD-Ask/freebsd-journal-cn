@@ -65,7 +65,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **避免章节交叉引用：** 正文不要出现具体的章节交叉引用（如"参见第 5 章"），改用语义化链接。
 - **代码块注释翻译：** 代码块（` ``` ` 围栏）内的英文注释必须翻译为中文（如 shell 注释 `# This is a comment` → `# 这是一个注释`）。只翻译注释部分，不修改实际命令或代码。保持代码结构和格式不变。
 - **fstab 不翻译：** fstab 文件表头（如 `# Device Mountpoint FStype Options Dump Pass#`）及其相关内容保持英文原样，不翻译。
-- **标点符号：** 全书正文标点符号统一使用全角，包括引号 `“”` 及括号 `（）` 等，避免半角混用。
+- **标点符号：** 全书正文标点符号统一使用全角，包括引号 `“”` 及括号 `（）` 等，避免半角混用。正文中不允许出现 `「」` 引号，一律替换为 `“”`。
+- **链接双冒号：** 不允许使用 `::` 双冒号结尾的链接（如 `mini-memstick::`），必须链接到真实地址。
+- **段落与换行：** 每个段落必须在一行内完成，不允许软换行。禁止行尾两个或以上空格创建硬换行、禁止使用 `+` 作为换行符、禁止行尾反斜杠 `\` 创建硬换行。
 
 ### 期刊特有规则
 
@@ -78,6 +80,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - `Ports` 保持英文不翻译，且保持首字母大写（注意区分真正的"端口"）禁止机械替换。
 - "Jail" 保持英文（不翻译为"监狱"、"监牢"）禁止机械替换。
+- `pkgbase` 保持英文不翻译，禁止译为"打包基系统"或类似中文。注意区分："pkgbase"是项目/工具名，保持英文；"packaged base system"（打包基本系统）是概念，可正常翻译。
+- "The FreeBSD Foundation" 翻译为"FreeBSD 基金会"，注意自动调整前后空格。代码块（启动信息、git 日志、系统输出）中的 "The FreeBSD Foundation" 不翻译。
 - "拷贝" → "复制"，"壳/外壳" → "shell"。禁止机械替换。
 - 第二人称一律使用"你"而非"您"
 - 所有术语翻译见 `yi-zhe-shuo-ming.md` 对照表
