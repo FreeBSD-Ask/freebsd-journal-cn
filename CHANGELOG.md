@@ -1,5 +1,16 @@
 # 编辑日志
 
+- 2026.7.10
+  - 校对 2023-1112 期（FreeBSD 14.0）全部 7 篇文章，英文源已归档至 `en/2023-1112-freebsd-14-0/`
+  - 4 篇新翻译：
+    - 《基金会来信》（letter-from-the-foundation.md，John Baldwin）：完整翻译；避免"之一"滥用（"魅力之一"→"一大魅力"）
+    - 《LinuxBoot：从 Linux 启动 FreeBSD》（linuxboot-cong-linux-qi-dong-freebsd.md，Warner Losh）：完整翻译；移除英中混排（"freely available（自由可用）"→"自由可用"）；路径加粗；man page 格式（`kexec.2`）
+    - 《现在用 Webhook 触发我》（xian-zai-yong-webhooks-chu-fa-wo.md，Dave Cottlehuber）：完整翻译；代码块注释翻译为中文；路径加粗（如 **/var/log/messages**）；命令反引号（如 `openssl dgst`、`logger.1`）
+    - 《新的 Ports 提交者：Joel Bodenmann》（xin-de-port-ti-jiao-zhe-oel-bodenmann-jbofreebsd.org.md，Tom Jones 采访）：完整翻译；修正 SUMMARY.md 标题拼写（"oel"→"Joel"，CI 自动同步 H1）；头部格式统一（`- 原文`/`- 作者`顺序）；图片 alt 文本修正（"oel"→"Joel"）；欧化汉语修正（长定语"设计用来执行特定任务的系统"→"为执行特定任务而设计的系统"、抽象名词做主语"随着我熟悉程度的增加"→"随着我越来越熟悉"、三连"的"重构、"更新"→"升级"准确性修正、"系统/组件"→"系统或组件"、删除"已经"滥用、句号改逗号修正句流）；作者姓名格式修正（"TOM JONES"→"Tom Jones"）
+  - 3 篇校对（已有翻译）：
+    - 《活动日历》（events-calendar.md）：逐段对照英文原文，翻译准确，无需修改
+    - 《FreeBSD 容器镜像》（freebsd-rong-qi-jing-xiang.md）：逐段对照英文原文，翻译准确，无需修改
+    - 《读者来信》（we-get-letters.md）：格式修正（"原文链接"→"原文"、作者加粗为 **Michael W Lucas**、添加 `---` 分隔符、移除期刊页脚"——《FreeBSD 期刊》，2023 年 11/12 月"）
 - 2026.7.9
   - 三工具全书清理第二轮（AutoCorrect、md-padding@latest、markdownlint），spec：three-tools-full-sweep-rerun-2
   - 重新生成三工具全量清单：markdownlint 28 处违规、AutoCorrect 112 条建议、md-padding 212 文件 +1496/-1475 行

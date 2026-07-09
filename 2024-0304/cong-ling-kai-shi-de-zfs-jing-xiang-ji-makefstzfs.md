@@ -1,6 +1,6 @@
 # 从零开始的 ZFS 镜像及 makefs -t zfs
 
-- 原文链接：[ZFS Images From Scratch, or makefs -t zfs](https://freebsdfoundation.org/our-work/journal/browser-based-edition/development-workflow-and-ci/zfs-images-from-scratch-or-makefs-t-zfs/)
+- 原文链接：[ZFS Images From Scratch, or makefs -t zfs](https://freebsdfoundation.org/our-work/journal/browser-based-edition/development-workflow-and-ci/zfs-images-from-scratch-or-makefs-t-zfs/)
 - 作者：Mark Johnston
 
 ![ZFS 镜像文章配图](../png/2024-0304/cong-ling-kai-shi-de-zfs-jing-xiang-ji-makefstzfs-1.jpg)

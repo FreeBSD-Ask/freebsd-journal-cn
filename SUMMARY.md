@@ -154,7 +154,7 @@
 * [LinuxBoot：从 Linux 启动 FreeBSD](2023-1112/linuxboot-cong-linux-qi-dong-freebsd.md)
 * [FreeBSD 容器镜像](2023-1112/freebsd-rong-qi-jing-xiang.md)
 * [现在用 Webhook 触发我](2023-1112/xian-zai-yong-webhooks-chu-fa-wo.md)
-* [新的 Ports 提交者：oel Bodenmann (<jbo@freebsd.org>)](2023-1112/xin-de-port-ti-jiao-zhe-oel-bodenmann-jbofreebsd.org.md)
+* [新的 Ports 提交者：Joel Bodenmann (<jbo@freebsd.org>)](2023-1112/xin-de-port-ti-jiao-zhe-oel-bodenmann-jbofreebsd.org.md)
 * [读者来信](2023-1112/we-get-letters.md)
 
 ## 2023-0910 Port 与软件包
