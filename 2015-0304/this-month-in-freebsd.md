@@ -3,7 +3,7 @@
 - 原文：[This Month in FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/zfs-best-practices/)
 - 作者：**Dru Lavigne**
 
-FreeBSD 项目自 2005 年谷歌编程之夏（谷歌 Summer of Code）项目启动以来，每届都担任指导组织，从未缺席。
+FreeBSD 项目自 2005 年谷歌 Summer of Code（GSoC）项目启动以来，每届都担任指导组织，从未缺席。
 
 每年的这个时候，开源指导组织都会评审学生提交的提案，挑选参与谷歌编程之夏的学生。本月，我们来看看 FreeBSD 项目在该项目中的参与情况。
 

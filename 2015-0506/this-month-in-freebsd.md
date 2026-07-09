@@ -3,7 +3,7 @@
 - 原文：[This Month in FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/measure-twice-code-once/)
 - 作者：**Dru Lavigne**
 
-上一期中，我们了解了 FreeBSD 项目参与谷歌编程之夏（谷歌 Summer of Code）的情况。本月，我有机会采访了 Julio Merino——一位前谷歌编程之夏学生，如今在 谷歌 工作。他从一名参与开源的学生起步，其经历横跨多个 BSD 项目，颇为引人入胜。他对自动化测试与代码审查的关注，让他的职业生涯与他仍参与的项目双双受益。
+上一期中，我们了解了 FreeBSD 项目参与谷歌 Summer of Code（GSoC）的情况。本月，我有机会采访了 Julio Merino——一位前谷歌编程之夏学生，如今在 谷歌 工作。他从一名参与开源的学生起步，其经历横跨多个 BSD 项目，颇为引人入胜。他对自动化测试与代码审查的关注，让他的职业生涯与他仍参与的项目双双受益。
 
 Julio，跟我们说说你自己。你的技术背景是什么，如何对自动化测试与代码审查产生兴趣，又是什么吸引了你加入 FreeBSD 项目？
 
