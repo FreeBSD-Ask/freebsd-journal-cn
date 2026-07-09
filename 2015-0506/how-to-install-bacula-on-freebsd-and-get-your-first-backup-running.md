@@ -1182,7 +1182,7 @@ Only in /usr/local/etc/bacula/: bacula-dir.conf~
 
 ### Catalog 与配置的备份
 
-除了用 Bacula 备份我的 Catalog dump 外，我还把那个 dump、所有 Bacula 配置文件以及所有 Bootstrap Files 复制到多个位置。我这样做是为了避免不得不使用 `bscan` 从 Volume 重建 Catalog。
+除了用 Bacula 备份我的 Catalog dump 外，我还把那个 dump、所有 Bacula 配置文件、所有 Bootstrap Files 复制到多个位置。我这样做是为了避免不得不使用 `bscan` 从 Volume 重建 Catalog。
 
 ### 问题？
 
