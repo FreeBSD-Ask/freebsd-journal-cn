@@ -88,7 +88,7 @@ wazuh-net 11.1.0.0 24 11.1.0.255 11.1.0.1 11.1.0.1 11.1.0.254 254 -
 
 ### 部署 Wazuh AIO（全一体）
 
-Wazuh makejail 将创建并配置 jail，其中包含 Wazuh SIEM 使用的所有组件（wazuh-manager、wazuh-server、wazuh-indexer 和 wazuh-dashboard）。目前在 ports 中为 4.5.2 版本。
+Wazuh makejail 将创建并配置 jail，其中包含 Wazuh SIEM 使用的所有组件（wazuh-manager、wazuh-server、wazuh-indexer 和 wazuh-dashboard）。目前在 Ports 中为 4.5.2 版本。
 
 使用 AppJail 通过 AppJail-Makejail 创建它。
 
