@@ -1,4 +1,4 @@
-# 目录
+# Table of contents
 
 * [FreeBSD 中文期刊](README.md)
 * [编辑日志](CHANGELOG.md)
@@ -653,7 +653,7 @@
 * [由 FreeBSD 驱动的中国 LCD 广告显示屏](2017-0102/freebsd-powered-lcd-advertising-displays.md)
 * [FlightAware 与 FreeBSD](2017-0102/flightaware-and-freebsd.md)
 * [活动日历](2017-0102/events-calendar.md)
-* [书评：《算法图解——给程序员和其他好奇者的图解指南》](2017-0102/book-review.md)
+* [书评](2017-0102/book-review.md)
 
 ## 2016-1112 编程语言
 
