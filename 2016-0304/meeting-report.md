@@ -10,7 +10,7 @@
 
 我做了第二场演讲，对 FreeBSD 项目做了概览介绍，并讲解如何贡献代码、成为 FreeBSD 提交者。我的演讲幻灯片位于 <http://www.slideshare.net/araujobsd/portscamp-taiwan>。
 
-我还提供了一台运行 bhyve(8) 的服务器，预装最新的 FreeBSD-HEAD、Ports 树和 poudriere(8)，与会者可以通过 ssh 访问并动手实验 FreeBSD ports。提供这台服务器是个非常好的主意——环境开箱即用，节省了大量配置时间。这台服务器是 i7 处理器配 16G 内存，托管了 25 个虚拟机，性能相当不错。
+我还提供了一台运行 bhyve(8) 的服务器，预装最新的 FreeBSD-HEAD、Ports 树和 poudriere(8)，与会者可以通过 ssh 访问并动手实验 FreeBSD Ports。提供这台服务器是个非常好的主意——环境开箱即用，节省了大量配置时间。这台服务器是 i7 处理器配 16G 内存，托管了 25 个虚拟机，性能相当不错。
 
 我们在 Ports 树中进行了 193 次提交，历史日志标记为：Sponsored by: PortsCamp Taiwan。
 
@@ -27,4 +27,4 @@
 
 ---
 
-**Marcelo Araujo** 是一名 FreeBSD 开发者，主要工作于 ports，近期也参与内核相关特性。他是生活在台湾的巴西人；在自由软件世界之外，Marcelo 喜欢摩托车、徒步和啤酒。
+**Marcelo Araujo** 是一名 FreeBSD 开发者，主要工作于 Ports，近期也参与内核相关特性。他是生活在台湾的巴西人；在自由软件世界之外，Marcelo 喜欢摩托车、徒步和啤酒。
