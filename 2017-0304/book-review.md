@@ -1,17 +1,17 @@
-# 书评：《DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD》
+# 书评：*DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD*
 
 作者：JOSEPH KONG
 
-**书名：** DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD
-**作者：** Brendan Gregg、Jim Mauro
-**出版社：** Prentice Hall（2011 年）
-**印刷版定价：** $59.99
-**电子版定价：** $47.99
-**ISBN-10：** 0132091518
-**ISBN-13：** 9780132091510
-**页数：** 1,152
+- **书名：** DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD
+- **作者：** Brendan Gregg、Jim Mauro
+- **出版社：** Prentice Hall（2011 年）
+- **印刷版定价：** $59.99
+- **电子版定价：** $47.99
+- **ISBN-10：** 0132091518
+- **ISBN-13：** 9780132091510
+- **页数：** 1,152
 
-我的同事们钟爱 DTrace，时常称道它定位 bug 根因的能力。于是我买了一本 Brendan Gregg 和 Jim Mauro 合著的《DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD》，好让自己跟上进度（好吧，我多少有点嫉妒同事们的 DTrace 功底）。大体上我喜欢这本书，但有几章读起来相当吃力（稍后再谈）。全书分为三部分。第一部分共两章，概述 DTrace。第 1 章《Introduction to DTrace》介绍 DTrace 究竟是什么，以及它如何工作（DTrace 是一个动态追踪框架，让你能观察系统的行为）。第 2 章《D Language》讲解如何编写 DTrace 脚本和一行式命令，并详细说明构成一个 DTrace 脚本的各个组件。读完这一部分并在网上做了若干示例后，我掌握了足够的知识，得以在工作中实际使用 DTrace。
+我的同事们钟爱 DTrace，时常称道它定位 bug 根因的能力。于是我买了一本 Brendan Gregg 和 Jim Mauro 合著的 *DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and FreeBSD*，好让自己跟上进度（好吧，我多少有点嫉妒同事们的 DTrace 功底）。大体上我喜欢这本书，但有几章读起来相当吃力（稍后再谈）。全书分为三部分。第一部分共两章，概述 DTrace。第 1 章《Introduction to DTrace》介绍 DTrace 究竟是什么，以及它如何工作（DTrace 是一个动态追踪框架，让你能观察系统的行为）。第 2 章《D Language》讲解如何编写 DTrace 脚本和一行式命令，并详细说明构成一个 DTrace 脚本的各个组件。读完这一部分并在网上做了若干示例后，我掌握了足够的知识，得以在工作中实际使用 DTrace。
 
 第二部分共八章，每章描述 DTrace 可以观察的一个不同领域，分别是：
 
@@ -39,4 +39,4 @@
 
 ---
 
-JOSEPH KONG 是广受好评的《Designing BSD Rootkits》与《FreeBSD Device Drivers》的作者，目前任职于 Dell EMC 的 Isilon 部门，担任高级软件工程师。更多关于 Joseph Kong 的信息，请访问 <www.thestackframe.org>，或在 Twitter 上关注 @JosephJKong。
+JOSEPH KONG 是广受好评的《Designing BSD Rootkits》与《FreeBSD 设备驱动程序》的作者，目前任职于 Dell EMC 的 Isilon 部门，担任高级软件工程师。更多关于 Joseph Kong 的信息，请访问 <www.thestackframe.org>，或在 Twitter 上关注 @JosephJKong。
