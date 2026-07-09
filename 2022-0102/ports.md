@@ -9,7 +9,7 @@
 
 随着新的 pkg(8) 包管理工具的出现，情况开始发生变化。如今，FreeBSD 的软件包仓库是开源世界中最大、最新的之一（参见 repology.org 上的图表）。大多数 FreeBSD 用户使用二进制包，而不是自己编译 Ports，自从我开始使用 FreeBSD（大约是 10.3 版本）以来，情况一直如此。
 
-虽然二进制包很棒，但人们仍然时常直接使用 FreeBSD Ports。无论是 FreeBSD 的维护者还是用户，他们都一直在使用它。那为什么 FreeBSD 用户会使用它呢？因为 ports 使得根据非常具体的需求定制二进制包变得非常简单。你想用自定义补丁重新构建 Nginx 包吗？没问题。你想为你的 collectd 守护进程添加一个不常见的后端吗？很容易。你想获得 Python 的调试版本吗？没什么大不了的。
+虽然二进制包很棒，但人们仍然时常直接使用 FreeBSD Ports。无论是 FreeBSD 的维护者还是用户，他们都一直在使用它。那为什么 FreeBSD 用户会使用它呢？因为 Ports 使得根据非常具体的需求定制二进制包变得非常简单。你想用自定义补丁重新构建 Nginx 包吗？没问题。你想为你的 collectd 守护进程添加一个不常见的后端吗？很容易。你想获得 Python 的调试版本吗？没什么大不了的。
 
 在这篇文章中，我想给你一些关于如何为 FreeBSD Ports 做贡献的见解。如何开始？为什么要开始？提交补丁需要什么？如果你想知道这些问题的答案，请继续阅读。
 
@@ -54,17 +54,17 @@ Icon=xpdf
 $ find /usr/local/share/icons -name '*xpdf*'
 ```
 
-`find(1)` 一行命令的输出为空，说明 Xpdf 图标并没有安装。此时，我们可能需要查看一下 ports 树。
+`find(1)` 一行命令的输出为空，说明 Xpdf 图标并没有安装。此时，我们可能需要查看一下 Ports 树。
 
 ## 开发补丁
 
-我们需要的第一件事是 FreeBSD ports 树的副本。你可以在 FreeBSD 手册中查阅详细信息（<https://docs.freebsd.org/en/books/handbook/ports/#ports-using>）。最终，我们只需要以下命令：
+我们需要的第一件事是 FreeBSD Ports 树的副本。你可以在 FreeBSD 手册中查阅详细信息（<https://docs.freebsd.org/en/books/handbook/ports/#ports-using>）。最终，我们只需要以下命令：
 
 ```sh
 $ git clone https://git.FreeBSD.org/ports.git ~/ports
 ```
 
-下面查看 Xpdf 的 port。如何在所有 ports 中找到它呢？有几种不同的方法。
+下面查看 Xpdf 的 port。如何在所有 Ports 中找到它呢？有几种不同的方法。
 
 最简单的方法是使用 pkg(8) 来查询这个软件包的来源。
 
