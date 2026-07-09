@@ -1,4 +1,4 @@
-# 目录
+# Table of contents
 
 * [FreeBSD 中文期刊](README.md)
 * [编辑日志](CHANGELOG.md)
@@ -787,7 +787,7 @@
 * [基金会来信](2015-0506/foundation-letter.md)
 * [活动日历](2015-0506/events-calendar.md)
 * [会议报道](2015-0506/conference-report.md)
-* [书评](2015-0506/book-review.md)
+* [书评：*The Book of PF: A No-Nonsense Guide to the OpenBSD Firewall*](2015-0506/book-review.md)
 
 ## 2015-0304 ZFS 最佳实践
 
