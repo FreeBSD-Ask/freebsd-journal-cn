@@ -30,7 +30,7 @@ ezjail_jailzfs="dozer/jails"
 
 注意：`-m` 标志会在 Jail 里安装手册页，因为没有什么比查不到 `ln` 的参数顺序更让人抓狂的了。
 
-这会为 basejail 和 newjail 创建数据集。basejail 数据集通过 nullfs 挂载到每个 Jail 里，提供基础系统，并允许通过简单替换 basejail 的内容来轻松更新。newjail 数据集会复制到每个新建的 Jail 里，以提供完整可用的系统。有了这些，我们可以创建第一个 Jail：
+这会为 basejail 和 newjail 创建数据集。basejail 数据集通过 nullfs 挂载到每个 Jail 里，提供基本系统，并允许通过简单替换 basejail 的内容来轻松更新。newjail 数据集会复制到每个新建的 Jail 里，以提供完整可用的系统。有了这些，我们可以创建第一个 Jail：
 
 ```sh
 # ezjail-admin create myjail.example.com 10.0.0.1
