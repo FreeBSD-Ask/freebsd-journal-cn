@@ -13,7 +13,7 @@
 
 今天的讲座是对 FreeBSD 的一个非常基础的介绍。接下来的两场 FreeBSD Friday 讲座将专注于 FreeBSD 入门，包括由 Roller Angel 主讲的“安装章节”（Installfest）第 1 和第 2 部分。你可以观看他一小时的演示，该内容将被录制。之后，当你准备在自己的系统上安装 FreeBSD 时，可以随时访问这些课程，并按照自己的节奏学习。
 
-在 Roller Angel 的课程之后，我们将迎来 Dr. Marshall Kirk McKusick（《BSD 快速文件系统的历史》）。大多数人认识他是因为他创造了 Fast Filesystem。这将是一场录播讲座，但 Kirk McKusick 会在最后进行问答互动。然后，我们计划的最后一场讲座是 Dan Langille 主讲的《ZFS 简介》。您可能不仅在社区中认识 Dan，还知道他是 BSDCan 的组织者。
+在 Roller Angel 的课程之后，我们将迎来 Dr. Marshall Kirk McKusick（《BSD 快速文件系统的历史》）。大多数人认识他是因为他创造了 Fast Filesystem。这将是一场录播讲座，但 Kirk McKusick 会在最后进行问答互动。然后，我们计划的最后一场讲座是 Dan Langille 主讲的《ZFS 简介》。你可能不仅在社区中认识 Dan，还知道他是 BSDCan 的组织者。
 
 我建议大家关注基金会的网页，我们将陆续推出更多 FreeBSD 101 级别的讲座，帮助大家了解 FreeBSD 的各个领域。
 
