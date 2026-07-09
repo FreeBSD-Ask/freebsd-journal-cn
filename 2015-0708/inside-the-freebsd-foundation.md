@@ -1,6 +1,6 @@
 # 走进 FreeBSD 基金会
 
-- 原文：[Inside the FreeBSD Foundation](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
+- 原文：[Inside the FreeBSD 基金会](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
 - 作者：**Deb Goodkin**
 
 与 FreeBSD 项目互动

@@ -8,4 +8,4 @@ George Neville-Neil
 
 FreeBSD 期刊主编
 
-FreeBSD Foundation 董事会理事
+FreeBSD 基金会 董事会理事
