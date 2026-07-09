@@ -3,13 +3,13 @@
 - 原文：[Ports Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/migrating-jail-management-from-warden-to-iocage/)
 - 作者：**Frederic Culot**
 
-9 月至 10 月期间，ports 领域的活跃度与夏季基本持平，整体并不算高。话虽如此，我们很高兴看到几位新 committer 加入项目。此外，本期内一些主要的 port 也得到更新，升级时可能需要按后文所述谨慎处理。
+9 月至 10 月期间，Ports 领域的活跃度与夏季基本持平，整体并不算高。话虽如此，我们很高兴看到几位新 committer 加入项目。此外，本期内一些主要的 port 也得到更新，升级时可能需要按后文所述谨慎处理。
 
 ## 新任 Ports Committer 与代为保管
 
-我们很高兴欢迎三位新老面孔加入 ports committer 的行列。
+我们很高兴欢迎三位新老面孔加入 Ports committer 的行列。
 
-- Soren Straarup（xride@）在时隔一年多之后，得以重新参与 ports 工作。garga@ 与 mat@ 将担任其导师，在 xride@ 需要追上近期基础设施变化时提供帮助。
+- Soren Straarup（xride@）在时隔一年多之后，得以重新参与 Ports 工作。garga@ 与 mat@ 将担任其导师，在 xride@ 需要追上近期基础设施变化时提供帮助。
 
 另有两位新 committer 加入我们：
 
@@ -48,4 +48,4 @@ make -C /usr/ports quicksearch maint=ports@FreeBSD.org
 
 **作者简介**
 
-**Frederic Culot** 在完成物理学计算机建模博士学位后，已在 IT 行业工作 10 年。业余时间他研习商业与管理，并刚取得 MBA 学位。Frederic 于 2010 年以 ports committer 身份加入 FreeBSD，此后累计提交约 2,000 次 commit，指导过六位新 committer，现承担 portmgr-secretary 的职责。
+**Frederic Culot** 在完成物理学计算机建模博士学位后，已在 IT 行业工作 10 年。业余时间他研习商业与管理，并刚取得 MBA 学位。Frederic 于 2010 年以 Ports committer 身份加入 FreeBSD，此后累计提交约 2,000 次 commit，指导过六位新 committer，现承担 portmgr-secretary 的职责。
