@@ -1,6 +1,6 @@
 # iocage：真正的 Jail 管理器
 
-作者：Michael W Lucas
+作者：**Michael W Lucas**
 
 iocage
 真正的 Jail 管理器

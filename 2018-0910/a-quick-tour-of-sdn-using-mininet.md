@@ -2,7 +2,7 @@
 
 从 20 世纪 90 年代中期开始，我就不间断地使用 FreeBSD 和 Linux。多年来我运行过许多不同的 Linux 发行版，最近专注于 CentOS。我也有大量 Mac OS X 和 NetBSD 的使用经验，并尝试过许多其他 BSD 平台。作为坚信开放标准价值的不可知论者，我喜欢熟悉 POSIX 世界的所有选项，以便随时为工作选择最佳工具。
 
-——Ayaka Koshibe
+作者：**Ayaka Koshibe**
 
 从最基本的意义上说，软件定义网络（Software-Defined Networking，SDN）可以视为一种构建网络的方法，使其能够像单一逻辑实体一样被管理。基于 SDN 的网络通常由可编程的白盒交换机和软件交换机构建，并由控制应用程序管理，这些应用程序利用对网络的全局视图来协调交换机协同工作。对于习惯于“经典”网络（按设备逐个配置，其行为由分布式网络协议决定）的人来说，结果可能看起来相当陌生。网络模拟器是更好地理解这些网络行为和组装方式的有用工具。
 
@@ -14,7 +14,7 @@ Mininet 是相当知名的基于 SDN 的网络模拟器，因与 OpenFlow（SDN 
 
 ## 安装
 
-Mininet 可以像任何其他应用程序一样安装：用 `pkg`(8) 安装为 `py27-mininet`，或从 Ports 树安装为 `net/mininet`。
+Mininet 可以像任何其他应用程序一样安装：用 `pkg.8` 安装为 `py27-mininet`，或从 Ports 树安装为 `net/mininet`。
 
 ## mn 命令
 
@@ -140,4 +140,6 @@ net.stop()
 
 我们的 Mininet 旋风之旅到此结束。希望它能为那些有兴趣探索 SDN 领域的人提供一个不错的起点。•
 
-AYAKA KOSHIBE 在大学时期协助部署 GENI OpenFlow 校园试验的基础设施而涉足 SDN 领域。她目前在 Big Switch Networks 工作，是 SDN 控制器平台团队的成员，同时也是 FreeBSD 和 OpenBSD 上 Mininet Port 的维护者和上游。
+---
+
+**AYAKA KOSHIBE** 在大学时期协助部署 GENI OpenFlow 校园试验的基础设施而涉足 SDN 领域。她目前在 Big Switch Networks 工作，是 SDN 控制器平台团队的成员，同时也是 FreeBSD 和 OpenBSD 上 Mininet Port 的维护者和上游。
