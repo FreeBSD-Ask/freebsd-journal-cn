@@ -1,5 +1,8 @@
 # 基金会来信
 
+- 原文链接：[Foundation Letter](https://freebsdfoundation.org/wp-content/uploads/2021/03/Foundation-Letter.pdf)
+- 作者：Deb Goodkin
+
 欢迎 2021！
 
 和你们许多人一样，基金会团队很高兴看到 2021 年 1 月 1 日午夜的钟声响起。过去这一年必将成为基金会 20 年历史中最令人难忘的一年。不过我们很高兴地报告，这一年以积极的基调收尾。多亏你们的慷慨支持，基金会筹集到足够的资金，不仅能继续支持 FreeBSD 项目，还能在 2021 年扩展软件开发和推广工作。从软件开发团队的新成员招聘，到线上内容的增加，再到对教育领域 FreeBSD 的更多关注，我们期待以各种方式继续确保 FreeBSD 始终是你所倚重的高性能、稳定且安全的操作系统。
@@ -8,5 +11,7 @@
 
 再次感谢读者对 FreeBSD 项目和基金会的持续支持。祝大家新年快乐，期待 2021 年我们共同完成的一切。
 
-Deb Goodkin
-代表 FreeBSD 基金会，FreeBSD 基金会执行董事
+代表 FreeBSD 基金会，
+
+**Deb Goodkin**
+FreeBSD 基金会执行董事
