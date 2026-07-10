@@ -29,7 +29,7 @@ Dominic Fandrey 的导师是 cs@ 和 koobs@。其次，sbruno@ 已有 src 提交
 
 得益于 `@dirrm` 和 `@dirrmtry` 关键字被弃用，Ports 树对 pkg-plist 文件做了大规模清理。这次清理之所以可能，是因为 `pkg(8)` 现在能在需要时自动删除 **${PREFIX}** 下的目录。结果，pkg-plist 文件中包含 `@dirrm`/`@dirrmtry` 指令的多数行被删除。但请注意，可能仍需指定要清理的目录（主要是 **${PREFIX}** 之外创建的目录，如在 **/var/games/** 中创建的游戏文件），此时必须使用新的 `@dir` 关键字。
 
-请注意 `@cwd` 关键字也已弃用。Ports 基础设施的所有这些变化都有文档记录，开发者和用户可参考两个重要来源来跟踪变化。其一是 porter's handbook（<https://www.freebsd.org/doc/en/books/porters-handbook/>），详细解释了新关键字一出现时的用法。其二是 **/usr/ports/CHANGES** 文件，常被忽视，但其中包含主要与 Ports 提交者相关的重要技术细节，对最终用户也有启发。欢迎大家不时查阅此文件。
+请注意 `@cwd` 关键字也已弃用。Ports 基础设施的所有这些变化都有文档记录，开发者和用户可参考两个重要来源来跟踪变化。其一是 porter’s handbook（<https://www.freebsd.org/doc/en/books/porters-handbook/>），详细解释了新关键字一出现时的用法。其二是 **/usr/ports/CHANGES** 文件，常被忽视，但其中包含主要与 Ports 提交者相关的重要技术细节，对最终用户也有启发。欢迎大家不时查阅此文件。
 
 ---
 

@@ -203,7 +203,7 @@ LICENSE= GPLv2
 LICENSE_FILE= ${WRKSRC}/COPYING
 ```
 
-这是一条有效的警告，因为我们的示例 port 没有设置 `${LICENSE}` 变量。`LICENSE` 变量可设为某个已知许可证缩写，列表见 **/usr/ports/Mk/bsd.licenses.db.mk**。如果软件项目带有许可证文件，也应通过 `${LICENSE_FILE}` 变量安装。见示例 9。
+这是一条有效的警告，因为我们的示例 port 没有设置 `${LICENSE}` 变量。`${LICENSE}` 变量可设为某个已知许可证缩写，列表见 **/usr/ports/Mk/bsd.licenses.db.mk**。如果软件项目带有许可证文件，也应通过 `${LICENSE_FILE}` 变量安装。见示例 9。
 
 ## 测试 Port：使用 poudriere
 
@@ -244,5 +244,7 @@ shar `find sash'> sash.shar
 得到的 sash.shar 可提交到 FreeBSD bugzilla 数据库。
 
 本文对 Ports 树的介绍仅触及皮毛，请务必查阅 Porters Handbook（<https://www.freebsd.org/doc/en/books/porters-handbook/index.html>），它不断更新，包含 Ports 树全部特性的详尽信息。还有活跃的 porter 社区乐于回答任何问题。你可以在 freebsd-ports 邮件列表（<http://lists.freebsd.org/mailman/listinfo/freebsd-ports>）或 EFnet 上的 IRC 频道 #bsdports 找到他们。祝 porting 愉快！
+
+---
 
 **Erwin Lansing** 与妻子和儿子居住在哥本哈根。他就职于 DK Hostmaster，负责让丹麦互联网的灯一直亮着。他也是 FreeBSD 基金会董事会副主席。

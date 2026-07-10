@@ -1,6 +1,6 @@
 # FreeBSD 新面孔
 
-作者：Dru Lavigne
+作者：**Dru Lavigne**
 
 此专栏旨在聚焦最近获得 commit bit 的贡献者，并向 FreeBSD 社区介绍他们。
 

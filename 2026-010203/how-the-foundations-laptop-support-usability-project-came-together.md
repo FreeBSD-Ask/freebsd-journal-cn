@@ -1,7 +1,7 @@
 # 基金会的笔记本电脑支持与可用性项目是如何形成的
 
 - 原文：[How the Foundation’s Laptop Support & Usability Project Came Together](https://freebsdfoundation.org/our-work/journal/browser-based-edition/laptop-desktop/how-the-foundations-laptop-support-usability-project-came-together/)
-- 作者：Deb Goodkin
+- 作者：**Deb Goodkin**
 
 多年来，我们不断从用户那里听到同样的反馈：是的，FreeBSD 能在笔记本电脑上运行，但实现这一点往往很困难。人们可以让它工作，但通常需要更多的故障排除、耐心和时间，远超应有的程度。对于学生、新用户和试图将 FreeBSD 作为日常工作一部分的开发人员来说，这种摩擦确实影响了他们。
 
@@ -45,7 +45,7 @@
 
 显卡支持也取得了重要进展。显卡驱动程序已升级到 Linux 6.10，该版本在 15.0 中提供。Linux 6.11 正在等待最终审查，6.12 的工作正在进行中。
 
-音频在 15.0 中也有重要改进。用户现在可以使用新的 sndctl(8) 和 mididump(1) 实用程序，以及错误修复、更广泛的笔记本电脑支持，并初步改善了 HDA 声卡的自动声音重定向。
+音频在 15.0 中也有重要改进。用户现在可以使用新的 sndctl.8 和 mididump.1 实用程序，以及错误修复、更广泛的笔记本电脑支持，并初步改善了 HDA 声卡的自动声音重定向。
 
 安装程序也针对笔记本电脑用户的需求做了改进。在 FreeBSD 15.0 中，安装程序现在支持在基本系统安装完成后下载和安装固件包。在 15.1 中，用户还可以在安装过程中安装 KDE 图形桌面环境。
 
@@ -77,4 +77,4 @@
 
 ---
 
-Deb Goodkin 是 FreeBSD 基金会的执行董事，于 2005 年作为第一位员工加入。当她不管理基金会或折腾 FreeBSD 时，你会发现她在陪她的狗玩耍、在博尔德的乡间小路上跑步，或读一本好书。
+**Deb Goodkin** 是 FreeBSD 基金会的执行董事，于 2005 年作为第一位员工加入。当她不管理基金会或折腾 FreeBSD 时，你会发现她在陪她的狗玩耍、在博尔德的乡间小路上跑步，或读一本好书。

@@ -132,7 +132,7 @@ PID USERNAME PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 ...
 ```
 
-按此性能剖析，该核超过 50% 的 CPU 时间花在 `__rw_wlock_hard()` 上，而这个内核函数主要由 `tcp_input()` 调用。`__rw_wlock_hard()` 是读者/写者内核锁实现（`rwlock(9)`）的一部分，更确切地说，该函数的目标是获取该锁的独占访问。运行内核锁性能分析（`LOCK_LOCK_PROFILING(9)`）并按每个锁的累计等待时间（`wait_total`，单位微秒）排序，可得到竞争锁的详细信息，见图 5。
+按此性能剖析，该核超过 50% 的 CPU 时间花在 `__rw_wlock_hard()` 上，而这个内核函数主要由 `tcp_input()` 调用。`__rw_wlock_hard()` 是读者/写者内核锁实现（`rwlock.9`）的一部分，更确切地说，该函数的目标是获取该锁的独占访问。运行内核锁性能分析（`LOCK_LOCK_PROFILING.9`）并按每个锁的累计等待时间（`wait_total`，单位微秒）排序，可得到竞争锁的详细信息，见图 5。
 
 ![图 5：TCP 负载的锁性能分析](../png/2014-0506/tcp-connection-rate-scaling-05.png)
 

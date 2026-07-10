@@ -1,6 +1,6 @@
 # FreeNAS 9.3 新功能
 
-- 原文：[What's New in FreeNAS 9.3](https://freebsdfoundation.org/our-work/journal/browser-based-edition/zfs-best-practices/)
+- 原文：[What’s New in FreeNAS 9.3](https://freebsdfoundation.org/our-work/journal/browser-based-edition/zfs-best-practices/)
 - 作者：**Dru Lavigne**
 
 FreeNAS 是开源、BSD 许可的网络附加存储（NAS）操作系统，基于 FreeBSD 构建。它使用 OpenZFS——ZFS 的开源版本——一种自我修复的文件系统，特别适合存储和保持所存数据的完整性。

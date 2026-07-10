@@ -147,4 +147,4 @@ pass in on $ext_if proto icmp
 
 ---
 
-MICHAEL W LUCAS 是几本 FreeBSD 书籍的作者，包括 Absolute FreeBSD 和 FreeBSD Mastery 系列。在 <www.michaelwlucas.com> 了解更多。
+**MICHAEL W LUCAS** 是几本 FreeBSD 书籍的作者，包括 Absolute FreeBSD 和 FreeBSD Mastery 系列。在 <www.michaelwlucas.com> 了解更多。

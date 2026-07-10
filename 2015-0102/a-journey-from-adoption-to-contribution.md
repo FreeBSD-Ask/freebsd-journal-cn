@@ -59,7 +59,7 @@ Rick Miller 是 Verisign 公司的 UNIX 系统工程师，负责构建支持全�
 [4] Kernel panic: Sleeping thread owns a non-sleepable lock from netinet/in_multi.c
 <https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=185043>
 
-[5] Verisign's FreeBSD public repository
+[5] Verisign’s FreeBSD public repository
 <https://github.com/verisign/freebsd>
 
 [6] FreeBSD Journal May/June 2014 issue

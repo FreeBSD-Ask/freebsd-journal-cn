@@ -1,6 +1,6 @@
 # 活动日历
 
-八月/九月  作者：ANNE DICKISON 与 DRU LAVIGNE
+八月/九月  作者：**ANNE DICKISON** 与 **DRU LAVIGNE**
 
 以下 BSD 相关会议将于 2018 年 8 月和 9 月举行。
 

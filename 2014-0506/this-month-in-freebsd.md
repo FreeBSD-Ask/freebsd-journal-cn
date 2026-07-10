@@ -11,7 +11,7 @@ Dan 写道：
 
 > 我首次接触 BSD 会议是 1999 年 10 月在伯克利举办的 FreeBSDCon。那时我用 FreeBSD 已经将近 18 个月。翻看当年的笔记（<http://www.freebsddiary.org/freebsdcon99.php>），我看到自己被那场会议的社交氛围所打动——它与其他会议形成鲜明对比。次年，我参加了同一会议——此时已更名为 BSDCon——2000 年在蒙特雷举行。我又一次度过了一段美好的时光，学到了新东西。
 >
-> 当时我住在渥太华，活跃于本地 Linux 用户组 OCLUG，曾帮他们组织过相当成功的 OSW（Open Source Weekend）。如果我没记错，BSDCon 后来停办，留下一片空白。我知道有 Andrew Hutton 主办的 Ottawa Linux Symposium。我和 Andrew 吃过几次午饭，谈论办会议的事。他的会议与 BSDCan 截然不同（比如预算惊人）。作为对比，当年他们的一场派对花费就超过 BSDCan 2014 全部预算。正是这给了我信心去和渥太华大学商谈承办会议。我算过，就算最坏的情况发生、无人到场，我也不过损失大约 2000 美元。2003 年 8 月我注册了 `bsdcan.org`，一切由此展开。
+> 当时我住在渥太华，活跃于本地 Linux 用户组 OCLUG，曾帮他们组织过相当成功的 OSW（Open Source Weekend）。如果我没记错，BSDCon 后来停办，留下一片空白。我知道有 Andrew Hutton 主办的 Ottawa Linux Symposium。我和 Andrew 吃过几次午饭，谈论办会议的事。他的会议与 BSDCan 截然不同（比如预算惊人）。作为对比，当年他们的一场派对花费就超过 BSDCan 2014 全部预算。正是这给了我信心去和渥太华大学商谈承办会议。我算过，就算最坏的情况发生、无人到场，我也不过损失大约 2,000 美元。2003 年 8 月我注册了 `bsdcan.org`，一切由此展开。
 >
 > 公告于 2004 年 1 月发出（<http://lists.freebsd.org/pipermail/freebsd-announce/2004-January/000934.html>），几个月后，BSDCan 的传统由此开启。
 >
@@ -37,10 +37,10 @@ Dan 写道：
 
 ## 关于彩蛋的更多讨论
 
-> Dru Lavigne 的 3/4 月专栏提到了彩蛋。其中有一句“more is less than less and less is more than more.”（more 比 less 少，less 比 more 多）。我虽同意后半句，但 `more(1)` 至少比 `less(1)` 早 4 年问世。
+> Dru Lavigne 的 3/4 月专栏提到了彩蛋。其中有一句“more is less than less and less is more than more.”（more 比 less 少，less 比 more 多）。我虽同意后半句，但 `more.1` 至少比 `less.1` 早 4 年问世。
 >
-> 翻找一番后，我注意到我手上最早的 Unix `more(1)` 来自 3BSD，日期为 1979 年 11 月。最早的 `less(1)` 则发布在 mod.sources（comp.sources.unix）第 3 卷，其 `changelog` 中最早的条目为 1984 年 1 月。
+> 翻找一番后，我注意到我手上最早的 Unix `more.1` 来自 3BSD，日期为 1979 年 11 月。最早的 `less.1` 则发布在 mod.sources（comp.sources.unix）第 3 卷，其 `changelog` 中最早的条目为 1984 年 1 月。
 >
-> 我起初以为 `more(1)` 是对 AT&T `pg(1)` 工具的谐音双关，但 3BSD 手册页中提到“MIT ITS 系统的‘more’特性”，所以这个名字可能与后者有关。
+> 我起初以为 `more.1` 是对 AT&T `pg.1` 工具的谐音双关，但 3BSD 手册页中提到“MIT ITS 系统的‘more’特性”，所以这个名字可能与后者有关。
 >
-> ——Peter Jeremy，一名 FreeBSD committer（<peter@rulingia.com>）
+> ——Peter Jeremy，FreeBSD 提交者（<peter@rulingia.com>）
