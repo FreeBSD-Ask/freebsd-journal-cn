@@ -319,7 +319,7 @@ $ make
 $ make install
 ```
 
-**Packages**：FreeBSD 打包团队计划提供与新打包管理工具 `pkg` 兼容的 ARM 软件包。截至 2013 年 9 月，此功能尚未实现。许多人成功使用 Poudriere 自动构建自己的软件包集。
+**软件包**：FreeBSD 打包团队计划提供与新打包管理工具 `pkg` 兼容的 ARM 软件包。截至 2013 年 9 月，此功能尚未实现。许多人成功使用 Poudriere 自动构建自己的软件包集。
 
 **USB**：USB 在 BBB 上通常工作良好。USB 驱动器、USB 网络适配器和打印机均成功使用。但有一个注意点：除非 BBB 连接了独立电源，否则不要插入任何 USB 外设。如果通过 mini-USB 线供电并连接任何 USB 设备，BBB 很可能会关机。
 
@@ -336,7 +336,7 @@ $ make install
 你可以使用 `svnlite` 命令（如今是 FreeBSD 的标准组件）从 FreeBSD 项目的 Subversion 仓库检出源代码：
 
 ```sh
-$ svnlite co https://svn.freebsd.org/base/head /usr/src
+$ svnlite co http://svn.freebsd.org/base/head /usr/src
 $ cd /usr/src
 ```
 

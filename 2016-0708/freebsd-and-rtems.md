@@ -1,6 +1,7 @@
 # FreeBSD 与 RTEMS：实时操作系统中的 UNIX
 
-作者：Chris Johns、Joel Sherrill、Ben Gras、Sebastian Huber、Gedare Bloom
+- 原文：[FreeBSD and RTEMS, UNIX in a Real-Time Operating System](https://freebsdfoundation.org/wp-content/uploads/2016/08/FreeBSD-and-RTEMS-Unix-in-a-Real-Time-Operating-System.pdf)
+- 作者：**Chris Johns**、**Joel Sherrill**、**Ben Gras**、**Sebastian Huber**、**Gedare Bloom**
 
 RTEMS 开发者有在 RTEMS 源码库中使用 FreeBSD 代码的悠久历史，成果斐然。RTEMS 并非唯一这么做的项目，RTEMS 在使用 FreeBSD 源码时遇到的挑战和问题，也是其他项目同样会遇到的。RTEMS 是一种 POSIX 实时操作系统（RTOS），与所有开源项目一样资源有限。所有可用的精力都必须聚焦在操作系统的实时部分。RTEMS 尽可能采用质量上乘、许可证合适的源码——结合来自 Newlib、RTEMS 和 FreeBSD TCP/IP 协议栈的代码——提供令人惊喜的、相当稳健的 POSIX 子集。下文回顾历史、总结过去 20 年取得的成果，并说明如何在最小化维护负担的前提下解决集成问题。
 

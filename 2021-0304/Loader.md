@@ -99,4 +99,4 @@ vbe_max_resolution
 
 ---
 
-TOOMAS SOOME 出生于爱沙尼亚。Toomas 自 1993 年起一直从事 UNIX 管理工作，主要使用 Solaris。他还是一名基础架构架构师、illumos 开发者和 FreeBSD 源代码提交者。Toomas 不怕启动加载程序，并且能读写 Forth。
+**TOOMAS SOOME** 出生于爱沙尼亚。Toomas 自 1993 年起一直从事 UNIX 管理工作，主要使用 Solaris。他还是一名基础架构架构师、illumos 开发者和 FreeBSD 源代码提交者。Toomas 不怕启动加载程序，并且能读写 Forth。
