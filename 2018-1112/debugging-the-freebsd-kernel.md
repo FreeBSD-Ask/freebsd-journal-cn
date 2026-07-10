@@ -1,6 +1,6 @@
 # 调试 FreeBSD 内核
 
-**作者：Mark Johnston**
+作者：**Mark Johnston**
 
 写这篇文章时，期待已久的 FreeBSD 12.0 版本即将发布。当然，FreeBSD 开发者花数月时间精心打磨和测试 12.0 的内核，我们信心十足，认为所有 bug 都已修复。
 
