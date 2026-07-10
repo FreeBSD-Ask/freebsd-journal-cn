@@ -39,7 +39,7 @@ SCaLE 是北美规模最大的社区主办的开源和自由软件大会。
 
 <https://2022.eurobsdcon.org>
 
-这场年度大会提供了了解 BSD 世界最新动态的绝佳机会。
+这场年度大会是了解 BSD 世界最新动态的绝佳机会。
 
 ## All Things Open
 
@@ -49,12 +49,12 @@ SCaLE 是北美规模最大的社区主办的开源和自由软件大会。
 
 <https://2022.allthingsopen.org/>
 
-All Things Open 是美国东海岸规模最大的开源/开放技术/开放网络大会，也是全美规模最大的之一。它定期邀请世界上最知名的专家，还有几乎所有主要科技公司。FreeBSD 很荣幸成为今年 All Things Open 的媒体合作伙伴。
+All Things Open 是美国东海岸规模最大的开源/开放技术/开放网络大会，也是全美规模最大的之一。它定期邀请一些世界上最知名的专家，还有几乎所有主要科技公司。FreeBSD 很荣幸成为今年 All Things Open 的媒体合作伙伴。
 
 ## FreeBSD Office Hours
 
 <https://wiki.freebsd.org/OfficeHours>
 
-和 FreeBSD 社区成员一起参与 FreeBSD Office Hours。从一般问答到基于主题的演示和教程，Office Hours 是获取 FreeBSD 相关问题答案的好途径。
+和 FreeBSD 社区成员一起参加 FreeBSD Office Hours。从一般问答到基于主题的演示和教程，Office Hours 是获取 FreeBSD 相关问题答案的好途径。
 
 往期节目可在 FreeBSD YouTube 频道观看：<https://www.youtube.com/c/FreeBSDProject>
