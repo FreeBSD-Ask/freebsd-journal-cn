@@ -1,7 +1,7 @@
 # 七种提升新安装 FreeBSD 安全性的方法
 
 - 原文链接：[Seven Ways to Increase Security in a New FreeBSD Installation](https://freebsdfoundation.org/wp-content/uploads/2021/07/Seven-Ways-to-Increase-Security-in-a-New-FreeBSD-Installation.pdf)
-- 作者：**MARIUSZ ZABORSKI**
+- 作者：MARIUSZ ZABORSKI
 
 FreeBSD 可以作为桌面操作系统和服务器操作系统使用。在设置新机器时，选择最安全的配置至关重要。我们的计算机上存储了大量数据，这些数据都需要得到保护。本文介绍了在配置新 FreeBSD 系统时，大家应记住的七项配置优化。
 
