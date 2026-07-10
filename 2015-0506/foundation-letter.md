@@ -13,7 +13,7 @@
 
 如果你还没听人称赞过 Go 编程语言，那你显然没看博客，甚至可能没看互联网。Ganbold Tsagaankhuu、Esbold Unurkhaan 和 Erdenebat Gantumur 带我们领略了在 FreeBSD 上用 Go 语言过滤互联网内容的门道、缘由与窍门。
 
-在我自己从事 FreeBSD 相关的工作中，重心一直放在测量与改进网络性能上。我把 AsiaBSDCon 2015（<https://2015.asiabsdcon.org/>）的演讲与论文整理成了一篇期刊文章，让今年未能成行东京的人也能一窥网络栈在幕后都发生了什么。说到 AsiaBSDCon，David Maxwell 也为这一期写了一篇报道，向你讲述东京大会的方方面面。
+我从事 FreeBSD 相关工作时，重心一直放在测量与改进网络性能上。我把 AsiaBSDCon 2015（<https://2015.asiabsdcon.org/>）的演讲与论文整理成了一篇期刊文章，让今年未能成行东京的人也能一窥网络栈在幕后都发生了什么。说到 AsiaBSDCon，David Maxwell 也为这一期写了一篇报道，向你讲述东京大会的方方面面。
 
 FreeBSD 基金会（<https://www.freebsdfoundation.org>）既资助期刊，也支持 FreeBSD 相关的许多其他活动。基金会向那些认为某个项目会对 FreeBSD 有所助益、却苦于没有资金和时间自行推进的开发者提供资助。基金会项目总监 Ed Maste 详尽说明了如何写好一份资助申请。
 

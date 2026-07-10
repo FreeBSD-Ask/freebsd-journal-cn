@@ -56,7 +56,7 @@ $ duplicity backup –full-if-older-than 1M –exclude ./.cache \
 –par2-redundancy 5 ./ par2+s3:///mybucket-s3backup/computer
 ```
 
-上述命令启动 duplicity 的备份组件，如果前一个完整备份超过一个月，则创建一个完整备份，排除 .cache 目录，将 par2 冗余设置为 5%，从当前目录（用户主目录的根目录）获取所有文件和文件夹，并将备份写入 mybucket-s3backup 存储桶中的 /computer 文件夹，使用 par2 包装器进行块冗余。
+上述命令启动 duplicity 的备份组件，如果前一个完整备份超过一个月，则创建一个完整备份，排除 **.cache** 目录，将 par2 冗余设置为 5%，从当前目录（用户主目录的根目录）获取所有文件和文件夹，并将备份写入 mybucket-s3backup 存储桶中的 **/computer** 文件夹，使用 par2 包装器进行块冗余。
 
 duplicity 完成运行后，你将看到备份的统计信息：
 
