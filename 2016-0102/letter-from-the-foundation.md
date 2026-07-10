@@ -1,6 +1,6 @@
 # 基金会来信：令人期待的这一年！
 
-作者：George Neville-Neil
+- 作者：**George Neville-Neil**
 
 代表 FreeBSD 期刊编辑委员会
 
@@ -12,7 +12,7 @@
 
 2016 年的《期刊》将推出对 FreeBSD 社区成员的访谈。Dru Lavigne 是《期刊》编辑委员会成员，也是《期刊》历史专栏和日历专栏的作者，她将采访 Allan Jude——后者最近与人合著了一本关于 ZFS 的书。这一年里，我们将陆续呈现对更多社区成员的访谈，了解是什么吸引他们来到 FreeBSD，以及他们从项目中获得了什么、又回馈了什么。
 
-也别错过本期的信息专栏，其中包括 Simon Gerraty 撰写的一篇新书评，评的是 Joseph Kong 所著的《FreeBSD 设备驱动程序开发：A Guide for the Intrepid》。
+也别错过本期的信息专栏，其中包括 Simon Gerraty 撰写的一篇新书评，评的是 Joseph Kong 所著的《FreeBSD 设备驱动程序开发》——写给无畏者的指南。
 
 新年伊始的这期，我们迎来《期刊》的新专栏作者。Steven Kreuzer 从 Glen Barber 手中接过 SVN 动态专栏——随着 FreeBSD 11.0 的临近，Glen 需要更多时间处理发行工程任务。Glen 加入我们是一件乐事，感谢他两年来贡献的精彩专栏，接力棒交到 Steven 手中，我们相信他也会做得非常出色。
 

@@ -150,4 +150,6 @@ startx
 
 至此你应该可以开始使用 FreeBSD 了。下一步建议选择并配置一个防火墙。FreeBSD 期刊 2014 年 5/6 月号有一篇精彩文章《IPfw An Overview》，可指导你完成该过程。此外，读一读《BSD Hacks》这本书，可以让你更熟悉 `tcsh` shell，并掌握若干新技能。 •
 
+---
+
 **ROLLER ANGEL** 是一名热忱的 BSD 用户，喜欢探索 BSD 技术所能实现的种种精彩事情。他曾基于 FreeBSD 讲授过编程研讨班，正在搭建一个在线培训平台，用于教授 BSD 及相关技术。详见 BSD.pw。

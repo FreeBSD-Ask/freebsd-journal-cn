@@ -29,4 +29,6 @@
 
 <http://www.socallinuxexpo.org/scale/17x> • 第 17 届南加州 Linux Expo（SCaLE 17X）将于 2019 年 3 月 7–10 日在帕萨迪纳会议中心举办。SCaLE 17X 预计今年将迎来 150 家参展商，并有近 130 场会议、教程与特别活动，其中包括一场 FreeBSD 入门研讨班。
 
+---
+
 **DRU LAVIGNE** 是 FreeBSD 文档提交者，著有多本图书，包括《BSD Hacks》与《The Best of FreeBSD Basics》。

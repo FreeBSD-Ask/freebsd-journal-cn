@@ -1,6 +1,6 @@
 # 存储多路径综述
 
-作者：ALEXANDER MOTIN
+作者：**ALEXANDER MOTIN**
 
 存储多路径是一种旨在提升存储可靠性的技术，通过消除单点故障，并在多个物理连接之间分担负载以改善性能。多路径可在多个不同层次实现：传输层（如 iSCSI）、外设驱动层（如 SCSI 块设备驱动），或块存储转换层（如 FreeBSD GEOM）。每种实现各有优劣。
 
@@ -214,5 +214,9 @@ multipath/mp0  OPTIMAL  da0 (PASSIVE)
 开箱即用时，Windows Server 仅支持 MC/S 传输层多路径。上层多路径需作为单独的可选功能安装。但组件安装并数次系统重启后，如果系统还活着 ;），ALUA 多路径目标方应能被正确检测并工作：
 
 总结：作为目标方使用时，FreeBSD CAM Target Layer（CTL）能提供不错的 SCSI 多路径功能，支持 ALUA 和高可用集群，并兼容许多第三方发起方。iSCSI MC/S 的传输层多路径因高复杂性和有限范围而不被支持，但在有许多 Windows 桌面的环境中可能有用。作为发起方使用时，FreeBSD 目前只能提供基本的 GEOM 层多路径，不支持 ALUA。某种程度上可由外部脚本补偿，但明智之举是开箱即用便实现带 ALUA 支持的完整 SCSI 层多路径。
+
+---
+
+**ALEXANDER MOTIN** 是 iXsystems Inc. OS/服务团队负责人，自 2007 年起成为 FreeBSD 源代码提交者。
 
 ALEXANDER MOTIN 是 iXsystems Inc. OS/服务团队负责人，自 2007 年起担任 FreeBSD 源代码提交者。
