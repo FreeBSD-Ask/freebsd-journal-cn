@@ -1,7 +1,7 @@
 # Tarsnap 的 FreeBSD 集群
 
 - 原文链接：[Tarsnap’s FreeBSD Cluster](https://freebsdfoundation.org/wp-content/uploads/2021/03/Tarsnaps-FreeBSD.pdf)
-- 作者：**COLIN PERCIVAL**
+- 作者：COLIN PERCIVAL
 
 ![Tarsnap 备份服务](../png/2021-0102/Tarsnap-01.png)
 

@@ -21,27 +21,8 @@ sudo 项目位于 <https://www.sudo.ws/>，同样有一个 bugzilla 实例供人
 
 与此同时，sudo 1.8.26 新版本发布，其中包含了文档修复，并甚至在发行说明中提及（<https://www.sudo.ws/stable.html#1.8.26>）。FreeBSD Port 在此不久后也得到更新（<https://svnweb.freebsd.org/ports?view=revision&revision=484929>），这些修复也随之作为 FreeBSD 的一部分可用。就这样，从一个使用 sudo 的下游项目所报告的小错误，演变为针对多个文档问题在上游报告并修复的较大补丁。开源项目中这类事情无时无刻不在发生，不仅限于文档。src 与 Ports 也是如此，这是协作并交换修复、工具与思想使所有人受益的绝佳范例。妙处在于从文档工作入手很容易，尤其是手册页。小修复与大改进同样有价值，正如你所见，可能引发比初看时更大的事。
 
-有意开始文档工作的人不妨一读 FreeBSD Documentation Project primer（<https://www.freebsd.org/doc/en_US.ISO8859-1/books/fdp-primer/>）。快速入门章节解释了在工具与获取源码方面所需的一切。准备就绪后，便可在文档中开始猎虫。使用 FreeBSD 的 pkg 工具安装 textproc/igor Port 非常简单。找到 bug 后，请确认它尚未被报告或修复。如未报告，务必报告给实际维护它的项目与人员。许多项目都有 bug 跟踪系统或可报告问题的邮件列表。请尽量提供详尽信息与清晰描述，并附上你已创建的所有补丁。这样能提高补丁获得审视与处理的机会。对 FreeBSD 文档流程有任何疑问，可在 freebsd-doc 邮件列表提问，或到 Efnet 上 #bsddocs 频道找我们。 •
-
-**BENEDICT REUSCHLING** 于 2009 年加入 FreeBSD 项目。2010 年获得完整的文档提交权限后，他积极开始指导他人成为 FreeBSD 提交者。他是 BSD 认证小组的考官，并于 2015 年加入 FreeBSD 基金会，目前担任副总裁。Benedict 拥有计算机科学硕士学位，在德国达姆施塔特应用技术大学讲授面向软件开发者的 UNIX 课程。
+有意开始文档工作的人不妨一读 FreeBSD Documentation Project primer（<https://www.freebsd.org/doc/en_US.ISO8859-1/books/fdp-primer/>）。快速入门章节解释了在工具与获取源码方面所需的一切。准备就绪后，便可在文档中开始猎虫。使用 FreeBSD 的 pkg 工具安装 textproc/igor Port 非常简单。找到 bug 后，请确认它尚未被报告或修复。如未报告，务必报告给实际维护它的项目与人员。许多项目都有 bug 跟踪系统或可报告问题的邮件列表。请尽量提供详尽信息与清晰描述，并附上你已创建的所有补丁。这样能提高补丁获得审视与处理的机会。对 FreeBSD 文档流程有任何疑问，可在 freebsd-doc 邮件列表提问，或到 #bsddocs 频道找我们。 •
 
 ---
 
-FreeBSD 是一款高性能、安全且稳定操作系统的创新引领者，在国际上广受认可。
-
-FreeBSD 不仅易于安装，而且能运行大量……
-
-完整的源代码。
-
-FreeBSD 社区自豪地受到……
-
-FreeBSD 项目正在寻找像你这样的人，帮助继续开发这款稳健的操作系统。
-
-加入我们！
-
-已参与其中？
-
-别忘了在 freebsdfoundation.org 查看最新的资助机会。
-
-共创未来。
-加入 FreeBSD 项目！
+**BENEDICT REUSCHLING** 于 2009 年加入 FreeBSD 项目。2010 年获得完整的文档提交权限后，他积极开始指导他人成为 FreeBSD 提交者。他是 BSD 认证小组的考官，并于 2015 年加入 FreeBSD 基金会，目前担任副总裁。Benedict 拥有计算机科学硕士学位，在德国达姆施塔特应用技术大学讲授面向软件开发者的 UNIX 课程。

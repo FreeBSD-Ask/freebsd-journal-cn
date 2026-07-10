@@ -19,4 +19,6 @@ BSDCan • 6 月 10 – 13 日 • 加拿大渥太华
 
 如果你知道任何 FreeBSD 期刊读者可能感兴趣的会议、活动或事件，请将日历条目发送至 <editor@freebsdjournal.com>。
 
-Dru Lavigne 是 FreeBSD 基金会理事，BSD 认证小组主席。
+---
+
+**Dru Lavigne** 是 FreeBSD 基金会理事，BSD 认证小组主席。

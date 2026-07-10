@@ -25,4 +25,6 @@ Brendan Gregg 在 Netflix 工作，向我们展示了 FreeBSD 性能分析的五
 
 如果你从未参加过 meetBSD 会议或任何 BSD 会议，现在就开始计划并做安排吧。从与会者、演讲者到分组讨论，你能从中得到想要的一切。我非常期待参加在加拿大举行的下一次会议。到时候见！
 
-Wallace Barrow 主修计算机科学、辅修安全。他曾在威斯康星大学为农业部门管理 Windows 域。三年前他在威斯康星州麦迪逊的一家小型本地 ISP 工作时开始接触 FreeBSD。Wallace 热爱他的 Packers、Badgers 和开源！
+---
+
+**Wallace Barrow** 主修计算机科学、辅修安全。他曾在威斯康星大学为农业部门管理 Windows 域。三年前他在威斯康星州麦迪逊的一家小型本地 ISP 工作时开始接触 FreeBSD。Wallace 热爱他的 Packers、Badgers 和开源！
