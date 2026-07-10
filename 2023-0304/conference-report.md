@@ -9,4 +9,4 @@
 
 我相信 SCaLE 又一次成功地推动了更多人来使用 FreeBSD、为 FreeBSD 做贡献。工作坊始终是亮点，每年参会人数都在增长。我期待 SCaLE21X，希望能见到更多 FreeBSD 社区的朋友！
 
-DREW GURKOWSKI 是 FreeBSD 基金会的市场协调员。
+**DREW GURKOWSKI** 是 FreeBSD 基金会的市场协调员。
