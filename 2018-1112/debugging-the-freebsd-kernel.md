@@ -30,7 +30,7 @@ INVARIANTS 是在 FreeBSD 内核开发版本中配置的内核选项——如果
 
 ### 内存 Trash
 
-FreeBSD 内核有一个 malloc(9) 实现，与常规 C 应用程序中使用的非常相似。此外，名为 UMA（“Universal Memory Allocator”）的内存子系统为高性能代码路径提供 slab 分配 API。当内核配置了 INVARIANTS 时，使用这些 API 之一释放的内存会被”trashed”，即其内容被特定模式覆盖。每次重用 trashed 内存时，其内容都会与该模式比对验证。如果验证失败，说明内存在释放后又被写入，内核 panic。
+FreeBSD 内核有一个 `malloc.9` 实现，与常规 C 应用程序中使用的非常相似。此外，名为 UMA（“Universal Memory Allocator”）的内存子系统为高性能代码路径提供 slab 分配 API。当内核配置了 INVARIANTS 时，使用这些 API 之一释放的内存会被”trashed”，即其内容被特定模式覆盖。每次重用 trashed 内存时，其内容都会与该模式比对验证。如果验证失败，说明内存在释放后又被写入，内核 panic。
 
 这是一种非常标准的技术，大多数功能齐全的内存分配器都实现了此技术。在 FreeBSD 上，trash 模式是 `0xdeadc0de`，因此虽然分配器本身会捕获 write-after-free，任何读取 trashed 内存位置（即 read-after-free）的代码如果将值当作指针，也很可能引发崩溃。调试或分诊内核 panic 时，留意 `0xdeadc0de` —— 它通常意味着 use-after-free。
 
