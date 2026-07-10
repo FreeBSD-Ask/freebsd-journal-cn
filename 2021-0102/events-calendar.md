@@ -1,7 +1,9 @@
 # 活动日历
 
+- 原文链接：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2021/03/Events-Calendar.pdf)
+- 作者：Anne Dickison
+
 截至 2021 年 3 月的 BSD 活动
-作者：ANNE DICKISON
 
 请将未在此处列出的任何 FreeBSD 相关活动或对 FreeBSD 用户有意义的活动详情发送至 <freebsd-doc@FreeBSD.org>。
 
