@@ -7,8 +7,6 @@
 
 如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
-![Events Calendar 封面](../png/2022-0304/events-calendar-01.pdf)
-
 ## BSDCan 2022
 
 2022 年 6 月 1-4 日
