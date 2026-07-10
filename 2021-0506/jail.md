@@ -1,13 +1,9 @@
 # 对 Jail 进行安全扫描
 
 - 原文链接：[Security Scanning a Jail](https://freebsdfoundation.org/wp-content/uploads/2021/07/Security-Scanning-a-Jail.pdf)
-- 作者：**BENEDICT REUSCHLING**
+- 作者：BENEDICT REUSCHLING
 
----
-
-本专栏介绍了 FreeBSD 中有用、独特或值得了解的 Ports 和软件包。Ports 扩展了基本操作系统的功能，确保你能完成某些任务，或者简单地带来一丝微笑。跟随我们一起探索，也许你会发现一些新鲜的东西。
-
----
+本专栏介绍了 FreeBSD 中有用、独特或值得了解的 Ports 和软件包。Ports 扩展了基本系统的功能，确保你能完成某些任务，或者简单地带来一丝微笑。跟随我们一起探索，也许你会发现一些新鲜的东西。
 
 在本期中，我稍微偏离了介绍多个 Ports 的形式，专注于一个 Port：security/lynis。
 

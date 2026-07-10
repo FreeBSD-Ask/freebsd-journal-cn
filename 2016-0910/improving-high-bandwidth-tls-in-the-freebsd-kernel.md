@@ -1,7 +1,7 @@
 # 提升 FreeBSD 内核中的高带宽 TLS
 
 - 原文：[Improving High-Bandwidth TLS in the FreeBSD Kernel](https://freebsdfoundation.org/wp-content/uploads/2016/10/Improving-High-Bandwidth-TLS-in-the-FreeBSd-Kernel.pdf)
-- 作者：**Randall Stewart 和 Scott Long**
+- 作者：**Randall Stewart** 和 **Scott Long**
 
 在 2015 年的论文《Optimizing TLS for High-Bandwidth Applications in FreeBSD》中，我们展示了 TLS 加密对 Netflix OpenConnect 设备（OCA）[1] 上高带宽视频服务的开销，并探索了通过内核内加密降低该开销的方法。结果表明这一概念可行，但只获得了较小的性能提升。本文描述了此后为降低加密开销所做的改进，并比较了几种不同批量加密实现的性能。
 

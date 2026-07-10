@@ -7,6 +7,16 @@
 
 如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
+## Open Source 101
+
+2022 年 3 月 29 日
+
+线上
+
+<https://opensource101.com/>
+
+Open Source 101 是一场聚焦开源"基础"的单日大会。3 月 29 日（星期二），加入 AllThingsOpen 团队以及众多出色的赞助商、演讲者和与会者，享受一整天的直播开源节目。免费参加。基金会很高兴成为媒体赞助商。
+
 ## SCALE 19x
 
 2022 年 7 月 28-31 日
@@ -29,16 +39,6 @@ SCaLE 19X——第 19 届年度南加州 Linux 大会——将于 2022 年 7 月
 
 <https://wiki.freebsd.org/OfficeHours>
 
-加入 FreeBSD 社区成员参与的 FreeBSD Office Hours。从一般问答到基于主题的演示和教程，Office Hours 是获取 FreeBSD 相关问题答案的好途径。
+与 FreeBSD 社区成员一起参加 FreeBSD Office Hours。从一般问答到基于主题的演示和教程，Office Hours 是获取 FreeBSD 相关问题答案的好途径。
 
 往期节目可在 FreeBSD YouTube 频道观看：<https://www.youtube.com/c/FreeBSDProject>
-
-## Open Source 101
-
-2022 年 3 月 29 日
-
-线上
-
-<https://opensource101.com/>
-
-Open Source 101 是一场聚焦开源"基础"的单日大会。3 月 29 日（星期二），加入 AllThingsOpen 团队以及众多赞助商、演讲者和与会者，享受一整天的直播开源节目。免费参加。基金会很高兴成为媒体赞助商。

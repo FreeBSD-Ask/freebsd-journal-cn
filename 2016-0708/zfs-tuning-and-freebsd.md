@@ -132,7 +132,7 @@ PostgreSQL 把数据库存在 **/usr/local/pgsql/data/base**。预写日志（WA
 
 在没有 SLOG 的系统中高速创建大量小文件时，ZFS 会花费大量时间等待文件和元数据刷入稳定存储。
 
-如果你愿意承担过去五秒（若 **vfs.zfs.txg.timeout** 更高则更多）内新建文件丢失的风险，把 `sync` 属性设为 `disabled` 会告知 ZFS 把所有写入视为异步。即使应用程序请求在文件安全之前不要被告知写入完成，ZFS 也会立即返回，并在下一个定期 txg 中写入文件。
+如果你愿意承担过去五秒（若 `vfs.zfs.txg.timeout` 更高则更多）内新建文件丢失的风险，把 `sync` 属性设为 `disabled` 会告知 ZFS 把所有写入视为异步。即使应用程序请求在文件安全之前不要被告知写入完成，ZFS 也会立即返回，并在下一个定期 txg 中写入文件。
 
 高速 SLOG 让你既能同步又能快速地存储那些小文件。
 
@@ -140,10 +140,10 @@ PostgreSQL 把数据库存在 **/usr/local/pgsql/data/base**。预写日志（WA
 
 ZFS 近期通过 `large_block` 特性加入了对大于 128 KB 块的支持。如果你要存储许多大文件，确实应考虑这一点。默认最大块尺寸为 1 MB。
 
-理论上可以使用大于 1 MB 的块尺寸。但很少有系统对此进行过广泛测试，且与内核内存分配子系统的交互在长期使用下也未经检验。你可以尝试极大的记录尺寸，但出问题时记得提交 bug 报告。`sysctl` **vfs.zfs.max_recordsize** 控制最大块尺寸。
+理论上可以使用大于 1 MB 的块尺寸。但很少有系统对此进行过广泛测试，且与内核内存分配子系统的交互在长期使用下也未经检验。你可以尝试极大的记录尺寸，但出问题时记得提交 bug 报告。sysctl `vfs.zfs.max_recordsize` 控制最大块尺寸。
 
 一旦激活 `large_blocks`（或任何其他特性），该池就不能再被不支持该特性的主机使用。要停用该特性，需销毁任何 `recordsize` 曾设为大于 128 KB 的 dataset。
 
 存储系统在延迟与吞吐量之间艰难平衡。ZFS 使用 `logbias` 属性决定倾向哪一方。ZFS 默认使用 `latency` 作为 `logbias`，让数据快速同步到磁盘，使数据库和其他应用能继续工作。处理大文件时，把 `logbias` 属性改为 `throughput` 可能获得更好性能。你必须自行测试，决定哪种设置适合你的工作负载。
 
-MICHAEL W. LUCAS 是《Absolute FreeBSD》《Absolute OpenBSD》《DNSSEC Mastery》等书的作者。他与妻子和一群大鼠住在密歇根州底特律。访问他的网站：<https://www.michaelwlucas.com>。
+**MICHAEL W. LUCAS** 是《Absolute FreeBSD》《Absolute OpenBSD》《DNSSEC Mastery》等书的作者。他与妻子和一群大鼠住在密歇根州底特律。访问他的网站：<https://www.michaelwlucas.com>。

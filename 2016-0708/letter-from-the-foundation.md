@@ -1,5 +1,8 @@
 # 基金会致信
 
+- 原文：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2016/08/Letter-from-the-Foundation.pdf)
+- 作者：**George Neville-Neil**
+
 暑期阅读
 
 美国东北部现在是夏天，夏天就要读暑期读物。还有什么比阅读 FreeBSD 相关内容度过这些日子更好的方式呢？本期带来几个有趣的话题，包括两篇关于 ZFS 的文章：一篇是 Michael W. Lucas 撰写的《ZFS 调优》，他是同主题两本优秀著作《FreeBSD Mastery: ZFS》和《FreeBSD Mastery: Advanced ZFS》的合著者。作为笔记本电脑上改用 ZFS、用启动环境降低内核开发风险的人，我可以说，深入了解这一文件系统总能提升我的生产力。Michael 在 ZFS 书籍中的合著者 Allan Jude 撰写了一篇关于 ScaleEngine 使用 FreeBSD 的精彩文章，这是一家自 2008 年起由他运营的内容分发网络。ScaleEngine 使用 FreeBSD，特别是 ZFS，从全球分布的数据中心向世界各地的客户端提供视频和其他内容。

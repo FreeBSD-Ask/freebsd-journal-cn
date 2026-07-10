@@ -13,5 +13,6 @@
 
 代表 FreeBSD 基金会，
 
-Deb Goodkin
+**Deb Goodkin**
+
 FreeBSD 基金会执行董事

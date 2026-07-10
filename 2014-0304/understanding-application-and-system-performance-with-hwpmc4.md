@@ -120,7 +120,7 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 ![Fig. 5：采样模式运行 hanoi](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-05.png)
 
 ```sh
-> pmcstat -O /tmp/hanoi.log -P INSTR_RETIRED_ANY ./hanoi 10
+$ pmcstat -O /tmp/hanoi.log -P INSTR_RETIRED_ANY ./hanoi 10
 1013645 loops
 ```
 
@@ -131,7 +131,7 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 ![Fig. 6：分析 hanoi 日志生成图文件](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-06.png)
 
 ```sh
-> pmcstat -R /tmp/hanoi.log -G /tmp/hanoi.graph
+$ pmcstat -R /tmp/hanoi.log -G /tmp/hanoi.graph
 ```
 
 图 7 的输出显示 `mov()` 例程（见列表 X 中的代码）占据了最大数量的样本，而程序的 `main()` 例程样本很少。结果正如我们对该程序的预期。
@@ -151,17 +151,17 @@ pmcstat -C -p INSTR_RETIRED_ANY -p CPU_CLK_UNHALTED_CORE ./hanoi 10
 100.0% [1429] _start
 ```
 
-pmcstat 的输出还可以另一种方式展示，作为 gprof(1) 输出 `pmcstat -R /tmp/hanoi.log -g`（图 7）。用 `-g` 参数处理同一日志会创建按事件分的目录 **INSTR_RETIRED_ANY/**，其中包含采样时使用中的每个程序、库和内核的输出文件。处理 hanoi.gmon 文件得到图 8 所示输出。这种情况下，时间具有误导性。seconds 列中的数字代表被计数的事件，而非秒，但这样的输出便于简短阅读。我们仍然看到 `mov()` 例程是事件的最大消费者，占据了与该程序相关的所有事件的 99.8%。
+pmcstat 的输出还可以另一种方式展示，作为 gprof.1 输出 `pmcstat -R /tmp/hanoi.log -g`（图 7）。用 `-g` 参数处理同一日志会创建按事件分的目录 **INSTR_RETIRED_ANY/**，其中包含采样时使用中的每个程序、库和内核的输出文件。处理 hanoi.gmon 文件得到图 8 所示输出。这种情况下，时间具有误导性。seconds 列中的数字代表被计数的事件，而非秒，但这样的输出便于简短阅读。我们仍然看到 `mov()` 例程是事件的最大消费者，占据了与该程序相关的所有事件的 99.8%。
 
 **图 8**
 
 ![Fig. 8：hanoi gprof 输出](../png/2014-0304/understanding-application-and-system-performance-with-hwpmc4-08.png)
 
 ```sh
-> ls
+$ ls
 hanoi.gmon kernel.gmon libc.so.7.gmon
 hwpmc.ko.gmon ld-elf.so.1.gmon
-> gprof ../hanoi hanoi.gmon
+$ gprof ../hanoi hanoi.gmon
 granularity: each sample hit covers 4.00673 byte(s) for 0.00% of 362181.00 seconds
 % cumulative self self total
 time seconds seconds calls ms/call ms/call name

@@ -1,7 +1,7 @@
 # 使用 TLS 改善 NFS 安全性
 
 - 原文链接：[Using TLS to improve NFS Security](https://freebsdfoundation.org/wp-content/uploads/2021/07/Using-TLS-to-Improve-NFS-Security.pdf)
-- 作者：**RICK MACKLEM**
+- 作者：RICK MACKLEM
 
 传统上，NFS 提供的安全性非常有限，主要基于客户端的 IP 地址/DNS 主机名，使用 exports(5) 配置。这种方式可以通过 IP 地址欺骗来绕过，且对于没有固定、众所周知的 IP 地址或 DNS 主机名的移动客户端来说根本无法使用。此外，所有数据通常以明文在网络上传输，因此容易被嗅探。
 
@@ -56,7 +56,7 @@ tlscertuser - 表示客户端必须使用 TLS，必须在 TLS 握手期间提供
 
 rpc.tlsservd 还有命令行选项，指定守护进程要求客户端 IP 地址的反向 DNS（rDNS）名称与客户端 X.509 证书中的 subjectAltName 的“DNS”组件匹配。这类似于 RFC 6125 建议客户端做的操作，用于验证域名应用服务的身份。由于该选项旨在防止客户端 IP 地址欺骗，无法使用 exports(5)，因为它是基于客户端的 IP 地址来设置的。因此，该选项指定所有使用 NFS over TLS 的客户端必须满足这一标准，未能满足的将导致握手失败。它是最强的客户端主机身份检查，但要求所有客户端都必须拥有经过验证的 X.509 证书，并且证书的 subjectAltName 中的 DNS 组件正确。当指定此选项时，所有客户端还必须具有固定的、已知的 DNS 地址。
 
-客户端守护进程的功能与此类似，但有所不同。与 rpc.tlsservd 不同，rpc.tlscltnd 仅在指定了 -m/--mutualverf 命令行选项时才需要证书。客户端还可以处理存储在不同文件中的多个证书，以防不同的 NFS over TLS 服务器需要不同的证书。
+客户端守护进程的功能与此类似，但有所不同。与 rpc.tlsservd 不同，rpc.tlsclntd 仅在指定了 -m/--mutualverf 命令行选项时才需要证书。客户端还可以处理存储在不同文件中的多个证书，以防不同的 NFS over TLS 服务器需要不同的证书。
 
 当 NFS 挂载与服务器建立新的 TCP 连接，并且指定了“tls”挂载选项时，krpc 将执行以下操作：
 
@@ -139,7 +139,7 @@ rpc.tlsservd 还有命令行选项，指定守护进程要求客户端 IP 地址
 
 如果因任何原因笔记本电脑不再允许挂载，也可以撤销证书并将其添加到证书吊销列表（CRL）中。
 
-在上述示例中，所有在服务器上执行的 RPC 将使用 NFSv4 服务器上登录名“rmacklem”的 POSIX 凭证。这避免了笔记本电脑需要与服务器保持统一的 uid 和 gid 空间。它还将因笔记本电脑被入侵而导致的风险限制为“rmacklem”可访问的文件。此可选配置可能与互联网草案不符。该草案的一位共同作者同意根据 TLS 握手期间提供的 X.509 证书将客户端 RPC 凭证映射到特定用户是有用的，事实上他为此创造了“TLS 身份压缩”（TLS Identity Squashing）这个术语。然而，这位作者更倾向于使用数据库将证书的元组映射到“用户”。他认为将“用户”包含在证书中混淆了“机器”与“用户”凭证。作为务实主义者，我认为将“用户”包含在证书中只是实现这一目标的一种简单方法。如果这种做法成为首选实践，rpc.tlsclntd 可以修改为使用平面文件/数据库来实现这一点。
+在上述示例中，所有在服务器上执行的 RPC 将使用 NFSv4 服务器上登录名“rmacklem”的 POSIX 凭证。这避免了笔记本电脑需要与服务器保持统一的 uid 和 gid 空间。它还将因笔记本电脑被入侵而导致的风险限制为“rmacklem”可访问的文件。此可选配置可能与互联网草案不符。该草案的一位共同作者同意根据 TLS 握手期间提供的 X.509 证书将客户端 RPC 凭证映射到特定用户是有用的，事实上他为此创造了“TLS 身份压缩”（TLS Identity Squashing）这个术语。然而，这位作者更倾向于使用数据库将证书的 <issuerName, serialNumber> 元组映射到“用户”。他认为将“用户”包含在证书中混淆了“机器”与“用户”凭证。作为务实主义者，我认为将“用户”包含在证书中只是实现这一目标的一种简单方法。如果这种做法成为首选实践，rpc.tlsclntd 可以修改为使用平面文件/数据库来实现这一点。
 
 以上只是示例用例。守护进程的命令行选项支持多种配置，从仅要求 TLS 对传输中的 RPC 消息加密，到要求所有客户端提供可验证的 X.509 证书，其中 subjectAltName 的 DNS 组件必须与客户端 IP 主机地址的 rDNS 名称匹配。客户端还可以以 RFC 6125 推荐的方式验证 NFS 服务器的真实性，用于 TLS 域名应用服务。
 
@@ -149,4 +149,4 @@ rpc.tlsservd 还有命令行选项，指定守护进程要求客户端 IP 地址
 
 ---
 
-**RICK MACKLEM**  Rick 有 30 余年的工作经验，从 1980 年开始，他是计算机科学系的系统管理员，管理着包括 BSD 系统在内的多种系统。当 VAX 11/780 替换为 MicroVAXII 系统时，需要在 4.3BSD 上实现 NFS，因此 Rick 实现了这个功能并将其贡献给了 CSRG。Usenix 论文《Lessons Learned Tuning the 4.3BSD NFS Implementation》描述了作为这项工作一部分的首次 TCP 上的 NFS 实现。Rick 现已退休，继续致力于 FreeBSD 上 NFS 的实现工作。
+**RICK MACKLEM** 有 30 余年的工作经验，从 1980 年开始，他是计算机科学系的系统管理员，管理着包括 BSD 系统在内的多种系统。当 VAX 11/780 替换为 MicroVAXII 系统时，需要在 4.3BSD 上实现 NFS，因此 Rick 实现了这个功能并将其贡献给了 CSRG。Usenix 论文《Lessons Learned Tuning the 4.3BSD NFS Implementation》描述了作为这项工作一部分的首次 TCP 上的 NFS 实现。Rick 现已退休，继续致力于 FreeBSD 上 NFS 的实现工作。

@@ -1,5 +1,8 @@
 # 读者来信
 
+- 原文链接：[We Get Letters](https://freebsdfoundation.org/wp-content/uploads/2021/07/We-Get-Letters.pdf)
+- 作者：MICHAEL W LUCAS
+
 亲爱的来信专栏作家：
 
 老板说"一切都要安全"。我开始列安全检查清单，根本做不完。我该怎么办？
@@ -48,4 +51,6 @@
 
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
-MICHAEL W LUCAS 写了 40 多本书，并抵御一切让他停下的努力。其中一本《Only Footnotes》是他所有书的脚注合集，但他随即又添加了更多脚注使其失效，所以那本不算数。他最近的图书包括《TLS Mastery》和《$ git sync murder》。他正在撰写《DNSSEC Mastery》第二版，加倍对他先前施加给文明的伤害。
+---
+
+**MICHAEL W LUCAS** 写了 40 多本书，并抵御一切让他停下的努力。其中一本《Only Footnotes》是他所有书的脚注合集，但他随即又添加了更多脚注使其失效，所以那本不算数。他最近的图书包括《TLS Mastery》和《$ git sync murder》。他正在撰写《DNSSEC Mastery》第二版，加倍对他先前施加给文明的伤害。

@@ -5,7 +5,7 @@
 
 ## 截至 2022 年 11 月的 BSD 活动
 
-如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
+如发现此处未列出的 FreeBSD 相关活动或 FreeBSD 用户感兴趣的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
 ![活动日历](../png/2022-0708/events-calendar-01.pdf)
 
@@ -31,7 +31,7 @@
 
 美国科罗拉多州博尔德
 
-落基山庆祝计算领域女性大会（RMCWiC）是一场区域性会议，类似 Grace Hopper 大会，规模较小。RMCWiC 的目标是鼓励当地女性在计算领域的研究与职业兴趣。FreeBSD 基金会期待参与即将到来的此次活动。
+落基山庆祝计算领域女性大会（RMCWiC）是一场区域性会议，类似 Grace Hopper 大会，规模较小。RMCWiC 的目标是鼓励当地女性在计算领域的研究与职业兴趣。FreeBSD 基金会期待参与即将到来的活动。
 
 ## All Things Open
 
@@ -39,7 +39,7 @@
 
 美国北卡罗来纳州罗利
 
-All Things Open 是美国东海岸规模最大的开源/开放技术/开放网络大会，也是全美规模最大的之一。它定期邀请世界上最知名的专家，以及几乎所有主要科技公司。FreeBSD 很荣幸成为今年 All Things Open 的媒体合作伙伴。
+All Things Open 是美国东海岸规模最大的开源/开放技术/开放网络大会，也是全美规模最大的大会之一。它定期邀请一些世界上最知名的专家，还有几乎所有主要科技公司。FreeBSD 很荣幸成为今年 All Things Open 的媒体合作伙伴。
 
 ## FreeBSD Office Hours
 

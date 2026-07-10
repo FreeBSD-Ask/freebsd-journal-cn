@@ -11,5 +11,6 @@
 
 代表 FreeBSD 基金会，
 
-Ed Maste
+**Ed Maste**
+
 高级技术总监
