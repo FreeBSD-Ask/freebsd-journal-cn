@@ -60,7 +60,7 @@ FreeBSD 基金会最近为支持发布工程团队而购置的发布构建机器
 
 FreeBSD 基金会与 ARM、Cavium、Semihalf sp.j. 合作，资助 FreeBSD 开发者 Andrew Turner 将 FreeBSD 移植到 64 位 ARM 平台（即 aarch64）。
 
-FreeBSD/aarch64 的初始支持在 r280259 中加入 11-CURRENT，此后持续开发。该项目的目标是将 FreeBSD/aarch64 提升至 Tier-1 支持状态，包括发行安装介质与第三方 package。
+FreeBSD/aarch64 的初始支持在 r280259 中加入 11-CURRENT，此后持续开发。该项目的目标是将 FreeBSD/aarch64 提升至 Tier-1 支持状态，包括发行安装介质与第三方软件包。
 
 制作 FreeBSD/aarch64 发行介质的初始支持在 r281802 中加入 11-CURRENT，该工作由 FreeBSD 基金会资助。目前，FreeBSD FTP 镜像上提供了用于 Qemu 模拟器的虚拟机镜像、内存棒安装镜像。
 
