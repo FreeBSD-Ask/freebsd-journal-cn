@@ -65,7 +65,7 @@ kq = malloc(sizeof *kq, M_KQUEUE, M_WAITOK | M_ZERO);
 MALLOC_DEFINE(M_KQUEUE, "kqueue", "memory for kqueue system");
 ```
 
-因此 M_KQUEUE malloc(9) 类型命名为“kqueue”。每个 malloc(9) 类型的统计信息可以用 `vmstat -m` 列出，UMA zone 的类似统计信息可以用 `vmstat -z` 列出。
+因此 M_KQUEUE `malloc.9` 类型命名为"kqueue"。每个 `malloc.9` 类型的统计信息可以用 `vmstat -m` 列出，UMA zone 的类似统计信息可以用 `vmstat -z` 列出。
 
 MemGuard 默认不包含在 FreeBSD 内核中，必须通过将 DEBUG_MEMGUARD 选项添加到内核配置中编译进来。然后，要为特定内存类型配置 MemGuard，将 `vm.memguard.desc` 设置为 malloc(9) 类型或 UMA zone 的名称，方法是在 **/boot/loader.conf** 中添加条目或设置 sysctl。配置 MemGuard 后，它会挂钩该内存类型的所有分配和释放。每次分配都填充到完整页面，当一块内存被释放时，整个已分配内存范围会被取消映射。这意味着在内存释放后访问它，很可能导致页面错误，从而引发内核崩溃，在发生时捕获 use-after-free。
 
