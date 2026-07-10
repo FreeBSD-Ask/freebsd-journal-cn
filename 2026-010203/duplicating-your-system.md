@@ -118,7 +118,7 @@ Sat Mar 14 13:47:32 2026 .sh_history
 Sat Mar  7 15:55:14 2026 .shrc
 ```
 
-duplicity 中的 list (ls) 命令显示存档，类似于 tar -t。同样，这里已经使用 par2 包装器连接到 mybucket-s3backup，以验证每个块的一致性并实时修复。
+duplicity 中的 list (ls) 命令显示存档，类似于 `tar -t`。同样，这里已经使用 par2 包装器连接到 mybucket-s3backup，以验证每个块的一致性并实时修复。
 
 现在是时候在我们的主目录中开始工作了。让我们先克隆 Ports 分支：
 

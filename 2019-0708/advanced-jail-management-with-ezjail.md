@@ -1,6 +1,6 @@
 # 使用 Ezjail 进行高级 Jail 管理
 
-作者：Andrew Fengler
+作者：**Andrew Fengler**
 
 Jail 是现代系统管理员的强大工具。它们允许轻量级容器化，让你能轻松隔离服务，保持物理宿主机整洁。
 
