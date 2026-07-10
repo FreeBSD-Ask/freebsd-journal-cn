@@ -48,6 +48,6 @@ WARN: Consider to set DEVELOPER=yes in /etc/make.conf
 
 使用（半）自动化构建系统测试你的 Port。在上一期中，我们推荐订阅 <http://redports.org> 来测试 Port。该服务对所有人开放、为公共利益服务。有些人拥有必要的硬件资源来构建自己的构建系统。如果你正是其中一员，那么 Ports 树里有些工具可以一试。最初的构建系统是老牌的 Tinderbox，在树中以 **ports-mgmt/tinderbox** 出现，还有其前沿版本 **ports-mgmt/tinderbox-devel**。可阅读其网站 <http://tinderbox.marcuscom.com/> 了解更多。近年来出现了名为 Poudriere 的较新构建系统，译自法语大致就是“tinderbox”。可在 Ports 树中找到 **ports-mgmt/poudriere**，以及其前沿版本 **ports-mgmt/poudriere-devel**。更多信息见 <http://fossil.etoilebsd.net/poudriere>。`poudriere` 构建系统现已成为 Ports 管理团队执行 `-exp` 测试运行和软件包构建的基础。
 
-选择适合你的构建系统，利用它测试 Port 构建，验证其能干净地安装和卸载，甚至搭建你自己的私有打包系统。
+选择适合你的构建系统，利用它测试 Port 构建，验证其能干净地安装和卸载，甚至搭建你自己的私有软件包系统。
 
 Ports 树是 FreeBSD 的增值软件集合。它是全球贡献者共同协作的成果，每个人都做了一点点让它变得更好的事情。向所有伸出援手的人致以诚挚的谢意。

@@ -39,7 +39,7 @@ global:
  scrape_interval: 15s # 将抓取间隔设为每 15 秒一次。默认为每 1 分钟一次。
  evaluation_interval: 15s # 每 15 秒评估一次规则。默认值为每 1 分钟一次。
 # scrape_timeout 设为全局默认值（10 秒）。
-# 一个包含一个要抓取的端点的抓取配置：
+# 包含仅一个要抓取端点的抓取配置：
 # 这里是 Prometheus 本身。
 scrape_configs:
  # 作业名称作为标签 `job=<job_name>` 被添加到从该配置抓取的任何时间序列中。
