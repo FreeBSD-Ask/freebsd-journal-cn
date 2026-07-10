@@ -29,12 +29,12 @@
 
 谁会想把这强加给数百万 FreeBSD 用户？倡导者说，把基本系统打包会让安装最小化的 FreeBSD 系统变得非常容易，只包含执行指定任务所需的程序。听起来不错，但就像"锻炼""健康饮食"和"不去摸那只可爱的苏门答腊虎，尽管它就在那儿"一样。这不会发生。设计只包含所需内容的操作系统安装，需要无限的预测未来的能力，或者规划，两者都不太可能。你心知肚明，那台本打算只用作域名服务器的小系统，最终会跑着 CEO 侄子女友的闪光朋克乐队的 CRM 套件和视频编辑软件。这就是服务器的自然生命周期。
 
-获得一台不舒服地稀疏的 FreeBSD 系统的正确方法是从源码构建。FreeBSD 构建系统包含添加和排除组件的选项。Michael Dexter 在他的 Build Options Survey（<https://callfortesting.org/results/>）中组织并测试了所有这些选项。你甚至可以直接尝试 OccamBSD（<https://github.com/michaeldexter/occambsd>），这是旨在托管 Jail、bhyve 和 Xen 客户端的最小可行 FreeBSD 构建。OccamBSD 是不错的起点，因为重新启用功能比把它们拆出来要简单得多。
+要获得一台稀疏得让人不舒服的 FreeBSD 系统，正确方法是从源码构建。FreeBSD 构建系统包含添加和排除组件的选项。Michael Dexter 在他的 Build Options Survey（<https://callfortesting.org/results/>）中组织并测试了所有这些选项。你甚至可以直接尝试 OccamBSD（<https://github.com/michaeldexter/occambsd>），这是旨在托管 Jail、bhyve 和 Xen 客户端的最小可行 FreeBSD 构建。OccamBSD 是不错的起点，因为重新启用功能比把它们拆出来要简单得多。
 
-幸运的是，FreeBSD 自身强烈抗拒被打包。它被设计为一个有凝聚力的单一系统，不喜欢被拆散成独立组件。搞清楚系统哪些部分真正相互依赖、哪些只是私交甚笃，是个非常困难的问题，许多开发者多年来一直为之头疼。许多方法都尝试过并失败了。打包基本系统是 FreeBSD 的恶龙，吞噬每一个出发去征服它的开发者。然而，世界源源不断地供应乐观的开发者，我毫不怀疑某天他们中会有一人成功，进一步削弱运行 FreeBSD 所需的道德品质。
+幸运的是，FreeBSD 自身强烈抗拒被打包。它本身就是一个有凝聚力的单一系统，不喜欢被拆散成独立组件。搞清楚系统哪些部分真正相互依赖、哪些只是私交甚笃，是个非常困难的问题，许多开发者多年来一直为之头疼。许多方法都尝试过并失败了。打包基本系统是 FreeBSD 的恶龙，吞噬每一个出发去征服它的开发者。然而，世界源源不断地供应乐观的开发者，我毫不怀疑某天他们中会有一人成功，进一步削弱运行 FreeBSD 所需的道德品质。
 
 运气好的话，那时我已经死了。或者至少不再回你的信。
 
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
-**MICHAEL W LUCAS** 的脑袋里塞满了过时的知识，大多是关于 FreeBSD、其他 BSD 以及其他一些次要操作系统的。要学新东西，他得先把其中一些垃圾扔出去。他的最新著作包括《$ git sync murder》、《TLS Mastery》和《SNMP Mastery》。你读到这篇时《DNSSEC Mastery》本该已出版，但他懒，所以多半还没出。更多信息见 <https://mwl.io>。
+**MICHAEL W LUCAS** 的脑袋里塞满了过时的知识，大多是关于 FreeBSD、其他 BSD 和其他一些次要操作系统的。要学新东西，他得先把其中一些垃圾扔出去。他的最新著作包括《$ git sync murder》、《TLS Mastery》和《SNMP Mastery》。你读到这篇时《DNSSEC Mastery》本该已出版，但他懒，所以多半还没出。更多信息见 <https://mwl.io>。

@@ -1,5 +1,8 @@
 # 读者来信
 
+- 原文链接：[We Get Letters](https://freebsdfoundation.org/wp-content/uploads/2021/03/We-Get-Letters.pdf)
+- 作者：MICHAEL W LUCAS
+
 噢，慷慨、华丽、无偿的 FreeBSD 期刊来信答疑者：
 
 FreeBSD 13 随时可能发布。它有一堆我急切想上手的新特性，但我对全新版本心怀戒备。关于何时升级，有何建议？
@@ -58,4 +61,6 @@ DNO：
 
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
-MICHAEL W LUCAS 最近出版的图书包括《SNMP Mastery》、《Cash Flow for Creators》和《Drinking Heavy Water》，以及更多作品，详见 <https://mwl.io>。绝不允许他靠近用户。
+---
+
+**MICHAEL W LUCAS** 最近出版的图书包括《SNMP Mastery》、《Cash Flow for Creators》和《Drinking Heavy Water》，以及更多作品，详见 <https://mwl.io>。绝不允许他靠近用户。

@@ -1,7 +1,7 @@
 # FreeBSD 本月动态
 
 - 原文：[This Month in FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2016/06/This-Month-in-FreeBSD.pdf)
-- 作者：Dru Lavigne
+- 作者：**Dru Lavigne**
 
 本月，我们采访了 Benedict Reuschling。他最近参加了在埃森举办的第二届黑客马拉松，并在柏林的开源数据中心大会上发表演讲。Benedict 在德国达姆施塔特应用技术大学教授面向软件开发者的 Unix 课程，同时担任 FreeBSD 文档导师、FreeBSD 德语翻译团队成员、FreeBSD 基金会董事，以及 BSD 认证集团的监考人。他对面对面黑客马拉松的重要性以及参与非 BSD 会议分享了一些有趣的见解。
 

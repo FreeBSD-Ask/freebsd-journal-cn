@@ -46,7 +46,7 @@ BeagleBone 和树莓派等新兴 ARM 系统引发了开发者对 FreeBSD/ARM 的
 
 - BeagleBone Black。
 - 5V 电源或 Mini-USB 线。
-- 4GB 或更大的容量的存储卡。
+- 4GB 或更大容量的存储卡。
 - 串口线缆，如 Adafruit #954 或 FTDI TTL-232R-3V3（可选但强烈建议）。
 
 ### 1. 构建或下载 FreeBSD 镜像

@@ -1,7 +1,7 @@
 # SVN 动态
 
 - 原文：[svn update](https://freebsdfoundation.org/wp-content/uploads/2016/06/svn-update.pdf)
-- 作者：Steven Kreuzer
+- 作者：**Steven Kreuzer**
 
 过去几年，我们看到对 ARM 这一系列精简指令集计算（RISC）处理器的兴趣与日俱增。其爆炸式流行部分归功于 BeagleBone 和树莓派等廉价单板计算机，它们为人们提供了简单而强大的实验平台。在生产环境中，IT 专业人员也把目光投向 ARM，以扩展基础设施，同时尝试降低功耗和散热成本。
 

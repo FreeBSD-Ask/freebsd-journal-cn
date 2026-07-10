@@ -1,7 +1,7 @@
 # FreeBSD 在 Cavium ThunderX 片上系统上的运行
 
 - 原文：[FreeBSD on Cavium ThunderX System on a Chip](https://freebsdfoundation.org/wp-content/uploads/2016/06/FreeBSD-on-Cavium-ThunderZ-System-on-a-Chip.pdf)
-- 作者：Zbigniew Bodek 和 Wojciech Macek
+- 作者：**Zbigniew Bodek** 和 **Wojciech Macek**
 
 本文描述 FreeBSD 操作系统向 Cavium ThunderX CN88XX 片上系统（SoC）的移植工作。ThunderX 是新推出的 ARM64（ARMv8）SoC，面向高性能和服务器市场。在 ARM 阵营中，目前只有它能将多达 96 个 CPU 核心集成到系统中，并拥有使其成为现实的技术。
 

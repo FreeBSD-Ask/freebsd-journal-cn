@@ -1,6 +1,6 @@
 # FreeBSD 笔记本评测
 
-**作者：** George V. Neville-Neil
+作者：**George V. Neville-Neil**
 
 ## 在笔记本上运行 FreeBSD，从未有过的更好时机
 
@@ -85,5 +85,7 @@ X270 与 T470 一样，在 FreeBSD 上运行良好，但更小更轻。如果你
 ## 结论
 
 如果你是 FreeBSD 的真心粉丝，想尽可能在任何地方都使用它，这在现代笔记本上完全可行，且不必在加速图形、长电池续航、挂起/恢复等重要功能上妥协。如果你能再配备两块硬盘并使用 ZFS 镜像，还能获得更安全的笔记本体验。关注 FreeBSD Laptop Wiki 页面可获取哪些笔记本与 FreeBSD 兼容良好的最新信息；如果你购买了不在列表上的型号，请考虑将你的信息贡献到 Wiki，这是帮助我们开源系统前进的方式。•
+
+---
 
 **GEORGE V. NEVILLE-NEIL** 出于兴趣和盈利而从事网络与操作系统代码工作。他还教授与编程相关的各类课程。他的兴趣领域包括代码考古、操作系统、网络和时间协议。他与 Marshall Kirk McKusick 和 Robert N. M. Watson 合著了 The Design and Implementation of the FreeBSD Operating System。十多年来，他以 Kode Vicious 之名撰写专栏。他在波士顿东北大学获得计算机科学学士学位，是 ACM、Usenix 协会和 IEEE 的会员。他热爱骑行与旅行，现居纽约市。

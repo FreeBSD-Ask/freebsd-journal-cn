@@ -1,7 +1,7 @@
 # 基金会来信：FreeBSD 为最新 64 位架构做好了更充分的准备
 
 - 原文：[Foundation Letter: FreeBSD is Even Better ARMed for the Latest 64-bit Architecture](https://freebsdfoundation.org/wp-content/uploads/2016/06/Foundation-Letter.pdf)
-- 作者：George Neville-Neil
+- 作者：**George Neville-Neil**
 
 致 FreeBSD 期刊编辑委员会
 
