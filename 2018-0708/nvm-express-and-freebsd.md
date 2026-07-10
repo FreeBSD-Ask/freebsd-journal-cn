@@ -1,6 +1,6 @@
 # NVM Express 与 FreeBSD
 
-作者：Jim Harris 与 Warner Losh
+作者：**Jim Harris** 与 **Warner Losh**
 
 NVM Express（NVMe）已迅速成为通过 PCI Express 进行高性能非易失性存储器访问的主导标准。FreeBSD 于 2012 年加入对 NVMe 的支持，使 FreeBSD 能够利用每个 NVMe 设备可提供超过 500,000 IO/s 的设备1。Netflix 等公司迅速转向在 FreeBSD 上部署 NVMe 存储，使得 FreeBSD 的 NVMe 子系统现在帮助驱动北美洲互联网流量的很大一部分2。在本文中，我们描述 NVMe 规范以及 FreeBSD 对该规范的实现，并提供 FreeBSD 用于监控和管理 NVMe 存储的实用工具概览。
 

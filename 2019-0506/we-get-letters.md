@@ -1,6 +1,6 @@
 # 读者来信
 
-作者：Michael W Lucas
+作者：**Michael W Lucas**
 
 <letters@freebsdjournal.org>
 
