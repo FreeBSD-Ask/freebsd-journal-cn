@@ -30,7 +30,7 @@
 
 你想要观看受 DRM 保护的流媒体？
 
-你想要做点真正荒唐的事，比如出版一本书？一本使用**多种字体**的书？
+你想要做点真正荒唐的事，比如出版一本书？一本使用 **多种字体** 的书？
 
 这些都是痛苦。痛苦会不断加剧，直到你解决根本问题（系统管理法则第 22 条）。你通过学习来克服每一种痛苦。你知道得越多，克服痛苦的能力就越强。练习足够多，你几乎能征服一切精美的、无法解决的剧痛，而忍受这些剧痛对于你生活中非计算部分（也就是”重要”的部分）是极好的训练。
 
@@ -39,6 +39,6 @@
 从控制台起步，逐步搭建出一个可用的桌面，这教给你的东西会超出你的想象。具体来说，它会教会你：你当初应该去买鸡。
 
 有问题想问 Michael？
-发送至 [letters@freebsdjournal.](mailto:letters@freebsdjournal.org)org
+发送至 [letters@freebsdjournal.](mailto:letters@freebsdjournal.org) org
 
 Michael W Lucas 是《Absolute FreeBSD》《Run Your Own Mail Server》和《$ git commit murder》的作者。腰部安装键盘这件事完全是真的。了解更多请访问 <https://mwl.io>。

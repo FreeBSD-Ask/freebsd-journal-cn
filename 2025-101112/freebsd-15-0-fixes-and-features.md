@@ -3,13 +3,13 @@
 - 原文：[FreeBSD 15.0: Fixes and Features](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-15-0/freebsd-15-0-fixes-and-features/)
 - 作者：John Baldwin
 
-FreeBSD 社区持续推进 15.0 的发布。相较于 2023 年 11 月发布的 14.0，15.0 版本包含了大量新特性、改进和 bug 修复。下面列出了一些变更要点，但更多细节可参见[发布说明](https://www.freebsd.org/releases/15.0R/relnotes/)。
+FreeBSD 社区持续推进 15.0 的发布。相较于 2023 年 11 月发布的 14.0，15.0 版本包含了大量新特性、改进和 bug 修复。下面列出了一些变更要点，但更多细节可参见 [发布说明](https://www.freebsd.org/releases/15.0R/relnotes/)。
 
 ## 改进项目结构
 
 在过去两年中，FreeBSD 的开发者虽然合并了大量补丁，同时也重构了项目的若干流程和结构。这些变更旨在优化开发工作流程，合理规划开发者的时间。
 
-在 14.0 发布后不久，Colin Percival 提出了对 FreeBSD 发布计划的若干修改。正如他在今年早些时候的[期刊文章](https://freebsdfoundation.org/our-work/journal/browser-based-edition/downstreams/freebsd-release-engineering-a-new-sheriff-is-in-town/)中详细说明的那样，新计划设定了主版本和次版本发布的固定节奏。15.0 是遵循该新计划的第一个主版本。
+在 14.0 发布后不久，Colin Percival 提出了对 FreeBSD 发布计划的若干修改。正如他在今年早些时候的 [期刊文章](https://freebsdfoundation.org/our-work/journal/browser-based-edition/downstreams/freebsd-release-engineering-a-new-sheriff-is-in-town/) 中详细说明的那样，新计划设定了主版本和次版本发布的固定节奏。15.0 是遵循该新计划的第一个主版本。
 
 在去年的 BSDCan 大会上，FreeBSD 核心团队宣布成立了新的源代码管理团队来管理源代码仓库。将诸如 src commit 权限等任务委派给该团队，使核心团队能够将精力集中于整个项目的战略规划。
 

@@ -7,7 +7,7 @@
 
 与此同时，在等待 14.0 登上你身边的 CDN 服务器之际，本期提供了不少精彩内容供你阅读。
 
-Tom Jones 继续撰写他名为"回忆录"的专栏。本期中，Tom 采访了 Warner Losh——他是长期 FreeBSD 贡献者，以烧坏笔记本电脑等轶事闻名。
+Tom Jones 继续撰写他名为 "回忆录" 的专栏。本期中，Tom 采访了 Warner Losh——他是长期 FreeBSD 贡献者，以烧坏笔记本电脑等轶事闻名。
 
 Benedict Reuschling 为读者详细讲解了如何使用 `poudriere.8` 构建本地软件包——从设置自定义选项到向多台客户端机器部署已签名的软件包仓库。此外，在软件包方面，Charlie Li 简要介绍了 Python 生态中打包扩展的历史，以及将 FreeBSD 的 Ports 树适配到最新版本的工作。
 

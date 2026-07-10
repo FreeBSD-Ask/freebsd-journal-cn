@@ -9,7 +9,7 @@ Webhook 是一种基于 HTTP 的事件驱动远程回调协议，允许从几乎
 
 最简单的 Webhook 可以只是智能手机浏览器中一个加书签的链接，较复杂的版本可能需要强认证和授权。
 
-虽然 Ansible 和 Puppet 等大型自动化工具集已经存在，但有时候更简单的方案就够了。Webhook 正是如此，让你能够按需安全地在远程计算机上执行任务。调用 webhook 可以看作是"踢一脚"，这也是本文标题的由来。
+虽然 Ansible 和 Puppet 等大型自动化工具集已经存在，但有时候更简单的方案就够了。Webhook 正是如此，让你能够按需安全地在远程计算机上执行任务。调用 webhook 可以看作是 "踢一脚"，这也是本文标题的由来。
 
 ## 集成
 
@@ -271,7 +271,7 @@ Content-Type : text/plain; charset=utf-8
 freebsd otutahi
 ```
 
-更复杂的示例可在 port 的 [webhook.yaml 示例](https://cgit.freebsd.org/ports/tree/www/webhook/files/webhook.yaml) 或[详细文档](https://github.com/adnanh/webhook/tree/master/docs)中找到。
+更复杂的示例可在 port 的 [webhook.yaml 示例](https://cgit.freebsd.org/ports/tree/www/webhook/files/webhook.yaml) 或 [详细文档](https://github.com/adnanh/webhook/tree/master/docs) 中找到。
 
 ## 保护 Webhook 内容
 

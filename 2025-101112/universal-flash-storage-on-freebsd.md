@@ -54,7 +54,7 @@
 ## 主要优势（高性能、低功耗）
 
 * **性能：** 相比 eMMC 的半双工并行接口，UFS 的全双工高速串行接口提供更高带宽和更低延迟。提交路径轻量化，基于队列、DMA 和中断构建。因此，即使仅使用单队列，性能也很稳定，多循环队列（MCQ）在多核系统上进一步提高了可扩展性。WriteBooster 利用 NAND 的 SLC 区域进一步提升突发写入性能。
-* **功耗效率：** UIC 链路仅在 I/O 活跃时提升档位，空闲时迅速降至低功耗状态。标准定义了电源状态切换，从而在热量和功耗受限的移动设备中延长电池寿命。实际上，有报道显示，使用 UFS 而非 NVMe 的平板电脑可额外延长[约 30-90 分钟的续航](https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Duet_3_11IAN8/IdeaPad_Duet_3_11IAN8_Spec.pdf)。
+* **功耗效率：** UIC 链路仅在 I/O 活跃时提升档位，空闲时迅速降至低功耗状态。标准定义了电源状态切换，从而在热量和功耗受限的移动设备中延长电池寿命。实际上，有报道显示，使用 UFS 而非 NVMe 的平板电脑可额外延长 [约 30-90 分钟的续航](https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Duet_3_11IAN8/IdeaPad_Duet_3_11IAN8_Spec.pdf)。
 * **兼容性：** UFS 使用 SCSI 命令子集，现有 SCSI 基础设施可以复用。在 FreeBSD 中，CAM 处理 SCSI 命令，而 UFS 驱动将 CAM 生成的 SCSI 命令封装到 UPIU 中传递给 UTP，使其与 CAM 的集成十分简便。
 
 ## UFS 的历史与后续
@@ -65,7 +65,7 @@ UFS 标准以 JESD220（UFS）发布，主控器接口以 JESD223（UFSHCI）发
 
 ## 驱动概览
 
-我于 2024 年 7 月在 freebsd-hackers 邮件列表上提出了 UFS 设备驱动的构想，并于 2025 年 1 月开始进行分析与设计。幸运的是，Warner Losh（现为我的导师）回复并在 FreeBSD 存储架构方面提供了宝贵指导。FreeBSD 手册和 BSD 大会的演讲也提供了帮助。经过约两个月对 CAM、SCSI 和 NVMe 驱动的分析，我设计了 UFS 驱动。由于 NVMe 与 UFS 结构相似，我复用了许多相同的设计思路。我在 2025 年 5 月 16 日提交了[早期代码评审](https://reviews.freebsd.org/D50370)。经过多轮审查，该工作于 2025 年 6 月 15 日被合并，并内置在 FreeBSD 15.0 中。
+我于 2024 年 7 月在 freebsd-hackers 邮件列表上提出了 UFS 设备驱动的构想，并于 2025 年 1 月开始进行分析与设计。幸运的是，Warner Losh（现为我的导师）回复并在 FreeBSD 存储架构方面提供了宝贵指导。FreeBSD 手册和 BSD 大会的演讲也提供了帮助。经过约两个月对 CAM、SCSI 和 NVMe 驱动的分析，我设计了 UFS 驱动。由于 NVMe 与 UFS 结构相似，我复用了许多相同的设计思路。我在 2025 年 5 月 16 日提交了 [早期代码评审](https://reviews.freebsd.org/D50370)。经过多轮审查，该工作于 2025 年 6 月 15 日被合并，并内置在 FreeBSD 15.0 中。
 
 开发主要通过 QEMU 的 UFS 仿真完成，随后在实际硬件上验证：包括配备 UFS 2.0/3.1/4.0 设备的 Intel Lakefield 和 Alder Lake 平台。我也曾计划在 ARM SoC 上测试，但合适硬件难以获取。
 

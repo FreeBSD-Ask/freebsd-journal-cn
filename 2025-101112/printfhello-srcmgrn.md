@@ -15,7 +15,7 @@ srcmgr 是由 FreeBSD src 开发者组成的团队，其目标是帮助组织和
 
 尽管早些时候已有组建 srcmgr 团队的想法，但我最初的接触是在 2023 年 BSDCan 与 John Baldwin 和 Ed Maste 的交流中。我们认识到核心团队（Core）往往负担过重，无法主动引导 src 的开发。同时，我对我们处理 bug 报告、新贡献者和代码评审的整体方式感到沮丧。作为个人开发者，要在完成常规有偿工作之余，还兼顾这些事务，实在是太耗费精力。
 
-那么，srcmgr 在实际工作中做什么呢？我们的[章程](https://www.freebsd.org/srcmgr/charter/)概述了主要职责。我们每两周开一次会，约两小时；前一小时用于审查议程事项、讨论并提供状态更新，后一小时通常用于处理最近的[src bug 报告](https://bugs.freebsd.org/bugzilla/)和/或[GitHub pull requests](https://github.com/freebsd/freebsd-src/pulls)。
+那么，srcmgr 在实际工作中做什么呢？我们的 [章程](https://www.freebsd.org/srcmgr/charter/) 概述了主要职责。我们每两周开一次会，约两小时；前一小时用于审查议程事项、讨论并提供状态更新，后一小时通常用于处理最近的 [src bug 报告](https://bugs.freebsd.org/bugzilla/) 和/或 [GitHub pull requests](https://github.com/freebsd/freebsd-src/pulls)。
 
 该团队的核心职责是对 src commit bit 投票：当一名 src committer 与贡献者合作，并认为该贡献者能够合理使用 src commit 权限时，可以向 srcmgr 提出申请，由团队投票决定是否授予 commit 权限。这个流程通常比较直接、无争议，实际上消耗的时间很少。
 

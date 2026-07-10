@@ -5,7 +5,7 @@
 
 ![WiFi 开发](../png/2025-789/freebsd-wifi-development-part-2-working-on-a-driver-01.png)
 
-这是 FreeBSD 上 WiFi 开发系列的第二篇文章。在[第一篇文章](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/freebsd-wifi-development/)中，我们介绍了 WiFi/80211 网络的一些术语，简要讲解了典型的网络架构，并展示了如何使用 `ifconfig` 和一些无线网卡创建 station、host ap 和 monitor 模式的 WLAN 接口。我们还介绍了实现 WiFi 子系统的两个不同内核层 —— **驱动** 和 **net80211**。
+这是 FreeBSD 上 WiFi 开发系列的第二篇文章。在 [第一篇文章](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/freebsd-wifi-development/) 中，我们介绍了 WiFi/80211 网络的一些术语，简要讲解了典型的网络架构，并展示了如何使用 `ifconfig` 和一些无线网卡创建 station、host ap 和 monitor 模式的 WLAN 接口。我们还介绍了实现 WiFi 子系统的两个不同内核层 —— **驱动** 和 **net80211**。
 
 **驱动**：如 iwx、rtwn 和 ath，通过 USB 或 PCIe 等物理总线与无线网卡通信，通常通过固件接口实现。
 
@@ -13,7 +13,7 @@
 
 为了在硬件需求上保持灵活性，**net80211** 层本身能实现 IEEE 802.11 状态机的大多数部分。这种架构使我们能够用标准接口与整个网络栈集成，屏蔽不同网卡支持能力的差异。同时，它还能支持纯软件的 WLAN 适配器，这在测试环境中非常有用。
 
-网卡对功能的支持程度不同，范围从 **FullMAC 接口**（几乎所有处理都在网卡上直接完成），到几乎完全依赖 **net80211** 堆栈，仅由网卡管理射频。在 FullMAC 卡中，固件会为操作系统驱动暴露配置接口，所有的数据包收发和管理操作（如切换信道、扫描）都由固件完成。OpenBSD 和 NetBSD 中的 **bwfm Broadcom 驱动**就是 FullMAC 驱动的例子。
+网卡对功能的支持程度不同，范围从 **FullMAC 接口**（几乎所有处理都在网卡上直接完成），到几乎完全依赖 **net80211** 堆栈，仅由网卡管理射频。在 FullMAC 卡中，固件会为操作系统驱动暴露配置接口，所有的数据包收发和管理操作（如切换信道、扫描）都由固件完成。OpenBSD 和 NetBSD 中的 **bwfm Broadcom 驱动** 就是 FullMAC 驱动的例子。
 
 其他网卡需要 **net80211** 堆栈提供多种服务以支持驱动的运行。一些设备（如 iwx）提供扫描和加入网络等管理接口，但大多数操作仍由 **net80211** 完成。
 

@@ -660,6 +660,7 @@ This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '100.124.236.28' (ED25519) to the list of known hosts.
 root@vmtest:~ #
+
 ```
 
 ## 服务发现
@@ -2055,7 +2056,7 @@ datacenter: http://127.0.0.1:8888
 
 Overlord 能为你做的事情远不止本文件所展示的内容，更多示例请参见 [Wiki](https://github.com/DtxdF/overlord/wiki)。
 
-Overlord 是一个较新的项目，仍有很大的改进空间，未来也将加入更多功能以提升可用性。如果你愿意支持该项目，请[考虑捐款](https://www.patreon.com/AppJail)。
+Overlord 是一个较新的项目，仍有很大的改进空间，未来也将加入更多功能以提升可用性。如果你愿意支持该项目，请 [考虑捐款](https://www.patreon.com/AppJail)。
 
 ---
 

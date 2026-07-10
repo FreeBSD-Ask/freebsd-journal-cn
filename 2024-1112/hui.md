@@ -5,7 +5,7 @@
   
 ## 在会议前
 
-最初产生参加 EuroBSDCon 的念头是在 2023 年。当时，[Coimbra](https://2023.eurobsdcon.org/) 本会是很适合多年后重返会议的好地点，但遗憾的是我未能成行。当[都柏林的注册通知](https://2024.eurobsdcon.org/)发布时，我决定这就是合适的时机。与此同时，[BSD Cafe](https://bsd.cafe/) 项目也已启动，其所获得的热烈反响给了我很大的动力。我想可以提议一场[演讲](https://events.eurobsdcon.org/2024/talk/LNMLZX/)。我工作中每天接触 BSD 系统，服务于各种客户，分享我如何管理（以及现在仍然在管理）从 Linux 到 BSD 系统的过渡，可能会引起社区的兴趣。
+最初产生参加 EuroBSDCon 的念头是在 2023 年。当时，[Coimbra](https://2023.eurobsdcon.org/) 本会是很适合多年后重返会议的好地点，但遗憾的是我未能成行。当 [都柏林的注册通知](https://2024.eurobsdcon.org/) 发布时，我决定这就是合适的时机。与此同时，[BSD Cafe](https://bsd.cafe/) 项目也已启动，其所获得的热烈反响给了我很大的动力。我想可以提议一场 [演讲](https://events.eurobsdcon.org/2024/talk/LNMLZX/)。我工作中每天接触 BSD 系统，服务于各种客户，分享我如何管理（以及现在仍然在管理）从 Linux 到 BSD 系统的过渡，可能会引起社区的兴趣。
 
 我还记得那一刻，6 月时我点击了“提交”。我对妻子说：“无论是作为讲者还是参与者，九月我们都会去都柏林。”她和我一起工作，所以她也会参加这次会议。这是近年来我最好的决定。
 
@@ -28,7 +28,7 @@
 
 ![EuroBSDCon 讲者胸卡](../png/2024-1112/hui-2.jpg)
 
-EuroBSDCon 在[都柏林大学学院（UCD）的 O'Reilly Hall](https://www.ucd.ie/universityclub/conferenceandbanqueting/theoreillyhall/) 举行——我觉得这是非常合适且舒适的地点。在入口处，有两个区域：右侧是签到和注册处（有三种颜色的胸卡：橙色是组织者和工作人员，白色是与会者，绿色是讲者）；左侧是 T 恤和更多工作人员及朋友的区域。到达时，我一自我介绍就受到了热情友好的欢迎。Henning Brauer 递给我们胸卡——看到那个绿色的胸卡，我心里充满了骄傲。和他在一起的还有 Katie McMillan，我之前从未与她交流过——即使在网上也没有，但我曾看到过她在 BSDCan 上的演讲视频，所以见到她非常高兴。另一桌旁坐着几位人士，包括 Mischa Peters（他给了我一件 [OpenBSD.Amsterdam](https://openbsd.amsterdam) 的 T 恤），我的“同事”Jeroen Janssen（aka h3artbl33d，[exquisite.social](https://exquisite.social/) Mastodon 实例的管理员），Peter Hansteen、Paul de Weerd、René Ladan、Janne Johansson、Guido Van Rooij、Michael Reim、Benny Siegert 等。我多年来一直敬佩的人们都聚集在那里。我们聊了一个多小时，随着时间推移，有些人加入，也有些人离开。我早就知道 BSD 社区是积极的，但我惊讶于各个小组之间的凝聚力。我立刻感到非常自在，那种身处熟悉的地方、在亲密朋友中间的感觉。
+EuroBSDCon 在 [都柏林大学学院（UCD）的 O'Reilly Hall](https://www.ucd.ie/universityclub/conferenceandbanqueting/theoreillyhall/) 举行——我觉得这是非常合适且舒适的地点。在入口处，有两个区域：右侧是签到和注册处（有三种颜色的胸卡：橙色是组织者和工作人员，白色是与会者，绿色是讲者）；左侧是 T 恤和更多工作人员及朋友的区域。到达时，我一自我介绍就受到了热情友好的欢迎。Henning Brauer 递给我们胸卡——看到那个绿色的胸卡，我心里充满了骄傲。和他在一起的还有 Katie McMillan，我之前从未与她交流过——即使在网上也没有，但我曾看到过她在 BSDCan 上的演讲视频，所以见到她非常高兴。另一桌旁坐着几位人士，包括 Mischa Peters（他给了我一件 [OpenBSD.Amsterdam](https://openbsd.amsterdam) 的 T 恤），我的“同事”Jeroen Janssen（aka h3artbl33d，[exquisite.social](https://exquisite.social/) Mastodon 实例的管理员），Peter Hansteen、Paul de Weerd、René Ladan、Janne Johansson、Guido Van Rooij、Michael Reim、Benny Siegert 等。我多年来一直敬佩的人们都聚集在那里。我们聊了一个多小时，随着时间推移，有些人加入，也有些人离开。我早就知道 BSD 社区是积极的，但我惊讶于各个小组之间的凝聚力。我立刻感到非常自在，那种身处熟悉的地方、在亲密朋友中间的感觉。
 
 其间，Franco Fichtner 到了，准备做相同的技术检查。[OPNSense](https://opnsense.org/) 是我为客户选择路由器/防火墙解决方案时的首选之一，和他直接交流真的很愉快。
 
@@ -80,7 +80,7 @@ Patrick McEvoy，一如既往地高效和专业，帮我戴上了麦克风，站
 
 随着我继续讲述，我看到观众的注意力越来越集中。多年来，BSD 的关注度有所下降。许多大公司在多年忽视开源解决方案后，开始拥抱 Linux 及其生态系统。虽然这给整个开源界带来了重大推动，但也间接减少了其他操作系统如 FreeBSD 的采用。有时原因是公司政治、技术储备（“更容易找到有 Linux 经验的人”）或者纯粹的意识形态或商业动机（“大家都知道 Linux 是什么，所以它更容易销售”）。但我做的恰恰相反。我不鄙视 Linux，可我更喜欢 BSD。而人们也想知道这是怎么做到的。
 
-有一次，当我提到我关于[一台 NetBSD 服务器运行超过 10 年无人工干预](https://it-notes.dragas.net/2023/08/27/that-old-netbsd-server-running-since-2010/)的博客文章时，我看到前排的男士睁大了眼睛：“我不敢相信！你就是那个家伙！”这是美妙的时刻：他早就关注我的博客了，却没意识到我就是演讲者。在演讲结束后，我们聊了一会儿，他说了一些非常友善的话，我非常感激。谢谢你，Raymundo Soto！
+有一次，当我提到我关于 [一台 NetBSD 服务器运行超过 10 年无人工干预](https://it-notes.dragas.net/2023/08/27/that-old-netbsd-server-running-since-2010/) 的博客文章时，我看到前排的男士睁大了眼睛：“我不敢相信！你就是那个家伙！”这是美妙的时刻：他早就关注我的博客了，却没意识到我就是演讲者。在演讲结束后，我们聊了一会儿，他说了一些非常友善的话，我非常感激。谢谢你，Raymundo Soto！
 
 ![演讲结束后的致谢场景](../png/2024-1112/hui-5.jpg)
 
@@ -109,7 +109,7 @@ Patrick McEvoy，一如既往地高效和专业，帮我戴上了麦克风，站
 
 接下来的讲座选择很难，因为每个都非常有趣。我最终选择了 Alexander Bluhm 的演讲：《数据包在 OpenBSD 网络堆栈中的旅程》。非常有趣，Alexander 逐步展示了数据包的路径，并解释了沿途做出的决策。期间有许多问题和解答，使得讲座更具吸引力。在出口处，我遇到了刚刚做完演讲的 Sven Ruediger，我们交换了几句话。很遗憾没能听他的讲座，因为我听到许多人对他的讲座给予了非常正面的评价。
 
-午餐后，大家集合拍摄了[传统的家庭合影](https://2024.eurobsdcon.org/images/dublin-family-34636.jpg)。
+午餐后，大家集合拍摄了 [传统的家庭合影](https://2024.eurobsdcon.org/images/dublin-family-34636.jpg)。
 
 仅仅几分钟，我们便在 UCD 大楼外集合好了——摄影师背后是湖泊——拍下了这张照片。200 多人很快排成了整齐的队伍。即便在这里，BSD 社区的高效也得到了体现。那一刻充满了欢乐与正能量。“家庭”合影这一词语比“团体”合影更能完美传达当时的氛围。
 接下来是另一个艰难的选择：Kirk McKusick、David Brooks 还是 Jason Tubnor。我选择了 Jason 的讲座：《为澳大利亚健康行业的 NFP/NGO 建立 SD-WAN 设备》。Jason 的方法和我类似，详细说明了他在构建基础设施时遇到的有趣问题和挑战。我也喜欢用技术解决问题，而不仅仅是使用“盒子”，因此我非常享受他的演讲。
@@ -128,7 +128,7 @@ Patrick McEvoy，一如既往地高效和专业，帮我戴上了麦克风，站
 
 ## 最后的想法
 
-即使是 Liam Proven（我在活动中没有与他交谈）也参加了这次活动，几周后，他在《The Register》上写了一篇[关于此次活动和我的演讲的文章](https://www.theregister.com/2024/10/08/switching_from_linux_to_bsd/)，我非常感谢。
+即使是 Liam Proven（我在活动中没有与他交谈）也参加了这次活动，几周后，他在《The Register》上写了一篇 [关于此次活动和我的演讲的文章](https://www.theregister.com/2024/10/08/switching_from_linux_to_bsd/)，我非常感谢。
 
 在见到所有这些人并参加讲座之后，我意识到 BSD 系统比以往任何时候都更加活跃，开发工作正在持续推进，FreeBSD 基金会和开发人员有着非常明确的计划，知道如何前进、需要什么，以及如何推动这些计划的实现。这次会议极大地丰富了我以及其他与会者，因为它由那些每天与正在讨论的系统打交道的人主办。几乎没有商业炒作，只有大量真正的技术内容。丰富的内涵。巨大的人员和技术价值。
 
