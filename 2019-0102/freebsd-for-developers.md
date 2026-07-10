@@ -102,4 +102,6 @@ FreeBSD 以文档优秀著称。软件开发方面也是如此。你多少次搜
 
 FreeBSD 拥有诸多让软件开发者生活更轻松的特性，例如 Jail、bhyve、ZFS 与 DTrace。系统中也能找到非常有用的文档。更不用说大量等待被使用的第三方软件。学习新语言的好方式之一是用它写些游戏——当然，这完全可以在 FreeBSD 上完成！所以别再犹豫，赶紧搭建你的 FreeBSD 开发者工作站！ •
 
+---
+
 **MARIUSZ ZABORSKI** 是 Fudo Security 的 QA 与开发经理。自 2015 年起自豪地持有 FreeBSD 提交权限。Mariusz 的主要兴趣领域是操作系统安全与底层编程。在 Fudo Security，他领导一支团队，开发用于监控、记录并控制 IT 基础设施流量的最先进解决方案。2018 年，Mariusz 组织了波兰 BSD 用户组。业余时间，他在 <https://oshogbo.vexillium.org> 撰写博客。
