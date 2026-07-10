@@ -2,7 +2,7 @@
 
 作者：**Jim Harris** 与 **Warner Losh**
 
-NVM Express（NVMe）已迅速成为通过 PCI Express 进行高性能非易失性存储器访问的主导标准。FreeBSD 于 2012 年加入对 NVMe 的支持，使 FreeBSD 能够利用每个 NVMe 设备可提供超过 500,000 IO/s 的设备1。Netflix 等公司迅速转向在 FreeBSD 上部署 NVMe 存储，使得 FreeBSD 的 NVMe 子系统现在帮助驱动北美洲互联网流量的很大一部分2。在本文中，我们描述 NVMe 规范以及 FreeBSD 对该规范的实现，并提供 FreeBSD 用于监控和管理 NVMe 存储的实用工具概览。
+NVM Express（NVMe）已迅速成为通过 PCI Express 进行高性能非易失性存储器访问的主导标准。FreeBSD 于 2012 年加入对 NVMe 的支持，使 FreeBSD 能够利用可提供超过 500,000 IO/s 的 NVMe 设备1。Netflix 等公司迅速转向在 FreeBSD 上部署 NVMe 存储，使得 FreeBSD 的 NVMe 子系统现在帮助驱动北美洲互联网流量的很大一部分2。在本文中，我们描述 NVMe 规范以及 FreeBSD 对该规范的实现，并提供 FreeBSD 用于监控和管理 NVMe 存储的实用工具概览。
 
 让我们首先描述 NVMe 中使用的一些常见术语。NVMe SSD 被称为 NVMe 控制器，大致相当于 SCSI HBA 或 AHCI 控制器。主要差异在于，对于 NVMe，介质位于控制器本身内部——控制器与其介质之间没有单独的协议或线缆。NVMe 控制器内的存储介质被分组为一个或多个 NVMe 命名空间。命名空间可以被认为大致相当于一个 SCSI LUN。这种将 HBA 和介质组合到一个单元中的做法通过简化所需协议并消除抽象层来减少开销。该设计利用 PCIe 的能力，通过支持无锁请求排队来消除驱动瓶颈。
 
