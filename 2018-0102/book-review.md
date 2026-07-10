@@ -1,6 +1,6 @@
 # 书评：*FreeBSD Mastery: Specialty Filesystems*
 
-作者：MATT JORAS
+作者：**MATT JORAS**
 
 *FreeBSD Mastery: Specialty Filesystems*
 
