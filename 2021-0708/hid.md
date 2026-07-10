@@ -1,7 +1,7 @@
 # FreeBSD 13 中的人机接口设备 (HID) 支持
 
 - 原文链接：[Human Interface Device (HID) Support in FreeBSD 13](https://freebsdfoundation.org/wp-content/uploads/2021/08/Human-Interface-Device-HID-Support-in-FreeBSD-13.pdf)
-- 作者：**VLADIMIR KONDRATYEV**
+- 作者：VLADIMIR KONDRATYEV
 
 HID 类主要由人类用来控制计算机系统操作的设备组成。HID 类设备的典型例子包括键盘、指点设备（如标准鼠标设备、轨迹球和游戏杆）。HID 类的采用主要是为了简化此类设备的安装过程。  
 
@@ -134,7 +134,7 @@ p.1 通过传输抽象层得以消除。
 
 为了解决 p.2 对传统支持的问题，鼠标接口被移除。我们使用内置于 evdev 的字符设备处理程序。
 
-为了减少 p.3 和 p.4 所需的代码量，创建了 hidmap。它基于 HID 和 evdev 是密切相关的事实，我们可以直接将许多 HID 用法映射到 evdev 事件。Listing 3 展示了一个将 Listing 1 中的鼠标报告的 HID 用法映射到 evdev 事件的示例。
+为了减少 p.3 和 p.4 所需的代码量，创建了 hidmap。它基于 HID 和 evdev 是密切相关的事实，我们可以直接将许多 HID 用法映射到 evdev 事件。清单 3 展示了一个将清单 1 中的鼠标报告的 HID 用法映射到 evdev 事件的示例。
 
 ```c
                 HID Usage 映射到 evdev 事件  

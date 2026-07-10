@@ -1,7 +1,7 @@
 # 基金会来信
 
 - 原文链接：[Foundation Letter](https://freebsdfoundation.org/wp-content/uploads/2021/08/JulyAugust_foundation_letter.pdf)
-- 作者：John Baldwin
+- 作者：JOHN BALDWIN
 
 围绕 FreeBSD 的一个迷思是它只适用于服务器环境或作为设备的基础。事实是，FreeBSD 也是一款桌面操作系统。FreeBSD 的基本系统和软件包包含现代图形适配器和输入设备的驱动程序。作为工具箱式的操作系统，FreeBSD 支持从极简窗口管理器到功能齐全的桌面环境等多种图形界面。本期第一篇文章逐一介绍这些选项，解释用户如何按自己的需要定制桌面，并指引到在 FreeBSD 之上构建完整桌面系统的下游项目。接下来的两篇文章深入探讨一些较新的支持桌面的设备驱动程序细节。最后，本期的第四篇文章解释在项目最近从 Subversion 迁移到 Git 后，如何跟上 FreeBSD 的开发进展。
 

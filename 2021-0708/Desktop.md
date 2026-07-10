@@ -1,7 +1,7 @@
 # 通往 FreeBSD 桌面的直线路径
 
 - 原文链接：[A Straight Path to the FreeBSD Desktop](https://freebsdfoundation.org/wp-content/uploads/2021/08/A-Straight-Path-to-the-FreeBSD-Desktop.pdf)
-- 作者：**VERMADEN**
+- 作者：VERMADEN
 
 所以，你想试试 FreeBSD 桌面？  
 
