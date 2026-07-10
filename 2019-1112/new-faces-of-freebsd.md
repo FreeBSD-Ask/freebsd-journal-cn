@@ -14,7 +14,7 @@
 
 你是怎么知道 FreeBSD 的？FreeBSD 哪些方面让你感兴趣？
 
-- 我经 Philip Paeps 和 Tod McQuillin 介绍认识 FreeBSD，那是 2015 年在 HillHacks（`https://hillhacks.in/`）上，一场喜马拉雅山脚下的技术会议。除了 2009 年试过一次 NetBSD，我没深挖过其他形式的 BSD，虽然听说过 FreeBSD。Philip 鼓励我尝试用 FreeBSD 托管 IRC 客户端，因为我一直在笔记本本地跑客户端，关机就掉线很烦。我正想试试 树莓派 2，就想在 RPi2 上跑 FreeBSD/arm 11.0-RELEASE，用 Irssi 搭建 IRC 客户端。这段时间我探索了如何使用 FreeBSD，从源码用 Ports 系统或二进制包管理器安装软件包。从 Linux 背景过来，我以为设置和配置会很麻烦。相反，我发现初始设置和配置更容易、组织得更好。FreeBSD Handbook 中有足够的指南和细节，涵盖从基本安装、初始配置到为第三方软件设置 Ports 的各个步骤。
+- 我经 Philip Paeps 和 Tod McQuillin 介绍认识 FreeBSD，那是 2015 年在 HillHacks（`https://hillhacks.in/`）上，一场喜马拉雅山脚下的技术会议。除了 2009 年试过一次 NetBSD，我没深挖过其他形式的 BSD，虽然听说过 FreeBSD。Philip 鼓励我尝试用 FreeBSD 托管 IRC 客户端，因为我一直在笔记本本地跑客户端，关机就掉线很烦。我正想试试树莓派 2，就想在 RPi2 上跑 FreeBSD/arm 11.0-RELEASE，用 Irssi 搭建 IRC 客户端。这段时间我探索了如何使用 FreeBSD，从源码用 Ports 系统或二进制包管理器安装软件包。从 Linux 背景过来，我以为设置和配置会很麻烦。相反，我发现初始设置和配置更容易、组织得更好。FreeBSD Handbook 中有足够的指南和细节，涵盖从基本安装、初始配置到为第三方软件设置 Ports 的各个步骤。
 
   这期间我发现一个问题阻碍我使用 FreeBSD：我的 Irssi 设置需要连接 ICB 网络的插件，但 Ports 树里没有。我只好手动从源码编译，但每次升级 Irssi 都要重来。所以，在 Philip 和 FreeBSD Handbook 帮助下，我写了第一个对 FreeBSD Ports 系统的贡献——`irc/irssi-icb`（`https://blog.port0.in/2017/04/my-first-freebsd-port`）包。从那以后，我陆续把一些小软件打包进 FreeBSD，既为学习也为做贡献。一段时间后，我最终在 FreeBSD 上搭起了我用的大部分基础设施。进入 BSD 世界让我接触到的另一件事，是为中小型会议做网络。在基于 FreeBSD 的 UniFi 控制器上玩 DHCP、DNS 和 pf（`https://blog.port0.in/2017/07/networking-like-the-big-boys`）是愉快而有趣的练习。
 
