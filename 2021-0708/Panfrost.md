@@ -1,7 +1,7 @@
 # Panfrost 驱动程序
 
 - 原文链接：[The Panfrost Driver](https://freebsdfoundation.org/wp-content/uploads/2021/08/The-Panfrost-Driver.pdf)
-- 作者：**RUSLAN BUKIN**
+- 作者：RUSLAN BUKIN
 
 成熟的操作系统和面向 arm64 平台的新图形驱动程序使我们能够在高端服务器/桌面系统、研究平台、嵌入式环境，甚至是当前的智能手机/个人设备上运行 FreeBSD。
 
@@ -119,7 +119,7 @@ DRM 暴露了一个 API（一组 ioctls），允许用户空间程序向 GPU 发
 
 ### 1. drm-kmod 和 LinuxKPI
 
-DRM 于 2001 年以“drm-kmod”端口的形式出现在 FreeBSD 中，以支持当时的 3D 显卡（也称为 drm1）。从 2010 年到 2012 年，Konstantin Belousov 开发了对新 Intel HD Graphics GPU 的支持，引入了 FreeBSD 基础中的新 DRM 支持（drm2）。
+DRM 于 2001 年以“drm-kmod”端口的形式出现在 FreeBSD 中，以支持当时的 3D 显卡（也称为 drm1）。从 2010 年到 2012 年，Konstantin Belousov 开发了对新 Intel HD Graphics GPU 的支持，引入了 FreeBSD 基本系统中的新 DRM 支持（drm2）。
 
 一个新项目 drm-next 于 2017 年左右启动，旨在支持未修改的 DRM。随着上游频繁更新，支持 drm2（一个移植版本的图形驱动程序）变得越来越困难，因为每次驱动程序更新时都需要通过驱动程序并将 Linux-KPI 转换为 FreeBSD-KPI。
 
