@@ -1,6 +1,6 @@
 # FreeBSD 新面孔
 
-**作者：Dru Lavigne**
+作者：**Dru Lavigne**
 
 本专栏旨在为近期获得提交权限的贡献者提供舞台，向 FreeBSD 社区介绍他们。本期专栏聚焦于 9 月获得 Ports 提交权限的 Sergey Kozlov，以及 10 月获得 Ports 提交权限的 Vinícius Zavam。
 
