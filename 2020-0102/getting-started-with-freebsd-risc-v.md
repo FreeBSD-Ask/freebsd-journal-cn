@@ -195,8 +195,8 @@ umount /dev/md0p1
 
 ## 结语
 
-本文旨在介绍 RISC-V CPU 架构，并让读者能轻松实验 FreeBSD/RISC-V。希望你现在对构建、安装并运行自己的 FreeBSD/RISC-V 系统的能力充满信心。鼓励感兴趣的用户在系统搭建完毕后，继续跟踪变更并更新系统。进一步阅读请查看 FreeBSD wiki 上的 RISC-V 页面（<https://wiki.freebsd.org/riscv>），并订阅 freebsd-riscv 邮件列表（<https://lists.freebsd.org/mailman/listinfo/freebsd-riscv>）。
+本文旨在介绍 RISC-V CPU 架构，并让读者能轻松实验 FreeBSD/RISC-V。希望你现在对构建、安装并运行自己的 FreeBSD/RISC-V 系统充满信心。鼓励感兴趣的用户在系统搭建完毕后，继续跟踪变更并更新系统。进一步阅读请查看 FreeBSD wiki 上的 RISC-V 页面（<https://wiki.freebsd.org/riscv>），并订阅 freebsd-riscv 邮件列表（<https://lists.freebsd.org/mailman/listinfo/freebsd-riscv>）。
 
-诚然，对 RISC-V 整体而言仍处于早期。硬件侧的供货不足与软件侧的不完整支持意味着，RISC-V 的用处目前主要限于研究与专用计算领域。过去几年对软件支持的许多改进与 RISC-V 采用率的提升表明，这种情况不会一直如此，它可能很快会作为更易得的通用计算平台出现。随着 RISC-V 持续成长，
+诚然，RISC-V 整体仍处于早期阶段。硬件侧的供货不足与软件侧的不完整支持意味着，RISC-V 的用处目前主要限于研究与专用计算领域。过去几年对软件支持的许多改进与 RISC-V 采用率的提升表明，这种情况不会一直如此，它可能很快会作为更易得的通用计算平台出现。随着 RISC-V 持续成长，
 
 MITCHELL HORNE 是加拿大滑铁卢大学即将完成本科学业的大学生。他是 FreeBSD src committer，并在过去一年中成为 FreeBSD/RISC-V 移植的主要贡献者之一。
