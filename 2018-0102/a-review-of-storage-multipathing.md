@@ -218,5 +218,3 @@ multipath/mp0  OPTIMAL  da0 (PASSIVE)
 ---
 
 **ALEXANDER MOTIN** 是 iXsystems Inc. OS/服务团队负责人，自 2007 年起成为 FreeBSD 源代码提交者。
-
-ALEXANDER MOTIN 是 iXsystems Inc. OS/服务团队负责人，自 2007 年起担任 FreeBSD 源代码提交者。
