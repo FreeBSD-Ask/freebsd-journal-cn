@@ -1,6 +1,6 @@
 # FreeBSD 硬件黑客入门
 
-作者：Tom Jones
+作者：**Tom Jones**
 
 FreeBSD 是创客和硬件黑客项目的理想平台，因为我们在各类板卡上都提供了扎实且统一的支持。
 
@@ -111,7 +111,7 @@ gpio_22<OUT>, caps:<IN,OUT,PU,PD,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN>
 # gpioctl -f /dev/gpioc1 21 1
 ```
 
-尽情欣赏我们 glorious LED 的光辉吧。
+尽情欣赏我们辉煌的 LED 的光辉吧。
 
 进一步，可以用 `gpioctl` 的 `-t` 标志切换 LED 状态。当你只想让 LED 闪烁时这很有用：
 
@@ -200,10 +200,10 @@ else
 echo $project done building
 if [ "$result" = '"SUCCESS"' ]; then
 echo build suceeded for $project
-gpioctl -f /dev/gpioc2 1 1 #绿色 led
+gpioctl -f /dev/gpioc2 1 1 # 绿色 led
 else
 echo build failed for $project
-gpioctl -f /dev/gpioc0 26 1 #红色 led
+gpioctl -f /dev/gpioc0 26 1 # 红色 led
 fi
 fi
 sleep 60  # 1 分钟
@@ -216,4 +216,4 @@ done
 
 ---
 
-Tom Jones 是苏格兰阿伯丁一家黑客空间（57northhacklab.org.uk）的创始人和理事。他最初为了把一个项目从 Linux 移植过来而开始尝试在 FreeBSD 上做硬件黑客，结果一头扎进了内核黑客的世界。
+**Tom Jones** 是苏格兰阿伯丁一家黑客空间（57northhacklab.org.uk）的创始人和理事。他最初为了把一个项目从 Linux 移植过来而开始尝试在 FreeBSD 上做硬件黑客，结果一头扎进了内核黑客的世界。
