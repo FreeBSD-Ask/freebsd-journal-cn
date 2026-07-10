@@ -1,7 +1,7 @@
 # Capsicum 案例研究：Got
 
 - 原文链接：[Capsicum Case Study: Got](https://freebsdfoundation.org/wp-content/uploads/2021/07/Capsicum-Case-Study-Got.pdf)
-- 作者：**YANG ZHONG**
+- 作者：YANG ZHONG
 
 我在 FreeBSD 基金会的实习期间与 Capsicum 一起工作了一段时间。本文详细介绍了我将 Capsicum 沙箱框架应用于名为 Got 的大型程序的过程。在此过程中，我将简单而具体地介绍 Capsicum：它解决了什么问题、其解决方案背后的思路以及如何使用它。我们将发现 Got 非常适合 Capsicum，并且我将讨论 Got 的结构如何使该程序更适合 Capsicum。
 
@@ -161,4 +161,4 @@ static const struct got_error *
 
 ---
 
-**YANG ZHONG** 正在滑铁卢大学学习计算机科学。他曾在 2020 年秋季学期作为实习生在 FreeBSD 基金会工作，并在 2021 年春季学期继续实习。在空闲时间，他喜欢为滑铁卢大学数学系的学生出版物 mathNEWS 写作。
+**YANG ZHONG** 正在滑铁卢大学学习计算机科学。作为大学合作教育项目的一部分，他曾在 2020 年秋季学期在 FreeBSD 基金会实习，并在 2021 年春季学期继续实习。在空闲时间，他喜欢为滑铁卢大学数学系的学生出版物 mathNEWS 写作。

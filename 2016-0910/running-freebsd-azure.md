@@ -1,7 +1,7 @@
 # 在 Azure 上运行 FreeBSD
 
 - 原文：[Running FreeBSD Azure](https://freebsdfoundation.org/wp-content/uploads/2016/10/Running-FreeBSD-Azure.pdf)
-- 作者：**Sepherosa Ziehuau**
+- 作者：**Sepherosa Ziehau**
 
 2016 年 6 月 8 日，一个标准的 FreeBSD 10.3 镜像发布到 Azure Marketplace。该镜像由 Microsoft 作为 FreeBSD 社区的一部分，并与 FreeBSD 基金会协作发布。这是一个里程碑，标志着 Microsoft 与 FreeBSD 社区多年合作的结晶。FreeBSD 被用作 Azure 中运行的若干虚拟设备的基础操作系统，因此 Microsoft 自然有兴趣确保它运行良好。
 

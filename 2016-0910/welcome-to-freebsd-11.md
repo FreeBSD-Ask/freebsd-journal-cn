@@ -37,7 +37,7 @@ FreeBSD 10.1 是首个为受支持的 FreeBSD/arm 系统提供发行镜像的版
 
 第四，FreeBSD 11 支持更多系统。新增对若干 Allwinner SoC 的支持，包括 Banana Pi、Cubieboard 1 和 Cubieboard 2。11 还为 PandaBoard 和树莓派 2 系统提供安装镜像。
 
-最后，FreeBSD 11 通过 FreeBSD/arm64 平台新增对 64 位 ARMv8 处理器的支持。11 在 Cavium ThunderX 系统上可即装即用，更多系统的支持将在后续版本中提供。arm64 平台包含一个全局共享页，使 32 位 ARM 平台上的不可执行栈和快速时间查询同样可用。大页支持已经存在于 HEAD 中，将在 FreeBSD 11.1 中提供。FreeBSD 的包系统为 FreeBSD/arm64 提供了超过 2 万个预编译包，并定期更新。
+最后，FreeBSD 11 通过 FreeBSD/arm64 平台新增对 64 位 ARMv8 处理器的支持。11 在 Cavium ThunderX 系统上可即装即用，更多系统的支持将在后续版本中提供。arm64 平台包含一个全局共享页，使 32 位 ARM 平台上的不可执行栈和快速时间查询同样可用。大页支持已经存在于 HEAD 中，将在 FreeBSD 11.1 中提供。FreeBSD 的软件包系统为 FreeBSD/arm64 提供了超过 2 万个预编译软件包，并定期更新。
 
 ## RISC-V
 
