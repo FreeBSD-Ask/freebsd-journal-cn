@@ -48,7 +48,7 @@ FJ Letters Dude，
 
 我的意思是我正在查看安装程序，它想知道我想使用 UFS 还是 ZFS？而 George Neville-Neil 说你需要来信。
 
-——FreeBSD 新位
+——FreeBSD 新手
 
 哦！
 
