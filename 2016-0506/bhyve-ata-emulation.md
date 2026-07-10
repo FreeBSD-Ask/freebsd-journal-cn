@@ -1,7 +1,7 @@
 # bhyve ATA/ATAPI 仿真
 
 - 原文：[bhyve ATA/ATAPI Emulation](https://freebsdfoundation.org/wp-content/uploads/2016/06/bhyve-ATA-Emulation.pdf)
-- 作者：Teaca Ionut-Alexandru、Mihai Carabas、Peter Grehan
+- 作者：**Teaca Ionut-Alexandru**、**Mihai Carabas**、**Peter Grehan**
 
 bhyve 的 ATA/ATAPI 仿真是更宏大项目的一部分，旨在确保 FreeBSD Hypervisor（bhyve）与旧版本 FreeBSD 客户机的向后兼容性。目前 bhyve hypervisor 为驱动器和 atapi 设备仿真 AHCI 标准。为了支持 FreeBSD 4 等没有 ahci 驱动的客户机，需要仿真 ATA/ATAPI 控制器。
 

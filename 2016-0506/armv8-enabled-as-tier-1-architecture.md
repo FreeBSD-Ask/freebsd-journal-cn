@@ -1,7 +1,7 @@
 # ARMv8 成为一级架构：协作开发项目
 
 - 原文：[ARMv8 Enabled as Tier 1 Architecture: A Collaborative Development Project](https://freebsdfoundation.org/wp-content/uploads/2016/06/ARMv8-Enabled-as-Tier-1-Architecture.pdf)
-- 作者：Andrew Wafaa
+- 作者：**Andrew Wafaa**
 
 FreeBSD 对 ARM 架构的支持历来由社区自发推动，对大量嵌入式平台而言这种模式运作良好。随着 ARMv8 发布，基于 ARM 的系统开发扩展到企业领域，涵盖服务器基础设施和网络基础设施。为支撑企业市场，我们显然需要更激进的开发模式，以交付最完整、最具竞争力的 FreeBSD。
 
