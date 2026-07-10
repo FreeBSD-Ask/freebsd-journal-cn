@@ -58,5 +58,7 @@ FJ Letters Dude，
 
 感谢你的提示。下次我遇到 GNN，我们会讨论他鼓励人的不幸倾向。
 
-MICHAEL W LUCAS (<https://mwl.io>) 写了太多书，包括《Absolute FreeBSD》、《FreeBSD Mastery: Specialty Filesystems》和《git commit murder》。将你的问题发送到
+---
+
+**MICHAEL W LUCAS** (<https://mwl.io>) 写了太多书，包括《Absolute FreeBSD》、《FreeBSD Mastery: Specialty Filesystems》和《git commit murder》。将你的问题发送到
 <letters@freebsdjournal.com>。来信将按其启发、逗乐或激怒专栏作者的顺序回答，并可能为他自己的目的进行编辑。
