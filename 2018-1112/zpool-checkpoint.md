@@ -1,6 +1,6 @@
 # ZPool 检查点
 
-**作者：Serapheim Dimitropoulos**
+作者：**Serapheim Dimitropoulos**
 
 今年 3 月（2018 年），Alexander Motin（`mav@freebsd.org`）将 OpenZFS 的 Pool Checkpoint 功能从 Illumos 移植到 FreeBSD。pool 检查点可以看作是“池范围快照”，捕获创建检查点时 pool 的整个状态，允许用户将整个 pool 回滚到该状态或丢弃它。一般用例是管理任务，如操作系统升级，涉及更改或销毁 ZFS 状态和元数据的操作。此类操作的示例包括：启用新的 pool 功能、更改数据集属性、销毁快照和文件系统。在执行此类操作之前，管理员可以创建 pool 的检查点，然后应用更改。如果升级出问题，管理员可以回滚到检查点，就像从未采取过这些操作一样。就像快照可以帮助你将用户数据返回到先前状态一样，检查点可以帮助你将 ZFS pool 返回到先前状态。
 
