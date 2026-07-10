@@ -102,7 +102,7 @@ SYSCTL_OPAQUE(_demo, OID_AUTO, mi_switch,
 | `CTLFLAG_ANYBODY` | 所有用户都可写此节点。通常只有超级用户可写节点。 |
 | `CTLFLAG_SECURE` | 仅在 securelevel 小于等于零时可写。 |
 | `CTLFLAG_PRISON` | 由 `jail.2` 创建的 prison 中的超级用户可写。 |
-| `CTLFLAG_SKIP` | 在树的迭代遍历中隐藏此节点，例如 `sysctl` 列出节点时。 |
+| `CTLFLAG_SKIP` | 在树的迭代遍历中隐藏此节点，例如 `sysctl.8` 列出节点时。 |
 | `CTLFLAG_MPSAFE` | 处理器例程不需要 Giant。所有简单节点类型已设置此标志。仅对使用自定义处理器的节点显式要求。 |
 | `CTLFLAG_VNET` | 如果 prison 包含自己的虚拟网络栈，则其中的超级用户可写。 |
 
@@ -131,14 +131,14 @@ SYSCTL_OPAQUE(_demo, OID_AUTO, mi_switch,
 
 ## 节点格式字符串
 
-每个节点除类型外还有一个格式字符串。`sysctl` 工具使用此字符串格式化节点值。与节点类型一样，大多数标准宏隐式指定格式。`SYSCTL_OPAQUE` 和 `SYSCTL_PROC` 宏要求显式指定格式。大多数格式字符串与特定类型绑定，大多数类型只有单一格式字符串。可用格式字符串列于表 3。
+每个节点除类型外还有一个格式字符串。`sysctl.8` 工具使用此字符串格式化节点值。与节点类型一样，大多数标准宏隐式指定格式。`SYSCTL_OPAQUE` 和 `SYSCTL_PROC` 宏要求显式指定格式。大多数格式字符串与特定类型绑定，大多数类型只有单一格式字符串。可用格式字符串列于表 3。
 
 | FORMAT | 含义 |
 | ------ | ---- |
 | `A` | ASCII 字符串。与 `CTLTYPE_STRING` 一起使用。 |
 | `I` | 有符号整数。与 `CTLTYPE_INT` 一起使用。 |
 | `IU` | 无符号整数。与 `CTLTYPE_UINT` 一起使用。 |
-| `IK` | 值单位为十分之一开尔文度的整数。`sysctl` 工具在显示前将值转换为摄氏度。与 `CTLTYPE_UINT` 一起使用。 |
+| `IK` | 值单位为十分之一开尔文度的整数。`sysctl.8` 工具在显示前将值转换为摄氏度。与 `CTLTYPE_UINT` 一起使用。 |
 | `L` | 有符号长整数。与 `CTLTYPE_LONG` 一起使用。 |
 | `LU` | 无符号长整数。与 `CTLTYPE_ULONG` 一起使用。 |
 | `Q` | 有符号 64 位整数。与 `CTLTYPE_S64` 一起使用。 |
