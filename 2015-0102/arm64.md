@@ -89,7 +89,9 @@ AArch64 将系统调用作为硬件异常在内核中处理，由内核决定如
 
 我要感谢 FreeBSD 基金会，以及 ARM Ltd 和 Cavium 赞助本项目。由于这只是一个开始，后续仍需努力。芯片厂商需要发布文档，以便 FreeBSD 移植到他们的芯片。进一步的赞助也将有助于让 FreeBSD 在 ARMv8 上达到稳定且可用于生产的状态。
 
-Andrew Turner 最早接触 FreeBSD on ARM，是将其移植到 OpenMoko 手机中 Samsung CPU 的人，并负责将 ARM EABI 支持引入 FreeBSD。他作为嵌入式软件工程师，参与过从只有几 KB RAM 的深度嵌入式 ARM 设备，到拥有数 GB 内存的多核 ARM 板的项目。他也以承包商身份将 FreeBSD 移植到 ARMv8 芯片。
+---
+
+**Andrew Turner** 最早接触 FreeBSD on ARM，是将其移植到 OpenMoko 手机中 Samsung CPU 的人，并负责将 ARM EABI 支持引入 FreeBSD。他作为嵌入式软件工程师，参与过从只有几 KB RAM 的深度嵌入式 ARM 设备，到拥有数 GB 内存的多核 ARM 板的项目。他也以承包商身份将 FreeBSD 移植到 ARMv8 芯片。
 
 ## 延伸阅读
 
