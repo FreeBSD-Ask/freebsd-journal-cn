@@ -37,7 +37,7 @@ JID  UUID                                                           BOOT  STATE 
 
 Jail 已启动——是时候装个 pkg 了！只需运行 `iocage console example`，我们就能直接登录到 Jail 中，像操作一台物理机那样与它交互。本例中，这意味着安装 pkg。于是我们可以执行 `pkg install tmux`，不久后 tmux 就装进了 Jail 里。就是这么简单。iocage 支持大量高级使用场景、其他各类操作。对此，我鼓励你阅读我们的 manpage 并访问文档：<https://iocage.readthedocs.org/en/latest/index.html>。
 
-以上就是 iocage 使用入门。作为一款工具，我们力求非常易用，即便你从未用过 Jail 也能上手。当然，具备一些 Jail 的前置知识会有所助益。如有任何疑问，可在我们的 Google Group 上获得解答：<https://groups.google.com/forum/#!forum/iocage>。
+以上就是 iocage 使用入门。作为一款工具，我们力求非常易用，即便你从未用过 Jail 也能上手。当然，具备一些 Jail 的前置知识会有所助益。如有任何疑问，可在我们的 Google Group 上获得解答：<https://groups.google.com/forum/#! forum/iocage>。
 
 Jail 启动后，那些目录就会被挂载，对用户而言使用方式完全一致。
 

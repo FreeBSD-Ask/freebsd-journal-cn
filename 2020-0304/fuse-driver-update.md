@@ -65,7 +65,7 @@ sudo lklfuse -o type=ext2,allow_other,default_permissions \
 
 用户态编程的好处之一是不限于 C 语言。事实上，FUSE 绑定覆盖 Perl、Python、Rust、Javascript、Java、Ruby、Nim、C#、Go，可能还有其他语言。
 
-启动 FUSE 守护进程略显复杂：守护进程先打开 `/dev/fuse`，再调用 `nmount` 并把该文件描述符作为参数之一传入。然后开始从同一文件描述符读取 FUSE 请求并写回响应。不过开发者很少需要操心这些细节，因为 `libfuse` 全包了。无论用 C 还是其他语言，开发者通常只需为每个支持的 FUSE 操作定义回调。剩下的接线和管道工作交给库。比如 Python 中"Hello World"示例的核心代码仅 37 行（完整示例见 <https://github.com/libfuse/python-fuse/blob/master/example/hello.py>）。
+启动 FUSE 守护进程略显复杂：守护进程先打开 `/dev/fuse`，再调用 `nmount` 并把该文件描述符作为参数之一传入。然后开始从同一文件描述符读取 FUSE 请求并写回响应。不过开发者很少需要操心这些细节，因为 `libfuse` 全包了。无论用 C 还是其他语言，开发者通常只需为每个支持的 FUSE 操作定义回调。剩下的接线和管道工作交给库。比如 Python 中 "Hello World" 示例的核心代码仅 37 行（完整示例见 <https://github.com/libfuse/python-fuse/blob/master/example/hello.py>）。
 
 ```python
 class HelloFS(Fuse):

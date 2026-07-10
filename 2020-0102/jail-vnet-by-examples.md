@@ -29,7 +29,7 @@ vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
 
 ## 示例
 
-这些示例使用基于 host `/` 的"空" Jail，仅聚焦 vnet 特性。它们都处于 "persist" 模式（因为没有进程运行）。
+这些示例使用基于 host `/` 的 "空" Jail，仅聚焦 vnet 特性。它们都处于 "persist" 模式（因为没有进程运行）。
 
 关于操作系统要求：
 
@@ -64,10 +64,10 @@ vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
 # jexec useless ifconfig
 ```
 
-lo0: flags=8008<LOOPBACK,MULTICAST> metric 0 mtu 16384
-        options=680003<RXCSUM,TXCSUM,LINKSTATE,RXCSUM_IPV6,TXCSUM_IPV6>
+lo0: flags=8008<LOOPBACK, MULTICAST> metric 0 mtu 16384
+        options=680003<RXCSUM, TXCSUM, LINKSTATE, RXCSUM_IPV6, TXCSUM_IPV6>
         groups: lo
-        nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+        nd6 options=21<PERFORMNUD, AUTO_LINKLOCAL>
 
 ```sh
 # jexec useless netstat -rn
@@ -82,18 +82,18 @@ Routing tables
 ```
 
 Stopping Network: lo0.
-lo0: flags=8008<LOOPBACK,MULTICAST> metric 0 mtu 16384
-        options=680003<RXCSUM,TXCSUM,LINKSTATE,RXCSUM_IPV6,TXCSUM_IPV6>
+lo0: flags=8008<LOOPBACK, MULTICAST> metric 0 mtu 16384
+        options=680003<RXCSUM, TXCSUM, LINKSTATE, RXCSUM_IPV6, TXCSUM_IPV6>
         groups: lo
-        nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+        nd6 options=21<PERFORMNUD, AUTO_LINKLOCAL>
 Starting Network: lo0.
-lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
-        options=680003<RXCSUM,TXCSUM,LINKSTATE,RXCSUM_IPV6,TXCSUM_IPV6>
+lo0: flags=8049<UP, LOOPBACK, RUNNING, MULTICAST> metric 0 mtu 16384
+        options=680003<RXCSUM, TXCSUM, LINKSTATE, RXCSUM_IPV6, TXCSUM_IPV6>
         inet6 ::1 prefixlen 128
         inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1
         inet 127.0.0.1 netmask 0xff000000
         groups: lo
-        nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+        nd6 options=21<PERFORMNUD, AUTO_LINKLOCAL>
 
 ```sh
 # jexec useless netstat -rn
@@ -123,13 +123,13 @@ vnet jail
 # ifconfig $TAP
 ```
 
-tap0: flags=8802<BROADCAST,SIMPLEX,MULTICAST> metric 0 mtu 1500
+tap0: flags=8802<BROADCAST, SIMPLEX, MULTICAST> metric 0 mtu 1500
         options=80000<LINKSTATE>
         ether 00:bd:70:98:00:00
         groups: tap
         media: Ethernet autoselect
         status: no carrier
-        nd6 options=29<PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL>
+        nd6 options=29<PERFORMNUD, IFDISABLED, AUTO_LINKLOCAL>
 
 ```sh
 # ifconfig $TAP vnet useless
@@ -144,20 +144,20 @@ ifconfig: interface tap0 does not exist
 # jexec useless ifconfig $TAP
 ```
 
-tap0: flags=8802<BROADCAST,SIMPLEX,MULTICAST> metric 0 mtu 1500
+tap0: flags=8802<BROADCAST, SIMPLEX, MULTICAST> metric 0 mtu 1500
         options=80000<LINKSTATE>
         ether 00:bd:70:98:00:00
         groups: tap
         media: Ethernet autoselect
         status: no carrier
-        nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+        nd6 options=21<PERFORMNUD, AUTO_LINKLOCAL>
 
 ```sh
 # jexec useless ifconfig $TAP inet 192.0.2.1/24 up
 # jexec useless ifconfig $TAP inet
 ```
 
-tap0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+tap0: flags=8843<UP, BROADCAST, RUNNING, SIMPLEX, MULTICAST> metric 0 mtu 1500
         options=80000<LINKSTATE>
         inet 192.0.2.1 netmask 0xffffff00 broadcast 192.0.2.255
 
@@ -650,13 +650,13 @@ vnet.interface=epair${i}b; jexec jail$i ifconfig epair${i}b inet \
 192.0.2.${i}/24 up; jexec jail$i ifconfig epair${i}b inet; done
 ```
 
-epair1b: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+epair1b: flags=8843<UP, BROADCAST, RUNNING, SIMPLEX, MULTICAST> metric 0 mtu 1500
         options=8<VLAN_MTU>
         inet 192.0.2.1 netmask 0xffffff00 broadcast 192.0.2.255
-epair2b: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+epair2b: flags=8843<UP, BROADCAST, RUNNING, SIMPLEX, MULTICAST> metric 0 mtu 1500
         options=8<VLAN_MTU>
         inet 192.0.2.2 netmask 0xffffff00 broadcast 192.0.2.255
-epair3b: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+epair3b: flags=8843<UP, BROADCAST, RUNNING, SIMPLEX, MULTICAST> metric 0 mtu 1500
         options=8<VLAN_MTU>
         inet 192.0.2.3 netmask 0xffffff00 broadcast 192.0.2.255
 
@@ -815,7 +815,7 @@ protocol device {}
 protocol kernel { ipv4 { export all; }; }
 protocol ospf {
   area 0 {
-    interface "epair${i}b" {
+    interface " epair${i}b " {
       hello 60;
       dead 240;
     };

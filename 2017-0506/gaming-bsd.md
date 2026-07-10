@@ -140,6 +140,6 @@ TM
 
 TM
 
-访问 <www.freebsdfoundation.org> 1 年 $19.99/单本 $6.99
+访问 <www.freebsdfoundation.org> 1 年 $19.99/单本 $ 6.99
 
 现已在你喜欢的应用商店上架

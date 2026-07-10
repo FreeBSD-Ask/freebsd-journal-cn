@@ -12,14 +12,14 @@
 - 2026.7.10
   - 校对 2023-1112 期（FreeBSD 14.0）全部 7 篇文章，英文源已归档至 `en/2023-1112-freebsd-14-0/`
   - 4 篇新翻译：
-    - 《基金会来信》（letter-from-the-foundation.md，John Baldwin）：完整翻译；避免"之一"滥用（"魅力之一"→"一大魅力"）
-    - 《LinuxBoot：从 Linux 启动 FreeBSD》（linuxboot-cong-linux-qi-dong-freebsd.md，Warner Losh）：完整翻译；移除英中混排（"freely available（自由可用）"→"自由可用"）；路径加粗；man page 格式（`kexec.2`）
+    - 《基金会来信》（letter-from-the-foundation.md，John Baldwin）：完整翻译；避免 "之一" 滥用（"魅力之一" → "一大魅力"）
+    - 《LinuxBoot：从 Linux 启动 FreeBSD》（linuxboot-cong-linux-qi-dong-freebsd.md，Warner Losh）：完整翻译；移除英中混排（"freely available（自由可用）" → "自由可用"）；路径加粗；man page 格式（`kexec.2`）
     - 《现在用 Webhook 触发我》（xian-zai-yong-webhooks-chu-fa-wo.md，Dave Cottlehuber）：完整翻译；代码块注释翻译为中文；路径加粗（如 **/var/log/messages**）；命令反引号（如 `openssl dgst`、`logger.1`）
-    - 《新的 Ports 提交者：Joel Bodenmann》（xin-de-port-ti-jiao-zhe-oel-bodenmann-jbofreebsd.org.md，Tom Jones 采访）：完整翻译；修正 SUMMARY.md 标题拼写（"oel"→"Joel"，CI 自动同步 H1）；头部格式统一（`- 原文`/`- 作者`顺序）；图片 alt 文本修正（"oel"→"Joel"）；欧化汉语修正（长定语"设计用来执行特定任务的系统"→"为执行特定任务而设计的系统"、抽象名词做主语"随着我熟悉程度的增加"→"随着我越来越熟悉"、三连"的"重构、"更新"→"升级"准确性修正、"系统/组件"→"系统或组件"、删除"已经"滥用、句号改逗号修正句流）；作者姓名格式修正（"TOM JONES"→"Tom Jones"）
+    - 《新的 Ports 提交者：Joel Bodenmann》（xin-de-port-ti-jiao-zhe-oel-bodenmann-jbofreebsd.org.md，Tom Jones 采访）：完整翻译；修正 SUMMARY.md 标题拼写（"oel" → "Joel"，CI 自动同步 H1）；头部格式统一（`- 原文`/`- 作者` 顺序）；图片 alt 文本修正（"oel" → "Joel"）；欧化汉语修正（长定语 "设计用来执行特定任务的系统" → "为执行特定任务而设计的系统"、抽象名词做主语 "随着我熟悉程度的增加" → "随着我越来越熟悉"、三连 "的" 重构、"更新" → "升级" 准确性修正、"系统/组件" → "系统或组件"、删除 "已经" 滥用、句号改逗号修正句流）；作者姓名格式修正（"TOM JONES" → "Tom Jones"）
   - 3 篇校对（已有翻译）：
     - 《活动日历》（events-calendar.md）：逐段对照英文原文，翻译准确，无需修改
     - 《FreeBSD 容器镜像》（freebsd-rong-qi-jing-xiang.md）：逐段对照英文原文，翻译准确，无需修改
-    - 《读者来信》（we-get-letters.md）：格式修正（"原文链接"→"原文"、作者加粗为 **Michael W Lucas**、添加 `---` 分隔符、移除期刊页脚"——《FreeBSD 期刊》，2023 年 11/12 月"）
+    - 《读者来信》（we-get-letters.md）：格式修正（"原文链接" → "原文"、作者加粗为 **Michael W Lucas**、添加 `---` 分隔符、移除期刊页脚 "——《FreeBSD 期刊》，2023 年 11/12 月"）
 - 2026.7.9
   - 三工具全书清理第二轮（AutoCorrect、md-padding@latest、markdownlint），spec：three-tools-full-sweep-rerun-2
   - 重新生成三工具全量清单：markdownlint 28 处违规、AutoCorrect 112 条建议、md-padding 212 文件 +1496/-1475 行
@@ -31,38 +31,38 @@
   - 校对 2023-0506 期（FreeBSD 三十周年纪念特刊）全部 13 篇文章
   - 子批次 1（5 篇，早期会话已完成）：基金会来信、CheriBSD、AArch64、Timeline、Installing
   - 子批次 2（4 篇）：ZFS、Promise（早期会话已完成）、Recollections、Unix
-    - 校对《回忆》（Recollections.md，20 处修改）：删除"一个"滥用、改写万能动词"给予...提升"、删除"关于"滥用、"进行操作"→删除、"在...情况下"→"无论...都"等
-    - 校对《Unix》（Unix.md，31 处修改）：删除"一个"滥用、改写万能动词"做出/进行"、删除"在...中"滥用、"由于"滥用改写等
+    - 校对《回忆》（Recollections.md，20 处修改）：删除 "一个" 滥用、改写万能动词 "给予...提升"、删除 "关于" 滥用、"进行操作" → 删除、"在...情况下" → "无论...都" 等
+    - 校对《Unix》（Unix.md，31 处修改）：删除 "一个" 滥用、改写万能动词 "做出/进行"、删除 "在...中" 滥用、"由于" 滥用改写等
   - 子批次 3（4 篇）：
-    - 校对《早期的 FreeBSD 移植》（Ports.md，17 处修改）："需要在许多不同的领域进行修改"→"许多不同领域都需要修改"、"进行条件执行"→"条件执行"、"进行分支预测"→"分支预测"、"对内存进行读-改-写操作"→"对内存做读-改-写操作"、"John Baldwin 对原子框架进行了扩展"→"John Baldwin 扩展了原子框架"等万能动词"进行"改写
-    - 校对《FreeBSD 30 周年：成功的秘诀》（30.md，13 处修改）：头部格式修正（作者加粗、"- 原文"格式）、删除 3 处 pull quote 残留段、"对项目仓库进行修改"→"修改项目仓库"、"从光盘启动系统进行试用"→"从光盘启动系统试用"、"对硬件进行精挑细选"→"精挑细选硬件"、"它是一个用于创建..."→"它是用于创建..."、"构建一个定制的操作系统"→"构建定制的操作系统"等
-    - 校对《FreeBSD 在日本》（Japan.md，13 处修改）：作者加粗、"与美国计算机的一个主要区别"→"与美国计算机的主要区别"、翻译错误修复"直到 1975 年，外国公司才能进入日本市场"→"1975 年之前，外国公司无法进入日本市场"、"并且还支持"→"也支持"、"在...期间/过程中"滥用、"一个/一款"滥用、"们"字滥用、"之一"滥用、被动句改主动、万能动词"进行"改写、"对...不容乐观"结构混乱等
-    - 校对《读者来信》（we-get-letters.md，15 处修改）：删除 PDF 页脚残留"28 FreeBSD 期刊 • 2023 年 5/6 月"、作者加粗、"原文链接"→"原文"、删除 pull quote 残留、修复两处 PDF 分页截断的不完整句子（"但这些与"+"与真正的写作扯不上关系"、"经历过"+"让我看到"）、"一个/一种/一位/一家"滥用、"们"字滥用等
+    - 校对《早期的 FreeBSD 移植》（Ports.md，17 处修改）："需要在许多不同的领域进行修改" → "许多不同领域都需要修改"、"进行条件执行" → "条件执行"、"进行分支预测" → "分支预测"、"对内存进行读-改-写操作" → "对内存做读-改-写操作"、"John Baldwin 对原子框架进行了扩展" → "John Baldwin 扩展了原子框架" 等万能动词 "进行" 改写
+    - 校对《FreeBSD 30 周年：成功的秘诀》（30.md，13 处修改）：头部格式修正（作者加粗、"- 原文" 格式）、删除 3 处 pull quote 残留段、"对项目仓库进行修改" → "修改项目仓库"、"从光盘启动系统进行试用" → "从光盘启动系统试用"、"对硬件进行精挑细选" → "精挑细选硬件"、"它是一个用于创建..." → "它是用于创建..."、"构建一个定制的操作系统" → "构建定制的操作系统" 等
+    - 校对《FreeBSD 在日本》（Japan.md，13 处修改）：作者加粗、"与美国计算机的一个主要区别" → "与美国计算机的主要区别"、翻译错误修复 "直到 1975 年，外国公司才能进入日本市场" → "1975 年之前，外国公司无法进入日本市场"、"并且还支持" → "也支持"、"在...期间/过程中" 滥用、"一个/一款" 滥用、"们" 字滥用、"之一" 滥用、被动句改主动、万能动词 "进行" 改写、"对...不容乐观" 结构混乱等
+    - 校对《读者来信》（we-get-letters.md，15 处修改）：删除 PDF 页脚残留 "28 FreeBSD 期刊 • 2023 年 5/6 月"、作者加粗、"原文链接" → "原文"、删除 pull quote 残留、修复两处 PDF 分页截断的不完整句子（"但这些与"+"与真正的写作扯不上关系"、"经历过"+"让我看到"）、"一个/一种/一位/一家" 滥用、"们" 字滥用等
   - 英文原文已归档至 en/2023-0506-freebsd-30th-anniversary/（部分英文源 PDF 抓取失败，仅做欧化汉语排查）
 - 2026.7.9
   - 校对 2023-0304 期（嵌入式）全部 7 篇文章
-  - 校对《基金会来信》（格式头部统一 `- 原文链接`→`- 原文`、作者加粗）
-  - 校对《活动日历》（格式头部统一；"商业供应商方面的来稿"→"商业供应商来稿"删除"方面的"冗余；"将在会上举办"→"很高兴在会上举办"翻译修正）
-  - 校对《会议报告：SCaLE20X》（格式头部统一 `- 原文链接`→`- 原文`、作者加粗为 **Drew Gurkowski**）
-  - 校对《读者来信》（格式头部统一；"在生产线部署"→"在生产环境部署"用词修正；重构打断句子的 pull quote 为引用块）
-  - 校对《CheriBSD Ports 与软件包》（格式头部统一；`***MACHINE_ARCH***`→`**MACHINE_ARCH**` 三重星号改为双星号；`git add -i` 加反引号；图 2/图 3 alt 文本修正，原误写为"图 1"）
-  - 校对《让我们来试试 ChatGPT》（作者加粗为 **Benedict Reuschling**；16 处 `***BCR***`/`***ChatGPT***` 三重星号改为双星号 `**BCR**`/`**ChatGPT**`；"展示一个解决方案时"→"展示解决方案时"删除"一个"滥用；"一个争议问题"→"争议问题"删除"一个"滥用）
-  - 校对《GPU 直通》（作者加粗为 **Corvin Köhne** 和 **Daniel Kerkhoff**；3 处 pull quote 三重星号改为双星号；"显然选择"→"理所当然的选择"翻译修正避免非标准搭配）
+  - 校对《基金会来信》（格式头部统一 `- 原文链接` → `- 原文`、作者加粗）
+  - 校对《活动日历》（格式头部统一；"商业供应商方面的来稿" → "商业供应商来稿" 删除 "方面的" 冗余；"将在会上举办" → "很高兴在会上举办" 翻译修正）
+  - 校对《会议报告：SCaLE20X》（格式头部统一 `- 原文链接` → `- 原文`、作者加粗为 **Drew Gurkowski**）
+  - 校对《读者来信》（格式头部统一；"在生产线部署" → "在生产环境部署" 用词修正；重构打断句子的 pull quote 为引用块）
+  - 校对《CheriBSD Ports 与软件包》（格式头部统一；`***MACHINE_ARCH***` → `**MACHINE_ARCH**` 三重星号改为双星号；`git add -i` 加反引号；图 2/图 3 alt 文本修正，原误写为 "图 1"）
+  - 校对《让我们来试试 ChatGPT》（作者加粗为 **Benedict Reuschling**；16 处 `***BCR***`/`***ChatGPT***` 三重星号改为双星号 `**BCR**`/`**ChatGPT**`；"展示一个解决方案时" → "展示解决方案时" 删除 "一个" 滥用；"一个争议问题" → "争议问题" 删除 "一个" 滥用）
+  - 校对《GPU 直通》（作者加粗为 **Corvin Köhne** 和 **Daniel Kerkhoff**；3 处 pull quote 三重星号改为双星号；"显然选择" → "理所当然的选择" 翻译修正避免非标准搭配）
   - 英文原文已归档至 en/2023-0304-embedded/（全部 7 篇，PDF 兜底）
 - 2026.7.9
   - 校对 2023-0102 期（构建 FreeBSD Web 服务器）全部 8 篇文章
-  - 校对《活动日历》（格式头部统一 `- 原文链接`→`- 原文`；作者名加粗为 **ANNE DICKISON**；"所有演讲均在线上交付"→"所有演讲均在线上进行"避免"交付"用于演讲不自然）
-  - 校对《ZFS 的原子 I/O 与 PostgreSQL》（格式头部统一 `- 原文链接`→`- 原文`；翻译质量良好，保留译者注）
+  - 校对《活动日历》（格式头部统一 `- 原文链接` → `- 原文`；作者名加粗为 **ANNE DICKISON**；"所有演讲均在线上交付" → "所有演讲均在线上进行" 避免 "交付" 用于演讲不自然）
+  - 校对《ZFS 的原子 I/O 与 PostgreSQL》（格式头部统一 `- 原文链接` → `- 原文`；翻译质量良好，保留译者注）
   - 校对《虚拟实验室——BSD 编程研讨会》（格式头部统一；ping 命令顺序调整与英文原文一致：`ping -c 3 10.66.6.1` 在前 `ping -c 3 bsd.pw` 在后）
   - 校对《ZFS 简介》（格式头部统一；代码块引号从双引号 `"da[0-9]|cd[0-9]"` 改为单引号 `'da[0-9]|cd[0-9]'` 与英文原文一致）
   - 校对《会议报告：落基山庆祝女性计算机科学家》（格式头部统一；3 处段落拆分——英文 7 段中文合并为 4 段，已拆分为 7 段与英文原文一致）
-  - 校对《进行中的工作/征求反馈：数据包批处理》（格式头部统一；URL 错误修正 `bsdjhb:-freebsd:cxgbe_batching`→`bsdjhb:freebsd:cxgbe_batching` 删除多余的 `-`，联网复查确认）
+  - 校对《进行中的工作/征求反馈：数据包批处理》（格式头部统一；URL 错误修正 `bsdjhb:-freebsd:cxgbe_batching` → `bsdjhb:freebsd:cxgbe_batching` 删除多余的 `-`，联网复查确认）
   - 校对《基金会与 FreeBSD 桌面》（格式头部统一；2 处段落拆分——英文段 2+3 合并、段 7+8 合并，已拆分与英文原文一致）
-  - 校对《读者来信》（格式头部统一；作者名加粗为 **MICHAEL W LUCAS**；段落重组——删除重复内容"那文件系统呢？文件系统需要调优！胡说八道，我说！"、删除添加内容"行了。你可以向管理层汇报...回去玩 nethack 吧"、按英文原文顺序重新组织段落、英文段 5-8 拆分为 4 个短段；删除文末 PAM Mastery 书籍广告 PDF 残留）
+  - 校对《读者来信》（格式头部统一；作者名加粗为 **MICHAEL W LUCAS**；段落重组——删除重复内容 "那文件系统呢？文件系统需要调优！胡说八道，我说！"、删除添加内容 "行了。你可以向管理层汇报...回去玩 nethack 吧"、按英文原文顺序重新组织段落、英文段 5-8 拆分为 4 个短段；删除文末 PAM Mastery 书籍广告 PDF 残留）
   - 英文原文已归档至 en/2023-0102-building-a-freebsd-web-server/（全部 8 篇，PDF 兜底）
 - 2026.7.9
   - 校对 2022-1112 期（可观测性和衡量标准）全部 11 篇文章
-  - 校对《基金会来信》（格式头部统一 `- 原文链接`→`- 原文`）
+  - 校对《基金会来信》（格式头部统一 `- 原文链接` → `- 原文`）
   - 校对《活动日历》（格式头部统一）
   - 校对《DDB 内核调试器》（格式头部统一）
   - 校对《DTrace：旧追踪系统的新增功能》（格式头部统一）
@@ -70,9 +70,9 @@
   - 校对《activitymonitor.sh》（格式头部统一）
   - 校对《实用 IPv6（第四部分）》（格式头部统一）
   - 校对《EuroBSDCon 2022 会议报告》（格式头部统一）
-  - 校对《实用 Port：Prometheus 的安装与配置》（补漏译"左侧"对应 on the left；"是一个不错的选择"→"是不错的起点"避免"一个"滥用；删除增译"具有清晰的架构"和"随时"；补漏译"黑暗深处"对应 dark depths；"文档贡献者"→"文档提交者"术语一致性）
-  - 校对《书评：Kill It with Fire》（作者行 `**BOOK REVIEW** & **TOM JONES**`→`审阅：**TOM JONES**` 参照 2022-0910 书评格式；"UNIX 已经五十与年"错别字→"UNIX 几年前已满五十"；"初衷"→"最初的主张"翻译修正；"书中的教训"→"书中的经验"用词修正；"填补管理和维护现有系统的团队之间的空白"→"弥合与现有系统维护和管理人员之间的鸿沟"翻译修正；补漏译"与团队一起"和"以更好地匹配现代实践"；"更有价值的数据"→"更确凿的数据"翻译修正）
-  - 校对《读者来信》（作者名加粗为 **Michael W Lucas**；文末署名 `**MICHAEL W LUCAS**`→**Michael W Lucas**；补漏译"烤"对应 roasted garlic；"因为出于一种合理的恐惧"→"出于一种合理的恐惧"删除重复连词；删除文末 PAM Mastery 广告块 PDF 残留）
+  - 校对《实用 Port：Prometheus 的安装与配置》（补漏译 "左侧" 对应 on the left；"是一个不错的选择" → "是不错的起点" 避免 "一个" 滥用；删除增译 "具有清晰的架构" 和 "随时"；补漏译 "黑暗深处" 对应 dark depths；"文档贡献者" → "文档提交者" 术语一致性）
+  - 校对《书评：Kill It with Fire》（作者行 `**BOOK REVIEW** & **TOM JONES**` → `审阅：**TOM JONES**` 参照 2022-0910 书评格式；"UNIX 已经五十与年" 错别字 → "UNIX 几年前已满五十"；"初衷" → "最初的主张" 翻译修正；"书中的教训" → "书中的经验" 用词修正；"填补管理和维护现有系统的团队之间的空白" → "弥合与现有系统维护和管理人员之间的鸿沟" 翻译修正；补漏译 "与团队一起" 和 "以更好地匹配现代实践"；"更有价值的数据" → "更确凿的数据" 翻译修正）
+  - 校对《读者来信》（作者名加粗为 **Michael W Lucas**；文末署名 `**MICHAEL W LUCAS**` → **Michael W Lucas**；补漏译 "烤" 对应 roasted garlic；"因为出于一种合理的恐惧" → "出于一种合理的恐惧" 删除重复连词；删除文末 PAM Mastery 广告块 PDF 残留）
   - 英文原文已归档至 en/2022-1112-observability-and-metrics/（全部 11 篇，PDF 兜底）
 - 2026.7.9
   - 校对 2022-0910 期（安全性）全部 11 篇文章
@@ -82,61 +82,61 @@
   - 校对《内核安全》（格式统一）
   - 校对《PAM》（格式统一）
   - 校对《SSH》（格式统一）
-  - 校对《实用 IPv6（第三部分）》（`IPV6-SERVER`、`ROUTED-IPV6-PREFIX`、`rtadvd(8)`、`service(8)`、`ipv6_defaultrouter`、`gif0`、`sshd(8)`、`tcp/22`、`syslogd(8)`、`gif(4)` 等手册页/参数由加粗改为反引号；`LLA` 去加粗；"可能无法正常工作"→"无法正常工作"翻译语气修正）
-  - 校对《书评》（删除"一位"/"一个"滥用 4 处；"谷歌"→"Google" 2 处品牌名一致性；"九章"去加粗）
-  - 校对《访谈：保障 FreeBSD 安全性》（PDF 提取人名空格修复：`PAMBAKER`→**PAM BAKER**、`ANNEDICKISON`→**ANNE DICKISON**、`GordonTetlow`→Gordon Tetlow、`EdMaste`→Ed Maste、`MarkJohnston`→Mark Johnston；术语空格修复：`ProductSecurityIncidentResponseTeam`→Product Security Incident Response Team、`DecisionIntelligenceForDummies`→Decision Intelligence For Dummies；`ports`→`Ports` 2 处首字母大写；"是一位多产"→"是多产"删除"一位"滥用）
-  - 校对《MCH 2022 会议报告》（"以及黑客实践"→"、黑客实践"；补全漏译"UbaBot"自动调酒机名称；"以及一个关于"→"、关于"删除"以及"和"一个"滥用；"及旋钮"→"、旋钮"；"以及在父母的花园里"→"、在父母的花园里"）
-  - 校对《读者来信》（作者名加粗为 **Michael W Lucas**；"HP/UX 以及其他 Unix"→"、其他 Unix"；"正义的背叛，以及那种"→"、那种"；"Java 以及其他诱人"→"、其他诱人"；"进行正经的投票"→"正经投票"避免万能动词"进行"滥用）
+  - 校对《实用 IPv6（第三部分）》（`IPV6-SERVER`、`ROUTED-IPV6-PREFIX`、`rtadvd(8)`、`service(8)`、`ipv6_defaultrouter`、`gif0`、`sshd(8)`、`tcp/22`、`syslogd(8)`、`gif(4)` 等手册页/参数由加粗改为反引号；`LLA` 去加粗；"可能无法正常工作" → "无法正常工作" 翻译语气修正）
+  - 校对《书评》（删除 "一位"/"一个" 滥用 4 处；"谷歌" → "Google" 2 处品牌名一致性；"九章" 去加粗）
+  - 校对《访谈：保障 FreeBSD 安全性》（PDF 提取人名空格修复：`PAMBAKER` → **PAM BAKER**、`ANNEDICKISON` → **ANNE DICKISON**、`GordonTetlow` →Gordon Tetlow、`EdMaste` →Ed Maste、`MarkJohnston` →Mark Johnston；术语空格修复：`ProductSecurityIncidentResponseTeam` →Product Security Incident Response Team、`DecisionIntelligenceForDummies` →Decision Intelligence For Dummies；`ports` → `Ports` 2 处首字母大写；"是一位多产" → "是多产" 删除 "一位" 滥用）
+  - 校对《MCH 2022 会议报告》（"以及黑客实践" → "、黑客实践"；补全漏译 "UbaBot" 自动调酒机名称；"以及一个关于" → "、关于" 删除 "以及" 和 "一个" 滥用；"及旋钮" → "、旋钮"；"以及在父母的花园里" → "、在父母的花园里"）
+  - 校对《读者来信》（作者名加粗为 **Michael W Lucas**；"HP/UX 以及其他 Unix" → "、其他 Unix"；"正义的背叛，以及那种" → "、那种"；"Java 以及其他诱人" → "、其他诱人"；"进行正经的投票" → "正经投票" 避免万能动词 "进行" 滥用）
   - 英文原文已归档至 en/2022-0910-security/（全部 11 篇，PDF 兜底）
 - 2026.7.9
   - 校对 2022-0708 期（科研、系统与 FreeBSD）全部 11 篇文章
-  - 校对《基金会来信》（`- 原文链接`→`- 原文`、作者改为 **John Baldwin** 去除"编辑委员会"）
-  - 校对《活动日历》（`- 原文链接`→`- 原文`、作者加粗为 **Anne Dickison**、"落基山庆祝女性计算机科学家 2022"→"落基山庆祝计算领域女性 2022"翻译修正）
-  - 校对《在 FreeBSD 上构建 Loom 框架》（`- 原文链接`→`- 原文`、作者 `BRIAN KIDNEY`→**Brian Kidney**）
-  - 校对《教授本科生 Unix 课程》（`- 原文链接`→`- 原文`、作者 `BENEDICT REUSCHLING`→**Benedict Reuschling**）
-  - 校对《FreeBSD 入门研讨会》（`- 原文链接`→`- 原文`、作者 `ROLLER ANGEL`→**Roller Angel**、文末署名同步修改）
-  - 校对《实用 IPv6（第二部分）》（`- 原文链接`→`- 原文`、作者 **佐藤広生** 保持不变）
-  - 校对《在 2022 年及以后推广 FreeBSD》（`- 原文链接`→`- 原文`、作者 `**ANNE DICKISON**`→**Anne Dickison**、文末署名同步修改、"坚定推广...的重要性"→"坚定地宣传...的重要性"语法修正）
-  - 校对《进行中的工作/征求反馈：Socket 缓冲区》（`- 原文链接`→`- 原文`、作者 `**TOM JONES** & **GLEB SMIRNOFF**`→**Tom Jones**、**Gleb Smirnoff**、文末署名同步修改、"寻找一个能让他为开源贡献的工作"→"寻找能让他为开源贡献的工作"避免"一个"滥用）
-  - 校对《FreeBSD 开发者峰会报告》（`- 原文链接`→`- 原文`、作者 `**ANNE DICKISON**`→**Anne Dickison**、文末署名同步修改、重写"特别是她在...期间，帮助她树立了...信念"句式为"特别是她在...的工作经历，使她更加坚定地宣传...的重要性"修正语法）
-  - 校对《支持 Electromagnetic Field 2022》（`- 原文链接`→`- 原文`、作者 `**TOM JONES**`→**Tom Jones**、文末署名同步修改）
-  - 校对《读者来信》（`- 原文链接`→`- 原文`、作者 `Michael W Lucas`→**Michael W Lucas** 加粗、文末署名 `**MICHAEL W LUCAS**`→**Michael W Lucas**、"一个从磁盘读过的文件"→"从磁盘读过的文件"避免"一个"滥用）
+  - 校对《基金会来信》（`- 原文链接` → `- 原文`、作者改为 **John Baldwin** 去除 "编辑委员会"）
+  - 校对《活动日历》（`- 原文链接` → `- 原文`、作者加粗为 **Anne Dickison**、"落基山庆祝女性计算机科学家 2022" → "落基山庆祝计算领域女性 2022" 翻译修正）
+  - 校对《在 FreeBSD 上构建 Loom 框架》（`- 原文链接` → `- 原文`、作者 `BRIAN KIDNEY` → **Brian Kidney**）
+  - 校对《教授本科生 Unix 课程》（`- 原文链接` → `- 原文`、作者 `BENEDICT REUSCHLING` → **Benedict Reuschling**）
+  - 校对《FreeBSD 入门研讨会》（`- 原文链接` → `- 原文`、作者 `ROLLER ANGEL` → **Roller Angel**、文末署名同步修改）
+  - 校对《实用 IPv6（第二部分）》（`- 原文链接` → `- 原文`、作者 **佐藤広生** 保持不变）
+  - 校对《在 2022 年及以后推广 FreeBSD》（`- 原文链接` → `- 原文`、作者 `**ANNE DICKISON**` → **Anne Dickison**、文末署名同步修改、"坚定推广...的重要性" → "坚定地宣传...的重要性" 语法修正）
+  - 校对《进行中的工作/征求反馈：Socket 缓冲区》（`- 原文链接` → `- 原文`、作者 `**TOM JONES** & **GLEB SMIRNOFF**` → **Tom Jones**、**Gleb Smirnoff**、文末署名同步修改、"寻找一个能让他为开源贡献的工作" → "寻找能让他为开源贡献的工作" 避免 "一个" 滥用）
+  - 校对《FreeBSD 开发者峰会报告》（`- 原文链接` → `- 原文`、作者 `**ANNE DICKISON**` → **Anne Dickison**、文末署名同步修改、重写 "特别是她在...期间，帮助她树立了...信念" 句式为 "特别是她在...的工作经历，使她更加坚定地宣传...的重要性" 修正语法）
+  - 校对《支持 Electromagnetic Field 2022》（`- 原文链接` → `- 原文`、作者 `**TOM JONES**` → **Tom Jones**、文末署名同步修改）
+  - 校对《读者来信》（`- 原文链接` → `- 原文`、作者 `Michael W Lucas` → **Michael W Lucas** 加粗、文末署名 `**MICHAEL W LUCAS**` → **Michael W Lucas**、"一个从磁盘读过的文件" → "从磁盘读过的文件" 避免 "一个" 滥用）
   - 英文原文已归档至 en/2022-0708-science-systems-and-freebsd/（全部 11 篇，PDF 兜底）
 - 2026.7.9
   - 校对 2022-0506 期（灾难恢复）全部 9 篇文章
   - 校对《基金会来信》（格式统一、标点统一全角）
   - 校对《活动日历》（补漏译 URL 多处、格式统一）
-  - 校对《云上灾难恢复》（术语不一致修正：5 处指代 guest 虚拟机的"客户端"改为"客户机"、"客户端 VPN"保留；代码块内英文注释翻译为中文）
+  - 校对《云上灾难恢复》（术语不一致修正：5 处指代 guest 虚拟机的 "客户端" 改为 "客户机"、"客户端 VPN" 保留；代码块内英文注释翻译为中文）
   - 校对《使用 LLDB 调试 FreeBSD》（图 4 说明中 `PT_DETACH` 和 `PT_CONTINUE` 加反引号）
-  - 校对《IPv6 故障排除》（头部 `- 原文链接`→`- 原文`、多处命令/手册页加反引号：`grep`、`AddressFamily`、`nd6 options`、`AUTO_LINKLOCAL`、`ping6(8)`、`ifconfig(8)`、`scopeid`、`-alias`、`%zoneid`；"IPv6 节点配置"补充 `###` 标题标记；**/etc/rc.conf** 路径加粗；"已经配置了"→"配置了"避免"已"字滥用）
+  - 校对《IPv6 故障排除》（头部 `- 原文链接` → `- 原文`、多处命令/手册页加反引号：`grep`、`AddressFamily`、`nd6 options`、`AUTO_LINKLOCAL`、`ping6(8)`、`ifconfig(8)`、`scopeid`、`-alias`、`%zoneid`；"IPv6 节点配置" 补充 `###` 标题标记；**/etc/rc.conf** 路径加粗；"已经配置了" → "配置了" 避免 "已" 字滥用）
   - 校对《Netdump》（`NETDUMP_VMCORE`、`NETDUMP_KDH`、`NETDUMP_FINISHED` 消息类型常量加反引号；`dumpon(8)` 手册页引用加反引号；`netdumpd` 守护进程名加反引号）
-  - 校对《FreeBSD 启动性能》（头部 `- 原文链接`→`- 原文`、FlameGraphs URL 从方括号 `[URL]` 改为尖括号 `<URL>`、`options TSLOG` 加反引号、`rtsold` 加反引号、"一个良好起点"→"良好起点"避免"一个"滥用、sysctl 名称 `boottrace`/`runtrace`/`shuttrace` 加反引号）
-  - 校对《实用 Port：在 OpenZFS 上设置 NFSv4 文件服务器》（头部 `- 原文链接`→`- 原文`、`readonly=on` 加反引号、多处路径从反引号改为加粗：**/etc/rc.conf**、**/etc/exports**、**/fileshare**、**/etc/fstab**、**/media**；`nfsuserd` 加反引号；`on` 加反引号与 `off` 格式一致）
-  - 校对《读者来信》（头部 `- 原文链接`→`- 原文`、作者名加粗为 **Michael W Lucas**）
+  - 校对《FreeBSD 启动性能》（头部 `- 原文链接` → `- 原文`、FlameGraphs URL 从方括号 `[URL]` 改为尖括号 `<URL>`、`options TSLOG` 加反引号、`rtsold` 加反引号、"一个良好起点" → "良好起点" 避免 "一个" 滥用、sysctl 名称 `boottrace`/`runtrace`/`shuttrace` 加反引号）
+  - 校对《实用 Port：在 OpenZFS 上设置 NFSv4 文件服务器》（头部 `- 原文链接` → `- 原文`、`readonly=on` 加反引号、多处路径从反引号改为加粗：**/etc/rc.conf**、**/etc/exports**、**/fileshare**、**/etc/fstab**、**/media**；`nfsuserd` 加反引号；`on` 加反引号与 `off` 格式一致）
+  - 校对《读者来信》（头部 `- 原文链接` → `- 原文`、作者名加粗为 **Michael W Lucas**）
   - 英文原文已归档至 en/2022-0506-disaster-recovery/（全部 9 篇，PDF 兜底，已用 pdfplumber 提取为 Markdown）
 - 2026.7.9
   - 三工具全书清理（AutoCorrect、md-padding@latest、markdownlint），spec：three-tools-full-sweep-rerun
   - 重新生成三工具全量清单：markdownlint 1 处违规（MD009）、AutoCorrect 109 条建议、md-padding 209 文件 +1209/-1188 行
   - markdownlint 逐项审核：采纳 1 处（2018-0102/book-review.md:12 MD009 行尾空格删除）
-  - AutoCorrect 逐项审核：采纳 1 条（2017-0506/book-review-designing-bsd-rootkits.md:12 删除全角冒号前多余空格），拒绝 108 条（全角标点转半角、连字符加空格、书名号转引号、`+`加空格等）
+  - AutoCorrect 逐项审核：采纳 1 条（2017-0506/book-review-designing-bsd-rootkits.md:12 删除全角冒号前多余空格），拒绝 108 条（全角标点转半角、连字符加空格、书名号转引号、`+` 加空格等）
   - md-padding 逐项审核：采纳 0 条，拒绝全部 1209 条（代码块内加空格、sup 标签加空格、全角引号加空格、加粗标记加空格等）
   - 总复核：原 MD009 已修复；AutoCorrect 105 条建议均为已拒绝类别；md-padding 211 文件（原 209 + 2 新 spec 文件）0 采纳；无批量接受、无 `--fix`、无脚本/sed/awk
 - 2026.7.9
   - 校对 2022-0304 期（ARM64 是一级架构）全部 8 篇文章
-  - 校对《基金会来信》（`- 原文链接`→`- 原文`、URL 修正 2022/03→2022/04、作者改为 **Ed Maste** 去除"编辑委员会"、删除"已"字"已获得"→"获得"、调整工具链描述句式）
-  - 校对《活动日历》（`- 原文链接`→`- 原文`、URL 修正 2022/03→2022/04、作者加粗为 **Anne Dickison**、Office Hours 段落末尾添加 YouTube 链接）
-  - 校对《FreeBSD/ARM64 上的数据科学》（`- 原文链接`→`- 原文`、"所有基于 ARM 的 FreeBSD 系统"→"各种 ARM 平台上支持 FreeBSD"、"不仅仅是另一个 Web 服务器"→"不是又一个 Web 服务器或 NFS 存储阵列"）
-  - 校对《Pinebook Pro 上的 FreeBSD》（`- 原文链接`→`- 原文`、多处 `ports`→`Ports` 首字母大写 4 处、"原版 Manjaro 和 Debian"→"原版 Manjaro 或 Debian"、"Port 和修改后的软件包"→"Ports 和修改后的软件包"、RockPRO64 注意事项中 `u-boot`→"U-Boot"）
-  - 校对《嵌入式控制器的 ACPI 支持》（`- 原文链接`→`- 原文`、"FreeBSD ARM64 端口"→"FreeBSD ARM64 移植"事实性错误修正、"已允许"→"现在允许"避免"已"字滥用、"已在 FreeBSD 内核中实现"→"FreeBSD 内核已实现该方案"、"已探测到的驱动程序"→"探测到的驱动程序"、"这种灵活性经常被厂商滥用"→"厂商经常滥用这种灵活性"被动句改主动句）
-  - 校对《进行中的工作/征求反馈：Lumina 桌面征集开发人员》（`- 原文链接`→`- 原文`、链接文本改为英文原标题、作者加粗为 **TOM JONES** 和 **JT PENNINGTON**）
-  - 校对《实用 Port：如何设置 Apple 时间机器》（`- 原文链接`→`- 原文`、"一切最新 ARM 板"→"任何较新的 ARM 板"翻译修正、代码块 `grouadd`→`groupadd` 和 `groumod`→`groupmod` 拼写修正 3 处、路径格式去除反引号 `/usr/local/etc/afp.conf` 和 `/var/log/afp.log`、补全漏译段落"unix charset"和"zeroconf"两段、`\$u`→`` `$u` `` 转义字符修正）
-  - 校对《读者来信》（`- 原文链接`→`- 原文`、URL 修正 2022/03/letters.pdf→2022/04/MarchApril-Letters.pdf、作者加粗为 **Michael W Lucas**、"花了太多十年"→"花了太多个十年"量词缺失修正）
+  - 校对《基金会来信》（`- 原文链接` → `- 原文`、URL 修正 2022/03→2022/04、作者改为 **Ed Maste** 去除 "编辑委员会"、删除 "已" 字 "已获得" → "获得"、调整工具链描述句式）
+  - 校对《活动日历》（`- 原文链接` → `- 原文`、URL 修正 2022/03→2022/04、作者加粗为 **Anne Dickison**、Office Hours 段落末尾添加 YouTube 链接）
+  - 校对《FreeBSD/ARM64 上的数据科学》（`- 原文链接` → `- 原文`、"所有基于 ARM 的 FreeBSD 系统" → "各种 ARM 平台上支持 FreeBSD"、"不仅仅是另一个 Web 服务器" → "不是又一个 Web 服务器或 NFS 存储阵列"）
+  - 校对《Pinebook Pro 上的 FreeBSD》（`- 原文链接` → `- 原文`、多处 `ports` → `Ports` 首字母大写 4 处、"原版 Manjaro 和 Debian" → "原版 Manjaro 或 Debian"、"Port 和修改后的软件包" → "Ports 和修改后的软件包"、RockPRO64 注意事项中 `u-boot` → "U-Boot"）
+  - 校对《嵌入式控制器的 ACPI 支持》（`- 原文链接` → `- 原文`、"FreeBSD ARM64 端口" → "FreeBSD ARM64 移植" 事实性错误修正、"已允许" → "现在允许" 避免 "已" 字滥用、"已在 FreeBSD 内核中实现" → "FreeBSD 内核已实现该方案"、"已探测到的驱动程序" → "探测到的驱动程序"、"这种灵活性经常被厂商滥用" → "厂商经常滥用这种灵活性" 被动句改主动句）
+  - 校对《进行中的工作/征求反馈：Lumina 桌面征集开发人员》（`- 原文链接` → `- 原文`、链接文本改为英文原标题、作者加粗为 **TOM JONES** 和 **JT PENNINGTON**）
+  - 校对《实用 Port：如何设置 Apple 时间机器》（`- 原文链接` → `- 原文`、"一切最新 ARM 板" → "任何较新的 ARM 板" 翻译修正、代码块 `grouadd` → `groupadd` 和 `groumod` → `groupmod` 拼写修正 3 处、路径格式去除反引号 `/usr/local/etc/afp.conf` 和 `/var/log/afp.log`、补全漏译段落 "unix charset" 和 "zeroconf" 两段、`\$u` → `` `$u` `` 转义字符修正）
+  - 校对《读者来信》（`- 原文链接` → `- 原文`、URL 修正 2022/03/letters.pdf→2022/04/MarchApril-Letters.pdf、作者加粗为 **Michael W Lucas**、"花了太多十年" → "花了太多个十年" 量词缺失修正）
   - 英文原文已归档至 en/2022-0304-arm64-is-a-tier-1-architecture/（全部 8 篇）
 - 2026.7.9
   - 校对 2025-789 期（嵌入式）全部 11 篇文章
   - 校对《基金会来信》（添加格式头部：原文链接+作者 **John Baldwin**）
   - 校对《活动日历》（添加格式头部：原文链接+作者 **Anne Dickison**、修正日期 en-dash 为连字符：25–28→25-28、6–7→6-7）
-  - 校对《开启 FreeBSD 开发之路 —— 专访 Igor Ostapenko》（格式头部 `- [Starting...]`→`- 原文：[Starting...]`、"通往 FreeBSD 开发之路的有很多因素"→"通往 FreeBSD 开发之路有很多条"、"我更多专注在"→"我更专注于"、补全课程主讲人 Marshall Kirk McKusick、修正"George Neville-Neil"→"George V. Neville-Neil"、"事实证明是最有效的方法"→"事实证明这是最有效的方法"、补全 VNET Jails 针对新实现的功能或修复的 bug 的说明、补全源码路径 **src/tests/sys/netpfil**、补全 Kristof 的 YouTube 演讲链接、补全漏译段落"使用语言服务器协议（LSP）可以大大简化代码理解和导航"、"他们的积累可以"→"他们积累的知识和经验可以"、"虽然不是必须的"→"虽然不是必须的或所期望的"、"是一位 FreeBSD 提交者"→"是 FreeBSD 提交者"、"导航设备测试系统"→"导航设备操作与测试系统"、补全"这里打个基于网络的比方"、补全漏译"通往贡献的路径有很多种"、补全 Netlink 实现迁移说明"（伴随现有工具的迁移工作）"、补全 VPP 全称"Vector Packet Processing"、补全漏译段落"每篇文章都不是涵盖所有细节..."）
+  - 校对《开启 FreeBSD 开发之路 —— 专访 Igor Ostapenko》（格式头部 `- [Starting...]` → `- 原文：[Starting...]`、"通往 FreeBSD 开发之路的有很多因素" → "通往 FreeBSD 开发之路有很多条"、"我更多专注在" → "我更专注于"、补全课程主讲人 Marshall Kirk McKusick、修正 "George Neville-Neil" → "George V. Neville-Neil"、"事实证明是最有效的方法" → "事实证明这是最有效的方法"、补全 VNET Jails 针对新实现的功能或修复的 bug 的说明、补全源码路径 **src/tests/sys/netpfil**、补全 Kristof 的 YouTube 演讲链接、补全漏译段落 "使用语言服务器协议（LSP）可以大大简化代码理解和导航"、"他们的积累可以" → "他们积累的知识和经验可以"、"虽然不是必须的" → "虽然不是必须的或所期望的"、"是一位 FreeBSD 提交者" → "是 FreeBSD 提交者"、"导航设备测试系统" → "导航设备操作与测试系统"、补全 "这里打个基于网络的比方"、补全漏译 "通往贡献的路径有很多种"、补全 Netlink 实现迁移说明 "（伴随现有工具的迁移工作）"、补全 VPP 全称 "Vector Packet Processing"、补全漏译段落 "每篇文章都不是涵盖所有细节..."）
   - 校对《CHERIoT》（前期已完成）
   - 校对《FreeBSD、Home Assistant 与 rtl_433》（前期已完成）
   - 校对《撰写有效的 Bug 报告》（前期已完成）
@@ -144,51 +144,51 @@
   - 校对《FreeBSD WiFi 开发第二部分：驱动开发》（前期已完成）
   - 校对《嵌入式 FreeBSD：回顾与展望》（前期已完成）
   - 校对《会议报告：2025 BSDCan》（前期已完成）
-  - 校对《读者来信》（添加格式头部：原文链接+作者 **Michael W Lucas**、"所以送货卡车之后才到"→"所以邮件在送货卡车之后才到"补全 it 指代、"没记过任何有用的东西"→"没有记录过任何有用的东西"、修复损坏的邮箱链接 `[letters@freebsdjournal.](mailto:letters@freebsdjournal.org)org`→`<letters@freebsdjournal.org>`、作者署名加粗）
+  - 校对《读者来信》（添加格式头部：原文链接+作者 **Michael W Lucas**、"所以送货卡车之后才到" → "所以邮件在送货卡车之后才到" 补全 it 指代、"没记过任何有用的东西" → "没有记录过任何有用的东西"、修复损坏的邮箱链接 `[letters@freebsdjournal.](mailto:letters@freebsdjournal.org)org` → `<letters@freebsdjournal.org>`、作者署名加粗）
   - 英文原文已归档至 en/2025-789-embedded-2/（全部 11 篇）
 - 2026.7.9
   - 校对 2022-0102 期（软件与系统管理）全部 10 篇文章
-  - 校对《基金会来信》（`- 原文链接`→`- 原文`、作者行加粗、`贡献新 port`→`贡献新 Port`、`向 ports 贡献`→`向 Ports 贡献`、`同样主题下`→`类似地`、签名块加空行）
-  - 校对《活动日历》（补全缺失 URL：SCALE、FreeBSD Fridays、Office Hours、Open Source 101 各自链接、调整段落顺序与英文原文一致、`- 原文链接`→`- 原文`）
-  - 校对《为 FreeBSD Ports 做贡献》（`- 原文链接`→`- 原文`、多处小写 ports 改为 Ports："从 ports 构建"→"从 Ports 构建"、"自己编译 ports"→"自己编译 Ports"、"因为 ports 使得"→"因为 Ports 使得"、"为 FreeBSD ports 开发"→"为 FreeBSD Ports 开发"、"折腾 FreeBSD ports"→"折腾 FreeBSD Ports"、"ports 提交者"→"Ports 提交者"、"ports 补丁"→"Ports 补丁"、"ports 树"→"Ports 树"）
-  - 校对《git-arc》（`- 原文链接`→`- 原文`、"创建或更新 port"→"创建或更新 Port"、"为树贡献新 port"→"为树贡献新 Port"、"扫描请求的 port 列表"→"扫描请求的 Port 列表"、"创建新 port"→"创建新 Port"、`<revision_id>`→`<revision>` 与代码块一致）
-  - 校对《CBSD》（`- 原文链接`→`- 原文`）
-  - 校对《将 OpenBSD 的 pf syncookie 代码移植到 FreeBSD 的 pf》（`- 原文链接`→`- 原文`）
-  - 校对《进行中的工作/征求反馈：mkjail》（`- 原文链接`→`- 原文`、删除文末 PAM Mastery 广告块 PDF 残留）
-  - 校对《书评：编程智慧》（`- 原文链接`→`- 原文`、日文引言翻译为中文"去年の癡僧..."→"去年，一位愚僧。今年，依然如故。"、"良寛大愚"→"良宽大愚"日文汉字转简体中文、`**PP BENEDICT REUSCHLING**`→`**BENEDICT REUSCHLING**`删除 PDF 残留的专栏签名 PP）
-  - 校对《会议报告：EuroBSDCon 2021》（`- 原文链接`→`- 原文`、删除 PDF 侧栏文本残留两处"通常，EuroBSDCon 是一场线下活动，"和"但 COVID 疫情改变了规则。"、ports→Ports 首字母大写 2 处）
-  - 校对《读者来信》（`- 原文链接`→`- 原文`、URL 修正 letters.pdf→JanFeb_letters.pdf、作者格式标准化为 `- 作者：**MICHAEL W LUCAS**`）
+  - 校对《基金会来信》（`- 原文链接` → `- 原文`、作者行加粗、`贡献新 port` → `贡献新 Port`、`向 ports 贡献` → `向 Ports 贡献`、`同样主题下` → `类似地`、签名块加空行）
+  - 校对《活动日历》（补全缺失 URL：SCALE、FreeBSD Fridays、Office Hours、Open Source 101 各自链接、调整段落顺序与英文原文一致、`- 原文链接` → `- 原文`）
+  - 校对《为 FreeBSD Ports 做贡献》（`- 原文链接` → `- 原文`、多处小写 ports 改为 Ports："从 ports 构建" → "从 Ports 构建"、"自己编译 ports" → "自己编译 Ports"、"因为 ports 使得" → "因为 Ports 使得"、"为 FreeBSD ports 开发" → "为 FreeBSD Ports 开发"、"折腾 FreeBSD ports" → "折腾 FreeBSD Ports"、"ports 提交者" → "Ports 提交者"、"ports 补丁" → "Ports 补丁"、"ports 树" → "Ports 树"）
+  - 校对《git-arc》（`- 原文链接` → `- 原文`、"创建或更新 port" → "创建或更新 Port"、"为树贡献新 port" → "为树贡献新 Port"、"扫描请求的 port 列表" → "扫描请求的 Port 列表"、"创建新 port" → "创建新 Port"、`<revision_id>` → `<revision>` 与代码块一致）
+  - 校对《CBSD》（`- 原文链接` → `- 原文`）
+  - 校对《将 OpenBSD 的 pf syncookie 代码移植到 FreeBSD 的 pf》（`- 原文链接` → `- 原文`）
+  - 校对《进行中的工作/征求反馈：mkjail》（`- 原文链接` → `- 原文`、删除文末 PAM Mastery 广告块 PDF 残留）
+  - 校对《书评：编程智慧》（`- 原文链接` → `- 原文`、日文引言翻译为中文 "去年 の 癡僧..." → "去年，一位愚僧。今年，依然如故。"、"良寛大愚" → "良宽大愚" 日文汉字转简体中文、`**PP BENEDICT REUSCHLING**` → `**BENEDICT REUSCHLING**` 删除 PDF 残留的专栏签名 PP）
+  - 校对《会议报告：EuroBSDCon 2021》（`- 原文链接` → `- 原文`、删除 PDF 侧栏文本残留两处 "通常，EuroBSDCon 是一场线下活动，" 和 "但 COVID 疫情改变了规则。"、ports→Ports 首字母大写 2 处）
+  - 校对《读者来信》（`- 原文链接` → `- 原文`、URL 修正 letters.pdf→JanFeb_letters.pdf、作者格式标准化为 `- 作者：**MICHAEL W LUCAS**`）
   - 英文原文已归档至 en/2022-0102-software-and-systems-management/
 - 2026.7.9
   - 校对 2021-1112 期（存储）全部 8 篇文章
-  - 校对《基金会来信》（添加原文链接+作者行、简化"度过一个愉快的假期"→"假期愉快"、修正"在这个又一个"冗余、改"享受了"为"喜欢"）
-  - 校对《活动日历》（添加原文链接+作者行、去内联作者、改"加入 FreeBSD 社区成员参加"为"与 FreeBSD 社区成员一起参加"）
-  - 校对《开放通道 SSD》（原文链接文本"Open Channel 固态硬盘"→"Open Channel SSD"、**sys/dev/nvme** 路径加粗、"实时反馈"→"主动反馈"、**lightnvm/control** 路径加粗、"划分并创建目标"→"划分并行单元并创建目标"、简化冗余缓存描述、"接下来"→"又一次"）
-  - 校对《构建 FreeBSD 社区》（"FreeBSD 是个开源社区"→"FreeBSD 是一个开源社区"、"友好的小型技术会议"→"Friendly Wee Tech Conference"、"BSD 聚焦事件"→"BSD 主题活动"、"一同玩耍"→"一起钻研技术"、"在疫情爆发前"→"在疫情袭来之际"、"基于工作冒险的"→"基于 WorkAdventure 的"、"心理上要有准备接受失落"→"做好心理准备接受失望"、"一场自我肯定的赌注"→"对自尊心的考验"、"回顾着我曾经参与组织的日子"→"人们讲述着我参与组织的那天的故事"）
-  - 校对《与完美操作系统同行 27 年》（ports→Ports 首字母大写、jail→Jail 首字母大写、Shell→shell、"更容易被记录和文档化"→"更容易文档化"、"待我离开公司"→"我离开公司后"、FreeBSD jail→FreeBSD Jail、FreeBSD ports→FreeBSD Ports、"更新一个包"→"更新包"、句子语序调整、"以及"→"、"、"进行日志记录"→"记录日志"、补全"我在 FreeBSD 上的常规测试"、"两十年前"→"二十年前"、"图形功能"→"图形界面"、"待我再次拥有"→"一旦我再次拥有"、"跟踪 bug"→"关注 bug 跟踪系统"、补全"关于 sudo 和 syslog-ng 的演讲"、"PPC 和 ARM"→"PPC 或 ARM"）
-  - 校对《进行中的工作/征求反馈：OccamBSD》（原文链接文本改为英文、"本期"→"首期"、"无论这些功能"→"无论其"、jail→Jail、"和...以及"→"、"、"提供了一个关于...的一瞥"→"让人一窥"、"一个独特的机会"→"独特的机会"、"应该从哪里开始的地方"→"可以说应该开始的地方"、"一次很有价值的练习"→"有价值的练习"、"一个极简的系统实例"→"极简系统的实例"、"一个更小的学习环境"→"更小的学习环境"、"FreeBSD 基础的项目"→"基于 FreeBSD 的项目"）
-  - 校对《通过 iSCSI 导入 ZFS ZIL》（原文链接加冒号、"适应 ARC"→"放入 ARC"、"待我们开始"→"一旦我们开始"、**/etc/ctl.conf** 等路径加粗、补全"要么"、"ZIL 会确认"→"ZIL 会向应用程序（数据库）确认"、"集成问题"→"集成有多么糟糕"、"只要时间问题"→"这只是时间问题"、"缺失的 ZIL 设备挂载"→"带有缺失 ZIL 设备的池挂载"、"待完成"→"完成后"、`zpool status` 反引号、"应该休息"→"本该睡觉"、`net/ceph14` 等命令反引号、**volumes/ssdvolume** 路径加粗、`--id` 等选项反引号、**/dev/ggate0** 路径加粗、"zfs 发送"→"`zfs send`"、"衡量性能丧失的地方"→"测量性能损失发生的位置"、"记录每一步"→"为自己和同事记录每一步"、"教授...课程给本科生"→"为本科生教授...课程"）
-  - 校对《读者来信》（作者格式标准化为 `- 作者：**Michael W Lucas**`、"以及"→"、"）
+  - 校对《基金会来信》（添加原文链接+作者行、简化 "度过一个愉快的假期" → "假期愉快"、修正 "在这个又一个" 冗余、改 "享受了" 为 "喜欢"）
+  - 校对《活动日历》（添加原文链接+作者行、去内联作者、改 "加入 FreeBSD 社区成员参加" 为 "与 FreeBSD 社区成员一起参加"）
+  - 校对《开放通道 SSD》（原文链接文本 "Open Channel 固态硬盘" → "Open Channel SSD"、**sys/dev/nvme** 路径加粗、"实时反馈" → "主动反馈"、**lightnvm/control** 路径加粗、"划分并创建目标" → "划分并行单元并创建目标"、简化冗余缓存描述、"接下来" → "又一次"）
+  - 校对《构建 FreeBSD 社区》（"FreeBSD 是个开源社区" → "FreeBSD 是一个开源社区"、"友好的小型技术会议" → "Friendly Wee Tech Conference"、"BSD 聚焦事件" → "BSD 主题活动"、"一同玩耍" → "一起钻研技术"、"在疫情爆发前" → "在疫情袭来之际"、"基于工作冒险的" → "基于 WorkAdventure 的"、"心理上要有准备接受失落" → "做好心理准备接受失望"、"一场自我肯定的赌注" → "对自尊心的考验"、"回顾着我曾经参与组织的日子" → "人们讲述着我参与组织的那天的故事"）
+  - 校对《与完美操作系统同行 27 年》（ports→Ports 首字母大写、jail→Jail 首字母大写、Shell→shell、"更容易被记录和文档化" → "更容易文档化"、"待我离开公司" → "我离开公司后"、FreeBSD jail→FreeBSD Jail、FreeBSD ports→FreeBSD Ports、"更新一个包" → "更新包"、句子语序调整、"以及" → "、"、"进行日志记录" → "记录日志"、补全 "我在 FreeBSD 上的常规测试"、"两十年前" → "二十年前"、"图形功能" → "图形界面"、"待我再次拥有" → "一旦我再次拥有"、"跟踪 bug" → "关注 bug 跟踪系统"、补全 "关于 sudo 和 syslog-ng 的演讲"、"PPC 和 ARM" → "PPC 或 ARM"）
+  - 校对《进行中的工作/征求反馈：OccamBSD》（原文链接文本改为英文、"本期" → "首期"、"无论这些功能" → "无论其"、jail→Jail、"和...以及" → "、"、"提供了一个关于...的一瞥" → "让人一窥"、"一个独特的机会" → "独特的机会"、"应该从哪里开始的地方" → "可以说应该开始的地方"、"一次很有价值的练习" → "有价值的练习"、"一个极简的系统实例" → "极简系统的实例"、"一个更小的学习环境" → "更小的学习环境"、"FreeBSD 基础的项目" → "基于 FreeBSD 的项目"）
+  - 校对《通过 iSCSI 导入 ZFS ZIL》（原文链接加冒号、"适应 ARC" → "放入 ARC"、"待我们开始" → "一旦我们开始"、**/etc/ctl.conf** 等路径加粗、补全 "要么"、"ZIL 会确认" → "ZIL 会向应用程序（数据库）确认"、"集成问题" → "集成有多么糟糕"、"只要时间问题" → "这只是时间问题"、"缺失的 ZIL 设备挂载" → "带有缺失 ZIL 设备的池挂载"、"待完成" → "完成后"、`zpool status` 反引号、"应该休息" → "本该睡觉"、`net/ceph14` 等命令反引号、**volumes/ssdvolume** 路径加粗、`--id` 等选项反引号、**/dev/ggate0** 路径加粗、"zfs 发送" → "`zfs send`"、"衡量性能丧失的地方" → "测量性能损失发生的位置"、"记录每一步" → "为自己和同事记录每一步"、"教授...课程给本科生" → "为本科生教授...课程"）
+  - 校对《读者来信》（作者格式标准化为 `- 作者：**Michael W Lucas**`、"以及" → "、"）
   - 英文原文已归档至 en/2021-1112-storage/
 - 2026.7.9
   - 校对 2021-0910 期（FreeBSD 开发）全部 7 篇文章
   - 校对《基金会来信》（添加格式头部：原文链接+作者）
   - 校对《活动日历》（格式头部从内联改为标准格式）
-  - 校对《FreeBSD 代码审查与 git-arc》（路径加粗 tools/tools/git 和 /usr/local/bin、jq 链接补全、"待提交的审查"→"候选提交"误译修正）
-  - 校对《如何为 FreeBSD 实现简单的 USB 驱动程序》（补译 2 段漏译正文、清单标题统一为"清单"、清单 10/11 标题误复制修正、"KMOD 调试工具"→"KMOD 变量"误译修正、路径加粗）
-  - 校对《内核开发技巧》（SoC 误译修正"掌中宝般的小型系统"→"掌心大小的 SoC"、"待从"误译修正、万能动词"进行"多处修正、"加快构建时间"→"缩短构建时间"搭配错误修正、路径加粗 /tmp/kernel、/boot/loader.conf、/etc/rc.local、tools/test/stress2 等、转义字符 \${SRCDIR} 加粗、"提供一个第二个"→"提供第二个"冗余修正等，共 21 处修改）
-  - 校对《程序员编程杂谈》（ports→Ports 首字母大写、"三角象限"→"德尔塔象限"delta quadrant 误译修正）
+  - 校对《FreeBSD 代码审查与 git-arc》（路径加粗 tools/tools/git 和 /usr/local/bin、jq 链接补全、"待提交的审查" → "候选提交" 误译修正）
+  - 校对《如何为 FreeBSD 实现简单的 USB 驱动程序》（补译 2 段漏译正文、清单标题统一为 "清单"、清单 10/11 标题误复制修正、"KMOD 调试工具" → "KMOD 变量" 误译修正、路径加粗）
+  - 校对《内核开发技巧》（SoC 误译修正 "掌中宝般的小型系统" → "掌心大小的 SoC"、"待从" 误译修正、万能动词 "进行" 多处修正、"加快构建时间" → "缩短构建时间" 搭配错误修正、路径加粗 /tmp/kernel、/boot/loader.conf、/etc/rc.local、tools/test/stress2 等、转义字符 \${SRCDIR} 加粗、"提供一个第二个" → "提供第二个" 冗余修正等，共 21 处修改）
+  - 校对《程序员编程杂谈》（ports→Ports 首字母大写、"三角象限" → "德尔塔象限" delta quadrant 误译修正）
   - 校对《读者来信》（添加格式头部：原文链接+作者、作者署名 MICHAEL W LUCAS 加粗）
   - 英文原文已归档至 en/2021-0910-freebsd-development/
 - 2026.7.9
   - 校对 2021-0708 期（桌面/无线网）全部 9 篇文章
-  - 校对《基金会来信》（补译"recent"、添加作者元数据）
+  - 校对《基金会来信》（补译 "recent"、添加作者元数据）
   - 校对《活动日历》（作者元数据格式规范）
-  - 校对《通往 FreeBSD 桌面的直接路径》（误加"之一"删除、误加"可能"删除）
-  - 校对《FreeBSD 13 中的 HID 支持》（"later in 2000"误译修正、驱动名 cons→hcons、漏译 game controllers 补全、item 误译修正）
-  - 校对《FreeBSD 上的 Panfrost 驱动》（tiling/tiler/tile 混淆修正、Vulcan→Vulkan、缺陷→怪癖、路径加粗、补冒号、FDT 语序修正、您→你）
-  - 校对《用 Git 更新 FreeBSD》（您→你 3 处、补译漏译 -CURRENT、语序修正、URL 拼写修正 gitstash→git-stash 和 gitmerge→git-merge、修复重复代码块）
-  - 校对《FreeBSD 的新面孔》（补译漏译句"我在 Linux 上曾用过一段时间"、作者名加粗）
+  - 校对《通往 FreeBSD 桌面的直接路径》（误加 "之一" 删除、误加 "可能" 删除）
+  - 校对《FreeBSD 13 中的 HID 支持》（"later in 2000" 误译修正、驱动名 cons→hcons、漏译 game controllers 补全、item 误译修正）
+  - 校对《FreeBSD 上的 Panfrost 驱动》（tiling/tiler/tile 混淆修正、Vulcan→Vulkan、缺陷 → 怪癖、路径加粗、补冒号、FDT 语序修正、您 → 你）
+  - 校对《用 Git 更新 FreeBSD》（您 → 你 3 处、补译漏译 -CURRENT、语序修正、URL 拼写修正 gitstash→git-stash 和 gitmerge→git-merge、修复重复代码块）
+  - 校对《FreeBSD 的新面孔》（补译漏译句 "我在 Linux 上曾用过一段时间"、作者名加粗）
   - 校对《想给你的桌面加点佐料？》（翻译质量高，逐段对照后无需修改）
   - 校对《读者来信》（作者署名 MICHAEL W LUCAS 加粗，与本 issue 其他文章格式一致）
   - 英文原文已归档至 en/2021-0708-desktop-wireless/
@@ -197,11 +197,11 @@
   - 校对《基金会来信》
   - 校对《活动日历》
   - 校对《提升 FreeBSD 安全性的七种方法》
-  - 校对《copyinout 框架》（清单标题格式修正、ABIs→ABI、PDF 残留 stray 代码块删除、拷贝→复制、一个 XX 删除、已字删除等）
-  - 校对《使用 TLS 改善 NFS 安全性》（host/@REALM 补全、一个 XX 删除、进行万能动词删除、待完成→完成后误译修正、POSIX 用户凭证空括号补全、路径加粗等）
-  - 校对《Capsicum 案例研究：Got》（一个 XX 删除、因此冗余删除、隐性→隐蔽、为其使用→供其使用、精细→微妙、/tmp 加粗、文件路径加粗、1Capsicum helpers` typo 修复、黑客操作→拼凑、AT_FDCWD 反引号等）
-  - 校对《对 Jail 进行安全扫描》（以及→和、命令反引号、/tmp 和 /var 加粗、家庭目录→主目录误译修正、导致问题或阻止工作→导致或避免问题、/etc/login.conf 加粗等）
-  - 校对《读者来信》（签名补全"为勒索软件"，匹配英文 TBMfR 缩写）
+  - 校对《copyinout 框架》（清单标题格式修正、ABIs→ABI、PDF 残留 stray 代码块删除、拷贝 → 复制、一个 XX 删除、已字删除等）
+  - 校对《使用 TLS 改善 NFS 安全性》（host/@REALM 补全、一个 XX 删除、进行万能动词删除、待完成 → 完成后误译修正、POSIX 用户凭证空括号补全、路径加粗等）
+  - 校对《Capsicum 案例研究：Got》（一个 XX 删除、因此冗余删除、隐性 → 隐蔽、为其使用 → 供其使用、精细 → 微妙、/tmp 加粗、文件路径加粗、1Capsicum helpers` typo 修复、黑客操作 → 拼凑、AT_FDCWD 反引号等）
+  - 校对《对 Jail 进行安全扫描》（以及 → 和、命令反引号、/tmp 和 /var 加粗、家庭目录 → 主目录误译修正、导致问题或阻止工作 → 导致或避免问题、/etc/login.conf 加粗等）
+  - 校对《读者来信》（签名补全 "为勒索软件"，匹配英文 TBMfR 缩写）
   - 英文原文已归档至 en/2021-0506-security/
 - 2026.7.9
   - 校对 2021-0304 期（FreeBSD 13.0）全部 10 篇文章
@@ -211,8 +211,8 @@
   - 校对《FreeBSD 13 工具链》（作者简介格式统一）
   - 校对《FreeBSD 13 中的新加载器》（路径加粗、teken 译名修正、多处欧化汉语修正）
   - 校对《TCP Cubic 准备起飞》（作者元数据去加粗、误译修正 running these numbers/aggression、多处欧化修正）
-  - 校对《OpenZFS 中的 Zstandard 压缩》（作者元数据去加粗、量词删除、万能动词删除、命令行参数格式修复、术语统一包→Port）
-  - 校对《会议报告：FreeBSD 供应商峰会》（作者元数据去加粗、误译 update→工作汇报、被动句改主动、个别视频→各场视频）
+  - 校对《OpenZFS 中的 Zstandard 压缩》（作者元数据去加粗、量词删除、万能动词删除、命令行参数格式修复、术语统一包 →Port）
+  - 校对《会议报告：FreeBSD 供应商峰会》（作者元数据去加粗、误译 update→ 工作汇报、被动句改主动、个别视频 → 各场视频）
   - 校对《Git 不够吗？》（作者元数据去加粗、补译漏译专栏引言、习语 rolling them back 修正、多处欧化修正）
   - 校对《读者来信》（补加缺失元数据头部、补译 incorruptible/tantrum/meat machine、误译修正）
   - 英文原文已归档至 en/2021-0304-freebsd-13-0/
@@ -220,7 +220,7 @@
 - 2026.7.9
   - 三工具全书清理（AutoCorrect、md-padding@latest、markdownlint）
   - markdownlint：680 个 .md 文件检查，0 违规
-  - AutoCorrect：121 条建议逐项审核，23 条采纳（CJK-Latin 加空格，如"Ports中"→"Ports 中"），1 条特殊修复（FOSDEM 括号位置），97 条拒绝（全角标点/连字符复合词/书名号/脚注标记/CLAUDE.md 表格）
+  - AutoCorrect：121 条建议逐项审核，23 条采纳（CJK-Latin 加空格，如 "Ports 中" → "Ports 中"），1 条特殊修复（FOSDEM 括号位置），97 条拒绝（全角标点/连字符复合词/书名号/脚注标记/CLAUDE.md 表格）
   - md-padding：784 条建议逐项审核，全部拒绝（237 条引号两侧加空格、69 条代码内加空格、4 条 HTML sup 标签、2 条脚注标记、1 条 ^W 修辞符号、其余为标点/代码内容修改误报）
   - 修改涉及 16 个文件，23 处采纳修改 + 1 处特殊修复
   - 总复核：重新运行三工具验证，markdownlint 0 违规、AutoCorrect 99 条建议均为已拒绝类型、md-padding 183 文件 +784/-765 均为已拒绝误报

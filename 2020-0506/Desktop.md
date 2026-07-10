@@ -3,7 +3,7 @@
 - 原文链接：[FreeBSD Desktop Distributions](https://freebsdfoundation.org/wp-content/uploads/2020/07/FreeBSD-Guides-FreeBSD-Desktop-Distrobutions.pdf)
 - 作者：**DREW GURKOWSKI**
 
-**FreeBSD 桌面发行版**将 FreeBSD 操作系统带入了一个新方向，同时仍依赖于 FreeBSD 的强大和稳定的基础操作系统。从集成的桌面环境、便携式 USB 系统到数据恢复工具，FreeBSD 已被广泛应用于各种开源项目。
+**FreeBSD 桌面发行版** 将 FreeBSD 操作系统带入了一个新方向，同时仍依赖于 FreeBSD 的强大和稳定的基础操作系统。从集成的桌面环境、便携式 USB 系统到数据恢复工具，FreeBSD 已被广泛应用于各种开源项目。
 
 ## FuryBSD
 

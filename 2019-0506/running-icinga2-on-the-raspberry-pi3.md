@@ -250,9 +250,9 @@ object ApiUser "icingaweb2" {
 # sysrc php_fpm_enable=yes
 # sysrc nginx_enable=yes
 # sed -i '' "s/listen\ =\ 127.0.0.1:9000/listen\ =\ \/var\/run\/php5-fpm.sock/" /usr/local/etc/php-fpm.d/www.conf
-# sed -i '' "s/;listen.owner/listen.owner/" /usr/local/etc/php-fpm.d/www.conf
-# sed -i '' "s/;listen.group/listen.group/" /usr/local/etc/php-fpm.d/www.conf
-# sed -i '' "s/;listen.mode/listen.mode/" /usr/local/etc/php-fpm.d/www.conf
+# sed -i '' "s/; listen.owner/listen.owner/" /usr/local/etc/php-fpm.d/www.conf
+# sed -i '' "s/; listen.group/listen.group/" /usr/local/etc/php-fpm.d/www.conf
+# sed -i '' "s/; listen.mode/listen.mode/" /usr/local/etc/php-fpm.d/www.conf
 ```
 
 在位于 **/usr/local/etc/nginx/nginx.conf** 的 nginx 配置文件中，在 `location / { ... }` 部分之前加入以下配置段：

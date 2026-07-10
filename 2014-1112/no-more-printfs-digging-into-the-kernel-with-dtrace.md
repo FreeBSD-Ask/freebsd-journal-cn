@@ -45,7 +45,7 @@ ip:::receive
 
 ## 追查内存泄漏
 
-动态探测点尽管有短板，在缩小问题来源范围时往往很有用。调查阶段写的 D 脚本通常是一次性工具，只为隔离某种具体行为，所以探测点稳定性不是问题。`dtrace(1)` 的输出也可高度定制，把 DTrace 与其他程序组合使用往往很方便。对 D 脚本的原始输出做后处理是常见做法，比如用于生成火焰图[2]。
+动态探测点尽管有短板，在缩小问题来源范围时往往很有用。调查阶段写的 D 脚本通常是一次性工具，只为隔离某种具体行为，所以探测点稳定性不是问题。`dtrace(1)` 的输出也可高度定制，把 DTrace 与其他程序组合使用往往很方便。对 D 脚本的原始输出做后处理是常见做法，比如用于生成火焰图 [2]。
 
 定位内存泄漏的原因可能是个艰苦的过程。内核里尤其如此——既缺乏用户态程序那样成熟的调试工具，`malloc()` 接口又有大量各异的调用者。FreeBSD 的 DTrace 实现提供 dtmalloc provider，能帮助快速定位内存泄漏来源。介绍它之前，我们先回顾一下 FreeBSD 内核提供的 `malloc()` 接口：
 
@@ -93,7 +93,7 @@ tick-1s
 在较新版本的 FreeBSD 上，可以用 DTrace 新的 aggpack 选项查看各子系统的分配请求大小分布：
 
 ```sh
-# dtrace -n 'dtmalloc:::malloc {@[probefunc] = quantize(args[3]);}' -x aggpack
+# dtrace -n 'dtmalloc:::malloc {@[probefunc] = quantize(args [3]);}' -x aggpack
 ```
 
 如果某子系统泄漏了 `malloc()` 分配的内存，可以借助 dtmalloc 和 fbt provider 定位导致泄漏的代码路径。考虑这样一个简单场景：运行一个使用 `pmc(3)` 的测试后，观察到 `hwpmc(4)` 在卸载时泄漏内存（通过控制台消息）。
@@ -300,7 +300,7 @@ fbt::cache_purge:entry
 
 ## 查看进程参数向量
 
-execsnoop 是 Brendan Gregg 编写的经典 DTrace 脚本，可在 DTrace toolkit[3] 中找到。它通过在 `execve(2)` 系统调用返回时追踪 `curpsinfo->pr_psargs` 变量（定义在 **/usr/lib/dtrace/psinfo.d**），让用户实时观察进程执行；简化版如下：
+execsnoop 是 Brendan Gregg 编写的经典 DTrace 脚本，可在 DTrace toolkit [3] 中找到。它通过在 `execve(2)` 系统调用返回时追踪 `curpsinfo->pr_psargs` 变量（定义在 **/usr/lib/dtrace/psinfo.d**），让用户实时观察进程执行；简化版如下：
 
 ```d
 #pragma D option quiet
@@ -362,7 +362,7 @@ syscall::execve:return
 
 这段脚本用到了 DTrace 几个不那么常见的特性。首先是 `self->argv` 变量与多个 D 函数配合使用，这是 DTrace 推测追踪特性的应用——它让我们能在尚不确定是否需要某份数据时先把它捕获下来。这里我们用 `kern_execve()` 的参数提取程序参数，但不能在 `fbt::kern_execve:entry` 探测点直接打印，因为系统调用可能失败。解决办法是先推测性地追踪参数；等确认系统调用成功后再打印，否则就丢弃这份字符串。
 
-推测涉及四个 D 函数。首先用 `speculation()` 分配一个推测缓冲区，把句柄存入 `self->argv` 线程局部变量，作为参数传给其他推测函数。`speculate()` 为该探测点余下部分启用推测追踪——数据采集动作的输出暂存到推测缓冲区以备后用。最后，`commit()` 和 `discard()` 分别把推测数据存入 DTrace 的输出缓冲区或丢弃。DTrace 只能分配固定数量的推测缓冲区；可用 `nspec` 选项（如上例所示）调整可用缓冲区数量。DTrace 推测追踪特性的完整文档见[4]。
+推测涉及四个 D 函数。首先用 `speculation()` 分配一个推测缓冲区，把句柄存入 `self->argv` 线程局部变量，作为参数传给其他推测函数。`speculate()` 为该探测点余下部分启用推测追踪——数据采集动作的输出暂存到推测缓冲区以备后用。最后，`commit()` 和 `discard()` 分别把推测数据存入 DTrace 的输出缓冲区或丢弃。DTrace 只能分配固定数量的推测缓冲区；可用 `nspec` 选项（如上例所示）调整可用缓冲区数量。DTrace 推测追踪特性的完整文档见 [4]。
 
 本例另一个不常见之处是 `memstr()` D 函数。撰写本文时该函数为 FreeBSD 独有，专门为处理 FreeBSD 内核中参数字符串的内存布局而添加。比如字符串 `wc -w article.txt` 会被存储为：
 

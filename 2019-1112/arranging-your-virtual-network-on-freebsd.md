@@ -58,6 +58,7 @@ root@jailhost:~ # iocage destroy -f simplecage
 Stopping simplecage
 Destroying simplecage
 root@jailhost:~ #
+
 ```
 
 使用 `sysutils/pot` 做同样示例，它是一个替代的 jail 管理器，旨在提供类容器功能和 `sysutils/nomad` 集成：
@@ -81,6 +82,7 @@ root@jailhost:~ # pot destroy -Fp simplepot
 ===>
 Destroying pot simplepot
 root@jailhost:~ #
+
 ```
 
 ### 使用专用 IP 地址的普通 Jail
@@ -152,6 +154,7 @@ root@jailhost:~ # pot destroy -Fp aliaspot
 ===>
 Destroying pot aliaspot
 root@jailhost:~ #
+
 ```
 
 ### 使用 VLAN IP 地址的普通 Jail
@@ -189,6 +192,7 @@ root@jailhost:~ # iocage destroy -f vlancage
 Stopping vlancage
 Destroying vlancage
 root@jailhost:~ #
+
 ```
 
 这假设防火墙和 NAT 在网络中的另一台主机/设备上进行。由于宿主机已配置 IP 地址（**10.1.1.1/24**），将 jail 的 IP 地址作为别名宿主地址（掩码 **/32**）添加正是所需。这也有助于配置，允许在 jail 启动前配置静态路由，并基于接口的网络配置设置防火墙规则。
@@ -227,6 +231,7 @@ root@locage:~ # host freebsd.org
 ;; connection timed out; no servers could be reached
 root@locage:~ # logout
 root@jailhost:~ #
+
 ```
 
 ### 为公共流量添加出站 NAT
@@ -277,6 +282,7 @@ root@locage:~ # fetch -q -o - http://canhazip.com
 <your public facing IP shown here>
 root@locage:~ # logout
 root@jailhost:~ #
+
 ```
 
 ### 运行服务并将流量重定向到它
@@ -308,6 +314,7 @@ root@locage:~ # logout
 root@jailhost:~ # fetch -q -o - http://172.31.255.17
 Hello Jail
 root@jailhost:~ #
+
 ```
 
 此时从外部访问 jail 内托管的 web 服务器应该可用，可通过浏览器指向服务器的主 IP 地址验证。
@@ -485,6 +492,7 @@ disk usage
 ===>
 runtime memory usage require rctl enabled
 root@jailhost:~ #
+
 ```
 
 pot 在 `pf(4)` 中创建包含导出端口重定向 pass 规则的 anchor，同样可通过 `pfctl(8)` 查看：
@@ -608,6 +616,7 @@ root@vnetcage:~ # fetch -q -o - http://canhazip.com
 <your public facing IP shown here>
 root@vnetcage:~ # logout
 root@jailhost:~ #
+
 ```
 
 ## 加入 bhyve VM 和 DHCP
@@ -737,6 +746,7 @@ $ fetch -q -o - http://canhazip.com
 <your public facing IP shown here>
 $ ^DConnection to 10.1.1.11 closed.
 root@jailhost:~ #
+
 ```
 
 > **注意**：通过将 `/dev/bpf` 暴露给 VNET jail，可以像此处 VM 那样用 DHCP 配置 jail 的 IP 地址。在 `iocage(8)` 中启用 `dhcp` 属性即可轻松实现。
@@ -790,6 +800,7 @@ SSH-2.0-OpenSSH_7.8 FreeBSD-20180909
 ^C
 root@vnetcage:~ # logout
 root@jailhost:~ #
+
 ```
 
 将交换机切换为 private 模式后，VM 连接到桥接的 tap 接口被标记为 PRIVATE。由于 jail 的 epair 接口未标记 PRIVATE，流量仍可流通，ssh 仍可用：
@@ -808,6 +819,7 @@ root@jailhost:~ # nc 10.1.1.11 22
 SSH-2.0-OpenSSH_7.8 FreeBSD-20180909
 ^C
 root@jailhost:~ #
+
 ```
 
 理想情况下，`iocage(8)` 应支持一个配置选项，允许在桥接成员上自动设置 private 标志。在该功能出现之前，下面的脚本可配置为通过 jail 的 `poststart` 钩子执行，达到（几乎）同样的效果。
@@ -861,6 +873,7 @@ root@jailhost:~ # ifconfig vm-services | grep vnet
 member: vnet0.16 flags=943<LEARNING,DISCOVER,PRIVATE,AUTOEDGE,\
 AUTOPTP>
 root@jailhost:~ #
+
 ```
 
 如你所见，桥接成员现在在 jail 启动时正确配置为 private。
@@ -899,6 +912,7 @@ root@vnetcage:~ # ls /dev/pf
 /dev/pf
 root@vnetcage:~ # logout
 root@jailhost:~ #
+
 ```
 
 > **注意**：由于 `iocage(8)` 的一个 bug，每次 jail 停止时配置的 `devfs(8)` 规则会从 `devfs(8)` 中移除。未来版本可能会修复；目前有一个补丁可用（`https://github.com/iocage/iocage/pull/1106`）可解决该问题。
@@ -940,6 +954,7 @@ all tcp 10.1.1.2:58192 -> 104.16.223.38:80
 FIN_WAIT_2:FIN_WAIT_2
 root@vnetcage:~ # logout
 root@jailhost:~ #
+
 ```
 
 > **注意**：同一桥接上的 jail/VM 可设置/盗用 IP、更改 MAC 地址，所以这层保护只足以防止不必要/意外的流量发生。如需更严格的安全，可在 jailhost 上启用 `ipfw(8)` 的二层过滤，并在宿主桥接和 jail 的 epair 接口之间插入额外的桥接。这种配置的细节超出本文范围。
@@ -1168,6 +1183,7 @@ root@gateway:~ # sysrc natd_interface=em0
 natd_interface:
 -> em0
 root@gateway:~ #
+
 sysrc gateway_enable=YES
 gateway_enable: NO -> YES
 ```
@@ -1181,7 +1197,7 @@ cloned_interfaces:
 root@gateway:~ # sysrc ifconfig_vxlan111="inet 10.0.111.1/24 mtu 1450"
 ifconfig_vxlan111:
 -> inet 10.0.111.1/24 mtu 1450
-root@gateway:~ # sysrc create_args_vxlan111="vxlanid 111 vxlanlocal\
+root@gateway:~ # sysrc create_args_vxlan111=" vxlanid 111 vxlanlocal\
 192.168.0.1 vxlandev em1 vxlangroup 239.0.0.111"
 create_args_vxlan111:
 -> vxlanid 111 vxlanlocal 192.168.0.1
@@ -1189,7 +1205,7 @@ vxlandev em1 vxlangroup 239.0.0.111
 root@gateway:~ # sysrc ifconfig_vxlan222="inet 10.0.222.1/24 mtu 1450"
 ifconfig_vxlan222:
 -> inet 10.0.222.1/24 mtu 1450
-root@gateway:~ # sysrc create_args_vxlan222="vxlanid 222 vxlanlocal\
+root@gateway:~ # sysrc create_args_vxlan222=" vxlanid 222 vxlanlocal\
 192.168.0.1 vxlandev em1 vxlangroup 239.0.0.222"
 create_args_vxlan222:
 -> vxlanid 222 vxlanlocal 192.168.0.1
@@ -1226,7 +1242,7 @@ cloned_interfaces:
 root@jailhost-a:~ # sysrc ifconfig_vxlan111="inet 10.0.111.10/24 mtu 1450"
 ifconfig_vxlan111:
 -> inet 10.0.111.10/24 mtu 1450
-root@jailhost-a:~ # sysrc create_args_vxlan111="vxlanid 111 vxlanlocal\
+root@jailhost-a:~ # sysrc create_args_vxlan111=" vxlanid 111 vxlanlocal\
 192.168.0.10 vxlandev igb0 vxlangroup 239.0.0.111"
 create_args_vxlan111:
 -> vxlanid 111 vxlanlocal 192.168.0.10
@@ -1234,7 +1250,7 @@ vxlandev igb0 vxlangroup 239.0.0.111
 root@jailhost-a:~ # sysrc ifconfig_vxlan222="inet 10.0.222.10/24 mtu 1450"
 ifconfig_vxlan222:
 -> inet 10.0.222.10/24 mtu 1450
-root@jailhost-a:~ # sysrc create_args_vxlan222="vxlanid 222 vxlanlocal\
+root@jailhost-a:~ # sysrc create_args_vxlan222=" vxlanid 222 vxlanlocal\
 192.168.0.10 vxlandev igb0 vxlangroup 239.0.0.222"
 create_args_vxlan222:
 -> vxlanid 222 vxlanlocal 192.168.0.10
@@ -1403,7 +1419,7 @@ cloned_interfaces:
 root@jailhost-b:~ # sysrc ifconfig_vxlan111="inet 10.0.111.20/24 mtu 1450"
 ifconfig_vxlan111:
 -> inet 10.0.111.20/24 mtu 1450
-root@jailhost-b:~ # sysrc create_args_vxlan111="vxlanid 111 vxlanlocal\
+root@jailhost-b:~ # sysrc create_args_vxlan111=" vxlanid 111 vxlanlocal\
 192.168.0.20 vxlandev em0 vxlangroup 239.0.0.111"
 create_args_vxlan111:
 -> vxlanid 111 vxlanlocal 192.168.0.20
@@ -1411,7 +1427,7 @@ vxlandev em0 vxlangroup 239.0.0.111
 root@jailhost-b:~ # sysrc ifconfig_vxlan222="inet 10.0.222.20/24 mtu 1450"
 ifconfig_vxlan222:
 -> inet 10.0.222.20/24 mtu 1450
-root@jailhost-b:~ # sysrc create_args_vxlan222="vxlanid 222 vxlanlocal\
+root@jailhost-b:~ # sysrc create_args_vxlan222=" vxlanid 222 vxlanlocal\
 192.168.0.20 vxlandev em0 vxlangroup 239.0.0.222"
 create_args_vxlan222:
 -> vxlanid 222 vxlanlocal 192.168.0.20
@@ -1481,6 +1497,7 @@ PING 10.0.111.10 (10.0.111.10): 56 data bytes
 round-trip min/avg/max/stddev = 0.297/0.444/0.716/0.193 ms
 root@plainjail-b:~ # logout
 root@jailhost-b:~ #
+
 ```
 
 > **注意**：“plainjail-b”这种配置下，其公共流量不会通过 VXLAN 发送并由网关主机 NAT。此设置是有意的；否则会用 VNET jail。
