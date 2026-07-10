@@ -166,7 +166,7 @@ SSH 还可以作为 rsync(1) 的安全传输机制，用于传输大体量文件
 
 但这个模块缺乏维护。它往往无法与最新的 Windows 设备驱动配合工作，尤其是无线以太网设备驱动。
 
-此外，ndis(4) 只能覆盖相当有限的一部分网络设备。事实上，在现实中，尽管 FreeBSD 拥有一个非常健壮且设计良好的内核，但由于这些不足，它在某些方面让人更倾向于 GNU/Linux。
+此外，ndis(4) 只能覆盖相当有限的一部分网络设备。事实上，尽管 FreeBSD 拥有一个非常健壮且设计良好的内核，但由于这些不足，它在某些方面让人更倾向于 GNU/Linux。
 
 对于 FreeBSD 的未来，我的建议与设备驱动有关：
 
@@ -185,18 +185,18 @@ SSH 还可以作为 rsync(1) 的安全传输机制，用于传输大体量文件
 
 - [1] “High-speed rail in China,”维基百科，在线访问：[https://en.wikipedia.org/wiki/High-speed_rail_in_China](https://en.wikipedia.org/wiki/High-speed_rail_in_China)
 - [2] “Beijing–Shanghai High-Speed Railway,”维基百科，在线访问：[https://en.wikipedia.org/wiki/Beijing%E2%80%93Shanghai_High-Speed_Railway](https://en.wikipedia.org/wiki/Beijing%E2%80%93Shanghai_High-Speed_Railway)
-- [3] （仅中文）“京沪高速铁路，”百度百科，在线访问：[http://baike.baidu.com/view/141756.htm](http://baike.baidu.com/view/141756.htm)
+- [3] （仅中文）“京沪高速铁路”，百度百科，在线访问：[http://baike.baidu.com/view/141756.htm](http://baike.baidu.com/view/141756.htm)
 - [4] “Harbin-Dalian High-Speed Railway,”维基百科，在线访问：[https://en.wikipedia.org/wiki/Harbin%E2%80%93Dalian_High-Speed_Railway](https://en.wikipedia.org/wiki/Harbin%E2%80%93Dalian_High-Speed_Railway)
-- [5] （仅中文）“哈大高速铁路，”百度百科，在线访问：[http://baike.baidu.com/view/1213823.htm](http://baike.baidu.com/view/1213823.htm)
+- [5] （仅中文）“哈大高速铁路”，百度百科，在线访问：[http://baike.baidu.com/view/1213823.htm](http://baike.baidu.com/view/1213823.htm)
 - [6] （仅中文）高铁网，在线访问：[http://www.gaotie.cn/](http://www.gaotie.cn/)
-- [7] “Intel® Desktop Board D410PT 技术产品规格，”Intel，在线访问：[http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000021877.html](http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000021877.html)
-- [8] “Intel Desktop Board D425KT/D425KTW 技术产品规格，”Intel，在线访问：[http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000020992.html](http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000020992.html)
+- [7] “Intel® Desktop Board D410PT 技术产品规格”，Intel，在线访问：[http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000021877.html](http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000021877.html)
+- [8] “Intel Desktop Board D425KT/D425KTW 技术产品规格”，Intel，在线访问：[http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000020992.html](http://www.intel.com/content/www/us/en/support/boards-and-kits/desktop-boards/000020992.html)
 - [9] Mega-info Media 有限公司，官方网站：[http://www.megainfomedia.com/](http://www.megainfomedia.com/)
 - [10] GA-B75-D3V 用户手册，技嘉科技有限公司，在线访问：[http://download.gigabyte.cn/FileList/Manual/mb-manual_ga-b75-d3v_v1.2_e.pdf](http://download.gigabyte.cn/FileList/Manual/mb-manual_ga-b75-d3v_v1.2_e.pdf)
 - [11] Intel Core i5-3450 介绍，Intel，在线访问：[http://ark.intel.com/products/65511/Intel-Corei5-3450-Processor-6M-Cache-up-to-3_50-GHz](http://ark.intel.com/products/65511/Intel-Corei5-3450-Processor-6M-Cache-up-to-3_50-GHz)
 - [12] FreeBSD 版 GeForce 驱动，NVIDIA，在线访问：[http://www.geforce.com/drivers](http://www.geforce.com/drivers)
 - [13] Martin Matuška，“mfsBSD”，在线访问：[http://mfsbsd.vx.sk/](http://mfsbsd.vx.sk/)
 - [14] wxWidgets，跨平台 C++ GUI 库，在线访问：[http://www.wxwidgets.org/](http://www.wxwidgets.org/)
-- [15] “内核初始化，”《FreeBSD 架构手册》，在线访问：[https://www.freebsd.org/doc/en_US.ISO8859-1/books/arch-handbook/boot-kernel.html](https://www.freebsd.org/doc/en_US.ISO8859-1/books/arch-handbook/boot-kernel.html)
+- [15] “内核初始化”，《FreeBSD 架构手册》，在线访问：[https://www.freebsd.org/doc/en_US.ISO8859-1/books/arch-handbook/boot-kernel.html](https://www.freebsd.org/doc/en_US.ISO8859-1/books/arch-handbook/boot-kernel.html)
 - [16] 中国新华社，官方网站：[http://www.news.cn/english/](http://www.news.cn/english/)
 - [17] 中国大陆重新制作的地理概览图，参考政府数字地图网站“天地图”，在线访问：中文：[http://map.tianditu.com/](http://map.tianditu.com/) 英文：[http://en.tianditu.com/](http://en.tianditu.com/)

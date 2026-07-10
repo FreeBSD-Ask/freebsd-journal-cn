@@ -1,7 +1,7 @@
 # 活动日历
 
 - 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2016/06/Events-Calendar.pdf)
-- 作者：Dru Lavigne
+- 作者：**Dru Lavigne**
 
 ## 至 2016 年 7 月
 

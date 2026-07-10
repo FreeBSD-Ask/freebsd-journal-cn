@@ -1,6 +1,6 @@
 # 基金会来信
 
-- 原文链接：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2022/11/foundation_letter.pdf)
+- 原文：[Letter from the Foundation](https://freebsdfoundation.org/wp-content/uploads/2022/11/foundation_letter.pdf)
 - 作者：Ed Maste、编辑委员会
 
 ## 欢迎阅读最新一期 FreeBSD 期刊安全专题。
