@@ -1,5 +1,6 @@
 # 会议报道：台北/台湾 PortsCamp
 
+- 原文：[Meeting Report: PortsCamp in Taipei/Taiwan](https://freebsdfoundation.org/wp-content/uploads/2016/04/Meeting-Report.pdf)
 - 作者：**Marcelo Araujo**
 
 2016 年 1 月 15 日

@@ -1,5 +1,6 @@
 # FreeBSD 本月动态：访谈 Gleb Smirnoff
 
+- 原文：[This Month in FreeBSD: An Interview with Gleb Smirnoff](https://freebsdfoundation.org/wp-content/uploads/2016/04/This-Month-in-FreeBSD.pdf)
 - 作者：**Dru Lavigne**
 
 接下来几期，我们将深入关注 2016 年版本中的若干新特性和背后的开发者。

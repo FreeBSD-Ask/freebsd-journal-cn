@@ -1,5 +1,6 @@
 # Ports 报告
 
+- 原文：[Ports Report](https://freebsdfoundation.org/wp-content/uploads/2016/04/Ports-Report.pdf)
 - 作者：**Frederic Culot**
 
 1 月至 2 月期间，问题修复方面的活跃度非常高。在此期间，我们也高兴地欢迎 miwi@ 回归 port 管理团队，并迎来 3 位新加入或回归的提交者。此外，若干重要 ports 也得到更新，升级时可能需要谨慎处理，详见下文。
