@@ -199,4 +199,6 @@ umount /dev/md0p1
 
 诚然，RISC-V 整体仍处于早期阶段。硬件侧的供货不足与软件侧的不完整支持意味着，RISC-V 的用处目前主要限于研究与专用计算领域。过去几年对软件支持的许多改进与 RISC-V 采用率的提升表明，这种情况不会一直如此，它可能很快会作为更易得的通用计算平台出现。随着 RISC-V 持续成长，
 
-MITCHELL HORNE 是加拿大滑铁卢大学即将完成本科学业的大学生。他是 FreeBSD src committer，并在过去一年中成为 FreeBSD/RISC-V 移植的主要贡献者之一。
+---
+
+**MITCHELL HORNE** 是加拿大滑铁卢大学即将完成本科学业的大学生。他是 FreeBSD src committer，并在过去一年中成为 FreeBSD/RISC-V 移植的主要贡献者之一。
