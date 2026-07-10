@@ -55,4 +55,6 @@ HUG：
 
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
-MICHAEL W LUCAS 从社会的 Michael W Lucas 抽象层中冒出的最新图书包括《TLS Mastery》、《Only Footnotes》以及即将问世的《$git sync murder》。系统管理员三十年生涯已将苦涩、愤世嫉俗和讽刺从他身上净化干净。更多内容见 <https://mwl.io>。
+---
+
+**MICHAEL W LUCAS** 从社会的 Michael W Lucas 抽象层中冒出的最新图书包括《TLS Mastery》、《Only Footnotes》以及即将问世的《$git sync murder》。系统管理员三十年生涯已将苦涩、愤世嫉俗和讽刺从他身上净化干净。更多内容见 <https://mwl.io>。
