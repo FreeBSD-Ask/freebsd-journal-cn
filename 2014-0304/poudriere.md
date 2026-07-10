@@ -157,4 +157,4 @@ lrwxr-xr-x 1 root wheel 7 Jan 26 2013 freebsd:8:x86:64@ -> 83amd64
 
 ---
 
-**Bryan Drewery** 自 2004 年起用 FreeBSD 管理共享托管服务。他于 2012 年作为 Ports 提交者加入项目，是 Portmgr 成员，最近成为 Src 提交者。他是 Portupgrade、Portmaster 的当前上游维护者，也是 Pkg 和 Poudriere 的开发者。在 Portmgr 中，他协助处理 Ports 框架、管理包构建系统、包构建及在系统上测试 Ports 补丁。
+**Bryan Drewery** 自 2004 年起用 FreeBSD 管理共享托管服务。他于 2012 年作为 Ports 提交者加入项目，是 Portmgr 成员，最近成为 Src 提交者。他是 Portupgrade、Portmaster 的当前上游维护者，也是 Pkg 和 Poudriere 的开发者。在 Portmgr 中，他协助处理 Ports 框架、管理软件包构建系统、软件包构建及在系统上测试 Ports 补丁。

@@ -16,6 +16,8 @@
 
 最后，我们要感谢 George Neville-Neil 和 Kristof Provost 在编委会的服务。两人都卸任休整。George 自期刊创刊起即在编委会任职，并是首任编委会主席。Kristof 在编委会任职已两年。尽管他们不再在编委会，仍会出现在期刊页面中。其中一位（或至少他的另一个自我）甚至可能在本期露面……
 
-John Baldwin
-代表 FreeBSD 基金会
+代表 FreeBSD 基金会，
+
+**John Baldwin**
+
 FreeBSD 期刊编委会主席
