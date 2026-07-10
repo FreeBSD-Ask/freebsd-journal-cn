@@ -301,7 +301,7 @@ Web 服务器和 php-fpm 现在可以启动了：
 
 ## 配置要监控的主机和服务
 
-Icinga 检查分为主动检查和被动检查。主动检查在被监控主机自身执行，结果发送回 icinga 服务器做进一步处理。被动检查由 icinga 服务器从主机外部执行，如 ping。我们只介绍被动检查；不过主动检查在 树莓派 上也工作得很好。被监控主机的配置文件位于 **/usr/local/etc/icinga2/conf.d/hosts.conf**，我的默认配置中已包含 icinga 服务器自身。用以下模板添加新主机：
+Icinga 检查分为主动检查和被动检查。主动检查在被监控主机自身执行，结果发送回 icinga 服务器做进一步处理。被动检查由 icinga 服务器从主机外部执行，如 ping。我们只介绍被动检查；不过主动检查在树莓派上也工作得很好。被监控主机的配置文件位于 **/usr/local/etc/icinga2/conf.d/hosts.conf**，我的默认配置中已包含 icinga 服务器自身。用以下模板添加新主机：
 
 ```nginx
 object Host "myhost" {

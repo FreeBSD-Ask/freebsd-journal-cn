@@ -36,7 +36,7 @@
 
 **Ruey-Cherng：** 收集 FreeBSD 9.0 安装所需资料时，我发现繁体中文文档匮乏，能找到的也过时，多为 FreeBSD 5.X。zh_TW 版 FreeBSD Handbook 最后更新在 2008 年。FreeBSD 官网没有指向 zh_TW 版的链接，因为内容过时。于是我决定更新 FreeBSD Handbook 的翻译。
 
-我给 freebsd-doc 邮件列表发了封自我介绍并求助的邮件。共同导师 lwhsu@ 联系我，帮我将旧的 BIG-5 编码转换为 UTF-8。然后我开始翻译。delphij@ 帮我解决 PDF 渲染中的乱码问题。我在 树莓派 2B 上搭了台 FreeBSD 服务器，这样可以从牙科诊所 ssh 上去，有空就翻译。当时 FreeBSD ARM 包仓库还没建立，我安装常用程序时遇到一些问题。我在 FreeBSD 台湾用户组 Facebook 群组认识了导师 kevlo@。他耐心回答了我许多愚蠢的问题，帮我解决问题并鼓励我继续翻译。我挣扎于 xml 标签，进度很慢。幸好测试与练习 po 翻译那晚，我遇到 po 翻译转 UTF-8 的问题，共同导师 wblock@ 热心帮我解决。把旧翻译方式转换为 po 翻译是劳动密集型工作，必须逐条把字符串复制粘贴到 po 文件，需要更多人参与。为吸引新鲜血液，7 月我在台北本地 BSDDay 做了关于 FreeBSD 文档繁体中文翻译的演讲（见 <https://lists.freebsd.org/pipermail/freebsdtranslators/2016-August/000141.html>）。对无法到场的人，我也写了篇文章介绍 FreeBSD 文档繁体中文翻译。一位贡献者 cwlin 通过 subversion 日志联系我，他把 zh_TW 版 Handbook 转成了 po 翻译，工作量很大！之后，kevlo@ 提议我成为提交者以方便翻译工作。如今在 kevlo@ 与 ryusuke@ 帮助下，我复兴了 zh_TW 版 FreeBSD 网站。
+我给 freebsd-doc 邮件列表发了封自我介绍并求助的邮件。共同导师 lwhsu@ 联系我，帮我将旧的 BIG-5 编码转换为 UTF-8。然后我开始翻译。delphij@ 帮我解决 PDF 渲染中的乱码问题。我在树莓派 2B 上搭了台 FreeBSD 服务器，这样可以从牙科诊所 ssh 上去，有空就翻译。当时 FreeBSD ARM 包仓库还没建立，我安装常用程序时遇到一些问题。我在 FreeBSD 台湾用户组 Facebook 群组认识了导师 kevlo@。他耐心回答了我许多愚蠢的问题，帮我解决问题并鼓励我继续翻译。我挣扎于 xml 标签，进度很慢。幸好测试与练习 po 翻译那晚，我遇到 po 翻译转 UTF-8 的问题，共同导师 wblock@ 热心帮我解决。把旧翻译方式转换为 po 翻译是劳动密集型工作，必须逐条把字符串复制粘贴到 po 文件，需要更多人参与。为吸引新鲜血液，7 月我在台北本地 BSDDay 做了关于 FreeBSD 文档繁体中文翻译的演讲（见 <https://lists.freebsd.org/pipermail/freebsdtranslators/2016-August/000141.html>）。对无法到场的人，我也写了篇文章介绍 FreeBSD 文档繁体中文翻译。一位贡献者 cwlin 通过 subversion 日志联系我，他把 zh_TW 版 Handbook 转成了 po 翻译，工作量很大！之后，kevlo@ 提议我成为提交者以方便翻译工作。如今在 kevlo@ 与 ryusuke@ 帮助下，我复兴了 zh_TW 版 FreeBSD 网站。
 
 **Joseph：** 像大多数提交者一样，我只是开始提交补丁。我通过潜伏在 IRC 与邮件列表、参加 BSDCan 结识 FreeBSD 人。BSDCan 的黑客休息室是结识 FreeBSD、OpenBSD 乃至一些 DragonFlyBSD 社区成员的好方式。这些联系激发了我更多贡献的动机。
 
