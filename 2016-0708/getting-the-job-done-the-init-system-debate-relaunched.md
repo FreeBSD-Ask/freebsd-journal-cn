@@ -1,6 +1,7 @@
 # 把活干完：init 系统辩论再起
 
-作者：Mark Heily
+- 原文：[Getting the Job Done: The init System Debate Relaunched](https://freebsdfoundation.org/wp-content/uploads/2016/08/Getting-the-Job-Done.pdf)
+- 作者：**Mark Heily**
 
 随着时间推移，Unix 操作系统演化出多种启动程序并影响其执行的机制。为便于理解，我们来快速浏览一下典型 FreeBSD 系统上运行的不同类型的程序。
 

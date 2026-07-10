@@ -63,4 +63,4 @@ Zstd 支持已作为 OpenZFS 2.0 的一部分发布，并且可以通过 Port `s
 
 ---
 
-ALLAN JUDE 是 Klara Inc. 的工程副总裁，这是一家全球领先的 FreeBSD 专业服务和支持公司。他还是每周 BSD 播客 BSDNow.tv 的主持人，并曾于 2016 至 2020 年期间担任 FreeBSD 核心团队成员。他与 Michael W. Lucas 共同著有《FreeBSD Mastery: ZFS》和《FreeBSD Mastery: Advanced ZFS》。
+**ALLAN JUDE** 是 Klara Inc. 的工程副总裁，这是一家全球领先的 FreeBSD 专业服务和支持公司。他还是每周 BSD 播客 BSDNow.tv 的主持人，并曾于 2016 至 2020 年期间担任 FreeBSD 核心团队成员。他与 Michael W. Lucas 共同著有《FreeBSD Mastery: ZFS》和《FreeBSD Mastery: Advanced ZFS》。
