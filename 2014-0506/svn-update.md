@@ -27,7 +27,7 @@ stable/9 基本系统中的 BIND DNS 服务器更新至 9.9.5 版本。该软件
 
 <http://svnweb.freebsd.org/base?view=revision&revision=r262564>
 
-`ext2fs(5)` 代码已更新，在 stable/9 中启用只读模式下的 ext4 文件系统支持。head/ 中以修订 r262346 加入了对挂载只读 ext4 文件系统的支持。只读 ext4 文件系统支持在 stable/10 中自修订 r262563 起可用。
+`ext2fs.5` 代码已更新，在 stable/9 中启用只读模式下的 ext4 文件系统支持。head/ 中以修订 r262346 加入了对挂载只读 ext4 文件系统的支持。只读 ext4 文件系统支持在 stable/10 中自修订 r262563 起可用。
 
 ## pkg(8) 引导签名校验：stable/9@r263038
 
