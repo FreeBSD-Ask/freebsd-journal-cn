@@ -216,4 +216,6 @@ FreeBSD 11 与 FreeBSD 12 以及 FreeBSD 12 与 Ubuntu 18（Linux 4.15）的 Wil
 
 <https://github.com/ScaleBSD/scalebsd.github.io/tree/master/media/freebsd_processor_scaling>
 
-MATT MACY 是一名咨询内核工程师和 FreeBSD 提交者。最近他专注于网络性能、内核可扩展性和 ZFS。
+---
+
+**MATT MACY** 是一名咨询内核工程师和 FreeBSD 提交者。最近他专注于网络性能、内核可扩展性和 ZFS。

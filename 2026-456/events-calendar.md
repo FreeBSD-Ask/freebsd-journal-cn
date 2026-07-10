@@ -16,8 +16,6 @@
 
 欢迎加入 FreeBSD 社区，参加 2026 年 9 月的 FreeBSD 黑客马拉松。活动将在德国柏林举办，时间在 EuroBSDCon 2026 之前。黑客马拉松汇聚 FreeBSD 开发者和贡献者，协作推进项目、分享想法，随后一同前往 EuroBSDCon。
 
-![FreeBSD logo](../png/2026-456/events-calendar-01.png)
-
 ## 2026 年 9 月 FreeBSD 开发者峰会
 
 2026 年 9 月 9-10 日

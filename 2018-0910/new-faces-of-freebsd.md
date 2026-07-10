@@ -1,6 +1,6 @@
 # FreeBSD 新面孔
 
-作者：DRU LAVIGNE
+作者：**Dru Lavigne**
 
 这个专栏旨在聚焦最近获得提交位的贡献者，并将他们介绍给 FreeBSD 社区。本月的专栏聚焦于 5 月获得 src 位的 Breno Leitao。
 
@@ -38,35 +38,6 @@
 
   我不太擅长给人建议，但我用问题纠缠 Powerpc 维护者（有时整天）这一点，对我来说是能够解决重要问题并被邀请成为提交者的关键。•
 
-DRU LAVIGNE 是 iXsystems 的存储工程总监，《BSD Hacks》和《The Best of FreeBSD Basics》的作者。
-
-## Write For Us!
-
-联系 Jim Maurer
-（<jmaurer@freebsdjournal.com>）
-提交你的文章想法。
-
 ---
 
-作者：Brooks Davis, Robert Norton, Jonathan Woodruff & Robert N. M. Watson
-
-ZFS 专家打造了他们的服务器。
-现在你也可以。获取一本.....
-
-选择电子书、印刷版或组合版。你将学会：
-
-- 使用 boot environment，让风险最高的系统管理任务变得乏味。
-- 向用户委派文件系统权限。
-- 用 jail 容器化 ZFS 数据集。
-- 快速高效地在机器之间复制数据。
-- 从镜像中分离层。
-- 优化 ZFS 块存储。
-- 处理大型存储阵列。
-- 选择缓存策略以提升性能。
-- 管理下一代存储硬件。
-- 识别并消除瓶颈。
-- 构建极速数据库存储。
-- 深入了解池、metaslab 等！
-
-无论你是管理单台小型服务器还是国际数据中心，
-用 FreeBSD Mastery: Advanced ZFS 简化你的存储。立即获取！
+**DRU LAVIGNE** 是 iXsystems 的存储工程总监，《BSD Hacks》和《The Best of FreeBSD Basics》的作者。

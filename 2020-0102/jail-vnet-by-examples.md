@@ -33,14 +33,14 @@ vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
 
 关于操作系统要求：
 
-- 使用的 shell 是 `/bin/sh`。
+- 使用的 shell 是 **/bin/sh**。
 - FreeBSD 12.1 起步（可以是 12-STABLE 或更佳的 -head）
 
-作者：OLIVIER COCHARD-LABBÉ
+作者：**OLIVIER COCHARD-LABBÉ**
 
 ## 无用的隔离 vnet Jail
 
-这个无用的示例展示如何创建一个隔离的 vnet Jail。
+这个无用的示例展示如何创建隔离的 vnet Jail。
 
 命令行参数详情：
 
@@ -75,7 +75,7 @@ lo0: flags=8008<LOOPBACK, MULTICAST> metric 0 mtu 16384
 
 Routing tables
 
-存在一个未配置的 loopback（禁用且未分配 IP 地址）和空路由表。我们来修复它。
+存在未配置的 loopback（禁用且未分配 IP 地址）和空路由表。我们来修复它。
 
 ```sh
 # jexec useless service netif restart
@@ -109,7 +109,7 @@ Destination                     Gateway                       Flags     Netif Ex
 fe80::%lo0/64                   link#1                        U           lo0
 fe80::1%lo0                     link#1                        UHS         lo0
 
-好多了！但我们只有 loopback 接口在运行。下一步是创建一个虚拟 Ethernet tap 接口并分配给 Jail。`ifconfig(8)` 手册页摘录：
+好多了！但我们只有 loopback 接口在运行。下一步是创建虚拟 Ethernet tap 接口并分配给 Jail。`ifconfig(8)` 手册页摘录：
 
 ```sh
 vnet jail
@@ -471,7 +471,7 @@ traceroute to 192.0.2.9 (192.0.2.9), 64 hops max, 40 byte packets
   4  192.0.2.7  0.194 ms  0.197 ms  0.191 ms
   5  192.0.2.9  0.261 ms  0.201 ms  0.188 ms
 
-可选地，给此设置增添一点趣味（在拥有较大 IPv6 范围时，应能轻松编写一个填充 DNS 配置文件的 text-to-traceroute 脚本）。
+可选地，给此设置增添一点趣味（在拥有较大 IPv6 范围时，应能轻松编写填充 DNS 配置文件的 text-to-traceroute 脚本）。
 
 ```sh
 # cat >> /etc/hosts <<EOF
@@ -508,9 +508,9 @@ traceroute to 192.0.2.9 (192.0.2.9), 64 hops max, 40 byte packets
 
 ### SR-IOV
 
-这一最初为虚拟机设计的特性会创建多个 Virtual Function（VF = 我们的场景下即虚拟 NIC）。使用默认的非 passthrough 模式时，它向 host 呈现多个虚拟 NIC，每一个都可附加到 vnet-jail。
+这一最初为虚拟机设计的特性会创建多个 Virtual Function（VF = 我们的场景下即虚拟 NIC）。使用默认的非 passthrough 模式时，它向 host 呈现多个虚拟 NIC，每个都可附加到 vnet-jail。
 
-下面是一个使用两块 Chelsio 接口（cxl0 与 cxl1）为每块创建 10 个 VF 的示例。
+下面是使用两块 Chelsio 接口（cxl0 与 cxl1）为每块创建 10 个 VF 的示例。
 
 ```sh
 # sysrc iovctl_files="/etc/iovctl.cxl0.conf /etc/iovctl.cxl1.conf"
