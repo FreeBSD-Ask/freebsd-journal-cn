@@ -1,7 +1,7 @@
 # 会议报告：AsiaBSDCon（令人惊叹的友善之人）
 
 - 原文：[Conference Report: AsiaBSDCon (Amazingly Friendly People)](https://freebsdfoundation.org/wp-content/uploads/2016/06/Conference-Report.pdf)
-- 作者：Warren Block
+- 作者：**Warren Block**
 
 2016 年 AsiaBSDCon 于 2016 年 3 月 10 日至 14 日在东京举行。如果早知道我那篇关于全新 FreeBSD 文档翻译系统的论文会被接受，我早就学上几句日语了。不过这确实是个令人愉快的惊喜。
 

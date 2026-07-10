@@ -224,11 +224,13 @@ information.
 - “man page.” Wikipedia，Wikimedia Foundation，2019 年 1 月 5 日，<en.wikipedia.org/wiki/Man_page>。
 - Wirzenius, Lars. “Writing Manual Pages.” Writing Manual Pages, 2010 年 11 月 10 日，<liw.fi/manpages/>。
 - Dzonsons, Kristaps. “mdoc(7).” FreeBSD，2018 年 7 月 28 日，<www.freebsd.org/cgi/man.cgi?query=mdoc&sektion=7&manpath=freebsd-release-ports>。
-- Toth, Peter，与 Brandon Schneider. “iocage(8).”FreeBSD，2017 年 4 月 20 日，<www.freebsd.org/cgi/man.cgi?query=iocage&sektion=8>。
-- Dzonsons, Kristaps，与 Ingo Schwarze. “roff(7).”FreeBSD，2018 年 4 月 10 日，<www.freebsd.org/cgi/man.cgi?query=roff&apropos=0&sektion=0>。
+- Toth, Peter，与 Brandon Schneider. “iocage(8).” FreeBSD，2017 年 4 月 20 日，<www.freebsd.org/cgi/man.cgi?query=iocage&sektion=8>。
+- Dzonsons, Kristaps，与 Ingo Schwarze. “roff(7).” FreeBSD，2018 年 4 月 10 日，<www.freebsd.org/cgi/man.cgi?query=roff&apropos=0&sektion=0>。
 
 ## 结论
 
 从零开始编写手册页起初可能让人望而生畏。但稍作研究后，`mdoc(7)` 标记语言便易于使用。手册页是程序不可或缺的组成部分，而 EXAMPLES 章节更是巨大的助力。 •
+
+---
 
 **AARON ST. JOHN** 就职于 iXsystems。他刚毕业，拥有数学学士学位，对一切技术与电子游戏充满热情。

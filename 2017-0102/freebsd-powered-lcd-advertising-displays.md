@@ -19,9 +19,9 @@
 
 在京沪高速铁路线路（全长约 1318 公里 [6]）中，上海至徐州这一段（约 626 公里 [6]）[2–3]，客户订购了第 10 页插图照片 [9] 所示的独立式 LCD 广告显示屏。这些设备安装在图 1 所列各铁路车站的候车室中。
 
-用于运行 FreeBSD 的硬件配置如表 1 所示 [7–8]。在 2011 年，以太网和音频控制器已经分别由 FreeBSD 的 re(4) 和 snd_hda(4) 驱动完全驱动。但对 FreeBSD 来说，GPU 仍属较新的硬件，需要更新的 Xorg 驱动 xf86-video-intel29，而该驱动并不属于 FreeBSD Ports 中 Xorg 依赖的主线。
+用于运行 FreeBSD 的硬件配置如表 1 所示 [7–8]。在 2011 年，以太网和音频控制器已经分别由 FreeBSD 的 re(4) 和 snd_hda(4) 驱动完全驱动。但对 FreeBSD 来说，GPU 仍属较新的硬件，需要更新的 Xorg 驱动 `xf86-video-intel29`，而该驱动并不属于 FreeBSD Ports 中 Xorg 依赖的主线。
 
-当时，Xorg 已在 GNU/Linux 社区中引入了 kernel mode setting（KMS）机制，但 FreeBSD 尚未跟进。幸运的是，x11-drivers/xf86-video-intel29 能够在 user mode 下与 Xorg 7.5.1 以及板载 GPU 良好配合。显示模式可以平滑设置为 1920×1080p@60Hz，完全符合显示器的最佳性能要求。此外，Xorg 的 XVideo 扩展也能够正常工作。该驱动防止了在播放视频时 CPU 负载过高。
+当时，Xorg 已在 GNU/Linux 社区中引入了 kernel mode setting（KMS）机制，但 FreeBSD 尚未跟进。幸运的是，**x11-drivers/xf86-video-intel29** 能够在 user mode 下与 Xorg 7.5.1 以及板载 GPU 良好配合。显示模式可以平滑设置为 1920×1080p@60Hz，完全符合显示器的最佳性能要求。此外，Xorg 的 XVideo 扩展也能够正常工作。该驱动防止了在播放视频时 CPU 负载过高。
 
 ![Figure 1：京沪高铁主线](../png/2017-0102/freebsd-powered-lcd-advertising-displays-01.png)
 
@@ -67,7 +67,7 @@
 
 用于运行 FreeBSD 的硬件配置如表 2 所示 [10–11]。在 2013 年，以太网控制器 Atheros GbE 尚未被 FreeBSD 支持。但我没有足够的时间自行修改驱动，只能在主板上额外安装一块使用 RTL8139 的 PCI 以太网卡。
 
-在该应用场景中，每一台主机被设计为通过 VGA 接口驱动 5 块 LCD 显示屏。除板载 GPU 之外，我还必须在每块主板上安装两块带有 VGA 和 DVI-I 接口的 PCIe 显卡。当时，NVIDIA 的 GPU 能够通过其闭源驱动正常工作 [12]，而 Intel GPU 只能由 xf86-video-vesa 驱动。所幸，由于使用了 Xorg 的 Xinerama 扩展，将 5 块 LCD 显示屏组合为一个虚拟显示器，XVideo 扩展并非必需（实际上，Xinerama 会禁用大多数硬件渲染）；在这种情况下，xf86-video-vesa 已经足够使用。
+在该应用场景中，每一台主机被设计为通过 VGA 接口驱动 5 块 LCD 显示屏。除板载 GPU 之外，我还必须在每块主板上安装两块带有 VGA 和 DVI-I 接口的 PCIe 显卡。当时，NVIDIA 的 GPU 能够通过其闭源驱动正常工作 [12]，而 Intel GPU 只能由 `xf86-video-vesa` 驱动。所幸，由于使用了 Xorg 的 Xinerama 扩展，将 5 块 LCD 显示屏组合为一个虚拟显示器，XVideo 扩展并非必需（实际上，Xinerama 会禁用大多数硬件渲染）；在这种情况下，`xf86-video-vesa` 已经足够使用。
 
 ## 技术要点
 
