@@ -143,7 +143,7 @@ SYSCTL_OPAQUE(_demo, OID_AUTO, mi_switch,
 | `LU` | 无符号长整数。与 `CTLTYPE_ULONG` 一起使用。 |
 | `Q` | 有符号 64 位整数。与 `CTLTYPE_S64` 一起使用。 |
 | `QU` | 无符号 64 位整数。与 `CTLTYPE_U64` 一起使用。 |
-| `S,<foo>` | 类型为 `struct foo` 的 C 结构。与 `CTLTYPE_STRUCT` 一起使用。`sysctl` 工具理解少数结构类型，如 `struct timeval` 和 `struct loadavg`。 |
+| `S,<foo>` | 类型为 `struct foo` 的 C 结构。与 `CTLTYPE_STRUCT` 一起使用。`sysctl.8` 工具理解少数结构类型，如 `struct timeval` 和 `struct loadavg`。 |
 
 **表 3**
 
