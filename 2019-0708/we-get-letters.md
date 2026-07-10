@@ -72,4 +72,4 @@
 
 ---
 
-Michael W Lucas（<https://mwl.io>）的最新著作是《Sudo Mastery》第二版和《Terrapin Sky Tango》。如果你读到了这里，《FreeBSD Mastery: Jails》也许对你有用。把问题发到 <letters@freebsdjournal.com>，他也许会回答。如果他愿意的话。
+**Michael W Lucas**（<https://mwl.io>）的最新著作是《Sudo Mastery》第二版和《Terrapin Sky Tango》。如果你读到了这里，《FreeBSD Mastery: Jails》也许对你有用。把问题发到 <letters@freebsdjournal.com>，他也许会回答。如果他愿意的话。
