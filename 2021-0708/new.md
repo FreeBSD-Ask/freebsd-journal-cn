@@ -1,7 +1,7 @@
 # FreeBSD 的新面孔
 
 - 原文链接：[New Faces of FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2021/08/JulyAugust_new_faces.pdf)
-- 作者：**DRU LAVIGNE**
+- 作者：DRU LAVIGNE
 
 本栏目的目标是聚焦那些最近获得提交权限的贡献者，并将他们介绍给 FreeBSD 社区。
 
