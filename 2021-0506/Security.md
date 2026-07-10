@@ -86,28 +86,28 @@ sudo pw lock root
 幸运的是，我们在系统上使用了 ZFS，并利用了另一个有趣的特性——快照。快照是某一时刻数据集的副本。它们非常有用，因为我们可以通过 `zfs` 命令提取这些副本，并通过 `zfs receive` 命令导入它们。创建 ZFS 备份的最简单方法是做一个快照并将其导出到文件中：
 
 ```sh
-# zfs snapshot -r 池名@快照名
-# zfs send -R -c 池名@快照名 > 导出名
+# zfs snapshot -r name_of_the_pool@name_of_the_snapshot
+# zfs send -R -c name_of_the_pool@name_of_the_snapshot > export_name
 ```
 
-上述命令将会创建池 `池名` 中所有数据集的递归快照，然后将它们导出到 `导出名` 文件中。`-c` 选项表示导出的数据将被压缩。导入时，只需确保系统支持所有使用的压缩算法。现在，备份可以被复制到外部磁盘、加密、发送到云端、任何其他服务器或用户想要保存备份的平台上。还可以通过 SSH 进行简单的远程备份：
+上述命令将会创建池 `name_of_the_pool` 中所有数据集的递归快照，然后将它们导出到 `export_name` 文件中。`-c` 选项表示导出的数据将被压缩。导入时，只需确保系统支持所有使用的压缩算法。现在，备份可以被复制到外部磁盘、加密、发送到云端、任何其他服务器或用户想要保存备份的平台上。还可以通过 SSH 进行简单的远程备份：
 
 ```sh
-# zfs send -R -c 池名@快照名 | ssh example.com
+# zfs send -R -c name_of_the_pool@name_of_the_snapshot | ssh example.com
 cat > mybackupfile
 ```
 
 或者，如果远程服务器支持 ZFS，这也可以自动在远程服务器上导入：
 
 ```sh
-# zfs send -R -c 池名@快照名 | ssh example.com
+# zfs send -R -c name_of_the_pool@name_of_the_snapshot | ssh example.com
 zfs receive storage/mybackup
 ```
 
 因此，数据将在该服务器上可供浏览。可能需要一些额外的配置来启用对 ZFS 特性的访问。用户必须通过 `zfs allow` 或使用 `sudo(8)` 来允许执行 `zfs receive` 命令。发送完整的备份可能会因为所需存储空间和网络带宽的开销而显得有些过多。幸运的是，ZFS 还支持发送增量快照。通过这种方式，ZFS 只会创建包含两个快照之间差异的流。以下命令允许你使用更少的存储和网络资源复制快照：
 
 ```sh
-# zfs send -c -i name_of_previous_snapshot 池名@快照名 | ssh example.com zfs receive storage/mybackup
+# zfs send -c -i name_of_previous_snapshot name_of_the_pool@name_of_the_snapshot | ssh example.com zfs receive storage/mybackup
 ```
 
 也可以将这些增量部分导出到文件中。然而，如果 `zfs send` 创建多个小的增量部分，恢复时可能会有些复杂——首先需要导入整个备份，然后再按创建顺序分别导入每个文件。
