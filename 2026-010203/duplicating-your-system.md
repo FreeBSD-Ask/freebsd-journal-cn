@@ -160,7 +160,7 @@ Local and Remote metadata are synchronized, no sync needed.
 Last full backup date: Sat Mar 14 14:57:52 2026
 ```
 
-此命令仅从之前使用 par2 包装器备份到 S3 存储桶的主目录中恢复 Ports 目录。Ports 目录的目标位置将是 /tmp/temp/
+此命令仅从之前使用 par2 包装器备份到 S3 存储桶的主目录中恢复 Ports 目录。Ports 目录的目标位置将是 **/tmp/temp/**
 
 ```sh
 jtubnor@disk:~ $ du -sh /tmp/temp && ls -lsa /tmp/temp
