@@ -675,7 +675,7 @@
 * [基金会来信：外联与支持](2016-1112/letter-from-the-foundation.md)
 * [Rust 比磨损更好](2016-1112/its-better-to-rust-than-wear-out.md)
 * [活动日历](2016-1112/events-calendar.md)
-* [EuroBSDCon：幕后](2016-1112/eurobsdcon-behind-the-scenes.md)
+* [EuroBSDcon：幕后](2016-1112/eurobsdcon-behind-the-scenes.md)
 * [会议报道：MeetBSD 2016](2016-1112/conference-report.md)
 * [书评：《人月神话》](2016-1112/book-review.md)
 
