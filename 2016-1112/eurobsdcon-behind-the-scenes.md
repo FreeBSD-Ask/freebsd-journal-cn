@@ -1,4 +1,4 @@
-# EuroBSDCon：幕后
+# EuroBSDcon：幕后
 
 - 原文：[EuroBSDcon Behind the Scenes](https://freebsdfoundation.org/wp-content/uploads/2016/12/EuroBSDcon-Behind-the-Scenes.pdf)
 - 作者：**Kristof Provost** 与 **Beat Gätzi**
