@@ -97,7 +97,7 @@ qemu-system-riscv64 -machine virt -smp 2 -m 2G -nographic \
      -device virtio-blk-device,drive=hd0
 ```
 
-如果一切顺利，你应看到 FreeBSD 开始启动。如果你跳过了之前的可选步骤，系统将无法挂载根文件系统。发生时，在提示符处输入 `ufs:/dev/vtbd0p1` 即可。
+如果一切顺利，你应看到 FreeBSD 开始启动。如果你跳过了之前的可选步骤，系统将无法挂载根文件系统。发生这种情况时，在提示符处输入 `ufs:/dev/vtbd0p1` 即可。
 
 你可能注意到没有看到熟悉的 `loader(8)` 提示符。这是因为 `loader(8)` 尚未移植到 RISC-V，因此内核直接从 OpenSBI 启动。目前你还无法享受 loader 微调或可调参数，但未来一定会支持。
 
@@ -111,7 +111,7 @@ qemu-system-riscv64 -machine virt -smp 2 -m 2G -nographic \
 -netdev user,hostfwd=tcp::10000-:22,id=net0 -device virtio-net-device,netdev=net0
 ```
 
-如你所见，我们将主机的 TCP 端口 10000 转发到客户机的 22 端口。22 端口是 `ssh(1)` 使用的默认端口。在连接之前，我们必须通过将以下内容追加到 `/etc/rc.conf` 在客户机上启用 `sshd(8)`：
+如你所见，我们将主机的 TCP 端口 10000 转发到客户机的 22 端口。22 端口是 `ssh(1)` 使用的默认端口。在连接之前，我们必须在客户机上启用 `sshd(8)`，将以下内容追加到 `/etc/rc.conf`：
 
 ```sh
 sshd_enable="YES"

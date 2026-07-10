@@ -10,6 +10,6 @@
 
 最后，我想借此机会感谢期刊上一任编辑委员会主席 George Neville-Neil。2013 年夏天，George 第一次跟我谈起他对期刊的设想。我熟悉 George 在 ACM Queue 的经验，所以我知道他很清楚把 FreeBSD 期刊创办起来需要什么。George 的热情富有感染力，他的干劲也帮助编辑委员会初创那几年越过难关站稳脚跟。34 期之后，期刊蒸蒸日上，编辑委员会也期待继续推进 George 六年前的愿景。
 
-John Baldwin
+**John Baldwin**
 
 FreeBSD 期刊编辑委员会主席
