@@ -1,6 +1,6 @@
 # FreeBSD 新面孔
 
-作者：DRU LAVIGNE
+作者：**DRU LAVIGNE**
 
 本专栏旨在聚焦近期获得提交权限的贡献者，并把他们介绍给 FreeBSD 社区。本期聚焦 4 月获得 src 权限的 Doug Moore，以及 5 月获得 docs 权限的 Sergio Carlavilla。
 
