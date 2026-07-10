@@ -106,29 +106,4 @@ Jail 是每个系统管理员工具箱里都该有的出色工具，不管是出
 
 ---
 
-ANDREW FENGLER 是 ScaleEngine Inc.（一家视频 CDN）的系统管理员。他负责管理一支横跨全球的服务器队伍，其中大部分运行 FreeBSD。
-
----
-
-Jail 是 FreeBSD 最传奇的功能：以强大著称，难以精通，并笼罩在数十年的可疑传说中。
-
-《FreeBSD Mastery: Jails》拨开繁杂，揭示 Jail 的内部机制，在你的服务中释放它的力量。
-
-- 从容地在 Jail 限制内工作
-- 实现 Jail 功能的细粒度控制
-- 构建虚拟网络
-- 部署分层 Jail
-- 约束 Jail 资源使用
-- ……以及更多！
-
-束缚你的软件！
-
-- 理解 Jail 如何实现轻量级虚拟化
-- 理解基本系统的 Jail 工具和 iocage 工具包
-- 优化配置硬件
-- 从宿主机和 Jail 内部管理 Jail
-- 优化磁盘空间以支持数千个 Jail
-
-各地书店有售
-
-《FreeBSD Mastery: Jails》MICHAEL W LUCAS 著
+**ANDREW FENGLER** 是 ScaleEngine Inc.（一家视频 CDN）的系统管理员。他负责管理一支横跨全球的服务器队伍，其中大部分运行 FreeBSD。

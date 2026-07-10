@@ -130,7 +130,7 @@ $ du -sh .
 1.0G    .
 ```
 
-这大大增加了我们的主目录。现在该备份我们涉及多个 port 的工作了：
+这大大增加了我们的主目录。现在该备份我们涉及多个 Ports 的工作了：
 
 ```sh
 $ duplicity backup –full-if-older-than 1M –exclude ./.cache \

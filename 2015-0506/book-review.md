@@ -6,7 +6,7 @@
 *The Book of PF: A No-Nonsense Guide to the OpenBSD Firewall*
 
 - Peter N.M. Hansteen
-- 2014 No Starch Press
+- No Starch Press，2014 年第 3 版
 - ISBN 159-3275897
 - 248 页
 
