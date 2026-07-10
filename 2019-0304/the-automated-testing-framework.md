@@ -275,6 +275,8 @@ vnet 将网络栈虚拟化。如果这句术语对你像天书，试试这样理
 
 示例可在 **/usr/src/tests/sys/netpfil/pf** 找到。
 
-其他人也利用这个示例为 IPSec 编写了测试，见 **/usr/src/tests/sys/netipsec**。
+其他人也利用这个示例为 IPSec 编写了测试，见 **/usr/src/tests/sys/netipsec**。 •
 
-KRISTOF PROVOST 是一名自由嵌入式软件工程师，专攻网络和视频应用。他是 FreeBSD 提交者、FreeBSD 中 pf 防火墙的维护者，以及 EuroBSDCon 基金会董事会成员。Kristof 不幸总爱踩中 uClibc 的 bug，并对 FTP 怀有刻骨的厌恶。不要跟他提 IPv6 分片。
+---
+
+**KRISTOF PROVOST** 是一名自由嵌入式软件工程师，专攻网络和视频应用。他是 FreeBSD 提交者、FreeBSD 中 pf 防火墙的维护者，以及 EuroBSDCon 基金会董事会成员。Kristof 不幸总爱踩中 uClibc 的 bug，并对 FTP 怀有刻骨的厌恶。不要跟他提 IPv6 分片。

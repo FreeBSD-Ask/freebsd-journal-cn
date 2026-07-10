@@ -115,11 +115,11 @@ fn main() {
 
 ## 包管理
 
-吸引我转向 Rust 的最后一个、也是最重要的特性，是对现代应用包管理的支持。Rust 提供灵活的 crate 与模块系统，用于组织、切分软件并管理可见性。Rust crate 等同于其他语言的库或包，Rust 模块则切分 crate 内的代码。一个 Rust 程序通常由单个可执行 crate 组成，可选依赖一个或多个库 crate。可复用的、社区开发的库 crate 托管于 crates.io——Rust 包管理工具 cargo 的中央包仓库（crates.io 大致相当于 Python 的 PyPI）。Rust 的 cargo 工具从 crates.io 拉取项目构建依赖并管理软件构建。是啊，我知道，世界真的需要又一套打包软件、解决依赖、构建软件的机制吗？也许不需要，但 cargo 确实挺好用（不过对用惯 Maven 的人来说，门槛本来也不高）。
+吸引我转向 Rust 的最后一个、也是最重要的特性，是对现代应用软件包管理的支持。Rust 提供灵活的 crate 与模块系统，用于组织、切分软件并管理可见性。Rust crate 等同于其他语言的库或软件包，Rust 模块则切分 crate 内的代码。一个 Rust 程序通常由单个可执行 crate 组成，可选依赖一个或多个库 crate。可复用的、社区开发的库 crate 托管于 crates.io——Rust 软件包管理工具 cargo 的中央软件包仓库（crates.io 大致相当于 Python 的 PyPI）。Rust 的 cargo 工具从 crates.io 拉取项目构建依赖并管理软件构建。是啊，我知道，世界真的需要又一套打包软件、解决依赖、构建软件的机制吗？也许不需要，但 cargo 确实挺好用（不过对用惯 Maven 的人来说，门槛本来也不高）。
 
 ## 在 FreeBSD 上起步
 
-Rust 的平台支持分为三层，各提供不同保证。x86_64 上的 FreeBSD 目前是 Tier 2 平台，即保证能构建，但不保证能用。尽管没有保证，实践中通常都挺好用。Tier 2 平台提供 Rust 编译器 rustc 与标准库 std（`pkg install rust`）、包管理器 cargo（`pkg install cargo`）的官方发布。FreeBSD 的 Rust 二进制包目前（撰文时）为 v1.12，而最新稳定版是 v1.13。安装后，可执行 rustup 脚本将 Rust 更新到最新版本：
+Rust 的平台支持分为三层，各提供不同保证。x86_64 上的 FreeBSD 目前是 Tier 2 平台，即保证能构建，但不保证能用。尽管没有保证，实践中通常都挺好用。Tier 2 平台提供 Rust 编译器 rustc 与标准库 std（`pkg install rust`）、软件包管理器 cargo（`pkg install cargo`）的官方发布。FreeBSD 的 Rust 二进制包目前（撰文时）为 v1.12，而最新稳定版是 v1.13。安装后，可执行 rustup 脚本将 Rust 更新到最新版本：
 
 ```sh
 curl -sSf https://static.rust-lang.org/rustup.sh | sh

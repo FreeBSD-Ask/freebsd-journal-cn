@@ -12,7 +12,7 @@
 <http://www.bsdcan.org/2014/> • 第十一届 BSDCan 将在加拿大渥太华举行。这场广受欢迎的会议吸引了从 BSD 操作系统的入门新手到资深开发者的广泛人群。会议包含开发者峰会、厂商峰会、文档冲刺、教程与演讲。5 月 16 日和 17 日的午餐期间将提供 BSDA 认证考试，BSDP 实验考试的首次 beta 测试将于 5 月 18 日启动。
 
 **Texas LinuxFest** • 2014 年 6 月 13–14 日，美国得克萨斯州奥斯汀
-<http://texaslinuxfest.org/> • Texas LinuxFest 是得克萨斯州首个全州级别、每年举办一次的社区驱动型会议，面向来自孤星之州各地的 Linux 与开源软件用户、爱好者。展览区将设有 BSD 展位，并安排多场 BSD 主题演讲。6 月 13 日将提供 BSDA 认证考试。
+<http://texaslinuxfest.org/> • Texas LinuxFest 是得克萨斯州首个全州级别、每年举办一次、由社区运作的会议，面向来自孤星之州各地的 Linux 与开源软件用户、爱好者。展览区将设有 BSD 展位，并安排多场 BSD 主题演讲。6 月 13 日将提供 BSDA 认证考试。
 
 **SouthEast LinuxFest** • 2014 年 6 月 20–22 日，美国北卡罗来纳州夏洛特
 <http://www.southeastlinuxfest.org/> • 这是该开源会议在东南部地区的第六届。展览区将设有 BSD 展位，并安排多场 BSD 相关演讲。6 月 22 日将提供 BSDA 认证考试。

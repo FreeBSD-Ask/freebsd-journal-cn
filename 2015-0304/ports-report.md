@@ -24,7 +24,7 @@
 
 过去两个月仅有一位提交者的权限被收回保管（rafan@），但也有令人惋惜的消息：decke@ 决定辞去在 FreeBSD 的职务，转而专注于家庭与职业生活。decke@ 对 FreeBSD 项目贡献卓著，他是 redports.org、QAT 的创建者，也是为 FreeBSD 移植并维护 VirtualBox 的开发者。衷心感谢他的所有辛勤工作。想进一步了解 Bernhard，可阅读他的访谈：<http://blogs.freebsdish.org/portmgr/2013/10/29/getting-to-knowyour-portmgr-bernhardfroehlich/>。
 
-在本期专栏结尾，我们想给出一些统计数据，让大家更直观地了解志愿者们完成的大量工作。2015 年前两个月，Ports 树共应用了 4046 次提交，关闭了 1182 个 PR，portmgr@ 共收到 1002 封邮件（未计入垃圾邮件……）。而这一切，是由平均仅 130 名活跃的 Ports 开发者完成的！
+在本期专栏结尾，我们想给出一些统计数据，让大家更直观地了解志愿者完成的大量工作。2015 年前两个月，Ports 树共应用了 4046 次提交，关闭了 1182 个 PR，portmgr@ 共收到 1002 封邮件（未计入垃圾邮件……）。而这一切，是由平均仅 130 名活跃的 Ports 开发者完成的！
 
 **Frederic Culot** 在 IT 行业工作了 10 年。业余时间他学习商业与管理，刚取得 MBA 学位。Frederic 于 2010 年作为 Ports 提交者加入 FreeBSD，此后完成约 2000 次提交，指导了六位新提交者，现担任 portmgr-secretary。
 

@@ -1,11 +1,11 @@
 # 程序员编程杂谈
 
 - 原文链接：[Programmers Programming Potpourri](https://freebsdfoundation.org/wp-content/uploads/2021/11/Programmers_Programming_Potpourri.pdf)
-- 作者：**BENEDICT REUSCHLING**
+- 作者：BENEDICT REUSCHLING
 
 ---
 
-本专栏介绍了一些对 FreeBSD 有用、独特或值得了解的 Ports 和软件包。Ports 扩展了基本操作系统的功能，可以帮助你完成任务，甚至让你会心一笑。一起探索吧，也许你会发现一些新奇的东西。
+本专栏介绍了一些对 FreeBSD 有用、独特或值得了解的 Ports 和软件包。Ports 扩展了基本系统的功能，可以帮助你完成任务，甚至让你会心一笑。一起探索吧，也许你会发现一些新奇的东西。
 
 ---
 
@@ -21,7 +21,7 @@ Unix 的一个优势是，尽管它涉及大量的输入，但多年来已经发
 
 ![magic-wormhole 接收文件示例](../png/2021-0910/Programmers-02.png)
 
-我经常让本科计算机科学专业的学生练习在 Unix 中解析文本文件。在这些作业中，逗号分隔值 (CSV) 仍然是一种常见的文件格式。这通常发生在学生学习数据库和 SQL 之前。如果他们提前了解 SQL，那很可能会直接使用我接下来介绍的工具，并且再也不会回头看其他方法：`textproc/csvq`。你可以随心所欲地读取、更新和删除 CSV 文件。这个工具不仅提供了交互式 shell 和命令行模式，还支持顺序执行多个操作，并通过托管事务进行管理。此外，它还支持变量、游标，甚至临时表。哦，对了，除了 CSV，它还完全支持 UTF-8 和 UTF-16 编码的 JSON，因为——为什么不呢？
+我经常让本科计算机科学专业的学生练习在 Unix 中解析文本文件。在这些作业中，逗号分隔值（CSV）仍然是一种常见的文件格式。这通常发生在学生学习数据库和 SQL 之前。如果他们提前了解 SQL，那很可能会直接使用我接下来介绍的工具，并且再也不会回头看其他方法：`textproc/csvq`。你可以随心所欲地读取、更新和删除 CSV 文件。这个工具不仅提供了交互式 shell 和命令行模式，还支持顺序执行多个操作，并通过托管事务进行管理。此外，它还支持变量、游标，甚至临时表。哦，对了，除了 CSV，它还完全支持 UTF-8 和 UTF-16 编码的 JSON，因为——为什么不呢？
 
 另一个实用工具是 `textproc/dasel`（Data Selector），它不仅支持 CSV，还能处理 JSON、YAML、TOML 和 XML。它可以在这些格式之间进行转换，还能添加新内容或删除已有条目。这样，每当遇到新数据格式时，你不必重新学习一款新工具——大概率 `dasel` 已经支持了。
 
@@ -91,4 +91,4 @@ fd foo
 
 ---
 
-**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档贡献者，同时也是文档工程团队的成员。他担任 FreeBSD 基金会董事会副主席，并曾在 FreeBSD 核心团队任职两届。他在德国达姆施塔特应用科技大学管理一个大数据集群，并教授本科课程 **“Unix for Developers”**（面向开发者的 Unix）。此外，他还是 **bsdnow.tv** 播客的主持人之一。
+**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，同时也是文档工程团队的成员。他担任 FreeBSD 基金会董事会副主席，并曾在 FreeBSD 核心团队任职两届。他在德国达姆施塔特应用科技大学管理一个大数据集群，并教授本科课程"Unix for Developers"（面向开发者的 Unix）。此外，他还是 bsdnow.tv 播客的主持人之一。

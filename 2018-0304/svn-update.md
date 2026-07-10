@@ -1,8 +1,8 @@
 # SVN 动态
 
-**作者：** Steven Kreuzer
+作者：**Steven Kreuzer**
 
-2014 年，作为 谷歌 Summer of Code 项目，FreeBSD 开发者和学生共同设计并实现了一个用于 loader 脚本解释器的模块化接口——将解释器与 loader 解耦。历经四年，它终于被提交！FreeBSD 12 将附带一个全新的、基于 Lua 的 bootloader，这将使大多数人说早已“待得太久”的忠实 Forth loader 退出舞台。本专栏的多数文章倾向于涵盖各子系统的开发进展，但我认为这一期我想专注于 bootloader，因为我从未见过如此低级别的系统组件上有这么多活动。
+2014 年，作为谷歌 Summer of Code 项目，FreeBSD 开发者和学生共同设计并实现了一个用于 loader 脚本解释器的模块化接口——将解释器与 loader 解耦。历经四年，它终于被提交！FreeBSD 12 将附带一个全新的、基于 Lua 的 bootloader，这将使大多数人说早已“待得太久”的忠实 Forth loader 退出舞台。本专栏的多数文章倾向于涵盖各子系统的开发进展，但这一期我想专注于 bootloader，因为我从未见过如此低级别的系统组件上有这么多活动。
 
 ## 向 /boot/loader 添加 Lua 作为脚本语言
 

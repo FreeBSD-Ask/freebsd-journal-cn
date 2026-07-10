@@ -67,52 +67,52 @@ FreeBSD 适合研究的一个特征，是各种工具为系统提供的可见性
 
 ## 参考文献
 
-[1] Babaoglu, Özalp and Joy, William. "Converting a Swap-based System to Do Paging in an Architecture Lacking Page-referenced Bits"; SOSP '81: Proceedings of the Eighth ACM Symposium on Operating Systems Principles. (December 1981)
+[1] Babaoglu, Özalp and Joy, William. “Converting a Swap-based System to Do Paging in an Architecture Lacking Page-referenced Bits”; SOSP '81: Proceedings of the Eighth ACM Symposium on Operating Systems Principles. (December 1981)
 
-[2] Cantrill, Bryan; Shapiro, Michael; and Leventhal, Adam. "Dynamic Instrumentation of Production Systems"; USENIX Annual Technical Conference. (June 2007)
+[2] Cantrill, Bryan; Shapiro, Michael; and Leventhal, Adam. “Dynamic Instrumentation of Production Systems”; USENIX Annual Technical Conference. (June 2007)
 
-[3] Criswell, John; Dautenhahn, Nathan; and Adve, Vikram. "KCoFI: Complete Control-Flow Integrity for Commodity Operating System Kernels"; SP '14: Proceedings of the 2014 IEEE Symposium on Security and Privacy. IEEE Computer Society. (May 2014)
+[3] Criswell, John; Dautenhahn, Nathan; and Adve, Vikram. “KCoFI: Complete Control-Flow Integrity for Commodity Operating System Kernels”; SP '14: Proceedings of the 2014 IEEE Symposium on Security and Privacy. IEEE Computer Society. (May 2014)
 
-[4] Criswell, John; Dautenhahn, Nathan; and Adve, Vikram. "Virtual Ghost"; ASPLOS 2014. ACM Press. (2014)
+[4] Criswell, John; Dautenhahn, Nathan; and Adve, Vikram. “Virtual Ghost”; ASPLOS 2014. ACM Press. (2014)
 
-[5] Davis, B; Norton, R.; Woodruff, J.; and Watson, R. N. M. "How FreeBSD Boots: A Soft-core MIPS Perspective." <www.cl.cam.ac.uk>.
+[5] Davis, B; Norton, R.; Woodruff, J.; and Watson, R. N. M. “How FreeBSD Boots: A Soft-core MIPS Perspective.” <www.cl.cam.ac.uk>.
 
-[6] Ganger, Gregory R.; McKusick, Marshall Kirk; Soules, Craig A. N.; and Patt, Yale N. "Soft Updates: A Solution to the Metadata Update Problem in File Systems"; Transactions on Computer Systems. (May 2000)
+[6] Ganger, Gregory R.; McKusick, Marshall Kirk; Soules, Craig A. N.; and Patt, Yale N. “Soft Updates: A Solution to the Metadata Update Problem in File Systems”; Transactions on Computer Systems. (May 2000)
 
-[7] Lattner, Chris and Adve, Vikram. "LLVM: A Compilation Framework for Lifelong Program Analysis and Transformation"; CGO '04: Proceedings of the International Symposium on Code Generation and Optimization: Feedback-directed and Runtime Optimization. IEEE Computer Society. (March 2004)
+[7] Lattner, Chris and Adve, Vikram. “LLVM: A Compilation Framework for Lifelong Program Analysis and Transformation”; CGO '04: Proceedings of the International Symposium on Code Generation and Optimization: Feedback-directed and Runtime Optimization. IEEE Computer Society. (March 2004)
 
-[8] Marinos, Ilias; Watson, Robert N. M.; and Handley, Mark. "Network Stack Specialization for Performance"; Proceedings of the 2014 ACM Conference on SIG-COMM. SIGCOMM '14. (2014)
+[8] Marinos, Ilias; Watson, Robert N. M.; and Handley, Mark. “Network Stack Specialization for Performance”; Proceedings of the 2014 ACM Conference on SIG-COMM. SIGCOMM '14. (2014)
 
-[9] Mayer, Frank. "Security Enhanced Linux Symposium-SELinux 2007"; Security Enhanced Linux Symposium-SELinux 2007. (March 2007)
+[9] Mayer, Frank. “Security Enhanced Linux Symposium-SELinux 2007”; Security Enhanced Linux Symposium-SELinux 2007. (March 2007)
 
-[10] McCanne, Steven and Jacobson, Van. "The BSD Packet Filter: A New Architecture for User-level Packet Capture"; USENIX'93: Proceedings of the USENIX Winter 1993 Conference Proceedings. USENIX Association. (January 1993)
+[10] McCanne, Steven and Jacobson, Van. “The BSD Packet Filter: A New Architecture for User-level Packet Capture”; USENIX'93: Proceedings of the USENIX Winter 1993 Conference Proceedings. USENIX Association. (January 1993)
 
 [11] McKusick, Marshall Kirk. Open Sources: Voices from the Open Source Revolution. O'Reilly. (1999)
 
-[12] McKusick, M. K.; Joy, W. N.; and Leffler, S. J. "A Fast File System for UNIX"; ACM Transactions on Computing Systems. (1984)
+[12] McKusick, M. K.; Joy, W. N.; and Leffler, S. J. “A Fast File System for UNIX”; ACM Transactions on Computing Systems. (1984)
 
-[13] McKusick, M. K. and Roberson, J. "Journaled Soft-Updates"; Proceedings of EuroBSDCon. (2010)
+[13] McKusick, M. K. and Roberson, J. “Journaled Soft-Updates”; Proceedings of EuroBSDCon. (2010)
 
 [14] Moore, S. "Shill: A Secure Shell Scripting Language"; 11th USENIX Symposium on Operating Systems Design and Implementation. USENIX Association. (2014)
 
 [15] Rizzo, Luigi. "Dummynet: A Simple Approach to the Evaluation of Network Protocols"; SIGCOMM Computer Communication Review. (January 1997)
 
-[16] Rizzo, Luigi. "Netmap: A Novel Framework for Fast Packet i/o"; 2012 USENIX Annual Technical Conference. USENIX Association. (2012)
+[16] Rizzo, Luigi. “Netmap: A Novel Framework for Fast Packet i/o”; 2012 USENIX Annual Technical Conference. USENIX Association. (2012)
 
-[17] Rosenblum, Mendel and Ousterhout, John K. "The Design and Implementation of a Log-structured File System"; ACM Transactions on Computer Systems. (February 1992)
+[17] Rosenblum, Mendel and Ousterhout, John K. “The Design and Implementation of a Log-structured File System”; ACM Transactions on Computer Systems. (February 1992)
 
 [18] Stewart, L. and Healy, J. "Characterizing the Behavior and Performance of SIFTR v1.1.0."; <http://caia.swin.edu.au/reports/070824A/CAIA-TR-070824A.pdf> (2007)
 
 [19] Watson, R.; Feldman, B.; Migus, A.; and Vance, C. Design and Implementation of the Trusted BSD MAC framework, Volume 1. IEEE. (2003)
 
-[20] Watson, Robert N. M. "A Decade of OS Access-control Extensibility"; Communications of the ACM. (February 2013)
+[20] Watson, Robert N. M. “A Decade of OS Access-control Extensibility”; Communications of the ACM. (February 2013)
 
-[21] Watson, Robert N. M.; Anderson, Jonathan; Laurie, Ben; and Kennaway, Kris. "Capsicum: Practical Capabilities for UNIX"; USENIX Security'10: Proceedings of the 19th USENIX Conference on Security. USENIX Association. (August 2010)
+[21] Watson, Robert N. M.; Anderson, Jonathan; Laurie, Ben; and Kennaway, Kris. “Capsicum: Practical Capabilities for UNIX”; USENIX Security'10: Proceedings of the 19th USENIX Conference on Security. USENIX Association. (August 2010)
 
 [22] Woodruff, J.; Watson, R. N. M.; Chisnall, D.; Moore, S. W.; Anderson, J.; Davis, B.; Laurie, B.; Neumann, P. G.; Norton, R.; and Roe, M. "The CHERI Capability Model: Revisiting RISC in an Age of Risk"; Computer Architecture (ISCA), 2014 ACM/IEEE 41st International Symposium. (2014)
 
-[23] Woodruff, Jonathan; Moore, Simon W.; and Watson, Robert N. M. "Memory Segmentation to Support Secure Applications"; CEUR Workshop: Doctoral Symposium on Engineering Secure Software and Systems (ESSoS). (January 2013)
+[23] Woodruff, Jonathan; Moore, Simon W.; and Watson, Robert N. M. “Memory Segmentation to Support Secure Applications”; CEUR Workshop: Doctoral Symposium on Engineering Secure Software and Systems (ESSoS). (January 2013)
 
-[24] Dennis, J.B. and VanHorn, E.C. "Programming Semantics for Multi-programmed Computations," Commun. ACM, Vol. 9, No. 3, (1966). Also <http://www.cs.virginia.edu/~evans/cs551/saltzer/>
+[24] Dennis, J.B. and VanHorn, E.C. “Programming Semantics for Multi-programmed Computations,” Commun. ACM, Vol. 9, No. 3, (1966). Also <http://www.cs.virginia.edu/~evans/cs551/saltzer/>
 
 [25] <https://www.usenix.org/conference/usenix-winter-1993-conference/presentation/nachos-instructional-operating-system>. A reference to its child is: <http://en.wikipedia.org/wiki/Pintos>

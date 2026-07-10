@@ -6,9 +6,9 @@
 
 接下来几个月将举办以下 BSD 相关会议。这些活动与本地用户组会议的更多信息，请访问 <http://www.bsdevents.org>。
 
-**LinuxFest Northwest** • 4 月 25 日与 26 日 • 华盛顿州贝灵厄姆
+**LinuxFestNorthwest** • 4 月 25 日与 26 日 • 华盛顿州贝灵厄姆
 
-<http://linuxfestnorthwest.org/2015> • 第 16 届年度 LFNW 开源会议将在贝灵厄姆技术学院举办，免费入场。expo 区设有 FreeBSD 展位，《BSD Now》团队将现场录制采访，用于后续节目。
+<http://linuxfestnorthwest.org/2015> • 第 16 届年度 LFNW 开源会议将在贝灵厄姆技术学院举办，免费入场。展区设有 FreeBSD 展位，《BSD Now》团队将现场录制采访，用于后续节目。
 
 **BSDCan** • 6 月 10 – 14 日 • 加拿大渥太华
 

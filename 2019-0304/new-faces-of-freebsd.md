@@ -41,4 +41,6 @@
 - 记住 FreeBSD 社区由志愿者组成，许多人还要应对现实生活、家庭和工作等其他优先事项。
 - 最重要的一点：这应该是一件有趣的事。
 
-DRU LAVIGNE 是 FreeBSD 文档提交者，也是《BSD Hacks》和《The Best of FreeBSD Basics》的作者。
+---
+
+**DRU LAVIGNE** 是 FreeBSD 文档提交者，也是《BSD Hacks》和《The Best of FreeBSD Basics》的作者。

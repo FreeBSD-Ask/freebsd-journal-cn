@@ -10,4 +10,4 @@
 
 我们期待在 5 月中旬于加拿大安大略省渥太华举办的 BSDCan 上见到尽可能多的读者。大多数编辑委员会成员都会到场，如果你在那里看到我们，请停下来打个招呼，告诉我们 FreeBSD 期刊做得如何。
 
-GEORGE NEVILLE-NEIL
+**GEORGE NEVILLE-NEIL**

@@ -1,7 +1,7 @@
 # 活动日历
 
 - 原文链接：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2021/11/SeptOct_events_calendar.pdf)
-- 作者：**ANNE DICKISON**
+- 作者：ANNE DICKISON
 
 截至 2021 年 12 月的 BSD 活动
 
