@@ -94,4 +94,6 @@ FreeBSD 上的持续维护或开发简单。尽管没有用于分析、调试等
 
 [9] Radeon Open Compute: <https://github.com/RadeonOpenCompute/>
 
-JOHANNES DIETERICH 自 6.1 版本开始使用 FreeBSD，一年前成为 Ports 提交者。白天，他过去九年在学术研究中从事高性能计算工作，解决从全局优化到量子化学方法的一系列问题。最近，他开始为 AMD 从事 GPU 加速深度学习工作。
+---
+
+**JOHANNES DIETERICH** 自 6.1 版本开始使用 FreeBSD，一年前成为 Ports 提交者。白天，他过去九年在学术研究中从事高性能计算工作，解决从全局优化到量子化学方法的一系列问题。最近，他开始为 AMD 从事 GPU 加速深度学习工作。

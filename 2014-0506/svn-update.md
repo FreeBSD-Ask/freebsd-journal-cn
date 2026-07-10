@@ -15,13 +15,13 @@ stable/9 基本系统中的 BIND DNS 服务器更新至 9.9.5 版本。该软件
 
 <http://svnweb.freebsd.org/base?view=revision&revision=r262331>
 
-`bhyve(8)` hypervisor 现在支持从 ZFS 数据集引导虚拟机，从而支持纯粹的“root on ZFS”虚拟机。此前只能从 UFS 文件系统引导。
+`bhyve.8` hypervisor 现在支持从 ZFS 数据集引导虚拟机，从而支持纯粹的“root on ZFS”虚拟机。此前只能从 UFS 文件系统引导。
 
 ## urndis(4) 支持：stable/9@r262362
 
 <http://svnweb.freebsd.org/base?view=revision&revision=r262362>
 
-`urndis(4)` 驱动已加入 stable/9。该驱动最初在 head/ 中通过修订 r261541、r261543 和 r261544 提供，提供基于远程 NDIS 的以太网访问，使手机和平板等移动设备能通过 USB tethering 提供网络访问。`urndis(4)` 驱动在 stable/10 中自修订 r262363 起可用。该驱动应支持任何 USB RNDIS 提供者，例如 Android 设备上的那些。`urndis(4)` 驱动从 OpenBSD 移植而来。
+`urndis.4` 驱动已加入 stable/9。该驱动最初在 head/ 中通过修订 r261541、r261543 和 r261544 提供，提供基于远程 NDIS 的以太网访问，使手机和平板等移动设备能通过 USB tethering 提供网络访问。`urndis.4` 驱动在 stable/10 中自修订 r262363 起可用。该驱动应支持任何 USB RNDIS 提供者，例如 Android 设备上的那些。`urndis.4` 驱动从 OpenBSD 移植而来。
 
 ## ext4 文件系统支持：stable/9@r262564
 

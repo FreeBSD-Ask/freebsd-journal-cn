@@ -10,6 +10,6 @@ FreeBSD 期刊的编辑委员会也在经历一些变化。Brooks Davis 和 Stev
 
 全新组建的 FreeBSD 期刊编辑委员会将继续为我们日益壮大的社区提供关于 FreeBSD 的优质文章和专栏。即便你不是正式的编辑委员会成员，我们也欢迎你就期次主题、文章和作者人选提出建议。
 
-George Neville-Neil
+**George Neville-Neil**
 
-John Baldwin
+**John Baldwin**

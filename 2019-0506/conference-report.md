@@ -2,7 +2,7 @@
 
 ## LinuxFest Northwest 2019
 
-作者：Conor Beh
+作者：**Conor Beh**
 
 4 月 26 日至 28 日，LinuxFest Northwest 迎来 20 周年纪念，FreeBSD 社区来了很多人。我有机会和 Linux 阵营、开源社区的朋友们一起，参加了三场与 FreeBSD 相关的讲座，并在会场布置了一个大型展台。虽然 LinuxFest Northwest 的地点有些偏僻，但讲座内容多样、氛围轻松，吸引了世界各地的人前来。
 

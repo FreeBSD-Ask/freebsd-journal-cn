@@ -1,6 +1,6 @@
 # 活动日历
 
-作者：DRU LAVIGNE 与 ANNE DICKISON
+作者：**DRU LAVIGNE** 与 **ANNE DICKISON**
 
 以下 BSD 活动将于 2019 年第三季度举行。
 
