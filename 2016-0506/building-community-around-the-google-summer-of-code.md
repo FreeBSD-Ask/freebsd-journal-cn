@@ -1,7 +1,7 @@
 # 围绕谷歌编程之夏构建社区
 
 - 原文：[Building Community Around the Google Summer of Code](https://freebsdfoundation.org/wp-content/uploads/2016/06/Building-Community-Around-the-Google-Summer-of-Code.pdf)
-- 作者：Pedro Giffuni
+- 作者：**Pedro Giffuni**
 
 FreeBSD 每年都作为导师组织参与谷歌 Summer of Code（简称 GSoC），这是谷歌资助大学生参与开源项目的计划。这是让学生参与软件开发的好方式，同时帮助通常资源紧缺的社区获得开发资金。
 

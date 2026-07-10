@@ -1,7 +1,7 @@
 # 在世界之巅
 
 - 原文链接：[On Top of the World](https://freebsdfoundation.org/wp-content/uploads/2021/03/Practical-Ports.pdf)
-- 作者：**BENEDICT REUSCHLING**
+- 作者：BENEDICT REUSCHLING
 
 本专栏介绍 FreeBSD 的 Ports 和软件包，它们或实用、或奇特，或值得了解。Ports 扩展了基础操作系统的功能，确保你能完成任务，或者简单来说，让你会心一笑。一起来吧，也许你会发现新东西。
 
