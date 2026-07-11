@@ -20,7 +20,7 @@
 
 为清晰起见，示例中有时（并非总是）会展示命令输出。
 
-手册页引用以斜体显示，括号中标注手册章节；如 security(7) 指安全手册页，可输入 `man 7 security` 或 `man security` 显示（因无同名手册页，可省略章节号）。
+手册页引用以加粗显示，括号中标注手册章节；如 **security(7)** 指安全手册页，可输入 `man 7 security` 或 `man security` 显示（因无其他同名手册页，可省略章节号）。
 
 FreeBSD 软件包引用以斜体显示，使用 Port 的 origin，即 `<分类>/<名称>`，如 `security/sudo`，可作为二进制包安装（`pkg install sudo`），也可从 Ports 安装（`cd /usr/ports/security/sudo && make install clean`）。
 
