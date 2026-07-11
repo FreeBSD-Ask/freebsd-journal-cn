@@ -186,7 +186,7 @@ SSH 在此之后显式重启，因为 playbook 很快就要使用 Hadoop SSH 登
 
 为了正常运行，Hadoop 需要设置一些环境变量。这些包括 `JAVA_HOME`、`HADOOP_HOME` 以及 Hadoop 用户使 Hadoop 集群与 Java 协同工作所需的其他变量。环境变量存储在 `.bashrc` 文件中，该文件从本地 Ansible 控制机部署到远程系统上的 Hadoop 主目录。
 
-`.bashrc` 文件本身将作为模板提供。Ansible 中的这项强大功能使得存储填充了 Ansible 变量的配置文件成为可能（利用 Jinja2 语法）。部署时，不只是简单的复制操作。在传输到远程机器的过程中，变量被替换为其实际值。在这种情况下，`{{hdp_destdir}}` 被替换为 **/usr/local/hadoop2.9.0**。
+`.bashrc` 文件本身将作为模板提供。Ansible 中的这项强大功能使得存储填充了 Ansible 变量的配置文件成为可能（利用 Jinja2 语法）。部署时，不只是简单的复制操作。传输到远程机器时，变量被替换为其实际值。此时，`{{hdp_destdir}}` 被替换为 **/usr/local/hadoop2.9.0**。
 
 ```ini
      - name: "Copy BashRC over to {{hdp_localhome}}/{{hdp}}/.bashrc"
