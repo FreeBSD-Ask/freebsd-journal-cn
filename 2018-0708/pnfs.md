@@ -171,7 +171,7 @@ ds5/207508569ff983350c000000a9730200eec58e800000000000000000
 
 这告诉你“abc.c”的数据存储在 nfsv4-data2 和 nfsv4-data3 的子目录“ds5”中，文件名为“2075...”。
 
-如果我们转到 nfsv4-data2 上的 **/DSstore/ds5**，“ls -l *a97302*”会显示：
+如果我们转到 nfsv4-data2 上的 **/DSstore/ds5**，`ls -l *a97302*` 会显示：
 
 ```sh
 -rw-r--r--  1 ricktst  wheel  274 Jun  5 18:02
