@@ -11,7 +11,7 @@
 # portsnap fetch
 ```
 
-第一次运行 `portsnap` 时，解压缩快照到 **/usr/ports**：
+第一次运行 portsnap 时，解压缩快照到 **/usr/ports**：
 
 ```sh
 # portsnap extract
@@ -24,7 +24,7 @@
 # make install clean
 ```
 
-在安装过程中会出现提示，保持默认设置并安装软件包。
+在安装过程中会出现提示，保持默认设置并安装 Port。
 
 ## 第二步：配置 Poudriere
 
@@ -73,7 +73,7 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 # poudriere jail -c -j 91x64 -v 12.1-RELEASE -a amd64
 ```
 
-在上述命令中，91x64 用于标识 jail，而 12.1-RELEASE 标识要使用的 FreeBSD 版本。如果需要不同的名称或 FreeBSD 版本，可以进行调整。只需记得在本指南的其余部分也进行替换。
+在上述命令中，91x64 用于标识 jail，而 12.1-RELEASE 标识要使用的 FreeBSD 版本。如果需要不同的名称或 FreeBSD 版本，可以调整。只需记得在本指南的其余部分也替换。
 
 ## 第四步：创建批量 Port 列表
 
@@ -86,7 +86,7 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 # echo WITH_PKGNG=YES >> 91x64-make.conf
 ```
 
-接下来的步骤是为 Poudriere 创建 Port 列表以进行编译和维护；FreeBSD Ports 中有各种各样的 Port，Poudriere 可以用来管理它们。首先，运行：
+接下来的步骤是为 Poudriere 创建 Port 列表以编译和维护；FreeBSD Ports 中有各种各样的 Port，Poudriere 可以用来管理它们。首先，运行：
 
 ```sh
 # cd /usr/local/etc
