@@ -1,6 +1,6 @@
 # Jail vnet 实例教程
 
-为理解虚拟网络特性（vnet），切勿与 VirtIO Ethernet 驱动 vtnet(4) 混淆，我们先引用 vnet(9) 手册页的一段：
+为理解虚拟网络特性（vnet），切勿与 VirtIO Ethernet 驱动 **vtnet(4)** 混淆，我们先引用 **vnet(9)** 手册页的一段：
 
 ## DESCRIPTION
 
@@ -11,7 +11,7 @@ vnet 是虚拟化网络栈的技术名称。
 是基本系统不受限制的默认网络栈。
 ```
 
-作为相关的 prison 特性，我们查看 jail(8) 手册页中关于 vnet 的部分：
+作为相关的 prison 特性，我们查看 **jail(8)** 手册页中关于 vnet 的部分：
 
 ```sh
 vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
@@ -29,7 +29,7 @@ vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
 
 ## 示例
 
-这些示例使用基于 host `/` 的“空” Jail，仅聚焦 vnet 特性。它们都处于“persist”模式（因为没有进程运行）。
+这些示例使用基于 host **/ ** 的“空” Jail，仅聚焦 vnet 特性。它们都处于“persist”模式（因为没有进程运行）。
 
 关于操作系统要求：
 
@@ -45,10 +45,10 @@ vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
 命令行参数详情：
 
 - `-c`：创建新 Jail
-- name：Jail 名称，避免后续使用其 jail ID（JID）
-- host.hostname：本示例中仅用于让 `jls` 命令输出美观
-- persist：因 Jail 无进程运行，故强制其处于运行状态
-- vnet：启用虚拟网络栈
+- `name`：Jail 名称，避免后续使用其 jail ID（JID）
+- `host.hostname`：本示例中仅用于让 jls 命令输出美观
+- `persist`：因 Jail 无进程运行，故强制其处于运行状态
+- `vnet`：启用虚拟网络栈
 
 ```sh
 # jail -c name=useless host.hostname=jvnet persist vnet
@@ -109,7 +109,7 @@ Destination                     Gateway                       Flags     Netif Ex
 fe80::%lo0/64                   link#1                        U           lo0
 fe80::1%lo0                     link#1                        UHS         lo0
 
-好多了！但我们只有 loopback 接口在运行。下一步是创建虚拟 Ethernet tap 接口并分配给 Jail。`ifconfig(8)` 手册页摘录：
+好多了！但我们只有 loopback 接口在运行。下一步是创建虚拟 Ethernet tap 接口并分配给 Jail。**ifconfig(8)** 手册页摘录：
 
 ```sh
 vnet jail
@@ -231,7 +231,7 @@ Destination        Gateway            Flags     Netif Expire
 
 但这行不通。TAP 接口会从 host（=从 host 消失）移入 Jail 的 vnet，因此也会从 bridge 消失！
 
-为解决此问题，epair(4) 接口（Ethernet pair）应运而生。这种特殊网络接口表现为两个接口（epairXa 与 epairXb），它们的行为如同交叉相连的两个 Ethernet 接口。将每一侧分配到不同 vnet 后，二者仍能相互交换帧。
+为解决此问题，**epair(4)** 接口（Ethernet pair）应运而生。这种特殊网络接口表现为两个接口（epairXa 与 epairXb），它们的行为如同交叉相连的两个 Ethernet 接口。将每一侧分配到不同 vnet 后，二者仍能相互交换帧。
 
 host
 jail1
@@ -564,7 +564,7 @@ cxlv11 cxlv12 cxlv13 cxlv14 cxlv15 cxlv16 cxlv17 cxlv18 cxlv19
 请注意：
 
 1. 某些 NIC（如 Intel）需要更多参数（`allow-promisc`、`allow-set-mac`、`mac-antispoof`）以允许在 VF 上进行如 CARP 之类的特定用法。
-2. 使用 Intel ix(4) 驱动的 FreeBSD 12 无法将驱动附加到这些 VF。
+2. 使用 Intel **ix(4)** 驱动的 FreeBSD 12 无法将驱动附加到这些 VF。
 
 ```sh
 ixv0: <Intel(R) PRO/10GbE Virtual Function Network Driver> at device 0.128 on pci4
@@ -956,4 +956,6 @@ jail1
 
 <https://bsdrp.net/documentation/examples/multi-tenant_ha_pf_firewalls>
 
-OLIVIER COCHARD-LABBÉ 在 2005 年通过定制 m0n0wall 创建 FreeNAS 而接触 FreeBSD。作为网络工程师，他于 2009 年创建 BSD Router Project，此后一直致力于测试 FreeBSD 网络栈。他于 2016 年获得 Ports commit 权限，目前是 Netflix 的测试软件开发者。
+---
+
+**OLIVIER COCHARD-LABBÉ** 在 2005 年通过定制 m0n0wall 创建 FreeNAS 而接触 FreeBSD。作为网络工程师，他于 2009 年创建 BSD Router Project，此后一直致力于测试 FreeBSD 网络栈。他于 2016 年获得 Ports commit 权限，目前是 Netflix 的测试软件开发者。

@@ -4,7 +4,7 @@
 
 本栏目聚焦最近获得提交权限的贡献者，向 FreeBSD 社区介绍他们。
 
-本期主角是 Alfredo Dal’Ava Júnior（1 月获得 src 提交权限）和 Ryan Moeller（2 月获得 src 提交权限）。
+本期主角是 Alfredo Dal'Ava Júnior（1 月获得 src 提交权限）和 Ryan Moeller（2 月获得 src 提交权限）。
 
 ## 谈谈你自己、背景和兴趣吧。
 
