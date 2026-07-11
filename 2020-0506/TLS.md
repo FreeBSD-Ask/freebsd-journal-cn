@@ -191,4 +191,4 @@ Netflix 还开发了 nginx 扩展，以利用 OpenSSL 中的新 `SSL_sendfile()`
 
 ---
 
-**JOHN BALDWIN** 是名系统软件开发人员。在过去 20 年里，他直接为 FreeBSD 操作系统的各个部分（包括 x86 平台支持、SMP、各种设备驱动程序和虚拟内存子系统）以及用户空间程序提交了代码更改。除了编写代码外，John 还曾在 FreeBSD 核心团队和发布工程团队工作。他还为 GDB 调试器和 LLVM 作出了贡献。John 目前与妻子 Kimberly 及三名子女 Janelle、Evan 和 Bella 一起生活在加利福尼亚州的康科德市。
+**JOHN BALDWIN** 是系统软件开发人员。在过去 20 年里，他直接为 FreeBSD 内核的各个部分（包括 x86 平台支持、SMP、各种设备驱动程序和虚拟内存子系统）以及用户空间程序提交了代码更改。除了编写代码外，John 还曾在 FreeBSD 核心团队和发布工程团队工作。他还为 GDB 调试器和 LLVM 作出了贡献。John 目前与妻子 Kimberly 及三名子女 Janelle、Evan 和 Bella 一起生活在加利福尼亚州的康科德市。
