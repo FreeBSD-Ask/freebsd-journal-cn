@@ -1,4 +1,4 @@
-# 利用 netdump(4) 进行事后内核调试
+# 利用 **netdump(4)** 进行事后内核调试
 
 - 原文：[Post-Mortem Kernel Debugging with netdump(4)](https://freebsdfoundation.org/wp-content/uploads/2022/06/kernal_debugging.pdf)
 - 作者：**MARK JOHNSTON**
