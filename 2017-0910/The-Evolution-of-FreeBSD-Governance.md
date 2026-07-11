@@ -92,7 +92,7 @@ Warner Losh 与 Poul-Henning Kamp、Wes Peters 等人一起起草了一套章程
 
 为了尽量避免类似上述两种情况，核心团队引入了“FreeBSD Community Process”（FreeBSD 社区流程），作为一种更加制度化的机制，用于在项目内部提出并裁决重要或存在争议的变更。其核心理念在于，避免讨论在邮件列表上退化为无休止的争论，而最终却没有任何实际行动。
 
-FreeBSD Community Process 借鉴了其他项目中的类似理念，尤其是 Python Enhancement Process（https://www.python.org/dev/peps/pep-0001/）、Joyent RFD Process（https://github.com/joyent/rfd/blob/master/README.md），甚至还包括历史悠久的 IETF RFC Process（https://www.ietf.org/about/standards-process.html）。
+FreeBSD Community Process 借鉴了其他项目中的类似理念，尤其是 Python Enhancement Process（<https://www.python.org/dev/peps/pep-0001/）、Joyent> RFD Process（<https://github.com/joyent/rfd/blob/master/README.md），甚至还包括历史悠久的> IETF RFC Process（<https://www.ietf.org/about/standards-process.html）。>
 
 凡是希望进行一项会对 FreeBSD 用户群体产生非琐碎影响的变更的提交者，或者事后来看，任何在遇到争议后不得不回退某项原本被认为并不复杂的变更的人，都需要将其拟议的变更内容写成文档。该提案需要描述其试图解决的问题，概述拟采用的解决方案，并指出该提案可能带来的任何后续影响。在经过 FreeBSD Community Process 编辑的审阅之后，该文档会被加入 FreeBSD Community Process 索引，提交到 FreeBSD Community Process 仓库，并发布以供讨论。每一份 FreeBSD Community Process 提案都是一份“活文档”，可以根据讨论过程中形成的结论不断更新。
 
@@ -106,7 +106,7 @@ FreeBSD Community Process 借鉴了其他项目中的类似理念，尤其是 Py
 
 ## FreeBSD 安全团队
 
-安全官这一角色在多年中不断演变。最初，它只是一个头衔，用于指派某个人负责项目中与安全相关的问题。2002 年，通过了一份正式章程（https://www.freebsd.org/security/charter.html），其中也明确承认，相关工作量并非一人所能承担，因此设立了一个向安全官汇报的安全团队。近几年，人们也逐渐意识到，要找到一位同时具备相应背景并且有足够时间担任安全官的人并非易事。针对这一职责范围的扩展，核心团队重新定义了安全官的角色，使其更偏向管理职能，而安全团队则作为一个人员池，根据需要承担具体工作，用于应对安全问题、起草安全通告，并确保补丁被合入所有相关分支。
+安全官这一角色在多年中不断演变。最初，它只是一个头衔，用于指派某个人负责项目中与安全相关的问题。2002 年，通过了一份正式章程（<https://www.freebsd.org/security/charter.html），其中也明确承认，相关工作量并非一人所能承担，因此设立了一个向安全官汇报的安全团队。近几年，人们也逐渐意识到，要找到一位同时具备相应背景并且有足够时间担任安全官的人并非易事。针对这一职责范围的扩展，核心团队重新定义了安全官的角色，使其更偏向管理职能，而安全团队则作为一个人员池，根据需要承担具体工作，用于应对安全问题、起草安全通告，并确保补丁被合入所有相关分支。>
 
 ## 总结
 

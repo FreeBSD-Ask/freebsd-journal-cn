@@ -105,7 +105,7 @@ FreeBSD 发布工程团队制作 AArch64 快照安装介质和虚拟机镜像。
 
 ## Cavium ThunderX，主要参考平台
 
-凭借出色的功能和可用性，Cavium 的 ThunderX 平台是 FreeBSD ARMv8 移植的主要硬件参考平台。在 ThunderX 上启动 FreeBSD/arm64 的说明可在 **https://wiki.freebsd.org/arm64/ThunderX** 找到。
+凭借出色的功能和可用性，Cavium 的 ThunderX 平台是 FreeBSD ARMv8 移植的主要硬件参考平台。在 ThunderX 上启动 FreeBSD/arm64 的说明可在 **<https://wiki.freebsd.org/arm64/ThunderX>** 找到。
 
 Cavium 的 ThunderX 平台有两种配置——单插槽 48 核平台和双插槽 96 核变体。
 

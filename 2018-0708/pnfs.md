@@ -41,6 +41,7 @@ MDS 向知道如何为非镜像 DS 情况执行 pNFS 的 NFSv4.1 客户端生成
 pNFS 服务位于 FreeBSD-current 中，将在 FreeBSD 12 发布时包含在其中。在 FreeBSD 12 发布之前，可以使用 FreeBSD-current 快照分发进行测试。
 
 ## 设置使用 Plan B 的 FreeBSD pNFS 服务器
+
 让我们假设有五台 FreeBSD 12 系统，其中四台配置为 DSs，使用双向镜像和 AUTH_SYS 进行示例。
 
 • MDS，向客户端导出 **/export**。
