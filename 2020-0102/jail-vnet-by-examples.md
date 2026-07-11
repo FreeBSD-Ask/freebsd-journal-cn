@@ -29,7 +29,7 @@ vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
 
 ## 示例
 
-这些示例使用基于 host **/ ** 的“空” Jail，仅聚焦 vnet 特性。它们都处于“persist”模式（因为没有进程运行）。
+这些示例使用基于 host **/** 的“空” Jail，仅聚焦 vnet 特性。它们都处于“persist”模式（因为没有进程运行）。
 
 关于操作系统要求：
 
@@ -815,11 +815,11 @@ protocol device {}
 protocol kernel { ipv4 { export all; }; }
 protocol ospf {
   area 0 {
-    interface “ epair${i}b ” {
+    interface "epair${i}b" {
       hello 60;
       dead 240;
     };
-    interface “lo1” {
+    interface "lo1" {
       stub yes;
     };
   };
