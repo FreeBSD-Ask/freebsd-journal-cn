@@ -2,7 +2,7 @@
 
 北半球大部分地区春意盎然，而在春天，年轻开发者的心思也会转向调试和测试。如果你对此存疑，那么本期刊登的三篇精彩文章足以让你改观。
 
-作为佐证，我们奉上：John Baldwin 的《Debugging with GDB》、Kristof Provost 的《The Automated Testing Framework》以及 Benedict Reuschling 的《Diagnosing Excess LDAP Connections Using DTrace》。虽然许多开发者仍在用 `printf()` 调试，但你不必继续这样过活——John Baldwin 带我们领略了 GNU 调试器 gdb 最新版本（8.3）的功能，并展示了它如何为我们节省数小时追踪 bug 的挫败时间。
+作为佐证，我们奉上：John Baldwin 的《Debugging with GDB》、Kristof Provost 的《The Automated Testing Framework》、Benedict Reuschling 的《Diagnosing Excess LDAP Connections Using DTrace》。虽然许多开发者仍在用 `printf()` 调试，但你不必继续这样过活——John Baldwin 带我们领略了 GNU 调试器 gdb 最新版本（8.3）的功能，并展示了它如何为我们节省数小时追踪 bug 的挫败时间。
 
 防止代码出 bug 的最佳手段是好的测试，这正是 Kristof Provost 在文章中向我们阐述的内容。三篇中的第三篇是 Benedict Reuschling 的实践经历文章，讲述在运行中的系统上用 DTrace 调试问题。
 
