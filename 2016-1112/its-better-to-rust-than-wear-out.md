@@ -1,6 +1,6 @@
 # Rust 比磨损更好
 
-- 原文：[It's Better to Rust Than Wear Out](https://freebsdfoundation.org/wp-content/uploads/2016/12/Its-Better-to-Rust-Than-Wear-Out.pdf)
+- 原文：[It’s Better to Rust Than Wear Out](https://freebsdfoundation.org/wp-content/uploads/2016/12/Its-Better-to-Rust-Than-Wear-Out.pdf)
 
 同事首次向我热情推荐 Rust 时，我心存怀疑。早年间我为安全关键系统开发软件，吃过苦头后才明白：编程语言常不如表面看上去那么正常。以 C 为例，尽管标准化工作可观，C 规范仍充斥未指定、未定义与实现定义的行为 [2]。即便到了 2016 年，研究人员仍在探究 C ISO 标准与实际用法之间的差异 [4]。并非所有软件工程师都需关注位字段以非 int、signed int 或 unsigned int 类型声明时会发生什么（这是未定义行为 [2]）这类看似冷僻的问题，但我与安全关键及安全系统打交道太久，这部分较真无法关掉。于是略带轻蔑，我把 Rust 与 Go、Haskell 等听起来很酷但我永远用不上的技术归为一类。今年早些时候，我有机会重新审视 Rust，发现自己有些草率。
 
