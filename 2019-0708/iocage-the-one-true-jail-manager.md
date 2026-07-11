@@ -21,7 +21,7 @@ iocage
 
 ## iocage 命令行
 
-所有操作都用 `iocage(8)` 命令完成。语法和 ZFS 极为相似，好像 iocage 的开发者看到好主意就知道是好的。我们先用 `iocage get` 查看 iocage 的默认参数。我们加上 `-a` 标志获取所有参数，并加上 Jail 名 `default` 来查看默认参数。
+所有操作都用 **iocage(8)** 命令完成。语法和 ZFS 极为相似，好像 iocage 的开发者看到好主意就知道是好的。我们先用 `iocage get` 查看 iocage 的默认参数。我们加上 `-a` 标志获取所有参数，并加上 Jail 名 `default` 来查看默认参数。
 
 ```sh
 # iocage get -a default
