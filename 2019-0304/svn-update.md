@@ -63,7 +63,7 @@ vmm 的 CPUID 仿真此前向客户机呈现 Intel 拓扑信息，却禁用了 A
 
 <https://svnweb.freebsd.org/changeset/base/344106>
 
-这些改动很大程度上参考了 amd64。arm64 对超级页创建有更严格的要求，以避免 TLB 冲突中止的可能性，而这些要求不适用于 RISC-V——和 amd64 一样，RISC-V 允许同时缓存给定页面的 4KB 和 2MB 转换。RISC-V 的 PTE 格式仅包含两个软件位，而这两个位已被占用，因此我们没有 amd64 的 `PG_PROMOTED` 等价物。相应地，`pmap_remove_l2()` 总是失效整个 2MB 地址范围。
+这些改动很大程度上参考了 amd64。arm64 对超级页创建有更严格的要求，以避免 TLB 冲突中止的可能性，而这些要求不适用于 RISC-V——和 amd64 一样，RISC-V 允许同时缓存给定页面的 4KB 和 2MB 转换。RISC-V 的 PTE 格式仅包含两个软件位，而这两个位被占用，因此我们没有 amd64 的 `PG_PROMOTED` 等价物。相应地，`pmap_remove_l2()` 总是失效整个 2MB 地址范围。
 
 `pmap_ts_referenced()` 经过修改以清除 `PTE_A`，因为我们现在同时支持硬件和软件管理的引用位和脏位。同时修复了 `pmap_fault_fixup()`，使其不在内核映射上设置 `PTE_A` 或 `PTE_D`。
 
