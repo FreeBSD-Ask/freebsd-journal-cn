@@ -13,7 +13,7 @@ sudo 项目位于 <https://www.sudo.ws/>，同样有一个 bugzilla 实例供人
 
 几年前，Warren Block 编写了一款基于 perl 的工具 igor——“友好的实验室助手”（<http://www.wonkity.com/~wblock/igor/>），可对手册页与 DocBook XML 页面运行，检查各种问题。其中一项检查就是重复词，幸运的是该工具足够灵活，能在 FreeBSD 之外使用。于是我对 sudoers 手册页运行了 igor，它报告了重复词之外的其它问题。
 
-由于愈发怀疑 sudo 项目其它手册页可能也存在类似问题，我对它们也运行了 igor，发现了若干其它问题。sudo 项目维护多种手册页格式，语法略有不同，因此我需要对它们逐个修改。手册页改动的妙处在于，通过运行 `man(1)` 程序并将改动后的手册页作为参数传入即可立即查看结果。无需冗长编译，能快速得到改动反馈。
+由于愈发怀疑 sudo 项目其它手册页可能也存在类似问题，我对它们也运行了 igor，发现了若干其它问题。sudo 项目维护多种手册页格式，语法略有不同，因此我需要对它们逐个修改。手册页改动的妙处在于，通过运行 **man(1)** 程序并将改动后的手册页作为参数传入即可立即查看结果。无需冗长编译，能快速得到改动反馈。
 
 修复 igor 报告的所有问题（包括最初引我们注意的那个）后，我用 `diff -ruN` 创建了补丁。补丁附在 sudo bugzilla 的 issue <https://bugzilla.sudo.ws/show_bug.cgi?id=854> 上，并附有描述与 igor 工具链接。
 
@@ -21,7 +21,7 @@ sudo 项目位于 <https://www.sudo.ws/>，同样有一个 bugzilla 实例供人
 
 与此同时，sudo 1.8.26 新版本发布，其中包含了文档修复，并甚至在发行说明中提及（<https://www.sudo.ws/stable.html#1.8.26>）。FreeBSD Port 在此不久后也得到更新（<https://svnweb.freebsd.org/ports?view=revision&revision=484929>），这些修复也随之作为 FreeBSD 的一部分可用。就这样，从一个使用 sudo 的下游项目所报告的小错误，演变为针对多个文档问题在上游报告并修复的较大补丁。开源项目中这类事情无时无刻不在发生，不仅限于文档。src 与 Ports 也是如此，这是协作并交换修复、工具与思想使所有人受益的绝佳范例。妙处在于从文档工作入手很容易，尤其是手册页。小修复与大改进同样有价值，正如你所见，可能引发比初看时更大的事。
 
-有意开始文档工作的人不妨一读 FreeBSD Documentation Project primer（<https://www.freebsd.org/doc/en_US.ISO8859-1/books/fdp-primer/>）。快速入门章节解释了在工具与获取源码方面所需的一切。准备就绪后，便可在文档中开始猎虫。使用 FreeBSD 的 pkg 工具安装 textproc/igor Port 非常简单。找到 bug 后，请确认它尚未被报告或修复。如未报告，务必报告给实际维护它的项目与人员。许多项目都有 bug 跟踪系统或可报告问题的邮件列表。请尽量提供详尽信息与清晰描述，并附上你已创建的所有补丁。这样能提高补丁获得审视与处理的机会。对 FreeBSD 文档流程有任何疑问，可在 freebsd-doc 邮件列表提问，或到 #bsddocs 频道找我们。 •
+有意开始文档工作的人不妨一读 FreeBSD Documentation Project primer（<https://www.freebsd.org/doc/en_US.ISO8859-1/books/fdp-primer/>）。快速入门章节解释了在工具与获取源码方面所需的一切。准备就绪后，便可在文档中开始猎虫。使用 FreeBSD 的 pkg 工具安装 textproc/igor Port 非常简单。找到 bug 后，请确认它尚未被报告或修复。如未报告，务必报告给实际维护它的项目与人员。许多项目都有 bug 跟踪系统或可报告问题的邮件列表。请尽量提供详尽信息与清晰描述，并附上你已创建的所有补丁。这样能提高补丁获得审视与处理的机会。对 FreeBSD 文档流程有任何疑问，可在 freebsd-doc 邮件列表提问，或到 Efnet IRC 的 #bsddocs 频道找我们。
 
 ---
 

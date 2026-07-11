@@ -10,7 +10,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/348611>
 
-在我们（某些架构）迁移到 lld 之后，内核构建时带有唯一的 build-ID。通过 sysctl 和 `uname(1)` 暴露它，让用户能识别正在运行的内核。
+在我们（某些架构）迁移到 lld 之后，内核构建时带有唯一的 build-ID。通过 sysctl 和 **uname(1)** 暴露它，让用户能识别正在运行的内核。
 
 ## 修改 mountd，使其在重载时增量更新内核导出
 

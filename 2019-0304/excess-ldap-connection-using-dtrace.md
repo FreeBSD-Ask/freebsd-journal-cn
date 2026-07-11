@@ -66,7 +66,7 @@ rpc: files
 
 nss-pam-ldapd 软件不仅完全从头设计，并与名为 nslcd 的本地缓存服务集成，而且文档完善。此外，该软件持续维护，FreeBSD port 的最近一次更新是在 2018 年 11 月——也就是本文撰写之时。这些改动无需重启系统即可实施。一句警告：**/etc/pam.d** 或 **/etc/nsswitch.conf** 中的文件出错可能让你被系统锁在外面，连 root 用户也不例外。发生这种情况时，需要在单用户模式或使用 live CD 修复。
 
-改动落实、nslcd 服务启动后，我再次运行 DTrace 脚本。在第一列中我看到 nslcd 连接 LDAP 服务器的条目（之前我已停用 nscd，因为它没起作用）。现在由这个缓存守护进程发起调用，向本地服务（sudo 和 ssh）提供所需信息。DTrace 输出中到 LDAP 服务器的连接数大幅下降。在服务器一侧，IT 部门也确认流量已恢复正常水平。不必说，我在其他所有机器上都部署了 nss-pam-ldapd 服务及 nslcd。我还更新了安装脚本，在系统安装时使用 nss-pam-ldapd 替代 pam-ldap。注意，还有一个支持 SASL 的版本，名为 nss-pam-ldapd-sasl。
+改动落实、nslcd 服务启动后，我再次运行 DTrace 脚本。在第一列中我看到 nslcd 连接 LDAP 服务器的条目（之前我已停用 nscd，因为它没起作用）。现在由这个缓存守护进程发起调用，向本地服务（sudo 和 ssh）提供所需信息。DTrace 输出中到 LDAP 服务器的连接数大幅下降。在服务器一侧，IT 部门也确认流量已恢复正常水平。不必说，我在其他所有机器上都部署了 nss-pam-ldapd 服务和 nslcd。我还更新了安装脚本，在系统安装时使用 nss-pam-ldapd 替代 pam-ldap。注意，还有一个支持 SASL 的版本，名为 nss-pam-ldapd-sasl。
 
 这次排查令人愉快的一点是，我几乎不用自己费神去写 DTrace 探针。我可以直接从 FreeBSD wiki 上的 DTrace 单行命令库（<https://wiki.freebsd.org/DTrace/One-Liners>）中取用。那里已经有一些现成的、开箱即用的单行命令，覆盖存储、网络、系统调用等多个领域。稍加修改，就能构造出提供所需信息的探针，帮助诊断更棘手的问题。 •
 
