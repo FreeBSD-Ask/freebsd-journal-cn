@@ -275,12 +275,58 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - 仅接受符合本项目规范的修改，逐个手动应用
 - **禁止盲目接受全部 diff**
 
+#### AutoCorrect 审核准则
+
+**应拒绝的常见错误建议：**
+1. 全角括号 `（）` → 半角括号 `()`（违反全角标点规范）
+2. 全角冒号 `：` → 半角冒号 `:`（违反全角标点规范）
+3. 删除 CJK 与英文/引号间空格（违反 CJK 空格规范）
+4. 中文连字符前后加空格（如 `编辑-编译-测试` → `编辑 - 编译 - 测试`，中文复合词连字符不需加空格）
+5. 代码块内大小写修改（如 `-O json` → `-O JSON`、`-D windows` → `-D Windows`，禁止篡改代码块）
+6. `vim` → `VIM`（vim 是正确拼写，不是 VIM）
+7. `linux` → `Linux`（需确认上下文，可能是代码标识符如 linux 仿真模块）
+8. 中文句号 `。` → 英文句号 `.`
+9. 代码块内 `redis` 等用户名/组名改为大写
+
+**可接受的合理建议：**
+1. 品牌名称大小写修正：`github` → `GitHub`、`rabbitmq` → `RabbitMQ`（仅限正文，代码块内不修改）
+2. 缩写词大小写修正：`json` → `JSON`、`ssl` → `SSL`、`xml` → `XML`、`http` → `HTTP`（仅限正文，代码块内不修改）
+3. 程序名保持原样：`http-echo` 等程序名不改大小写，只改正文中独立使用的 `http`
+
+#### md-padding 审核准则
+
+**应拒绝的常见错误建议：**
+1. 代码块内的 `=`、`:` 周围加空格（破坏命令、配置、系统输出格式）
+2. URL 参数中的 `=` 加空格（如 `?id=xxx` → `?id = xxx`）
+3. C++ 命名空间 `::` 加空格（如 `std::vector` → `std:: vector`）
+4. Markdown 加粗格式 `**` 加空格（如 `**/path**` → `* */path**`）
+5. 美元符号与数字间加空格（如 `$5` → `$ 5`、`$50,000` → `$ 50,000`）
+6. 专有名词中的 `*` 加空格（如 `NYC*BUG` → `NYC *BUG`）
+7. 命令提示符 `>` 加空格（如 `grub>` → `grub >`）
+8. 配置赋值 `=` 加空格（如 `ROOTDEVNAME=/dev/...` → `ROOTDEVNAME =/dev/...`）
+9. 系统输出中的 `=`、`:` 加空格（如 `flags=8008<LOOPBACK>` → `flags = 8008 <LOOPBACK>`）
+10. 括号内等号说明加空格（如 `host（=从 host 消失）` → `host（= 从 host 消失）`）
+
+**可接受的合理建议：**
+1. 参考文献中英文冒号后加空格（如 `issue:December` → `issue: December`）
+
 ### 阶段 M：markdownlint 检查与修复
 
 - 运行 `markdownlint-cli2` 检查全部中文 `.md` 文件
-- 自动修复可修复的问题（`--fix`）
+- 自动修复可修复的问题（`--fix`）：MD009 行尾空格、MD022 标题周围空行、MD032 列表周围空行、MD034 裸 URL 等
 - 手动修复 MD060 表格列风格等无法自动修复的问题
 - 确保无 MD056 表格列数错误
+
+#### MD060 表格列风格修复方法
+
+当 markdownlint 报 `MD060/table-column-style [Table pipe does not align with header for option "aligned_delimiter"]` 时：
+
+1. **检查表头列内容宽度**：计算表头每列的字符数（含空格），如 `GPIO SIGNAL` = 11 字符
+2. **调整分隔行 dash 数量**：分隔行每列的 dash 数量应使管道符位置与表头行对齐
+   - 表头列内容 `GPIO SIGNAL`（11 字符）→ 分隔行应为 `-----------`（11 dash）
+   - 表头列内容 `Ball`（4 字符）→ 分隔行应为 `----`（4 dash）
+3. **验证管道符位置**：表头行和分隔行的管道符位置必须完全一致
+4. **compact 风格**：管道符两侧各保留单个空格，空单元格写作 `| |`
 
 ### 阶段 N：更新 CLAUDE.md
 
