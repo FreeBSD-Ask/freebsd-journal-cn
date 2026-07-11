@@ -84,11 +84,11 @@ Prometheus 提供基于 Web 的界面，用于查询和显示由系统（在 Pro
 输出应包含以下行，确认两个服务已成功启动：
 
 | 用户 | 命令 | PID | FD | 协议 | 本地地址 | 远程地址 |
-| :------: | :--: | :-: | :-: | :--: | :------: | :------: |
+| :--: | :--: | :-: |:--:| :--: | :------: | :------: |
 | prometheus | prometheus | 70027 | 8 | tcp4 | mistwood:9090 | `*:*` |
 | nobody | node_exporter | 2950 | 3 | tcp46 | `*:9100` | `*:*` |
 
-首先，让我们检查 node_exporter 是否正在提取一些指标。我们可以在浏览器中访问运行 node_exporter 服务的主机（在我的情况下是 mistwood），并在 URL 末尾添加端口 9100 和 /metrics，形成以下链接：**http://mistwood:9100/metrics**
+首先，让我们检查 node_exporter 是否正在提取一些指标。我们可以在浏览器中访问运行 node_exporter 服务的主机（在我的情况下是 mistwood），并在 URL 末尾添加端口 9100 和 /metrics，形成以下链接：<http://mistwood:9100/metrics>
 
 ![node_exporter 指标页面](../png/2022-1112/prometheus-01.png)
 

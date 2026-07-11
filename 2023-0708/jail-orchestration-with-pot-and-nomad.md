@@ -192,7 +192,7 @@ $ sudo pot show
 
 作为命令行的替代方案，nomad 服务器也配置为提供功能强大的 web UI，可以通过 **localhost:4646** 访问。在 UI 中可以看到“nginx-minipot”任务，并导航查看集群、分配、客户端等所有信息。
 
-通过 nomad，我们可以直接看到所有容器的状态。进入分配页面后，点击 "exec" 按钮即可在运行中的容器里启动 **/bin/sh** shell。
+通过 nomad，我们可以直接看到所有容器的状态。进入分配页面后，点击 “exec” 按钮即可在运行中的容器里启动 **/bin/sh** shell。
 
 ### 检查 consul
 

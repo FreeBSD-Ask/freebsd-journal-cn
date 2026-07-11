@@ -137,7 +137,7 @@ Password  :  @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 -j agent01 -- --network wazuh-net --agent_ip 11.1.0.3 --agent_name agent01 --server_ip 11.1.0.2 --enrollment @ugEwZHpUJ8a7oCsc1rxJKd3/hlk=
 ```
 
-对于每个代理（agent01、agent02、agent03、agent04 和 agent05），重复此命令，使用不同的 IP 地址（11.1.0.3、11.1.0.4、11.1.0.5 和 11.1.0.6），并更改系统版本（13.2-RELEASE 或 14.0-RC1）。完成后，我们将能够在 wazuh-dashboard 的 "Agents" 窗口中查看已连接代理的列表。
+对于每个代理（agent01、agent02、agent03、agent04 和 agent05），重复此命令，使用不同的 IP 地址（11.1.0.3、11.1.0.4、11.1.0.5 和 11.1.0.6），并更改系统版本（13.2-RELEASE 或 14.0-RC1）。完成后，我们将能够在 wazuh-dashboard 的 “Agents” 窗口中查看已连接代理的列表。
 
 ![image](../png/2023-0910/wazuh-and-mitre-caldera-3.png)
 

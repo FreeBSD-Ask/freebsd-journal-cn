@@ -8,7 +8,7 @@
 
 ## 构建和测试你的 Ports 的资源
 
-成为 porter 是为 FreeBSD 项目做贡献的最简单方式之一。维护叶子 Ports 通常需要的资源很少，基本可以在小型家用系统上完成。但如果你维护的 port 依赖 GTK 或 QT 或其他需要先构建大量 Ports 的东西，该怎么办？这时 RedPorts.org 就派上用场了。RedPorts 是由 `portmgr@` 维护、供 porter 社区使用的机器集群。你只需注册账户并熟悉如何签入你的个人 Ports 树进行测试。一旦 port 为测试目的提交，它会交给构建器，由构建器组装所有依赖直到你的 port 被构建。流程结束时，服务器上会保留日志，你随后可以审查完整性。不要气馁；有时一个 port 需要调整几次才能干净编译。
+成为 porter 是为 FreeBSD 项目做贡献的最简单方式之一。维护叶子 Ports 通常需要的资源很少，基本可以在小型家用系统上完成。但如果你维护的 port 依赖 GTK 或 QT 或其他需要先构建大量 Ports 的东西，该怎么办？这时 RedPorts.org 就派上用场了。RedPorts 是由 `portmgr@` 维护、供 porter 社区使用的机器集群。你只需注册账户并熟悉如何签入你的个人 Ports 树做测试。一旦 port 为测试目的提交，它会交给构建器，由构建器组装所有依赖直到你的 port 被构建。流程结束时，服务器上会保留日志，你随后可以审查完整性。不要气馁；有时 port 需要调整几次才能干净编译。
 
 ## Ports 树新动态
 
@@ -30,7 +30,7 @@ FreeBSD Ports 的优势之一在于我们 porters 的多样性——这些热心
 
 ## 新任 Ports 提交者
 
-业内有句老话：如果你提交了太多 PR、修复了太多 Ports，并在邮件列表中持续热心贡献，就会被“惩罚”——给一个 commit 权限。最近几个月，我们“惩罚”了以下诸位：
+业内有句老话：如果你提交了太多 PR、修复了太多 Ports，并在邮件列表中持续热心贡献，就会被“惩罚”——给予 commit 权限。最近几个月，我们“惩罚”了以下诸位：
 
 - **John Marino**（`marino@`），许多 BSD 项目的贡献者，尤为著名的是他在 DragonFlyBSD 中负责 DPorts
 - **Rusmir Dusko**（`nemysis@`），同时为 FreeBSD Ports 和 PC-BSD PBI 工作
@@ -43,4 +43,4 @@ FreeBSD Ports 的优势之一在于我们 porters 的多样性——这些热心
 
 ---
 
-**Thomas Abthorpe** 是一名服务器管理员，在行业内拥有逾 20 年经验。他于 2007 年 8 月获得 Ports commit 权限，2010 年 3 月加入 Ports 管理团队，2012 年 7 月当选 FreeBSD 核心团队成员。在忙完 FreeBSD 事务之余，他在“Bicycles for Humanity”担任见习自行车技师。
+**Thomas Abthorpe** 是服务器管理员，在行业内拥有逾 20 年经验。他于 2007 年 8 月获得 Ports commit 权限，2010 年 3 月加入 Ports 管理团队，2012 年 7 月当选 FreeBSD 核心团队成员。在忙完 FreeBSD 事务之余，他在“Bicycles for Humanity”担任见习自行车技师。
