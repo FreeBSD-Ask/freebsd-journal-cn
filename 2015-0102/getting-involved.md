@@ -29,7 +29,7 @@
 
 **布道：** 你是否参加技术会议或本地技术用户组？可考虑就你在 FreeBSD 上的工作做一次演讲、闪电演讲或 BoF（Birds of a Feather）分会。若演讲被接受，发邮件至 freebsd-doc 邮件列表，以便将活动信息列入 FreeBSD 网站。
 
-**开发：** 本文着重介绍非代码贡献，但开发者的贡献仍不可或缺。作为完整的操作系统，FreeBSD 提供大量编码机会：设备驱动、网络协议、文件系统、API、硬件子系统等等。
+**开发：** 本节着重介绍非代码贡献，但开发者的贡献仍不可或缺。作为完整的操作系统，FreeBSD 提供大量编码机会：设备驱动、网络协议、文件系统、API、硬件子系统等等。
 
 ## 但我不是专家！
 
@@ -107,4 +107,6 @@ FreeBSD 项目确实有许多在各自领域造诣深厚、被誉为专家的贡
 - 在 Twitter 发布 FreeBSD 相关博客文章新帖时加上 @freebsdblogs
 - 在 <https://freebsd.org/docs.html> 查找更多文档
 
-Dru Lavigne 自 1997 年起将 FreeBSD 作为主力平台，是 FreeBSD 衍生项目 PC-BSD 和 FreeNAS 的首席文档撰写者。她著有《BSD Hacks》、《The Best of FreeBSD Basics》和《The Definitive Guide to PC-BSD》。她是 BSD 认证集团（BSD Certification Group Inc.）的创始人和现任主席，该非营利组织致力于建立 BSD 系统管理员认证标准；她同时担任 FreeBSD 基金会理事。
+---
+
+**Dru Lavigne** 自 1997 年起将 FreeBSD 作为主力平台，是 FreeBSD 衍生项目 PC-BSD 和 FreeNAS 的首席文档撰写者。她著有《BSD Hacks》、《The Best of FreeBSD Basics》和《The Definitive Guide to PC-BSD》。她是 BSD 认证集团（BSD Certification Group Inc.）的创始人和现任主席，该非营利组织致力于建立 BSD 系统管理员认证标准；她同时担任 FreeBSD 基金会理事。

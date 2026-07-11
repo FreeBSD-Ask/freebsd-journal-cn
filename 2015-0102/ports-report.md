@@ -17,9 +17,9 @@
 - 默认 Perl 版本设为 5.18
 - 默认 PostgreSQL 版本设为 9.3
 
-照例，如果更新特定 ports 需要手动步骤，这些步骤会在 **/usr/ports/UPDATING** 文件中清楚说明。强烈建议在对 Ports 树执行任何更新前先检查此文件！
+照例，如果更新特定 Ports 需要手动步骤，这些步骤会在 **/usr/ports/UPDATING** 文件中清楚说明。强烈建议在对 Ports 树执行任何更新前先检查此文件！
 
-另外请注意，存在多个版本的 ports，其默认版本在 **/usr/ports/Mk/bsd.default-versions.mk** 文件中设置。如果出于某些原因某个 port 的默认版本不符合你的需求，可以在 `make.conf` 中加入 `DEFAULT_VERSIONS` 变量来覆盖，如下所示：
+另外请注意，存在多个版本的 Ports，其默认版本在 **/usr/ports/Mk/bsd.default-versions.mk** 文件中设置。如果出于某些原因某个 Port 的默认版本不符合你的需求，可以在 `make.conf` 中加入 `DEFAULT_VERSIONS` 变量来覆盖，如下所示：
 
 - `DEFAULT_VERSIONS=       perl5=5.16 ruby=1.9`
 
@@ -39,4 +39,6 @@
 
 新一届任期于 11 月开始，我们的两位 lurker 是 ak@ 和 sunpoet@。按照传统，他们受邀回答一份问卷，以便大家更好地了解他们。以下是 Alex [http://blogs.freebsdish.org/portmgr/2014/11/04/getting-to-know-your-portmgr-lurker-ak/] 和 Po-Chuan [http://blogs.freebsdish.org/portmgr/2014/12/03/getting-to-know-your-portmgr-lurker-sunpoet/] 回答的问卷链接。
 
-Frederic Culot 在 IT 行业工作了十年。业余时间他学习商业与管理，刚完成 MBA 学业。Frederic 于 2010 年作为 Ports 提交者加入 FreeBSD，至今已有约 2,000 次提交，指导了六位新提交者，现在担任 portmgr-secretary。
+---
+
+**Frederic Culot** 在 IT 行业工作了十年。业余时间他学习商业与管理，刚完成 MBA 学业。Frederic 于 2010 年作为 Ports 提交者加入 FreeBSD，至今已有约 2,000 次提交，指导了六位新提交者，现在担任 portmgr-secretary。
