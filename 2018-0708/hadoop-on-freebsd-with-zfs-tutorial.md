@@ -135,7 +135,7 @@ hadoop:*:31707:31707:hadoop User:/home/hadoop:/usr/local/bin/bash
     key: "{{ lookup('file', './{{hdp_keyname}}.pub') }}"
 ```
 
-公钥和私钥必须放在 hadoop 用户主目录下的 `.ssh` 中。由于已为密钥定义了变量，因此很容易提供公钥（`.pub` 扩展名）和私钥（无扩展名），而无需在此任务中拼出其真实名称。此外，密钥通过设置适当的模式和所有权进行保护，以便除 hadoop 外无人能访问它。
+公钥和私钥必须放在 Hadoop 用户主目录下的 `.ssh` 中。由于已为密钥定义了变量，因此很容易提供公钥（`.pub` 扩展名）和私钥（无扩展名），而无需在此任务中拼出其真实名称。此外，密钥通过设置适当的模式和所有权进行保护，以便除 Hadoop 外无人能访问它。
 
 ```ini
 - name: "Copy public and private key to {{hdp}}'s .ssh directory"
