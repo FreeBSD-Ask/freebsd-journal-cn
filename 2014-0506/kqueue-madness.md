@@ -50,7 +50,7 @@ g) 当 TCP 连接被对方优雅关闭时，我是否总能从 kqueue 得到 EOF
 - **Nevents**——Eventlist 的边界大小，让内核知道它最多能告诉你多少事件。
 - **Timeout**——一个 `struct timespec`，表示超时值。
 
-与 `poll(2)` 或 `select(2)` 一样，Timeout 字段让你控制调用的“阻塞”程度。如果设为 `NULL`，调用将永远等待。如果 Timeout 非 `NULL`，它被解释为一个 `timespec`（`tv_sec` 和 `tv_nsec`），表示返回前最长延迟时间。需要注意的一点是，如果你在 Nevents 字段中指定零，那么即使指定了 Timeout，`kevent()` 调用也不会延迟。
+与 **poll(2)** 或 **select(2)** 一样，Timeout 字段让你控制调用的“阻塞”程度。如果设为 `NULL`，调用将永远等待。如果 Timeout 非 `NULL`，它被解释为一个 `timespec`（`tv_sec` 和 `tv_nsec`），表示返回前最长延迟时间。需要注意的一点是，如果你在 Nevents 字段中指定零，那么即使指定了 Timeout，`kevent()` 调用也不会延迟。
 
 `kevent()` 调用可以三种方式使用：
 
