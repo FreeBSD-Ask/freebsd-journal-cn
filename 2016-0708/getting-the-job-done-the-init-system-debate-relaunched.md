@@ -65,13 +65,13 @@ jobd 是一种在单个操作系统实例中启动和监控“作业”（job）
 
 ## 历史与动机
 
-jobd 源于一次实验，最初想克隆 MacOS X 中的 launchd(8) 系统。它的命令行语法和故障处理能力深受 Solaris 的服务管理设施（SMF）系统启发。它并非这两个 Unix 工具的简单克隆或拼凑，而是从各自的最佳特性中大量借鉴，同时避开了一些不太理想的方面。
+jobd 源于一次实验，最初想克隆 macOS X 中的 launchd(8) 系统。它的命令行语法和故障处理能力深受 Solaris 的服务管理设施（SMF）系统启发。它并非这两个 Unix 工具的简单克隆或拼凑，而是从各自的最佳特性中大量借鉴，同时避开了一些不太理想的方面。
 
 我写 jobd 的动机之一，是回应引发 Linux 社区重大分裂的 systemd 风波。systemd 的采用是我把个人计算机从 Linux 切换到 PC-BSD 的重要因素。切换之后，我开始寻找可以回馈 FreeBSD 项目的小项目。
 
 创建新 init 系统的愿望一直存在，但需要一个火花来推动。巧合的是，在我切换到 PC-BSD 前后，NextBSD 项目宣布，听了 Jordan Hubbard 几场关于 launchd 优势的演讲后，我准备好帮忙。
 
-可惜，进一步审视后，我并不认同 NextBSD 移植 launchd 所用的技术路线——即决定编写 Mach 微内核的部分实现作为兼容层，本质上让 FreeBSD 假装自己是 MacOS X 的半成品变种。
+可惜，进一步审视后，我并不认同 NextBSD 移植 launchd 所用的技术路线——即决定编写 Mach 微内核的部分实现作为兼容层，本质上让 FreeBSD 假装自己是 macOS X 的半成品变种。
 
 我此前花了好几年把 kevent(2) API 从 FreeBSD 移植到其他操作系统，深知创建兼容层让一个内核假装成另一个内核的痛苦。这段经历让我对为 launchd 创建 Mach 兼容层的决定高度怀疑。即便 Mach 兼容层在加入 FreeBSD 内核后工作完美，也会增加大量技术债，FreeBSD 项目未必能接受。它难以移植到其他类 Unix 操作系统，耗时费力，且不会有太大需求。
 
@@ -81,7 +81,7 @@ jobd 源于一次实验，最初想克隆 MacOS X 中的 launchd(8) 系统。它
 
 我们创建并发布了 relaunchd 的一个相对稳定、功能完备的版本 0.6。它包含原版 launchd 的大部分功能。
 
-在 iXsystems 的一次编程马拉松上，我与 Kris Moore 密切合作，尝试用 relaunchd 管理一个名为 SysAdm 的新 PC-BSD 服务。我们遇到了若干问题，暴露出原版 launchd 设计在 FreeBSD 软件打包方面的不足。MacOS X 没有 Ports 树的概念，软件通常通过图形安装程序安装，由安装程序负责与 launchd 交互。结果发现，人工与 launchd 交互有不少不足。
+在 iXsystems 的一次编程马拉松上，我与 Kris Moore 密切合作，尝试用 relaunchd 管理一个名为 SysAdm 的新 PC-BSD 服务。我们遇到了若干问题，暴露出原版 launchd 设计在 FreeBSD 软件打包方面的不足。macOS X 没有 Ports 树的概念，软件通常通过图形安装程序安装，由安装程序负责与 launchd 交互。结果发现，人工与 launchd 交互有不少不足。
 
 launchd 也不支持用户自定义属性，也不支持向用户暴露属性和方法来操控服务的启动方式。从 rc(8) 背景过来的人，失去在 rc.conf 中定义 `$foo_flags` 变量来控制 foo 服务的能力会让他们不快，这是可以理解的。
 

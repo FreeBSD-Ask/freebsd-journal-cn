@@ -26,4 +26,4 @@
 
 ## AsiaBSDCon 2019 • 3 月 21–24 日 • 日本东京
 
-<https://2019.asiabsdcon.org/> • 这一年度会议面向任何开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的人。AsiaBSDCon 是一场技术会议，旨在收集可用的最佳技术论文和演示，以确保我们开源社区的最新发展能够与尽可能广泛的受众分享。
+<https://2019.asiabsdcon.org/> • 这一年度会议面向任何开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 macOS X 系统的人。AsiaBSDCon 是一场技术会议，旨在收集可用的最佳技术论文和演示，以确保我们开源社区的最新发展能够与尽可能广泛的受众分享。

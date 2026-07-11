@@ -89,7 +89,7 @@
 
 ### NomadBSD
 
-这个系统专注于 Openbox，并进行了少量附加，适合非常轻量级的桌面环境。它还使用了 Tint2 和 Plank，看起来与 MacOS 布局相似。它提供了几个有趣的 DSB 工具，用于自动挂载或音量控制。你可以访问他们的页面 [https://nomadbsd.org/](https://nomadbsd.org/)。  
+这个系统专注于 Openbox，并进行了少量附加，适合非常轻量级的桌面环境。它还使用了 Tint2 和 Plank，看起来与 macOS 布局相似。它提供了几个有趣的 DSB 工具，用于自动挂载或音量控制。你可以访问他们的页面 [https://nomadbsd.org/](https://nomadbsd.org/)。  
 
 ### helloSystem
 

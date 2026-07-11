@@ -37,4 +37,4 @@ SCALE 是北美规模最大的社区主办的开源和自由软件大会。
 
 日本东京
 
-AsiaBSDCon 是面向基于 BSD 的系统用户和开发者的大会。下一届大会将于 2025 年 3 月 20-23 日在日本东京举行。大会面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的人。AsiaBSDCon 是一场技术大会，旨在汇集最优秀的技术论文和演讲，确保开源社区中的最新进展能被最广泛的受众所了解。
+AsiaBSDCon 是面向基于 BSD 的系统用户和开发者的大会。下一届大会将于 2025 年 3 月 20-23 日在日本东京举行。大会面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 macOS X 系统的人。AsiaBSDCon 是一场技术大会，旨在汇集最优秀的技术论文和演讲，确保开源社区中的最新进展能被最广泛的受众所了解。

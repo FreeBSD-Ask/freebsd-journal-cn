@@ -21,4 +21,4 @@ BSDCan • 6 月 3–6 日 • 加拿大渥太华
 AsiaBSDCon • 3 月 19–22 日 • 日本东京
 <https://2020.asiabsdcon.org/>
 
-AsiaBSDCon 是面向基于 BSD 的系统用户与开发者的大会。会议面向所有开发、部署、使用 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 与 MacOS X 系统的人士。AsiaBSDCon 作为一场技术大会，旨在汇集最优秀的技术论文与演讲，确保开源社区的最新进展能传递给尽可能广泛的受众。
+AsiaBSDCon 是面向基于 BSD 的系统用户与开发者的大会。会议面向所有开发、部署、使用 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 与 macOS X 系统的人士。AsiaBSDCon 作为一场技术大会，旨在汇集最优秀的技术论文与演讲，确保开源社区的最新进展能传递给尽可能广泛的受众。
