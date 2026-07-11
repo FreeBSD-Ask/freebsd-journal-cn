@@ -495,7 +495,7 @@ root@jailhost:~ #
 
 ```
 
-pot 在 `pf(4)` 中创建包含导出端口重定向 pass 规则的 anchor，同样可通过 `pfctl(8)` 查看：
+pot 在 **pf(4)** 中创建包含导出端口重定向 pass 规则的 anchor，同样可通过 **pfctl(8)** 查看：
 
 ```sh
 root@jailhost:~ # pfctl -a pot-rdr -s Anchors
