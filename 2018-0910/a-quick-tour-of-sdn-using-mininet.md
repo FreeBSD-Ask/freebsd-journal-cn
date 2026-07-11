@@ -14,7 +14,7 @@ Mininet 是相当知名的基于 SDN 的网络模拟器，因与 OpenFlow（SDN 
 
 ## 安装
 
-Mininet 可以像任何其他应用程序一样安装：用 `pkg.8` 安装为 `py27-mininet`，或从 Ports 树安装为 `net/mininet`。
+Mininet 可以像任何其他应用程序一样安装：用 **pkg(8)** 安装为 `py27-mininet`，或从 Ports 树安装为 `net/mininet`。
 
 ## mn 命令
 
@@ -74,7 +74,7 @@ h2 -> h1
 *** Results: 0% dropped (2/2 received)
 ```
 
-在任一情况下，我们都应该看到交换机（localhost.<高端口>）向控制器（localhost.6653）发送 PACKET_IN 消息，以及控制器作为响应发送回的 PACKET_OUT 和 FLOW_MOD 消息。交换机使用 PACKET_IN 将其不知道如何处理的数据包发送给控制器，在这种情况下是 ARP 和 ICMP 消息。控制器使用 PACKET_OUT 指示交换机输出特定数据包（即在 PACKET_IN 中发送的那个，这样它就不会“丢失”），使用 FLOW_MOD 修改交换机处理不同类型流量的方式。在修改因不使用而过期之前，s1 不应因另一次 ping 而生成新的 PACKET_IN。
+在任一情况下，我们都应该看到交换机（localhost.<高端口>）向控制器（localhost.6653）发送 PACKET_IN 消息，还有控制器作为响应发送回的 PACKET_OUT 和 FLOW_MOD 消息。交换机使用 PACKET_IN 将其不知道如何处理的数据包发送给控制器，在这种情况下是 ARP 和 ICMP 消息。控制器使用 PACKET_OUT 指示交换机输出特定数据包（即在 PACKET_IN 中发送的那个，这样它就不会“丢失”），使用 FLOW_MOD 修改交换机处理不同类型流量的方式。在修改因不使用而过期之前，s1 不应因另一次 ping 而生成新的 PACKET_IN。
 
 `Ctrl-D` 或 `exit` 命令将退出 CLI 并拆除网络。
 
@@ -82,10 +82,10 @@ h2 -> h1
 
 控制器在网络中的作用可以通过运行一个没有控制器的网络来直接演示。可以通过向 `mn` 的 `--controller` 选项传递 `none` 而不是 `ryu` 来实现。这个“无头”网络上的主机应该无法相互 ping。
 
-另一个有用的选项是 `remote`，它允许网络使用在 Mininet 控制之外运行的控制器。开发者可能会通过此选项将 Mininet 网络指向他们编写的控制器进行测试。假设控制器运行在 **192.168.0.100** 并监听端口 6633，以下命令将启动一个网络并将交换机连接到它：
+另一个有用的选项是 `remote`，它允许网络使用在 Mininet 控制之外运行的控制器。开发者可能会通过此选项将 Mininet 网络指向他们编写的控制器来测试。假设控制器运行在 **192.168.0.100** 并监听端口 6633，以下命令将启动一个网络并将交换机连接到它：
 
 ```sh
-# mn --controller=remote, ip=192.168.0.100, port=6633
+# mn --controller=remote,ip=192.168.0.100,port=6633
 ```
 
 ## 创建各种拓扑
@@ -138,7 +138,7 @@ net.stop()
 
 <https://github.com/akoshibe/mininet>
 
-我们的 Mininet 旋风之旅到此结束。希望它能为那些有兴趣探索 SDN 领域的人提供一个不错的起点。•
+我们的 Mininet 旋风之旅到此结束。希望它能为那些有兴趣探索 SDN 领域的人提供一个不错的起点。
 
 ---
 
