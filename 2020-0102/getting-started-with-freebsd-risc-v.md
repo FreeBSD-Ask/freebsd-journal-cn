@@ -111,7 +111,7 @@ qemu-system-riscv64 -machine virt -smp 2 -m 2G -nographic \
 -netdev user,hostfwd=tcp::10000-:22,id=net0 -device virtio-net-device,netdev=net0
 ```
 
-如你所见，我们将主机的 TCP 端口 10000 转发到客户机的 22 端口。22 端口是 `ssh(1)` 使用的默认端口。在连接之前，我们必须在客户机上启用 `sshd(8)`，将以下内容追加到 `/etc/rc.conf`：
+如你所见，我们将主机的 TCP 端口 10000 转发到客户机的 22 端口。22 端口是 **ssh(1)** 使用的默认端口。在连接之前，我们必须在客户机上启用 **sshd(8)**，将以下内容追加到 **/etc/rc.conf**：
 
 ```sh
 sshd_enable="YES"
