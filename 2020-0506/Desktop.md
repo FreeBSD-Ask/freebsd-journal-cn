@@ -32,7 +32,7 @@
 - 原版 FreeBSD 副本，系统能继续更新 FreeBSD 工具。
 - 允许配置设备以支持大规模部署，并可能在每一步配置中自动化。
 - 最新的补丁集每季度更新一次，因此用户无需通过 FreeBSD-update 更新。
-  - 使用 Poudriere 镜像构建系统，以确保 jail 始终更新。
+  - 构建系统使用 Poudriere 镜像，以确保 jail 保持最新。
 - 提供 `.iso` 媒体，包括 RELEASE + FreeBSD-update 补丁。
 - 如果 FuryBSD 停止支持，仍可通过更新 FreeBSD 使用该系统。
 
