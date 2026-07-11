@@ -417,7 +417,7 @@
 * [内核中的 TLS 卸载](2020-0506/TLS.md)
 * [访谈：Michael W Lucas](2020-0506/Lucas.md)
 * [FreeBSD 桌面发行版](2020-0506/Desktop.md)
-* [使用 Poudriere 进行 Port 批量管理](2020-0506/Port.md)
+* [使用 Poudriere 进行 Ports 批量管理](2020-0506/Port.md)
 * [FreeBSD 的新面孔](2020-0506/Faces.md)
 * [读者来信](2020-0506/we-get-letters.md)
 

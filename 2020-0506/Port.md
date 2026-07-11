@@ -75,9 +75,9 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 
 在上述命令中，91x64 用于标识 jail，而 12.1-RELEASE 标识要使用的 FreeBSD 版本。如果需要不同的名称或 FreeBSD 版本，可以调整。只需记得在本指南的其余部分也替换。
 
-## 第四步：创建批量 Port 列表
+## 第四步：创建批量 Ports 列表
 
-![Port 列表示例](../png/2020-0506/Port-01.png)
+![Ports 列表示例](../png/2020-0506/Port-01.png)
 
 继续之前，运行以下命令：
 
@@ -86,14 +86,14 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 # echo WITH_PKGNG=YES >> 91x64-make.conf
 ```
 
-接下来的步骤是为 Poudriere 创建 Port 列表以编译和维护；FreeBSD Ports 中有各种各样的 Port，Poudriere 可以用来管理它们。首先，运行：
+接下来的步骤是为 Poudriere 创建 Ports 列表以编译和维护；FreeBSD Ports 中有各种各样的 Ports，Poudriere 可以用来管理它们。首先，运行：
 
 ```sh
 # cd /usr/local/etc
 # ee poudriere-list
 ```
 
-像之前一样，使用 **ee(1)** 文本编辑器编辑文件，添加 Poudriere 要管理的 Port 列表。上面是示例图像，其中包括 Firefox、i3 窗口管理器、irssi 和 tmux。可以通过使用 Port 原始路径（类别/名称）将 Port 添加到列表中。
+像之前一样，使用 **ee(1)** 文本编辑器编辑文件，添加 Poudriere 要管理的 Ports 列表。上面是示例图像，其中包括 Firefox、i3 窗口管理器、irssi 和 tmux。可以通过使用 Port 原始路径（类别/名称）将 Ports 添加到列表中。
 
 按 **ESC** 键，然后按两次 **回车键** 以退出并保存对配置文件的更改。
 
@@ -111,7 +111,7 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 
 然后，使用安装提示（箭头键导航，空格键选择），可以手动编辑 Port。此过程可以对 Poudriere 管理的每个 Port 执行。
 
-## 第六步：使用 Poudriere 管理 Port
+## 第六步：使用 Poudriere 管理 Ports
 
 ![Poudriere 批量管理](../png/2020-0506/Port-03.png)
 
@@ -121,9 +121,9 @@ Poudriere 执行批量功能时需要设置 FreeBSD jail。可以使用以下命
 # poudriere bulk -j 91x64 -f poudriere-list
 ```
 
-Poudriere 会花费一些时间来完成批量处理，但与手动构建和安装 Port 不同，它可以在无需用户输入的情况下完成所有工作。Poudriere 还提供了基于文本的可视化显示，展示安装过程。它允许用户在不牺牲自动化的前提下，更好地控制 Port。
+Poudriere 会花费一些时间来完成批量处理，但与手动构建和安装 Ports 不同，它可以在无需用户输入的情况下完成所有工作。Poudriere 还提供了基于文本的可视化显示，展示安装过程。它允许用户在不牺牲自动化的前提下，更好地控制 Ports。
 
-如果需要更新 Port 列表，可以使用以下命令来更新 Ports：
+如果需要更新 Ports 列表，可以使用以下命令来更新 Ports：
 
 ```sh
 # cd /usr/local/etc
