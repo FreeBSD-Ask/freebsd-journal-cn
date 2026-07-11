@@ -5,17 +5,17 @@
 
 希望你的新年开局美好，并在假期抽空把机器升级到了 FreeBSD 12。虽说 2018 年投入 FreeBSD 的时间与精力可以说非同凡响，但我强烈预感 2019 年会是开发上更加激动人心的一年。今年还没满一个月，我已经看到一些非常有趣的改动被提交到 HEAD。我热切期待未来会带来什么，希望你也怀有同感。
 
-## vmm(4)：在 AMD 主机上屏蔽 Spectre 特性位 —— <https://svnweb.freebsd.org/changeset/base/343166>
+## **vmm(4)**：在 AMD 主机上屏蔽 Spectre 特性位 —— <https://svnweb.freebsd.org/changeset/base/343166>
 
-为了与 Intel 主机保持一致——后者已经屏蔽掉指示 SPEC_CTRL MSR 存在的 CPUID 特性位——AMD 上做同样处理。最终我们可能需要为来宾提供更好的支持方案，但眼下先限制因错误地暴露尚未支持的 MSR 而造成的损害。
+为了与 Intel 主机保持一致——后者已经屏蔽掉指示 SPEC_CTRL MSR 存在的 CPUID 特性位——AMD 上做同样处理。最终我们可能需要为客户机提供更好的支持方案，但眼下先限制因错误地暴露尚未支持的 MSR 而造成的损害。
 
 ## nvdimm：为 NVDIMM 根设备添加驱动 —— <https://svnweb.freebsd.org/changeset/base/343143>
 
 NVDIMM 根设备是各个 ACPI NVDIMM 设备的父设备。为 NVDIMM 根设备添加驱动，使其能够枚举系统中的 NVDIMM 设备、NVDIMM SPA 范围。
 
-## vmm(4)：向多核 bhyve AMD 支持迈进 —— <https://svnweb.freebsd.org/changeset/base/343075>
+## **vmm(4)**：向多核 bhyve AMD 支持迈进 —— <https://svnweb.freebsd.org/changeset/base/343075>
 
-bhyve 的 CPUID 仿真向客户机呈现 Intel 拓扑信息，却禁用了 AMD 拓扑信息，某些情况下还把垃圾数据透传过去。例如，CPUID leaves 0x8000_001 [de] 被透传给客户机，但客户机 CPU 可以在线程间迁移，因此呈现的信息并不一致。这一点可以轻易通过 `cpucontrol -i 0xfoo /dev/cpuctl0` 观察到。
+bhyve 的 CPUID 仿真向客户机呈现 Intel 拓扑信息，却禁用了 AMD 拓扑信息，某些情况下还把垃圾数据透传过去。例如，CPUID leaves 0x8000_001[de] 被透传给客户机，但客户机 CPU 可以在线程间迁移，因此呈现的信息并不一致。这一点可以轻易通过 `cpucontrol -i 0xfoo /dev/cpuctl0` 观察到。
 
 通过启用 AMD 拓扑特性标志位，并至少呈现 FreeBSD 自身在更现代的 AMD64 硬件（Family 15h+）上探测拓扑所用的 CPUID 字段，对这一情况进行轻微改善。更老的硬件大概不那么值得关注。我未能通过实验确认它是否足够，但也不会造成回归。
 
