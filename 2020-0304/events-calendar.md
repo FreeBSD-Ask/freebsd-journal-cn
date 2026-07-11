@@ -4,7 +4,7 @@
 作者：ANNE DICKISON 与 DRU LAVIGNE
 
 BSDCan • 6 月 3-6 日 • 线上
-<https://www.bsdcan.org/2020/>
+https://www.bsdcan.org/2020/
 
 今年第 17 届 BSDCan 改为线上举办。BSDCan 围绕 BSD 操作系统家族举办各类讲座和教程。
 
