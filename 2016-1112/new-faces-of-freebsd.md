@@ -68,7 +68,7 @@
 
 你的所有努力都会受到赞赏。看到别人“激烈”讨论也别怕，这只是个像现实世界一样的小社会。
 
-**Joseph：** 我的体验相当积极。我有很棒的导师（swills 与 AMDmi3），在我跑偏时把我引回正轨。其他更资深的 Ports 开发者（尤其是 mat）也给了很多有用提示。对任何想为 Ports 树贡献的人我想说：超过 25000 个 Ports，我们需要你！《Porter's Handbook》及 poudriere、portlint 等工具让参与变得平易，即便经验不多的人也行。•
+**Joseph：** 我的体验相当积极。我有很棒的导师（swills 与 AMDmi3），在我跑偏时把我引回正轨。其他更资深的 Ports 开发者（尤其是 mat）也给了很多有用提示。对任何想为 Ports 树贡献的人我想说：超过 25000 个 Ports，我们需要你！《Porter’s Handbook》及 poudriere、portlint 等工具让参与变得平易，即便经验不多的人也行。•
 
 ---
 
