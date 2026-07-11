@@ -222,7 +222,7 @@ Linus Torvalds 退休时，谁会上去？怎么上？
 
 **Kirk**：是的，……whatever。突然我们的基础设施就没了。Justin Gibbs 把这看作了问题。他意识到 FreeBSD 项目需要某种方式资助至少基本的基础设施。于是他创办了 FreeBSD 基金会，过了五到八年才有足够收入考虑基础设施之类的基本东西，事实上我们最近四五年才完全切过去。过程很慢。但 Yahoo 今天消失了，我们也没事。
 
-项目通过 GitHub 或 Apache Foundation 这类组织获取基础设施的方式有很多。FreeBSD 项目设立了自己的基金会。有自己的基金会而不是挂在 Apache 下面，我们对事情如何运作有更多控制权，这有好有坏。但总体上，Foundation 是重要的基石。
+项目通过 GitHub 或 Apache Foundation 这类组织获取基础设施的方式有很多。FreeBSD 项目设立了自己的基金会。有自己的基金会而不是挂在 Apache 下面，我们对事情如何运作有更多控制权，这有好有坏。但总体上，FreeBSD 基金会是重要的基石。
 
 我想项目最大的担心是 Foundation 想接管。至今 Foundation 一直努力把自己定位为受项目目标驱动，而不是驱动项目。但 Foundation 重要，非常重要。
 
