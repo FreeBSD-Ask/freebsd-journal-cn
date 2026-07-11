@@ -117,7 +117,7 @@ qemu-system-riscv64 -machine virt -smp 2 -m 2G -nographic \
 sshd_enable="YES"
 ```
 
-接下来，用以下命令启动 `sshd(8)` 服务：
+接下来，用以下命令启动 **sshd(8)** 服务：
 
 ```sh
 service sshd start
@@ -129,13 +129,13 @@ service sshd start
 ssh -p 10000 mhorne@localhost
 ```
 
-如果你有桥接到真实网卡的 `tap(4)` 设备，也可以使用它。改为向 QEMU 追加以下参数：
+如果你有桥接到真实网卡的 **tap(4)** 设备，也可以使用它。改为向 QEMU 追加以下参数：
 
 ```sh
 -netdev tap,ifname=tap0,script=no,id=net1 -device virtio-net-device,netdev=net1
 ```
 
-`tap(4)` 接口将让你的客户机在网络中表现为任何其他主机。使用客户机上 `ifconfig(8)` 输出中显示的 IP 地址连接：
+**tap(4)** 接口将让你的客户机在网络中表现为任何其他主机。使用客户机上 **ifconfig(8)** 输出中显示的 IP 地址连接：
 
 ```sh
 ssh mhorne@10.0.1.25
@@ -164,7 +164,7 @@ make -j4 CROSS_TOOLCHAIN=riscv64-gcc TARGET=riscv buildworld
 make -j4 CROSS_TOOLCHAIN=riscv64-gcc TARGET=riscv KERNCONF=QEMU buildkernel
 ```
 
-更新后的系统已就绪待安装。但这次我们不安装到主机上的某个目标目录，而是要更新我们之前生成的镜像文件的内容。我们可以利用 `mdconfig(8)`，它允许我们将镜像文件作为内存盘创建并挂载。
+更新后的系统已就绪待安装。但这次我们不安装到主机上的某个目标目录，而是要更新我们之前生成的镜像文件的内容。我们可以利用 **mdconfig(8)**，它允许我们将镜像文件作为内存盘创建并挂载。
 
 > **提示**：本步骤及后续步骤需要超级用户权限。为防止对文件系统的并发访问，请在继续之前确保已关闭所有使用该镜像文件的 QEMU 实例。
 
