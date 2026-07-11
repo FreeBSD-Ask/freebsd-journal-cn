@@ -338,7 +338,7 @@ ds5/207508569ff983350c000000a9730200eec58e800000000000000000
 
 （使用 `sh`，搜索仍具有 DS 地址 0.0.0.0 的任何文件。）
 
-如果这打印出文件，则需要对它们执行“pnfsdscopymr -r”命令。如果没有打印出任何内容，nfsv4-data2 已恢复，所有文件现在应该正确镜像。系统管理员也可以使用 pnfsdscopymr(1) 命令将数据文件从一个 DS 迁移到另一个 DS。要将 abc.c 的数据文件从 nfsv4-data3 移动到 nfsv4-data0，命令是：
+如果这打印出文件，则需要对它们执行 `pnfsdscopymr -r` 命令。如果没有打印出任何内容，nfsv4-data2 已恢复，所有文件现在应该正确镜像。系统管理员也可以使用 **pnfsdscopymr(1)** 命令将数据文件从一个 DS 迁移到另一个 DS。要将 abc.c 的数据文件从 nfsv4-data3 移动到 nfsv4-data0，命令是：
 
 ```sh
    # pnfsdscopymr -m /data3 /data0 abc.c
@@ -354,7 +354,7 @@ ds5/207508569ff983350c000000a9730200eec58e800000000000000000
    ds5/207508569ff983350c000000a9730200eec58e800000000000000000
 ```
 
-如果我们转到 nfsv4-data2 上的 **/DSstore/ds5**，“ls -l *a97302*”会显示：
+如果我们转到 nfsv4-data2 上的 **/DSstore/ds5**，`ls -l *a97302*` 会显示：
 
 ```sh
    -rw-r--r--  1 ricktst  wheel  586 Jun  5 19:11
