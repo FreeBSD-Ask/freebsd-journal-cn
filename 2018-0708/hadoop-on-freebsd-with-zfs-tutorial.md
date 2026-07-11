@@ -222,7 +222,7 @@ export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
 
 ## 部署 Hadoop 配置文件
 
-是时候部署构成 Hadoop 发行版的文件了。它基本上是一个可以解压到任何目录的 tarball，因为它主要包含 JAR 和配置文件。这样，Hadoop 可以轻松地作为一个整体复制，因为该目录包含运行 Hadoop 所需的一切。这些文件可以从 Hadoop 网页下载（<http://hadoop.apache.org/releases.html>）。有许多支持的版本不断发展，意味着将有新版本定期发布。该页面底部列出了每个版本修复了多少 bug。与听起来相反，无需跟上 Hadoop 项目设定的节奏，如果需要，旧版本的 Hadoop 可以运行多年。本文选择了相当新的版本（2.9.0）。请确保选择二进制发行版来下载，因为从源码构建 Hadoop 需要额外时间。文件名为 `hadoop-2.9.0.tar.gz`，名称将在 playbook 中使用 `vars.yml` 文件中的定义再次构造。Ansible 的 `unarchive` 模块负责在远程机器上将 tarball 解压到 `{{hdp_destdir}}`，即 **/usr/local/hadoop2.9.0**。将版本包含在目录/数据集名称中，便于并排安装不同版本的 Hadoop 进行测试。
+是时候部署构成 Hadoop 发行版的文件了。它基本上是可以解压到任何目录的 tarball，因为它主要包含 JAR 和配置文件。这样，Hadoop 可以轻松作为整体复制，因为该目录包含运行 Hadoop 所需的一切。这些文件可以从 Hadoop 网页下载（<http://hadoop.apache.org/releases.html>）。有许多支持的版本不断发展，意味着将有新版本定期发布。该页面底部列出了每个版本修复了多少 bug。与听起来相反，无需跟上 Hadoop 项目设定的节奏，如果需要，旧版本的 Hadoop 可以运行多年。本文选择了相当新的版本（2.9.0）。请确保选择二进制发行版来下载，因为从源码构建 Hadoop 需要额外时间。文件名为 `hadoop-2.9.0.tar.gz`，名称将在 playbook 中使用 `vars.yml` 文件中的定义再次构造。Ansible 的 `unarchive` 模块负责在远程机器上将 tarball 解压到 `{{hdp_destdir}}`，即 **/usr/local/hadoop2.9.0**。将版本包含在目录/数据集名称中，便于并排安装不同版本的 Hadoop 测试。
 
 ```ini
 - name: "Unpack Hadoop {{hdp_ver}}"
@@ -236,7 +236,7 @@ export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
 
 ## Hadoop 核心配置
 
-是时候编辑随 Hadoop 附带的配置文件集群了。对于初学者来说，理解哪个文件需要更改可能会令人不知所措。不幸的是，Hadoop 网站没有很好地解释完全分布式 Hadoop 集群需要更改哪些文件。根据我们的经验，Hadoop 网站上的文档不完整，即使严格遵循，结果也不是一个能正常工作的 Hadoop 集群。经过大量试错，作者确定了在 FreeBSD 上创建功能完整的 map-reduce 集群（底层为 HDFS）所需的重要文件。
+是时候编辑随 Hadoop 附带的一组配置文件了。初学者理解哪个文件需要更改可能会不知所措。不幸的是，Hadoop 网站没有很好地解释完全分布式 Hadoop 集群需要更改哪些文件。根据我们的经验，Hadoop 网站上的文档不完整，即使严格遵循，结果也不是能正常工作的 Hadoop 集群。经过大量试错，作者确定了在 FreeBSD 上创建功能完整的 map-reduce 集群（底层为 HDFS）所需的重要文件。
 
 在其核心，4 个文件构成此集群的站点特定配置部分，命名为 `*-site.xml`。需要更改它们，它们都位于 Hadoop 发行版的配置目录中。在本教程中，该路径为 **/usr/local/hadoop2.9.0/etc/hadoop/**，包含 `core-site.xml`、`yarn-site.xml`、`hdfs-site.xml` 和 `mapred-site.xml`。
 
