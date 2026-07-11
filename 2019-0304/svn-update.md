@@ -75,4 +75,4 @@ vmm 的 CPUID 仿真此前向客户机呈现 Intel 拓扑信息，却禁用了 A
 
 ---
 
-**STEVEN KREUZER** 是一名 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他与妻子、女儿和狗居住在纽约皇后区。
+**STEVEN KREUZER** 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他与妻子、女儿和狗居住在纽约皇后区。
