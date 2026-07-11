@@ -19,11 +19,11 @@ CHERI 是一个硬件/软件/语义联合设计项目，旨在提高现有和未
 
 为了充分了解 CheriBSD 软件包构建的基础设施，我们应该首先描述开发者可以用来构建 CHERI 软件的 SDK。CHERI 硬件-软件栈（见表 1）由硬件、仿真器、编译器、调试器、操作系统以及为支持 CHERI 的操作系统准备的应用程序组成。这个栈的每个组件都需要为 CHERI 进行调整，并且必须实现对 CHERI 能力的支持【注 22】。
 
-| 第三方软件 | 约 9,000 个 CHERI 软件包 (Morello)<br/><br/> 约 24,000 个非 CHERI 软件包 (Morello) |
+| 第三方软件 | 约 9,000 个 CHERI 软件包 (Morello)；约 24,000 个非 CHERI 软件包 (Morello) |
 | ---------- | ---------------------------------------------------------------------------------- |
-| 操作系统 | CheriBSD (Morello, CHERI-RISC-V)<br/>FreeRTOS (CHERI-RISC-V)<br/>CHERIoT RTOS (CHERI-RISC-V)<br/>Linux (Morello)<br/>Android (Morello) |
-| 工具链 | CHERI LLVM for CHERI C/C++ (Morello, CHERI-RISC-V)<br/>Morello GCC for CHERI C/C++ (Morello)<br/>GDB-CHERI (Morello, CHERI-RISC-V) |
-| CPU | Arm Morello SoC<br/>CHERI-RISC-V on FPGA<br/>QEMU-CHERI (Morello, CHERI-RISC-V)<br/>Microsoft CHERIoT (CHERI-RISC-V) |
+| 操作系统 | CheriBSD (Morello, CHERI-RISC-V)；FreeRTOS (CHERI-RISC-V)；CHERIoT RTOS (CHERI-RISC-V)；Linux (Morello)；Android (Morello) |
+| 工具链 | CHERI LLVM for CHERI C/C++ (Morello, CHERI-RISC-V)；Morello GCC for CHERI C/C++ (Morello)；GDB-CHERI (Morello, CHERI-RISC-V) |
+| CPU | Arm Morello SoC；CHERI-RISC-V on FPGA；QEMU-CHERI (Morello, CHERI-RISC-V)；Microsoft CHERIoT (CHERI-RISC-V) |
 
 **表 1：目前的 CHERI 硬件-软件栈**
 

@@ -181,7 +181,7 @@ cbsd jcreate jname=jail1 runasap=1
 
 （注意：参数 `runasap=1` 意味着容器将立即启动）
 
-6. 最后一步：将 redis 服务模板应用到 jail1 容器：
+6. 最后一步：将 Redis 服务模板应用到 jail1 容器：
 
 ```sh
 cbsd forms module=redis jname=jail1
@@ -191,7 +191,7 @@ cbsd forms module=redis jname=jail1
 
 ![Redis 模块参数 TUI 界面](../png/2022-0102/cbsd-03.png)
 
-保留默认参数，并通过 [COMMIT] 操作选择它们。脚本运行完成可能需要一段时间（取决于互联网连接速度，因为模块从官方仓库 pkg.FreeBSD.org 安装 redis 服务器），因此你需要再次确认容器中的服务已安装并正在运行：
+保留默认参数，并通过 [COMMIT] 操作选择它们。脚本运行完成可能需要一段时间（取决于互联网连接速度，因为模块从官方仓库 pkg.FreeBSD.org 安装 Redis 服务器），因此你需要再次确认容器中的服务已安装并正在运行：
 
 ```sh
 ~ # cbsd jexec jname=jail1 sockstat -4l
@@ -203,7 +203,7 @@ redis redis-serv 8910 7 tcp4 172.16.0.13:6379 *:*
 
 - 将端口设置为 7777；
 
-- 设置连接到 redis 服务器的密码；
+- 设置连接到 Redis 服务器的密码；
 
 - 将 maxmemory 参数设置为 4g；
 
@@ -231,7 +231,7 @@ H_TCP_KEEPALIVE H_LOG_LEVEL H_SYSLOG_ENABLED H_TIMEOUT H_SLAVE_PRIORITY
 H_SLAVEOF
 ```
 
-Forms 会在常规参数的名称前添加 `H_` 前缀，以降低与系统全局变量冲突的可能性。下面第三次重新配置 redis 端口（将其设置为 9999），但不使用交互模式（`inter=0`）：
+Forms 会在常规参数的名称前添加 `H_` 前缀，以降低与系统全局变量冲突的可能性。下面第三次重新配置 Redis 端口（将其设置为 9999），但不使用交互模式（`inter=0`）：
 
 ```sh
 env H_PORT=9999 cbsd forms module=redis jname=jail1 inter=0
@@ -249,7 +249,7 @@ env H_PORT=9999 cbsd forms module=redis jname=jail1 inter=0
 
 这些值可以自动导出到文件或各种服务发现服务，如 [Consul](https://www.consul.io/)。在这种情况下，你的集群会自动获取这些值，可以用于构建 SOA（面向服务的架构），但这是另一个话题。
 
-除了 redis，[这里](https://github.com/cbsd) 还有其他服务配置模板：命名为 `modules-forms-XXXX` 的仓库。例如，尝试使用以下模板：
+除了 Redis，[这里](https://github.com/cbsd) 还有其他服务配置模板：命名为 `modules-forms-XXXX` 的仓库。例如，尝试使用以下模板：
 
 • modules-forms-memcached
 
@@ -333,7 +333,7 @@ cbsd forms formfile=/tmp/myforms.sqlite
 
 ![动态构建的参数表单](../png/2022-0102/cbsd-06.png)
 
-redis 服务的表单结构更为复杂，因为它包含布尔类型和下拉菜单类型的字段元素。下面看一下表格：
+Redis 服务的表单结构更为复杂，因为它包含布尔类型和下拉菜单类型的字段元素。下面看一下表格：
 
 ![Redis 服务表单结构](../png/2022-0102/cbsd-07.png)
 

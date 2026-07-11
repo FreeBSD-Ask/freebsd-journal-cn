@@ -52,9 +52,9 @@
 | :--: | :--: |
 | 主板 | GIGABYTE GA-B75-D3V |
 | CPU | Intel Core i5（LGA1155） |
-| GPU | Intel HD Graphics 2500（板载）<br>NVIDIA GeForce 210（PCI-E，双卡） |
+| GPU | Intel HD Graphics 2500（板载）；NVIDIA GeForce 210（PCI-E，双卡） |
 | 芯片组 | Intel B75 |
-| 以太网 | Atheros GbE（板载，未使用）<br>Realtek RTL8139（PCI） |
+| 以太网 | Atheros GbE（板载，未使用）；Realtek RTL8139（PCI） |
 | 音频 | Realtek ALC887 |
 | 内存 | 2 GB |
 | 存储 | SATA SSD 120 GB，Intel |
