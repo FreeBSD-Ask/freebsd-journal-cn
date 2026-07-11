@@ -201,7 +201,7 @@ PHP 也要配置。所幸 FreeBSD 提供了一份适合生产环境使用的 PHP
 
 此页询问使用哪个认证后端，应已提供默认条目。更多认证后端可稍后在 Icinga Web 2 中添加，此处直接继续。在下一屏输入 Icinga Web 2 管理员账户的凭据（用户名和口令）。继续前确保记住口令。
 
-下一屏处理调试（是否创建用户可见的堆栈跟踪）、设置存储位置以及日志记录方式（日志类型和级别）。如果不想让 syslog 被 Icinga 2 消息塞满，记录到单独文件是好主意。切换到"file"时，运行 mkdir **/var/log/icingaweb2** 后跟 chown www:www **/var/log/icingaweb2**，让 Web 界面能写入日志。
+下一屏处理调试（是否创建用户可见的堆栈跟踪）、设置存储位置以及日志记录方式（日志类型和级别）。如果不想让 syslog 被 Icinga 2 消息塞满，记录到单独文件是好主意。切换到“file”时，运行 mkdir **/var/log/icingaweb2** 后跟 chown www:www **/var/log/icingaweb2**，让 Web 界面能写入日志。
 
 下一页汇总所有设置，满意后继续到下一页配置监控组件。后端是 IDO，我们之前已用于 PostgreSQL 数据库，所以从这里继续。我们希望将所有监控信息存储在 PostgreSQL 中，因此需要输入先前使用的相同连接信息。点击 Next 前通过验证确认设置正确。
 
