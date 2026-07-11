@@ -56,7 +56,7 @@ make TARGET=riscv -DNO_ROOT DESTDIR=$HOME/riscv-root distribution
 make TARGET=riscv -DNO_ROOT DESTDIR=$HOME/riscv-root installkernel
 ```
 
-我们已安装所有必要文件，接下来要创建一个可被 QEMU 读取的磁盘镜像。我们将首先用 `makefs(8)` 生成 ufs 根文件系统，然后用 `mkimg(1)` 创建包含交换分区的镜像。
+我们已安装所有必要文件，接下来要创建一个可被 QEMU 读取的磁盘镜像。我们将首先用 **makefs(8)** 生成 ufs 根文件系统，然后用 **mkimg(1)** 创建包含交换分区的镜像。
 
 切换到我们刚刚填充的根文件系统目录。你可以使用以下脚本生成镜像。
 
@@ -97,7 +97,7 @@ qemu-system-riscv64 -machine virt -smp 2 -m 2G -nographic \
      -device virtio-blk-device,drive=hd0
 ```
 
-如果一切顺利，你应看到 FreeBSD 开始启动。如果你跳过了之前的可选步骤，系统将无法挂载根文件系统。发生这种情况时，在提示符处输入 `ufs:/dev/vtbd0p1` 即可。
+如果一切顺利，你应看到 FreeBSD 开始启动。如果你跳过了之前的可选步骤，系统将无法挂载根文件系统。发生这种情况时，在提示符处输入 **ufs:/dev/vtbd0p1** 即可。
 
 你可能注意到没有看到熟悉的 `loader(8)` 提示符。这是因为 `loader(8)` 尚未移植到 RISC-V，因此内核直接从 OpenSBI 启动。目前你还无法享受 loader 微调或可调参数，但未来一定会支持。
 
