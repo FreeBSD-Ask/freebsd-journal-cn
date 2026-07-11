@@ -516,25 +516,17 @@ traceroute to 192.0.2.9 (192.0.2.9), 64 hops max, 40 byte packets
 # sysrc iovctl_files="/etc/iovctl.cxl0.conf /etc/iovctl.cxl1.conf"
 # sysrc kld_list+=if_cxgbev
 # cat > /etc/iovctl.cxl0.conf <<EOF
-```
-
-? PF {
-? device : "cxl0";
-? num_vfs : 10;
-? }
-? EOF
-
-```sh
+PF {
+  device : "cxl0";
+  num_vfs : 10;
+}
+EOF
 # cat > /etc/iovctl.cxl1.conf <<EOF
-```
-
-? PF {
-? device : "cxl1";
-? num_vfs : 10;
-? }
-? EOF
-
-```sh
+PF {
+  device : "cxl1";
+  num_vfs : 10;
+}
+EOF
 # iovctl -C -f /etc/iovctl.cxl0.conf
 # iovctl -C -f /etc/iovctl.cxl1.conf
 # kldload if_cxgbev
