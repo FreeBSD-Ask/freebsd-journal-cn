@@ -157,7 +157,7 @@ LED 接好后，把它们的 GPIO 配置为输出，就可以玩了：
 
 FreeBSD 有持续集成（CI）服务器，为不同架构构建 FreeBSD，以测试对代码树的每次提交。FreeBSD 使用 Jenkins 做 CI，Jenkins 提供了便利的状态 API，告诉我们构建状况以及是成功还是失败。
 
-我们来做一个构建状态指示器，看看 FreeBSD ARMv7（BeagleBone Black 的架构）的构建状况。Jenkins 通过 json api 暴露构建状态，而 `textproc/jq` 提供了查询 json 对象的简单方式。Jenkins 返回两个与进行中构建相关的字段——`building` 和 `result`。如果 `building` 为 true，则不会有有效的 `result`。`result` 可以是 `SUCCESS`、`FAILURE`、`UNSTABLE` 或 `none`，具体取决于 `building` 状态以及最近一次构建的 `result`。
+我们来做一个构建状态指示器，看看 FreeBSD ARMv7（BeagleBone Black 的架构）的构建状况。Jenkins 通过 JSON API 暴露构建状态，而 `textproc/jq` 提供了查询 JSON 对象的简单方式。Jenkins 返回两个与进行中构建相关的字段——`building` 和 `result`。如果 `building` 为 true，则不会有有效的 `result`。`result` 可以是 `SUCCESS`、`FAILURE`、`UNSTABLE` 或 `none`，具体取决于 `building` 状态以及最近一次构建的 `result`。
 
 脚本需要 `jq` 工具来解析 CI 服务器返回的 json，还需要一套 ssl 证书与服务器认证。BeagleBone Black 没有实时时钟——你要与 CI 服务器进行 ssl 通信，必须有准确的时间。
 
