@@ -1,4 +1,4 @@
-# 目录
+# Table of contents
 
 * [FreeBSD 期刊](README.md)
 * [编辑日志](CHANGELOG.md)
@@ -275,7 +275,7 @@
 * [使用 FreeBSD 构建高弹性的私有云](2022-0506/cloud.md)
 * [LLDB 14 —— FreeBSD 新调试器](2022-0506/lldb.md)
 * [实用 IPv6（第一部分）](2022-0506/ipv6.md)
-* [利用 netdump(4) 进行事后内核调试](2022-0506/netdump.md)
+* [利用 **netdump(4)** 进行事后内核调试](2022-0506/netdump.md)
 * [进行中的工作/征求反馈：FreeBSD 启动性能](2022-0506/freebsd.md)
 * [实用 Port：在 OpenZFS 上设置 NFSv4 文件服务器](2022-0506/port.md)
 * [读者来信](2022-0506/we-get-letters.md)
