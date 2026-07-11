@@ -40,7 +40,7 @@
 
 **Joseph：** 像大多数提交者一样，我只是开始提交补丁。我通过潜伏在 IRC 与邮件列表、参加 BSDCan 结识 FreeBSD 人。BSDCan 的黑客休息室是结识 FreeBSD、OpenBSD 乃至一些 DragonFlyBSD 社区成员的好方式。这些联系激发了我更多贡献的动机。
 
-我做过的 Ports 涵盖 `games/voxelands` 到 `security/wpa_supplicant`，但有一个领域我希望多提交，可以称为"科学软件"。例如 `biology/diamond`、`biology/njplot`、`biology/paml`、`cad/gmsh`、`math/R`。
+我做过的 Ports 涵盖 `games/voxelands` 到 `security/wpa_supplicant`，但有一个领域我希望多提交，可以称为“科学软件”。例如 `biology/diamond`、`biology/njplot`、`biology/paml`、`cad/gmsh`、`math/R`。
 
 **加入 FreeBSD 项目后体验如何？对想成为 FreeBSD 提交者的读者有何建议？**
 
