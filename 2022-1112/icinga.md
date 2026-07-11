@@ -302,7 +302,7 @@ ignore where service.name == "agent-health"
 }
 ```
 
-我们可以看到 Icinga 在使用其领域特定语言时的灵活性，利用诸如 "apply" 这样的常见元素与占位符（如 Host、Service 或 Dependency）一起定义监控的内容和方式。当检测到状态不是 OK（例如 "FAILED" 或 "UNREACHABLE"）时，将触发代理健康检查。为了不为每个主机单独定义这一点，并且不会忘记稍后添加的新主机，我们再次使用 `assign` 关键字将其应用于所有定义为端点的主机。
+我们可以看到 Icinga 在使用其领域特定语言时的灵活性，利用诸如 “apply” 这样的常见元素与占位符（如 Host、Service 或 Dependency）一起定义监控的内容和方式。当检测到状态不是 OK（例如 “FAILED” 或 “UNREACHABLE”）时，将触发代理健康检查。为了不为每个主机单独定义这一点，并且不会忘记稍后添加的新主机，我们再次使用 `assign` 关键字将其应用于所有定义为端点的主机。
 
 主机或服务分组帮助我们了解具有共同任务或标准的系统概况，比如 Web 服务器、数据库服务器、前端主机、防火墙等。这就是 `groups.conf` 所定义的内容，但在监控的基础设施较小或过于多样化以至于没有任何共同点时，这是可选的。
 
@@ -313,7 +313,7 @@ assign where host.vars.os == "FreeBSD"
 }
 ```
 
-记得上面在 `hosts.conf` 中定义的主机对象 "monitor.example.com" 吗？我们定义了本地变量 `vars.os`。现在，我们可以使用 "assign where" 语句根据该变量的值进行过滤。自动为基础设施中新主机添加条目的工具也可能包含有关使用的操作系统（以及其他信息），因此 Icinga 会在 Icingaweb2 显示中将这些系统分组。服务组（ServiceGroups）的定义方式类似。通过这种方式，报告可能会包含定期检查特定服务的系统数量。Web 服务器可能会运行与数据库服务器不同的检查，但作为服务组，很容易将这些检查整体应用于新主机，或者定义两者的混合来形成全新的监控目标。
+记得上面在 `hosts.conf` 中定义的主机对象 “monitor.example.com” 吗？我们定义了本地变量 `vars.os`。现在，我们可以使用 “assign where” 语句根据该变量的值进行过滤。自动为基础设施中新主机添加条目的工具也可能包含有关使用的操作系统（以及其他信息），因此 Icinga 会在 Icingaweb2 显示中将这些系统分组。服务组（ServiceGroups）的定义方式类似。通过这种方式，报告可能会包含定期检查特定服务的系统数量。Web 服务器可能会运行与数据库服务器不同的检查，但作为服务组，很容易将这些检查整体应用于新主机，或者定义两者的混合来形成全新的监控目标。
 
 我想展示的最后一个文件是 `users.conf` 文件，其中包含所有 Icinga 能理解的用户信息，当某些检查失败时会通知他们。基本定义可能如下所示：
 
@@ -379,7 +379,7 @@ client# chown -R icinga:icinga /usr/local/etc/icinga2
 client# sysrc icinga2_enable=yes
 ```
 
-接下来，使用 "icinga2 pki" 子命令生成客户端证书。虽然这个命令是交互式的，但我们也可以直接在命令行提供所有必要的参数，以便在以后添加数百个主机时简化自动化。请注意，这必须在中央监控实例上运行。
+接下来，使用 “icinga2 pki” 子命令生成客户端证书。虽然这个命令是交互式的，但我们也可以直接在命令行提供所有必要的参数，以便在以后添加数百个主机时简化自动化。请注意，这必须在中央监控实例上运行。
 
 ```sh
 monitor# icinga2 pki new-cert --cn client.example.org \
@@ -395,7 +395,7 @@ monitor# icinga2 pki sign-csr \
  --cert /var/lib/icinga2/certs/client.example.org.crt"
 ```
 
-当我们在本文开头运行 "icinga2 node setup --master" 生成主证书以签署其他证书时，系统在 **/var/lib/icinga2/certs/** 目录下创建了名为 monitor.example.org.crt 的文件。需要以安全方式将此文件传输到客户端，以便验证服务器证书。根据你对客户端及其连接的用户的信任程度，以及客户端与服务器之间的网络（或媒介），有多种方法可以实现这一操作。
+当我们在本文开头运行 “icinga2 node setup --master” 生成主证书以签署其他证书时，系统在 **/var/lib/icinga2/certs/** 目录下创建了名为 monitor.example.org.crt 的文件。需要以安全方式将此文件传输到客户端，以便验证服务器证书。根据你对客户端及其连接的用户的信任程度，以及客户端与服务器之间的网络（或媒介），有多种方法可以实现这一操作。
 
 ```sh
 monitor# scp /var/lib/icinga2/certs/monitor.example.org.crt \
@@ -451,7 +451,7 @@ vars.agent_endpoint = name
 }
 ```
 
-Host 对象定义起来相当简单，并且没有包含我们之前添加中央服务器时尚未看到的新字段。和之前一样，我们还需要定义这个主机是端点（没有其他监控客户端位于它之下，并且它不是另一个主机的父级），以及它所属的区域。通常，这些条目会放在包含 'object Zone "director-global" {' 的行之前，像这样：
+Host 对象定义起来相当简单，并且没有包含我们之前添加中央服务器时尚未看到的新字段。和之前一样，我们还需要定义这个主机是端点（没有其他监控客户端位于它之下，并且它不是另一个主机的父级），以及它所属的区域。通常，这些条目会放在包含 ‘object Zone "director-global" {’ 的行之前，像这样：
 
 ```ini
 object Endpoint "client.example.org" {

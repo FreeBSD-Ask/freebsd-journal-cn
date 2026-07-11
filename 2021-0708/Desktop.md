@@ -11,7 +11,7 @@
 
 在本文中，我将尝试为你理清通往 FreeBSD 桌面的道路。  
 
-## 硬件  
+## 硬件
 
 ![FreeBSD 桌面硬件](../png/2021-0708/Desktop-01.png)
 
@@ -24,7 +24,7 @@
 
 请记住，这些硬件支持列表也并不完美。例如，它们列出了许多受支持的 AMD 处理器，但却没有提到 AMD EPYC 服务器 CPU 和 AMD Ryzen 桌面/移动 CPU，而 FreeBSD 在这些平台上运行得非常流畅。
 
-### 笔记本电脑  
+### 笔记本电脑
 
 许多人更喜欢“移动计算”而不是传统的 PC。总体而言，IBM 和联想 ThinkPad 笔记本电脑对 FreeBSD 的支持相当不错。我个人偏爱经典的 7 排 IBM 键盘，因此我使用的是 2011 年（是的，一台十年前的电脑）推出的 ThinkPad W520，在这台设备上，一切都运行得非常顺畅。其他配备该经典键盘的机型包括 X220、T420、T420s 和 T520。  
 
@@ -35,7 +35,7 @@
 - [FreeBSD 笔记本电脑支持列表](https://wiki.freebsd.org/Laptops)  
 - [BSD 硬件数据库](http://bsd-hardware.info/)  
 
-### WiFi  
+### WiFi
 
 这是 FreeBSD 领域最需要改进的部分，不过在许多方面，它的进展已经开始了。这个话题在最近的 FreeBSD 开发者峰会上被讨论过，FreeBSD 基金会也已经意识到了这个问题，并启动了一项计划来解决它。  
 
@@ -53,18 +53,18 @@
 
 我个人使用低功耗的 Intel 集成显卡，它们的表现对我来说足够好。如果你需要更强的性能，那么可以考虑 AMD 和 Nvidia 的产品。我更倾向于 AMD，因为它们的驱动和硬件设计是开源的。不过，Nvidia 的二进制闭源驱动在很多情况下也能很好地运行。
 
-### 蓝牙  
+### 蓝牙
 
 就个人而言，我认为蓝牙更像是手机的功能，而非笔记本电脑的功能，但蓝牙在所有笔记本电脑中都有存在，甚至许多 SBC（单板计算机）如树莓派也配备了蓝牙。FreeBSD 上的蓝牙应该可以正常使用鼠标和键盘，但在一些笔记本上，它也可能会“破坏”你的睡眠/恢复周期。  
 
-### BIOS 设置  
+### BIOS 设置
 
 有时你需要更改一些 BIOS 设置，才能让笔记本电脑正常睡眠/恢复。需要禁用的选项有时包括：  
 
 - 蓝牙  
 - 受信平台模块 (TPM)  
 
-## X11  
+## X11
 
 ![X11 图形界面](../png/2021-0708/Desktop-04.png)
 
@@ -73,29 +73,29 @@
 - [FreeBSD X11 手册](https://freebsd.org/handbook/x11)  
 - [FreeBSD X11 FAQ](https://freebsd.org/faq/#X11)  
 
-## 图形环境  
+## 图形环境
 
 ![图形环境示例](../png/2021-0708/Desktop-05.png)
 
 图形环境是由你来决定的，有很多选择。有人偏好简约的 Openbox 和 FVWM 栈式窗口管理器。其他人喜欢 i3 或 Awesome 等平铺式窗口管理器。一些人选择轻量级环境，如 MATE 或 XFCE。还有一些人觉得完整的桌面环境，如 GNOME 或 KDE 最为舒适。如果你坚持使用更简约的窗口管理器，你将需要自己创建环境，包括状态栏和信息栏。决定是否使用通知守护进程，是否使用系统托盘和剪贴板管理器——而在桌面环境中，这些决策已经为你做出了。你无需重新造轮子 😀  
 
-## 现成的解决方案  
+## 现成的解决方案
 
 你可以安装 FreeBSD 并按照自己的方式设置桌面，但如果你只想体验使用 FreeBSD 桌面的感觉，可以尝试一些现成的、专为桌面设计的 FreeBSD 解决方案。我将简要介绍其中的几种，更多信息可以参考 FreeBSD 基金会页面：[FreeBSD 桌面发行版指南](https://freebsdfoundation.org/freebsd-project/resources/guide-to-freebsd-desktop-distributions/)
 
-### GhostBSD  
+### GhostBSD
 
 它可能是其中一个较老且更加成熟的解决方案。它使用 MATE 作为图形桌面，并且采用 OpenRC 初始化系统，而不是默认的 FreeBSD rc(8) 系统。这可能对一些已经熟悉 OpenRC 系统的 Linux 用户有吸引力。它们还有一个 XFCE 变体，如果你觉得它更合适，可以尝试。详情请访问 [https://www.ghostbsd.org/](https://www.ghostbsd.org/)。  
 
-### NomadBSD  
+### NomadBSD
 
 这个系统专注于 Openbox，并进行了少量附加，适合非常轻量级的桌面环境。它还使用了 Tint2 和 Plank，看起来与 MacOS 布局相似。它提供了几个有趣的 DSB 工具，用于自动挂载或音量控制。你可以访问他们的页面 [https://nomadbsd.org/](https://nomadbsd.org/)。  
 
-### helloSystem  
+### helloSystem
 
 helloSystem 仍处于非常早期的开发阶段，但它具有一些 Linux 上甚至没有的独特功能，例如全局菜单搜索/过滤系统。它的图形部分主要是用 QT 编写的。详情请查看 [https://hellosystem.github.io/docs/](https://hellosystem.github.io/docs/)。  
 
-## 结束语  
+## 结束语
 
 我选择了“创建自己的桌面”路径，并通过 Openbox 作为窗口管理器构建了我的图形环境——这在我的 FreeBSD 桌面系列中分为 26 部分进行描述——[https://vermaden.wordpress.com/freebsd-desktop/](https://vermaden.wordpress.com/freebsd-desktop/)。你还应该查看 FreeBSD 基金会对 X11 设置的总结——[https://freebsdfoundation.org/freebsd-project/resources/installing-a-desktop-environment-on-freebsd/](https://freebsdfoundation.org/freebsd-project/resources/installing-a-desktop-environment-on-freebsd/)。你也可以使用 desktop-installer 来为你完成很多工作——[https://www.grayhatfreelancing.com/freebsd-desktop-workstation-quickbuild/](https://www.grayhatfreelancing.com/freebsd-desktop-workstation-quickbuild/)。  
 

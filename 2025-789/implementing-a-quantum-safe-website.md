@@ -259,7 +259,7 @@ Invoke-WebRequest https://192.168.2.40
      data: 192.168.2.1n
 ```
 
-注意末尾的那个 "n"。如果你想去掉它，可以在 **/usr/local/etc/nginx/nginx.conf** 中修改以下这一行：
+注意末尾的那个 “n”。如果你想去掉它，可以在 **/usr/local/etc/nginx/nginx.conf** 中修改以下这一行：
 
 ```sh
 return 200 "$remote_addr\n";
@@ -287,12 +287,12 @@ security.tls.enable_kyber
 
 接下来，按 `F12` 打开开发者工具：
 
-* Firefox 切换到 "network" 选项卡
-* Chrome 进入 "隐私和安全"
+* Firefox 切换到 “network” 选项卡
+* Chrome 进入 “隐私和安全”
 
 然后输入你的 FreeBSD 安装的 IP 地址并按回车。屏幕上应该只显示 IP 地址（即请求的来源）。在开发者工具中，点击对应你 FreeBSD IP 地址的请求条目：
 
-* 如果使用 Firefox，还需要点击右侧的 "Security" 标签页。
+* 如果使用 Firefox，还需要点击右侧的 “Security” 标签页。
 
 如果你的浏览器支持 PQC，你会看到密钥交换方式是：
 
