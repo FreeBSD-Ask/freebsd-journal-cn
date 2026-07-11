@@ -20,7 +20,7 @@ FreeBSD 基金会与 simPRO Software 合作，将于 2020 年 1 月 14 日在 li
 
 <https://wiki.freebsd.org/DevSummit/202002>
 
-与 FOSDEM '20 同期举办，与其他 FreeBSD 开发者一起参加为期一天的活动。
+与 FOSDEM ’20 同期举办，与其他 FreeBSD 开发者一起参加为期一天的活动。
 
 ---
 

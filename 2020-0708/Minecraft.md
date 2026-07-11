@@ -20,7 +20,7 @@
 
 ## 第二步：使用 Ports
 
-本节中的所有命令应以 root 身份运行；使用命令“su”也可以。要将压缩快照下载到 `/var/db/portsnap`：
+本节中的所有命令应以 root 身份运行；使用 su 命令也可以。要将压缩快照下载到 **/var/db/portsnap**：
 
 ```sh
 # portsnap fetch
