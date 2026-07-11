@@ -185,9 +185,9 @@ KTLS 工作线程从 `sb_mtls` 链中解密 TLS 记录。工作线程首先将 T
 
 内核 TLS 还需要对用户空间 SSL 库进行更改。在撰写本文时，OpenSSL 的开发分支已包括对 FreeBSD 上 TLS 1.0-1.2 传输的支持。这一功能作为 KTLS 选项提供，位于 Port `security/openssl-devel` 中。此外，当前的 KTLS 补丁已被回移植到 OpenSSL 1.1.1 中，作为 Port `security/openssl` 的 KTLS 选项。对 TLS 1.3 的传输支持和对 TLS 1.1-1.2 的接收支持目前正在审查中，并应在 OpenSSL 3.0.0 发布之前加入。
 
-Netflix 还开发了一个 nginx 扩展，以利用 OpenSSL 中的新 `SSL_sendfile()` 函数通过 TLS 使用 `sendfile()`。目前，这一功能作为补丁提供，位于 Port  `www/nginx-devel` 下的 KTLS Port 选项中。
+Netflix 还开发了 nginx 扩展，以利用 OpenSSL 中的新 `SSL_sendfile()` 函数通过 TLS 使用 `sendfile()`。目前，这一功能作为补丁提供，位于 Port `www/nginx-devel` 下的 KTLS 选项中。
 
-最后，内核 TLS 是一个庞大的项目，由 FreeBSD 社区的多个成员共同努力。当前的工作成果是经过多年的迭代和改进。Scott Long 在 Netflix 工作时首次构想将 TLS 移入内核。他与 Randall Stewart（也在 Netflix）合作设计并实现了软件 TLS 传输的第一个版本。Drew Gallatin 引入了外部页面 mbufs 及其后续扩展为 TLS mbufs，并将 Netflix 早期的 KTLS 转换为使用 M_NOTREADY mbufs 进行软件 TLS 传输。Drew 还为软件 TLS 后端添加了可插拔接口。我与 Drew 一起添加了 网卡 TLS 传输的基础设施，并支持在 Chelsio T6 适配器上进行 网卡 TLS 传输。Hans Petter Selasky 为 Mellanox ConnectX-6 Dx 适配器添加了对 网卡 TLS 的支持。随后，我负责了 TOE TLS 和 TLS 接收的工作。Scott、Randall 和 Drew 的工作由 Netflix 提供资金支持，Hans Petter 的工作由 Mellanox 提供资金支持，我的工作则由 Chelsio 和 Netflix 提供资金支持。
+最后，内核 TLS 是一个庞大的项目，由 FreeBSD 社区的多个成员共同努力。当前的工作成果是经过多年的迭代和改进。Scott Long 在 Netflix 工作时首次构想将 TLS 移入内核。他与 Randall Stewart（也在 Netflix）合作设计并实现了软件 TLS 传输的最初版本。Drew Gallatin 引入了外部页面 mbufs 及其后续扩展为 TLS mbufs，并将 Netflix 早期的 KTLS 转换为使用 M_NOTREADY mbufs 进行软件 TLS 传输。Drew 还为软件 TLS 后端添加了可插拔接口。我与 Drew 一起添加了网卡 TLS 传输的基础设施，并支持在 Chelsio T6 适配器上进行网卡 TLS 传输。Hans Petter Selasky 为 Mellanox ConnectX-6 Dx 适配器添加了对网卡 TLS 的支持。随后，我负责了 TOE TLS 和 TLS 接收的工作。Scott、Randall 和 Drew 的工作由 Netflix 提供资金支持，Hans Petter 的工作由 Mellanox 提供资金支持，我的工作则由 Chelsio 和 Netflix 提供资金支持。
 
 ---
 
