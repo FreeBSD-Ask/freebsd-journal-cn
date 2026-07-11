@@ -224,7 +224,7 @@ Linus Torvalds 退休时，谁会上去？怎么上？
 
 项目通过 GitHub 或 Apache Foundation 这类组织获取基础设施的方式有很多。FreeBSD 项目设立了自己的基金会。有自己的基金会而不是挂在 Apache 下面，我们对事情如何运作有更多控制权，这有好有坏。但总体上，FreeBSD 基金会是重要的基石。
 
-我想项目最大的担心是 Foundation 想接管。至今 Foundation 一直努力把自己定位为受项目目标驱动，而不是驱动项目。但 Foundation 重要，非常重要。
+我想项目最大的担心是 FreeBSD 基金会想接管。至今 FreeBSD 基金会一直努力把自己定位为受项目目标驱动，而不是驱动项目。但 FreeBSD 基金会重要，非常重要。
 
 **Allan**：是的，同时 Foundation 和 core 通常也是能贡献最多的人。两边都从同一批人里挑，所以重合在所难免。
 
