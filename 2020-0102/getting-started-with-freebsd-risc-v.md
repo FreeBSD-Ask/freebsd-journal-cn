@@ -99,9 +99,9 @@ qemu-system-riscv64 -machine virt -smp 2 -m 2G -nographic \
 
 如果一切顺利，你应看到 FreeBSD 开始启动。如果你跳过了之前的可选步骤，系统将无法挂载根文件系统。发生这种情况时，在提示符处输入 **ufs:/dev/vtbd0p1** 即可。
 
-你可能注意到没有看到熟悉的 `loader(8)` 提示符。这是因为 `loader(8)` 尚未移植到 RISC-V，因此内核直接从 OpenSBI 启动。目前你还无法享受 loader 微调或可调参数，但未来一定会支持。
+你可能注意到没有看到熟悉的 **loader(8)** 提示符。这是因为 **loader(8)** 尚未移植到 RISC-V，因此内核直接从 OpenSBI 启动。目前你还无法享受 loader 微调或可调参数，但未来一定会支持。
 
-你应看到系统启动到登录提示符。以 root 登录，并用 `passwd(1)` 修改 root 密码。
+你应看到系统启动到登录提示符。以 root 登录，并用 **passwd(1)** 修改 root 密码。
 
 ## 网络
 
