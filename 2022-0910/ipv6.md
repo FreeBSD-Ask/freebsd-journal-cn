@@ -261,7 +261,7 @@ nameserver fe80::ffff:1:35%bge0
 
 请注意，NFS 并不完全支持 LLA，因为 RPC 库在处理 IPv6 地址时不会包含 zone ID。尽管第二行可以被指定，并且其语法是正确的，但实际上并不起作用 ⁸。IPv6 GUA 则可以正常工作。因此，目前应避免在 NFS 中使用 LLA，该问题预计会在 FreeBSD 14 中修复。
 
-### Sendmail  
+### Sendmail
 
 Sendmail 也使用原始 IPv6 地址格式，并支持为每个地址指定地址族关键字。示例如下：
 
@@ -302,7 +302,7 @@ FEATURE(`msp', `[127.0.0.1]')dnl
 +@
 ```
 
-## 总结  
+## 总结
 
 本文介绍了如何使用隧道服务接入 IPv6 互联网，并配置 FreeBSD 基本系统中的关键软件以支持 IPv6。使用 `gif(4)` 接口的隧道连接并不特定于 **Hurricane Electric IPv6 Tunnel Broker**，它也可以用于构建自定义的虚拟网络。然而，这种方法可能过于原始，不适用于实际用途——它不支持加密或自动配置。
 

@@ -30,4 +30,4 @@
 
 ## 活动
 
-欧洲有一场重要活动（FOSDEM），汇集了开源界的各路主要玩家。活动期间，bapt@ 发表了一场精彩演讲，讲述 `pkg`(8) 的历史——`pkg`(8) 已成为在 FreeBSD 上安装第三方软件的主要工具。幻灯片可在 <https://fosdem.org/2015/schedule/event/4yearofpkg/> 在线查阅。
+欧洲有一场重要活动（FOSDEM），汇集了开源界的各路主要玩家。活动期间，bapt@ 发表了一场精彩演讲，讲述 `pkg.8` 的历史——`pkg.8` 已成为在 FreeBSD 上安装第三方软件的主要工具。幻灯片可在 <https://fosdem.org/2015/schedule/event/4yearofpkg/> 在线查阅。

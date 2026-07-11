@@ -3,7 +3,7 @@
 - 原文：[DTrace: New Additions to an Old Tracing System](https://freebsdfoundation.org/wp-content/uploads/2023/01/stolfa_dtrace.pdf)
 - 作者：**DOMAGOJ STOLFA**
 
-## DTrace 简介  
+## DTrace 简介
 
 DTrace 是 FreeBSD 内置的软件跟踪框架，允许用户实时检查和修改正在运行的系统。它高度可扩展，最初为 Solaris 设计，但后来被多次移植到其他环境，如 FreeBSD、macOS、Windows 和 Linux。本文将重点介绍在 FreeBSD 上 DTrace 的用法，并提供示例，同时总结 DTrace 在 FreeBSD 领域的最新发展。  
 
@@ -155,13 +155,13 @@ bin:/usr/sbin:/usr/bin /etc/rc.d/sendmail onestop
 
 此外，**dwatch** 支持基于 **jail**、用户组、进程等多种条件进行过滤，即便是经验丰富的 **DTrace** 用户也值得学习这款工具。演讲《All along the dwatch tower》介绍了 **dwatch** 并详细讲解了其功能。此外，**FreeBSD** 的 **dwatch(1)** 手册页也提供了许多优秀的示例，适合感兴趣的用户尝试。
 
-## CTFv3  
+## CTFv3
 
 **紧凑 C 类型格式（CTF）** 是一种用于在 **FreeBSD ELF** 二进制文件中编码 **C** 类型信息的格式。它使 **DTrace** 能够了解目标二进制文件（进程或内核）的 **C** 类型布局，以便用户编写的脚本可以引用和探索这些类型。  
 
 过去，由于 **CTFv2** 的实现方式，**DTrace** 在单个二进制文件中最多仅支持 **2^15** 种 **C** 类型。这一限制导致了 **FreeBSD** 中许多与 **DTrace** 相关的错误报告。今年 **3 月**，**Mark Johnston（<markj@freebsd.org>）** 提交了相关更改，使 **DTrace** 切换为 **CTFv3**，这不仅提高了 **DTrace** 可处理的 **C** 类型数量，同时还扩展了 **CTF** 的其他多个限制。
 
-## kinst —— 用于指令级跟踪的全新 DTrace 提供程序  
+## kinst —— 用于指令级跟踪的全新 DTrace 提供程序
 
 在 2022 年谷歌编程之夏（GSoC）中，**Christos Margiolis（<christos@freebsd.org>）** 在 **Mark Johnston（<markj@freebsd.org>）** 的指导下成功完成了一项项目，并将 **指令级跟踪（Instruction-level Tracing）** 功能合并到 **FreeBSD**。实现该功能的提供程序被称为 **kinst**。
 
