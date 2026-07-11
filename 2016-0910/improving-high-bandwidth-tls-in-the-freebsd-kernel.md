@@ -47,17 +47,17 @@ compile-with "/usr/local/bin/yasm -g dwarf2 -f elf64 ${INTELISAINCLUDES} -o ${.T
 
 我们决定向新密码传入指针数组，指定加密的源和目标，即 iovec。这个 iovec 数组在 sendfile 调用的初始设置阶段填充，每个页面为 I/O 设置时填充，从而消除了遍历 mbuf 链表的需要。我们还重新设计了 mbuf 分配例程，使其能在分配时包含这个新的”mbuf map”。
 
-我们的大部分数据都在加密，我们还设计了新的特殊 mbuf zone，分配时开销更小。典型的单页 mbuf 需要三次独立分配（一次给 mbuf，一次给引用计数，一次给页面）。我们重新设计，使页面和 mbuf 成为不可分割的单元，FreeBSD 的 UMA 在其初始化例程中一起分配页面和 mbuf，UMA 构造函数仅用于重置该绑定实体内的指针。我们还将引用计数嵌入 mbuf。这需要在复制时做一些小技巧（直到所有副本释放后才真正释放原始 mbuf），但证明在减少 mbuf 开销方面相当有效。
+由于大部分数据都要加密，我们还设计了新的特殊 mbuf zone，分配时开销更小。典型的单页 mbuf 需要三次独立分配（一次给 mbuf，一次给引用计数，一次给页面）。我们重新设计，使页面和 mbuf 成为不可分割的单元，FreeBSD 的 UMA 在其初始化例程中一起分配页面和 mbuf，UMA 构造函数仅用于重置该绑定实体内的指针。我们还将引用计数嵌入 mbuf。这需要在复制时做一些小技巧（直到所有副本释放后才真正释放原始 mbuf），但证明在减少 mbuf 开销方面相当有效。
 
-切换到 iovec 数组迫使我们放弃 OpenCrypto Framework API，直接访问密码例程。我们仍希望为测试目的能回退到 OpenCrypto，因此创建了一个层，抽象内存分配和 iovec 处理用于低级密码访问，同时仍允许与 OpenCrypto 互操作。这种转换对上层透明，并可在运行时选择。这项工作还使我们有机会找到并修复产生不必要数据复制的代码路径。我们还修复了不正确的 `sendfile` 标志用法。
+切换到 iovec 数组迫使我们放弃 OpenCrypto Framework API，直接访问密码例程。我们仍希望为测试目的能回退到 OpenCrypto，因此创建了一个层，为低级密码访问抽象了内存分配和 iovec 处理，同时仍允许与 OpenCrypto 互操作。这种转换对上层透明，并可在运行时选择。这项工作还使我们有机会找到并修复产生不必要数据复制的代码路径。我们还修复了不正确的 sendfile 标志用法。
 
 ## 结果
 
 添加所有改进后，我们在三台不同的机器上部署了新固件。这些机器在繁忙时段接收实时流量，同时收集 CPU 和带宽测量数据。所有测量使用相同的软件，唯一区别是配置变更，使软件：
 
-- 禁用所有 `sendfile` 增强并只使用 OpenSSL，从文件读取并将加密数据写入 TCP 连接。
-- 使用 `sendfile` 增强，加密设置为使用 BoringSSL。
-- 使用 `sendfile` 增强，加密设置为使用 Intel 的 ISA 库。
+- 禁用所有 sendfile 增强并只使用 OpenSSL，从文件读取并将加密数据写入 TCP 连接。
+- 使用 sendfile 增强，加密设置为使用 BoringSSL。
+- 使用 sendfile 增强，加密设置为使用 Intel 的 ISA 库。
 
 因此每台机器为我们提供三组结果。机器类型如下：
 
@@ -67,7 +67,7 @@ compile-with "/usr/local/bin/yasm -g dwarf2 -f elf64 ${INTELISAINCLUDES} -o ${.T
 
 每组结果将标记为 Rev H、Rev F 或 Rev N 和所进行的测试。我们展示繁忙时段大约一小时的流量。为视觉清晰，图中图例已移除；绿色 x 图为带宽（Gbps），红色 + 图为 CPU 系统使用率（百分比）。
 
-在图 1 中我们看到只使用 OpenSSL 时的情况。我们设置的 CPU 限制是标准的 80%；然而存储缓存受磁盘限制，CPU 命中 60% 到 65%，性能上限约为 12–12.5Gbps 的服务流量。`sendfile` 特性带来了相当大的改进，如接下来两图所示。BoringSSL 在内核中使用 `sendfile` 的结果见图 2。CPU 使用稍多（55%–70% CPU 利用率），总体输出性能提升至 15–16Gbps。这正是我们使用 `sendfile` 调用简化 I/O 所期望的。
+在图 1 中我们看到只使用 OpenSSL 时的情况。我们设置的 CPU 限制是标准的 80%；然而存储缓存受磁盘限制，CPU 命中 60% 到 65%，性能上限约为 12–12.5Gbps 的服务流量。sendfile 特性带来了相当大的改进，如接下来两图所示。BoringSSL 在内核中使用 sendfile 的结果见图 2。CPU 使用稍多（55%–70% CPU 利用率），总体输出性能提升至 15–16Gbps。这正是我们使用 sendfile 调用简化 I/O 所期望的。
 
 ![Figure 1：Rev H 上使用 OpenSSL 的性能（基线）](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-01.png)
 

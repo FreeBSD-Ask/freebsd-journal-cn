@@ -43,7 +43,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/297773>
 
-现在可在 i386 和 amd64 上，在启动早期、`dtrace(1)` 可调用之前启用 DTrace 探针。所需的启用通过 `dtrace -A` 创建，它会写入一个 **/boot/dtrace.dof** 文件，并使用 `nextboot(8)` 确保在随后的启动中加载 DTrace 内核模块，并由 `loader(8)` 加载描述此启用的 DOF 文件。追踪输出随后可通过 `dtrace -a` 获取。
+现在可在 i386 和 amd64 上，在启动早期、**dtrace(1)** 可调用之前启用 DTrace 探针。所需的启用通过 `dtrace -A` 创建，它会写入一个 **/boot/dtrace.dof** 文件，并使用 **nextboot(8)** 确保在随后的启动中加载 DTrace 内核模块，并由 **loader(8)** 加载描述此启用的 DOF 文件。追踪输出随后可通过 `dtrace -a` 获取。
 
 ## ARM64 上用户空间应用的追踪支持
 
