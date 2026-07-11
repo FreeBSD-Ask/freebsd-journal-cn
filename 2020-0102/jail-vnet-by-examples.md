@@ -519,7 +519,7 @@ traceroute to 192.0.2.9 (192.0.2.9), 64 hops max, 40 byte packets
 ```
 
 ? PF {
-? device : “cxl0”;
+? device : "cxl0";
 ? num_vfs : 10;
 ? }
 ? EOF
@@ -529,7 +529,7 @@ traceroute to 192.0.2.9 (192.0.2.9), 64 hops max, 40 byte packets
 ```
 
 ? PF {
-? device : “cxl1”;
+? device : "cxl1";
 ? num_vfs : 10;
 ? }
 ? EOF

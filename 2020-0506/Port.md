@@ -5,13 +5,13 @@
 
 ## 第一步：使用 Ports 安装 Poudriere
 
-本节中的所有命令应以 root 用户身份运行；使用 su(1) 命令即可。要将 Ports 的压缩快照下载到 `/var/db/portsnap`：
+本节中的所有命令应以 root 用户身份运行；使用 **su(1)** 命令即可。要将 Ports 的压缩快照下载到 **/var/db/portsnap**：
 
 ```sh
 # portsnap fetch
 ```
 
-第一次运行 portsnap 时，解压缩快照到 /usr/ports：
+第一次运行 `portsnap` 时，解压缩快照到 **/usr/ports**：
 
 ```sh
 # portsnap extract
