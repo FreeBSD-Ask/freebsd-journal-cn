@@ -129,9 +129,9 @@ close(fd);
 munmap(buf, len);
 ```
 
-注意，`mmap(2)` 和 `open(2)` 调用的结果作为输入传递给后续的调用。在没有先前的 `mmap(2)` 和 `open(2)` 调用的情况下，对 `munmap(2)` 和 `close(2)` 进行 fuzzing 并没有太大意义，因此 syzlang 模型定义了相应的资源，syzkaller 使用这些关系创建系统调用链，以引导其选择。
+注意，**mmap(2)** 和 **open(2)** 调用的结果作为输入传递给后续的调用。在没有先前的 **mmap(2)** 和 **open(2)** 调用的情况下，对 **munmap(2)** 和 **close(2)** 进行 fuzzing 并没有太大意义，因此 syzlang 模型定义了相应的资源，syzkaller 使用这些关系创建系统调用链，以引导其选择。
 
-`mmap(2)` 的使用还说明了需要为“标志”参数（如第三和第四个参数）定义有效值的集合。syzlang 为此提供了内置的 flags 类型：
+**mmap(2)** 的使用还说明了需要为“标志”参数（如第三和第四个参数）定义有效值的集合。syzlang 为此提供了内置的 flags 类型：
 
 ```c
 mmap(addr vma, len len[addr], prot flags[mma_prot],
