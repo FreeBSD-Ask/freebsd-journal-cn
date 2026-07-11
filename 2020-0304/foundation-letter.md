@@ -12,6 +12,8 @@
 
 希望你喜欢本期！
 
-Deb Goodkin
+**Deb Goodkin**
+
 执行董事
+
 FreeBSD 基金会
