@@ -14,7 +14,7 @@
 
 你是怎么知道 FreeBSD 的？FreeBSD 哪些方面让你感兴趣？
 
-- 虽然听说过 FreeBSD，但在参加工作之前我从没真正试用过。2018 年初，我有幸被 Foundation 录用为实习生。在那四个月里，我接触到了 FreeBSD 的许多不同领域，参与了令人兴奋的项目，比如 `kcov(4)` 的早期版本——这个项目最终让 Syzkaller（<https://github.com/google/syzkaller>）得以在 FreeBSD 上运行。
+- 虽然听说过 FreeBSD，但在参加工作之前我从没真正试用过。2018 年初，我有幸被 FreeBSD 基金会录用为实习生。在那四个月里，我接触到了 FreeBSD 的许多不同领域，参与了令人兴奋的项目，比如 **kcov(4)** 的早期版本——这个项目最终让 Syzkaller（<https://github.com/google/syzkaller>）得以在 FreeBSD 上运行。
 
   从纯 Linux 背景过渡过来一开始有些不适应，但我很快就意识到，FreeBSD 本质上是一个令人兴奋的系统，有很多值得探索的地方。整个操作系统的协调一致、出色的文档，以及不含废话却很友好的社区，这些都让 FreeBSD 在我实习期间成为一件乐事。它也让我看到了还有多少东西要学，这让我想把 FreeBSD 的工作继续做下去，不止于实习期。
 

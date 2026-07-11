@@ -505,7 +505,7 @@ rdr pass on em0 inet proto tcp \
 from any to 192.168.0.2 port = http -> 10.192.0.3 port 80
 ```
 
-> **注意**：此时 `pf(4)` 仅用于 NAT 和重定向流量，不阻止任何流量。
+> **注意**：此时 **pf(4)** 仅用于 NAT 和重定向流量，不阻止任何流量。
 
 ### 使用 sysutils/iocage 的 VNET Jail
 
@@ -513,11 +513,11 @@ from any to 192.168.0.2 port = http -> 10.192.0.3 port 80
 
 #### 管理桥接
 
-`iocage(8)` 期望用户自行管理 VNET jail 连接的桥接，所以通常通过 `ifconfig(8)` 和修改 **/etc/rc.conf** 手动完成。
+**iocage(8)** 期望用户自行管理 VNET jail 连接的桥接，所以通常通过 **ifconfig(8)** 和修改 **/etc/rc.conf** 手动完成。
 
-另一种管理桥接的方式是使用 `sysutils/vm-bhyve`，它将桥接抽象为”虚拟交换机”。由于 `vm-bhyve(8)` 是管理 bhyve VM 的出色工具，我们利用它管理 `iocage(8)` jail 的桥接，之后将 bhyve VM 连接到它。
+另一种管理桥接的方式是使用 `sysutils/vm-bhyve`，它将桥接抽象为”虚拟交换机”。由于 **vm-bhyve(8)** 是管理 bhyve VM 的出色工具，我们利用它管理 **iocage(8)** jail 的桥接，之后将 bhyve VM 连接到它。
 
-> **注意**：`vm-bhyve(8)` 支持不同交换机类型。我们暂时限于默认的”standard”。
+> **注意**：**vm-bhyve(8)** 支持不同交换机类型。我们暂时限于默认的”standard”。
 
 运行 `rcorder /usr/local/etc/rc.d/*` 可看到 `vm` 在系统启动时先于 `iocage` 执行。这意味着 jail 连接时桥接已可用。
 
@@ -557,7 +557,7 @@ groups: bridge vm-switch viid-10cd3@
 nd6 options=1<PERFORMNUD>
 ```
 
-并将新的 `iocage(8)` jail 连接到它：
+并将新的 **iocage(8)** jail 连接到它：
 
 ```sh
 root@jailhost:~ # iocage create -r 12.1-RELEASE -n vnetcage \
@@ -602,7 +602,7 @@ groups: bridge vm-switch viid-10cd3@
 nd6 options=1<PERFORMNUD>
 ```
 
-为让 jail 能与外界通信，我们添加最简配置为其做出站 NAT（假设 `pf(4)` 尚未运行）：
+为让 jail 能与外界通信，我们添加最简配置为其做出站 NAT（假设 **pf(4)** 尚未运行）：
 
 ```sh
 root@jailhost:~ # echo "set skip on lo0" >/etc/pf.conf
