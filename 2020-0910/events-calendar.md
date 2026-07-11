@@ -1,7 +1,7 @@
 # 活动日历
 
 截至 2020 年 11 月的 BSD 活动
-作者：ANNE DICKISON
+作者：**ANNE DICKISON**
 
 OpenFEST 2020
 11 月 7–8 日
@@ -25,7 +25,7 @@ Mark Johnston 将带你了解 FreeBSD 上的 DTrace 入门知识。
 
 FreeBSD Office Hours
 <https://wiki.freebsd.org/OfficeHours>
-欢迎加入 FreeBSD 社区成员参与的 FreeBSD Office Hours。从综合问答到主题演示与教程，Office Hours 是解答 FreeBSD 相关问题的绝佳途径。
+欢迎与 FreeBSD 社区成员一起参加 FreeBSD Office Hours。从综合问答到主题演示与教程，Office Hours 是解答 FreeBSD 相关问题的绝佳途径。
 
 过往节目可在 FreeBSD YouTube 频道找到
 <https://www.youtube.com/c/FreeBSDProject>。
