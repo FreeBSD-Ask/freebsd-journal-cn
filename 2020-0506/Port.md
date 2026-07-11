@@ -1,4 +1,4 @@
-# 使用 Poudriere 进行 Port 批量管理
+# 使用 Poudriere 进行 Ports 批量管理
 
 - 原文链接：[Bulk Ports Management with Poudriere](https://freebsdfoundation.org/wp-content/uploads/2020/07/FreeBSD-Guides-Bulk-Ports-Management-with-Poudriere.pdf)
 - 作者：**DREW GURKOWSKI**
