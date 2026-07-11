@@ -98,7 +98,7 @@ make DESTDIR=$ROOTFS install
 
 它没有 `sysctl` 控制选项，而是直接修改了代码。详细信息请参考 `drm-subtree` 讨论，pull [#13](https://github.com/evadot/drm-subtree/pull/13)。  
 
-## Ports 和修改后的软件包  
+## Ports 和修改后的软件包
 
 如前所述，我将 `sway`、`wlroots` 和 `hikari` 还原到了较早的版本。同时，我对 `libdrm` 进行了修改，以便通过此 [补丁](https://gist.github.com/jsm222/7df208cc5a72918a70cfbef8ee15b51b) 检测 `panfrost`。`hikari` 还需要一个小补丁来修复其参数解析 [问题](https://hub.darcs.net/raichoo/hikari/issue/20)。此外，`mesa-dri` 和 `mesa-libs` 也经过修改，以便编译 `panfrost` 驱动程序，并启用 `gles1` 和 `gles2`，即按照 Ruslan Bukin 在其文章中描述的方式进行编译。  
 
