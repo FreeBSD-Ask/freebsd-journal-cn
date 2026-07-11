@@ -6,7 +6,7 @@
 
 把一台标准的 FreeBSD RELEASE 系统变成功能齐全的媒体中心需要做些什么？其实相当简单。首先，你必须决定要安装哪种服务器。我能推荐几款。Plex Media Server 是我的首选，因为它功能完整的界面用起来很愉悦。安装它只需输入 `# pkg install -y plexmediaserver`。Plex 确实提供付费的 Plex Pass，解锁额外功能；如果你有 Plex Pass，需使用不同的命令 `# pkg install -y plexmediaserver-plexpass`。
 
-下一个不错的媒体服务器选择是 Emby。命令是 `# pkg install -y emby-server`。最后，你也可以只装一个 mini DLNA 服务器。由于 Plex 在自带的服务器软件之外还包含内置的 DLNA 服务器，我主要就用 Plex 的 DLNA 服务器。不过，想要简单方案的人只要输入 `# pkg install -y minidlna` 即可。许多播放器都内置支持从 DLNA 服务器定位并串流媒体。安装包之后阅读显示的信息很重要。要再次调出该信息，输入 `pkg info -D` 和包名。若希望媒体服务器在 FreeBSD 启动时自动启动，记得在 **/etc/rc.conf** 中添加条目。
+下一个不错的媒体服务器选择是 Emby。命令是 `# pkg install -y emby-server`。最后，你也可以只装一个 mini DLNA 服务器。由于 Plex 在自带的服务器软件之外还包含内置的 DLNA 服务器，我主要就用 Plex 的 DLNA 服务器。不过，想要简单方案的人只要输入 `# pkg install -y minidlna` 即可。许多播放器都内置支持从 DLNA 服务器定位并串流媒体。安装软件包之后阅读显示的信息很重要。要再次调出该信息，输入 `pkg info -D` 和软件包名。若希望媒体服务器在 FreeBSD 启动时自动启动，记得在 **/etc/rc.conf** 中添加条目。
 
 ## 配置
 
