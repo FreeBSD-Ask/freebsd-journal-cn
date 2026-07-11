@@ -402,7 +402,7 @@ playbook 中的以下任务负责把它们放在正确的位置，并用 `vars.y
        with_items: "{{ workers }}"
 ```
 
-既然对安装进行了一堆文件更改，我们需要确保文件仍然归 Hadoop 所有，而不是运行 Ansible 脚本的用户。最后一个任务递归地设置所有权和组到 Hadoop 用户，作用于 playbook 迄今为止触及的文件和目录。
+既然对安装做了一堆文件更改，我们需要确保文件仍然归 Hadoop 所有，而不是运行 Ansible 脚本的用户。最后一个任务递归地设置所有权和组到 Hadoop 用户，作用于 playbook 迄今为止触及的文件和目录。
 
 ```ini
      - name: "Give ownership to {{hdp}}"
@@ -428,13 +428,13 @@ playbook 中的以下任务负责把它们放在正确的位置，并用 `vars.y
 
 ## 启动 Hadoop 和第一个 Map-reduce 作业
 
-运行 playbook 后，部署中没有错误，是时候登录 namenode 主机并切换到 Hadoop 用户（使用设置的密码）。第一个测试是验证该用户可以登录到每个 datanode1 和 datanode2，而不会被提示确认主机密钥或提供密码。如果登录完成时没有任何这些，那么可以启动 Hadoop 服务。第一步是使用 `hdfs namenode` 命令格式化分布式文件系统（Hadoop 的路径在 `.bashrc` 文件中，因此省略了 `hdfs` 可执行文件的完整路径）：
+运行 playbook 后，部署中没有错误，是时候登录 namenode 主机并切换到 Hadoop 用户（使用设置的密码）。第一个测试是验证该用户可以登录到每个 datanode1 和 datanode2，而不会被提示确认主机密钥或提供密码。如果登录时没有出现这些，那么可以启动 Hadoop 服务。第一步是使用 `hdfs namenode` 命令格式化分布式文件系统（Hadoop 的路径在 `.bashrc` 文件中，因此省略了 `hdfs` 可执行文件的完整路径）：
 
 ```sh
 hadoop@namenode$ hdfs namenode -format
 ```
 
-几条初始化消息会滚动过去，但最后应该没有错误。小心运行此命令第二次。每次都会生成一个唯一的 ID，用于识别该 HDFS 并与其他区分开来。不幸的是，格式化只在主节点上完成，而不是在所有其他集群节点上。因此，第二次运行它会混淆 datanode，因为它们仍然保留旧的 ID。解决方案是清除 `{{hdp_data_dir}}` 和 `{{hdp_tmp}}` 中定义的目录中的任何先前内容，在 datanode 和 namenode 上都要做。
+几条初始化消息会滚动过去，但最后应该没有错误。小心运行此命令第二次。每次都会生成唯一的 ID，用于识别该 HDFS 并与其他区分开来。不幸的是，格式化只在主节点上完成，而不是在所有其他集群节点上。因此，第二次运行它会混淆 datanode，因为它们仍然保留旧的 ID。解决方案是清除 `{{hdp_data_dir}}` 和 `{{hdp_tmp}}` 中定义的目录中的任何先前内容，在 datanode 和 namenode 上都要做。
 
 接下来，必须按顺序启动构成 Hadoop 系统的所有服务。以下命令将负责此操作：
 
@@ -485,7 +485,7 @@ NAME                              PROPERTY             VALUE        SOURCE
 hadooppool/hadoop/hdfs/datanode   refcompressratio     2.35x        -
 ```
 
-这表明在 FreeBSD 上运行 Hadoop 有好处。OpenZFS 能够为存储在 HDFS 中的数据添加额外保护，并使得在底层磁盘上存储更多数据成为可能。在大数据世界中，这是一个巨大的优势。
+这表明在 FreeBSD 上运行 Hadoop 有好处。OpenZFS 能够为存储在 HDFS 中的数据添加额外保护，并使得在底层磁盘上存储更多数据成为可能。在大数据世界中，这是巨大的优势。
 
 ---
 
