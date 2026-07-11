@@ -240,7 +240,7 @@ root@jailhost:~ #
 
 > **警告**：启用/配置防火墙是把自己锁在机器外的好办法。确保你已有方案，万一意外发生能重新获得访问权限。
 
-本例使用 `pf(4)`（packet filter）防火墙。假设尚未配置防火墙。
+本例使用 **pf(4)**（packet filter）防火墙。假设尚未配置防火墙。
 
 创建以下 **/etc/pf.conf**：
 
@@ -270,7 +270,7 @@ pass in on $ext_if proto tcp to $ext_if:0 port ssh
 pass out on $ext_if
 ```
 
-接下来启用 `pf(4)` 并验证出站连接按预期工作：
+接下来启用 **pf(4)** 并验证出站连接按预期工作：
 
 ```sh
 root@jailhost:~ # service pf enable

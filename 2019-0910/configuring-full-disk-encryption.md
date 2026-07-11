@@ -26,10 +26,10 @@
 yubikey-personalization-gui
 ```
 
-访问 Static Password 选项卡。接下来点击 Scan Code 按钮。第一步是选择要使用的 Configuration Slot。Configuration Slot 选择气泡旁边的 ? 图标提供了关于配置槽的说明和使用方法，请参阅。接下来，在 Password 部分，找到带有 Choose-a-Layout 下拉菜单的 Keyboard 标签，选择你将使用的键盘布局。现在可以将你的随机密码短语插入 Password 字段旁边的框中。最后，插入 YubiKey 后，选择 Write Configuration 将该密码短语保存到 YubiKey 的指定配置槽。现在，当你按住 YubiKey 上的按钮时，会看到密码短语自动输入，就像你在键盘上手动输入一样。注意，按住按钮的时间长短取决于你编程的是哪个 Configuration Slot。
+访问 Static Password 选项卡。接下来点击 Scan Code 按钮。第一步是选择要使用的 Configuration Slot。请参阅 Configuration Slot 选择气泡旁边的 ? 图标提供的配置槽说明和使用方法。接下来，在 Password 部分，找到带有 Choose-a-Layout 下拉菜单的 Keyboard 标签，选择你将使用的键盘布局。现在可以将你的随机密码短语插入 Password 字段旁边的框中。最后，插入 YubiKey 后，选择 Write Configuration 将该密码短语保存到 YubiKey 的指定配置槽。现在，当你按住 YubiKey 上的按钮时，会看到密码短语自动输入，就像你在键盘上手动输入一样。注意，按住按钮的时间长短取决于你编程的是哪个 Configuration Slot。
 
 ## 重启
 
 重启刚刚安装 FreeBSD 的机器，你首先会看到一个要求输入密码短语的屏幕。正确输入密码短语后，系统将正常启动。
 
-Roller Angel 是一位热心的 BSD 用户，乐于探索 BSD 技术的各种奇妙用途。他曾基于 FreeBSD 举办编程工作坊，目前正致力于搭建一个在线培训平台，教授 BSD 及相关技术。详见 BSD.pw。
+Roller Angel 是热心的 BSD 用户，乐于探索 BSD 技术的各种奇妙用途。他曾基于 FreeBSD 举办编程工作坊，目前正致力于搭建一个在线培训平台，教授 BSD 及相关技术。详见 BSD.pw。
