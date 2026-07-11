@@ -20,9 +20,9 @@
 
 为清晰起见，示例中有时（并非总是）会展示命令输出。
 
-手册页引用以加粗显示，括号中标注手册章节；如 **security(7)** 指安全手册页，可输入 `man 7 security` 或 `man security` 显示（因无其他同名手册页，可省略章节号）。
+手册页引用以斜体显示，括号中标注手册章节；如 ty(7) 指手册可输`man 7 security` 或 `man security` 显示（因无同名手册可省略章）。
 
-FreeBSD 软件包引用以斜体显示，使用 Port 的 origin，即 `<分类>/<名称>`，如 `security/sudo`，可作为二进制包安装（`pkg install sudo`），也可从 Ports 安装（`cd /usr/ports/security/sudo && make install clean`）。
+FreeBSD 软件包引用以反引号显示，使用 Port 的 origin，即 `<分类>/<名称>`，如 `security/sudo`，可作为二进制软件包安装（`pkg install sudo`），也可从 Ports 安装（`cd /usr/ports/security/sudo && make install clean`）。
 
 ## 许可证
 
@@ -30,7 +30,7 @@ FreeBSD 软件包引用以斜体显示，使用 Port 的 origin，即 `<分类>/
 
 ## 普通 Jail
 
-普通（即非 VNET）jail 与所运行的 jailhost 共享网络栈。因此网络配置和防火墙工作在 jailhost 上完成，不在 jail 内部。这是创建 jail 的传统方式，尽管有局限，但在容器化软件、文件系统和服务方面仍然非常有用。例如 `ports-mgmt/poudriere`（FreeBSD 的批量包构建器和 Port 测试工具）大量使用普通 jail。
+普通（即非 VNET）jail 与所运行的 jailhost 共享网络栈。因此网络配置和防火墙工作在 jailhost 上完成，不在 jail 内部。这是创建 jail 的传统方式，尽管有局限，但在容器化软件、文件系统和服务方面仍然非常有用。例如 `ports-mgmt/poudriere`（FreeBSD 的批量软件包构建器和 Port 测试工具）大量使用普通 jail。
 
 ### 使用继承 IP 配置的普通 Jail
 
@@ -87,9 +87,9 @@ root@jailhost:~ #
 
 ### 使用专用 IP 地址的普通 Jail
 
-如果想要更多隔离，可以分配专用静态 IP 地址。这能防止 jail 监听 jailhost 使用的端口，例如允许 `sshd(8)` 直接监听标准端口（22）连接到 jail。
+如果想要更多隔离，可以分配专用静态 IP 地址。这能防止 jail 监听 jailhost 使用的端口，例如允许通过 **ssh(1)** 直接连接到监听标准端口（22）的 jail。
 
-下例中，jailhost 使用 **192.168.0.2** 作为主 IP 地址，**192.168.0.1** 作为默认网关，**192.168.0.3** 是新增的、由 jail 使用的附加 IP 地址。目标是在局域网内创建一个使用专用静态 IP 地址的 jail，并在其内运行 `sshd(8)`。
+下例中，jailhost 使用 **192.168.0.2** 作为主 IP 地址，**192.168.0.1** 作为默认网关，**192.168.0.3** 是新增的、由 jail 使用的附加 IP 地址。目标是在局域网内创建一个使用专用静态 IP 地址的 jail，并在其内运行 **sshd(8)**。
 
 这假设 jailhost 的安全 shell 守护进程已配置为只监听相关 IP 地址，方法是在 **/etc/ssh/sshd_config** 中设置 `ListenAddress` 为 **192.168.0.2**，并通过 `service sshd reload` 重新加载。
 
@@ -118,7 +118,7 @@ dns : inherit
 root@jailhost:~ # pot run aliaspot
 ```
 
-你可以在供应过程的不同阶段运行 `ifconfig(8)`，了解 IP 别名（**192.168.0.33/32**）何时被加入/移除到接口。根据用例，将别名永久添加到 jailhost 的 **/etc/rc.conf** 也可能有意义。
+你可以在供应过程的不同阶段运行 **ifconfig(8)**，了解 IP 别名（**192.168.0.33/32**）何时被加入/移除到接口。根据用例，将别名永久添加到 jailhost 的 **/etc/rc.conf** 也可能有意义。
 
 > **注意**：在这种静态单 IP 配置下，jail 的唯一 IP 地址（神奇地）也用作 localhost，这有时会令人困惑，也意味着通常监听 localhost 因此外部无法访问的服务（如上例中的 `sendmail_submit`）突然暴露在外。所以在这种配置下，对 jailhost 上的服务做正确的防火墙（遵循默认阻止所有流量的最佳实践）很重要。可以为 jail 添加独立的回环地址（如 **127.0.0.2/8**），但考虑到额外引入的复杂性，这种做法只在少数用例中值得。
 
