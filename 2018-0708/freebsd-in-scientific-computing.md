@@ -74,7 +74,7 @@ cd /usr/ports/biology/canu
 make install
 ```
 
-如果你需要的软件尚无 FreeBSD port，考虑创建一个。它并不如人们想象的那么难。成为 FreeBSD Ports committer 有相当陡峭的学习曲线，committer 须经严格的质量控制后才能向系统添加 port。然而，port 无需提交即可使用 Ports 系统部署。事实上，所有 port 在提交前都部署并测试过。创建基本功能 port 或升级现有 port 的学习曲线相当平缓。任何会写 Makefile 并使用上游开发者所用构建系统的人，都可以相当快地学会。Porter's Handbook（<https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/>）覆盖了你需要了解的大部分内容，从入门到成为 FreeBSD committer。
+如果你需要的软件尚无 FreeBSD port，考虑创建一个。它并不如人们想象的那么难。成为 FreeBSD Ports committer 有相当陡峭的学习曲线，committer 须经严格的质量控制后才能向系统添加 port。然而，port 无需提交即可使用 Ports 系统部署。事实上，所有 port 在提交前都部署并测试过。创建基本功能 port 或升级现有 port 的学习曲线相当平缓。任何会写 Makefile 并使用上游开发者所用构建系统的人，都可以相当快地学会。Porter’s Handbook（<https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/>）覆盖了你需要了解的大部分内容，从入门到成为 FreeBSD committer。
 
 如果从 FreeBSD Ports 系统安装二进制包，可以使用以下命令快速轻松更新它们：
 
