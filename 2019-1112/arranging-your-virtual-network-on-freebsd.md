@@ -323,7 +323,7 @@ root@jailhost:~ #
 
 ## VNET Jail 和 bhyve VM
 
-VNET(9)——网络子系统虚拟化基础设施——是一种虚拟化网络栈的技术。
+**VNET(9)**——网络子系统虚拟化基础设施——是一种虚拟化网络栈的技术。
 
 虽然 VNET 最早出现在 FreeBSD 8.0 中，但直到最近都被视为实验特性。随着 FreeBSD 12 的到来，终于人人可用，无需构建自定义内核。
 
@@ -915,7 +915,7 @@ root@jailhost:~ #
 
 ```
 
-> **注意**：由于 `iocage(8)` 的一个 bug，每次 jail 停止时配置的 `devfs(8)` 规则会从 `devfs(8)` 中移除。未来版本可能会修复；目前有一个补丁可用（`https://github.com/iocage/iocage/pull/1106`）可解决该问题。
+> **注意**：由于 **iocage(8)** 的一个 bug，每次 jail 停止时配置的 **devfs(8)** 规则会从 **devfs(8)** 中移除。未来版本可能会修复；目前有一个补丁可用（`https://github.com/iocage/iocage/pull/1106`）可解决该问题。
 
 使用最简防火墙配置测试——检查阻止特定 IP 地址是否有效，以及状态是否如预期创建：
 
@@ -957,7 +957,7 @@ root@jailhost:~ #
 
 ```
 
-> **注意**：同一桥接上的 jail/VM 可设置/盗用 IP、更改 MAC 地址，所以这层保护只足以防止不必要/意外的流量发生。如需更严格的安全，可在 jailhost 上启用 `ipfw(8)` 的二层过滤，并在宿主桥接和 jail 的 epair 接口之间插入额外的桥接。这种配置的细节超出本文范围。
+> **注意**：同一桥接上的 jail/VM 可设置/盗用 IP、更改 MAC 地址，所以这层保护只足以防止不必要/意外的流量发生。如需更严格的安全，可在 jailhost 上启用 **ipfw(8)** 的二层过滤，并在宿主桥接和 jail 的 epair 接口之间插入额外的桥接。这种配置的细节超出本文范围。
 
 Jail 和 VM 是虚拟化技术，为资源供应增加了大量灵活性和敏捷性。
 
@@ -1164,11 +1164,11 @@ guest-b
 '----------------------------------'
 ```
 
-本例使用多播模式。VXLAN 也可配置为单播模式（详见 `vxlan(4)`）。
+本例使用多播模式。VXLAN 也可配置为单播模式（详见 **vxlan(4)**）。
 
 ### 网关配置
 
-网关主机使用简单的 `ipfw(8)`/`natd(8)` 配置和两个 `vxlan(4)` 接口。假设上行链路已配置好。
+网关主机使用简单的 **ipfw(8)**/**natd(8)** 配置和两个 **vxlan(4)** 接口。假设上行链路已配置好。
 
 防火墙、NAT 和 IP 转发：
 
@@ -1362,7 +1362,7 @@ $ ^D
 
 安装 `sysutils/iocage`：
 
-> **注意**：你可能想通过修改 **/etc/fstab** 永久挂载 `fdescfs(5)`。
+> **注意**：你可能想通过修改 **/etc/fstab** 永久挂载 **fdescfs(5)**。
 
 ```sh
 root@jailhost-a:~ # pkg install py36-iocage
@@ -1453,7 +1453,7 @@ root@jailhost-b:~ # reboot
 
 安装 `sysutils/iocage`：
 
-> **注意**：你可能想通过修改 **/etc/fstab** 永久挂载 `fdescfs(5)`。
+> **注意**：你可能想通过修改 **/etc/fstab** 永久挂载 **fdescfs(5)**。
 
 ```sh
 root@jailhost-b:~ # pkg install py36-iocage
@@ -1619,7 +1619,7 @@ root@jailhost-b:~ # reboot
 
 有多种工具可帮助排查 VXLAN 设置。
 
-使用 `ifconfig(8)` 确认接口确实正确配置：
+使用 **ifconfig(8)** 确认接口确实正确配置：
 
 ```sh
 root@jailhost-b:~ # ifconfig vxlan111
@@ -1638,7 +1638,7 @@ nd6 options=29<PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL>
 
 > **注意**：MTU 设为 1450（因为 VXLAN 使用 50 字节头部信息）。如果所有组件都支持，建议在网络中配置 jumbo frames。
 
-使用 `sockstat(1)` 确认主机确实监听标准 VXLAN 端口 4789：
+使用 **sockstat(1)** 确认主机确实监听标准 VXLAN 端口 4789：
 
 ```sh
 root@jailhost-b:~ # sockstat -l4 | grep 4789
@@ -1651,7 +1651,7 @@ udp4
 *:*
 ```
 
-使用 `ifmcstat(8)` 验证多播配置合理：
+使用 **ifmcstat(8)** 验证多播配置合理：
 
 ```sh
 root@jailhost-b:~ # ifmcstat -i em0
@@ -1666,7 +1666,7 @@ group 224.0.0.1 mode exclude
 mcast-macaddr 01:00:5e:00:00:01
 ```
 
-使用 `tcpdump(1)` 检查 VXLAN 流量：
+使用 **tcpdump(1)** 检查 VXLAN 流量：
 
 ```sh
 root@jailhost-b:~ # tcpdump -vni em0 -f "udp && port 4789"
@@ -1680,7 +1680,7 @@ ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 10.0.111.1 tell\
 ...
 ```
 
-使用 `arp(8)` 检查 ARP 表（在 VM 内也可）：
+使用 **arp(8)** 检查 ARP 表（在 VM 内也可）：
 
 ```sh
 root@jailhost-b:~ # arp -an
@@ -1694,7 +1694,7 @@ root@jailhost-b:~ # arp -an
 ...
 ```
 
-使用 `sysctl(8)` 检查 VXLAN 转发表：
+使用 **sysctl(8)** 检查 VXLAN 转发表：
 
 ```sh
 root@jailhost-b:~ # sysctl net.link.vxlan.111.ftable.dump
@@ -1727,13 +1727,13 @@ root@jailhost-b:~ # ifconfig vxlan222 vxlanflush
 
 ## 结论与延伸阅读
 
-本文意在通过示例展示 FreeBSD 虚拟化特性的各种网络配置方式。有意选择使用 Ports/包中的第三方工具，因为许多用户在实践中会尝试这些工具起步。即使特定工具不会进入生产环境，原型阶段使用它们更易实验、感知已配置的内容，再构建更精简的方案。
+本文意在通过示例展示 FreeBSD 虚拟化特性的各种网络配置方式。有意选择使用 Ports/软件包中的第三方工具，因为许多用户在实践中会尝试这些工具起步。即使特定工具不会进入生产环境，原型阶段使用它们更易实验、感知已配置的内容，再构建更精简的方案。
 
 所示示例绝非穷举，但应有助于读者入门，找出哪种配置可能满足其具体需求。建议进一步阅读以充分理解可用选项及其影响。 •
 
 ---
 
-**Michael Gmelin** 在巴伐利亚乡村长大，90 年代在一家用户友好的 rural userfriendly.org 风格 ISP 开始使用 FreeBSD。本世纪头十年大部分时间在开发软件以自动化 ISP 和网络运营商流程，接近十年末开始为项目贡献。后来投身新兴金融科技行业构建支付系统，最终在 2014 年成为 FreeBSD committer。他用多种语言写过软件，最近喜欢上 Rust。业余时间他喜欢玩经典电子游戏和运行 demoscene 作品。离开键盘时，他享受（制作）音乐、骑行、木工和烹饪。Perl 在他心里永远有一席之地。
+**Michael Gmelin** 在巴伐利亚乡村长大，90 年代在一家乡村的 userfriendly.org 风格 ISP 开始使用 FreeBSD。本世纪头十年大部分时间在开发软件以自动化 ISP 和网络运营商流程，接近十年末开始为项目贡献。后来投身新兴金融科技行业构建支付系统，最终在 2014 年成为 FreeBSD committer。他用多种语言写过软件，最近喜欢上 Rust。业余时间他喜欢玩经典电子游戏和运行 demoscene 作品。离开键盘时，他享受（制作）音乐、骑行、木工和烹饪。Perl 在他心里永远有一席之地。
 
 ## 一些主题信息的优秀来源
 
