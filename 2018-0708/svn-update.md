@@ -8,9 +8,9 @@
 
 pNFS 服务将读/写操作与所有其他 NFSv4.1 元数据操作分离。希望这种分离允许配置的 pNFS 服务超过单个 NFS 服务器的存储容量和/或 I/O 带宽限制。可以在数据服务器（DSs）中配置镜像，这样 MDS 文件的数据存储文件将镜像在两个或更多 DSs 上。使用此功能时，DS 故障不会停止 pNFS 服务，并且故障的 DS 可以在修复后恢复，同时 pNFS 服务继续运行。虽然双向镜像是常态，但可以设置最多四个或 DSs 数量（取较小者）的镜像级别。元数据服务器始终是单点故障，就像单个 NFS 服务器一样。
 
-允许 sysctl(8) 为单个节点设置数值数组 — <https://svnweb.freebsd.org/changeset/base/330711>
+允许 **sysctl(8)** 为单个节点设置数值数组 — <https://svnweb.freebsd.org/changeset/base/330711>
 
-一些节点返回值数组（例如，kern.cp_time）。sysctl(8) 知道如何显示返回多个值的节点的值（它打印每个数值，用空格分隔）。但是，直到现在，sysctl(8) 只能为 sysctl 节点设置单个值。此更改允许 sysctl 接受包含多个值（由空格或逗号分隔）的数字 sysctl 节点的新值。sysctl(8) 将此列表解析为数组，并将该数组作为“新”值传递给 sysctl(2)。
+大多数 sysctl 节点只返回单个值，但一些节点返回值数组（例如，kern.cp_time）。**sysctl(8)** 知道如何显示返回多个值的节点的值（它打印每个数值，用空格分隔）。但是，直到现在，**sysctl(8)** 只能为 sysctl 节点设置单个值。此更改允许 sysctl 接受包含多个值（由空格或逗号分隔）的数字 sysctl 节点的新值。**sysctl(8)** 将此列表解析为数组，并将该数组作为“新”值传递给 **sysctl(2)**。
 
 引入 TCP 高精度定时器系统（tcp_hpts）— <https://svnweb.freebsd.org/changeset/base/332770>
 
@@ -26,7 +26,7 @@ AF_UNIX：使 unix 套接字锁定更精细 — <https://svnweb.freebsd.org/chan
 
 修复低延迟网络上的虚假重传恢复 — <https://svnweb.freebsd.org/changeset/base/333346>
 
-TCP 的平滑 RTT（SRTT）可能比实际观察到的 RTT 大得多。这可能是因为 hz 将 VM 中可计算的 RTT 限制为 10ms，或使用默认 1000hz 时为 1ms，或者仅仅因为 SRTT 最近纳入了较大的值。如果 ACK 在计算的 badrxtvin（now + SRTT）之前到达：
+TCP 的平滑 RTT（SRTT）可能比实际观察到的 RTT 大得多。这可能是因为 hz 将 VM 中可计算的 RTT 限制为 10ms，或使用默认 1000hz 时为 1ms，或者仅仅因为 SRTT 最近纳入了较大的值。如果 ACK 在计算的 badrxtwin（now + SRTT）之前到达：
 
 ```c
 tp->t_badrxtwin = ticks + (tp->t_srtt >> (TCP_RTT_SHIFT + 1));
@@ -40,15 +40,15 @@ tp->t_badrxtwin = ticks + (tp->t_srtt >> (TCP_RTT_SHIFT + 1));
 
 导入 netdump 客户端代码 — <https://svnweb.freebsd.org/changeset/base/333283>
 
-这是一种系统组件，允许内核在 panic 后将核心转储到远程主机，而不是本地存储设备。服务器组件在 Ports 树中可用。netdump 在无盘系统上特别有用。netdump(4) 手册页包含一些描述协议的详细信息。要使用 netdump，内核必须使用 NETDUMP 选项编译。
+这是一种系统组件，允许内核在 panic 后将核心转储到远程主机，而不是本地存储设备。服务器组件在 Ports 树中可用。netdump 在无盘系统上特别有用。**netdump(4)** 手册页包含一些描述协议的详细信息。要使用 netdump，内核必须使用 NETDUMP 选项编译。
 
 改善 VM 页队列可扩展性 — <https://svnweb.freebsd.org/changeset/base/332974>
 
 当前必须同时持有页锁和页队列锁才能在给定页队列中入队、出队或重新排队页。队列锁是许多工作负载中的可扩展性瓶颈。此更改通过批处理队列操作减少页队列锁争用。为了解开页和页队列锁，使用每 CPU 批队列来引用具有待处理队列操作的页。请求的操作编码在页的 aflags 字段中，在持有页锁后，页入队以进行延迟批处理。页队列扫描同样经过优化以最小化持有页队列锁时执行的工作量。
 
-为 cron(1) 添加新功能和语法，以允许作业以给定间隔运行 — <https://svnweb.freebsd.org/changeset/base/334817>
+为 **cron(1)** 添加新功能和语法，以允许作业以给定间隔运行 — <https://svnweb.freebsd.org/changeset/base/334817>
 
-实际目标是避免前一次作业调用重叠到新调用，或避免持续时间长且没有立即启动点的作业间隔过短。间隔作业的另一个有用效果可以在集群中的机器周期性通信时注意到。基于时间运行任务会在节点上造成过多负载。基于间隔运行可分散调用，跨集群中的机器。
+实际目标是避免前一次作业调用重叠到新调用，或避免持续时间长且没有立即启动点的作业间隔过短。间隔作业的另一个有用效果可以在集群中的机器与单个节点周期性通信时注意到。基于时间运行任务会在节点上造成过多负载。基于间隔运行可在集群中的各台机器间分散调用。
 
 使用新的 SO_REUSEPORT_LB 选项负载均衡套接字 — <https://svnweb.freebsd.org/changeset/base/332894>
 
