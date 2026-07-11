@@ -348,7 +348,7 @@ root@jailhost:~ # service pf reload
 
 当创建网络类型为 `public-bridge` 的 jail 时，pot 自动使用 VNET。基于 **/usr/local/etc/pot/pot.cfg** 中的”内部虚拟网络配置”，它创建桥接接口并分配一个 IP 地址作为 jail 的默认网关。
 
-创建 jail 时，pot 从配置的范围自动分配静态 IP 地址。jail 启动时，会创建一个 `epair(4)` 接口，并将其”a 端”加入桥接：
+创建 jail 时，pot 从配置的范围自动分配静态 IP 地址。jail 启动时，会创建一个 **epair(4)** 接口，并将其”a 端”加入桥接：
 
 ```sh
 root@jailhost:~ # pot vnet-start
