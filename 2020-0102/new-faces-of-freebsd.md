@@ -1,6 +1,6 @@
 # FreeBSD 新面孔
 
-作者：DRU LAVIGNE
+作者：**DRU LAVIGNE**
 
 本专栏聚焦近期获得 commit 权限的贡献者，并向 FreeBSD 社区介绍他们。
 
