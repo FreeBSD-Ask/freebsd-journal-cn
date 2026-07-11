@@ -422,7 +422,7 @@ status: active
 nd6 options=29<PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL>
 ```
 
-`epair(4)` 接口的”b 端”由 jail 使用，jail 按其 **/etc/rc.conf** 中的配置设置静态 IP 地址：
+**epair(4)** 接口的”b 端”由 jail 使用，jail 按其 **/etc/rc.conf** 中的配置设置静态 IP 地址：
 
 ```sh
 root@jailhost:~ # jexec vnetpot1 grep ifconfig /etc/rc.conf
@@ -451,7 +451,7 @@ status: active
 nd6 options=29<PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL>
 ```
 
-使用 **/etc/pf.conf** 中配置的 anchor，pot 向 `pf(4)` 添加 NAT 规则，可通过 `pfctl(8)` 查看：
+使用 **/etc/pf.conf** 中配置的 anchor，pot 向 **pf(4)** 添加 NAT 规则，可通过 **pfctl(8)** 查看：
 
 ```sh
 root@jailhost:~ # pfctl -s nat -a pot-nat
