@@ -1,4 +1,4 @@
-# The Daemon’s Dozen——FreeBSD 12.0 简介
+# The Daemon's Dozen——FreeBSD 12.0 简介
 
 作者：**Michael W Lucas**
 
