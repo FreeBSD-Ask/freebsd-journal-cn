@@ -24,7 +24,7 @@
 
 当然，他会用股东价值、取悦客户、FIPS 合规之类花哨行话来包装，但归根结底都是让他高兴。他存在的意义是让他的老板高兴，以此类推。一家公司就是一棵拍马屁的树，像 TLS 信任链，但更恶毒。
 
-你的老板其实并不想要一本如何使用 `ls(1)` 的手册。他若坚持要，让他掏出撬棍撬开钱包，买一本 Nemeth 的《Unix and Linux System Administration Handbook》。他想要的是一个又大又软的泰迪熊活页夹，能抱在怀里向他的老板炫耀。毕竟他存在的意义是让他的老板高兴。
+你的老板其实并不想要一本如何使用 **ls(1)** 的手册。他若坚持要，让他掏出撬棍撬开钱包，买一本 Nemeth 的《Unix and Linux System Administration Handbook》。他想要的是一个又大又软的泰迪熊活页夹，能抱在怀里向他的老板炫耀。毕竟他存在的意义是让他的老板高兴。
 
 所以，给他想要的，而不是他要求的。
 
@@ -66,4 +66,6 @@
 有问题想问 Michael？
 请发送至 <letters@freebsdjournal.org>
 
-MICHAEL W LUCAS 最近出版的图书包括《SNMP Mastery》、《Cash Flow for Creators》和《Drinking Heavy Water》，以及更多作品，详见 <https://mwl.io>。绝不允许他靠近用户。
+---
+
+**MICHAEL W LUCAS** 最近出版的图书包括《SNMP Mastery》、《Cash Flow for Creators》和《Drinking Heavy Water》，以及更多作品，详见 <https://mwl.io>。绝不允许他靠近用户。
