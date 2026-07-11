@@ -73,7 +73,7 @@ compile-with "/usr/local/bin/yasm -g dwarf2 -f elf64 ${INTELISAINCLUDES} -o ${.T
 
 ![Figure 2：Rev H 上内核 sendfile 配合 BoringSSL 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-02.png)
 
-作为最终比较，我们部署了 ISA 库，同样在内核中使用 `sendfile`。结果见图 3，显示了又一次改进，使我们达到 18Gbps，但通常维持在 16–16.5Gbps 左右。
+作为最终比较，我们部署了 ISA 库，同样在内核中使用 sendfile。结果见图 3，显示了又一次改进，使我们达到 18Gbps，但通常维持在 16–16.5Gbps 左右。
 
 ![Figure 3：Rev H 上内核 sendfile 配合 ISA-L 的性能](../png/2016-0910/improving-high-bandwidth-tls-in-the-freebsd-kernel-03.png)
 
