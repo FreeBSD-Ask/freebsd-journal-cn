@@ -390,7 +390,7 @@ playbook 中的以下任务负责把它们放在正确的位置，并用 `vars.y
          - mapred-site.xml
 ```
 
-一个名为 `slaves`（较新版本重命名为 `workers`）的文件包含应作为 datanode 的主机名。定义为主节点的机器也可以参与并处理 map-reduce 作业，因此文件中有 localhost。此任务将定义为 Ansible playbook 参数的 worker 添加到该文件中：
+名为 `slaves`（较新版本重命名为 `workers`）的文件包含应作为 datanode 的主机名。定义为主节点的机器也可以参与并处理 map-reduce 作业，因此文件中有 localhost。此任务将定义为 Ansible playbook 参数的 worker 添加到该文件中：
 
 ```ini
      - name: "Create and populate the slaves file"
