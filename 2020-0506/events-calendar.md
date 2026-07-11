@@ -1,7 +1,7 @@
 # 活动日历
 
 截至 2020 年 6 月的 BSD 活动
-作者：ANNE DICKISON 和 DRU LAVIGNE
+- 作者：**ANNE DICKISON** 和 **DRU LAVIGNE**
 
 SCaLE 18x • 3 月 5–8 日 • 美国加州帕萨迪纳
 <https://www.socallinuxexpo.org/scale/18x>
@@ -11,7 +11,7 @@ SCaLE 18x——第 18 届年度南加州 Linux 博览会——在帕萨迪纳会
 FOSSASIA Summit 2020 • 3 月 19–22 日 • 新加坡
 <https://summit.fossasia.org/>
 
-FOSSASIA Summit 是面向开发者、初创公司与 IT 专业人士的亚洲领先开放技术大会，在新加坡终身学习学院举办。基金会执行董事 Deb Goodkin 将发表演讲《FreeBSD，另一种类 UNIX 操作系统——为什么你应该参与其中！》。
+FOSSASIA Summit 是亚洲领先的开放技术大会，面向开发者、初创公司与 IT 专业人士，在新加坡终身学习学院举办。基金会执行董事 Deb Goodkin 将发表演讲《FreeBSD，另一种类 UNIX 操作系统——为什么你应该参与其中！》。
 
 BSDCan • 6 月 3–6 日 • 加拿大渥太华
 <https://www.bsdcan.org/2020/>

@@ -3,17 +3,17 @@
 - 原文链接：[FreeBSD Desktop Distributions](https://freebsdfoundation.org/wp-content/uploads/2020/07/FreeBSD-Guides-FreeBSD-Desktop-Distrobutions.pdf)
 - 作者：**DREW GURKOWSKI**
 
-**FreeBSD 桌面发行版** 将 FreeBSD 操作系统带入了一个新方向，同时仍依赖于 FreeBSD 的强大和稳定的基础操作系统。从集成的桌面环境、便携式 USB 系统到数据恢复工具，FreeBSD 已被广泛应用于各种开源项目。
+**FreeBSD 桌面发行版** 将 FreeBSD 操作系统带入了一个新方向，同时仍依赖于 FreeBSD 强大而稳定的基础操作系统。从集成的桌面环境、便携式 USB 系统到数据恢复工具，FreeBSD 已广泛应用于各种开源项目。
 
 ## FuryBSD
 
-**译者注：FuryBSD 已经终止开发**
+**译者注：FuryBSD 已终止开发**
 
 **适用于从初学者到高级用户**
 
 [项目官网](https://www.furybsd.org/)
 
-“FuryBSD 是一个全新的开源 FreeBSD 桌面系统。FuryBSD 向以往的桌面 BSD 项目致敬，如 PC-BSD 和 TrueOS。FuryBSD 拥有图形界面，并增加了如实时混合 USB / DVD 镜像等额外工具。”
+"FuryBSD 是全新的开源 FreeBSD 桌面系统。FuryBSD 向以往的桌面 BSD 项目致敬，如 PC-BSD 和 TrueOS。FuryBSD 拥有图形界面，并增加了如实时混合 USB / DVD 镜像等额外工具。"
 
 ### FuryBSD 的独特之处
 
@@ -25,7 +25,7 @@
   - Firefox，
   - XFCE 桌面环境。
 - 小巧的 1.8GB 下载大小。
-- 在原版 FreeBSD 上添加了一个实时混合 USB / DVD 镜像。
+- 在原版 FreeBSD 上添加了实时混合 USB / DVD 镜像。
 - 可读写的文件系统，在提交到磁盘之前验证硬件是否正常工作。
 - 最小化磁盘承诺。
 - 自动安装图形桌面环境。
@@ -42,7 +42,7 @@
   - 最小化初学者可能会遇到的复杂设置过程。
 - 包含 Xorg 工具，能让用户在不安装每个驱动程序的情况下尝试不同的驱动组合。
   - 可在不测试每个驱动的情况下使用不同的驱动组合。
-- 除非系统未安装并重启，否则每个用户更改都会被保存。
+- 除非系统未安装就重启，否则每个用户更改都会被保存。
 - 最近为 FuryBSD 用户发布了自己的论坛。
 
 #### 后续计划
@@ -87,15 +87,15 @@
 - 集中的系统偏好设置。
 - 强调易于使用的图形界面，适合新用户。
 - BSD 风格的命令行。
-- 图形化的 Ports 和包管理器。
+- 图形化的 Ports 和软件包管理器。
 - 庞大的用户社区，包括邮件列表和社区论坛。
 - 丰富的文档资源。
-- 使用 Bugzilla 进行故障排除。
+- 通过 Bugzilla 排查故障。
 
 #### 后续计划
 
 - 扩展安全功能。
-- 重写包集群系统。
+- 重写软件包集群系统。
 - 维护和更新 Ports。
 
 ## GhostBSD
@@ -104,7 +104,7 @@
 
 [项目官网](https://www.ghostbsd.org/)
 
-“GhostBSD 是一个简单、用户友好的操作系统，基于 FreeBSD 操作系统的传奇安全性和稳定性。GhostBSD 提供了 FreeBSD 操作系统的所有优点，并结合了专注于简化新手用户体验的特点。”
+“GhostBSD 是简单、用户友好的操作系统，基于 FreeBSD 操作系统的传奇安全性和稳定性。GhostBSD 提供了 FreeBSD 操作系统的所有优点，并结合了专注于简化新手用户体验的特点。”
 
 ### GhostBSD 的独特之处
 
@@ -116,7 +116,7 @@
 - 免费开源，源代码托管在 GitHub 上。
 - 为多媒体文件优化的编解码器。
 - 项目发布以及社区发布。
-- 拥有 30,000+ 应用程序的 GhostBSD 包存储库。
+- 拥有 30,000+ 应用程序的 GhostBSD 软件包存储库。
   - 采用慢速滚动发布。
 - 可通过命令行进行更新。
 - 2018 年切换到 TrueOS。
@@ -145,7 +145,7 @@
 
 [项目官网](https://www.nomadbsd.org/)
 
-“NomadBSD 是一个基于 FreeBSD 的持久化实时系统，适用于 USB 闪存驱动器。它具备自动硬件检测和设置，配置为开箱即用的桌面系统，但也可以用于数据恢复、教育用途或测试 FreeBSD 的硬件兼容性。”
+“NomadBSD 是基于 FreeBSD 的持久化实时系统，适用于 USB 闪存驱动器。它具备自动硬件检测和设置，配置为开箱即用的桌面系统，但也可以用于数据恢复、教育用途或测试 FreeBSD 的硬件兼容性。”
 
 ### NomadBSD 的独特之处
 
@@ -175,4 +175,6 @@
   
 ---
 
-**DREW GURKOWSKI**，FreeBSD 基金会
+**DREW GURKOWSKI**
+
+FreeBSD 基金会
