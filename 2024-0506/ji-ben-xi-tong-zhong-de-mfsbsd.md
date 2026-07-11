@@ -58,7 +58,7 @@ mfsBSD 的作者是 Martin Matuška（`mm@FreeBSD.org`）。回顾 mfsBSD 存储
 
 三个月又二十二天后，将 mfsBSD 集成到基本系统中的项目终于完成了，历经反复调试（很多 Bug 是通过谷歌搜索和翻阅所有过去的 GitHub 问题来解决的），测试（用我的两台笔记本电脑 Thinkpad T440 和 P17 运行 shell 脚本），并且我向导师们问了太多问题。一整套三个补丁提交到了 Phabricator⑤。
 
-简单地说，第一个提交“mfsBSD: Vendor import mfsBSD（mfsBSD: 引入 mfsBSD）”将 mfsBSD 集成为 `contrib/mfsbsd`。主要提交“release: Integrate mfsBSD image build targets into the release tool set（发行：将 mfsBSD 镜像构建目标集成到发行工具集）”：在 `release/Makefile` 中添加了目标 `mfsbsd-se.img` 和 `mfsbsd-se.iso`（作为 `release/Makefile.mfsbsd`）。最后一次提交“release(7): Add entries for the new mfsBSD build targets（release(7): 为新的 mfsBSD 构建目标添加条目）”在 `share/man/man7/release.7` 中添加了相应条目。这意味着，现在我们可以在构建所有 FreeBSD 安装介质（如 cdrom、dvdrom、memstick 和 mini-memstick）的同时，在同一份发行版 Makefile 中使用 `make release WITH_MFSBSD=1` 构建 mfsBSD。
+简单地说，第一个提交“mfsBSD: Vendor import mfsBSD（mfsBSD: 引入 mfsBSD）”将 mfsBSD 集成为 `contrib/mfsbsd`。主要提交“release: Integrate mfsBSD image build targets into the release tool set（发行：将 mfsBSD 镜像构建目标集成到发行工具集）”：在 `release/Makefile` 中添加了目标 `mfsbsd-se.img` 和 `mfsbsd-se.iso`（作为 `release/Makefile.mfsbsd`）。最后一次提交“**release(7)**: Add entries for the new mfsBSD build targets（**release(7)**: 为新的 mfsBSD 构建目标添加条目）”在 `share/man/man7/release.7` 中添加了相应条目。这意味着，现在我们可以在构建所有 FreeBSD 安装介质（如 cdrom、dvdrom、memstick 和 mini-memstick）的同时，在同一份发行版 Makefile 中使用 `make release WITH_MFSBSD=1` 构建 mfsBSD。
 
 现在正在审查补丁集。mfsBSD 之前位于 FreeBSD 发布工具链以外，仅生成了 release 版本。我的设想是将这个补丁集作为基本系统的一部分，提供 mfsBSD 镜像，并通过调用 `cd /usr/src/release && make release WITH_MFSBSD=1` 构建定制 mfsBSD 镜像，然后在 **/usr/obj/usr/src/${ARCH}/release/** 创建 `mfsbsd-se.img` 和 `mfsbsd-se.iso`。
 

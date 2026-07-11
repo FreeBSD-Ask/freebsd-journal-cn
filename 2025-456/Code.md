@@ -3,7 +3,7 @@
 - 原文：[Overlord: Deploy Jails as Fast as You Code](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/overlord-deploy-jails-as-fast-as-you-code/)
 - 作者：Jesús Daniel Colmenares Oviedo
 
-当我创建 [AppJail](https://github.com/DtxdF/AppJail) 时——这是一款完全用 `sh(1)` 和 C 语言编写的、基于 BSD-3 许可证的开源框架，用于利用 FreeBSD Jail 创建隔离、便携且易于部署的类似应用程序的环境——我的初衷是用它来测试 Ports，以避免破坏我的主环境。如今，AppJail 不仅仅是一个用于测试 Ports 的脚本，它变得高度灵活，具备许多非常实用的自动化功能。
+当我创建 [AppJail](https://github.com/DtxdF/AppJail) 时——这是一款完全用 **sh(1)** 和 C 语言编写的、基于 BSD-3 许可证的开源框架，用于利用 FreeBSD Jail 创建隔离、便携且易于部署的类似应用程序的环境——我的初衷是用它来测试 Ports，以避免破坏我的主环境。如今，AppJail 不仅仅是一个用于测试 Ports 的脚本，它变得高度灵活，具备许多非常实用的自动化功能。
 
 当 AppJail 达到稳定阶段并被用于多种系统后，我意识到为每个想要的服务都部署一个 Jail 并不可行，尤其是在需要部署越来越多服务的情况下。于是，Director 应运而生。
 
@@ -13,7 +13,7 @@ Director 是 AppJail“一切皆代码”理念的首次实践。它将 Jail 组
 
 Director 将每个 Jail 视为“易失”的。这并不意味着 Jail 停止或系统重启后数据会丢失，而是意味着 Director 认为销毁 Jail 是安全的，因为你已经明确区分了应持久保存的数据和被视为易失的数据。
 
-更多细节见 `appjail-ephemeral(7)` 手册页，原则和上述相同。
+更多细节见 **appjail-ephemeral(7)** 手册页，原则和上述相同。
 
 值得注意的是，Director 本身不负责部署 Jail，它依赖执行配置、安装包等操作的指令，因此大量利用了 AppJail 的 Makejails 功能——这是一种简易文本文件，自动化创建 Jail 的步骤。Centralized Repository（集中仓库）中已有许多 Makejail 文件，但你也可以使用自己的仓库来托管。
 
@@ -157,7 +157,7 @@ datacenter: http://127.0.0.1:8888
 
 元数据用于创建小型文件（例如配置文件），这些文件可以在部署项目或虚拟机时使用。虽然像 GitLab、GitHub、Gitea 等 Git 托管服务与 Makejails 配合使用非常方便，但你也可以使用元数据来代替依赖 Git 托管，以进一步配置你正在部署的服务或虚拟机。
 
-元数据的另一个优点是可以在不同部署之间共享。例如，通过部署共享相同 `sshd_config(5)` 和 `authorized_keys` 文件的虚拟机，实现配置复用。
+元数据的另一个优点是可以在不同部署之间共享。例如，通过部署共享相同 **sshd_config(5)** 和 `authorized_keys` 文件的虚拟机，实现配置复用。
 
 tor.yml:
 
@@ -277,7 +277,7 @@ projects:
 
 Overlord 能够借助出色的 [vm-bhyve](https://github.com/churchers/vm-bhyve) 项目部署虚拟机。虚拟机可以隔离很多 Jail 无法做到的部分，尽管这样会带来一定的开销，但根据你的使用场景，这种开销可能并不是问题。
 
-这个部署过程如下：会创建一个 director 文件（由 Overlord 内部完成），该文件用于进一步创建一个 Jail，代表一个必须安装了 [vm-bhyve](https://github.com/churchers/vm-bhyve) 的环境，且需要配置使用 FreeBSD 支持的防火墙，和配置虚拟机使用的桥接网络。听起来很复杂，但有一个 [Makejail](https://github.com/DtxdF/vm-makejail) 专门完成这些工作，可以查看该项目了解细节。上述 Makejail 会创建一个安装了 [vm-bhyve-devel](https://freshports.org/sysutils/vm-bhyve-devel) 的环境，配置 `pf(4)` 防火墙，并创建一个带有分配的 IPv4（192.168.8.1/24）的桥接，因此我们必须给虚拟机分配一个该网段内的 IPv4 地址。`pf(4)` 并未配置进一步隔离连接，因此虚拟机内的应用程序可以“逃逸”访问其他服务，这是否理想取决于应用的具体需求。
+这个部署过程如下：会创建一个 director 文件（由 Overlord 内部完成），该文件用于进一步创建一个 Jail，代表一个必须安装了 [vm-bhyve](https://github.com/churchers/vm-bhyve) 的环境，且需要配置使用 FreeBSD 支持的防火墙，和配置虚拟机使用的桥接网络。听起来很复杂，但有一个 [Makejail](https://github.com/DtxdF/vm-makejail) 专门完成这些工作，可以查看该项目了解细节。上述 Makejail 会创建一个安装了 [vm-bhyve-devel](https://freshports.org/sysutils/vm-bhyve-devel) 的环境，配置 **pf(4)** 防火墙，并创建一个带有分配的 IPv4（192.168.8.1/24）的桥接，因此我们必须给虚拟机分配一个该网段内的 IPv4 地址。**pf(4)** 并未配置进一步隔离连接，因此虚拟机内的应用程序可以“逃逸”访问其他服务，这是否理想取决于应用的具体需求。
 
 vm.yml:
 
@@ -977,7 +977,7 @@ datacenter: http://127.0.0.1:8888
          message: None
 ```
 
-我们的 Etcd 集群和 DNS 服务器均已启动运行。客户端应配置为通过这些 DNS 服务器解析主机名，因此请在它们的 `resolv.conf(5)` 或类似文件中配置。
+我们的 Etcd 集群和 DNS 服务器均已启动运行。客户端应配置为通过这些 DNS 服务器解析主机名，因此请在它们的 **resolv.conf(5)** 或类似文件中配置。
 
 示例 **/etc/resolv.conf** 配置如下：
 
@@ -1598,7 +1598,7 @@ autoScale:
     - provider
 ```
 
-正如你可能已经注意到的，我们指定了两种类型的标签。这体现了自动扩缩部署与非自动扩缩部署之间的细微差别。与非自动扩缩部署不同，`deployIn.labels` 中的标签用于匹配相应的服务器以进行自动扩缩和监控，换句话说，匹配这些标签（在本例中为 `desktop`）的服务器将负责部署、监控，和在必要时重新部署。另一方面，匹配 `autoScale.labels` 中标签（在本例中为 `services` 和 `provider`）的服务器则用于以非自动扩缩部署的方式部署项目。我们已指定该项目至少包含三个副本。我们还可以指定其他内容，例如 `rctl(8)` 规则，但为了简洁起见，这样就足够了。
+正如你可能已经注意到的，我们指定了两种类型的标签。这体现了自动扩缩部署与非自动扩缩部署之间的细微差别。与非自动扩缩部署不同，`deployIn.labels` 中的标签用于匹配相应的服务器以进行自动扩缩和监控，换句话说，匹配这些标签（在本例中为 `desktop`）的服务器将负责部署、监控，和在必要时重新部署。另一方面，匹配 `autoScale.labels` 中标签（在本例中为 `services` 和 `provider`）的服务器则用于以非自动扩缩部署的方式部署项目。我们已指定该项目至少包含三个副本。我们还可以指定其他内容，例如 **rctl(8)** 规则，但为了简洁起见，这样就足够了。
 
 ```yml
 $ overlord apply -f hello-http.yml

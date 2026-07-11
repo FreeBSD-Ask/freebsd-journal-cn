@@ -9,7 +9,7 @@
 
 Tom Jones 继续撰写他那栏目名恰如其分的“回忆录”。本期中，Tom 采访了 Warner Losh——一位资深的 FreeBSD 贡献者，以烧毁笔记本电脑等趣闻闻名。
 
-Benedict Reuschling 为读者详细讲解了如何使用 `poudriere(8)` 构建本地软件包——从设置自定义选项到向多台客户端机器部署已签名的软件包仓库。此外，在软件包方面，Charlie Li 介绍了 Python 生态中打包扩展的简史，以及让 FreeBSD 的 Ports 树适配最新迭代版本的工作。
+Benedict Reuschling 为读者详细讲解了如何使用 **poudriere(8)** 构建本地软件包——从设置自定义选项到向多台客户端机器部署已签名的软件包仓库。此外，在软件包方面，Charlie Li 介绍了 Python 生态中打包扩展的简史，以及让 FreeBSD 的 Ports 树适配最新迭代版本的工作。
 
 Jail 方面，Alonso Cárdenas 详细介绍了如何以 FreeBSD Jail 为基础，借助现有的开源工具 Wazuh 和 Caldera 构建网络安全训练平台。
 

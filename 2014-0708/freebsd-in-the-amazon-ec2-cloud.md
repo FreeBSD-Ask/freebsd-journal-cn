@@ -68,13 +68,13 @@ region = us-east-1
 
 ## Amazon 弹性计算云（EC2）
 
-亚马逊弹性计算云（EC2）核心上是按小时计费的、运行于 Xen 虚拟机监控器下的虚拟机。
+亚马逊弹性计算云（EC2）核心是按小时计费的虚拟机，运行于 Xen 虚拟机监控器下。
 
 当 EC2 在 2006 年首次推出时，“租用虚拟服务器”的概念早已成熟，许多公司都曾使用 FreeBSD jail 或 Xen 等虚拟化系统提供此类服务，但这类服务通常需要一次租用一个月甚至更长时间，虚拟服务器的作用仅限于作为专用服务器的廉价替代品。通过引入按小时计费的虚拟机并提供快速、自动配置新虚拟机的 API，EC2 带来了虚拟化的全新益处——灵活性。
 
 不再按月租用服务器，EC2 让用户能够根据负载快速扩张和收缩——这正是“弹性计算云”中“弹性”的由来。
 
-启动一台 EC2 实例——其实任何虚拟机都一样——需要指定三个重要参数：在哪里启动虚拟机、启动什么类型的虚拟机、和虚拟机上运行什么。
+启动一台 EC2 实例——其实任何虚拟机都一样——需要指定三个重要参数：在哪里启动虚拟机、启动什么类型的虚拟机、在虚拟机上运行什么。
 
 ### AWS 区域
 
@@ -162,7 +162,7 @@ $ aws ec2 run-instances --image-id ami-69dae900 --instance-type m3.medium \
 $ aws ec2 get-console-output --output text --instance-id <你的实例 ID 写在这里> | more
 ```
 
-你会看到 FreeBSD 启动时通常的内核输出。往下滚动，你会看到一些标准 FreeBSD 安装中没有的东西。首先 freebsd-update 运行，下载并安装 FreeBSD 的关键更新——这很重要，因为在“云”中有一台虚拟机时，我们无法遵循通常的安全建议，即先登录并应用安全更新再把新服务器暴露到互联网上！之后你会看到 pkg 引导程序运行，awscli 包下载并安装。我们稍后就会看到如何更改首次启动时安装的包集合。最后，我们看到 FreeBSD 重启。这样如果 freebsd-update 安装了更新，或安装的包添加了 rc.d 脚本，我们就有运行最新代码、所有启用服务都已启动的系统。
+你会看到 FreeBSD 启动时通常的内核输出。往下滚动，你会看到一些标准 FreeBSD 安装中没有的东西。首先 freebsd-update 运行，下载并安装 FreeBSD 的关键更新——这很重要，因为在“云”中有一台虚拟机时，我们无法遵循通常的安全建议，即先登录并应用安全更新再把新服务器暴露到互联网上！之后你会看到 pkg 引导程序运行，awscli 软件包下载并安装。我们稍后就会看到如何更改首次启动时安装的软件包集合。最后，我们看到 FreeBSD 重启。这样如果 freebsd-update 安装了更新，或安装的软件包添加了 rc.d 脚本，我们就有运行最新代码、所有启用服务都已启动的系统。
 
 查看 FreeBSD 在做什么很有趣，但读控制台输出真正只有一个至关重要的原因：查看 SSH 主机密钥的指纹。这些主机密钥在系统首次启动时生成，而且——再说一遍，因为在云中——我们需要使用这种带外机制来确保我们连接到系统时，SSH 登录的是正确的机器。除了密钥生成时打印指纹外，指纹还会带 `ec2:` 前缀再次打印，以便自动工具容易提取。
 
@@ -225,9 +225,9 @@ configinit 能处理四种类型的文件：
 - 如果文件以字符 `#!` 开头，则该文件会被执行（这最有可能用于 shell 脚本）。
 - 否则，configinit 会尝试使用 bsdtar（自动检测多种归档和压缩格式）将该文件作为归档解压，然后递归处理其中每个文件，按字典序处理。
 
-此功能最直接的用法是向 FreeBSD 的“主配置文件” **/etc/rc.conf** 添加内容。configinit 代码会指示 rc 系统重新加载该文件，以确保改动的设置会在后续启动过程中反映出来。除了标准 FreeBSD 配置选项（例如 EC2 镜像中 rc.conf 文件里出现的 `sshd_enable="YES"`），EC2 镜像中预装的包还有几个有用的选项：
+此功能最直接的用法是向 FreeBSD 的“主配置文件” **/etc/rc.conf** 添加内容。configinit 代码会指示 rc 系统重新加载该文件，以确保改动的设置会在后续启动过程中反映出来。除了标准 FreeBSD 配置选项（例如 EC2 镜像中 rc.conf 文件里出现的 `sshd_enable="YES"`），EC2 镜像中预装的软件包还有几个有用的选项：
 
-`firstboot_pkgs_list="包列表"` 会让这些包在 EC2 实例首次启动时下载并安装，并自动启动相应服务：
+`firstboot_pkgs_list="包列表"` 会让这些软件包在 EC2 实例首次启动时下载并安装，并自动启动相应服务：
 
 - `firstboot_freebsd_enable="NO"` 会禁用启动时的 pkg 系统引导（在实例启动到无法访问 pkg 镜像的网络环境时有用）。
 - `firstboot_freebsd_update_enable="NO"` 会禁用启动时下载并安装关键勘误和安全更新。
@@ -250,7 +250,7 @@ configinit 的更复杂用法通常需要创建或编辑多个文件。在这种
 
 现在我们用 configinit 启动装好 Drupal 的系统。和之前一样的提醒——EC2 实例要花钱，所以确保探索完后清理。
 
-首先，为我们将要启动的实例创建一对新的 SSH 密钥。虽然我们现在不打算通过 SSH 登录实例，但如果你打算日后使用这台实例，就需要能够 SSH 进去执行升级（FreeBSD 和 Drupal 所需包的升级）和备份。运行以下命令：
+首先，为我们将要启动的实例创建一对新的 SSH 密钥。虽然我们现在不打算通过 SSH 登录实例，但如果你打算日后使用这台实例，就需要能够 SSH 进去执行升级（FreeBSD 和 Drupal 所需软件包的升级）和备份。运行以下命令：
 
 ```sh
 $ ssh-keygen -f ~/.ssh/drupal
@@ -280,11 +280,11 @@ apache22_enable="YES"
 mysql_enable="YES"
 ```
 
-第一行意思是“将本文件剩余部分追加到 **/etc/rc.conf**”，其余行是 rc.conf 设置，告诉 EC2 启动脚本为名为“drupal-user”的用户配置 SSH 登录；下载并安装 apache22、drupal7、mod_php5 和 mysql55-server 这些包；启动 Apache 2.2 和 MySQL。
+第一行意思是“将本文件剩余部分追加到 **/etc/rc.conf**”，其余行是 rc.conf 设置，告诉 EC2 启动脚本为名为“drupal-user”的用户配置 SSH 登录；下载并安装 apache22、drupal7、mod_php5 和 mysql55-server 这些软件包；启动 Apache 2.2 和 MySQL。
 
 文件 `apache` 写入 **/usr/local/etc/apache22/Includes/local.conf**，配置 Apache 从 **/usr/local/www/drupal7**（Drupal port 安装数据的位置）提供文件服务，并启用 PHP（Drupal 使用 PHP）。
 
-文件 `drupalinit` 是 shell 脚本，执行让 Drupal 工作所需的步骤。它将所有者设置为“www”用户，以便 Drupal 代码（通过 Apache 和 mod_php5 运行）能正常运行，并为 Drupal 创建 MySQL 数据库和用户。但有个问题：因为 configinit 在启动过程中早早运行——必然早到能添加指定要安装哪些包的 rc.conf 设置——此时还没有 mysql 守护进程运行，Drupal 中需要更改所有权的文件也还不存在。为了规避这一限制，`drupalinit` 脚本创建新 rc.d 脚本，该脚本会在包安装完毕且 mysql 运行后执行——脚本在初始化 Drupal 数据后会自我删除，以防下次系统启动时再次运行。
+文件 `drupalinit` 是 shell 脚本，执行让 Drupal 工作所需的步骤。它将所有者设置为“www”用户，以便 Drupal 代码（通过 Apache 和 mod_php5 运行）能正常运行，并为 Drupal 创建 MySQL 数据库和用户。但有个问题：因为 configinit 在启动过程中早早运行——必然早到能添加指定要安装哪些软件包的 rc.conf 设置——此时还没有 mysql 守护进程运行，Drupal 中需要更改所有权的文件也还不存在。为了规避这一限制，`drupalinit` 脚本创建新 rc.d 脚本，该脚本会在软件包安装完毕且 mysql 运行后执行——脚本在初始化 Drupal 数据后会自我删除，以防下次系统启动时再次运行。
 
 现在我们已了解 Drupal configinit 文件如何工作，来实际运行一下。运行以下命令：
 
@@ -302,7 +302,7 @@ $ aws ec2 run-instances --image-id ami-69dae900 --instance-type m3.medium \
 $ aws ec2 get-console-output --output text --instance-id <你的实例 ID 写在这里> | more
 ```
 
-你会看到 FreeBSD 启动、自我更新、下载并安装我们要求的包、重启、启动 Apache 和 MySQL 守护进程，最后你会看到一行：
+你会看到 FreeBSD 启动、自我更新、下载并安装我们要求的软件包、重启、启动 Apache 和 MySQL 守护进程，最后你会看到一行：
 
 ```sh
 Drupal password: <12 个字符>

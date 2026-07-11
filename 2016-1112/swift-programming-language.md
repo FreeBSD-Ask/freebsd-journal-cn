@@ -3,11 +3,11 @@
 - 原文：[Swift Programming Language](https://freebsdfoundation.org/wp-content/uploads/2016/12/Swift-Language.pdf)
 - 作者：**Steve Wills**
 
-Swift 是 Apple 推出的新通用编程语言，于 2014 年 Apple 年度 WWDC 活动上发布，2015 年以 Apache 许可证 2.0 版开源。它旨在替代 Objective C，但更简洁、更安全，也确已如此。Swift 主要面向 iOS 应用开发，但它是一门完整的通用系统编程语言，可用于多种任务。它处于快速开发中，可移植到多种操作系统。Swift 全面支持 Unicode。它易学、好用、运行快。Swift 支持命令式与面向对象编程、泛型、扩展、try/throw/catch 错误处理、动态分派、可扩展编程与晚绑定。
+Swift 是 Apple 推出的新通用编程语言，于 2014 年 Apple 年度 WWDC 活动上发布，2015 年以 Apache 许可证 2.0 版开源。它旨在替代 Objective C，但更简洁、更安全，也确已如此。Swift 主要面向 iOS 应用开发，但它是一门完整的通用系统编程语言，可用于多种任务。它正在快速发展，可移植到多种操作系统。Swift 全面支持 Unicode。它易学、好用、运行快。Swift 支持命令式与面向对象编程、泛型、扩展、try/throw/catch 错误处理、动态分派、可扩展编程与晚绑定。
 
 ## 安全性
 
-内存自动管理，无需手动分配或释放，避免相关错误。作为使编程更安全的设计目标之一，Swift 在很大程度上不向开发者暴露指针，但需要时也可使用。它要求变量使用前先声明，避免脚本语言中常见的隐式声明问题。为简洁起见，类型可推断；为安全与清晰起见，也可显式声明。为安全起见，数据类型严格强制；为灵活起见，类型也可轻松转换。
+内存自动管理，无需手动分配或释放，避免相关错误。作为使编程更安全的设计目标之一，Swift 在很大程度上不向开发者暴露指针，但需要时也可使用。它要求变量使用前先声明，避免脚本语言中有时出现的隐式声明问题。为简洁起见，类型可推断；为安全与清晰起见，也可显式声明。为安全起见，数据类型严格强制；为灵活起见，类型也可轻松转换。
 
 对符号（变量、函数、类等）支持五种访问控制：
 
@@ -125,14 +125,14 @@ let result = four + five
                ~~~~ ^ ~~~~
 ```
 
-但灵活方便允许轻松转换：
+但类型也可轻松转换，灵活方便：
 
 ```swift
 (swift) let result2 = four + Float(five)
 // result2 : Float = 9.0
 ```
 
-Swift 帮我们更易读数字：
+Swift 让数字更易读：
 
 ```swift
 (swift) let million = 1_000_000
@@ -181,7 +181,7 @@ Swift 推断 actualNumber 可能含也可能不含数字，而非要求我们指
 actualNumber has an integer value of 404.
 ```
 
-但使用前必须安全检查值是否存在：
+但为安全起见，使用前必须检查值是否存在：
 
 ```swift
 (swift) actualNumber = nil
@@ -265,7 +265,7 @@ Swift 函数使用具名参数，使代码更易读、易维护，不过在 Swif
 // 向用户打招呼的函数
 // 返回问候语
 func hello(user: String) -> String {
-    let result = "Hello, " + user + "!"  // result 不再修改，故为常量
+    let result = "Hello, " + user + "!"  // result 保持不变，故为常量
     return result
 }
 

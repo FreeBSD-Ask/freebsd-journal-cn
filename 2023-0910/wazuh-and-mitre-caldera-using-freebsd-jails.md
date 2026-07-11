@@ -34,7 +34,7 @@ MITRE Caldera（[security/caldera](https://cgit.freebsd.org/ports/tree/security/
 
 ## AppJail
 
-[AppJail](https://github.com/DtxdF/AppJail) 是完全由 sh(1) 和 C 编写的框架，用于使用 FreeBSD Jail 创建隔离的、便携的、易于部署的环境，这些环境的行为类似应用程序。AppJail 的有趣特性之一是 [AppJail-Makejails](https://github.com/AppJail-makejails) 格式。它是文本文档，包含构建 jail 的所有指令。Makejail 是构建 jail、配置它、安装应用程序、配置它们等过程的又一层抽象。
+[AppJail](https://github.com/DtxdF/AppJail) 是完全由 **sh(1)** 和 C 编写的框架，用于使用 FreeBSD Jail 创建隔离的、便携的、易于部署的环境，这些环境的行为类似应用程序。AppJail 的有趣特性之一是 [AppJail-Makejails](https://github.com/AppJail-makejails) 格式。它是文本文档，包含构建 jail 的所有指令。Makejail 是构建 jail、配置它、安装应用程序、配置它们等过程的又一层抽象。
 
 ## 准备
 

@@ -1,6 +1,6 @@
 # FreeBSD 新面孔
 
-作者：DRU LAVIGNE
+作者：Dru Lavigne
 
 本专栏聚焦近期获得提交权限的贡献者，并向 FreeBSD 社区介绍他们。本月聚焦的是 Danilo Baio 和 Richard Gallamore，他们分别在 2017 年 5 月获得 Ports 提交权限。
 
@@ -12,7 +12,7 @@
 
 ## 你最早是怎么了解到 FreeBSD 的？FreeBSD 哪点吸引你？
 
-**Danilo：** 毕业后，我开始在 BS2（ISP/托管）工作，现在也还在那里，并在 BS2 和 CRMall（软件公司）之间分担任务。经理问我对 FreeBSD 了解多少，我说不了解，他让我去看看，因为 BS2 有好几台机器在跑 FreeBSD。我印象最深的是 FreeBSD 的组织方式——比如把基本系统的配置文件（**/etc**）和通过 Ports 安装的包的配置文件（**/usr/local/etc**）分开；还有系统升级的简洁性，哪怕是跨大版本升级。我也欣赏开发者和项目对变更的认真态度——变更记录详尽，对用户没有意外。在成为提交者之前，我听说过 POLA（Principle of Least Astonishment，最小惊讶原则，<https://www.freebsd.org/doc/handbook/freebsdglossary.html#pola-glossary>），现在回头看，这一切都说得通。
+**Danilo：** 毕业后，我开始在 BS2（ISP/托管）工作，现在也还在那里，并在 BS2 和 CRMall（软件公司）之间分担任务。经理问我对 FreeBSD 了解多少，我说不了解，他让我去看看，因为 BS2 有好几台机器在跑 FreeBSD。我印象最深的是 FreeBSD 的组织方式——比如把基本系统的配置文件（**/etc**）和通过 Ports 安装的软件包的配置文件（**/usr/local/etc**）分开；还有系统升级的简洁性，哪怕是跨大版本升级。我也欣赏开发者和项目对变更的认真态度——变更记录详尽，对用户没有意外。在成为提交者之前，我听说过 POLA（Principle of Least Astonishment，最小惊讶原则，<https://www.freebsd.org/doc/handbook/freebsdglossary.html#pola-glossary>），现在回头看，这一切都说得通。
 
 **Richard：** 我一直有兴趣保持系统和软件更新——近乎偏执，有时甚至没必要，大概有点强迫症的成分。2013/2014 年前后，我开始更深入地了解 Ports，手动更新 Ports 并构建它们。我发现一个叫 Seafile 的 Port 坏了，花了好几个小时试图编译，终于把它弄能用，想更新这个 Port，但完全不懂流程。幸运的是，我在 IRC 上找到一些帮助，被引到了正确的方向。这段时间里我积累了不少 FreeBSD 知识。期间有 FreeBSD 开发者几次问我要不要成为提交者，但我工作太忙没时间，也觉得自己还没准备好或知识不够。今年早些时候，我终于下定决心对当下的生活状态不满足，需要改变。于是我转行，搬到加州。我联系了那位经常提交我工作的提交者，于是就有了今天！
 
@@ -22,12 +22,12 @@
 
 **Danilo：** 2009 年，我看了 Renato Botelho（garga@）关于 VuXML（<https://vuxml.freebsd.org/>）的演讲，发现我们在 BS2 用到的一个 Port 有安全问题。这就是我提交第一个 PR（<https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=141318>）的缘起。几年后，我开始频繁提交补丁更新 Ports。STAGEDIR 支持引入后，没有 STAGEDIR 支持的 Port 将被移除。我也给 pfSense 项目提交过一些贡献。在 FreeBSD 和 pfSense 之间来回工作时，Renato 问我他能否推荐我成为提交者。如果通过，他会担任我的导师。这件事发生在今年 5 月，我现在每天还在不断学习。
 
-**Richard：** 我参与过的一个 PR（感兴趣的可以看 171246）就发生过这种情况——提交后等了七个月，等我成为提交者后才由我自己提交。
-
 ## 加入 FreeBSD 项目以来你的体验如何？对想成为提交者的读者有什么建议？
 
 **Danilo：** 世界各地的开发者都欢迎我加入，这真的太棒了。大多数人都跟我说”享受乐趣就好”，我也正是这么做的。我现在对项目的组织水平更加惊叹——任何小细节都很重要，哪怕是 Bugzilla 中的一个简单关键字。我处理的每个 PR，都会检查贡献者是否已登记在 Additional FreeBSD Contributors 列表（<https://www.freebsd.org/doc/en/articles/contributors/contrib-additional.html>）中。如果没有，就添加进去，以此表明任何贡献都是重要且有意义的，也许未来他们也能成为 FreeBSD 提交者。我对未来潜在提交者的建议是：在提交任何补丁前，永远先为其他用户着想。想一想，这个改动对大多数用户有意义，还是只对你自己有意义。订阅你感兴趣领域的邮件列表，并多关注 FreeBSD Phabricator（<https://reviews.freebsd.org/>）。那里发生的事情很多，有时你能学到手册里还没写的东西。新开发者的指导工作也通常在那里进行。贡献者也可以先向 Phabricator 提交修订，再在 Bugzilla（<http://bugs.freebsd.org/>）登记一个 PR，让自己的代码被提交。总有开发者愿意看一看、提些意见。最后，持续提交补丁，保持耐心，如果反馈等了一段时间，不要灰心。这并不说明你做错了什么，只是开发者们都很忙，或在专注其他事情——毕竟大家通常用业余时间参与。我参与过一个 PR（感兴趣的可以看 171246）就发生过这种情况——等了七个月，等我成为提交者后才由我自己提交。
 
 **Richard：** 加入 FreeBSD 项目以来，我的体验非常好！这里有许多知识渊博的开发者。在成为提交者的路上，最重要的事情之一就是贡献。不仅要积极为项目做贡献，还要跑 QA，并完整填写 bug 报告——写清楚为什么需要这个补丁的总结，附上或链接 changelog，并提供 QA 报告。这样做表明你重视自己的工作，并愿意多走一步。久而久之，这会被注意到并得到感谢。在邮件列表或 IRC 上保持活跃，也是学习和帮助社区的好方式。
 
-DRU LAVIGNE 是 FreeBSD 项目的文档提交者，BSD 认证小组主席。
+---
+
+**DRU LAVIGNE** 是 FreeBSD 项目的文档提交者，BSD 认证小组主席。

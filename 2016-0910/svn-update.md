@@ -25,13 +25,13 @@ Intel PRO/1000 千兆以太网适配器现在支持 TCP/IPv6 和 UDP/IPv6 的校
 
 MFH r297023（<https://svnweb.freebsd.org/base?view=revision&revision=302800>）
 
-`kldstat(8)` 现在能够以合适的格式打印模块特定的信息。除其他用途外，这使我们能够查询动态加载、向量号动态分配的 syscall 编号。
+**kldstat(8)** 现在能够以合适的格式打印模块特定的信息。除其他用途外，我们能查询动态加载、向量号动态分配的 syscall 编号。
 
 ## MFC r302791
 
 MFC r302402（<https://svnweb.freebsd.org/base?view=revision&revision=302791>）
 
-`ahci(4)` 驱动现在能够附加到具备 32 个端口的控制器。由于符号错误，本应是位域的变量扩展导致无限循环。修复此问题后，系统能够正确检测 bhyve 中 AHCI HBA 上配置的 32 个设备。
+**ahci(4)** 驱动现在能够附加到具备 32 个端口的控制器。由于符号错误，本应是位域的变量扩展导致无限循环。修复此问题后，系统能够正确检测 bhyve 中 AHCI HBA 上配置的 32 个设备。
 
 ## MFC r302714
 

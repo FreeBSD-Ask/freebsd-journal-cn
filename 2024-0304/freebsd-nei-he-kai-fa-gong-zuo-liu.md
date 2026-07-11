@@ -590,4 +590,4 @@ builder# gdb -iex 'set sysroot /ws/sysroot' -ex 'target vmcore /ws/tmp/vmcore.0'
 
 ---
 
-**Navdeep Parhar** 使用 FreeBSD 已超过 20 年，自 2009 年起成为 FreeBSD 开发者。他目前在 Chelsio Communications 工作，负责为 Chelsio Terminator 系列网卡开发 FreeBSD 软件。他是 cxgbe(4) 驱动程序的作者和维护者，感兴趣的领域包括网络栈、设备驱动程序、通用内核调试和分析。
+**Navdeep Parhar** 使用 FreeBSD 已超过 20 年，自 2009 年起成为 FreeBSD 开发者。他目前在 Chelsio Communications 工作，负责为 Chelsio Terminator 系列网卡开发 FreeBSD 软件。他是 **cxgbe(4)** 驱动程序的作者和维护者，感兴趣的领域包括网络栈、设备驱动程序、通用内核调试和分析。

@@ -4,15 +4,15 @@
 
 拥有可复现构建系统的目标相当简单：编译某段源代码时，所产出的二进制文件应当与过去或未来编译出的任何二进制文件完全一致。可复现构建的最大好处之一，是你可以确信在生产环境运行的任何代码都如你所期望的那样。但它还带来诸多其他好处，比如大幅提升缓存共享，从而缩短构建时间，甚至能解决开发者必须维护加密密钥以签名代码、或信任构建二进制文件所用机器这类复杂问题。开发者早在 2013 年就开始为支持可复现构建添加工作，过去几个月里，我们看到若干提交让这项工作更接近完成。本期专栏，我决定着重介绍几项大小不一的改动，借以展示如此复杂的开发项目所投入的功夫。这类项目对最终用户而言往往不可见，但正是这类任务帮助构建出如此健壮且可验证的系统。
 
-- 添加 `WITH_REPRODUCIBLE_BUILD` src.conf.5 旋钮以禁用内核元数据。<https://svnweb.freebsd.org/changeset/base/310128>
+- 添加 `WITH_REPRODUCIBLE_BUILD` **src.conf(5)** 旋钮以禁用内核元数据。<https://svnweb.freebsd.org/changeset/base/310128>
 - 在 `WITH_REPRODUCIBLE_BUILD` 时以可复现方式构建 loader。<https://svnweb.freebsd.org/changeset/base/310268>
-- 移除 `-vd` 选项以使 iasl.8 可复现。<https://svnweb.freebsd.org/changeset/base/311529>
+- 移除 `-vd` 选项以使 **iasl(8)** 可复现。<https://svnweb.freebsd.org/changeset/base/311529>
 - 在 vchi 驱动中以硬编码字符串替换不可复现的 `__DATE__`/`__TIME__`。<https://svnweb.freebsd.org/changeset/base/310560>
 - 避免在 mlx 驱动中使用 `__DATE__` 以使构建可复现。<https://svnweb.freebsd.org/changeset/base/310425>
-- 移除 `srand()` 以确保 bhnd.4 输出确定性。<https://svnweb.freebsd.org/changeset/base/310371>
-- 在 newvers.sh 中添加 `-R` 选项，仅对未修改的 src 树包含元数据。<https://svnweb.freebsd.org/changeset/base/310273>
-- 在 newvers.sh 中添加选项以消除内核构建元数据。<https://svnweb.freebsd.org/changeset/base/310112>
-- 使 makewhatis 的输出可复现。<https://svnweb.freebsd.org/changeset/base/307003>
+- 移除 `srand()` 以确保 **bhnd(4)** 输出确定性。<https://svnweb.freebsd.org/changeset/base/310371>
+- 在 `newvers.sh` 中添加 `-R` 选项，仅对未修改的 src 树包含元数据。<https://svnweb.freebsd.org/changeset/base/310273>
+- 在 `newvers.sh` 中添加选项以消除内核构建元数据。<https://svnweb.freebsd.org/changeset/base/310112>
+- 使 `makewhatis` 的输出可复现。<https://svnweb.freebsd.org/changeset/base/307003>
 - 在 man 手册页中使用 changelog 日期而非文件修改日期。<https://svnweb.freebsd.org/changeset/base/306740>
 - 将 UEFI boot loader 的 PE/COFF 时间戳设为已知值以支持可复现构建。<https://svnweb.freebsd.org/changeset/base/305160>
 

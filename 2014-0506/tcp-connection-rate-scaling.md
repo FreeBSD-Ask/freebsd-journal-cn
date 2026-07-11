@@ -132,7 +132,7 @@ PID USERNAME PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 ...
 ```
 
-按此性能剖析，该核超过 50% 的 CPU 时间花在 `__rw_wlock_hard()` 上，而这个内核函数主要由 `tcp_input()` 调用。`__rw_wlock_hard()` 是读者/写者内核锁实现（`rwlock.9`）的一部分，更确切地说，该函数的目标是获取该锁的独占访问。运行内核锁性能分析（`LOCK_LOCK_PROFILING.9`）并按每个锁的累计等待时间（`wait_total`，单位微秒）排序，可得到竞争锁的详细信息，见图 5。
+按此性能剖析，该核超过 50% 的 CPU 时间花在 `__rw_wlock_hard()` 上，而这个内核函数主要由 `tcp_input()` 调用。`__rw_wlock_hard()` 是读者/写者内核锁实现（**rwlock(9)**）的一部分，更确切地说，该函数的目标是获取该锁的独占访问。运行内核锁性能分析（**LOCK_LOCK_PROFILING(9)**）并按每个锁的累计等待时间（`wait_total`，单位微秒）排序，可得到竞争锁的详细信息，见图 5。
 
 ![图 5：TCP 负载的锁性能分析](../png/2014-0506/tcp-connection-rate-scaling-05.png)
 
@@ -205,6 +205,8 @@ max wait_max total wait_total count avg wait_avg cnt_hold cnt_lock name
 
 虽然高连接速率对许多网络服务（包括流媒体或具有长寿命连接的服务）而言可能并不典型，但这类应用确实存在。处理能够占满单块吉比特网卡的高连接速率的挑战已近在咫尺，尽管要达成该目标仍有更多工作要做。
 
-Julien Charbon 是 Verisign, Inc. 的软件开发工程师。Julien 在公司的大规模网络服务 ATLAS 平台及相关大规模网络服务上工作。Julien 与 FreeBSD 合作完成过移植软件、开发修复与补丁以及网络性能研究等工作。
+---
 
-Michael Bentkofsky 是 Verisign, Inc. 的首席软件工程师，领导其 ATLAS 平台的开发。他曾在实施大规模、持续可用的 TCP 服务的团队中工作，包括 .COM 和 .NET 顶级域的 DNS 与 Whois 服务，以及用于证书校验的在线证书状态协议（OCSP）。
+**Julien Charbon** 是 Verisign, Inc. 的软件开发工程师。Julien 在公司的大规模网络服务 ATLAS 平台及相关大规模网络服务上工作。Julien 与 FreeBSD 合作完成过移植软件、开发修复与补丁以及网络性能研究等工作。
+
+**Michael Bentkofsky** 是 Verisign, Inc. 的首席软件工程师，领导其 ATLAS 平台的开发。他曾在实施大规模、持续可用的 TCP 服务的团队中工作，包括 .COM 和 .NET 顶级域的 DNS 与 Whois 服务，以及用于证书校验的在线证书状态协议（OCSP）。

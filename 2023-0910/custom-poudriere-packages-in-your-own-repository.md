@@ -111,7 +111,7 @@ EOF
 
 `max_size` 选项可以将缓存大小限制为一定数量，但设为 0 时，它可以使用所需的全部磁盘空间。我并不太担心，因为 ZFS 压缩在这里效果不错。如果磁盘空间不足，我甚至可以在数据集 **zroot/var/cache/ccache** 上设置配额。
 
-`cache_dir` 和 `base_dir` 定义缓存的位置。这里它们指向我们的数据集。将 `hash_dir` 选项设为 `false` 可以增加缓存命中率，但启用它会增加调试难度。这是我为了更好性能愿意做的权衡。此选项及其他选项的详情请参阅 ccache(1)。FreeBSD 论坛的一个帖子也讨论了这个问题：<https://forums.freebsd.org/threads/howto-speeding-up-poudriere-build-times.69431/>
+`cache_dir` 和 `base_dir` 定义缓存的位置。这里它们指向我们的数据集。将 `hash_dir` 选项设为 `false` 可以增加缓存命中率，但启用它会增加调试难度。这是我为了更好性能愿意做的权衡。此选项及其他选项的详情请参阅 **ccache(1)**。FreeBSD 论坛的一个帖子也讨论了这个问题：<https://forums.freebsd.org/threads/howto-speeding-up-poudriere-build-times.69431/>
 
 在 ccache 期望找到它的位置为该配置文件创建符号链接。
 
@@ -459,7 +459,7 @@ clienthost# mkdir ssl/certs ssl/keys
 clienthost# mkdir pkg/repos
 ```
 
-然后，安全地把编译机 **/usr/local/etc/ssl/certs/** 下的 `poudriere.cert` 复制到我们刚创建的目录。你可以用 `scp(1)` 从主机传到客户端：
+然后，安全地把编译机 **/usr/local/etc/ssl/certs/** 下的 `poudriere.cert` 复制到我们刚创建的目录。你可以用 **scp(1)** 从主机传到客户端：
 
 ```sh
 poudriere# scp /usr/local/etc/ssl/certs/poudriere.cert

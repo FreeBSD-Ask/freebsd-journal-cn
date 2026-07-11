@@ -27,8 +27,8 @@ Client —— M1 ———————— M2 —— Server
 
 a) 如果我删除一个套接字描述符的 kqueue 事件，却不关闭该套接字，会发生什么？
 b) 我有没有可能看到尚未读取的陈旧排队事件？
-c) `connect(2)` 如何与 kqueue 交互？
-d) `listen(2)` 呢？
+c) **connect(2)** 如何与 kqueue 交互？
+d) **listen(2)** 呢？
 e) kqueue 上可以附加到事件上的各种 flag 有何区别？何时该用哪一个？
 f) 某些错误返回（`EV_ERROR`）是什么含义？这是否覆盖了我所有错误情形？
 g) 当 TCP 连接被对方优雅关闭时，我是否总能从 kqueue 得到 EOF 条件？

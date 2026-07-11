@@ -3,11 +3,11 @@
 - 原文：[Exploring Network Activity with DTrace](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking/exploring-network-activity-with-dtrace/)
 - 作者：**Mark Johnston**
 
-FreeBSD 提供了大量工具和技巧，用于回答关于网络栈活动的问题。`systat(1)` 和 `netstat(1)` 这类工具能给出若干起点：例如它们可以按接口或按协议展示包速率和位速率。更高级的工具会利用伯克利包过滤器（Berkeley Packet Filter，BPF）来追踪进出系统的单个数据包；Ports 中的 `sysutils/iftop` 就用这种技术按四元组展示位速率。老牌的 `tcpdump(1)` 也通过 BPF 接口实时捕获并记录数据包，从而支持基于事后分析的提问。
+FreeBSD 提供了大量工具和技巧，用于回答关于网络栈活动的问题。**systat(1)** 和 **netstat(1)** 这类工具能给出若干起点：例如它们可以按接口或按协议展示包速率和位速率。更高级的工具会利用伯克利包过滤器（Berkeley Packet Filter，BPF）来追踪进出系统的单个数据包；Ports 中的 `sysutils/iftop` 就用这种技术按四元组展示位速率。老牌的 **tcpdump(1)** 也通过 BPF 接口实时捕获并记录数据包，从而支持基于事后分析的提问。
 
-FreeBSD 10 起，内核新增了一组 DTrace 探测器，让用户能深入洞察网络栈的内部工作。具体而言，用户现在可以基于 FreeBSD 内核 IP、TCP 和 UDP 层中的数据包发送和接收事件编写脚本，并实时窥探指定连接的内部 TCP 状态。这对任何程序员或系统管理员的工具箱都是一项有力的补充，因为它提供框架来回答关于 FreeBSD IP 栈行为的任意问题；DTrace 不受既有工具输出的局限，使得网络提供商可以编写自己的工具来探索网络活动，无论是为了监控性能指标、定位问题源头，还是单纯为了更深入地了解网络协议。
+FreeBSD 10 起，内核新增了一组 DTrace 探测器，让用户能深入洞察网络栈的内部工作。具体而言，用户现在可以基于 FreeBSD 内核 IP、TCP 和 UDP 层中的数据包发送和接收事件编写脚本，并实时窥探指定连接的内部 TCP 状态。这对任何程序员或系统管理员的工具箱都是一项有力的补充，因为它提供框架来回答关于 FreeBSD IP 栈行为的任意问题；DTrace 不受既有工具输出的局限，使得用户可以编写自己的工具来探索网络活动，无论是为了监控性能指标、定位问题源头，还是单纯为了更深入地了解网络协议。
 
-本文将概述每个新探测器，讲解其用法并给出示例。本文假定读者对 DTrace 有基本了解并熟悉其使用，但本文中的所有示例要么是 `dtrace(1)` 命令——可直接在 shell 中运行——要么是可执行脚本。这些示例均在 FreeBSD 10 上开发并测试，鼓励有可用测试系统的读者动手运行，以体会 DTrace 的能力。脚本可从 <http://people.freebsd.org/~markj/dtrace/network-providers/examples/> 下载。
+本文将概述每个新探测器，讲解其用法并给出示例。本文假定读者对 DTrace 有基本了解并熟悉其使用，但本文中的所有示例要么是 **dtrace(1)** 命令——可直接在 shell 中运行——要么是可执行脚本。这些示例均在 FreeBSD 10 上开发并测试，鼓励有可用测试系统的读者动手运行，以体会 DTrace 的能力。脚本可从 <http://people.freebsd.org/~markj/dtrace/network-providers/examples/> 下载。
 
 需要提醒的是，这些探测器的 FreeBSD 实现相对较新，因此在你尝试时自然可能遇到 bug 或难以解释的行为。DTrace 保证脚本不会让系统崩溃或破坏其状态，所以在 FreeBSD 上运行这些示例或任何 DTrace 脚本都没有危险。但是，如果你在使用这些新探测器或 DTrace 时遇到问题，请发送邮件至 <freebsd-dtrace@FreeBSD.org> 邮件列表报告。不针对 FreeBSD 的 DTrace 相关问题和讨论请发送至 <dtracediscuss@lists.dtrace.org> 邮件列表；DTrace 的多位原始及现任开发者都订阅了该列表，并乐于回应该列表上的帖子。
 
@@ -39,7 +39,7 @@ CPU ID FUNCTION:NAME
 0 36564 :send 8.8.178.110
 ```
 
-这是 DTrace 的默认输出格式。我们可以在 `dtrace(1)` 参数中加入 `-x quiet`，并自行打印换行符（`\n`），以获得更多控制：
+这是 DTrace 的默认输出格式。我们可以在 **dtrace(1)** 参数中加入 `-x quiet`，并自行打印换行符（`\n`），以获得更多控制：
 
 ```sh
 # dtrace -x quiet -n 'ip:::send {printf("%s\n", args[2]->ip_daddr);}'
@@ -428,4 +428,6 @@ printa("%-30s %@-12d %@-12d %@-12d %@-12d\n", @valorderb, @invorderb,
 - [4] DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X, and FreeBSD.
 - [5] <https://people.freebsd.org/~markj/dtrace/network-providers/examples/>
 
-Mark Johnston 是软件工程师，居住在安大略省滑铁卢。他于 2013 年在滑铁卢大学取得数学学士学位，自 2010 年起成为 FreeBSD 用户。他对操作系统开发的各个方面都感兴趣，尤其关注调试与性能分析工具。获得 commit 权限后，他的主要工作重心是改进 FreeBSD 的 DTrace 实现。可通过电子邮件 <markj@FreeBSD.org> 与他联系。
+---
+
+**Mark Johnston** 是软件工程师，居住在安大略省滑铁卢。他于 2013 年在滑铁卢大学取得数学学士学位，自 2010 年起成为 FreeBSD 用户。他对操作系统开发的各个方面都感兴趣，尤其关注调试与性能分析工具。获得 commit 权限后，他的主要工作重心是改进 FreeBSD 的 DTrace 实现。可通过电子邮件 <markj@FreeBSD.org> 与他联系。

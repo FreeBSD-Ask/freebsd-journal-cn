@@ -115,7 +115,7 @@ wlan2
 
 驱动支持的模式会在对应的手册页中列出。对比 `iwm`、`iwlwifi` 和 `iwx`（它们支持部分相同硬件），你会发现目前 `iwm` 和 `iwlwifi` 只能工作在站点模式，而 `iwx` 支持站点和监控模式。`iwx` 支持的 Intel 硬件能在 2.4GHz 频段有限度地作为主机接入点（host AP），但这部分支持尚未实现。
 
-`rtwn` 驱动支持站点、adhoc、主机接入点（host AP）和监控模式。`net80211` 支持的完整模式列表可在 `ifconfig(8)` 手册页中查阅：
+`rtwn` 驱动支持站点、adhoc、主机接入点（host AP）和监控模式。`net80211` 支持的完整模式列表可在 **ifconfig(8)** 手册页中查阅：
 
 ```sh
 wlanmode mode
@@ -321,7 +321,7 @@ wpa_passphrase="superpassword"
 # ifconfig wlan1 inet 192.168.2.1/24 up
 ```
 
-动态地址分配需要安装 dhcpd Port 并创建配置文件。可以在 `dhcpd.conf(5)` 手册页中找到最简配置示例，示例如下：
+动态地址分配需要安装 dhcpd Port 并创建配置文件。可以在 **dhcpd.conf(5)** 手册页中找到最简配置示例，示例如下：
 
 ```ini
 /usr/local/etc/dhcpd.conf:

@@ -17,7 +17,7 @@ TCP LRO 可采用多种方式降低所需的 CPU 资源，包括：
 
 ## TCP LRO 的发展
 
-TCP LRO 的初步实现由 Andrew Gallatin 完成于 2006 年，特定于 mxge(4) 驱动程序。然后，在 2008 年，Jack Vogel 将其扩展到所有驱动程序。它只有两个主要目标：
+TCP LRO 的初步实现由 Andrew Gallatin 完成于 2006 年，特定于 **mxge(4)** 驱动程序。然后，在 2008 年，Jack Vogel 将其扩展到所有驱动程序。它只有两个主要目标：
 
 1. 收集和合并小的传入数据段，向 TCP 提供一个更大的单一传入数据段，或者
 2. 收集多个 ACK，并向 TCP 栈呈现一个更大的单个 ACK。

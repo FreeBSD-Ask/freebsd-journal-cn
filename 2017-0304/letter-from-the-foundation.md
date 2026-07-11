@@ -4,7 +4,7 @@
 
 本期文章聚焦最受欢迎的配置管理系统，它们在 FreeBSD 上都有良好支持。打头阵的是 Michael Lucas，他著有多部广为人知的 BSD 书籍，在本期分享了他对配置管理这一话题的整体思考。如果你正打算第一次尝试配置管理，我建议你先读他的这篇入门文章，再阅读 CFEngine、Puppet、SaltStack 和 Vagrant 的系统专题。每个系统都有优劣，但有一点是共通的——它们都能帮助你部署和管理 FreeBSD。
 
-过去几年里，开源世界的一个热门话题是可复现构建。这一话题最初因 heartbleed 等安全问题而受到关注，开源项目对此极为重视。FreeBSD 项目深度参与其中，项目和基金会的代表出席并在多次可复现构建会议中做出贡献。这些努力正转化为进入 FreeBSD 的提交，Steven Kreuzer 在他最新的 `svn Update` 专栏中做了介绍。
+过去几年里，开源世界的一个热门话题是可复现构建。这一话题最初因 heartbleed 等安全问题而受到关注，开源项目对此极为重视。FreeBSD 项目深度参与其中，项目和基金会的代表出席并在多次可复现构建会议中做出贡献。这些努力正转化为进入 FreeBSD 的提交，Steven Kreuzer 在他最新的 svn Update 专栏中做了介绍。
 
 Joseph Kong 评介了 Brendan Gregg 和 Jim Mauro 的《DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X, and FreeBSD》。我对这本书很熟悉，因为在为 <http://www.teachbsd.org> 开发的课程中一直使用它。不过我不剧透——去读这篇书评并享受它吧。
 

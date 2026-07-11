@@ -19,7 +19,7 @@
 
 ## 项目目标
 
-我有之前做的小网站，仅使用 nginx，没有什么 HTML、CSS、PHP 等。它是简单的网站，会返回客户端的 IP 地址（类似 icanhazip.com 或 ifconfig.me）。它最初是我学习 nginx 时的兴趣项目，但后来我在更大的网络里部署它，用于测试客户端是否在 NAT 之后。这正好是我做 PQC 实验的良好起点。需求很简单：既要能适配广泛的软件（网页浏览器、`fetch(1)` 或 `curl(1)` 等命令行工具），又要遵循我在使用 FreeBSD 与 Linux 多年中体会到的 UNIX 哲学——尽可能简单，同时要稳定，因为它以后也可能跑在云端 VPS 上。因此，我自然选择 FreeBSD 作为操作系统、nginx 作为平台。剩下的就是 PQC 的实际实现。
+我有之前做的小网站，仅使用 nginx，没有什么 HTML、CSS、PHP 等。它是简单的网站，会返回客户端的 IP 地址（类似 icanhazip.com 或 ifconfig.me）。它最初是我学习 nginx 时的兴趣项目，但后来我在更大的网络里部署它，用于测试客户端是否在 NAT 之后。这正好是我做 PQC 实验的良好起点。需求很简单：既要能适配广泛的软件（网页浏览器、**fetch(1)** 或 **curl(1)** 等命令行工具），又要遵循我在使用 FreeBSD 与 Linux 多年中体会到的 UNIX 哲学——尽可能简单，同时要稳定，因为它以后也可能跑在云端 VPS 上。因此，我自然选择 FreeBSD 作为操作系统、nginx 作为平台。剩下的就是 PQC 的实际实现。
 
 我做了一些研究，找到了 Open Quantum Safe（OQS）项目的子项目——[oqs-provider](https://github.com/open-quantum-safe/oqs-provider)。它是一款适用于 OpenSSL 3 版本的开源 C 库与 provider，实现了包括 ML-KEM 在内的多种算法。它在 FreeBSD 与多种 Linux 发行版上均可用。
 
@@ -31,15 +31,15 @@
 
 oqsprovider 需要 OpenSSL 3.2 或更高版本。根据其 GitHub 页面说明，从 3.4 版本开始又新增了一些功能。我的 FreeBSD 安装里是 OpenSSL 3.0.16，不支持 oqsprovider。
 
-在撰写本文时，OpenSSL 3.5.0 已发布，带有原生的 PQC 算法支持，但 `pkg(8)` 的说明指出它处于 beta 阶段，不适合生产环境。因此，在余下实现中，我将继续使用 OpenSSL 3.4.1。
+在撰写本文时，OpenSSL 3.5.0 已发布，带有原生的 PQC 算法支持，但 **pkg(8)** 的说明指出它处于 beta 阶段，不适合生产环境。因此，在余下实现中，我将继续使用 OpenSSL 3.4.1。
 
-首先，我把虚拟机更新到 FreeBSD 14.3-RELEASE。我们还需要安装更新版本的 OpenSSL 和 nginx，并且要让 nginx 能使用较新的 OpenSSL。为了尽量减少折腾，我们将通过 `pkg(8)` 安装 openssl34 与 openssl-oqsprovider，而 nginx 则通过 Ports 系统构建。为此需要在 **/usr/ports** 下准备好 Ports。我的系统里没有 **security/openssl34**，因此我将拉取 Ports 树的 2025Q2 分支。我需要它来让 nginx 链接到 openssl34。首先，我会安装 `git(1)`，这是 FreeBSD 手册推荐的安装 / 更新 Ports 树的方法。
+首先，我把虚拟机更新到 FreeBSD 14.3-RELEASE。我们还需要安装更新版本的 OpenSSL 和 nginx，并且要让 nginx 能使用较新的 OpenSSL。为了尽量减少折腾，我们将通过 **pkg(8)** 安装 openssl34 与 openssl-oqsprovider，而 nginx 则通过 Ports 系统构建。为此需要在 **/usr/ports** 下准备好 Ports。我的系统里没有 **security/openssl34**，因此我将拉取 Ports 树的 2025Q2 分支。我需要它来让 nginx 链接到 openssl34。首先，我会安装 **git(1)**，这是 FreeBSD 手册推荐的安装 / 更新 Ports 树的方法。
 
 ```sh
 # pkg install -y git
 ```
 
-待系统上安装了 `git(1)`，就可以用它来管理 Ports 树了。不过，由于我之前通过基本系统安装过 Ports 树，所以现在会先删除现有的 **/usr/ports** 目录。这样在克隆仓库时，就不会提示 **/usr/ports** 已存在。当然，还有其他办法解决这个问题，但我更喜欢从一个干净的环境开始。
+待系统上安装了 **git(1)**，就可以用它来管理 Ports 树了。不过，由于我之前通过基本系统安装过 Ports 树，所以现在会先删除现有的 **/usr/ports** 目录。这样在克隆仓库时，就不会提示 **/usr/ports** 已存在。当然，还有其他办法解决这个问题，但我更喜欢从一个干净的环境开始。
 
 ```sh
 # rm -rf /usr/ports
@@ -154,7 +154,7 @@ http{
 * 使用 TLS 1.3 和 TLS 1.2 以保证兼容性
 * 使用平衡的加密套件，在提供较好安全性的同时兼顾广泛的兼容性（加密套件和曲线列表来源于 Mozilla SSL Configuration Generator）
 
-接下来，在本演示中我将创建一张自签名证书，但在生产环境中（和为了兼容性），你应当获取由可信 CA 签发的有效证书。你可以使用 Let’s Encrypt 证书，并通过 `certbot(1)` 来自动化证书续期。为此，只需运行以下命令：
+接下来，在本演示中我将创建一张自签名证书，但在生产环境中（和为了兼容性），你应当获取由可信 CA 签发的有效证书。你可以使用 Let’s Encrypt 证书，并通过 **certbot(1)** 来自动化证书续期。为此，只需运行以下命令：
 
 ```sh
 # pkg install -y py311-certbot
@@ -191,7 +191,7 @@ Starting nginx.
 
 ## 测试
 
-现在我们已经有正在运行的网站，接下来让我们检查它是否正常工作。在测试时，我将使用多种方法：网页浏览器和一些命令行客户端，例如 `curl(1)`。我已经安装好了 curl，如果你还没有，可以通过 `pkg` 来安装：
+现在我们已经有正在运行的网站，接下来让我们检查它是否正常工作。在测试时，我将使用多种方法：网页浏览器和一些命令行客户端，例如 **curl(1)**。我已经安装好了 curl，如果你还没有，可以通过 `pkg` 来安装：
 
 ```sh
 # pkg install -y curl
@@ -305,7 +305,7 @@ security.tls.enable_kyber
 
 ## 总结
 
-为 TLS 密钥交换添加 PQC 支持并不算太难，但整体流程包含了一些额外却必要的步骤。关键问题是你必须从源码编译 nginx 才能使用新版 OpenSSL。这意味着每次有安全补丁发布时，你都需要重新编译，而不像使用 `freebsd-update(8)` 或 `pkg(8)` 热修复那样方便。
+为 TLS 密钥交换添加 PQC 支持并不算太难，但整体流程包含了一些额外却必要的步骤。关键问题是你必须从源码编译 nginx 才能使用新版 OpenSSL。这意味着每次有安全补丁发布时，你都需要重新编译，而不像使用 **freebsd-update(8)** 或 **pkg(8)** 热修复那样方便。
 
 不过，OpenSSL 3.5.0 已经发布，它原生支持多种 PQC 算法，并且是长期支持（LTS）版本，官网称将支持至 2030 年。随着量子威胁的加剧和全行业急于尽快部署 PQC，我非常希望这一版本能被集成到 FreeBSD 基本系统中。这将省去绝大部分让 nginx（和可能的其他软件）支持 PQC 的额外步骤。
 

@@ -1,7 +1,5 @@
 # CADETS：在 FreeBSD 上融合追踪与安全
 
-在 FreeBSD 上融合追踪与安全 CADETS
-
 FreeBSD 操作系统已被用于许多需要强安全性的产品——从存储设备，到网络交换机、路由器以及游戏主机。在 FreeBSD 二十多年的发展中，安全领域已有显著进展。
 
 作者：Jonathan Anderson、George V. Neville-Neil、Arun Thomas 和 Robert N. M. Watson
@@ -22,7 +20,7 @@ printf("Hello world!");
 #ifdef LOGGING
 if (log)
     printf("You have written %d bytes", len);
-#endif /* 日志 */
+#endif /* LOGGING */
 ```
 
 基于 print 的日志系统还存在静态和易错的问题。如果程序员在代码构建前没有通过日志系统暴露某条信息，那么在不修改代码的情况下，将无法得知同一函数可能正在处理的任何其他数据。这两个问题叠加，意味着大多数高性能系统（如操作系统）在发布时不启用日志；即便启用日志，可用数据也仅限于原始程序员希望暴露的内容。作为开源开发者，我们习惯了“重新编译代码就行”的想法，但在生产系统中这并不总是可行。设想你把系统卖给了某家大银行。凌晨 3 点，系统发生某种故障并记录了错误。IT 部门有人收到故障通知，他们联系支持，支持联系程序员，程序员随后说：“停掉系统，重新构建代码，开启日志后重新运行。”以这种方式处理错误对客户和开发者来说都极其糟糕。客户会因为要重建并重启系统而恼火，而开发者也不太可能获得有用信息，因为错误早已时过境迁。
@@ -70,7 +68,7 @@ CPU ID FUNCTION:NAME
 
 审计子系统自 2004 年起成为 FreeBSD 的一部分，是一个可选的内核组件，连同用户态守护进程 `auditd` 一起，实现了“对安全相关事件的细粒度、可配置日志记录”[10]。它旨在满足美国政府的“通用准则（CC）通用访问保护 Profile（CAPP）评估”这一安全标准 [11]。审计子系统通过 C 宏在内核中访问数据和资源的位置添加了一组手工编写的追踪点。例如，在启用审计的系统中，每次访问文件描述符时都会在审计记录中记上一笔。审计记录会定期刷新到永久存储。我们近期在 DTrace 和安全方面的工作促使我们希望在审计系统与 DTrace 之间搭建桥梁。Robert Watson 在 FreeBSD 的 DTrace 系统中添加了审计提供者（audit provider）。
 
-DTrace 提供者（provider）使得 DTrace 可以访问一组追踪点。一些知名的提供者示例包括处理函数边界追踪点（fbt）、系统调用（syscall）和网络协议（tcp、udp、ip）的提供者。审计提供者让 DTrace 能够记录系统上发生的审计事件信息，同时应用 DTrace 的功能，如通过谓词过滤事件以及通过聚合收集统计信息。在没有 DTrace 的情况下使用审计系统时，我们无法方便地编写运行时分析脚本来更精确地定位想要调查的进程。审计系统会针对特定进程，但我们希望能够仅在该进程执行特定操作时才收集数据。设想这样一个场景：我们想查看谁在与 Web 服务器通信；我们可能只想了解来自一组特定 Internet 地址的连接，也许因为我们知道这些地址已被标记为僵尸网络的一部分。借助审计提供者，我们可以编写一个简单的 D 脚本，只请求与 `connect(2)` 相关的审计事件，然后根据事件中包含的 IP 地址进行过滤。尽可能靠近信息源头进行数据缩减，不仅减轻了系统的整体负载，还减少了人类分析师或软件工具在后续分析阶段需要审视的数据量。
+DTrace 提供者（provider）使得 DTrace 可以访问一组追踪点。一些知名的提供者示例包括处理函数边界追踪点（fbt）、系统调用（syscall）和网络协议（tcp、udp、ip）的提供者。审计提供者让 DTrace 能够记录系统上发生的审计事件信息，同时应用 DTrace 的功能，如通过谓词过滤事件以及通过聚合收集统计信息。在没有 DTrace 的情况下使用审计系统时，我们无法方便地编写运行时分析脚本来更精确地定位想要调查的进程。审计系统会针对特定进程，但我们希望能够仅在该进程执行特定操作时才收集数据。设想这样一个场景：我们想查看谁在与 Web 服务器通信；我们可能只想了解来自一组特定 Internet 地址的连接，也许因为我们知道这些地址已被标记为僵尸网络的一部分。借助审计提供者，我们可以编写一个简单的 D 脚本，只请求与 **connect(2)** 相关的审计事件，然后根据事件中包含的 IP 地址进行过滤。尽可能靠近信息源头进行数据缩减，不仅减轻了系统的整体负载，还减少了人类分析师或软件工具在后续分析阶段需要审视的数据量。
 
 ## OpenDTrace：DTrace 的未来
 
@@ -80,13 +78,15 @@ DTrace 提供者（provider）使得 DTrace 可以访问一组追踪点。一些
 
 作者感谢 Ripduman Sohan 对手稿提出的宝贵意见。•
 
-JONATHAN ANDERSON 是纽芬兰纪念大学电气与计算机工程系的助理教授，研究横跨操作系统、安全和编译器等软件工具。他是 FreeBSD 提交者，并一直在寻找志趣相投的新研究生。
+---
 
-GEORGE V. NEVILLE-NEIL 出于兴趣和生计从事网络与操作系统代码工作，也教授与编程相关的各类课程。他的兴趣领域包括代码探源、操作系统、网络和时间协议。他与 Marshall Kirk McKusick 和 Robert N. M. Watson 合著了 **The Design and Implementation of the FreeBSD Operating System**。十余年来，他以 Kode Vicious 之名撰写专栏。他在马萨诸塞州波士顿的东北大学获得计算机科学学士学位，是 ACM、Usenix 协会和 IEEE 的会员。他热爱骑行和旅行，现居纽约市。
+**JONATHAN ANDERSON** 是纽芬兰纪念大学电气与计算机工程系的助理教授，研究横跨操作系统、安全和编译器等软件工具。他是 FreeBSD 提交者，并一直在寻找志趣相投的新研究生。
 
-ARUN THOMAS 是 BAE Systems 研发部门的研究员，也是因果自适应分布式高效追踪系统（CADETS）项目的首席研究员。
+**GEORGE V. NEVILLE-NEIL** 出于兴趣和生计从事网络与操作系统代码工作，也教授与编程相关的各类课程。他的兴趣领域包括代码探源、操作系统、网络和时间协议。他与 Marshall Kirk McKusick 和 Robert N. M. Watson 合著了 **The Design and Implementation of the FreeBSD Operating System**。十余年来，他以 Kode Vicious 之名撰写专栏。他在马萨诸塞州波士顿的东北大学获得计算机科学学士学位，是 ACM、Usenix 协会和 IEEE 的会员。他热爱骑行和旅行，现居纽约市。
 
-DR ROBERT N. M. WATSON 是剑桥大学计算机实验室的高级讲师（副教授），领导横跨操作系统、安全和计算机体系结构的研究。他是 FreeBSD 开发者、FreeBSD 基金会 董事会成员，并合著了 **The Design and Implementation of the FreeBSD Operating System**（第二版）。
+**ARUN THOMAS** 是 BAE Systems 研发部门的研究员，也是因果自适应分布式高效追踪系统（CADETS）项目的首席研究员。
+
+**DR ROBERT N. M. WATSON** 是剑桥大学计算机实验室的高级讲师（副教授），领导横跨操作系统、安全和计算机体系结构的研究。他是 FreeBSD 开发者、FreeBSD 基金会董事会成员，并合著了 **The Design and Implementation of the FreeBSD Operating System**（第二版）。
 
 本研究由美国国防高级研究计划局（DARPA）和美国空军研究实验室（AFRL）资助，合同编号 FA8650-15-C-7558。本文所含的观点、意见和/或发现均为作者本人观点，不应被解读为代表美国国防部或美国政府的官方观点或政策，无论明示或暗示。
 

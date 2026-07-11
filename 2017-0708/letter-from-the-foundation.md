@@ -12,4 +12,8 @@ Pawel Jakub Dawidek 与 Milosz Kaniewski 讲述他们如何用 FreeBSD 进行网
 
 本期还以三个专栏收尾：New Faces——Dru Lavigne 与两位新 Ports 提交者对谈；SVN 动态——Steven Kreuzer 带我们看看 FreeBSD 中所有崭新且闪亮的内容；以及 Roller Angel 撰写的 BSDCan 会议报告。想知道接下来 FreeBSD 还有哪些活动？Dru Lavigne 的活动日历会告诉你 FreeBSD 人在全球何处相聚。
 
-George Neville-Neil，FreeBSD 基金会董事会主席
+---
+
+**George Neville-Neil**
+
+FreeBSD 基金会董事会主席

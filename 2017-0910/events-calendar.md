@@ -1,8 +1,9 @@
 # 活动日历
 
-2017 年 10–12 月
+- 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2017/10/Events-Calendar.pdf)
+- 作者：DRU LAVIGNE
 
-作者：DRU LAVIGNE
+2017 年 10–12 月
 
 以下 BSD 相关会议将于 2017 年最后一个季度举行。
 

@@ -9,7 +9,7 @@
 
 FreeBSD 仍是新系统的优选平台。本期涵盖 Rust 与 Swift 这两种最新语言。引入新用户也意味着教育，本期还刊登了 Benedict Reuschling 与我合写的一篇文章，讲述我们用 FreeBSD 教授计算机科学本科生的经验。（我们课程的所有材料以 BSD 许可证发布在 teachbsd.org。）
 
-本月的书评对象是一本非常特别且篇幅不算长的书。30 余年来，Fred Brooks 的《人月神话》一直是软件工程的中流砥柱。本期 John Baldwin 评论 Brooks 这部经典，并着眼于将其教训应用到 FreeBSD。
+本月的书评对象是一本非常特别且篇幅不算长的书。30 余年来，Fred Brooks 的《人月神话》一直是软件工程的中流砥柱。本期 John Baldwin 评论 Brooks 这部经典，并着眼于将其启示应用到 FreeBSD。
 
 最后，我想再次呼吁支持 FreeBSD 基金会。帮助基金会达成并超越今年的筹款目标，才能确保 FreeBSD 项目在 2017 年及以后继续成功。
 

@@ -52,7 +52,7 @@ sysctl net.inet.tcp.functions_available
 
 实际使用 TCP RACK 栈的方式有很多种，有些方式需要修改应用程序的源代码，而有些方式只需要更改配置。
 
-`sysctl` 变量 `net.inet.tcp.functions_default` 用于指定新创建的 TCP 端点（通过系统调用 `socket.2` 创建）默认使用的 TCP 栈。执行以下命令：
+`sysctl` 变量 `net.inet.tcp.functions_default` 用于指定新创建的 TCP 端点（通过系统调用 **socket(2)** 创建）默认使用的 TCP 栈。执行以下命令：
 
 ```sh
 sysctl net.inet.tcp.functions_default=rack
@@ -66,7 +66,7 @@ net.inet.tcp.functions_default=rack
 
 当通过 listener 创建 TCP 端点时，TCP 栈要么继承自 listener，要么基于默认的 TCP 栈，这取决于 `net.inet.tcp.functions_inherit_listen_socket_stack` 的值是非零还是 `0`。该变量的默认值为 `1`。
 
-也可以使用命令行工具 `tcpsso.8` 来改变单个 TCP 连接的 TCP 栈，如该工具的手册页所述。
+也可以使用命令行工具 **tcpsso(8)** 来改变单个 TCP 连接的 TCP 栈，如该工具的手册页所述。
 
 如果能修改源代码，则可以使用名为 `TCP_FUNCTION_BLK` 的 `IPPROTO_TCP` 级别的套接字选项，将用于该套接字的 TCP 栈切换到 TCP RACK 栈。选项值的类型为 `struct tcp_function_set`。例如，可用如下代码执行此操作：
 

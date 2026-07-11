@@ -39,4 +39,4 @@
 
 ---
 
-JOSEPH KONG 是广受好评的《Designing BSD Rootkits》与《FreeBSD 设备驱动程序开发》的作者，目前任职于 Dell EMC 的 Isilon 部门，担任高级软件工程师。更多关于 Joseph Kong 的信息，请访问 <www.thestackframe.org>，或在 Twitter 上关注 @JosephJKong。
+**JOSEPH KONG** 是广受好评的《Designing BSD Rootkits》与《FreeBSD 设备驱动程序开发》的作者，目前任职于 Dell EMC 的 Isilon 部门，担任高级软件工程师。更多关于 Joseph Kong 的信息，请访问 <www.thestackframe.org>，或在 Twitter 上关注 @JosephJKong。

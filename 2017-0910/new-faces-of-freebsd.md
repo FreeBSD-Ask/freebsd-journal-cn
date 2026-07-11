@@ -1,6 +1,7 @@
 # FreeBSD 新面孔
 
-作者：DRU LAVIGNE
+- 原文：[New Faces of FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2017/10/New-Faces-of-FreeBSD.pdf)
+- 作者：DRU LAVIGNE
 
 本栏目旨在聚焦介绍近期获得提交权限的贡献者，并将他们介绍给 FreeBSD 社区。本月聚焦的是 Matt Joras，他在 7 月获得了 src 提交权限。
 
@@ -20,4 +21,6 @@
 
 自从十几岁开始主要使用开源软件以来，为开源项目做贡献就是我一直想做的事。那时我缺乏韧性、信心和足够的专业能力去做出有意义的贡献（至少我当时这么觉得）。自从我放弃成为物理学家的梦想、决定以软件为业后，我的理想一直是全职为开源做贡献。我在 Isilon 的工作虽不完全是开源工作，但它正式把我引入 FreeBSD，让我能在其上做工作。我钦佩身边许多已是社区成员的同事，也渴望成为其中一员。
 
-DRU LAVIGNE 是 FreeBSD 项目的文档提交者，BSD 认证小组主席。
+---
+
+**DRU LAVIGNE** 是 FreeBSD 项目的文档提交者，BSD 认证小组主席。

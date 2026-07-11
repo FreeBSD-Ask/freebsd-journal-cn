@@ -1,6 +1,9 @@
 # 基金会来信
 
-来自编辑委员会的信
+- 原文：[Letter From the Foundation](https://freebsdfoundation.org/wp-content/uploads/2017/10/Letter-From-the-Foundation.pdf)
+- 作者：GEORGE NEVILLE-NEIL
+
+来自董事会的信
 
 “FreeBSD 不就是个 Linux 发行版吗？“
 
@@ -14,4 +17,6 @@
 
 我们相信，当你读完本期后，如果同事再问”FreeBSD 不就是个 Linux 发行版吗？“，你将能给出明确的回答。
 
-George Neville-Neil，FreeBSD 基金会董事会主席
+**George Neville-Neil**
+
+FreeBSD 基金会董事会主席

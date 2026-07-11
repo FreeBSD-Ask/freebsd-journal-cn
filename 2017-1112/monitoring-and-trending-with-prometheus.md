@@ -6,7 +6,7 @@ Prometheus 由 SoundCloud 的软件工程师于 2012 年创建，是一个监控
 
 ## Prometheus 入门
 
-虽然使用 Go 的构建工具（`go get`）已经能很方便地安装 Prometheus，FreeBSD Ports 套件中也提供了打包版本。安装该 package 的一个好处是它附带了 `rc(8)` 脚本，让我们可以方便地以守护进程方式运行。运行以下命令后，Prometheus 应该就能启动运行：
+虽然使用 Go 的构建工具（`go get`）已经能很方便地安装 Prometheus，FreeBSD Ports 套件中也提供了打包版本。安装该软件包的一个好处是它附带了 **rc(8)** 脚本，让我们可以方便地以守护进程方式运行。运行以下命令后，Prometheus 应该就能启动运行：
 
 ```sh
 $ pkg install prometheus
@@ -24,11 +24,11 @@ Starting prometheus.
 
 targets 页面向我们展示了 Prometheus 正在监控哪些端点，并且已经透露出一些有趣的信息。这个 Prometheus 实例被配置为监控自身。Prometheus 是一种白盒监控系统，这意味着它能存储由目标自身报告的指标，而不仅仅是测量外部可见的因素（例如 TCP 和 HTTP 健康检查）。通过点击最左侧列中的 HTTP 链接，我们可以查看 Prometheus 服务器生成的原始指标：与 Go 运行时的垃圾回收、线程、HTTP 处理以及指标存储相关的统计信息（见右图）。
 
-Prometheus 通过网络提供指标的格式相当简单。每个指标占据 HTTP 响应中的一行，具有一个 64 位浮点数值。每个指标由一个名称和花括号内一组可选的标签（键值对）唯一标识。标签允许一个程序返回同名但内容不同的多个指标。例如，Web 服务器可以用标签为每个注册的虚拟主机或每个 HTTP 错误码类别返回 HTTP 统计信息（例如，仅返回 **<www.freebsd.org>** 的 HTTP 200 类响应的延迟）。
+Prometheus 通过网络提供指标的格式相当简单。每个指标占据 HTTP 响应中的一行，具有一个 64 位浮点数值。每个指标由一个名称和花括号内一组可选的标签（键值对）唯一标识。标签允许一个程序返回同名但内容不同的多个指标。例如，Web 服务器可以用标签为每个注册的虚拟主机或每个 HTTP 错误码类别返回 HTTP 统计信息（例如，仅返回 **www.freebsd.org** 的 HTTP 200 类响应的延迟）。
 
 为了区分由不同目标返回的同名指标，Prometheus 在摄入数据时会附加额外的标签，例如 `job` 和 `instance`。这些标签包含能唯一标识端点的值。这些标签的值会显示在 Prometheus 的 targets 页面上。在 Kumina，我们利用这一机制附加与我们环境相关的自定义标签，例如物理位置（数据中心名称）、系统所有者（客户名称）和支持合同（7×24 小时或仅办公时间）。这些标签随后可作为查询和告警条件的一部分。
 
-Prometheus 自身无法获取任何操作系统指标，例如 CPU 负载、磁盘使用情况和网络 I/O。它只是一种通过 HTTP 摄入指标并建立索引的工具。系统级指标由一个叫做 node exporter 的工具提供。node exporter 本质上是一个 Web 服务器，被访问时通过 `/dev`、`sysctl`、`libkvm` 等方式提取内核级状态，并以 Prometheus 的指标格式返回。在 FreeBSD 上安装 node exporter 非常简单：
+Prometheus 自身无法获取任何操作系统指标，例如 CPU 负载、磁盘使用情况和网络 I/O。它只是一种通过 HTTP 摄入指标并建立索引的工具。系统级指标由一个叫做 node exporter 的工具提供。node exporter 本质上是一个 Web 服务器，被访问时通过 **/dev**、sysctl、libkvm 等方式提取内核级状态，并以 Prometheus 的指标格式返回。在 FreeBSD 上安装 node exporter 非常简单：
 
 ```sh
 $ sudo pkg install node_exporter
@@ -52,7 +52,7 @@ Starting prometheus.
 
 重启 Prometheus 并刷新 targets 页面后，可以看到它现在抓取两个目标，这正是我们期望的结果（见右图）。
 
-除了 node exporter 之外，此时我们还能配置许多其他目标。常见的服务都有对应的导出器（例如 MySQL、Nginx、Java JMX），它们将指标从原生格式转换为通过 HTTP 提供的形式。Prometheus black box exporter 能执行 ICMP、DNS、TCP、HTTP 和 SSH 检查，并报告可用性和延迟。FreeBSD 12.x 提供了 `prometheus_sysctl_exporter(8)`，它可以提供任意 sysctl 的值。其中一些导出器由 Prometheus 项目官方维护，另一些则由社区维护。
+除了 node exporter 之外，此时我们还能配置许多其他目标。常见的服务都有对应的导出器（例如 MySQL、Nginx、Java JMX），它们将指标从原生格式转换为通过 HTTP 提供的形式。Prometheus black box exporter 能执行 ICMP、DNS、TCP、HTTP 和 SSH 检查，并报告可用性和延迟。FreeBSD 12.x 提供了 **prometheus_sysctl_exporter(8)**，它可以提供任意 sysctl 的值。其中一些导出器由 Prometheus 项目官方维护，另一些则由社区维护。
 
 在 Kumina，我们为 Dovecot、PHP-FPM、libvirt、OpenVPN 和 Postfix 等服务开发了导出器。我们还设计了一个基于 libpcap 的简单网络流量统计守护进程，按地址导出统计信息，名为 Promacct。所有这些工具都可以在我们公司的 GitHub 页面（<https://github.com/kumina>）找到。
 
@@ -117,13 +117,13 @@ ALERT TargetFailedToScrape
    }
 ```
 
-这个告警会在名为 `up` 的指标在至少 15 分钟内为零时触发。`up` 指标由 Prometheus 隐式创建，用于表示它是否成功抓取了某个目标。告警表达式中使用的指标所附带的标签也会附加到告警本身。这些标签对于格式化用户友好的告警消息很有用，也可用于创建”静默”（silences）——即应当暂时抑制的告警模式（例如因计划维护）。Prometheus 会在其“Alerts”页面上显示所有已注册的告警规则及其状态。
+当名为 `up` 的指标至少 15 分钟保持为零时，这个告警会触发。`up` 指标由 Prometheus 隐式创建，用于表示它是否成功抓取了某个目标。告警表达式中使用的指标所附带的标签也会附加到告警本身。这些标签对于格式化用户友好的告警消息很有用，也可用于创建”静默”（silences）——即应当暂时抑制的告警模式（例如因计划维护）。Prometheus 会在其“Alerts”页面上显示所有已注册的告警规则及其状态。
 
 为了保持设计简洁，Prometheus 服务器只支持一种机制来通知活动告警，即向其他服务发送 REST 调用。Prometheus 项目提供了一个独立的守护进程 Alertmanager，可以处理这些 REST 调用，生成电子邮件、SMS 和 Slack 消息，并管理静默。Prometheus 用于执行 REST 调用的 URL 可以通过 `--alertmanager.url` 命令行标志配置。可能还需要将 `--web.external-url` 标志设置为 Prometheus 服务器的公共 URL，这样 Alertmanager 就能在其告警消息中添加指向 Prometheus 的可点击链接。
 
 ## 联邦：Prometheus 服务器的层级结构
 
-在某些场景下，用单个 Prometheus 服务器为整个基础设施收集指标并不合适。要抓取的目标数量和要摄入的指标数量可能对单个 Prometheus 实例而言过大。目标也可能在地理上分散，意味着没有一个位置能可靠地抓取所有目标。为解决这一问题，Prometheus 服务器可在 `/federate?match[]=...` 接收 HTTP GET 请求，以自身格式输出选定的已存储指标，使其他服务器可以摄入它们。
+在某些场景下，用单个 Prometheus 服务器为整个基础设施收集指标并不合适。要抓取的目标数量和要摄入的指标数量可能对单个 Prometheus 实例而言过大。目标也可能在地理上分散，意味着没有一个位置能可靠地抓取所有目标。为解决这一问题，Prometheus 服务器可在 **/federate?match[]=...** 接收 HTTP GET 请求，以自身格式输出选定的已存储指标，使其他服务器可以摄入它们。
 
 实践中你会发现，这种机制常被用来引入层级。一个跨多数据中心部署的服务可以在每个地点部署一台 Prometheus 服务器，只抓取附近的系统。这些 Prometheus 服务器随后用录制规则为整个数据中心聚合关键指标，再由一台全局 Prometheus 服务器抓取。在排查问题时，可以首先查看全局 Prometheus 实例提供的仪表盘来确定哪些数据中心受影响。要获取系统级的指标访问权限，可以切换到相应的本地实例。
 
@@ -197,4 +197,6 @@ datacenter:unbound_queries:rate5m =
 
 自 2016 年起，Prometheus 团队每年举办一次名为 PromCon（<https://promcon.io/>）的会议。今年的会议于 8 月 17—18 日在德国慕尼黑举行。如果你想了解 Prometheus 项目的最新进展，请务必查看会议网站，所有演讲的录像都公开提供。•
 
-> ED SCHOUTENS 是 Kumina（位于荷兰埃因霍温的托管服务提供商和咨询公司）的首席软件开发者。Kumina 为企业提供完全托管平台，并提供 Prometheus 和 Kubernetes 的支持、培训和咨询。欢迎访问我们的网站 <https://kumina.nl/> 或发送邮件至 <info@kumina.nl>，告诉我们你的项目或索取关于我们服务的更多信息。
+---
+
+> **ED SCHOUTENS** 是 Kumina（位于荷兰埃因霍温的托管服务提供商和咨询公司）的首席软件开发者。Kumina 为企业提供完全托管平台，并提供 Prometheus 和 Kubernetes 的支持、培训和咨询。欢迎访问我们的网站 <https://kumina.nl/> 或发送邮件至 <info@kumina.nl>，告诉我们你的项目或索取关于我们服务的更多信息。

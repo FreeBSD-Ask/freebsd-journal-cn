@@ -65,7 +65,7 @@ $ sudo pkg install -r FreeBSD www/webhook ftp/curl www/gurl
 
 让我们用这个最小示例启动服务器，将其保存为 webhooks.yaml。
 
-它将使用 `logger.1` 命令向 **/var/log/messages** 写入一条简短记录，包含成功 webhook 的 HTTP User-Agent header。
+它将使用 **logger(1)** 命令向 **/var/log/messages** 写入一条简短记录，包含成功 webhook 的 HTTP User-Agent header。
 
 注意，有一个 trigger-rule 键确保 HTTP 查询参数 `secret` 与单词 `squirrel` 匹配。
 

@@ -1,6 +1,7 @@
 # SVN 动态
 
-作者：STEVEN KREUZER
+- 原文：[svn Update](https://freebsdfoundation.org/wp-content/uploads/2017/10/svn-Update.pdf)
+- 作者：STEVEN KREUZER
 
 本期主题是 FreeBSD vs. Linux，因此我想回顾一下过去几个月 LinuxKPI 子系统的若干改动，应该会比较有趣。该项目最初于 2016 年 5 月宣布，旨在不必再把 Linux KMS 和 DRM 驱动的改动逐个移植到 FreeBSD。思路是引入一组垫片（shim）作为兼容层，让这些驱动只需极少改动即可运行，从而更易于跟上游开发，并大幅缩小 FreeBSD 代码与 Linux 原始代码之间的差异。此外，它还加快了 FreeBSD 集成新改动的速度——对于在尖端硬件上运行 FreeBSD 的人来说，这无疑是个好消息。
 
@@ -36,4 +37,6 @@
 
 - 为 LinuxKPI 实现 64 位原子操作。<https://svnweb.freebsd.org/changeset/base/294521>
 
-STEVEN KREUZER 是一名 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车有兴趣。他与妻子、女儿和狗居住在纽约皇后区。
+---
+
+**STEVEN KREUZER** 是一名 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车有兴趣。他与妻子、女儿和狗居住在纽约皇后区。

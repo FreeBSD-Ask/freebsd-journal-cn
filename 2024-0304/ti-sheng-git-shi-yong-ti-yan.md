@@ -21,7 +21,7 @@ FreeBSD 14 弃用了工具 `portsnap`——许多人曾用它来下载和更新 
 
 请注意，`git port` 本身包含了丰富的可配置选项。由于我们刚开始，可以暂时忽略这些选项，并在经验丰富时重新审视它们。如果你发现某些有用的东西，请考虑写成博客或为 FreeBSD 杂志写篇文章。毕竟，写文章的活儿不能都让我一个人干。
 
-git 可用后，我们可以返回上面的使用案例：下载 Ports。FreeBSD 手册第 4 章告诉我们，我们可以下载 HEAD 分支（最新最全的）或者稍微保守一点，下载季度分支。无论我们选择哪个，我们都会看到一个非常熟悉的命令 `git clone`。这都很好，但是下载上述全部文件和目录需要很长时间。来看看写这篇文章时的季度分支。我将使用 time(1) 命令来测量下载时间。
+git 可用后，我们可以返回上面的使用案例：下载 Ports。FreeBSD 手册第 4 章告诉我们，我们可以下载 HEAD 分支（最新最全的）或者稍微保守一点，下载季度分支。无论我们选择哪个，我们都会看到一个非常熟悉的命令 `git clone`。这都很好，但是下载上述全部文件和目录需要很长时间。来看看写这篇文章时的季度分支。我将使用 **time(1)** 命令来测量下载时间。
 
 ```sh
 $ time git clone https://git.FreeBSD.org/ports.git -b 2024Q1 /usr/ports
@@ -110,7 +110,7 @@ scalar clone https://git.FreeBSD.org/src.git
 0.01s user 0.00s system 0% cpu 31.971 total
 ```
 
-现在先忽略那些警告，进程仍会完成。这里有关于定期获取更新的 crontab(1) 的一些内容。要将现有存储库转换为使用 scalar，不用再次克隆：在存储库的根目录中运行 `scalar register`，它会将本地副本转换为使用 scalar 的模式。真方便！scalar 命令会设定一个 crontab 条目。如果你没有用户特定的 crontab（就像我这里为 root 用户设置的那样），那么可运行 `crontab -e` 来设置它。如果一切顺利，`git` 将添加一个 scalar 运行的条目：
+现在先忽略那些警告，进程仍会完成。这里有关于定期获取更新的 **crontab(1)** 的一些内容。要将现有存储库转换为使用 scalar，不用再次克隆：在存储库的根目录中运行 `scalar register`，它会将本地副本转换为使用 scalar 的模式。真方便！scalar 命令会设定一个 crontab 条目。如果你没有用户特定的 crontab（就像我这里为 root 用户设置的那样），那么可运行 `crontab -e` 来设置它。如果一切顺利，`git` 将添加一个 scalar 运行的条目：
 
 ```sh
 # BEGIN GIT MAINTENANCE SCHEDULE
@@ -170,7 +170,7 @@ git config --global core.editor nvim
 
 基本上，你总是想把它设置为全局选项。在项目的 `.git/config` 中引入这个配置并将其提交，将导致生产效率急剧下降，因为其他贡献者将同你开始一场神圣的编辑器之战，导致仓库中充斥着试图将其更改为他们自己个人喜欢的编辑器的修改。在那天，爱讽刺人的老板永远地关上了你身后的公司大门，你会记起他的最后一句话是——“你真是个大聪明！”。
 
-还有其他配置设置会（更积极地）影响你的提交体验。选项太多，无法一一列举，但默认设置很好。稍作调整可以在一定程度上改善你的 git 体验，并可能消除一些个人困扰（请参阅下文）。有关详细信息，请参阅 git-config(1)。
+还有其他配置设置会（更积极地）影响你的提交体验。选项太多，无法一一列举，但默认设置很好。稍作调整可以在一定程度上改善你的 git 体验，并可能消除一些个人困扰（请参阅下文）。有关详细信息，请参阅 **git-config(1)**。
 
 如何为高级、常用但繁琐的命令定义别名？这就是别名部分派上用场的地方。我已经定义了这些别名：
 
@@ -180,7 +180,7 @@ git config --global core.editor nvim
     g = log --graph --all --pretty=format:'%Cred%h -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an (%ae)>'
 ```
 
-类似地，当查看日志时，我希望至少看到这些字段：提交、作者、作者做出修改的日期，以及提交及其日期。这可以通过查看 git-log(1) 并找出该选项名为 fuller 来实现：
+类似地，当查看日志时，我希望至少看到这些字段：提交、作者、作者做出修改的日期，以及提交及其日期。这可以通过查看 **git-log(1)** 并找出该选项名为 fuller 来实现：
 
 ```sh
 git config --global format.pretty fuller
@@ -227,7 +227,7 @@ git config --global commit.gpgsign true
 email ssh-ed25519 ssh_public_key comment
 ```
 
-目光敏锐的人会认出它与 ssh-keygen(1) 使用的格式相同。我们至少需要信任自己的 SSH 密钥，所以将其放在这里。对你圈子中其他为仓库做贡献并签署提交的人重复此步骤。为了教会 git 如何处理这个文件，添加另一个配置选项（正是之前错误消息提到的那个）。
+目光敏锐的人会认出它与 **ssh-keygen(1)** 使用的格式相同。我们至少需要信任自己的 SSH 密钥，所以将其放在这里。对你圈子中其他为仓库做贡献并签署提交的人重复此步骤。为了教会 git 如何处理这个文件，添加另一个配置选项（正是之前错误消息提到的那个）。
 
 ```sh
 git config --global gpg.ssh.allowedSignersFile "~/.config/git/allowed_signers"

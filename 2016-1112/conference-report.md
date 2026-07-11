@@ -19,7 +19,7 @@ Uber 六分钟后，我们在上午 9 点抵达会场。第一场正式演讲定
 
 会场氛围像典型的大学讲座，只是“学生”们带着更好的笔记本，且偏爱恶魔角。会议分为 45 分钟一段，话题涵盖各种 FreeBSD 相关主题，从 Jail 网络到 ZFS 与 OpenZFS 的历史。每场演讲后有 10 分钟问答。
 
-第一场演讲由 Devin Teske 带来，他现场演示了创建与管理 vimage Jail。在他的演讲中，我了解到 netgraph 与 if_bridge 可用于创建网络配置正确的多个 Jail。我也了解到，虽然技术上可以在 VNET Jail 中运行 ZFS 服务器，但不推荐这样做，因为已知在活跃 NFS 挂载时会发生 kernel panic。
+第一场演讲由 Devin Teske 带来，她现场演示了创建与管理 vimage Jail。在她的演讲中，我了解到 netgraph 与 if_bridge 可用于创建网络配置正确的多个 Jail。我也了解到，虽然技术上可以在 VNET Jail 中运行 ZFS 服务器，但不推荐这样做，因为已知在活跃 NFS 挂载时会发生 kernel panic。
 
 下午有一场“话题头脑风暴”，组织者给我们一个 Google Doc 链接，让我们分享想讨论的话题。约六个话题被提出，但我们这桌最感兴趣的无疑是“为了乐趣与利益钓鱼式戏弄 Linux 管理员”。
 

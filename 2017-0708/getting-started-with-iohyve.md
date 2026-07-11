@@ -22,7 +22,7 @@ iohyve 无聊的起源故事就讲到这里，下面来实际学习如何使用 
 pkg install sudo nano tmux git htop bhyve-firmware grub2-bhyve
 ```
 
-`sudo` 的用法相当直白：bhyve 需要 root（暂时如此），而我不信任用户。与其给他们 root 账号访问权限，不如通过 `sudo` 委派。我知道你们中有些人对我用 nano 投来异样眼光，但自从我开始编辑配置文件，就一直用 nano。当然，base 里的 `edit` 比 `vi` 还简单，但 nano 的操作界面对我来说已是肌肉记忆，无需思考。下一个是 `tmux`，终端多路复用器。它好用之处很多，第一是：即便你的 SSH 会话中断，会话仍能保持打开。由于 bhyve 默认不使用图形控制台，所有通信都通过 null modem（类似串行连接）进行。`tmux` 让你可以为每个 iohyve guest 的控制台开一个新窗口或窗格。我稍后会讲如何用它来帮助监控 iohyve 主机。我喜欢用 `git`，因为即便你可以通过 Ports 或 `pkg` 安装 iohyve，仍能确保从 iohyve GitHub 主分支获得最新最棒的 bug 修复。我还安装了 `htop`，说实话就是为了它那漂亮的 CPU 图表输出，方便一眼监控资源。`bhyve-firmware` 包安装 bhyve UEFI 固件，本文不会深入，但备着总没错。iohyve 与 UEFI 的更多信息见 man 手册页。最后是 `grub2-bhyve`，它让我们能把其他 BSD 或 Linux 发行版作为 iohyve guest 运行。一切安装完毕后，我把默认用户加入 sudoers 文件，重启进入新系统。此后我用 SSH 连接机器。理论上，这些操作也都能在控制台上完成。
+`sudo` 的用法相当直白：bhyve 需要 root（暂时如此），而我不信任用户。与其给他们 root 账号访问权限，不如通过 `sudo` 委派。我知道你们中有些人对我用 nano 投来异样眼光，但自从我开始编辑配置文件，就一直用 nano。当然，base 里的 `edit` 比 `vi` 还简单，但 nano 的操作界面对我来说已是肌肉记忆，无需思考。下一个是 `tmux`，终端多路复用器。它好用之处很多，第一是：即便你的 SSH 会话中断，会话仍能保持打开。由于 bhyve 默认不使用图形控制台，所有通信都通过 null modem（类似串行连接）进行。`tmux` 让你可以为每个 iohyve guest 的控制台开一个新窗口或窗格。我稍后会讲如何用它来帮助监控 iohyve 主机。我喜欢用 `git`，因为即便你可以通过 Ports 或 `pkg` 安装 iohyve，仍能确保从 iohyve GitHub 主分支获得最新最棒的 bug 修复。我还安装了 `htop`，说实话就是为了它那漂亮的 CPU 图表输出，方便一眼监控资源。`bhyve-firmware` 软件包安装 bhyve UEFI 固件，本文不会深入，但备着总没错。iohyve 与 UEFI 的更多信息见 man 手册页。最后是 `grub2-bhyve`，它让我们能把其他 BSD 或 Linux 发行版作为 iohyve guest 运行。一切安装完毕后，我把默认用户加入 sudoers 文件，重启进入新系统。此后我用 SSH 连接机器。理论上，这些操作也都能在控制台上完成。
 
 登录后第一件事，就是开一个新的 `tmux` 会话，简单地：
 
@@ -39,7 +39,7 @@ sudo make install clean
 cd ~
 ```
 
-如果你仔细找，也可以下载最新的 master ZIP 文件。也有发布版本可用，同样以 Port 和 package 形式提供。现在我们可以安装它（如果用 `sudo`）了。
+如果你仔细找，也可以下载最新的 master ZIP 文件。也有发布版本可用，同样以 Port 和软件包形式提供。现在我们可以安装它（如果用 `sudo`）了。
 
 瞧！Makefile 的魔法把一切都搬到了它该在的位置，包括 man 手册页和 RC 脚本。现在我们需要设置 iohyve。其中一条设置命令只需运行一次；另一条则要在每次启动 iohyve 主机时运行。这可以用 RC 脚本轻松完成，我们稍后介绍。首先，我们在 zpool 上设置 iohyve。例中使用内置的 zroot 池。你可以用任何已配置好的池。
 
@@ -130,4 +130,6 @@ iohyve info -v
 
 希望你现在掌握了足够的知识，或许可以把一些散落的 Linux 服务器搬到虚拟主机上，或者只是弄一个不错的沙盒来测试新东西、学习新技能。你可能会发现自己喜欢用别的方式监控资源，或者只需运行 FreeBSD guest，或只运行 Windows guest。希望 iohyve 能帮你顺利航行在系统管理的波涛中。如果你对 iohyve 有问题或疑问，或想申请新功能，甚至想为 iohyve 做贡献，请前往 GitHub 页面（<https://github.com/pr1ntf/iohyve>），总会有人回应。iohyve 项目由志愿者运营，所以别指望即时回复，但我们一般会回复 GitHub issue（<https://github.com/pr1ntf/iohyve/issues>）。
 
-TRENT THOMPSON 白天是安全工程师，夜晚是 FreeBSD 与虚拟化爱好者，维护并为 iohyve 项目做贡献。不做 BSD 相关活动时，你能在家里发现他在折腾其他技术玩意——比如音乐合成器、模型火箭，或者 20 世纪 80 年代的微型计算机。爱好永远不嫌多。
+---
+
+**TRENT THOMPSON** 白天是安全工程师，夜晚是 FreeBSD 与虚拟化爱好者，维护并为 iohyve 项目做贡献。不做 BSD 相关活动时，你能在家里发现他在折腾其他技术玩意——比如音乐合成器、模型火箭，或者 20 世纪 80 年代的微型计算机。爱好永远不嫌多。

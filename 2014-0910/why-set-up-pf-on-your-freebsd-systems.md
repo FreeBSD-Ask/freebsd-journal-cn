@@ -135,11 +135,11 @@ overload <bruteforce> flush global)
 
 FreeBSD 中的 PF（以及原始 OpenBSD 中更进一步的版本——出于各种可以理解的原因，FreeBSD 10 中附带的 PF 落后 OpenBSD 源码超过六年）提供了对许多有用功能的友好接口，以及相当多精细配置系统的可能性。PF 及相关工具能为你带来负载均衡、主机和服务冗余（本质上是集群功能）、流量整形，甚至一些轻量级而有效的反垃圾邮件功能。
 
-本文中的配置示例大致基于我的教程以及最终演变为《The Book of PF》（现已出至第三版）的手稿版本。如需进一步阅读，可以从 FreeBSD Handbook 防火墙章节中的 PF 部分（由我贡献，但由各位文档提交者进一步开发）、《The Book of PF》，当然还有 `pf.conf(5)` 和 `pfctl(8)` 手册页以及这些文档中的任何引用开始。如果你想研究代码本身，它就在你预期的地方。
+本文中的配置示例大致基于我的教程以及最终演变为《The Book of PF》（现已出至第三版）的手稿版本。如需进一步阅读，可以从 FreeBSD Handbook 防火墙章节中的 PF 部分（由我贡献，但由各位文档提交者进一步开发）、《The Book of PF》，当然还有 **pf.conf(5)** 和 **pfctl(8)** 手册页以及这些文档中的任何引用开始。如果你想研究代码本身，它就在你预期的地方。
 
 ## 参考文献
 
 - Hansteen, Peter N. M. The Book of PF. No Starch Press.（第 3 版，2014）<http://www.nostarch.com/pf3>
 - Hansteen, Peter N. M. The Hail Mary Cloud and the Lessons Learned（博客文章）。（2013）<http://bsdly.blogspot.com/2013/10/the-hail-mary-cloud-and-lessons-learned.html>
 - FreeBSD Handbook, PF chapter. (1995–2014) <https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/firewalls-pf.html>
-- The PF man pages `pfctl(8)` `pf.conf(5)`
+- The PF man pages **pfctl(8)** **pf.conf(5)**

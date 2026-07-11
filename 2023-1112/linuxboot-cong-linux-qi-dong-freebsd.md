@@ -23,7 +23,7 @@
 
 ## Linux 引导
 
-用 Linux 引导 Linux 的历史非常悠久，但篇幅有限，只能简要概述。1990 年代中期，`kexec.2` 系统调用家族被加入 Linux，用于提高服务器和嵌入式系统的正常运行时间和可靠性。Ron Minnich 和 Eric Biederman 于 1990 年代在洛斯阿拉莫斯启动了 LinuxBIOS 项目，旨在用固件中的 Linux 内核来引导系统。这个项目演变成了 coreboot，被 Chromebook 和多款开放平台笔记本电脑使用。在此过程中，coreboot 变得模块化，允许二进制 blob 与开源组件并存，因为 CPU 厂商拒绝开放早期处理器初始化代码，只向开源和闭源固件开发者提供二进制 blob。EDK2、U-Boot 和闭源固件也发展出了模块化系统，允许这些二进制 blob 与其他组件共存。
+用 Linux 引导 Linux 的历史非常悠久，但篇幅有限，只能简要概述。1990 年代中期，**kexec(2)** 系统调用家族被加入 Linux，用于提高服务器和嵌入式系统的正常运行时间和可靠性。Ron Minnich 和 Eric Biederman 于 1990 年代在洛斯阿拉莫斯启动了 LinuxBIOS 项目，旨在用固件中的 Linux 内核来引导系统。这个项目演变成了 coreboot，被 Chromebook 和多款开放平台笔记本电脑使用。在此过程中，coreboot 变得模块化，允许二进制 blob 与开源组件并存，因为 CPU 厂商拒绝开放早期处理器初始化代码，只向开源和闭源固件开发者提供二进制 blob。EDK2、U-Boot 和闭源固件也发展出了模块化系统，允许这些二进制 blob 与其他组件共存。
 
 ## NERF 项目成为 LinuxBoot
 

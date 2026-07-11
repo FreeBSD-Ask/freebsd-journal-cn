@@ -2,7 +2,7 @@
 
 2017 年 9 月
 
-作者：DRU LAVIGNE
+作者：Dru Lavigne
 
 以下 BSD 相关会议将于 2017 年 9 月举行。
 

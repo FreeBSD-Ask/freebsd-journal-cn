@@ -55,7 +55,7 @@ X710-DA2 拥有两个物理的 SFP+ 光纤端口。在 SR-IOV 术语中，这些
 
 ![主板 SR-IOV 启用界面](../png/2024-0102/sriov-yi-cheng-wei-freebsd-zhong-zhong-yao-de-gong-neng-7.jpg)
 
-现在，我们可以启动 FreeBSD，并查看 [dmesg(8)](https://man.freebsd.org/dmesg)。以下是我系统中 `dmesg` 的一段输出。
+现在，我们可以启动 FreeBSD，并查看 [**dmesg(8)**](https://man.freebsd.org/dmesg)。以下是我系统中 `dmesg` 的一段输出。
 
 ```sh
 ixl0: <Intel(R) Ethernet Controller X710 for 10GbE SFP+ - 2.3.3-k> mem 0x6000800000-0x6000ffffff,0x6001808000-0x600180ffff irq 16 at device 0.0 on pci1
@@ -70,7 +70,7 @@ ixl0: PCI Express Bus: Speed 2.5GT/s Width x8
 ixl0: SR-IOV ready ixl0: netmap queues/slots: TX 4/1024, RX 4/1024
 ```
 
-在第三行，我们看到了一些 SR-IOV 的信息。“PF-ID [0]”与 ixl0 相关，并且这个 PF 能支持 64 个 VF。而在第十行，我们可以看到明确确认：这个 PCIe 设备是“SR-IOV 就绪”（SR-IOV ready）。之所以名称是“ixl”，是因为这张网卡使用了 [ixl(4)](https://man.freebsd.org/cgi/man.cgi?query=ixl) Intel Ethernet 700 系列驱动。
+在第三行，我们看到了一些 SR-IOV 的信息。“PF-ID [0]”与 ixl0 相关，并且这个 PF 能支持 64 个 VF。而在第十行，我们可以看到明确确认：这个 PCIe 设备是“SR-IOV 就绪”（SR-IOV ready）。之所以名称是“ixl”，是因为这张网卡使用了 [**ixl(4)**](https://man.freebsd.org/cgi/man.cgi?query=ixl) Intel Ethernet 700 系列驱动。
 
 除了检查硬件状态外，无需其他配置。某些网卡（比如前面提到的 Mellanox）需要你配置网卡的固件，而其他网卡（比如前面提到的 Chelsio）则需要在 **/boot/loader.conf** 中进行驱动配置。但 X710-DA2 并不需要这些配置，尽管你可能需要检查并更新卡的固件版本（如有必要）。
 
@@ -91,7 +91,7 @@ defaultrouter="10.0.1.1"
 
 ### 指示 PF 创建 VF
 
-在 FreeBSD 中，是通过 [iovctl(8)](https://man.freebsd.org/cgi/man.cgi?query=iovctl) 实现 PF 和 VF 的管理的，`iovctl` 随操作系统提供。要创建 VF，我们需要在 **/etc/iov/** 目录下创建一个文件，指定我们需要的配置。我们将采用一个简单的策略：创建一个 VF 分配给 Jail，另一个 VF 分配给 bhyve 虚拟机。可以参考手册页 [iovctl.conf(5)](https://man.freebsd.org/iovctl.conf) 了解最重要的参数。
+在 FreeBSD 中，是通过 [**iovctl(8)**](https://man.freebsd.org/cgi/man.cgi?query=iovctl) 实现 PF 和 VF 的管理的，`iovctl` 随操作系统提供。要创建 VF，我们需要在 **/etc/iov/** 目录下创建一个文件，指定我们需要的配置。我们将采用一个简单的策略：创建一个 VF 分配给 Jail，另一个 VF 分配给 bhyve 虚拟机。可以参考手册页 [**iovctl.conf(5)**](https://man.freebsd.org/iovctl.conf) 了解最重要的参数。
 
 ```INI
 OPTIONS
@@ -104,7 +104,7 @@ OPTIONS
 
 我喜欢将 `num_vfs` 设置为实际需要的数量。我们本可以将其设置为最大值，但我发现这样会使查看 `ifconfig` 等命令的输出变得更加困难。
 
-另外，由于不同的网卡有不同的驱动程序，每款驱动程序都有一些可以根据硬件能力设置的选项。手册页面 [ixl(4)](https://man.freebsd.org/ixl) 列出了多个可选参数。
+另外，由于不同的网卡有不同的驱动程序，每款驱动程序都有一些可以根据硬件能力设置的选项。手册页面 [**ixl(4)**](https://man.freebsd.org/ixl) 列出了多个可选参数。
 
 ```sh
 IOVCTL OPTIONS
@@ -175,7 +175,7 @@ device=0x1572 subvendor=0x8086 subdevice=0x0000
     subclass   = ethernet
 ```
 
-要使 **/etc/iov/ixl0.conf** 配置文件生效，我们使用 [iovctl(8)](https://man.freebsd.org/cgi/man.cgi?query=iovctl)。
+要使 **/etc/iov/ixl0.conf** 配置文件生效，我们使用 [**iovctl(8)**](https://man.freebsd.org/cgi/man.cgi?query=iovctl)。
 
 ```sh
 (host) $ sudo iovctl -C -f /etc/iov/ixl0.conf
@@ -218,7 +218,7 @@ iavf1@pci0:1:0:17:        class=0x020000 rev=0x01 hdr=0x00 vendor=0x8086 device=
     subclass   = ethernet
 ```
 
-瞧！我们已经创建了崭新的 VF 设备。在 `pciconf` 的输出中，我们仍然可以看到原来的 `ixl` 设备，但现在有了两个 [iavf](https://man.freebsd.org/iavf) 设备。手册页面 `iavf(4)` 告诉我们，这是 Intel Adaptive Virtual Function 的驱动程序。
+瞧！我们已经创建了崭新的 VF 设备。在 `pciconf` 的输出中，我们仍然可以看到原来的 `ixl` 设备，但现在有了两个 [iavf](https://man.freebsd.org/iavf) 设备。手册页面 **iavf(4)** 告诉我们，这是 Intel Adaptive Virtual Function 的驱动程序。
 
 除了看到新的 PCI 设备外，`ifconfig` 也确认它们已经被识别为网络接口。对于大多数网络设备的常见功能，你可能区分不开 PF 和 VF。想要了解更详细的区别，可以查看驱动文档及使用 `pciconf` 的 `-c` 功能选项，例如 `pciconf -lc iavf`。
 
@@ -253,7 +253,7 @@ desk {
 }
 ```
 
-就这样！这个 Jail 现在能通过 [vnet(9)](https://man.freebsd.org/vnet) 访问自己专用的 VF 网络设备。我将修改这个 Jail 的 **/etc/rc.conf** 文件，启用网络配置：
+就这样！这个 Jail 现在能通过 [**vnet(9)**](https://man.freebsd.org/vnet) 访问自己专用的 VF 网络设备。我将修改这个 Jail 的 **/etc/rc.conf** 文件，启用网络配置：
 
 ```sh
 ifconfig_iavf0="inet 10.0.1.231 netmask 255.255.255.0"
@@ -291,7 +291,7 @@ ixl0 ixl1 lo0 iavf1
 
 ## 在 Bhyve 虚拟机中使用 SR-IOV 网络 VF
 
-通过虚拟机 [bhyve(8)](https://man.freebsd.org/bhyve)，你也能实现差不多的效果，虽然方法稍有不同。对于 Jail，我们可以在运行时分配和释放 VF。而在 bhyve 中，VF 的分配和释放必须在启动时完成，并且需要调整 SR-IOV 配置。首先，在做任何更改之前，我们再看一下 `pciconf`。
+通过虚拟机 [**bhyve(8)**](https://man.freebsd.org/bhyve)，你也能实现差不多的效果，虽然方法稍有不同。对于 Jail，我们可以在运行时分配和释放 VF。而在 bhyve 中，VF 的分配和释放必须在启动时完成，并且需要调整 SR-IOV 配置。首先，在做任何更改之前，我们再看一下 `pciconf`。
 
 ```sh
 (host) $ pciconf -l | grep iavf
@@ -301,7 +301,7 @@ iavf1@pci0:1:0:17:      class=0x020000 rev=0x01 hdr=0x00 vendor=0x8086 device=0x
 subvendor=0x8086 subdevice=0x0000
 ```
 
-看看未使用的 VF，`iavf1`。第一列可以理解为：“有一个使用 iavf 驱动的 PCI0 设备，ID 为 1，PCI 选择符为总线 1，插槽 0，功能 17”。虽然现在你还不需要它们，但最后这三个数字最终会告诉 bhyve 我们需要使用哪个设备。在此之前，我们需要确保在启动时加载 [vmm(4)](https://man.freebsd.org/vmm) 以启用 bhyve，再调整我们的第二个 VF 以便将其传给 bhyve。
+看看未使用的 VF，`iavf1`。第一列可以理解为：“有一个使用 iavf 驱动的 PCI0 设备，ID 为 1，PCI 选择符为总线 1，插槽 0，功能 17”。虽然现在你还不需要它们，但最后这三个数字最终会告诉 bhyve 我们需要使用哪个设备。在此之前，我们需要确保在启动时加载 [**vmm(4)**](https://man.freebsd.org/vmm) 以启用 bhyve，再调整我们的第二个 VF 以便将其传给 bhyve。
 
 ```sh
 ## 启动虚拟机监控程序（bhyve 的内核部分）
@@ -532,7 +532,7 @@ unmanaged-devices=interface-name:enp5s0f1*,interface-name:phys*
 
 ## 结论
 
-SR-IOV 是 FreeBSD 中的一等公民。本文中提到的所有内容都可以通过操作系统提供的手册页找到。你可以通过简单的 [apropos(1)](https://man.freebsd.org/apropos) 搜索来开始。
+SR-IOV 是 FreeBSD 中的一等公民。本文中提到的所有内容都可以通过操作系统提供的手册页找到。你可以通过简单的 [**apropos(1)**](https://man.freebsd.org/apropos) 搜索来开始。
 
 ```sh
 (host) $ apropos "SR-IOV"

@@ -28,16 +28,18 @@ UNIX System V 由 AT&T 开发，于 1983 年首次发布，是最早的商业版
 
 扩展工业标准架构是 1988 年公布的 IBM PC 兼容机总线标准，作为 IBM 专有微通道架构的替代方案推出。尽管 EISA 向后兼容 ISA 且非专有总线，但在桌面计算机上一直未真正普及，仅在服务器市场取得一定成功，因为它适合带宽密集型任务。
 
-## 移除 bdes(1)
+## 移除 **bdes(1)**
 
 （<https://svnweb.freebsd.org/changeset/base/313329>）
 
-`bdes` 工具实现了 FIPS PUB 81 中描述的全部 DES 操作模式，包括备用密文反馈模式和两种认证模式。DES 用于任何用途都不再推荐，尤其是静态 IV 为 0 的情况下，但如果需要 `bdes(1)`，仍可从 Ports 系统安装。
+`bdes` 工具实现了 FIPS PUB 81 中描述的全部 DES 操作模式，包括备用密文反馈模式和两种认证模式。DES 用于任何用途都不再推荐，尤其是静态 IV 为 0 的情况下，但如果需要 **bdes(1)**，仍可从 Ports 系统安装。
 
-## 移除 Intel 82586 ISA 以太网适配器的 ie(4) 驱动
+## 移除 Intel 82586 ISA 以太网适配器的 **ie(4)** 驱动
 
 （<https://svnweb.freebsd.org/changeset/base/304513>）
 
 该驱动仅支持通过外设输入输出（Peripheral Input/Output）实现的 10 Mb 以太网，且没有任何 PC Card 适配器受支持，仅支持 ISA 卡。
 
-STEVEN KREUZER 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他与妻子、两个女儿和狗住在纽约皇后区。
+---
+
+**STEVEN KREUZER** 是 FreeBSD 开发者和 Unix 系统管理员，对复古计算和风冷大众汽车感兴趣。他与妻子、两个女儿和狗住在纽约皇后区。

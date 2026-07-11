@@ -34,17 +34,17 @@
 
 ## FreeBSD 中的磁带
 
-FreeBSD 自 386BSD patchkit 起就支持磁带。最初的 FreeBSD SCSI 层由 Julian Elischer 编写，他还编写了 `st`(4) 磁带驱动。Justin Gibbs 和我编写了 FreeBSD 的 CAM（Common Access Method）SCSI 层，于 1998 年进入 FreeBSD 树，其中包含 `sa`(4)（Sequential Access）磁带驱动。（Justin 编写了 `sa`(4) 驱动的大部分。）Matt Jacob 从 1998 年底开始大幅改写 `sa`(4) 驱动，它现在的样子很大程度上归功于他的工作。Matt 多年来是该驱动的维护者。如今我是事实上的维护者。
+FreeBSD 自 386BSD patchkit 起就支持磁带。最初的 FreeBSD SCSI 层由 Julian Elischer 编写，他还编写了 **st(4)** 磁带驱动。Justin Gibbs 和我编写了 FreeBSD 的 CAM（Common Access Method）SCSI 层，于 1998 年进入 FreeBSD 树，其中包含 **sa(4)**（Sequential Access）磁带驱动。（Justin 编写了 **sa(4)** 驱动的大部分。）Matt Jacob 从 1998 年底开始大幅改写 **sa(4)** 驱动，它现在的样子很大程度上归功于他的工作。Matt 多年来是该驱动的维护者。如今我是事实上的维护者。
 
-`sa`(4) 驱动支持从旧式 SCSI-1 9-track 磁带机到最新的 Fibre Channel 连接 IBM TS1155 磁带机等各类磁带机。它包含现代密度支持，使用 `mt`(1) 的 getdensity 子命令。你可以用该命令询问现代磁带机它支持哪些磁带盒及哪些格式。这对于 IBM TS（以及现在的 LTO）磁带机非常有用，因为一盒磁带可以有多种不同容量的可用格式。
+**sa(4)** 驱动支持从旧式 SCSI-1 9-track 磁带机到最新的 Fibre Channel 连接 IBM TS1155 磁带机等各类磁带机。它包含现代密度支持，使用 **mt(1)** 的 `getdensity` 子命令。你可以用该命令询问现代磁带机它支持哪些磁带盒及哪些格式。这对于 IBM TS（以及现在的 LTO）磁带机非常有用，因为一盒磁带可以有多种不同容量的可用格式。
 
-`sa`(4) 驱动还支持 unmapped I/O。Unmapped I/O 缓冲区是用户态缓冲区，不映射到内核的虚拟地址空间，而是直接翻译为物理页，再传输到 FC/SAS/SCSI 控制器固件进行 DMA。将用户缓冲区映射到内核虚拟地址空间在现代多核机器上会因 TLB（Translation Lookaside Buffer）shootdown 而变慢——更新每个核心的缓存需要 shootdown。Unmapped I/O 允许内核不需要触碰的数据不经映射穿过内核，避免 TLB shootdown。大量 I/O 活动下，避免 TLB shootdown 能显著提升性能。
+**sa(4)** 驱动还支持 unmapped I/O。Unmapped I/O 缓冲区是用户态缓冲区，不映射到内核的虚拟地址空间，而是直接翻译为物理页，再传输到 FC/SAS/SCSI 控制器固件进行 DMA。将用户缓冲区映射到内核虚拟地址空间在现代多核机器上会因 TLB（Translation Lookaside Buffer）shootdown 而变慢——更新每个核心的缓存需要 shootdown。Unmapped I/O 允许内核不需要触碰的数据不经映射穿过内核，避免 TLB shootdown。大量 I/O 活动下，避免 TLB shootdown 能显著提升性能。
 
 ## 处理磁带库
 
-FreeBSD 自 1998 年从原始 SCSI 层过渡到 CAM 起就通过 `ch`(4) 驱动和 `chio`(1) 工具内置支持磁带库。我将 `ch`(4) 驱动和 `chio`(1)（由 Jason Thorpe 编写）从 NetBSD 移植到 FreeBSD/CAM。`ch`(4) 驱动支持从非常旧的磁带库到最新磁带库的一切设备。
+FreeBSD 自 1998 年从原始 SCSI 层过渡到 CAM 起就通过 **ch(4)** 驱动和 **chio(1)** 工具内置支持磁带库。我将 **ch(4)** 驱动和 **chio(1)**（由 Jason Thorpe 编写）从 NetBSD 移植到 FreeBSD/CAM。**ch(4)** 驱动支持从非常旧的磁带库到最新磁带库的一切设备。
 
-`mtx`(1) 工具（位于 Ports/misc）也可控制磁带库，通过 SCSI passthrough 操作。
+**mtx(1)** 工具（位于 Ports/misc）也可控制磁带库，通过 SCSI passthrough 操作。
 
 虽然 `chio`(1) 和 `mtx`(1) 适合命令行控制磁带库，但具有磁带库级支持的备份应用（如 Bacula 或 Amanda）会使用 `chio`(1) 或 `mtx`(1) 在磁带库的槽位和磁带机之间移动磁带。
 

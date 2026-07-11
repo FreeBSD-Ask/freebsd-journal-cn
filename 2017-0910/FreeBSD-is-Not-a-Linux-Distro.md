@@ -5,7 +5,7 @@
 
 本文经由多次讲座整理而成，在讲座中 FreeBSD 社区的多位成员将 FreeBSD 同 Linux 区别开来。由于 Linux 仍然是更加广为人知的系统，它可以作为对照，用来向技术性读者说明 FreeBSD 是什么、能做什么，以及如何应用它来构建需要操作系统的各种系统。
 
-由于本文载于《FreeBSD 期刊》，我假设读者已对 FreeBSD 有所了解，因此我将文章组织为一系列要素，便于在向同事或公司管理层解释 FreeBSD 时作为参考。
+由于本文载于《FreeBSD 期刊》，我假设读者已对 FreeBSD 有所了解，因此我将文章组织为一系列谈话要点，便于在向同事或公司管理层解释 FreeBSD 时作为参考。
 
 ## FreeBSD 是一款完整的系统
 
@@ -54,7 +54,7 @@ FreeBSD 项目由那些对源代码树做出贡献的人组织，也为他们服
 3. 一段时间后，Bob 发现 Alice 已能够独立提交更改，于是提名她获得提交权限。
 4. Bob 向相关团队发送电子邮件，提议授予 Alice 提交权限。如果 Alice 从事源代码工作，Bob 会联系核心团队；如果她从事文档工作，则联系文档团队；如果她负责一个或多个 Ports，则联系 Ports 团队。
 5. 核心团队、文档团队和 Ports 团队可以对提议的提交权限进行投票，如果权限被批准，Bob 将成为 Alice 的导师。
-6. 在一段时间内，Bob 必须批准 Alice 对源代码树的所有提交，这个过程要求 Alice 通过代码审查系统（[https://reviews.freebsd.org）与](https://reviews.freebsd.org）与) Bob 核对她的更改。
+6. 在一段时间内，Bob 必须批准 Alice 对源代码树的所有提交，这个过程要求 Alice 通过代码审查系统（https://reviews.freebsd.org）与 Bob 核对她的更改。
 7. 若 Bob 确认 Alice 能够独立工作，他会解除对她的指导。此后，Alice 就可以独立指导新的提交者。
 
 这七个步骤展示了 FreeBSD 项目如何不断吸纳新鲜血液。
@@ -85,4 +85,4 @@ Capsicum 是一个现代能力系统（capability system），专为 FreeBSD 构
 
 **GEORGE V. NEVILLE-NEIL** 从事网络和操作系统代码开发，既为兴趣也为职业。他还教授与编程相关的各类课程。他的兴趣领域包括代码探索、操作系统、网络和时间协议。他与 Marshall Kirk McKusick 和 Robert N. M. Watson 合著了《FreeBSD 操作系统设计与实现》。
 
-十余年来，他以专栏作家“Kode Vicious”的身份广为人知。他在马萨诸塞州波士顿的东北大学被授予计算机科学学士学位，是 ACM、Usenix 协会和 IEEE 的成员。他热衷骑行和旅行，目前居住在纽约市。
+十余年来，他以专栏作家“Kode Vicious”的身份广为人知。他在马萨诸塞州波士顿的东北大学获得计算机科学学士学位，是 ACM、Usenix 协会和 IEEE 的成员。他热衷骑行和旅行，目前居住在纽约市。

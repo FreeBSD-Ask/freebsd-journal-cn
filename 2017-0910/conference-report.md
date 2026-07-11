@@ -1,6 +1,7 @@
 # 会议报告
 
-作者：MICHAEL W LUCAS
+- 原文：[BSDCam 2017 Trip Report](https://freebsdfoundation.org/wp-content/uploads/2017/10/Conference-Report.pdf)
+- 作者：MICHAEL W LUCAS
 
 数十年来，FreeBSD 的开发与协调从纯线上协作，逐渐转向越来越多地依赖面对面的协调与合作。FreeBSD 基金会在 BSDCan、EuroBSDCon 和 AsiaBSDCon 之前都会赞助一场开发者峰会，让前去参会的开发者能顺便利用机票解决一些问题。互联网确实便于协调，但比不上一群开发者花 10 分钟在白板上勾画，把某件事做到万无一失。除了协调工作之外，会议开发者峰会都是有层级结构的。议程固定，议题事先确定。每场会议都有主持人。会议可能极具信息量，也可能演变成激烈的争论，或介于两者之间。
 
@@ -12,4 +13,6 @@ BSDCam 仅限受邀参加，场地也只能容纳 50 人左右。你必须正在
 
 每年 BSDCan 结束时我都疲惫不堪。BSDCam 结束时我已彻底精疲力尽。这些高强度、聚焦明确的讨论让我的大脑被拉伸到极限。不过，我对 FreeBSD 开发关键部分的真实走向有了非常清晰的了解。这有助于让新版《Absolute FreeBSD》经得起未来考验——至少在计算机书能经得起未来考验的范围内。此外，BSDCam 的会议晚宴是我见过最华丽的。我要感谢 Robert Watson 的盛情邀请，并感谢 FreeBSD 基金会为本趟行程分担费用。
 
-MICHAEL W LUCAS 著有多本 FreeBSD 书籍，包括《Absolute FreeBSD》和《FreeBSD Mastery》系列。更多信息见 <www.michaelwlucas.com>。
+---
+
+**MICHAEL W LUCAS** 著有多本 FreeBSD 书籍，包括《Absolute FreeBSD》和《FreeBSD Mastery》系列。更多信息见 <www.michaelwlucas.com>。
