@@ -26,7 +26,7 @@ pnfsd.dsattr——此扩展属性存储文件的 Size、AccessTime、ModifyTime 
 
 对于支持 pNFS 的 NFSv4.1 客户端，FreeBSD 服务器将向客户端返回两条信息，允许它直接对 DS 执行 I/O。
 
-• DeviceInfo——这是相对静态的信息，定义 DS 是什么。FreeBSD 服务器返回的关键信息是 DS 的 IP 地址，对于 Flexible File 布局，它是“紧密耦合”的。有一个“deviceid”标识 DeviceInfo，布局使用它引用它。支持 pNFS 的客户端通过 NFSv4.1 GetDeviceInfo 操作获取此信息。
+• DeviceInfo——这是相对静态的信息，定义 DS 是什么。FreeBSD 服务器返回的关键信息是 DS 的 IP 地址，对于 Flexible File 布局，它是“紧密耦合”的。有一个“deviceid”用于标识 DeviceInfo，布局通过它引用 DeviceInfo。支持 pNFS 的客户端通过 NFSv4.1 GetDeviceInfo 操作获取此信息。
 
 • Layout——这是每个文件的，可以在不再有效时由服务器收回。对于 FreeBSD 服务器，支持两种类型的布局，分别称为 File 和 Flexible File 布局。两者都允许客户端通过 NFSv4.1 I/O 操作在 DS 上执行 I/O。Flexible File 布局是较新的变体，允许指定镜像，客户端应向所有镜像执行写操作以保持它们处于一致状态。Flexible File 布局支持两种变体，分别称为“紧密耦合”和“松散耦合”。FreeBSD 服务器始终使用“紧密耦合”变体，客户端使用与在 MDS 上相同的凭据在 DS 上执行 I/O。对于“松散耦合”变体，布局指定一个合成用户/组，客户端使用它在 DS 上执行 I/O。FreeBSD 服务器不进行条带化，始终返回整个文件的布局。布局中的关键信息是 Read 与 Read/Write，标识数据文件存储在哪些 DS(s) 上的 deviceid(s)，以及数据文件的文件句柄。支持 pNFS 的客户端通过 NFSv4.1 LayoutGet 操作获取此信息。客户端还可以执行 LayoutReturn 操作以返回布局，无论是完成使用还是被 NFSv4.1 服务器执行 CBLayoutRecall 回调到客户端时请求这样做。对于 Flexible File 布局，客户端可以在 LayoutReturn 参数中向 MDS 报告在 DS 上执行 I/O 时发生的 I/O 错误。
 
@@ -40,7 +40,7 @@ MDS 向知道如何为非镜像 DS 情况执行 pNFS 的 NFSv4.1 客户端生成
 
 pNFS 服务位于 FreeBSD-current 中，将在 FreeBSD 12 发布时包含在其中。在 FreeBSD 12 发布之前，可以使用 FreeBSD-current 快照分发进行测试。
 
-设置使用 Plan B 的 FreeBSD pNFS 服务器
+## 设置使用 Plan B 的 FreeBSD pNFS 服务器
 让我们假设有五台 FreeBSD 12 系统，其中四台配置为 DSs，使用双向镜像和 AUTH_SYS 进行示例。
 
 • MDS，向客户端导出 **/export**。
