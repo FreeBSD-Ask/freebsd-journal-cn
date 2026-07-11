@@ -58,7 +58,7 @@ FreeBSD 手册是一部大型文档，目前是 FreeBSD 项目的主要文档。
 
 <https://translate-dev.freebsd.org/>
 
-Weblate 为每个翻译创建新的提交，并通过你的电子邮件地址引用它们，因此你可以轻松跟踪自己的工作。只要你使用与 Github 帐户匹配的电子邮件地址，你的翻译将出现在你的 Github 贡献活动中。
+Weblate 为每个翻译创建新的提交，并通过你的电子邮件地址引用它们，因此你可以轻松跟踪自己的工作。只要你使用与 GitHub 帐户匹配的电子邮件地址，你的翻译将出现在你的 GitHub 贡献活动中。
 
 - 订阅 freebsd-translators 邮件列表
 
