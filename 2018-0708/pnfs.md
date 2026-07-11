@@ -5,11 +5,13 @@
 为 FreeBSD 创建 pNFS 服务的第一次尝试使用了 GlusterFS 以及通过 fuse 与之通信的内核“nfsd”。它可以工作，但性能极差，上下文切换数量巨大。因此，我重新开始，设计一个使用“nfsd”和一些 FreeBSD 系统的内核内服务，但没有集群文件系统。我将其称为 Plan B，本文讨论的就是它。
 
 ## 总体目标
+
 pNFS 服务将读/写操作与所有其他 NFSv4.1 操作分离。希望是这种分离允许配置的 pNFS 服务超过单个 NFS 服务器的存储容量和/或 I/O 带宽限制。对于 pNFS 服务，NFS 服务器成为元数据服务器（MDS），处理除 I/O 操作外的所有操作。还有其他服务器配置为数据服务器（DSs），只处理 I/O 操作。
 
 可以在 DSs 中配置镜像，这样 MDS 文件的数据文件将镜像在两个或更多 DSs 上。使用此功能时，DS 故障不会停止 pNFS 服务，并且故障的 DS 可以在修复后恢复，同时 pNFS 服务继续运行。虽然双向镜像是常态，但可以设置最多四个或 DSs 数量（取较小者）的镜像级别。镜像级别指的是在不同 DSs 上保留多少份数据文件。FreeBSD MDS 仍然是单点故障，就像普通 NFS 服务器一样。
 
 ## Plan B 概览
+
 Plan B pNFS 服务由单个 MDS 和 K 个 DSs 组成，全部是 FreeBSD 12 系统。客户端将像挂载普通 NFS 服务器一样挂载 MDS。创建文件时，MDS 创建一个与普通 NFS 服务器创建的相同的文件树，不同之处在于所有常规（VREG）文件都为空。因此，如果直接在 MDS 服务器上（而不是通过 NFS 挂载）查看 MDS 上导出的树，所有文件大小都为 0。这些文件中的每一个还将具有系统属性名称空间中的两个扩展属性：
 
 pnfsd.dsfile——此扩展属性存储 MDS 在 DS(s) 上查找此文件的数据文件所需的信息。
@@ -28,7 +30,7 @@ pnfsd.dsattr——此扩展属性存储文件的 Size、AccessTime、ModifyTime 
 
 • Layout——这是每个文件的，可以在不再有效时由服务器收回。对于 FreeBSD 服务器，支持两种类型的布局，分别称为 File 和 Flexible File 布局。两者都允许客户端通过 NFSv4.1 I/O 操作在 DS 上执行 I/O。Flexible File 布局是较新的变体，允许指定镜像，客户端应向所有镜像执行写操作以保持它们处于一致状态。Flexible File 布局支持两种变体，分别称为“紧密耦合”和“松散耦合”。FreeBSD 服务器始终使用“紧密耦合”变体，客户端使用与在 MDS 上相同的凭据在 DS 上执行 I/O。对于“松散耦合”变体，布局指定一个合成用户/组，客户端使用它在 DS 上执行 I/O。FreeBSD 服务器不进行条带化，始终返回整个文件的布局。布局中的关键信息是 Read 与 Read/Write，标识数据文件存储在哪些 DS(s) 上的 deviceid(s)，以及数据文件的文件句柄。支持 pNFS 的客户端通过 NFSv4.1 LayoutGet 操作获取此信息。客户端还可以执行 LayoutReturn 操作以返回布局，无论是完成使用还是被 NFSv4.1 服务器执行 CBLayoutRecall 回调到客户端时请求这样做。对于 Flexible File 布局，客户端可以在 LayoutReturn 参数中向 MDS 报告在 DS 上执行 I/O 时发生的 I/O 错误。
 
-MDS 向知道如何为非镜像 DS 情况执行 pNFS 的 NFSv4.1 客户端生成 File 布局，除非 sysctl vfs.nfsd.default_flexfile 设置为非零，在这种情况下生成 Flexible File 布局。
+MDS 向知道如何为非镜像 DS 情况执行 pNFS 的 NFSv4.1 客户端生成 File 布局，除非 sysctl `vfs.nfsd.default_flexfile` 设置为非零，在这种情况下生成 Flexible File 布局。
 
 镜像 DS 配置始终生成 Flexible File 布局。对于不支持 NFSv4.1 pNFS 的 NFS 客户端，所有 I/O 操作都发送到 MDS。当 MDS 接收 I/O RPC 时，它将作为代理在 DS 上执行 RPC。
 
