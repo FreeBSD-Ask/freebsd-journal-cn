@@ -29,7 +29,7 @@ vnet    创建带有自身虚拟网络栈的 jail，拥有自身的
 
 ## 示例
 
-这些示例使用基于 host `/` 的 "空" Jail，仅聚焦 vnet 特性。它们都处于 "persist" 模式（因为没有进程运行）。
+这些示例使用基于 host `/` 的 “空” Jail，仅聚焦 vnet 特性。它们都处于 “persist” 模式（因为没有进程运行）。
 
 关于操作系统要求：
 
@@ -255,7 +255,7 @@ epair0a
 
 host 显示其两个新接口：epair0a 与 epair0b。
 
-创建名为 "jvnet" 的新 Jail，并将接口 epair0b 分配给它。
+创建名为 “jvnet” 的新 Jail，并将接口 epair0b 分配给它。
 
 ```sh
 # jail -c name=jvnet host.hostname=jvnet persist vnet vnet.interface=epair0b
