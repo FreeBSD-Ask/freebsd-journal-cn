@@ -801,8 +801,6 @@ for i in $(jot 480); do
     ipdot=$( dec2dot $(( ipepairbase + i)) )
     jexec jail$i ifconfig epair${i}b inet ${ipdot}/20 mtu 9000 up
     cat > /tmp/bird.${i}.conf <<EOF
-```
-
 protocol device {}
 protocol kernel { ipv4 { export all; }; }
 protocol ospf {
@@ -817,6 +815,7 @@ protocol ospf {
   };
 }
 EOF
+```
 
 ```sh
     jexec jail$i bird -c /tmp/bird.$i.conf -P /tmp/bird.$i.pid \
