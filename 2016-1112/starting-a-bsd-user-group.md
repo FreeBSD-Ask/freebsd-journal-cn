@@ -23,7 +23,7 @@
 
 > “i wonder if beer is involved? there's no mention of it in that posting.”
 >
-> “they are just doing what the linux group does... probably same ppl too.”
+> “they are just doing what the Linux group does... probably same ppl too.”
 
 最终，这位资深 BSD 开发者为我们做了场演讲，并成了我们最热心的支持者之一。
 

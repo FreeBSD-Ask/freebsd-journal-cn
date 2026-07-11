@@ -69,7 +69,7 @@ Ahmad Uways Zulkurnain 是第一个在 Accordium 工作的工程师，对 FreeBS
 
 ## 现在我们想从 FreeBSD 得到什么？
 
-Accordium 是一家 Java 和 Javascript 商店。OpenJDK 8 在 FreeBSD 上运行良好，但 Java 的后续版本（9/10/11）没有支持 FreeBSD 的迹象。BSD 移植工作似乎很少。当 OpenJDK 11 推出时，如果没有 FreeBSD 版本，我们将不得不继续前进，特别是当有趣的东西如 GraalVM 出现时。
+Accordium 是一家 Java 和 JavaScript 商店。OpenJDK 8 在 FreeBSD 上运行良好，但 Java 的后续版本（9/10/11）没有支持 FreeBSD 的迹象。BSD 移植工作似乎很少。当 OpenJDK 11 推出时，如果没有 FreeBSD 版本，我们将不得不继续前进，特别是当有趣的东西如 GraalVM 出现时。
 
 ## FreeBSD 在生产中——ACCORDIUM 进入 BETA
 

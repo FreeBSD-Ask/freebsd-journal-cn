@@ -219,7 +219,7 @@ $ vault secrets enable -version=2 kv
 Success! Enabled the kv secrets engine at: kv/
 ```
 
-从这儿开始，我们需要指定引擎类型及其挂载路径。可以将数据检索为 JSON 或 yaml 格式，甚至可以直接存储文件。
+从这儿开始，我们需要指定引擎类型及其挂载路径。可以将数据检索为 JSON 或 YAML 格式，甚至可以直接存储文件。
 
 ```sh
 $ vault kv put -mount=kv blackadder scarlet_pimpernel="we do not know"

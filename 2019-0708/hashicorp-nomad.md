@@ -158,7 +158,7 @@ Nomad 创建了全新的 Jail 并运行了 http-echo 服务器。事实上，如
 
 这是一个更复杂的作业文件，但我会解释发生了什么。首先，我们下载 basejail tarball 并解开，然后我们创建两个 shell 脚本，一个调用另一个。第一个发生在 Nomad Jail 根目录里，但在 Jail 之外，即 start.sh，它负责做任何启动工作、创建 run.sh 脚本，然后启动 Jail，由 Jail 运行 run.sh 脚本。
 
-我们的设置只是创建非常简单的 html 文件，然后通过 python3 内置的 http 服务器提供。`nomad run python.nomad` 应该能让你全部就绪并运行最简单的 python http 服务器。
+我们的设置只是创建非常简单的 HTML 文件，然后通过 python3 内置的 HTTP 服务器提供。`nomad run python.nomad` 应该能让你全部就绪并运行最简单的 python http 服务器。
 
 这应该能让你入门，但在 Nomad 里运行 Jail 实际上比上面容易得多，通过使用全新的 Nomad Jail 驱动，我们接下来会谈到。
 

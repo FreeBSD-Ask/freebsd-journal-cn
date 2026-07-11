@@ -125,7 +125,7 @@ $ find .
 ./states/dev/states/dev_files/redis_rc
 ```
 
-值得注意的是，top.sls 文件与 redis_demo.sls 文件位于不同位置；redis_demo.sls 是 dev/states 目录层级的子项。我这里所做的，是用这种结构创建了环境隔离。具体而言，根级别包含 top.sls 文件和 motd_freebsd 文件。此处的状态作用于所有主机，因为它们具有全局作用域。然后我创建了一个 `dev` 目录结构，其中包含我们的 redis statefile 和配套的文件资源。这个 dev 环境在前面的 top 文件中通过第 5–7 行体现，如第 6 行所示，我们通过正则表达式对匹配的主机更加严格。SaltStack 中也可以有任意数量的环境，非常方便。例如，在我较大的 SaltStack 部署中，除了预生产和生产环境外，还有若干开发环境。这让我能按环境划分访问权限，同时也有助于确保在一个环境中做的改动不会影响其他环境。
+值得注意的是，top.sls 文件与 redis_demo.sls 文件位于不同位置；redis_demo.sls 是 dev/states 目录层级的子项。我这里所做的，是用这种结构创建了环境隔离。具体而言，根级别包含 top.sls 文件和 motd_freebsd 文件。此处的状态作用于所有主机，因为它们具有全局作用域。然后我创建了一个 `dev` 目录结构，其中包含我们的 Redis statefile 和配套的文件资源。这个 dev 环境在前面的 top 文件中通过第 5–7 行体现，如第 6 行所示，我们通过正则表达式对匹配的主机更加严格。SaltStack 中也可以有任意数量的环境，非常方便。例如，在我较大的 SaltStack 部署中，除了预生产和生产环境外，还有若干开发环境。这让我能按环境划分访问权限，同时也有助于确保在一个环境中做的改动不会影响其他环境。
 
 ## 更复杂的 Statefile
 
@@ -282,7 +282,7 @@ Summary
 -------------------------------------------
 ```
 
-成功了！我们安装了 Redis 二进制文件，部署了自定义的 redis 配置文件，还确保 **/etc/motd** 已部署且为最新。我移除了 SaltStack 在覆盖默认 redis.conf 时报告的一段非常长的 diff。让我们检查一下配置，确保模板和 Grain 数据正确应用：
+成功了！我们安装了 Redis 二进制文件，部署了自定义的 Redis 配置文件，还确保 **/etc/motd** 已部署且为最新。我移除了 SaltStack 在覆盖默认 redis.conf 时报告的一段非常长的 diff。让我们检查一下配置，确保模板和 Grain 数据正确应用：
 
 ```sh
 $ head -n 10 /usr/local/etc/redis.conf

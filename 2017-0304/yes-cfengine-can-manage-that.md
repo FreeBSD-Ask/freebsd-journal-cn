@@ -42,7 +42,7 @@ bundle agent hello_world_freebsd
 }
 ```
 
-这个策略会多做两步。如果系统是 FreeBSD 硬类的成员，它会提供一条与 windows 成员不同的问候，而所有其他系统提供默认问候。来看看这个策略在两台不同主机上的实际运行：
+这个策略会多做两步。如果系统是 FreeBSD 硬类的成员，它会提供一条与 Windows 成员不同的问候，而所有其他系统提供默认问候。来看看这个策略在两台不同主机上的实际运行：
 
 ```sh
 root@freebsd11 # /var/cfengine/bin/cf-agent --no-lock --file ./hello_world.cf --bundlesequence hello_world_freebsd
