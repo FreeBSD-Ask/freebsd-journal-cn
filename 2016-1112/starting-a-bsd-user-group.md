@@ -21,7 +21,7 @@
 
 <http://mail-index.netbsd.org/regional-nyc/2004/01/13/0003.html>.
 
-> “i wonder if beer is involved? there's no mention of it in that posting.”
+> “i wonder if beer is involved? there’s no mention of it in that posting.”
 >
 > “they are just doing what the Linux group does... probably same ppl too.”
 

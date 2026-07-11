@@ -16,7 +16,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/335333>
 
-这提供了 arm64 Linux vdso 和 machdep、ptrace 和 futex 的存根实现，足以执行 arm64 Linux 'hello world' 二进制文件。
+这提供了 arm64 Linux vdso 和 machdep、ptrace 和 futex 的存根实现，足以执行 arm64 Linux ‘hello world’ 二进制文件。
 
 ## 使 UMA 和 `malloc.9` 在大多数情况下返回不可执行内存
 

@@ -34,9 +34,9 @@ pfSense 的主要优势之一是能够安装提供额外功能的附加包，如
 
 随着 pfSense 软件 2.4 版本的发布，OpenVPN 已升级到 2.4.0 版本。这是一次重大升级，包括对许多新功能的支持，如 AES-GCM 等 AEAD 密码。我们还添加了对可协商加密参数（Negotiable Crypto Parameters，NCP）的支持，以控制客户端和服务器之间的自动密码选择。
 
-## Let's Encrypt
+## Let’s Encrypt
 
-2017 年 2 月，一个名为 ACME 的新包在包管理器中面向 2.3.2 以上版本提供。此包与 Let's Encrypt 项目对接，处理证书的生成、验证和续期过程。Let's Encrypt 是来自非营利组织 Internet Security Research Group（ISRG）的开放、免费且完全自动化的证书颁发机构。Let's Encrypt 的目标是通过消除成本障碍和一些技术障碍来加密 Web，这些障碍阻碍了服务器管理员和组织获取用于 Internet 服务器（主要是 Web 服务器）的证书。大多数浏览器信任 Let's Encrypt 的证书。这些证书可用于 Web 服务器（HTTPS）、SMTP 服务器、IMAP/POP3 服务器以及其他使用相同类型证书的类似角色。Let's Encrypt 的证书是域名验证的，此验证确保请求证书的系统对相关服务器拥有权限。这种验证可以通过多种方式执行，例如通过证明对域名 DNS 记录的所有权，或在 Web 服务器上为该域名托管一个文件。通过使用 Let's Encrypt 的证书（包括 pfSense 中的 Web GUI），浏览器将信任该证书并显示绿色勾号、挂锁或类似指示。连接将被加密，无需手动信任无效证书。
+2017 年 2 月，一个名为 ACME 的新包在包管理器中面向 2.3.2 以上版本提供。此包与 Let’s Encrypt 项目对接，处理证书的生成、验证和续期过程。Let’s Encrypt 是来自非营利组织 Internet Security Research Group（ISRG）的开放、免费且完全自动化的证书颁发机构。Let’s Encrypt 的目标是通过消除成本障碍和一些技术障碍来加密 Web，这些障碍阻碍了服务器管理员和组织获取用于 Internet 服务器（主要是 Web 服务器）的证书。大多数浏览器信任 Let’s Encrypt 的证书。这些证书可用于 Web 服务器（HTTPS）、SMTP 服务器、IMAP/POP3 服务器以及其他使用相同类型证书的类似角色。Let’s Encrypt 的证书是域名验证的，此验证确保请求证书的系统对相关服务器拥有权限。这种验证可以通过多种方式执行，例如通过证明对域名 DNS 记录的所有权，或在 Web 服务器上为该域名托管一个文件。通过使用 Let’s Encrypt 的证书（包括 pfSense 中的 Web GUI），浏览器将信任该证书并显示绿色勾号、挂锁或类似指示。连接将被加密，无需手动信任无效证书。
 
 ## 贡献上游
 

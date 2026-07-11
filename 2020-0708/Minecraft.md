@@ -90,7 +90,7 @@ eula=true
 # pkg install wget
 ```
 
-按照提示完成安装，输入 'y' 确认。接下来，使用 wget(1) 从网站拉取设备的外部 IP 地址：
+按照提示完成安装，输入 ‘y’ 确认。接下来，使用 wget(1) 从网站拉取设备的外部 IP 地址：
 
 ```sh
 # wget -qO - http://wtfismyip.com/text

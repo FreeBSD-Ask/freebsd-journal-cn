@@ -40,7 +40,7 @@
 
 **Koichiro**：我用 FreeBSD 超过 10 年，记得 FreeBSD 5.4 或 6.0 是我的第一个 FreeBSD。我大学时开始把 FreeBSD 用作网络网关和路由器。`ipfw` 语法简单，易于理解。另外，`dummynet` 是控制流量和模拟真实网络的好工具。总之，网络功能吸引我使用 FreeBSD。
 
-**Sean**：在 Linux 的第一个版本不断因使用 telnet 而崩溃后，我切换到 386BSD 作为个人电脑，这导致了其他 BSD，最终在 FreeBSD 开始几个月后专注于 FreeBSD。当时可分发源代码的 BSD 仍然很新，有很多让我感兴趣的工作。像我一贯的做法，我做了大量库和工具工作，以及一些补充内核代码。在上 McKusick 的 BSD 内部课程时，我决定写一个 procfs 版本，在大量帮助下完成了模板。然后 procfs 工作后，我开始写 truss；这两个仍然是我最大的个人贡献。我还为 Dr Dobb's Journal 写了一些相关文章。
+**Sean**：在 Linux 的第一个版本不断因使用 telnet 而崩溃后，我切换到 386BSD 作为个人电脑，这导致了其他 BSD，最终在 FreeBSD 开始几个月后专注于 FreeBSD。当时可分发源代码的 BSD 仍然很新，有很多让我感兴趣的工作。像我一贯的做法，我做了大量库和工具工作，以及一些补充内核代码。在上 McKusick 的 BSD 内部课程时，我决定写一个 procfs 版本，在大量帮助下完成了模板。然后 procfs 工作后，我开始写 truss；这两个仍然是我最大的个人贡献。我还为 Dr Dobb’s Journal 写了一些相关文章。
 
 **Vincenzo**：我第一次接触 FreeBSD 是在大学学习 UNIX 系统管理的课程中。然而，我第一次真正与 FreeBSD 源代码互动只是几年前，当时我参加了 谷歌 Summer of Code 项目。在这个项目中，我玩内核比特和虚拟化工具，很开心。我还有机会在一次 FreeBSD 会议上展示我的工作。我对操作系统实现有浓厚兴趣，特别喜欢 FreeBSD，因为其干净的设计和出色的文档。
 

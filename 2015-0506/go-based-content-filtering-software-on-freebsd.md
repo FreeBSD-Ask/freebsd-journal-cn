@@ -405,4 +405,4 @@ PID USERNAME THR PRI NICE SIZE RES STATE C TIME WCPU COMMAND
 21. Goroutines. Retrieved from <https://golang.org/doc/effective_go.html#goroutines>
 22. Channels. Retrieved from <https://golang.org/doc/effective_go.html#channels>
 23. Go maps in action. Retrieved from <https://blog.golang.org/go-maps-in-action>
-24. Arrays, slices (and strings): The mechanics of 'append'. Retrieved from <https://blog.golang.org/slices>
+24. Arrays, slices (and strings): The mechanics of ‘append’. Retrieved from <https://blog.golang.org/slices>

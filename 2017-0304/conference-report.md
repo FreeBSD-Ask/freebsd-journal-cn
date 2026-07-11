@@ -2,7 +2,7 @@
 
 作者：Benedict Reuschling
 
-FOSDEM（Free and Open Source Software Developers' European Meeting，自由与开源软件开发者欧洲会议）是一个非商业性、由志愿者组织的欧洲活动，以自由与开源软件开发为中心。它每年举办一次，通常在 2 月的第一个周末，地点在比利时布鲁塞尔东南部的布鲁塞尔自由大学 Solbosch 校区。
+FOSDEM（Free and Open Source Software Developers’ European Meeting，自由与开源软件开发者欧洲会议）是一个非商业性、由志愿者组织的欧洲活动，以自由与开源软件开发为中心。它每年举办一次，通常在 2 月的第一个周末，地点在比利时布鲁塞尔东南部的布鲁塞尔自由大学 Solbosch 校区。
 
 ## 开发者峰会
 

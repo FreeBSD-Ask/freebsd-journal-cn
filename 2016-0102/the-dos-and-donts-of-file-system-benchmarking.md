@@ -1,6 +1,6 @@
 # 文件系统基准测试的注意事项
 
-- 原文：[The Dos and Don'ts of File System Benchmarking](https://freebsdfoundation.org/wp-content/uploads/2016/03/The-Dos-and-Donts-of-File-System-Benchmarking.pdf)
+- 原文：[The Dos and Don’ts of File System Benchmarking](https://freebsdfoundation.org/wp-content/uploads/2016/03/The-Dos-and-Donts-of-File-System-Benchmarking.pdf)
 - 作者：**Vasily Tarasov**、**Zhen Cao**、**Ming Chen**、**Erez Zadok**
 
 众所周知，“在 Unix 中，一切皆文件”[14]。文档、可执行文件、硬盘、内存、资源使用统计乃至系统设置，都通过文件访问和修改。因此，文件系统是任何 Unix 衍生系统的基石，其性能与效率对整体系统速度至关重要。多年来，人们提出并开发了大量目标、设计与实现各异的文件系统。其中，持久化存储与检索数据的文件系统尤为重要。所有文件系统有一个共同点：都提供相同（POSIX）的 API。例如，使用符合 POSIX 的文件系统的应用，可以以可移植的方式创建、打开、读写文件；创建、列出并修改层次化目录树；访问和修改文件元数据等等。

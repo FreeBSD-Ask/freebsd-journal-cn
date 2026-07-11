@@ -3,7 +3,7 @@
 - 原文：[This Month in FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/cloudabi/)
 - 作者：**Dru Lavigne**
 
-FreeBSD 素以文档详尽著称。FreeBSD 项目提供了大量文档，包括 FreeBSD Handbook、Porter's Handbook、Developer's Handbook、Documentation Project Primer、内置与在线的 man 手册页、官方网站。维护并翻译如此庞大的文档自有其挑战。本月，我有机会采访 WARREN BLOCK。Warren 是资深的文档提交者，FreeBSD DocEng 团队成员，也是 igor（<http://www.wonkity.com/~wblock/igor/>）的作者。
+FreeBSD 素以文档详尽著称。FreeBSD 项目提供了大量文档，包括 FreeBSD Handbook、Porter’s Handbook、Developer’s Handbook、Documentation Project Primer、内置与在线的 man 手册页、官方网站。维护并翻译如此庞大的文档自有其挑战。本月，我有机会采访 WARREN BLOCK。Warren 是资深的文档提交者，FreeBSD DocEng 团队成员，也是 igor（<http://www.wonkity.com/~wblock/igor/>）的作者。
 
 **问：** 请介绍一下你自己。你是如何开始接触 FreeBSD 的？你在 FreeBSD 项目中参与哪些工作？
 
@@ -45,7 +45,7 @@ FreeBSD 素以文档详尽著称。FreeBSD 项目提供了大量文档，包括 
 
 **答：** 若文档本身是 XML，又没有既有翻译，事情可能相当简单。有不少程序能把 XML 文件中的字符串提取到 PO 文件，也能反向生成，比如 itstool（<http://itstool.org/>）和 po4a（<https://po4a.alioth.debian.org/>）。基本流程很简单：从 XML 文件提取字符串，用 PO 编辑器翻译，再用译好的字符串构建新的 XML 文件。当然，一路上可能遇到各种坑。
 
-我们有大量既有翻译，英文源文档大约 87 MB，包括 FreeBSD.org 网站。最大的单篇文档是 FreeBSD Handbook 与 Porter's Handbook。
+我们有大量既有翻译，英文源文档大约 87 MB，包括 FreeBSD.org 网站。最大的单篇文档是 FreeBSD Handbook 与 Porter’s Handbook。
 
 我倒愿意说既有翻译已经转换完成。可惜尚未。用 PO 系统产出的翻译，要么是此前从未译过的文档，要么是全新的翻译。我们有些翻译已严重过时，重头译起未必比试图转换更费力。
 

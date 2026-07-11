@@ -10,7 +10,7 @@
 
 ## FOSDEM • 2 月 2–3 日 • 比利时布鲁塞尔
 
-<http://fosdem.org/2019/> • FOSDEM 是欧洲最大的年度开源活动之一，免费参加。届时会有 BSD 开发者房间和 expo 区域的 FreeBSD 展位。FreeBSD 基金会在会议前一天于 NH Brussels Carrefour de l'Europe 酒店赞助了一日开发者峰会。
+<http://fosdem.org/2019/> • FOSDEM 是欧洲最大的年度开源活动之一，免费参加。届时会有 BSD 开发者房间和 expo 区域的 FreeBSD 展位。FreeBSD 基金会在会议前一天于 NH Brussels Carrefour de l’Europe 酒店赞助了一日开发者峰会。
 
 ## APRICOT 2019 • 2 月 18–28 日 • 韩国大田儒城区
 

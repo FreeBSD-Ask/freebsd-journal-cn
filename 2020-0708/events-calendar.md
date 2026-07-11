@@ -37,7 +37,7 @@ Jail 普遍被视为 FreeBSD 的杀手级特性之一，但常被误解。本讲
 在 InstallFest 第二部分中，Roller Angel 带你完成桌面环境的搭建，并通过网页浏览器接入互联网。
 
 8 月 7 日：BSD 快速文件系统历史 —— Dr. Marshall Kirk McKusick
-这一期 FreeBSD Friday 略有不同。我们与 USENIX 协会及 Marshall Kirk McKusick 博士合作，为你带来 BSD 快速文件系统的历史。Kirk 以简短介绍开场，随后播放 USENIX FAST '15 主题演讲：A Brief History of the BSD Filesystem。演讲结束后，Kirk 回到现场进行实时问答。
+这一期 FreeBSD Friday 略有不同。我们与 USENIX 协会及 Marshall Kirk McKusick 博士合作，为你带来 BSD 快速文件系统的历史。Kirk 以简短介绍开场，随后播放 USENIX FAST ’15 主题演讲：A Brief History of the BSD Filesystem。演讲结束后，Kirk 回到现场进行实时问答。
 
 8 月 14 日：ZFS 入门 —— Dan Langille
 Dan Langille 带你了解 ZFS 基础，包括：

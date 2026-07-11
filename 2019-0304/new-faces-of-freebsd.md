@@ -26,7 +26,7 @@
 
 - 我前面简短提到过，这些年来我一直是个纯粹的开源软件用户。我总想着时机合适时，就为社区做点回馈。
 
-  2018 年初，我拿到一台新笔记本，装上崭新的 FreeBSD。我研读了《Porter's Handbook》，最初开始为较小的 Port 提交补丁。不久之后，我已经在做新 Port 和更大的项目，比如 net-mgmt/netbox，它还依赖其他包。
+  2018 年初，我拿到一台新笔记本，装上崭新的 FreeBSD。我研读了《Porter’s Handbook》，最初开始为较小的 Port 提交补丁。不久之后，我已经在做新 Port 和更大的项目，比如 net-mgmt/netbox，它还依赖其他包。
 
   NetBox 进入 Ports 树之后，我为许多 Django Port 提交了大量补丁，以应对 Django 1.8 到 1.11 迁移的善后工作。2018 年 7 月，Martin（miwi@）问我是否有兴趣拿一个提交权限。
 

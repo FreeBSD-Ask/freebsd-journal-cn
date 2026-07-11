@@ -3,11 +3,11 @@
 - 原文链接：[New Faces of FreeBSD](https://freebsdfoundation.org/wp-content/uploads/2020/07/New-Faces-of-FreeBSD.pdf)
 - 作者：**DRU LAVIGNE**
 
-本专栏旨在聚焦那些最近获得提交权限的贡献者，并将他们介绍给 FreeBSD 社区。在本期中，我们聚焦的是 Nick O'Brien，他在 3 月份获得了他的 src 权限；以及 Richard Scheffenegger，他在 4 月份获得了他的 src 权限。
+本专栏旨在聚焦那些最近获得提交权限的贡献者，并将他们介绍给 FreeBSD 社区。在本期中，我们聚焦的是 Nick O’Brien，他在 3 月份获得了他的 src 权限；以及 Richard Scheffenegger，他在 4 月份获得了他的 src 权限。
 
 ## 请简要介绍一下自己、你的背景和兴趣
 
-![Nick O'Brien 照片](../png/2020-0506/Faces-01.png)
+![Nick O’Brien 照片](../png/2020-0506/Faces-01.png)
 
 **Nick：** 我出生，成长于华盛顿州的西雅图，但自 2017 年底以来，大部分时间都住在加利福尼亚州的圣何塞。目前，我在 Axiado 从事嵌入式软件工作，我们使用 FreeBSD 来做 RISC-V 相关的工作。
 

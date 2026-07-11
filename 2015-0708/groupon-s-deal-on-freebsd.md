@@ -1,6 +1,6 @@
 # Groupon 在 FreeBSD 上的实践
 
-- 原文：[GROUPON's Deal on FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
+- 原文：[GROUPON’s Deal on FreeBSD](https://freebsdfoundation.org/our-work/journal/browser-based-edition/freebsd-in-the-enterprise/)
 - 作者：**SEAN CHITTENDEN**
 
 熟悉的外观和手感，略有不同的装饰，效果却更佳。
@@ -31,7 +31,7 @@
 
 从旋转锈盘迁移到 SSD 的性能提升是巨大的。10K RPM 硬盘的寻道时间平均在 2 到 5 毫秒之间，但第 99 百分位延迟可以达到几十甚至几百毫秒。从毫秒（“ms”，千分之一秒）到微秒（“us”，百万分之一秒）代表着三个数量级的提升，这种性能提升现在能推广到所有团队和应用，而不仅仅是 Tier-1 数据库。当然，性能提升对基准测试来说不错，但对工程团队来说，性能提升转化为真实的效率提升，缩短开发周期。频繁缓存未命中、原本需要 50–100ms 的低效查询现在只需 60–200us。CPU 使用率上升到理想水平，工程团队不必再那么担心性能优化工作。实际上，使用 SSD 让我们能通过缩短许多产品的交付时间将 OpEx 换成 CapEx，但代价是什么，组织该如何应对？
 
-在卡内基梅隆大学和 Facebook 于 2015 年 6 月 ACM SIGMETRICS '15 大会上发表出色的研究《A Large-Scale Study of Flash Memory Failures in the Field》之前一年，我们就已经在为数据库平台设计方案，以补偿我们在 SSD 上观察到的比特腐烂。当时我们在看到错误，但不知道问题会有多普遍，只知道我们预期它会发生，因此必须为这种必然性做补偿。当 CMU/FB 的闪存论文发表时，他们的发现与我们观察到的非常一致；然而，他们的测试方法要广泛得多，结果也更深刻。以下是他们发现的几个要点：
+在卡内基梅隆大学和 Facebook 于 2015 年 6 月 ACM SIGMETRICS ’15 大会上发表出色的研究《A Large-Scale Study of Flash Memory Failures in the Field》之前一年，我们就已经在为数据库平台设计方案，以补偿我们在 SSD 上观察到的比特腐烂。当时我们在看到错误，但不知道问题会有多普遍，只知道我们预期它会发生，因此必须为这种必然性做补偿。当 CMU/FB 的闪存论文发表时，他们的发现与我们观察到的非常一致；然而，他们的测试方法要广泛得多，结果也更深刻。以下是他们发现的几个要点：
 
 - 六家不同的主要 SSD 厂商
 - 不可纠正比特错误率（UBER）相当常见
