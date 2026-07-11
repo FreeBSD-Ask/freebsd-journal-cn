@@ -154,7 +154,7 @@ psql#>SET default_tablespace = nvme_ts;
 
 显然，iSCSI 导出太过危险，可能会再次失败。尽管我们在整个学期里都是这样运行的，但根据墨菲定律，这种情况总会在最糟糕的时刻发生，通常是在系统管理员本该睡觉的时候。肯定可以通过脚本在每次关机时安全地移除 ZIL，但如果涉及 iSCSI 导出的两台机器发生电力故障或崩溃，这种方法无法涵盖。幸运的是，我们的 IT 部门终于为这台机器提供了一个 SSD 支持的 Ceph 存储作为替代方案。该导入与 iSCSI 相似，但更加稳定，且不容易崩溃。
 
-Ceph 在 FreeBSD 上运行良好，但导入这个设备的过程却相当...有趣。Ceph 在 FreeBSD 上只通过 geom_gate 支持这种导入方式，这与 iSCSI 相似。安装 `net/ceph14` 包后，可以使用 `rbd-ggate` 命令（rbd 是 Ceph 的 Rados Block Device）。rbd-ggate(8) 的手册页相当简短，仅列出了几个命令和选项。我一开始有点担心，因为它的日期回溯到 2014 年，没有最近的更新，可能由于 FreeBSD 新版本的变化，支持已经失效了。不过，事实证明这个担心是多余的。我们只需要处理 Linux 和 FreeBSD 在命令行参数处理上的一些差异。在 Linux 中使用 `--option`，而在 FreeBSD 中，更常见的是使用单个 `-option`。最初的命令看起来像这样：
+Ceph 在 FreeBSD 上运行良好，但导入这个设备的过程却相当...有趣。Ceph 在 FreeBSD 上只通过 geom_gate 支持这种导入方式，这与 iSCSI 相似。安装 `net/ceph14` 包后，可以使用 `rbd-ggate` 命令（rbd 是 Ceph 的 Rados Block Device）。**rbd-ggate(8)** 的手册页相当简短，仅列出了几个命令和选项。我一开始有点担心，因为它的日期回溯到 2014 年，没有最近的更新，可能由于 FreeBSD 新版本的变化，支持已经失效了。不过，事实证明这个担心是多余的。我们只需要处理 Linux 和 FreeBSD 在命令行参数处理上的一些差异。在 Linux 中使用 `--option`，而在 FreeBSD 中，更常见的是使用单个 `-option`。最初的命令看起来像这样：
 
 ```sh
 # rbd map -t ggate volumes/ssdvolume

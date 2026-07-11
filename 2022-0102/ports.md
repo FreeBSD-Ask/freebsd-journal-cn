@@ -7,7 +7,7 @@
 
 在数个 FreeBSD 版本之前，FreeBSD Ports 是安装第三方软件的主要方式。用户会从 Ports 构建所需的软件。理论上，有一些二进制包可用，但它们的整体支持并不好。软件包管理工具难用，软件包仓库中的包已经过时。从 Ports 构建软件是必需的。
 
-随着新的 pkg(8) 包管理工具的出现，情况开始发生变化。如今，FreeBSD 的软件包仓库是开源世界中最大、最新的之一（参见 repology.org 上的图表）。大多数 FreeBSD 用户使用二进制包，而不是自己编译 Ports，自从我开始使用 FreeBSD（大约是 10.3 版本）以来，情况一直如此。
+随着新的 **pkg(8)** 包管理工具的出现，情况开始发生变化。如今，FreeBSD 的软件包仓库是开源世界中最大、最新的之一（参见 repology.org 上的图表）。大多数 FreeBSD 用户使用二进制包，而不是自己编译 Ports，自从我开始使用 FreeBSD（大约是 10.3 版本）以来，情况一直如此。
 
 虽然二进制包很棒，但人们仍然时常直接使用 FreeBSD Ports。无论是 FreeBSD 的维护者还是用户，都一直在使用它。那为什么 FreeBSD 用户会使用它呢？因为 Ports 使得根据非常具体的需求定制二进制包变得非常简单。你想用自定义补丁重新构建 Nginx 包吗？没问题。你想为你的 collectd 守护进程添加一个不常见的后端吗？很容易。你想获得 Python 的调试版本吗？没什么大不了的。
 
@@ -54,7 +54,7 @@ Icon=xpdf
 $ find /usr/local/share/icons -name *xpdf*
 ```
 
-`find(1)` 一行命令的输出为空，说明 Xpdf 图标并没有安装。此时，我们可能需要查看一下 Ports 树。
+**find(1)** 一行命令的输出为空，说明 Xpdf 图标并没有安装。此时，我们可能需要查看一下 Ports 树。
 
 ## 开发补丁
 
@@ -66,7 +66,7 @@ $ git clone https://git.FreeBSD.org/ports.git ~/ports
 
 下面查看 Xpdf 的 port。如何在所有 Ports 中找到它呢？有几种不同的方法。
 
-最简单的方法是使用 pkg(8) 来查询这个软件包的来源。
+最简单的方法是使用 **pkg(8)** 来查询这个软件包的来源。
 
 ```sh
 $ pkg search -o xpdf
@@ -77,11 +77,11 @@ graphics/xpdf4                 Display PDF files and convert them to other forma
 print/xpdfopen                 Command line utility for PDF viewers
 ```
 
-`pkg-search(8)` 会在软件包仓库目录中搜索与“xpdf”匹配的软件包名称。`-o` 选项告诉 `pkg-search(8)` 在输出中显示软件包的来源。来源是指 Ports 树中 port 目录的官方名称，这正是我们要找的内容。
+**pkg-search(8)** 会在软件包仓库目录中搜索与“xpdf”匹配的软件包名称。`-o` 选项告诉 **pkg-search(8)** 在输出中显示软件包的来源。来源是指 Ports 树中 port 目录的官方名称，这正是我们要找的内容。
 
 >**技巧**
 >
->有时候我不知道安装了我想要修复的文件的软件包名称。在这种情况下，我会使用 `pkg-which(8)`：
+>有时候我不知道安装了我想要修复的文件的软件包名称。在这种情况下，我会使用 **pkg-which(8)**：
 
 ```sh
 $ pkg which /usr/local/share/applications/xpdf.desktop
@@ -217,7 +217,7 @@ index bd81dd1a16be..36bd84d97e7e 100644
  MASTER_SITES=  https://dl.xpdfreader.com/
 ```
 
-太好了！现在来测试一下我们的更改。为此，我们需要构建并重新安装 Xpdf。以下命令就足够了。你可能想先运行 `make missing` 并使用 `pkg(8)` 安装依赖项，以节省时间。
+太好了！现在来测试一下我们的更改。为此，我们需要构建并重新安装 Xpdf。以下命令就足够了。你可能想先运行 `make missing` 并使用 **pkg(8)** 安装依赖项，以节省时间。
 
 ```sh
 make reinstall

@@ -55,4 +55,4 @@
 
 有问题想问 Michael？请发送至 <letters@freebsdjournal.org>
 
-**Michael W Lucas** 是《Absolute FreeBSD》、《$ git sync murder》等五十多本书的作者。《Letters to ed(1)》收录了他在《FreeBSD 期刊》的专栏。更多信息见 <https://mwl.io>。
+**Michael W Lucas** 是《Absolute FreeBSD》、《$ git sync murder》等五十多本书的作者。《Letters to **ed(1)**》收录了他在《FreeBSD 期刊》的专栏。更多信息见 <https://mwl.io>。

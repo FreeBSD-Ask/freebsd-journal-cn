@@ -6,7 +6,7 @@
 
 ## 支持异步 I/O 的新 sendfile(2)
 
-进入 HEAD 的最令人兴奋的变化，是新增了 `sendfile(2)` 系统调用的实现。这是 NGINX 与 Netflix 持续合作的成果，新的 sendfile 通过支持异步 I/O，显著加速了大型 TCP 数据传输。更妙的是，新 sendfile 可直接替换旧版，因此你无需修改应用即可利用这些改进。在旧版 sendfile 因磁盘 I/O 阻塞的场景下，现在能获得显著更好的性能。（<https://svnweb.freebsd.org/changeset/base/293439>）
+进入 HEAD 的最令人兴奋的变化，是新增了 **sendfile(2)** 系统调用的实现。这是 NGINX 与 Netflix 持续合作的成果，新的 sendfile 通过支持异步 I/O，显著加速了大型 TCP 数据传输。更妙的是，新 sendfile 可直接替换旧版，因此你无需修改应用即可利用这些改进。在旧版 sendfile 因磁盘 I/O 阻塞的场景下，现在能获得显著更好的性能。（<https://svnweb.freebsd.org/changeset/base/293439>）
 
 ## bhyve 客户机支持 Netmap
 

@@ -61,7 +61,7 @@ zfs create zroot/usr/home/ashish/ports/distfiles
 zfs set compression=off zroot/usr/home/ashish/freebsd/ports/distfiles
 ```
 
-你可以通过几种方式告诉 `make(1)` 你的 Ports 树的位置。第一种方法是将配置添加到 **/etc/make.conf** 文件中。
+你可以通过几种方式告诉 **make(1)** 你的 Ports 树的位置。第一种方法是将配置添加到 **/etc/make.conf** 文件中。
 
 ```c
 .if ${.CURDIR:M/usr/home/ashish/freebsd/ports/*}
@@ -272,7 +272,7 @@ poudriere bulk -i -j 13amd64 <category>/<port>
 poudriere options -j 13amd64 www/nyxt
 ```
 
-Poudriere 还会创建仓库，`pkg` 可以使用它安装包。如果你想在运行 poudriere 的同一系统上安装包，需要配置 `pkg` 使用该仓库。根据 PKG.CONF(5)，可以在 **/usr/local/etc/pkg/repos/** 下放置本地配置文件。文件名没有特殊要求，但必须以 `.conf` 结尾。要设置本地仓库配置并禁用默认的官方仓库，可以创建 **/usr/local/etc/pkg/repos/local.conf** 文件并输入以下内容：
+Poudriere 还会创建仓库，`pkg` 可以使用它安装包。如果你想在运行 poudriere 的同一系统上安装包，需要配置 `pkg` 使用该仓库。根据 **PKG.CONF(5)**，可以在 **/usr/local/etc/pkg/repos/** 下放置本地配置文件。文件名没有特殊要求，但必须以 `.conf` 结尾。要设置本地仓库配置并禁用默认的官方仓库，可以创建 **/usr/local/etc/pkg/repos/local.conf** 文件并输入以下内容：
 
 ```ini
 FreeBSD: {
