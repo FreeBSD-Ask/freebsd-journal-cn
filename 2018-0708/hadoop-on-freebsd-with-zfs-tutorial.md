@@ -374,7 +374,7 @@ export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
 
 **mapred-site.xml 模板**
 
-playbook 中的以下任务将负责用 `vars.yml` 定义文件中正确替换的变量将它们放在正确的位置。（特别是在这一点上，拥有集中的 Ansible 变量文件变得非常宝贵，因为这些文件中的拼写错误和错误会给调试已经复杂的分布式系统（如 Hadoop）带来很多头痛。）
+playbook 中的以下任务负责把它们放在正确的位置，并用 `vars.yml` 定义文件中的变量正确替换。（特别是在这一点上，拥有集中的 Ansible 变量文件变得非常宝贵，因为这些文件中的拼写错误和错误会给调试已经复杂的分布式系统（如 Hadoop）带来很多头痛。）
 
 ```ini
      - name: "Templating *-site.xml files for the node"
