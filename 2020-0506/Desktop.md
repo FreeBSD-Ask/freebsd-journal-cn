@@ -3,7 +3,7 @@
 - 原文链接：[FreeBSD Desktop Distributions](https://freebsdfoundation.org/wp-content/uploads/2020/07/FreeBSD-Guides-FreeBSD-Desktop-Distrobutions.pdf)
 - 作者：**DREW GURKOWSKI**
 
-**FreeBSD 桌面发行版** 将 FreeBSD 操作系统带入了一个新方向，同时仍依赖于 FreeBSD 强大而稳定的基础操作系统。从集成的桌面环境、便携式 USB 系统到数据恢复工具，FreeBSD 已广泛应用于各种开源项目。
+**FreeBSD 桌面发行版** 将 FreeBSD 操作系统带入了一个新方向，同时仍依赖于 FreeBSD 强大而稳定的基本操作系统。从集成的桌面环境、便携式 USB 系统到数据恢复工具，FreeBSD 已广泛应用于各种开源项目。
 
 ## FuryBSD
 
@@ -30,7 +30,7 @@
 - 最小化磁盘承诺。
 - 自动安装图形桌面环境。
 - 原版 FreeBSD 副本，系统能继续更新 FreeBSD 工具。
-- 允许配置设备以支持大规模部署，并可能在每一步配置中实现自动化。
+- 允许配置设备以支持大规模部署，并可能在每一步配置中自动化。
 - 最新的补丁集每季度更新一次，因此用户无需通过 FreeBSD-update 更新。
   - 使用 Poudriere 镜像构建系统，以确保 jail 始终更新。
 - 提供 `.iso` 媒体，包括 RELEASE + FreeBSD-update 补丁。
@@ -118,7 +118,7 @@
 - 项目发布以及社区发布。
 - 拥有 30,000+ 应用程序的 GhostBSD 软件包存储库。
   - 采用慢速滚动发布。
-- 可通过命令行进行更新。
+- 可通过命令行更新。
 - 2018 年切换到 TrueOS。
   - 基于 12.0-STABLE 构建。
   - TrueOS 于 2020 年停用。

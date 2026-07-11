@@ -80,7 +80,7 @@ FreeBSD Office Hours
 下一场定于 2020 年 9 月 19 日，上午 7 点至下午 2 点 PDT/14:00 至 21:00 UTC
 主题：Bug 清剿。黑客松聚焦关闭 PR。
 主持人：Tom Jones 与 Allan Jude
-欢迎加入 FreeBSD 社区成员参与的 FreeBSD Office Hours。从综合问答到主题演示与教程，Office Hours 是解答 FreeBSD 相关问题的绝佳途径。过往节目可在 FreeBSD YouTube 频道找到（<https://www.youtube.com/c/FreeBSDProject>）。
+欢迎与 FreeBSD 社区成员一起参加 FreeBSD Office Hours。从综合问答到主题演示与教程，Office Hours 是解答 FreeBSD 相关问题的绝佳途径。过往节目可在 FreeBSD YouTube 频道找到（<https://www.youtube.com/c/FreeBSDProject>）。
 
 OpenZFS Developer Summit 2020
 10 月 6–7 日
