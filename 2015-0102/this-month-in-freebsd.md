@@ -91,4 +91,6 @@
 
 你可以在 <https://www.freebsd.org/releng/> 了解更多关于 FreeBSD 发布工程团队及其发布工程流程的信息。
 
-Dru Lavigne 是 FreeBSD 基金会理事，BSD 认证小组主席。
+---
+
+**Dru Lavigne** 是 FreeBSD 基金会理事，BSD 认证小组主席。
