@@ -725,17 +725,17 @@ root@jailhost:~ # vm stop guest
 root@jailhost:~ # vm start guest
 ```
 
-这使用 bootonly ISO（基于网络的安装），应该可行，因为 IP 地址由 `dnsmasq(8)`（同时提供 DNS 服务）分配给客户机，且 NAT 已在宿主防火墙上配置。
+这使用 bootonly ISO（基于网络的安装），应该可行，因为 IP 地址由 **dnsmasq(8)**（同时提供 DNS 服务）分配给客户机，且 NAT 已在宿主防火墙上配置。
 
 > **注意**：这显示两个网络接口。`vtnet1` 是我们设置中要使用的接口。可通过修改 VM 配置文件 **/zroot/vms/guest/guest.conf** 手动移除 `vtnet0`。
 
-如预期，`dnsmasq(8)` 从 DHCP 池给新 VM 分配了一个 IP 地址（本例中为 **10.1.1.11/24**）。在需要稳定 IP 的环境中，基于虚拟网络接口的 MAC 地址在 **/usr/local/etc/dnsmasq.conf** 中分配固定 IP（不属动态池）更有利，例如：
+如预期，**dnsmasq(8)** 从 DHCP 池给新 VM 分配了一个 IP 地址（本例中为 **10.1.1.11/24**）。在需要稳定 IP 的环境中，基于虚拟网络接口的 MAC 地址在 **/usr/local/etc/dnsmasq.conf** 中分配固定 IP（不属动态池）更有利，例如：
 
 ```ini
 dhcp-host=11:22:33:44:55:66,192.168.0.60
 ```
 
-在新 VM 中添加非特权用户并启用 `sshd(8)` 后，我们就能 `ssh(1)` 进去：
+在新 VM 中添加非特权用户并启用 **sshd(8)** 后，我们就能 **ssh(1)** 进去：
 
 ```sh
 root@jailhost:~ # ssh user@10.1.1.11
@@ -749,7 +749,7 @@ root@jailhost:~ #
 
 ```
 
-> **注意**：通过将 `/dev/bpf` 暴露给 VNET jail，可以像此处 VM 那样用 DHCP 配置 jail 的 IP 地址。在 `iocage(8)` 中启用 `dhcp` 属性即可轻松实现。
+> **注意**：通过将 `/dev/bpf` 暴露给 VNET jail，可以像此处 VM 那样用 DHCP 配置 jail 的 IP 地址。在 **iocage(8)** 中启用 `dhcp` 属性即可轻松实现。
 
 ### 阻止 VNET Jail/VM 之间的流量
 
@@ -805,7 +805,7 @@ root@jailhost:~ #
 
 将交换机切换为 private 模式后，VM 连接到桥接的 tap 接口被标记为 PRIVATE。由于 jail 的 epair 接口未标记 PRIVATE，流量仍可流通，ssh 仍可用：
 
-让我们手动将 jail 的连接改为”private”，可以看到连接尝试 jail 时超时，而到外界的 NAT 仍然完好，jailhost 仍能通过 `ssh(1)` 连接到 VM：
+让我们手动将 jail 的连接改为”private”，可以看到连接尝试 jail 时超时，而到外界的 NAT 仍然完好，jailhost 仍能通过 **ssh(1)** 连接到 VM：
 
 ```sh
 root@jailhost:~ # ifconfig vm-services private vnet0.31
@@ -822,7 +822,7 @@ root@jailhost:~ #
 
 ```
 
-理想情况下，`iocage(8)` 应支持一个配置选项，允许在桥接成员上自动设置 private 标志。在该功能出现之前，下面的脚本可配置为通过 jail 的 `poststart` 钩子执行，达到（几乎）同样的效果。
+理想情况下，**iocage(8)** 应支持一个配置选项，允许在桥接成员上自动设置 private 标志。在该功能出现之前，下面的脚本可配置为通过 jail 的 `poststart` 钩子执行，达到（几乎）同样的效果。
 
 **/usr/local/sbin/set_ioc_vnet_private.sh**：
 
@@ -884,9 +884,9 @@ root@jailhost:~ #
 
 bhyve VM 内的防火墙很直接——只需运行 VM 内操作系统自带的宿主防火墙。
 
-jail 内运行防火墙稍复杂。`ipfw(8)` 是推荐选项，但 `pf(4)` 此时也应可用。为不在本文引入更多语法，我们这里介绍后者，尽管 `iocage` 文档另有推荐。
+jail 内运行防火墙稍复杂。**ipfw(8)** 是推荐选项，但 **pf(4)** 此时也应可用。为不在本文引入更多语法，我们这里介绍后者，尽管 `iocage` 文档另有推荐。
 
-要在 VNET jail 内运行 `pf(4)`，必须加载 `pf(4)` 内核模块，并暴露多个设备。方法是在 **/etc/devfs.rules** 中添加新规则集：
+要在 VNET jail 内运行 **pf(4)**，必须加载 **pf(4)** 内核模块，并暴露多个设备。方法是在 **/etc/devfs.rules** 中添加新规则集：
 
 ```ini
 [vnet_jail_pf=501]

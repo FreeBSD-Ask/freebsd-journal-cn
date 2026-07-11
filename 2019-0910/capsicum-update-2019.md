@@ -2,7 +2,7 @@
 
 FreeBSD 是通用操作系统，其目标之一是为用户提供安全环境。为实现该目标，FreeBSD 引入了 Capsicum 框架。FreeBSD 社区每天都在改进它，本文将回顾 Capsicum 在过去一年的变化。
 
-Capsicum 框架提供进程间的严格隔离。进程进入 capability 模式（沙箱）后，无法访问任何全局命名空间。进程可以通过 `_enter(1)````入该状态。Capsicum 与其他流行的沙箱框架不同之处在于，Capsicum 关注进程的 capability，而非过滤系统调用。在 Capsicum 中，文件描述符代表 capability。文件描述符非常适合充当 capability，因为可以复制（`d`(```` U`x `接字发送给其他进程，或撤销（`clo`(2)`。````
+Capsicum 框架提供进程间的严格隔离。进程进入 capability 模式（沙箱）后，无法访问任何全局命名空间。进程可以通过 **cap_enter(1)** 系统调用进入该状态。Capsicum 与其他流行的沙箱框架不同之处在于，Capsicum 关注进程的 capability，而非过滤系统调用。在 Capsicum 中，文件描述符代表 capability。文件描述符非常适合充当 capability，因为可以复制（**dup(2)**）、通过 Unix 域套接字发送给其他进程，或撤销（**close(2)**）。
 
 框架的另一组件是 capability 权限。这些权限让我们能进一步限制 capability（文件描述符）。通过 **cap_rights_limit(2)** 系统调用，可将描述符限制为只读（`CAP_READ`）或可写（`CAP_WRITE`）。即使文件描述符能在文件中重新定位偏移量（`CAP_SEEK`），也可限制其 capability。Capsicum 允许精确定义描述符的用途。目前有超过 50 种 capability。
 
@@ -49,11 +49,11 @@ cap_sysctl 服务允许我们与内核状态交互。在最初的实现中，我
 
 ## 私有服务
 
-Mark Johnston 做了一些更令人兴奋的工作。当他为 `rtsol(8)` 和 `rtsold(8)` 构建沙箱时，实现了专用于这两个应用的私有 Casper 服务。`rtsold(8)` 是守护程序，用于在指定接口上发送 ICMPv6 路由器请求消息。该服务针对特定应用，因此没有理由将其公开。这种方法可能让我们走到这样一步：某些服务将从 Ports/打包系统安装。他的工作让我们看到，Casper 服务也可用于不同环境中的进程分离。
+Mark Johnston 做了一些更令人兴奋的工作。当他为 **rtsol(8)** 和 **rtsold(8)** 构建沙箱时，实现了专用于这两个应用的私有 Casper 服务。**rtsold(8)** 是守护程序，用于在指定接口上发送 ICMPv6 路由器请求消息。该服务针对特定应用，因此没有理由将其公开。这种方法可能让我们走到这样一步：某些服务将从 Ports/打包系统安装。他的工作让我们看到，Casper 服务也可用于不同环境中的进程分离。
 
-`rtsol(8)` 和 `rtsold(8)` 使用 Casper 创建了服务，用于在原始 ICMPv6 套接字上发送路由器请求消息。这由 cap_sendmsg 服务完成。另一个私有服务 cap_script 用于生成并收集 `rtsold` 守护程序所需脚本的状态。为该程序实现的第三个也是最后一个服务是 cap_llflags。该服务负责获取指定接口上链路本地 IPv6 地址的标志。
+**rtsol(8)** 和 **rtsold(8)** 使用 Casper 创建了服务，用于在原始 ICMPv6 套接字上发送路由器请求消息。这由 cap_sendmsg 服务完成。另一个私有服务 cap_script 用于生成并收集 `rtsold` 守护程序所需脚本的状态。为该程序实现的第三个也是最后一个服务是 cap_llflags。该服务负责获取指定接口上链路本地 IPv6 地址的标志。
 
-`rtsold(8)` 是 Casper 服务中沙箱化程序的示例，它不需要实现通用的宽泛服务。
+**rtsold(8)** 是 Casper 服务中沙箱化程序的示例，它不需要实现通用的宽泛服务。
 
 ## Super Capsicumizer 9000
 
