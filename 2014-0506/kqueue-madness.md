@@ -164,4 +164,6 @@ int watch_for_reading(int fd)
 - [1] Kqueue: A generic and scalable event notification facility – Jonathan Lemon。<http://people.freebsd.org/~jlemon/papers/kqueue.pdf>
 - [2] Experiences with kqueue – Ted Unangst, 2009 年 8 月。<http://www.tedunangst.com/kqueue.pdf>
 
+---
+
 Randall Stewart 现就职于 Adara Networks Inc.，任杰出工程师。当前职责包括架构、设计和原型设计 Adara 下一代路由与交换平台。此前 Stewart 先生曾任 Cisco Systems 杰出工程师。在其他生涯中，他还曾就职于 Motorola、NYNEX S&T、Nortel 和 AT&T Communications。整个职业生涯中，他的关注点集中在操作系统开发、容错以及呼叫控制信令协议。Stewart 先生也是一名 FreeBSD committer，负责 FreeBSD 内的 SCTP 参考实现。
