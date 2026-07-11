@@ -127,7 +127,7 @@ exit # 不要继续进入网页
 
 ### 基本网页
 
-`activitymonitor.sh` 脚本在内部嵌入了小型网页，当没有请求数据 URL 时，它会返回这个页面。页面包含头部、一些画布供 JavaScript 绘制图表，以及用于显示 `top` 风格进程列表的 `pre` 块。它还嵌入了让所有功能得以实现的 JavaScript。HTML 页面（和 JavaScript）被追加到脚本的末尾，并用 'INDEX START' 标签标记。`activitymonitor.sh` 在自身中搜索该标签，并将标签后的所有内容作为要交付的内容，使用 `sed` 截取。
+`activitymonitor.sh` 脚本在内部嵌入了小型网页，当没有请求数据 URL 时，它会返回这个页面。页面包含头部、一些画布供 JavaScript 绘制图表，以及用于显示 `top` 风格进程列表的 `pre` 块。它还嵌入了让所有功能得以实现的 JavaScript。HTML 页面（和 JavaScript）被追加到脚本的末尾，并用 ‘INDEX START’ 标签标记。`activitymonitor.sh` 在自身中搜索该标签，并将标签后的所有内容作为要交付的内容，使用 `sed` 截取。
 
 ## 一些 JavaScript
 

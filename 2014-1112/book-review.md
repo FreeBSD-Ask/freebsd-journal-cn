@@ -3,7 +3,7 @@
 - 原文标题：Book Review — Bulletproof SSL and TLS
 - 作者：**Steven Kreuzer**
 
-《HTTPS 权威指南：在服务器和 Web 应用上部署 SSL-TLS 和 PKI》 Ivan Ristic 著
+《HTTPS 权威指南：在服务器和 Web 应用上部署 SSL-TLS 和 PKI》Ivan Ristic 著
 
 对大多数开发者和系统管理员来说，以合理且安全的方式部署 SSL 是个巨大挑战。Ivan Ristic 自 2009 年起专注 SSL，投入两年时间写作，其中包括六个月的改写和章节扩充，于 2014 年 8 月推出了他的第二本书《HTTPS 权威指南：在服务器和 Web 应用上部署 SSL-TLS 和 PKI》——构建安全服务器和 Web 应用的权威参考。他详尽的研究和专注有了回报。Ivan Ristic 实现并超越了他“为你节省时间”的目标。
 

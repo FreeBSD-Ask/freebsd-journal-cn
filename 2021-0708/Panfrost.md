@@ -164,7 +164,7 @@ Morello 开发板目前正在进入制造的最后阶段，预计今年晚些时
 
 快速测试表明，桌面图形环境的性能良好，响应快速。RK3399 有两个视频显示处理器：Big 和 Little。Big 支持 4K 分辨率，Little 则支持 Full-HD。对 Little 的支持已经添加。Wayland 和 Xorg 都能正常运行，只有一些小问题，比如内存泄漏（目前正在进行修复）。
 
-我能够运行 2D 加速桌面、浏览器以及像 glxgears(1) 和 geartrain(1) 这样的 3D Mesa 演示：轻松达到 HDMI 显示器的最大刷新率（60 FPS）。
+我能够运行 2D 加速桌面、浏览器以及像 **glxgears(1)** 和 **geartrain(1)** 这样的 3D Mesa 演示：轻松达到 HDMI 显示器的最大刷新率（60 FPS）。
 
 我期待将我的主桌面切换到 Morello Board，并每天使用我的 Panfrost 驱动程序。FreeBSD 上的 Panfrost 驱动程序已在 GitHub 上发布以供审查：<https://github.com/evadot/drm-subtree>。
 

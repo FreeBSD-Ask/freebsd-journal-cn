@@ -7,7 +7,7 @@
 
 嗯，也许你应该再考虑一下，因为即使是每天编写和修改 FreeBSD 的人——FreeBSD 开发者——多年来也更倾向于使用 Macbook，而不是尝试运行 FreeBSD 桌面。如果连他们都是这样，那你为什么还要尝试呢？  
 
-在经历了从 4.4BSD 和 386BSD 过渡到 FreeBSD 的多年演变后，它依然保持着 UNIX 的本质，并且遵循 UNIX 的方式做事。简单的事情依然简单，而复杂的事情尽可能地保持简单。它仍然基于 X11，并使用传统的纯文本文件进行配置。有些人实际上更喜欢这种方式——尤其是在 Linux 世界引入 systemd(1) 之后。但 FreeBSD 更加简单和统一，并且拥有 Linux 世界中找不到的多个子系统或特性。例如，ZFS 启动环境 (Boot Environments) 或 GEOM 存储框架。此外，还有 Jail、基本系统 (Base System) 概念、直接集成在内核中的优秀音频子系统，以及更多特性。  
+在经历了从 4.4BSD 和 386BSD 过渡到 FreeBSD 的多年演变后，它依然保持着 UNIX 的本质，并且遵循 UNIX 的方式做事。简单的事情依然简单，而复杂的事情尽可能地保持简单。它仍然基于 X11，并使用传统的纯文本文件进行配置。有些人实际上更喜欢这种方式——尤其是在 Linux 世界引入 **systemd(1)** 之后。但 FreeBSD 更加简单和统一，并且拥有 Linux 世界中找不到的多个子系统或特性。例如，ZFS 启动环境 (Boot Environments) 或 GEOM 存储框架。此外，还有 Jail、基本系统 (Base System) 概念、直接集成在内核中的优秀音频子系统，以及更多特性。  
 
 在本文中，我将尝试为你理清通往 FreeBSD 桌面的道路。  
 
@@ -85,7 +85,7 @@
 
 ### GhostBSD
 
-它可能是其中一个较老且更加成熟的解决方案。它使用 MATE 作为图形桌面，并且采用 OpenRC 初始化系统，而不是默认的 FreeBSD rc(8) 系统。这可能对一些已经熟悉 OpenRC 系统的 Linux 用户有吸引力。它们还有一个 XFCE 变体，如果你觉得它更合适，可以尝试。详情请访问 [https://www.ghostbsd.org/](https://www.ghostbsd.org/)。  
+它可能是其中一个较老且更加成熟的解决方案。它使用 MATE 作为图形桌面，并且采用 OpenRC 初始化系统，而不是默认的 FreeBSD **rc(8)** 系统。这可能对一些已经熟悉 OpenRC 系统的 Linux 用户有吸引力。它们还有一个 XFCE 变体，如果你觉得它更合适，可以尝试。详情请访问 [https://www.ghostbsd.org/](https://www.ghostbsd.org/)。  
 
 ### NomadBSD
 

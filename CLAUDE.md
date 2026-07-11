@@ -95,7 +95,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### 图片
 
-在正文中插入图片，使用 markdown 格式。
+在正文中插入图片，使用 Markdown 格式。
 
 - **离线目录**：所有图片必须离线至仓库根目录下的 `png/` 目录，按期号分子目录存放，结构为 `png/<期号>/<文章slug>-<序号或描述>.<ext>`（如 `png/2026-010203/events-calendar-01.png`、`png/2024-0708/tcp-01.png`）。
 - **禁止远程引用**：正文中不得出现远程 URL 图片引用（`![...](https://...)`），所有图片必须为本地相对路径。

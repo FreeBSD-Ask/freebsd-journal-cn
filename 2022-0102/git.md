@@ -45,7 +45,7 @@ zfs create zroot/usr/home/ashish/freebsd/ports
 当然，将 **zroot/usr/home/ashish/freebsd/ports** 替换为你的数据集布局。现在克隆仓库。你正在下载整个仓库，它包括超过 30,000 个 Ports 和 28 年的历史，因此这个过程会花费一些时间。
 
 ```sh
-git clone -o freebsd --config remote.freebsd.fetch=+refs/notes/*:refs/notes/*
+git clone -o freebsd --config remote.freebsd.fetch='+refs/notes/*:refs/notes/*'
 https://git.freebsd.org/ports.git ~/freebsd/ports
 ```
 

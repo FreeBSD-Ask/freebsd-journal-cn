@@ -39,15 +39,15 @@ Lucas 先生：
 
 如果你写得没别人那么糟，陌生人会从天而降，让你多写点。
 
-1990 年代末，技术出版社 O'Reilly 决定进军网络出版。他们说服了一位 Chris Coleman 为全新的在线 BSD DevCenter 组稿。他们提议他接这活儿时，听起来一定很简单，但 Chris 很快就发现，全世界大约只有两位 FreeBSD 作者，而 Greg Lehey 已经学聪明了。Chris 自我介绍了一番，提出以字换钱。幸好 Chris 还说服了 Dru Lavigne 加盟，否则 BSD DevCenter 就会改名叫《Lucas 像个受挫幼儿般抱怨》，没人会点进去看。
+1990 年代末，技术出版社 O’Reilly 决定进军网络出版。他们说服了一位 Chris Coleman 为全新的在线 BSD DevCenter 组稿。他们提议他接这活儿时，听起来一定很简单，但 Chris 很快就发现，全世界大约只有两位 FreeBSD 作者，而 Greg Lehey 已经学聪明了。Chris 自我介绍了一番，提出以字换钱。幸好 Chris 还说服了 Dru Lavigne 加盟，否则 BSD DevCenter 就会改名叫《Lucas 像个受挫幼儿般抱怨》，没人会点进去看。
 
 “Big Scary Daemons”专栏基本上就是“本周哪个程序在烦 Lucas，怎么把它揍到服帖”。因为专栏在网上，我的文章不算真正发表。这让我可以随便写一些乱七八糟的东西，包括“在多系统启动里让 Linux 和 FreeBSD 共享 swap 空间”那种傻乎乎的专栏——尽管多启动早已和 5.25 英寸软盘一起进了历史垃圾堆，仍有人想和我讨论它。
 
-我刚在 O'Reilly 开专栏，《Sys Admin》杂志就倒闭了。给我寄那些支票把出版社寄垮了。唉。
+我刚在 O’Reilly 开专栏，《Sys Admin》杂志就倒闭了。给我寄那些支票把出版社寄垮了。唉。
 
 2001 年初，Bill Pollock 问 Chris，认不认识想给 No Starch Press 写 FreeBSD 书的人。Chris 抛出了我的名字，赶在 Bill 把他拉下水之前逃走了。
 
-我刚签下《Absolute BSD》的合同，O'Reilly 的 BSD DevCenter 就倒闭了。我不是说我经常从着火的出版社里逃出来，但这种事也不算少见。
+我刚签下《Absolute BSD》的合同，O’Reilly 的 BSD DevCenter 就倒闭了。我不是说我经常从着火的出版社里逃出来，但这种事也不算少见。
 
 《Absolute BSD》之后是《Absolute OpenBSD》，然后是《Absolute FreeBSD》《Cisco Routers for the Desperate》《Network Flow Analysis》等等。我有无数其他书的主意，但我写《PGP & GPG》的经历让我看到不畅销的书堆在仓库里无人问津的下场，而关于 PAM、`sudo` 或 `ed(1)` 的书市场小得可怜。我的笔记在剪贴本里积灰，周围都是电话会议时涂鸦的玩意儿：下流的神秘符号、一个人玩的井字棋、求死的呓语。你懂的，老样子。等到自助出版成本变得可行，我就能把《SSH Mastery》和《FreeBSD Mastery: Jails》这类不太商业的书推出来。没有任何商业出版社会碰《$ git commit murder》和《$ git sync murder》这种小众小说，但如今我手里有工具，谁也拦不住我把这些 BSD 主题作品用投石机砸进公众视野。本期面世时，我的第 52 本书就要逃出牢笼。幸好这还不足以让维基百科收录。我不在乎有没有条目，但要是那词条里哪怕掺了一丁点那珍贵的真相，我就要抗议。
 

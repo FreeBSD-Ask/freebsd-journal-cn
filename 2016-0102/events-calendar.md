@@ -19,4 +19,4 @@
 
 **LinuxFest NorthWest** • 4 月 23 日和 24 日 • 华盛顿州贝灵厄姆
 
-<http://linuxfestnorthwest.org/2016> • 这是该年度社区型会议的第 17 个年头。活动免费参加，展区通常至少设有一个 BSD 展位，并至少有一场 BSD 相关演讲。
+<http://linuxfestnorthwest.org/2016> • 这是该年度社区型会议的第 17 个年头。活动免费参加，展区总是至少设有一个 BSD 展位，并至少有一场 BSD 相关演讲。

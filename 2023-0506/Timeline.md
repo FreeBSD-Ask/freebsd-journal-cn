@@ -110,7 +110,7 @@ FreeBSD 已经成熟了！在十月份，我们在伯克利举办了一次会议
 
 ## 2002 年
 
-逐渐地，我在项目中的活动减缓了：不再有雇主愿意资助我的开发工作，而这已经成为在该项目上开展任何重要工作的必要条件。但我继续从事其他方面的工作，比如在《Daemon's Advocate》发表文章以及在会议上做演讲和教程。由于 Walnut Creek 公司不再存在，O'Reilly 出版社也就同意我出版《The Complete FreeBSD》的第四版。
+逐渐地，我在项目中的活动减缓了：不再有雇主愿意资助我的开发工作，而这已经成为在该项目上开展任何重要工作的必要条件。但我继续从事其他方面的工作，比如在《Daemon’s Advocate》发表文章以及在会议上做演讲和教程。由于 Walnut Creek 公司不再存在，O’Reilly 出版社也就同意我出版《The Complete FreeBSD》的第四版。
 
 在核心团队中的日子并不总是很愉快。我们遇到了数量惊人的流氓提交者，其中两个提交者在公开场合大打出手，是一个尤其引人注目的案例。我们最终得出的结论是，我们必须开除其中一个——Matt Dillon，尽管并不清楚他是否有更大的过错。他后来创建了 DragonFlyBSD 项目。
 
@@ -140,4 +140,4 @@ Mike 也有同感：“不再好玩了”。这句话象征着前十年发生的
 
 他从 1989 年开始参与自由软件运动，从 1998 年开始成为 FreeBSD 开发团队的一员，在 FreeBSD 核心团队中担任过三届成员，目前仍是该团队的一员。他还是 NetBSD 开发人员和澳大利亚 Unix 用户组 AUUG 的主席。
 
-他著有《Porting UNIX Software》（O'Reilly and Associates，1995 年）和《The Complete FreeBSD》（Walnut Creek，1996 年和 O'Reilly and Associates，2003 年）。他于 2007 年退休，但仍活跃在 FreeBSD 社区。
+他著有《Porting UNIX Software》（O’Reilly and Associates，1995 年）和《The Complete FreeBSD》（Walnut Creek，1996 年和 O’Reilly and Associates，2003 年）。他于 2007 年退休，但仍活跃在 FreeBSD 社区。

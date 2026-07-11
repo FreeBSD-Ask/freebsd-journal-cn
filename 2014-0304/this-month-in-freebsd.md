@@ -44,6 +44,6 @@ Dan 写道：
 >
 > 翻查资料后，我注意到我手头最早的 Unix `more.1` 来自 3BSD，日期为 1979 年 11 月。而最早的 `less.1` 发布在 mod.sources（comp.sources.unix）第 3 卷，其变更日志中最早的条目是 1984 年 1 月。
 >
-> 我起初以为 `more.1` 是对 AT&T 的 `pg.1` 工具的谐音双关，但 3BSD 的手册页中提到“the ’more’ feature of the ITS systems at MIT”（MIT ITS 系统的 ’more’ 特性），所以这个名字可能与此相关。
+> 我起初以为 `more.1` 是对 AT&T 的 `pg.1` 工具的谐音双关，但 3BSD 的手册页中提到“the ’more’ feature of the ITS systems at MIT”（MIT ITS 系统的‘more’特性），所以这个名字可能与此相关。
 
 ——Peter Jeremy，FreeBSD 提交者（<peter@rulingia.com>）

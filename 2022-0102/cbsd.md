@@ -215,7 +215,7 @@ redis redis-serv 8910 7 tcp4 172.16.0.13:6379 *:*
 ~ # cbsd jexec jname=jail1 sockstat -4l
 USER COMMAND PID FD PROTO LOCAL ADDRESS FOREIGN ADDRESS
 redis redis-serv 12587 7 tcp4 172.16.0.13:7777 *:*
-~ # cbsd jexec jname=jail1 grep ^maxmemory /usr/local/etc/redis.conf
+~ # cbsd jexec jname=jail1 grep '^maxmemory' /usr/local/etc/redis.conf
 maxmemory 4g
 maxmemory-policy noeviction
 ```

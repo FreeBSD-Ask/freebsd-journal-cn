@@ -25,7 +25,6 @@ zookeeper_enable: -> YES
 # service zookeeper start
 Starting zookeeper.
 #
-
 ```
 
 服务启动后，你可以使用 `zkCli.sh` 命令连接服务器，并尝试几个命令验证一切工作正常。

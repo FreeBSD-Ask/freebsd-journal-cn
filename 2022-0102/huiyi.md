@@ -1,6 +1,6 @@
 # 会议报告：EuroBSDCon 2021 我的第一次 EuroBSDCon：一位新组织者的视角
 
-- 原文：[EuroBSDCon 2021 My First EuroBSDCon:  A New Organizer's Perspective](https://freebsdfoundation.org/wp-content/uploads/2022/03/ConferenceReports.pdf)
+- 原文：[EuroBSDCon 2021 My First EuroBSDCon:  A New Organizer’s Perspective](https://freebsdfoundation.org/wp-content/uploads/2022/03/ConferenceReports.pdf)
 - 作者：**KATIE MCMILLAN**
 
 我在新冠大流行期间开始参与 EuroBSDCon。那是 2020 年 9 月，我并不认识 EuroBSDCon 基金会（以下简称“基金会”）的董事会成员，只知道一些来自其他会议（如 BSDCan）的组织委员会和评审委员会的成员。EuroBSDCon 2020 已经取消，BSDCan 2021 也取消了，而 EuroBSDCon 2021 的前景也不太明朗。对于虚拟会议（或称为“线上”会议，听起来比“虚拟”稍好一点，但还是不好）并没有太多热情。

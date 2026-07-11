@@ -1,6 +1,6 @@
 # 在 FreeBSD 的 DDB 内核调试器中编写自定义命令
 
-- 原文：[Writing Custom Commands in FreeBSD's DDB Kernel Debugger](https://freebsdfoundation.org/wp-content/uploads/2023/01/Baldwin_DDB.pdf)
+- 原文：[Writing Custom Commands in FreeBSD’s DDB Kernel Debugger](https://freebsdfoundation.org/wp-content/uploads/2023/01/Baldwin_DDB.pdf)
 - 作者：**JOHN BALDWIN**
 
 DDB 是一款交互式内核调试器，可用于检查系统状态并控制正在运行的内核。DDB 最初作为 Mach 操作系统的一部分开发，后来被移植到 386BSD，并由包括 FreeBSD、NetBSD、OpenBSD 在内的多个操作系统继承。本文重点介绍了 FreeBSD 中 DDB 的实现。

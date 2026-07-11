@@ -331,7 +331,7 @@ webhook executed
 * Connection #0 to host localhost left intact
 ```
 
-[gurl](https://github.com/skunkwerks/gurl) 没有此选项，期望你以正规方式操作。对于生产环境，最好使用反向代理如 [nginx](https://nginx.org/) 或 [haproxy](https://haproxy.org/) 来提供可靠的 TLS 终止，并允许通过 Let's Encrypt 等类似服务使用公共 TLS 证书。
+[gurl](https://github.com/skunkwerks/gurl) 没有此选项，期望你以正规方式操作。对于生产环境，最好使用反向代理如 [nginx](https://nginx.org/) 或 [haproxy](https://haproxy.org/) 来提供可靠的 TLS 终止，并允许通过 Let’s Encrypt 等类似服务使用公共 TLS 证书。
 
 ## 用 GitHub 和 Webhook 更新网站
 
@@ -339,7 +339,7 @@ webhook executed
 
 虽然本文无法涵盖设置自己的网站、TLS 加密证书和 DNS 的全部细节，但以下步骤对于任何软件代码仓库都大致相似。
 
-你需要设置代理服务器，如 Caddy、nginx、haproxy 等，并配置可用的 TLS。通过 Let's Encrypt 使用 ACME 协议来维护是一个很好的选择。
+你需要设置代理服务器，如 Caddy、nginx、haproxy 等，并配置可用的 TLS。通过 Let’s Encrypt 使用 ACME 协议来维护是一个很好的选择。
 
 你需要调整代理服务器，将适当的请求路由到 webhook 守护进程。考虑限制可访问的 IP 地址，以及限制 HTTP 方法。GitHub 的 API 有一个 `/meta` 端点可获取其 IP 地址，但你需要保持更新。
 

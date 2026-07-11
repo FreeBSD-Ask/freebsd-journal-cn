@@ -28,7 +28,7 @@
 
 ![EuroBSDCon 讲者胸卡](../png/2024-1112/hui-2.jpg)
 
-EuroBSDCon 在 [都柏林大学学院（UCD）的 O'Reilly Hall](https://www.ucd.ie/universityclub/conferenceandbanqueting/theoreillyhall/) 举行——我觉得这是非常合适且舒适的地点。在入口处，有两个区域：右侧是签到和注册处（有三种颜色的胸卡：橙色是组织者和工作人员，白色是与会者，绿色是讲者）；左侧是 T 恤和更多工作人员及朋友的区域。到达时，我一自我介绍就受到了热情友好的欢迎。Henning Brauer 递给我们胸卡——看到那个绿色的胸卡，我心里充满了骄傲。和他在一起的还有 Katie McMillan，我之前从未与她交流过——即使在网上也没有，但我曾看到过她在 BSDCan 上的演讲视频，所以见到她非常高兴。另一桌旁坐着几位人士，包括 Mischa Peters（他给了我一件 [OpenBSD.Amsterdam](https://openbsd.amsterdam) 的 T 恤），我的“同事”Jeroen Janssen（aka h3artbl33d，[exquisite.social](https://exquisite.social/) Mastodon 实例的管理员），Peter Hansteen、Paul de Weerd、René Ladan、Janne Johansson、Guido Van Rooij、Michael Reim、Benny Siegert 等。我多年来一直敬佩的人们都聚集在那里。我们聊了一个多小时，随着时间推移，有些人加入，也有些人离开。我早就知道 BSD 社区是积极的，但我惊讶于各个小组之间的凝聚力。我立刻感到非常自在，那种身处熟悉的地方、在亲密朋友中间的感觉。
+EuroBSDCon 在 [都柏林大学学院（UCD）的 O’Reilly Hall](https://www.ucd.ie/universityclub/conferenceandbanqueting/theoreillyhall/) 举行——我觉得这是非常合适且舒适的地点。在入口处，有两个区域：右侧是签到和注册处（有三种颜色的胸卡：橙色是组织者和工作人员，白色是与会者，绿色是讲者）；左侧是 T 恤和更多工作人员及朋友的区域。到达时，我一自我介绍就受到了热情友好的欢迎。Henning Brauer 递给我们胸卡——看到那个绿色的胸卡，我心里充满了骄傲。和他在一起的还有 Katie McMillan，我之前从未与她交流过——即使在网上也没有，但我曾看到过她在 BSDCan 上的演讲视频，所以见到她非常高兴。另一桌旁坐着几位人士，包括 Mischa Peters（他给了我一件 [OpenBSD.Amsterdam](https://openbsd.amsterdam) 的 T 恤），我的“同事”Jeroen Janssen（aka h3artbl33d，[exquisite.social](https://exquisite.social/) Mastodon 实例的管理员），Peter Hansteen、Paul de Weerd、René Ladan、Janne Johansson、Guido Van Rooij、Michael Reim、Benny Siegert 等。我多年来一直敬佩的人们都聚集在那里。我们聊了一个多小时，随着时间推移，有些人加入，也有些人离开。我早就知道 BSD 社区是积极的，但我惊讶于各个小组之间的凝聚力。我立刻感到非常自在，那种身处熟悉的地方、在亲密朋友中间的感觉。
 
 其间，Franco Fichtner 到了，准备做相同的技术检查。[OPNSense](https://opnsense.org/) 是我为客户选择路由器/防火墙解决方案时的首选之一，和他直接交流真的很愉快。
 

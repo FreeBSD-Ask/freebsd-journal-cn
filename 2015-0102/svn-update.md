@@ -13,7 +13,7 @@
 
 `mailwrapper.8` 工具用于根据配置文件 `mailer.conf.5` 的指定调用合适的 MTA（邮件传输代理），例如 Sendmail、Postfix 或 qmail。`mailer.conf.5` 文件用于将邮件子系统使用的某些命令映射到应执行该命令的程序绝对路径。
 
-例如，`mailer.conf.5` 可能包含 ‘sendmail’、‘mailq’、‘newaliases’ 和 ‘hoststat’ 等命令。在 FreeBSD 上，这些命令映射到 **/usr/libexec/sendmail/sendmail** 程序，该程序根据调用它的命令名决定行为，以不同方式修改邮件系统的各部分。`newaliases.8` 会重建 `aliases.5` 数据库文件 aliases.db；`hoststat.8` 会打印 SMTP 事务中使用的主机状态数据库等。历史上，`mailer.conf.5` 存放在基本系统配置目录 **/etc/mail** 中，但从 revision 276917 开始，可以将 `mailwrapper.8` 配置文件存放在系统其他位置，避免冲突或意外撤销本地修改。`mailwrapper.8` 工具现在会尊重 `LOCALBASE` 环境变量，优先在该目录下查找配置文件，如果存在则覆盖 FreeBSD 基本系统默认的 `mailer.conf.5`。在 FreeBSD 术语中，`LOCALBASE` 是非基本系统安装路径的根，即 **/usr/local**。
+例如，`mailer.conf.5` 可能包含‘sendmail’、‘mailq’、‘newaliases’和‘hoststat’等命令。在 FreeBSD 上，这些命令映射到 **/usr/libexec/sendmail/sendmail** 程序，该程序根据调用它的命令名决定行为，以不同方式修改邮件系统的各部分。`newaliases.8` 会重建 `aliases.5` 数据库文件 aliases.db；`hoststat.8` 会打印 SMTP 事务中使用的主机状态数据库等。历史上，`mailer.conf.5` 存放在基本系统配置目录 **/etc/mail** 中，但从 revision 276917 开始，可以将 `mailwrapper.8` 配置文件存放在系统其他位置，避免冲突或意外撤销本地修改。`mailwrapper.8` 工具现在会尊重 `LOCALBASE` 环境变量，优先在该目录下查找配置文件，如果存在则覆盖 FreeBSD 基本系统默认的 `mailer.conf.5`。在 FreeBSD 术语中，`LOCALBASE` 是非基本系统安装路径的根，即 **/usr/local**。
 
 ## rc.8 子系统
 

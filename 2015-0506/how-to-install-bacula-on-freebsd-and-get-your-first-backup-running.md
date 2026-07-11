@@ -793,7 +793,7 @@ Used Volume status:
 *
 ```
 
-不必为 ‘Device “MyFirstStorage” (/usr/local/bacula/volumes) is not open’ 这条消息担心。当没有作业进行时，这完全正常。
+不必为‘Device “MyFirstStorage” (/usr/local/bacula/volumes) is not open’这条消息担心。当没有作业进行时，这完全正常。
 
 ### 你的第一个作业
 

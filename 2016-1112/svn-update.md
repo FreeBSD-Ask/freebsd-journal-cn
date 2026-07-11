@@ -28,9 +28,9 @@ cron 任务现在可拆分为单独文件，与修改 **/etc/crontab** 相比，
 
 链接：<https://svnweb.freebsd.org/changeset/base/308213>
 
-## syslogd(8)：新增 ‘include’ 关键字
+## syslogd(8)：新增‘include’关键字
 
-include 关键字后所跟目录中所有不以 ‘#’ 开头的 .conf 文件都会被包含。默认 syslogd.conf 已更新为 include **/etc/syslog.d** 与 **/usr/local/etc/syslog.d**。
+include 关键字后所跟目录中所有不以‘#’开头的 .conf 文件都会被包含。默认 syslogd.conf 已更新为 include **/etc/syslog.d** 与 **/usr/local/etc/syslog.d**。
 
 链接：<https://svnweb.freebsd.org/changeset/base/308160>
 
