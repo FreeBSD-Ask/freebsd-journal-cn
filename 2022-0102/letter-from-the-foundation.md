@@ -11,7 +11,7 @@ CBSD 提供了在 FreeBSD 上管理 Jail 和 bhyve 虚拟机的框架。Oleg Gin
 
 Kristoff Provost 描述了他持续维护 FreeBSD 上 pf 包过滤器移植版的又一篇章。
 
-本期还刊登两篇来自 EuroBSDCon 的会议报告。我们希望在今年后续几期中，刊登更多来自 “老牌” BSD 大会和新会议场地的会议报告。
+本期还刊登两篇来自 EuroBSDCon 的会议报告。我们希望在今年后续几期中，刊登更多来自“老牌” BSD 大会和新会议场地的会议报告。
 
 一如既往，我们乐于聆听读者的声音。如果你对任何文章有反馈、对未来文章话题的建议，或者有意撰稿，请通过 <info@freebsdjournal.com> 联系我们。
 
