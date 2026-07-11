@@ -330,13 +330,13 @@ ds5/207508569ff983350c000000a9730200eec58e800000000000000000
    # find . -type f -exec pnfsdscopymr -r /data2 {} \;
 ```
 
-要检查 find(1) 遗漏的文件：
+要检查 **find(1)** 遗漏的文件：
 
 ```sh
    # find . -type f -exec pnfsdsfile {} \; | sed "/0\.0\.0\.0/!d" | sed "/:.*//"
 ```
 
-（使用“sh”，搜索仍具有 DS 地址 0.0.0.0 的任何文件。）
+（使用 `sh`，搜索仍具有 DS 地址 0.0.0.0 的任何文件。）
 
 如果这打印出文件，则需要对它们执行“pnfsdscopymr -r”命令。如果没有打印出任何内容，nfsv4-data2 已恢复，所有文件现在应该正确镜像。系统管理员也可以使用 pnfsdscopymr(1) 命令将数据文件从一个 DS 迁移到另一个 DS。要将 abc.c 的数据文件从 nfsv4-data3 移动到 nfsv4-data0，命令是：
 
