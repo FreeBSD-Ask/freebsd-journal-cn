@@ -123,7 +123,7 @@ TOE TLS 使用类似于网卡 TLS 的数据流来传输 TLS 记录。与网卡 T
 
 为了探测 TOE TLS，套接字选项 `TCP_TXTLS_ENABLE` 的处理程序会检查当前套接字是否使用 TOE。如果套接字已被卸载，处理程序会调用附加的 TOE 驱动程序中的方法来分配一个 TLS 会话。
 
-与 网卡 TLS 类似，`ktls_frame()` 在使用 TOE TLS 时不会在 TLS mbuf 上设置 `M_NOTREADY` 标志。TOE TLS mbuf 被插入到套接字缓冲区中以供立即消费。当数据可用时，TCP 调用 TOE 驱动程序的输出方法。该方法从套接字缓冲区读取数据，并将其发送到相关 NIC 的 TOE 队列以进行传输。由于 NIC 上的 TOE 引擎负责 TCP 分段和头部生成，TOE 方法将完整的 mbuf 从套接字缓冲区排队到 NIC。这意味着，对于 TOE TLS，该方法始终能够一次性发送完整的 TLS 记录，而无需像 网卡 TLS 那样处理部分记录传输的边缘情况。此外，由于 TOE 会检查套接字缓冲区中的 mbuf，因此 TOE TLS 不需要单独的发送标签，而是使用 TLS mbuf 中的 TLS 会话引用。
+与网卡 TLS 类似，`ktls_frame()` 在使用 TOE TLS 时不会在 TLS mbuf 上设置 `M_NOTREADY` 标志。TOE TLS mbuf 被插入到套接字缓冲区中以供立即消费。当数据可用时，TCP 调用 TOE 驱动程序的输出方法。该方法从套接字缓冲区读取数据，并将其发送到相关 NIC 的 TOE 队列以进行传输。由于 NIC 上的 TOE 引擎负责 TCP 分段和头部生成，TOE 方法将完整的 mbuf 从套接字缓冲区排队到 NIC。这意味着，对于 TOE TLS，该方法始终能够一次性发送完整的 TLS 记录，而无需像网卡 TLS 那样处理部分记录传输的边缘情况。此外，由于 TOE 会检查套接字缓冲区中的 mbuf，因此 TOE TLS 不需要单独的发送标签，而是使用 TLS mbuf 中的 TLS 会话引用。
 
 ### TLS 接收
 
