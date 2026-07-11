@@ -4,17 +4,17 @@
 
 11.2-RELEASE 代码冻结目前生效，到你阅读本文时，应该已有 `releng/11.2`。预计在 2018 年 6 月 27 日左右看到发布公告，并开始准备升级，因为 FreeBSD 11.1 将于 2018 年 9 月 30 日到达生命周期终点。
 
-## 引入 dwatch(1) 作为让 DTrace 更有用的工具
+## 引入 **dwatch(1)** 作为让 DTrace 更有用的工具
 
 <https://svnweb.freebsd.org/changeset/base/330559>
 
-`dwatch(1)` 是一个让 dtrace 更有用的工具。`dwatch` 提供了一种有趣且无痛的方式来做各种事情，从实时观看系统进程调度器，到过滤文件系统事件及介于两者之间的一切。
+**dwatch(1)** 是一个让 dtrace 更有用的工具。dwatch 提供了一种有趣且无痛的方式来做各种事情，从实时观看系统进程调度器，到过滤文件系统事件及介于两者之间的一切。
 
 ## 添加对 zstd 压缩的用户和内核核心转储的支持
 
 <https://svnweb.freebsd.org/changeset/base/329240>
 
-这与现有的 gzip 压缩支持类似，但 zstd 通常更快且压缩率更好。必须通过在内核配置文件中添加 `ZSTDIO` 来配置对此功能的支持。`dumpon(8)` 的新 `-Z` 选项用于配置内核转储的 zstd 压缩。`savecore(8)` 现在能识别并保存带 `.zst` 扩展名的 zstd 压缩内核转储。
+这与现有的 gzip 压缩支持类似，但 zstd 通常更快且压缩率更好。必须通过在内核配置文件中添加 `ZSTDIO` 来配置对此功能的支持。**dumpon(8)** 的新 `-Z` 选项用于配置内核转储的 zstd 压缩。**savecore(8)** 现在能识别并保存带 `.zst` 扩展名的 zstd 压缩内核转储。
 
 ## 为 zfs_getpages() 添加后读/预读支持
 
@@ -38,7 +38,7 @@ NFSv4.1 RFC 规定 `OPEN_SHARE_ACCESS_WANT` 位可以设置在 OpenDowngrade 的
 
 <https://svnweb.freebsd.org/changeset/base/332645>
 
-当 `SIOCSLAGGPORT` 返回错误时发出警告，而不是退出。当我们在 lagg 创建期间因错误退出时，单个失败的 NIC（不再附加）可以阻止 lagg 创建和其他配置（如添加 IPv4 地址），从而使机器无法访问。为 `SIOCSLAGGPORT` 的退出状态保留非 `EEXISTS` 错误，以防脚本正在查找它。希望如果 `ifconfig` 的其他部分可以允许“软”失败，这可以扩展。改进警告消息，提及有问题的 lagg 和成员。
+当 `SIOCSLAGGPORT` 返回错误时发出警告，而不是退出。当我们在 lagg 创建期间因错误退出时，单个失败的 NIC（不再附加）可以阻止 lagg 创建和其他配置（如添加 IPv4 地址），从而使机器无法访问。为 `SIOCSLAGGPORT` 的退出状态保留非 `EEXISTS` 错误，以防脚本正在查找它。希望如果 ifconfig 的其他部分可以允许“软”失败，这可以扩展。改进警告消息，提及有问题的 lagg 和成员。
 
 ## 添加 TCP 高精度定时器系统（tcp_hpts）支持
 
@@ -46,7 +46,7 @@ NFSv4.1 RFC 规定 `OPEN_SHARE_ACCESS_WANT` 位可以设置在 OpenDowngrade 的
 
 这是引入 Rack 和 BBR 的先驱/基础工作，两者都使用 hpts 来控制数据包发送节奏。此功能是可选的，需要先启用 `TCPHPTS` 选项才能激活。使用它的 TCP 模块必须确保基础组件已编译到加载它们的内核中。
 
-## 从 getlogin(2) 中移除缓存
+## 从 **getlogin(2)** 中移除缓存
 
 <https://svnweb.freebsd.org/changeset/base/332119>
 
@@ -56,7 +56,7 @@ NFSv4.1 RFC 规定 `OPEN_SHARE_ACCESS_WANT` 位可以设置在 OpenDowngrade 的
 
 <https://svnweb.freebsd.org/changeset/base/332490>
 
-虽然 Arcnet 在工业控制中仍有部署，但市场上缺乏任何 PCI、USB 或 PCIe NIC 的驱动程序，表明此类用户并未运行 FreeBSD。PR 数据库中的证据表明 `cm(4)` 驱动（我们唯一的 Arcnet NIC）在 5.0 中就已损坏，此后一直无法工作。
+虽然 Arcnet 在工业控制中仍有部署，但市场上缺乏任何 PCI、USB 或 PCIe NIC 的驱动程序，表明此类用户并未运行 FreeBSD。PR 数据库中的证据表明 **cm(4)** 驱动（我们唯一的 Arcnet NIC）在 5.0 中就已损坏，此后一直无法工作。
 
 ## 向 syslogd 添加 RFC 5424 syslog 消息输出
 

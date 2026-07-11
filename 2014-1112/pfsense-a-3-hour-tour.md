@@ -17,7 +17,7 @@ pfSense 软件 2.2 版本是 15 个月开发努力的结晶，覆盖诸多领域
 
 为改善这一状况，本次开发期间我们跟踪 FreeBSD 10-STABLE，再到 10.1 的 BETA、RC 直至 RELEASE。pfSense 2.2 发布时已赶上最新 FreeBSD 版本，我们也在努力简化未来版本中更换基础操作系统版本的流程。未来你会看到我们与 FreeBSD 最新版本保持更紧密同步。
 
-FreeBSD 10.1 带来若干技术改进。我们社区最感兴趣的是 pf 的改进。FreeBSD 开发者 Gleb Smirnoff 让 FreeBSD 10 中的 pf 支持 SMP。pf 现在支持细粒度锁，能更好地利用多核机器上的 CPU。我们乐于利用开源带来的好处，也乐于贡献，所以我们让 pf 更快。我们与 FreeBSD 开发者 George Neville-Neil 一起开始调查如何进一步提升 pf 性能。第一个成果是：我们注意到 Jenkins 哈希（FreeBSD 10 中新增）占用了处理每个数据包相当可观的时间。把 Jenkins 哈希换成 xxhash（<https://code.google.com/p/xxhash/>）后，在 Intel `ixgbe(4)` 网卡上跑 null pf 测试用例（最坏情况）性能提升 3%。我们怀疑其他硬件会有更高的性能提升，因为测试所用硬件上 `ixgbe(4)` 的原始转发性能约为每秒 55 万个 64 字节包。
+FreeBSD 10.1 带来若干技术改进。我们社区最感兴趣的是 pf 的改进。FreeBSD 开发者 Gleb Smirnoff 让 FreeBSD 10 中的 pf 支持 SMP。pf 现在支持细粒度锁，能更好地利用多核机器上的 CPU。我们乐于利用开源带来的好处，也乐于贡献，所以我们让 pf 更快。我们与 FreeBSD 开发者 George Neville-Neil 一起开始调查如何进一步提升 pf 性能。第一个成果是：我们注意到 Jenkins 哈希（FreeBSD 10 中新增）占用了处理每个数据包相当可观的时间。把 Jenkins 哈希换成 xxhash（<https://code.google.com/p/xxhash/>）后，在 Intel **ixgbe(4)** 网卡上跑 null pf 测试用例（最坏情况）性能提升 3%。我们怀疑其他硬件会有更高的性能提升，因为测试所用硬件上 **ixgbe(4)** 的原始转发性能约为每秒 55 万个 64 字节包。
 
 FreeBSD 10.1 改进了作为客户机的虚拟化支持，这也是我们的用户在 2.2 beta 和发布候选版中已享受数月的特性。虽然多年来它在大多数 hypervisor 上大多数场景下已工作得很好，但 10.1 首次为 Microsoft 的 Hyper-V 带来真正可靠的方案，少数用户也报告了 virtio 的改进。
 

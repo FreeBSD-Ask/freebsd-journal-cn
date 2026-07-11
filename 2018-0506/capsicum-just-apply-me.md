@@ -153,11 +153,11 @@ if(nvlist_send(sock,nvl)<0){
 
 这些目前都只是想法。
 
-## Casper 与 dhclient(8)
+## Casper 与 **dhclient(8)**
 
 新的服务之一是 system.syslog。让我们讨论一下为什么创建它。
 
-在启用 `kern.trap_enotcap` sysctl 引导操作系统时，我们注意到 `dhclient(8)` 在进行核心转储。示例 4 展示了这种情况。
+在启用 `kern.trap_enotcap` sysctl 引导操作系统时，我们注意到 **dhclient(8)** 在进行核心转储。示例 4 展示了这种情况。
 
 ```sh
 Starting devd.
@@ -169,7 +169,7 @@ Trace/BPT trap/etc/rc.d/dhclient: WARNING: failed to start dhclient
 Starting syslogd.
 ```
 
-示例 4. `dhclient(8)` 在启动时进行核心转储。
+示例 4. **dhclient(8)** 在启动时进行核心转储。
 
 ```sh
 void syslog(int priority, const char *message, ...);
@@ -181,9 +181,9 @@ int setlogmask(int maskpri);
 
 示例 5. syslog API
 
-分析此程序后发现，dhclient 用 syslog 报告其状态。如果我们再看示例 4，会看到 `syslogd(8)` 在 `dhclient(8)` 之后启动。这是典型的鸡生蛋蛋生鸡问题。`syslogd(8)` 有时需要网络配置，而 `dhclient(8)` 需要 `syslogd(8)` 来报告状态。历史上，我们决定在运行 `syslogd(8)` 之前运行 `dhclient(8)`。
+分析此程序后发现，dhclient 用 syslog 报告其状态。如果我们再看示例 4，会看到 **syslogd(8)** 在 **dhclient(8)** 之后启动。这是典型的鸡生蛋蛋生鸡问题。**syslogd(8)** 有时需要网络配置，而 **dhclient(8)** 需要 **syslogd(8)** 来报告状态。历史上，我们决定在运行 **syslogd(8)** 之前运行 **dhclient(8)**。
 
-值得注意的是，`dhclient(8)` 在进入能力模式之前尝试连接到 `syslogd(8)`，因为服务器不存在而失败。令人惊讶的是，每次程序未连接时，syslog 函数都尝试连接它！当然，因为我们现在在 Capsicum 中运行，永远无法建立连接。因此，为解决此问题，我们决定引入一个新的 Casper 服务 syslog。它尝试连接到 `syslogd(8)`，如果失败，会在有内容要报告时再试。也值得注意的是，syslog API（如示例 5 所示）在出问题时不会报告任何问题。
+值得注意的是，**dhclient(8)** 在进入能力模式之前尝试连接到 **syslogd(8)**，因为服务器不存在而失败。令人惊讶的是，每次程序未连接时，syslog 函数都尝试连接它！当然，因为我们现在在 Capsicum 中运行，永远无法建立连接。因此，为解决此问题，我们决定引入一个新的 Casper 服务 syslog。它尝试连接到 **syslogd(8)**，如果失败，会在有内容要报告时再试。也值得注意的是，syslog API（如示例 5 所示）在出问题时不会报告任何问题。
 
 ## 总结
 

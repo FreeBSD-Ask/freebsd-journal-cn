@@ -17,7 +17,7 @@
 
 ## 重要里程碑
 
-9 月 1 日，我们将与旧的 `pkg_` 工具告别（详见 [http://blogs.freebsdish.org/portmgr/2014/02/03/time-to-bid-farewell-to-the-old-pkg_-tools/]）。经过多年服务，它们将由全新闪亮的 `pkg(8)` 取代。切换后，所有剩余的未暂存（unstaged）Port 将被移除，为更佳的树内 QA 和许多令人兴奋的新功能铺路！准备好迎接出色的新功能吧，比如以非 root 用户身份构建和打包、无需安装即可打包，以及创建子包的能力。Ports 树的未来一片光明！
+9 月 1 日，我们将与旧的 `pkg_` 工具告别（详见 [http://blogs.freebsdish.org/portmgr/2014/02/03/time-to-bid-farewell-to-the-old-pkg_-tools/]）。经过多年服务，它们将由全新闪亮的 **pkg(8)** 取代。切换后，所有剩余的未暂存（unstaged）Port 将被移除，为更佳的树内 QA 和许多令人兴奋的新功能铺路！准备好迎接出色的新功能吧，比如以非 root 用户身份构建和打包、无需安装即可打包，以及创建子包的能力。Ports 树的未来一片光明！
 
 ## 新的软件包仓库
 

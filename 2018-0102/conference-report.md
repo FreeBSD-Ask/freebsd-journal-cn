@@ -8,7 +8,7 @@
 
 接下来是 George Neville-Neil 关于 CADETS 项目中使用 DTrace 的更新。他们以常驻模式使用 DTrace，而传统 DTrace 的性能保证（探针未启用时影响极小或无影响）并不适用。George 介绍了多项正在进行的改进和 OpenDTrace 的工作——这是一个旨在沿 OpenZFS 的思路将各 DTrace 社区重新聚拢的项目。
 
-随后 Baptiste Daroussin 讨论了扩展 Poudrière 包构建系统以构建 FreeBSD 镜像的工作。从某种角度看，这似乎偏离了 Poudrière 的初衷，但实际上 Poudrière 一直需要构建干净的 FreeBSD 镜像，以便在构建包时挂载为 OS 文件系统。新功能只是增加了打包这些镜像的能力，而非继续作为 ZFS 卷维持。午饭后，我做了关于虚拟地址空间管理历史的演讲，展示了我们从早期 UNIX 的 `break()` 接口如何演进到今天的 `mmap()`。我还讨论了为什么我认为面对现代缓解策略和 API 设计理念，是时候重新审视这个接口了。
+随后 Baptiste Daroussin 讨论了扩展 Poudrière 软件包构建系统以构建 FreeBSD 镜像的工作。从某种角度看，这似乎偏离了 Poudrière 的初衷，但实际上 Poudrière 一直需要构建干净的 FreeBSD 镜像，以便在构建软件包时挂载为 OS 文件系统。新功能只是增加了打包这些镜像的能力，而非继续作为 ZFS 卷维持。午饭后，我做了关于虚拟地址空间管理历史的演讲，展示了我们从早期 UNIX 的 `break()` 接口如何演进到今天的 `mmap()`。我还讨论了为什么我认为面对现代缓解策略和 API 设计理念，是时候重新审视这个接口了。
 
 Johannes M. Dieterich 随后做了关于 FreeBSD 在 HPC 领域现状的演讲，聚焦程序语言支持、数值库和 GPU 支持。作为曾在该领域工作过的人，看到 FreeBSD 的进展和哪些地方仍需努力，很受启发。
 
