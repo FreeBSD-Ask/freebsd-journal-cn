@@ -150,7 +150,7 @@ hadoop:*:31707:31707:hadoop User:/home/hadoop:/usr/local/bin/bash
      - { type: "id_{{hdp_keytype}}.pub", name: "{{hdp_keyname}}.pub" }
 ```
 
-将 hadoop 用户添加到 **/etc/ssh/sshd_config** 中的 `AllowUsers` 行，允许其访问每台机器。正则表达式将确保 `AllowUsers` 行中的任何先前条目都得到保留，并将 hadoop 用户添加到现有用户列表的末尾。
+将 Hadoop 用户添加到 **/etc/ssh/sshd_config** 中的 `AllowUsers` 行，允许其访问每台机器。正则表达式将确保 `AllowUsers` 行中的任何先前条目都得到保留，并将 Hadoop 用户添加到现有用户列表的末尾。
 
 ```ini
 - name: "Add {{hdp}} to AllowedUsers line in /etc/ssh/sshd_config"
