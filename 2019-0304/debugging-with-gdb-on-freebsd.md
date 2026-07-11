@@ -349,8 +349,8 @@ From        To          Syms Read    Shared Object Library
 
 如果在加载核心文件之前忘记设置 `sysroot` 变量，也可以在核心文件加载后再设置。GDB 会在 `sysroot` 变更后自动在新的系统根目录下查找共享库。
 
-调试远程 FreeBSD 内核时，`sysroot` 变量也有效。GDB 会在系统根目录下查找内核模块及其关联的调试信息。即使目标机器与主机架构相同，但运行的操作系统或操作系统版本不同，这一功能也很有用。•
+调试远程 FreeBSD 内核时，`sysroot` 变量也有效。GDB 会在系统根目录下查找内核模块及其关联的调试信息。即使目标机器与主机架构相同，但运行的操作系统或操作系统版本不同，这一功能也很有用。
 
 ---
 
-**JOHN BALDWIN** 是一名系统软件开发者。他直接为 FreeBSD 操作系统提交更改已有十九年，涉及内核的多个部分（包括 x86 平台支持、SMP、各种设备驱动和虚拟内存子系统）以及用户态程序。除了写代码，John 还曾任职 FreeBSD 核心团队和发布工程团队。他也为 GDB 调试器和 LLVM 做过贡献。John 与妻子 Kimberly 和三个孩子 Janelle、Evan、Bella 居住在加州康科德。
+**JOHN BALDWIN** 是一名系统软件开发者。他直接为 FreeBSD 操作系统提交更改已有十九年，涉及内核的多个部分（包括 x86 平台支持、SMP、各种设备驱动和虚拟内存子系统）、用户态程序。除了写代码，John 还曾任职 FreeBSD 核心团队和发布工程团队。他也为 GDB 调试器和 LLVM 做过贡献。John 与妻子 Kimberly 和三个孩子 Janelle、Evan、Bella 居住在加州康科德。
