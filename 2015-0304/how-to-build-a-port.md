@@ -235,7 +235,7 @@ LICENSE_FILE= ${WRKSRC}/COPYING
 
 ## 提交 Port
 
-当你确认 port 按你期望的方式工作后，就可以提交它进入 FreeBSD 官方 Ports 树，这也会让 package 可通过 `pkg` 轻松安装。提交前确保 port 目录干净，没有任何多余文件。用 `make clean` 命令即可轻松删除 work 目录。从 port 目录上一级的分类目录下，用 `shar`(1) 工具把文件打包成 shar 归档：
+当你确认 port 按你期望的方式工作后，就可以提交它进入 FreeBSD 官方 Ports 树，这也会让 package 可通过 `pkg` 轻松安装。提交前确保 port 目录干净，没有任何多余文件。用 `make clean` 命令即可轻松删除 work 目录。从 port 目录上一级的分类目录下，用 `shar.1` 工具把文件打包成 shar 归档：
 
 ```sh
 shar `find sash'> sash.shar

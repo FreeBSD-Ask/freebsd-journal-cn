@@ -14,7 +14,7 @@
 
 <https://wiki.freebsd.org/Hackathon/202609>
 
-欢迎加入 FreeBSD 社区，参加 2026 年 9 月的 FreeBSD 黑客马拉松。活动将在德国柏林举办，时间在 EuroBSDCon 2026 之前。黑客马拉松汇聚 FreeBSD 开发者和贡献者，协作推进项目、分享想法，随后一同前往 EuroBSDCon。
+欢迎加入 FreeBSD 社区，参加 2026 年 9 月的 FreeBSD 黑客马拉松。活动将在德国柏林举办，时间在 EuroBSDCon 2026 前的周末。黑客马拉松汇聚 FreeBSD 开发者和贡献者，协作推进项目、分享想法、并肩工作，随后一同前往 EuroBSDCon。
 
 ## 2026 年 9 月 FreeBSD 开发者峰会
 
@@ -34,4 +34,4 @@
 
 <https://2026.eurobsdcon.org/>
 
-EuroBSDCon 是年度国际技术大会，每年在欧洲不同国家举办。大会聚焦使用 4.4BSD（伯克利软件发行版）操作系统家族及相关项目的用户和开发者。FreeBSD 基金会很荣幸成为本次活动的银级赞助商。
+EuroBSDCon 是年度国际技术大会，每年在欧洲不同国家举办。大会聚焦于汇聚使用 4.4BSD（伯克利软件发行版）操作系统家族及相关项目的用户和开发者。FreeBSD 基金会很荣幸成为本次活动的银级赞助商。
