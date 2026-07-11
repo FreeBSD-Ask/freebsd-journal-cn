@@ -13,7 +13,7 @@
 
 [项目官网](https://www.furybsd.org/)
 
-"FuryBSD 是全新的开源 FreeBSD 桌面系统。FuryBSD 向以往的桌面 BSD 项目致敬，如 PC-BSD 和 TrueOS。FuryBSD 拥有图形界面，并增加了如实时混合 USB / DVD 镜像等额外工具。"
+“FuryBSD 是全新的开源 FreeBSD 桌面系统。FuryBSD 向以往的桌面 BSD 项目致敬，如 PC-BSD 和 TrueOS。FuryBSD 拥有图形界面，并增加了如实时混合 USB / DVD 镜像等额外工具。”
 
 ### FuryBSD 的独特之处
 
