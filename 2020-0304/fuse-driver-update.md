@@ -20,13 +20,7 @@ FUSE 守护进程
 
 ## FreeBSD 的 FUSE 移植
 
-FreeBSD 的 FUSE 驱动最初是 Csaba Henk 在 2005 年 谷歌 编程之夏（GSoC）项目中编写的，但未进入基本系统。Ilya Putsikau 在 2011 年的另一个 GSoC 项目中完成了移植，Attilio Rao 随即将其合并。然而，2011 年版本仍落后于当时的协议若干年，且有一些未解决的 bug。此后 8 年间，许多 bug 未得到处理，缺乏维护和新特性，直到现在。
-
-FUSE
-
-驱动更新
-
-FUSE API 栈
+FreeBSD 的 FUSE 驱动最初是 Csaba Henk 在 2005 年谷歌编程之夏（GSoC）项目中编写的，但未进入基本系统。Ilya Putsikau 在 2011 年的另一个 GSoC 项目中完成了移植，Attilio Rao 随即将其合并。然而，2011 年版本仍落后于当时的协议若干年，且有一些未解决的 bug。此后 8 年间，许多 bug 未得到处理，缺乏维护和新特性，直到现在。
 
 得益于基金会的赞助，我得以改变这一局面。我基本重写了驱动，更新了协议版本，修复了数十个 bug，并新增了若干特性和性能改进。
 
@@ -65,7 +59,7 @@ sudo lklfuse -o type=ext2,allow_other,default_permissions \
 
 用户态编程的好处之一是不限于 C 语言。事实上，FUSE 绑定覆盖 Perl、Python、Rust、JavaScript、Java、Ruby、Nim、C#、Go，可能还有其他语言。
 
-启动 FUSE 守护进程略显复杂：守护进程先打开 `/dev/fuse`，再调用 `nmount` 并把该文件描述符作为参数之一传入。然后开始从同一文件描述符读取 FUSE 请求并写回响应。不过开发者很少需要操心这些细节，因为 `libfuse` 全包了。无论用 C 还是其他语言，开发者通常只需为每个支持的 FUSE 操作定义回调。剩下的接线和管道工作交给库。比如 Python 中“Hello World”示例的核心代码仅 37 行（完整示例见 <https://github.com/libfuse/python-fuse/blob/master/example/hello.py>）。
+启动 FUSE 守护进程略显复杂：守护进程先打开 **/dev/fuse**，再调用 `nmount` 并把该文件描述符作为参数之一传入。然后开始从同一文件描述符读取 FUSE 请求并写回响应。不过开发者很少需要操心这些细节，因为 `libfuse` 全包了。无论用 C 还是其他语言，开发者通常只需为每个支持的 FUSE 操作定义回调。剩下的接线和管道工作交给库。比如 Python 中"Hello World"示例的核心代码仅 37 行（完整示例见 https://github.com/libfuse/python-fuse/blob/master/example/hello.py）。
 
 ```python
 class HelloFS(Fuse):
@@ -107,13 +101,15 @@ FUSE 的安全模型可能出乎意料：默认情况下，守护进程负责授
 
 ## 新特性
 
-FreeBSD 13 全新的 `fusefs(5)` 驱动新增若干特性，现有 FUSE 文件系统应能立即受益。最有趣的几项如下：
+FreeBSD 13 全新的 **fusefs(5)** 驱动新增若干特性，现有 FUSE 文件系统应能立即受益。最有趣的几项如下：
 
 - 内核侧权限检查（`-o default_permissions`）现已完全实现
-- 支持 `mknod(2)`、`pipe(2)`、`socket(2)`，可在 fusefs 文件系统上创建任意类型的文件
-- 新增 `fcntl(2)` 建议锁的服务器端支持。此前 fcntl 锁总是在内核中实现，对于做分布式锁的网络文件系统并不足够
+- 支持 **mknod(2)**、**pipe(2)**、**socket(2)**，可在 fusefs 文件系统上创建任意类型的文件
+- 新增 **fcntl(2)** 建议锁的服务器端支持。此前 fcntl 锁总是在内核中实现，对于做分布式锁的网络文件系统并不足够
 - 以 `-o intr` 挂载时，若服务器支持，fusefs 挂载点现可完全中断。即信号可以打断因等待服务器响应而阻塞的操作。类似 NFS 同名挂载选项
 - fusefs 挂载点现可通过 NFS 导出
 - 服务器允许时，内核现会缓存文件名和属性。服务器也可异步淘汰部分内核缓存。服务器允许时，内核还能缓存读写。最后，进程看起来在顺序读取时，会执行预读。这些特性无需应用或配置改动即可提升性能
 
-ALAN SOMERS 自 2013 年起担任 FreeBSD 提交者。2019 年，他在 FreeBSD 基金会委托下重写了 fusefs 驱动。目前 Alan 在 Axcient 从事 FreeBSD 存储服务器相关工作。
+---
+
+**ALAN SOMERS** 自 2013 年起担任 FreeBSD 提交者。2019 年，他在 FreeBSD 基金会委托下重写了 fusefs 驱动。目前 Alan 在 Axcient 从事 FreeBSD 存储服务器相关工作。
