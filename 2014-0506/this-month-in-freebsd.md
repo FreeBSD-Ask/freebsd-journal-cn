@@ -37,10 +37,10 @@ Dan 写道：
 
 ## 关于彩蛋的更多讨论
 
-> Dru Lavigne 的 3/4 月专栏提到了彩蛋。其中有一句“more is less than less and less is more than more.”（more 比 less 少，less 比 more 多）。我虽同意后半句，但 `more.1` 至少比 `less.1` 早 4 年问世。
+> Dru Lavigne 的 3/4 月专栏提到了彩蛋。其中有一句“more is less than less and less is more than more.”（more 比 less 少，less 比 more 多）。我虽同意后半句，但 **more(1)** 至少比 **less(1)** 早 4 年问世。
 >
-> 翻找一番后，我注意到我手上最早的 Unix `more.1` 来自 3BSD，日期为 1979 年 11 月。最早的 `less.1` 则发布在 mod.sources（comp.sources.unix）第 3 卷，其 `changelog` 中最早的条目为 1984 年 1 月。
+> 翻找一番后，我注意到我手上最早的 Unix **more(1)** 来自 3BSD，日期为 1979 年 11 月。最早的 **less(1)** 则发布在 mod.sources（comp.sources.unix）第 3 卷，其 `changelog` 中最早的条目为 1984 年 1 月。
 >
-> 我起初以为 `more.1` 是对 AT&T `pg.1` 工具的谐音双关，但 3BSD 手册页中提到“MIT ITS 系统的‘more’特性”，所以这个名字可能与后者有关。
+> 我起初以为 **more(1)** 是对 AT&T **pg(1)** 工具的谐音双关，但 3BSD 手册页中提到“MIT ITS 系统的‘more’特性”，所以这个名字可能与后者有关。
 >
 > ——Peter Jeremy，FreeBSD 提交者（<peter@rulingia.com>）

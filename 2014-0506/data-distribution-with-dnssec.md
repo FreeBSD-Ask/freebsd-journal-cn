@@ -58,7 +58,7 @@ pestilence IN SSHFP 1 2 86c744ce05ba…
 
 每个主机名变体的哈希值相同。
 
-要让 OpenSSH 客户端检查 SSHFP 记录，请在 **ssh_config** 或 **~/.ssh/config** 中将 `VerifyHostKeyDNS` 设为 `yes`。`ssh(1)` 会使用 SSHFP 记录来校验主机密钥，而不再提示用户。计算机擅长比较，你不擅长。把活交给它们。
+要让 OpenSSH 客户端检查 SSHFP 记录，请在 **ssh_config** 或 **~/.ssh/config** 中将 `VerifyHostKeyDNS` 设为 `yes`。**ssh(1)** 会使用 SSHFP 记录来校验主机密钥，而不再提示用户。计算机擅长比较，你不擅长。把活交给它们。
 
 ## DANE 与 TLSA
 
@@ -79,7 +79,7 @@ _443._tcp.dnssec TLSA ( 3 0 1
 4CB0F4E1136D86A6813EA4164F19D294005EBFC02F10CC400F1776C45A97F16C)
 ```
 
-哈希从哪里来？对你的证书文件运行 `openssl(1)` 即可。下面我对证书文件 **dnssec.mwl.com.crt** 生成 SHA256 哈希：
+哈希从哪里来？对你的证书文件运行 **openssl(1)** 即可。下面我对证书文件 **dnssec.mwl.com.crt** 生成 SHA256 哈希：
 
 ```sh
 # openssl x509 -noout -fingerprint -sha256 < dnssec.mwl.com.crt
@@ -111,5 +111,7 @@ TLSA 支持多种哈希，也可以设置各种条件。公司里所有证书都
 DNSSEC 给了你一条替代的信任途径，跳出了传统而昂贵的 CA 模式。把 TLSA 推广得更广，意味着你可以用 SSL 保护更多服务，且无需额外开支。
 
 当然，没有可用的 DNSSEC 就无法部署上述任何一种服务。如今 DNSSEC 并不难——我能搞定，你也能。
+
+---
 
 Michael W. Lucas 是《Absolute FreeBSD》《Absolute OpenBSD》和《DNSSEC Mastery》等书的作者。他与妻子和一大群老鼠住在密歇根州底特律。访问他的网站：<https://www.michaelwlucas.com>。
