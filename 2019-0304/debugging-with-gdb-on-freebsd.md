@@ -4,15 +4,15 @@
 
 大多数调试器都支持一组基础功能，比如查看全局和局部变量的值、生成栈回溯、通过断点中断进程执行、通过单步执行控制进程或线程的执行。本文重点关注现代版本的 GNU 调试器（gdb）在 FreeBSD 上支持的其他一些功能。其中部分功能仅 gdb 的最新版本（撰写本文时为 8.3）支持，另一些功能在旧版本中也可用。
 
-要开始使用，先安装一个较新版本的 gdb。最简单的办法是运行 `pkg install gdb` 安装预编译包。也可以通过 devel/gdb port（<https://www.freshports.org/devel/gdb>）从源码构建 gdb。
+要开始使用，先安装较新版本的 gdb。最简单的办法是运行 `pkg install gdb` 安装预编译软件包。也可以通过 devel/gdb port（<https://www.freshports.org/devel/gdb>）从源码构建 gdb。
 
 ## info proc 命令
 
-`info proc` 命令可以查看进程在内存和线程之外的状态。默认情况下，`info proc` 提供基本信息，比如进程 ID 和命令行。不过，通过子命令可以获取更多信息，包括通过 `info proc files` 查看打开的文件描述符列表，以及通过 `info proc mappings` 查看活动内存映射列表。在前两个示例中，命令 `wc /usr/src/bin/ls/ls.c` 在调试器下执行。执行在 `cnt` 函数内暂停，目标文件已打开。第一个示例展示基本命令提供的信息。第二个示例展示打开的文件列表，其中包含 `ls.c` 文件描述符的偏移量，表明 `wc` 进程已读取了多少文件内容。
+`info proc` 命令可以查看进程在内存和线程之外的状态。默认情况下，`info proc` 提供基本信息，比如进程 ID 和命令行。不过，通过子命令可以获取更多信息，包括通过 `info proc files` 查看打开的文件描述符列表、通过 `info proc mappings` 查看活动内存映射列表。在前两个示例中，命令 `wc /usr/src/bin/ls/ls.c` 在调试器下执行。执行在 `cnt` 函数内暂停，目标文件已打开。第一个示例展示基本命令提供的信息。第二个示例展示打开的文件列表，其中包含 `ls.c` 文件描述符的偏移量，表明 `wc` 进程已读取了多少文件内容。
 
-虽然 `info proc` 提供的所有信息也可以通过其他工具获得，比如 ps(1)（<https://www.freebsd.org/cgi/man.cgi?query=ps(1)>）和 procstat(1)（<https://www.freebsd.org/cgi/man.cgi?query=procstat(1)>），但 `info proc` 命令允许用户在调试器内访问这些信息，无需另开窗口。这些命令也可以用于在非 FreeBSD 操作系统上运行的交叉调试器查看核心转储的场景。
+虽然 `info proc` 提供的所有信息也可以通过其他工具获得，比如 **ps(1)**（<https://www.freebsd.org/cgi/man.cgi?query=ps(1)>）和 **procstat(1)**（<https://www.freebsd.org/cgi/man.cgi?query=procstat(1)>），但 `info proc` 命令允许用户在调试器内访问这些信息，无需另开窗口。这些命令也可以用于在非 FreeBSD 操作系统上运行的交叉调试器查看核心转储的场景。
 
-关于 `info proc` 命令及其子命令的更多详细信息，可以查阅《Debugging with GDB 手册》（<https://sourceware.org/gdb/current/onlinedocs/gdb/>）中的 Process Information 章节（<https://sourceware.org/gdb/current/onlinedocs/gdb/Process-Information.html>）。
+`info proc` 命令及其子命令的更多详细信息，可以查阅《Debugging with GDB 手册》（<https://sourceware.org/gdb/current/onlinedocs/gdb/>）中的 Process Information 章节（<https://sourceware.org/gdb/current/onlinedocs/gdb/Process-Information.html>）。
 
 示例 1：info proc
 
@@ -52,11 +52,11 @@ root    dir     -           r---------
 
 GDB 支持一类特殊的断点，称为捕获点（catchpoint）。捕获点允许用户在执行期间发生某些类型的事件时暂停执行。GDB 支持的捕获点类型之一是系统调用捕获点。系统调用捕获点在进入和退出系统调用时暂停执行。
 
-系统调用捕获点通过 `catch syscall` 命令创建。如果不指定参数，执行会在所有系统调用的进入和退出时暂停。可以通过向命令传入系统调用列表作为参数，定义更具体的捕获点。系统调用可以按名称或编号指定。例如，`catch syscall write` 会设置一个捕获点，在进入和退出 write(2)（<https://www.freebsd.org/cgi/man.cgi?query=write(2)>）系统调用时暂停执行。
+系统调用捕获点通过 `catch syscall` 命令创建。如果不指定参数，执行会在所有系统调用的进入和退出时暂停。可以通过向命令传入系统调用列表作为参数，定义更具体的捕获点。系统调用可以按名称或编号指定。例如，`catch syscall write` 会设置一个捕获点，在进入和退出 **write(2)**（<https://www.freebsd.org/cgi/man.cgi?query=write(2)>）系统调用时暂停执行。
 
 系统调用捕获点创建后，可以用其他断点命令管理。`info breakpoints` 命令会列出捕获点及其他断点。捕获点通过 `delete` 命令删除。
 
-示例 3 拦截 ls(1)（<https://www.freebsd.org/cgi/man.cgi?query=ls(1)>）进程的 write(2)（<https://www.freebsd.org/cgi/man.cgi?query=write(2)>）系统调用。
+示例 3 拦截 **ls(1)**（<https://www.freebsd.org/cgi/man.cgi?query=ls(1)>）进程的 **write(2)**（<https://www.freebsd.org/cgi/man.cgi?query=write(2)>）系统调用。
 
 示例 3：捕获系统调用
 
@@ -85,7 +85,7 @@ Continuing.
 
 对于 FreeBSD，GDB 能识别兼容性系统调用。按名称捕获某个为旧版本提供兼容性系统调用的系统调用时，会捕获该系统调用的所有版本。例如，由于 `struct stat` 的变化，几个系统调用在 FreeBSD 12 中迁移到了新的编号。原有系统调用继续使用旧的 `struct stat` 布局，但被重命名，加上了 `freebsd11_` 前缀。
 
-按名称捕获这类系统调用时，GDB 会同时捕获两个版本，因为应用程序可能使用任一版本。示例 4 中，捕获 fstat(2)（<https://www.freebsd.org/cgi/man.cgi?query=fstat(2)>）系统调用会为两个版本都注册捕获点。
+按名称捕获这类系统调用时，GDB 会同时捕获两个版本，因为应用程序可能使用任一版本。示例 4 中，捕获 **fstat(2)**（<https://www.freebsd.org/cgi/man.cgi?query=fstat(2)>）系统调用会为两个版本都注册捕获点。
 
 示例 4：捕获 fstat(2)
 
@@ -99,7 +99,7 @@ Num     Type        Disp Enb Address    What
 
 ## 调试 fork
 
-许多程序通过 fork(2)（<https://www.freebsd.org/cgi/man.cgi?query=fork(2)>）和 vfork(2)（<https://www.freebsd.org/cgi/man.cgi?query=vfork(2)>）系统调用创建新进程。GDB 提供了多种工具来处理 fork 产生的子进程。下面的示例将使用清单 1 中的测试程序演示这些功能。
+许多程序通过 **fork(2)**（<https://www.freebsd.org/cgi/man.cgi?query=fork(2)>）和 **vfork(2)**（<https://www.freebsd.org/cgi/man.cgi?query=vfork(2)>）系统调用创建新进程。GDB 提供了多种工具来处理 fork 产生的子进程。下面的示例将使用清单 1 中的测试程序演示这些功能。
 
 清单 1：forktest.c
 
@@ -155,7 +155,7 @@ I'm in the parent
 [Inferior 1 (process 25297) exited normally]
 ```
 
-GDB 通过 `follow-fork-mode` 设置决定 fork 后跟随哪个进程。要改为跟随子进程而非父进程，使用“child”设置。要恢复默认行为，使用“parent”设置。该设置通过 `set follow-fork-mode` 命令更改。`show follow-fork-mode` 命令显示当前设置。示例 6 再次执行测试程序，但改为跟随子进程。
+GDB 通过 `follow-fork-mode` 设置决定 fork 后跟随哪个进程。要改为跟随子进程而非父进程，使用 `child` 设置。要恢复默认行为，使用 `parent` 设置。该设置通过 `set follow-fork-mode` 命令更改。`show follow-fork-mode` 命令显示当前设置。示例 6 再次执行测试程序，但改为跟随子进程。
 
 示例 6：跟随子进程
 
@@ -187,9 +187,9 @@ I'm in the child
 
 ### fork 时分离
 
-除了决定 fork 后跟随哪个进程，GDB 还可以选择如何处理非跟随的进程。默认情况下，GDB 从非跟随进程分离，让它在 fork 后自由运行。可以将 `detach-on-fork` 设置改为“no”来改变这一行为。设置为“no”时，GDB 保持附加在两个进程上，并在 fork 后让两个进程都暂停。
+除了决定 fork 后跟随哪个进程，GDB 还可以选择如何处理非跟随的进程。默认情况下，GDB 从非跟随进程分离，让它在 fork 后自由运行。可以将 `detach-on-fork` 设置改为 `no` 来改变这一行为。设置为 `no` 时，GDB 保持附加在两个进程上，并在 fork 后让两个进程都暂停。
 
-要管理这两个进程，会使用 GDB 的多进程支持（<https://sourceware.org/gdb/current/onlinedocs/gdb/Inferiors-and-Programs.html#Inferiors-and-Programs>）。在 GDB 术语中，每个进程关联一个“inferior”。`info inferiors` 命令用于列出活动的 inferior。`inferior` 命令用于在 inferior 之间切换。来自不同进程的线程也会在 `info threads` 命令中显示。切换到不同 inferior 的线程也是切换 inferior 的一种方式。fork 后，跟随进程的 inferior 被设为当前 inferior。
+要管理这两个进程，会使用 GDB 的多进程支持（<https://sourceware.org/gdb/current/onlinedocs/gdb/Inferiors-and-Programs.html#Inferiors-and-Programs>）。在 GDB 术语中，每个进程关联“inferior”。`info inferiors` 命令用于列出活动的 inferior。`inferior` 命令用于在 inferior 之间切换。来自不同进程的线程也会在 `info threads` 命令中显示。切换到不同 inferior 的线程也是切换 inferior 的一种方式。fork 后，跟随进程的 inferior 被设为当前 inferior。
 
 示例 7 再次给出测试程序的示例。这次禁用 `detach-on-fork`，让两个进程在 fork 后都保持暂停。使用默认的 fork 跟随模式，因此 fork 后 GDB 仍关注父进程。注意，子进程停在 fork 后的第一条指令处。
 
@@ -247,7 +247,7 @@ I'm in the parent
 
 ### 捕获 fork
 
-GDB 还提供了一组用于调试 fork 进程的工具：一组与 fork 相关事件的捕获点。`catch fork` 命令为非 vfork(2)（<https://www.freebsd.org/cgi/man.cgi?query=vfork(2)>）的 fork 调用安装捕获点。捕获点在跟随进程从 fork 返回时触发。`catch vfork` 命令为 vfork(2) 的 fork 调用安装捕获点。最后，`catch exec` 命令为 exec 系列系统调用的返回安装捕获点。示例 8 跟随一个 shell 进程，该进程 fork 出一个子进程来执行命令。
+GDB 还提供了一组用于调试 fork 进程的工具：一组与 fork 相关事件的捕获点。`catch fork` 命令为非 **vfork(2)**（<https://www.freebsd.org/cgi/man.cgi?query=vfork(2)>）的 fork 调用安装捕获点。捕获点在跟随进程从 fork 返回时触发。`catch vfork` 命令为 **vfork(2)** 的 fork 调用安装捕获点。最后，`catch exec` 命令为 exec 系列系统调用的返回安装捕获点。示例 8 跟随 shell 进程，该进程 fork 出一个子进程来执行命令。
 
 示例 8：捕获 fork 和 exec
 
@@ -280,7 +280,7 @@ crw-rw-rw- 1 root wheel 0xf Feb 2 18:00 /dev/null
 [Inferior 2 (process 27644) exited normally]
 ```
 
-关于使用 GDB 调试 fork 的更多信息，请参阅 GDB 手册的 Debugging Forks（<https://sourceware.org/gdb/current/onlinedocs/gdb/Forks.html>）章节。
+使用 GDB 调试 fork 的更多信息，请参阅 GDB 手册的 Debugging Forks（<https://sourceware.org/gdb/current/onlinedocs/gdb/Forks.html>）章节。
 
 ## 调试 C++ STL 类
 
