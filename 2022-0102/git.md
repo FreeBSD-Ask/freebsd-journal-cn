@@ -85,7 +85,7 @@ Ports 树处于活跃开发中，更改会经常推送到 **git.freebsd.org/port
 git -C ~/freebsd/ports fetch freebsd 
 ```
 
-获取（Fetching）让你有机会在合并更改到本地分支之前检查这些更改。这里的 `-C ~/freebsd/ports` 指示 Git 在 **~/freebsd/ports** 目录下操作。如果当前工作目录是 **~/freebsd/ports**，从现在开始假设如此，那么这个标志可以省略。`freebsd` 参数表示从该远程仓库获取。
+获取（Fetching）让你有机会在合并更改到本地分支之前检查这些更改。这里的 `-C ~/freebsd/ports` 指示 Git 在 **~/freebsd/ports** 目录下操作。如果当前工作目录是 **~/freebsd/ports**，从现在开始假设如此，那么这个标志可以省略。参数 `freebsd` 表示从该远程仓库获取。
 
 要列出推送到 `freebsd` 主分支但不属于本地主分支的提交，请运行：
 
@@ -252,7 +252,7 @@ portfmt -D Makefile
 poudriere ports -c -m null -M ~/freebsd/ports
 ```
 
-选项 `-m` 告诉 poudriere 使用 null 方法，即使用 `-M` 参数指定位置的现有 Ports。使用 null 方法意味着我们将手动管理该树，包括保持其最新状态，测试时检出适当的分支。设置好 poudriere 后，你可以测试你的 Port。如果你创建了名为 `13amd64` 的 Jail，可以在该 Jail 中测试新 Port，方法是
+选项 `-m` 告诉 poudriere 使用 null 方法，即使用参数 `-M` 指定位置的现有 Ports。使用 null 方法意味着我们将手动管理该树，包括保持其最新状态，测试时检出适当的分支。设置好 poudriere 后，你可以测试你的 Port。如果你创建了名为 `13amd64` 的 Jail，可以在该 Jail 中测试新 Port，方法是
 
 ```sh
 poudriere testport -j 13amd64 www/nyxt

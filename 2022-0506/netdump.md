@@ -58,7 +58,7 @@ netdumpd: default: listening on all interfaces
 Waiting for clients.
 ```
 
-这会让内核转储保存在当前目录，由 `-d` 参数指定。
+这会让内核转储保存在当前目录，由参数 `-d` 指定。
 
 测试设置时，我们可以手动触发 Panic，并让内核转储核心。
 
@@ -103,9 +103,9 @@ New dump from client devvm [10.0.1.157] (to ./vmcore.devvm.0)
 Completed dump from client devvm [10.0.1.157]
 ```
 
-现在，我们在 `-d` 参数指定的目录中得到了一个内核转储！
+现在，我们在参数 `-d` 指定的目录中得到了一个内核转储！
 
-在这个例子中，客户端和服务器位于同一链路。因此，`gateway` 参数是多余的，可以省略：
+在这个例子中，客户端和服务器位于同一链路。因此，参数 `gateway` 是多余的，可以省略：
 
 ```sh
 # dumpon -c 10.0.1.157 -s 10.0.1.236 vtnet0

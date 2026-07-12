@@ -16,7 +16,7 @@
 # portsnap auto
 ```
 
-然后，我进入相关 port 的目录，即 **/usr/ports/databases/postgresql15-server**，并运行
+然后，我进入相关 Port 的目录，即 **/usr/ports/databases/postgresql15-server**，并运行
 
 ```sh
 # make config-recursive
@@ -28,7 +28,7 @@
 OPTIONS_SET=LDAP
 ```
 
-到我的 **/etc/make.conf** 中，这样我编译的任何 ports 都会自动启用此选项（如果可用）。然后，我可以运行
+到我的 **/etc/make.conf** 中，这样我编译的任何 Ports 都会自动启用此选项（如果可用）。然后，我可以运行
 
 ```sh
 # make package
@@ -38,7 +38,7 @@ OPTIONS_SET=LDAP
 
 这一切都很棒，但如果涉及多个类似的软件包呢？或者，如果你想始终安装最新的软件包版本，但又不想在管理的每台独立机器上都这样做怎么办？迟早人们会想要自动编译自己的软件包，并在自己的网络中提供它们。针对这些场景，poudriere 应运而生。
 
-Poudriere（法语意为火药桶）是一个在 Jail 中编译定制软件包、解决它们之间的依赖关系，并将它们作为 FreeBSD 存储库提供的框架。Ports 开发人员使用它来测试 Ports 的新版本（因此有了火药桶的比喻，因为这样的编译有时可能会爆炸或者干脆失败）。你不必是 Ports 开发人员，也不必了解任何构建模块就能使用 poudriere。每个 port（即使是最微小的依赖）都在单独的 Jail 中编译（会自动创建和删除），以确保每次都有干净的编译环境。它还能并行编译 Ports，这非常有用，因为需要编译的软件包数量可能并不显而易见（依赖项可能先编译其他依赖的 Ports，然后越陷越深）。
+Poudriere（法语意为火药桶）是一个在 Jail 中编译定制软件包、解决它们之间的依赖关系，并将它们作为 FreeBSD 存储库提供的框架。Ports 开发人员使用它来测试 Ports 的新版本（因此有了火药桶的比喻，因为这样的编译有时可能会爆炸或者干脆失败）。你不必是 Ports 开发人员，也不必了解任何构建模块就能使用 poudriere。每个 Port（即使是最微小的依赖）都在单独的 Jail 中编译（会自动创建和删除），以确保每次都有干净的编译环境。它还能并行编译 Ports，这非常有用，因为需要编译的软件包数量可能并不显而易见（依赖项可能先编译其他依赖的 Ports，然后越陷越深）。
 
 你需要一台 FreeBSD 机器来编译这些自定义软件包，最好配备大量 CPU、内存和良好的 I/O。Poudriere 会给系统带来很大压力，因为它试图并行运行很多软件包编译，因此它也可以看作系统基准测试工具。
 
@@ -74,7 +74,7 @@ KEEP_OLD_PACKAGES=yes
 KEEP_OLD_PACKAGES_COUNT=3
 ```
 
-你需要提供 poudriere 使用的 ZFS 池名称。ZFS 可以快速克隆并删除编译 Jail，而不必为每个 port 从基本 Jail 复制。请创建 `POUDRIERE_DATA`、`DISTFILES_CACHE` 和 `CCACHE_DIR` 中定义的必要数据集（如果尚不存在）。调整 `MAX_FILES`、`PARALLEL_JOBS` 和 `PREPARE_PARALLEL_JOBS` 的值以适应你的系统。我建议一开始设得低一些，完成最初几次 poudriere 编译后再逐渐增加。如果这些值拉到最大，poudriere 编译可能让系统不堪重负，因此请为其他任务（例如 SSH 登录会话）保留一些资源。
+你需要提供 poudriere 使用的 ZFS 池名称。ZFS 可以快速克隆并删除编译 Jail，而不必为每个 Port 从基本 Jail 复制。请创建 `POUDRIERE_DATA`、`DISTFILES_CACHE` 和 `CCACHE_DIR` 中定义的必要数据集（如果尚不存在）。调整 `MAX_FILES`、`PARALLEL_JOBS` 和 `PREPARE_PARALLEL_JOBS` 的值以适应你的系统。我建议一开始设得低一些，完成最初几次 poudriere 编译后再逐渐增加。如果这些值拉到最大，poudriere 编译可能让系统不堪重负，因此请为其他任务（例如 SSH 登录会话）保留一些资源。
 
 ## Ccache 设置
 
@@ -130,7 +130,7 @@ poudriere# ccache -s
 
 ## 配置 Poudriere
 
-我们已经提到 poudriere 会为构成软件包的每个单独 port 运行 Jail。为此，poudriere 需要知道软件包应该在哪个架构和哪个 FreeBSD 版本上编译。版本之间存在细微差异，但 poudriere 可以让不同版本互不干扰地并排编译。这些 Jail 互相独立。此外，你可以通过这种方式在功能强大的 amd64 服务器上为树莓派编译软件包。
+我们已经提到 poudriere 会为构成软件包的每个单独 Port 运行 Jail。为此，poudriere 需要知道软件包应该在哪个架构和哪个 FreeBSD 版本上编译。版本之间存在细微差异，但 poudriere 可以让不同版本互不干扰地并排编译。这些 Jail 互相独立。此外，你可以通过这种方式在功能强大的 amd64 服务器上为树莓派编译软件包。
 
 从为 amd64 和 FreeBSD 13.2 创建 Jail 开始，因为这是本文写作时的当前版本。
 
@@ -164,13 +164,13 @@ PORTSTREE   METHOD     TIMESTAMP             PATH
 default     git+https  2023-10-01 12:00:02   /usr/local/poudriere/ports/default
 ```
 
-我们也可以拥有多个可用的 Ports 树。也许我们想放慢更新节奏，只编译上个季度的 ports，而不是最新的。使用 poudriere 和选项 `-p` 即可做到。
+我们也可以拥有多个可用的 Ports 树。也许我们想放慢更新节奏，只编译上个季度的 Ports，而不是最新的。使用 poudriere 和选项 `-p` 即可做到。
 
-现在我们需要一份供 poudriere 编译的软件包列表。“哦，我喜欢这个 port，而且我总是安装这个 shell，那个编辑器。还有 tmux…”这样很快就能列出清单，但它不包含依赖项（运行或编译所列软件包所需的其他软件包）。Poudriere 会替你解决这些依赖关系。
+现在我们需要一份供 poudriere 编译的软件包列表。“哦，我喜欢这个 Port，而且我总是安装这个 shell，那个编辑器。还有 tmux…”这样很快就能列出清单，但它不包含依赖项（运行或编译所列软件包所需的其他软件包）。Poudriere 会替你解决这些依赖关系。
 
-将其放在 **/usr/local/etc/poudriere.d/** 中，作为文本文件（同样，任何你喜欢的名称），每个 port 及其类别单独占一行。
+将其放在 **/usr/local/etc/poudriere.d/** 中，作为文本文件（同样，任何你喜欢的名称），每个 Port 及其类别单独占一行。
 
-我的 port 清单看起来像这样（我越喜欢 poudriere，它就越长）：
+我的 Port 清单看起来像这样（我越喜欢 poudriere，它就越长）：
 
 ```sh
 poudriere# cat /usr/local/etc/poudriere.d/pkglist.txt
@@ -179,11 +179,11 @@ databases/postgresql15-client
 databases/postgresql15-contrib
 ```
 
-这些是需要 LDAP 支持的 ports，记得吗？你可以从简单的开始，比如 games/sl 或 shells/fish，以免等 poudriere 完成编译花太多时间。
+这些是需要 LDAP 支持的 Ports，记得吗？你可以从简单的开始，比如 games/sl 或 shells/fish，以免等 poudriere 完成编译花太多时间。
 
 更好的办法是让软件包系统生成软件包列表。登录到装好所有这些软件包的系统，运行 `pkg_info`。这会生成一份包括依赖关系的列表。已经是相当长的列表了！如果原本就想删除某个软件包，你可以从列表中删掉。某些软件包也可能太大而不便编译（例如 libreoffice）。
 
-定义要编译哪些 ports 并不会自动配置它们。我们仍需告诉 poudriere 为每个 port 设置哪些选项。但只需做一次，后续编译中，poudriere 会保存我们选定的选项并复用，甚至用于软件包的将来版本。这相当于文章开头我们在 Ports 目录中运行的 `make config`。
+定义要编译哪些 Ports 并不会自动配置它们。我们仍需告诉 poudriere 为每个 Port 设置哪些选项。但只需做一次，后续编译中，poudriere 会保存我们选定的选项并复用，甚至用于软件包的将来版本。这相当于文章开头我们在 Ports 目录中运行的 `make config`。
 
 ```sh
 poudriere# poudriere options \
@@ -192,7 +192,7 @@ poudriere# poudriere options \
 -f /usr/local/etc/poudriere.d/pkglist.txt
 ```
 
-这会为整个 ports 列表定义选项。你也可以用以下方式为单个 port 设置：
+这会为整个 Ports 列表定义选项。你也可以用以下方式为单个 Port 设置：
 
 ```sh
 poudriere# poudriere options \
@@ -322,7 +322,7 @@ FreeBSD: {
 
 那么其他越来越多运行 FreeBSD 的机器怎么办？特别是虚拟机或嵌入式系统，你不会在每台机器上运行单独的 poudriere 编译机。一种方法是通过 NFS 把 repo URL 共享给每台机器。更好的办法是配置一台中央的、性能强劲的 poudriere 编译机，通过 HTTP 把它的软件包作为存储库共享。网络中其他 FreeBSD 机器可以像添加官方 FreeBSD 存储库一样添加它。相比 NFS 共享，这种办法的额外好处是你可以对这些软件包签名。这能保证密码学完整性和对源的信任（这些软件包确实是你自定义编译的）。这样，机器会检查编译机的公钥是否与它们持有的记录匹配，确保软件包来自真实源。下面开始相关设置。
 
-为了给其他机器提供软件包，我们安装 nginx 作为 web 服务器。其他 web 服务器只要能向客户端共享 URL 作为文档根目录，也可以使用。`poudriere bulk` 运行期间，我们还可以共享编译日志，查看当前编译的进度并调试失败的 ports。
+为了给其他机器提供软件包，我们安装 nginx 作为 web 服务器。其他 web 服务器只要能向客户端共享 URL 作为文档根目录，也可以使用。`poudriere bulk` 运行期间，我们还可以共享编译日志，查看当前编译的进度并调试失败的 Ports。
 
 ```sh
 poudriere# pkg install nginx
@@ -410,7 +410,7 @@ PKG_REPO_SIGNING_KEY=/usr/local/etc/ssl/keys/poudriere.key
 URL_BASE=http://my.domain.or.IP
 ```
 
-`URL_BASE` 定义的网站显示过去和当前软件包编译的许多统计信息。编译过程中它会自动刷新，显示编译状态。你还可以深入了解每次编译，查看哪些 ports 已成功编译、被跳过或被忽略。非常不错！
+`URL_BASE` 定义的网站显示过去和当前软件包编译的许多统计信息。编译过程中它会自动刷新，显示编译状态。你还可以深入了解每次编译，查看哪些 Ports 已成功编译、被跳过或被忽略。非常不错！
 
 添加这些行后，poudriere 就能签名新编译的软件包。在下一次
 
@@ -566,7 +566,7 @@ poudriere# poudriere bulk \
 
 我每天晚上运行此任务，第二天早上就有新编译的软件包等着我。我可以用 nginx 提供的 poudriere 网站查看编译状态。
 
-Poudriere 为不同架构编译许多不同软件包时，才真正发挥出威力。它用 qemu 为非 amd64 架构（如我的树莓派）编译软件包。一切并行进行，所以我可以更快地编译自己的软件包，其余的可以从默认 FreeBSD 存储库获取——因为我不需要在这些软件包上设置特殊选项。时间一长，你自己的自定义软件包清单肯定会增长。使用你自己的证书存储库的机器数量也会如此。你完全可以控制何时更新哪些软件包，甚至可以用 Poudriere 帮助编译新的 ports。
+Poudriere 为不同架构编译许多不同软件包时，才真正发挥出威力。它用 qemu 为非 amd64 架构（如我的树莓派）编译软件包。一切并行进行，所以我可以更快地编译自己的软件包，其余的可以从默认 FreeBSD 存储库获取——因为我不需要在这些软件包上设置特殊选项。时间一长，你自己的自定义软件包清单肯定会增长。使用你自己的证书存储库的机器数量也会如此。你完全可以控制何时更新哪些软件包，甚至可以用 Poudriere 帮助编译新的 Ports。
 
 ---
 

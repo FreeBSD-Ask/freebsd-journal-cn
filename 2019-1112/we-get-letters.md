@@ -45,7 +45,7 @@
 
 好消息是，前人已做过这些工作。其他人已决定 MariaDB 和 Postgres 应该同时与 nginx、或 Perl、或天知道什么集成。某些网站姑且隐去名字但押韵“Whack Derange”上，可疑的建议满坑满谷，帮你实现那幅朦胧的、绝非噩梦我保证的愿景。
 
-再说，我也一样有罪。我刚写完一本关于 Shoggothic Nightmare Misery Protocol（SNMP）的书。我的可怕研究要求我用我相当确信没人尝试过的特性构建 net-snmp。到那悲惨的地步，我已能看见维度 πr²，并知道那只所谓”松鼠”的真名——它偶尔挂在我办公室纱窗上，尖叫它永恒敌意颂歌——所以我去 Ports 系统决心开辟我那不可言说的路。结果发现 Eternal Madness 已是构建选项。（他们叫它”embedded Perl”和”MFD rewrites”，但那就是永恒疯狂。你不必信我。我们这些 Know Too Much To Ever Be Happy Again 的人欢迎你的加入。）
+再说，我也一样有罪。我刚写完一本关于 Shoggothic Nightmare Misery Protocol（SNMP）的书。我的可怕研究要求我用我相当确信没人尝试过的特性构建 net-snmp。到那悲惨的地步，我已能看见维度 πr²，并知道那只所谓“松鼠”的真名——它偶尔挂在我办公室纱窗上，尖叫它永恒敌意颂歌——所以我去 Ports 系统决心开辟我那不可言说的路。结果发现 Eternal Madness 已是构建选项。（他们叫它“embedded Perl”和“MFD rewrites”，但那就是永恒疯狂。你不必信我。我们这些 Know Too Much To Ever Be Happy Again 的人欢迎你的加入。）
 
 无论你需要什么特性组合，都有很大可能别人已经做过。
 

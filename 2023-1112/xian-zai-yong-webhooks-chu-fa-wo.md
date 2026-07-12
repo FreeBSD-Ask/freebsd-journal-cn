@@ -288,7 +288,7 @@ $ webhook -debug -hotreload \
   -hooks webhook.yaml
 ```
 
-curl 命令需要额外的 `-k` 参数来忽略自签名证书，但其余过程与之前相同：
+curl 命令需要额外的参数 `-k` 来忽略自签名证书，但其余过程与之前相同：
 
 ```sh
 curl -4vk https://localhost:9000/hooks/logger?secret=squirrel

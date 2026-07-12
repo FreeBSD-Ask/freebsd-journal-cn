@@ -394,7 +394,7 @@ htpasswd -Bnb adguard BastilleBSD!
 
 ![image](../png/2023-0708/practical-ports-2.png)
 
-我在手机上设置后——出于测试目的——稍微浏览了一下网页，就看到仪表板中出现了统计数据。这表明我们的设置正在运行，我们应该将互联网更名为 SnooperNet。几乎所有的网站在某种程度上都会追踪你或显示让你不悦的广告。树莓派能够处理这种负载，我在 `AdGuardHome.yaml` 的 `ratelimit` 参数中微调了连接数。
+我在手机上设置后——出于测试目的——稍微浏览了一下网页，就看到仪表板中出现了统计数据。这表明我们的设置正在运行，我们应该将互联网更名为 SnooperNet。几乎所有的网站在某种程度上都会追踪你或显示让你不悦的广告。树莓派能够处理这种负载，我在 `AdGuardHome.yaml` 的参数 `ratelimit` 中微调了连接数。
 
 你可以在 jail 的 **/var/log/adguardhome.log** 目录中找到 AdGuard 为该服务编写的日志。
 

@@ -56,13 +56,13 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 ## 你是怎么成为 committer 的？
 
-**Jason**：我从 2004 年左右开始维护 ports，当时我发现 FreeBSD 为我们在威斯康星医学院的 fMRI 研究解决了很多稳定性问题。我目前维护几十个活跃的 ports，工作进度集合中还有两百多个。
+**Jason**：我从 2004 年左右开始维护 Ports，当时我发现 FreeBSD 为我们在威斯康星医学院的 fMRI 研究解决了很多稳定性问题。我目前维护几十个活跃的 Ports，工作进度集合中还有两百多个。
 
 我被邀请成为 committer 两次。第一次是几年前我生活非常忙碌的时候，我不得不婉拒。第二次大约一年前，我仍然很忙，但事情朝着正确的方向发展，所以我咬紧牙关接受了。
 
 大约同一时间我也成为 pkgsrc 开发者，比较两个项目的优缺点很有趣。我希望在未来几年帮助弥合两者，使双方受益。我们广泛使用 pkgsrc 在 CentOS 系统上安装最新的开源软件包。
 
-**Koichiro**：我多年来一直在为 FreeBSD 项目做贡献，特别是作为 xrdp 的 port 维护者。有一天，我自愿成为 Ports committer。Hiroki Sato（一位日本 FreeBSD 核心开发者）提名我为 Ports committer，最终我成为了 committer。
+**Koichiro**：我多年来一直在为 FreeBSD 项目做贡献，特别是作为 xrdp 的 Port 维护者。有一天，我自愿成为 Ports committer。Hiroki Sato（一位日本 FreeBSD 核心开发者）提名我为 Ports committer，最终我成为了 committer。
 
 **Sean**：我在早期就曾是 committer。然而，2001 年我开始在 Apple 工作，可以说，他们不赞成我继续那样做。所以，有十年期间我几乎没做任何公开可见的事。离开 Apple 后，我去了 iXsystems，在那里我第一次全职与 FreeBSD 工作。然而，前几年我做的大部分涉及非操作系统代码（主要是安装程序和更新程序）。偶尔，我会遇到一些我想做的事情需要操作系统更改，其中大部分我通过邮件发回给最后修改相关文件的人。有些补丁目前仍在 iX，需要回去。
 
@@ -70,7 +70,7 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 **Vincenzo**：我是开源 Netmap 项目的维护者，该项目为应用提供从用户态执行快速网络 I/O 的 API。Netmap 在 FreeBSD 和 Linux 上运行，其源代码目前托管在 GitHub 上。虽然 Netmap 已经包含在 FreeBSD 树中，但其中的代码并没有真正维护，且相对于上游版本不断过时。因此，在上次 AsiaBSDCon 上我被邀请成为 committer，以保持 FreeBSD Netmap 代码的良好状态并与上游对齐。我非常高兴地接受了。
 
-**Fernando**：成为全职 FreeBSD 用户后，我开始贡献一些 port PR。2011 年，我发了几个 PR，移植了 wiki 的 WantedPorts 页面中列出的一些 ports。这是一件有趣的事，让我学到了很多，得益于所有提交我补丁的人的提示。我甚至在母校（Universidad de Valladolid）做了几次关于 FreeBSD 和如何创建 ports 的演讲。一段时间后，我觉得应该更深入地参与项目，所以我开始用“嘿，如果有人能指导我完成导师过程，我愿意提升”之类的话结束所有 PR。一段时间后，tz@ 回应了我的请求。tz@ 和 tcberner@ 是我耐心的导师。我仍在愉快地学习如何成为一名好的 Ports committer。
+**Fernando**：成为全职 FreeBSD 用户后，我开始贡献一些 Port PR。2011 年，我发了几个 PR，移植了 wiki 的 WantedPorts 页面中列出的一些 Ports。这是一件有趣的事，让我学到了很多，得益于所有提交我补丁的人的提示。我甚至在母校（Universidad de Valladolid）做了几次关于 FreeBSD 和如何创建 Ports 的演讲。一段时间后，我觉得应该更深入地参与项目，所以我开始用“嘿，如果有人能指导我完成导师过程，我愿意提升”之类的话结束所有 PR。一段时间后，tz@ 回应了我的请求。tz@ 和 tcberner@ 是我耐心的导师。我仍在愉快地学习如何成为一名好的 Ports committer。
 
 **Tom**：去年在布拉格的 IETF 上，约我吃午餐的人放了我鸽子，反而邀请我加入一位同事和 Netflix 团队。吃鲁本三明治时，我和 Jonathan Looney（我的导师）聊起我迄今为止在 FreeBSD 上做的工作。几周后在剑桥的 BSDCam，Jonathan 问我是否有兴趣成为 committer。
 

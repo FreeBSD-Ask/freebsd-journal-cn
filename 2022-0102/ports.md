@@ -108,7 +108,7 @@ $ cat -n Makefile
      6  .include "${MASTERDIR}/Makefile"
 ```
 
-看到第 4 行的 `MASTERDIR` 变量了吗？这意味着 `graphics/xpdf` 是一个主 port。当这个 port 被构建时，实际上是 `graphics/xpdf4` 在驱动整个过程。（顺便说一下，根据第 2 行，Xpdf 版本 4 显然是默认版本）。继续深入探索！
+看到第 4 行的变量 `MASTERDIR` 了吗？这意味着 `graphics/xpdf` 是一个主 port。当这个 port 被构建时，实际上是 `graphics/xpdf4` 在驱动整个过程。（顺便说一下，根据第 2 行，Xpdf 版本 4 显然是默认版本）。继续深入探索！
 
 ```sh
 $ cd ~/ports/graphics/xpdf4

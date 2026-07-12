@@ -9,9 +9,9 @@ FOSDEM 是欧洲主要的大型免费、非商业 FOSS 活动之一，2016 年 1
 
 每年，该活动吸引超过 5000 名黑客和约 600 场讲座。作为议程的一部分，FOSS 项目可以申请开发者房间（devroom）。BSD devroom 在周日举行，我负责该 devroom 的组织工作。今年周六还组织了一场 FreeBSD devsummit。
 
-FOSDEM 正式于周五下午在 Delirium 咖啡馆的”啤酒活动”中拉开帷幕。由于此处通常人满为患，在周围某家酒吧里碰头更为方便。这一夜，布鲁塞尔变成一座神奇城市，你可以在每个街角意外遇见数百名软件开发者，共饮一杯啤酒。
+FOSDEM 正式于周五下午在 Delirium 咖啡馆的“啤酒活动”中拉开帷幕。由于此处通常人满为患，在周围某家酒吧里碰头更为方便。这一夜，布鲁塞尔变成一座神奇城市，你可以在每个街角意外遇见数百名软件开发者，共饮一杯啤酒。
 
-FreeBSD devsummit 在布鲁塞尔市中心举行，靠近中央车站和”大广场”。最热门的话题是为 base 和 Ports 实现可复现构建的工作（<https://wiki.freebsd.org/ReproducibleBuilds>）。下午，部分与会者移步 FOSDEM 会场，听 gnn@ 谈论网络基准测试。
+FreeBSD devsummit 在布鲁塞尔市中心举行，靠近中央车站和“大广场”。最热门的话题是为 base 和 Ports 实现可复现构建的工作（<https://wiki.freebsd.org/ReproducibleBuilds>）。下午，部分与会者移步 FOSDEM 会场，听 gnn@ 谈论网络基准测试。
 
 周六也安排了晚宴。我们和 devsummit 与会者在布鲁塞尔一家优雅餐厅共进晚餐，餐厅位于欧洲最古老的玻璃拱廊商业街之一。
 

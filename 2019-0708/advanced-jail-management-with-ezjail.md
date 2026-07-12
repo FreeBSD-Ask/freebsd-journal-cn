@@ -94,7 +94,7 @@ export jail_myjail_example_com_fib="2"
 
 ZFS 和 Jail 的另一个强大功能是把数据集委托给 Jail。通过把数据集委托进 Jail，Jail 里的 root 用户就能创建和销毁子数据集、调整数据集属性、执行复制等等。这意味着我们可以创建存储设置，与宿主操作系统隔离，这样即便拥有提权权限的失控脚本也不会破坏宿主机。
 
-如果我们把数据集的 `jailed` 参数设为 `on`，作为安全措施，宿主机将无法再挂载或管理该数据集及其任何子数据集。设置好那个参数后，我们就可以通过设置以下选项，让 ezjail 把它委托给 Jail：
+如果我们把数据集的参数 `jailed` 设为 `on`，作为安全措施，宿主机将无法再挂载或管理该数据集及其任何子数据集。设置好那个参数后，我们就可以通过设置以下选项，让 ezjail 把它委托给 Jail：
 
 ```sh
 export jail_myjail_example_com_zfs_datasets="dozer/customerfiles"

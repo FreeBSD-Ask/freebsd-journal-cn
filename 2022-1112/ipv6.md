@@ -103,7 +103,7 @@ vlan84 : flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
 
 请注意，vlan84 是与之前示例中的 vlan100 不同的接口。你可以看到两个带有“autoconf”关键字的地址。第一个地址由 SLAAC 和修改后的 EUI-64 IID 生成，第二个地址具有随机 IID，并标记为“临时”。默认情况下，临时地址每 24 小时会自动更换一次。
 
-请注意，如果你已有 SLAAC 地址并启用了 `use_tempaddr` 变量，则需要首先删除 SLAAC 地址。
+请注意，如果你已有 SLAAC 地址并启用了变量 `use_tempaddr`，则需要首先删除 SLAAC 地址。
 
 该扩展在某种程度上是有用的，但当前 FreeBSD 实现存在以下问题：
 

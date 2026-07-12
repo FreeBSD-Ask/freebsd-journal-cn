@@ -78,7 +78,7 @@ ioctl(s, SIOCS80211, &ireq)
 
 在 FreeBSD 上，`sys_ioctl` 执行输入验证并格式化接收的数据，然后调用 `kern_ioctl`，后者判断 **ioctl(2)** 操作的文件描述符类型、套接字的能力，并相应分配函数指针 `fo_ioctl`。（NetBSD 和 OpenBSD 没有 `kern_ioctl`，`sys_ioctl` 直接调用 `fo_ioctl`。）我们的文件描述符对应一个接口，所以 FreeBSD 将 `fo_ioctl` 分配为指向 `ifioctl` 的函数指针，`ifioctl` 处理接口层 **ioctl(2)** 调用。该函数位于 **/usr/src/sys/net/if.c**。
 
-`ifioctl` 负责所有类型的接口：以太网、WiFi、**epair(4)** 等。`ifioctl` 以基于 `cmd` 参数的 switch 条件开始。这检查命令是否可由 **net80211(4)** 处理而无需跳入驱动，比如创建克隆接口或更新 MTU。快速的 **dtrace(2)** 探针显示 `cmd` 参数为 `SIOCS80211`，不满足任何 switch 条件，因此执行跳到底部。函数继续并调用 `ifp->if_ioctl`，对于 WiFi，这是指向 `ieee80211_ioctl` 的函数指针，位于 **/usr/src/sys/net80211/ieee80211_ioctl.c**。
+`ifioctl` 负责所有类型的接口：以太网、WiFi、**epair(4)** 等。`ifioctl` 以基于参数 `cmd` 的 switch 条件开始。这检查命令是否可由 **net80211(4)** 处理而无需跳入驱动，比如创建克隆接口或更新 MTU。快速的 **dtrace(2)** 探针显示参数 `cmd` 为 `SIOCS80211`，不满足任何 switch 条件，因此执行跳到底部。函数继续并调用 `ifp->if_ioctl`，对于 WiFi，这是指向 `ieee80211_ioctl` 的函数指针，位于 **/usr/src/sys/net80211/ieee80211_ioctl.c**。
 
 `ieee80211_ioctl` 包含另一个 switch-case。`cmd` 设为 `SIOCS80211` 时，执行匹配关联的 case 并调用 `ieee80211_ioctl_set80211`，位于 **/usr/src/sys/net80211/ieee80211_ioctl.c**。
 

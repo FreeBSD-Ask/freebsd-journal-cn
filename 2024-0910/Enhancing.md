@@ -100,7 +100,7 @@ atf_test_program{name="test_program", execenv="jail", execenv_jail_params="vnet 
 
 ## 隐式参数与分层 Jail
 
-由于测试用例和它的可选清理例程分别在独立的子进程中运行，Kyua 会隐式添加 `persist` 参数以保持临时 jail 存在，确保两个子进程都在同一个 jail 中运行。Kyua 会在“执行环境清理”步骤中删除临时 jail。
+由于测试用例和它的可选清理例程分别在独立的子进程中运行，Kyua 会隐式添加参数 `persist` 以保持临时 jail 存在，确保两个子进程都在同一个 jail 中运行。Kyua 会在“执行环境清理”步骤中删除临时 jail。
 
 网络测试中常见的做法是生成 jail。这就引出了一个问题：是否允许已经运行在 jail 内的测试用例创建子 jail。从原则上讲，只要不超过系统限制，这是允许的。每个 jail 都有一个关于可创建子 jail 数量的限制。在 15-CURRENT 中引入了以下新的只读 sysctl 变量，用于提供这些信息：
 

@@ -228,7 +228,7 @@ network={
 # wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf -D bsd
 ```
 
-在默认情况下，`wpa_supplicant` 会在前台运行，加上 `-B` 参数则会后台运行。可以通过控制接口获取它的日志信息。
+在默认情况下，`wpa_supplicant` 会在前台运行，加上参数 `-B` 则会后台运行。可以通过控制接口获取它的日志信息。
 
 `wpa_passphrase` 命令可用来为 `wpa_supplicant` 配置文件生成 WPA 网络配置，例如：
 
@@ -351,7 +351,7 @@ Data link types for wlan0 (use option -y to set):
   IEEE802_11_RADIO (802.11 plus radiotap header)
 ```
 
-我经常记不清这个变量中下划线的顺序，但 `tcpdump` 使用 `-L` 参数加接口名可以显示该接口类型支持的链路层头部类型。
+我经常记不清这个变量中下划线的顺序，但 `tcpdump` 使用参数 `-L` 加接口名可以显示该接口类型支持的链路层头部类型。
 
 ```sh
 # tcpdump -i wlan2 -y IEEE802_11_RADIO

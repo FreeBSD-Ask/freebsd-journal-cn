@@ -87,7 +87,7 @@ index 00e005fd7d4d..97c790dd5b81 100644
 
 ## 连接到 net80211
 
-WiFi 驱动所需的状态存储在驱动 softc 中的 `ieee80211com` 变量里（通常命名为 `ic`）。
+WiFi 驱动所需的状态存储在驱动 softc 中的变量 `ieee80211com` 里（通常命名为 `ic`）。
 
 驱动使用 `ic` 来设置能力标志，并通过覆盖函数指针来挂接或替换 **net80211** 栈提供的默认功能。
 
@@ -182,7 +182,7 @@ ieee80211_announce(ic);
 ifconfig wlan create wlandev iwx0
 ```
 
-`wlan` 参数让系统为我们分配一个设备号，而 `iwx0` 则告诉 net80211 子系统使用名为 `iwx0` 的设备来创建这个 VAP。
+参数 `wlan` 让系统为我们分配一个设备号，而 `iwx0` 则告诉 net80211 子系统使用名为 `iwx0` 的设备来创建这个 VAP。
 
 该命令会通过 `ifconfig` 的库转换为一次 `net80211_ioctl` 调用。最终结果是 net80211 会在我们的驱动 `ic` 上调用 `ic->ic_vap_create` 回调。正如前文所述，这个回调映射到 `iwx_vap_create`。
 

@@ -180,7 +180,7 @@ rsync -aHW --delete /t/tmp /home/cy/freebsd/rdist
                        notify root@cory ;
 ```
 
-在上述示例中，列在 `FILES` 变量中的文件将从本地主机复制到 `HOSTS` 变量中列出的机器上。除了 `EXLIB` 变量中列出的文件、**/usr/games/lib** 和一个模式之外。每个文件复制后，将运行带选项 `-bz` 的 `sendmail`。
+在上述示例中，列在变量 `FILES` 中的文件将从本地主机复制到变量 `HOSTS` 中列出的机器上。除了变量 `EXLIB` 中列出的文件、**/usr/games/lib** 和一个模式之外。每个文件复制后，将运行带选项 `-bz` 的 `sendmail`。
 
 `special` 一般用于运行 shell 命令。但在上述例子中，`special` 执行了 **/usr/lib/sendmail**（就如同 shell 一样），将引号内的参数传给 `sendmail`。
 

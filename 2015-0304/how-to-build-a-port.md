@@ -5,9 +5,9 @@
 
 与 FreeBSD 项目互动
 
-简要介绍 Ports 系统的结构，并带你入门编写简单的 port。
+简要介绍 Ports 系统的结构，并带你入门编写简单的 Port。
 
-FreeBSD 长期以来以 Ports 树闻名——过去用户必须从编译所有想安装的软件开始，某些情况下这既慢又麻烦。近几年里，大量工作投入到打造一流的 package 系统中，用户现在只需下载并安装预编译好的 package，配套了全新的打包工具和全新的 package 分发基础设施。对大多数用户而言，这已是推荐的软件安装方式；只要使用新的 `pkg.8` 系统（参见《FreeBSD 期刊》2014 年 3/4 月刊），大多数用户不再需要自行编译软件。但这一切之下仍是 FreeBSD Ports 系统，它掌握着如何在 FreeBSD 上构建和安装第三方软件的全部信息。在近 25,000 个 package 之中，仍有可能出现某个 package 尚不存在的情况，于是就需要编写新的 port。同样，要修改现有的 package，也得改动其底层的 port。本文简要介绍 Ports 系统的结构，并带你入门编写简单的 port。
+FreeBSD 长期以来以 Ports 树闻名——过去用户必须从编译所有想安装的软件开始，某些情况下这既慢又麻烦。近几年里，大量工作投入到打造一流的 package 系统中，用户现在只需下载并安装预编译好的 package，配套了全新的打包工具和全新的 package 分发基础设施。对大多数用户而言，这已是推荐的软件安装方式；只要使用新的 `pkg.8` 系统（参见《FreeBSD 期刊》2014 年 3/4 月刊），大多数用户不再需要自行编译软件。但这一切之下仍是 FreeBSD Ports 系统，它掌握着如何在 FreeBSD 上构建和安装第三方软件的全部信息。在近 25,000 个 package 之中，仍有可能出现某个 package 尚不存在的情况，于是就需要编写新的 Port。同样，要修改现有的 package，也得改动其底层的 Port。本文简要介绍 Ports 系统的结构，并带你入门编写简单的 Port。
 
 首先你需要取得一份新的 FreeBSD Ports 树。最快的方式是用 `portsnap.8`。这是个两步过程。第一步抓取 portsnap 数据文件，约 70MB，视网络情况可能耗时不少。第二步安装 Ports 树本身，会解压大量小文件，视磁盘速度也可能花费一些时间。
 
@@ -23,11 +23,11 @@ portsnap fetch
 portsnap update
 ```
 
-查看 **/usr/ports** 目录，你能看到若干文件和大量目录。最先应注意到的是 Makefile 文件。FreeBSD Ports 树用 `make.1` 编写，这是一种在构建和安装软件时广泛使用的语言。当然，单个 200 行的 Makefile 远远不够，Ports 基础设施的大部分代码位于 **/usr/ports/Mk** 目录。其他大部分目录都是分类目录，里面装着实际的 port。
+查看 **/usr/ports** 目录，你能看到若干文件和大量目录。最先应注意到的是 Makefile 文件。FreeBSD Ports 树用 `make.1` 编写，这是一种在构建和安装软件时广泛使用的语言。当然，单个 200 行的 Makefile 远远不够，Ports 基础设施的大部分代码位于 **/usr/ports/Mk** 目录。其他大部分目录都是分类目录，里面装着实际的 Port。
 
-极简的 port 由四个文件组成：Makefile、pkg-descr、pkg-plist 和 distinfo。Makefile 包含该 port 的一些基本信息和如何抓取、构建和安装它的指令。pkg-descr（即 package 描述）包含该 port 是什么、做什么的简短描述，还有该软件包官方项目网站的链接。pkg-plist（即打包清单）是该 port 安装的文件列表；最后，distinfo 包含该 port 需从互联网抓取的任何外部文件的校验和与大小。我下面以 **/usr/ports/shells/sash** 中的 Stand-Alone Shell（SASH）port 为例。在示例 1 中你还能看到名为 files 的目录，里面可以放置对该 port 有用的附加文件。
+极简的 Port 由四个文件组成：Makefile、pkg-descr、pkg-plist 和 distinfo。Makefile 包含该 Port 的一些基本信息和如何抓取、构建和安装它的指令。pkg-descr（即 package 描述）包含该 Port 是什么、做什么的简短描述，还有该软件包官方项目网站的链接。pkg-plist（即打包清单）是该 Port 安装的文件列表；最后，distinfo 包含该 Port 需从互联网抓取的任何外部文件的校验和与大小。我下面以 **/usr/ports/shells/sash** 中的 Stand-Alone Shell（SASH）port 为例。在示例 1 中你还能看到名为 files 的目录，里面可以放置对该 Port 有用的附加文件。
 
-看示例 2 中 SASH 的 Makefile，第一行是该 port 最初加入 Ports 树时对原作者的署名。接下来是 subversion 标识串，会由 subversion 自动展开，对新 port 而言只应是：
+看示例 2 中 SASH 的 Makefile，第一行是该 port 最初加入 Ports 树时对原作者的署名。接下来是 subversion 标识串，会由 subversion 自动展开，对新 Port 而言只应是：
 
 ```sh
 # $FreeBSD$
@@ -162,13 +162,13 @@ sash-3.8|/usr/ports/shells/sash|/usr/local|Stand-Alone shell combining many comm
 LIB_DEPENDS= libsqlite3.so:${PORTSDIR}/databases/sqlite3
 ```
 
-运行时或构建时的依赖以类似方式分别在 `RUN_DEPENDS` 和 `BUILD_DEPENDS` 变量中指定，由 `file:port` 组合的列表构成。
+运行时或构建时的依赖以类似方式分别在变量 `RUN_DEPENDS` 和 `BUILD_DEPENDS` 中指定，由 `file:port` 组合的列表构成。
 
 ```sh
 RUN_DEPENDS= ${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 ```
 
-`${LOCALBASE}` 变量通常与我们前面看到的 `${PREFIX}` 相同，但二者有区别：`LOCALBASE` 表示已安装 port 的位置，`PREFIX` 表示当前 port 将要安装的位置。对于默认路径中的可执行文件，无需写完整路径，所以上面的例子可简写为：
+变量 `${LOCALBASE}` 通常与我们前面看到的 `${PREFIX}` 相同，但二者有区别：`LOCALBASE` 表示已安装 port 的位置，`PREFIX` 表示当前 port 将要安装的位置。对于默认路径中的可执行文件，无需写完整路径，所以上面的例子可简写为：
 
 ```sh
 RUN_DEPENDS= bash:${PORTSDIR}/shells/bash
@@ -203,7 +203,7 @@ LICENSE= GPLv2
 LICENSE_FILE= ${WRKSRC}/COPYING
 ```
 
-这是一条有效的警告，因为我们的示例 port 没有设置 `${LICENSE}` 变量。`${LICENSE}` 变量可设为某个已知许可证缩写，列表见 **/usr/ports/Mk/bsd.licenses.db.mk**。如果软件项目带有许可证文件，也应通过 `${LICENSE_FILE}` 变量安装。见示例 9。
+这是一条有效的警告，因为我们的示例 port 没有设置变量 `${LICENSE}`。变量 `${LICENSE}` 可设为某个已知许可证缩写，列表见 **/usr/ports/Mk/bsd.licenses.db.mk**。如果软件项目带有许可证文件，也应通过变量 `${LICENSE_FILE}` 安装。见示例 9。
 
 ## 测试 Port：使用 poudriere
 

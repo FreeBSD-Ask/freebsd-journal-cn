@@ -313,7 +313,7 @@ vmm_load="YES"
 # pptdevs="1/0/17"
 ```
 
-要将 VF 保留为 bhyve 的 PCI 直通设备，我们使用 `iovctl` 的 `passthrough` 参数。
+要将 VF 保留为 bhyve 的 PCI 直通设备，我们使用 `iovctl` 的参数 `passthrough`。
 
 ```sh
     passthrough (boolean)

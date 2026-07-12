@@ -251,7 +251,7 @@ setup_partitions "$SSD" "$SWAP_SIZE_SSD" "false"
 
 **BCR**: 当我们用同样的 4g 作为 HDD 和 SSD 的交换空间大小时，代码会是什么样子？
 
-**ChatGPT**: 如果我们想对 HDD 和 SSD 使用同样的 4g 交换空间大小，我们可以修改 `setup_partitions` 函数，使其只接受一个磁盘参数，并删除 `is_hdd` 参数和确定磁盘序列号的条件逻辑。下面是更新后的代码在 **/bin/sh** 语法中的样子：
+**ChatGPT**: 如果我们想对 HDD 和 SSD 使用同样的 4g 交换空间大小，我们可以修改 `setup_partitions` 函数，使其只接受一个磁盘参数，并删除参数 `is_hdd` 和确定磁盘序列号的条件逻辑。下面是更新后的代码在 **/bin/sh** 语法中的样子：
 
 ```sh
 #!/bin/sh
