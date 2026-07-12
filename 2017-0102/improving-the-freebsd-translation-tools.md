@@ -43,7 +43,7 @@ FreeBSD 文档有几个不同类别。首先是图书与文章，使用 DocBook 
 
 ## 实现
 
-有几款程序可以从 XML 文件中提取可翻译字符串。本项目选用的是 itstool（<http://itstool.org>），因其简洁且符合标准。同时还使用了 gettext-tools 包中的几个小工具。itstool 依赖 Python，而 Python 已是文档 port（textproc/docproj）的必需依赖。port gettext-tools（devel/gettext-tools）在文档作者或译者的系统上很可能已安装，因此这些工具的开销很小。
+有几款程序可以从 XML 文件中提取可翻译字符串。本项目选用的是 itstool（<http://itstool.org>），因其简洁且符合标准。同时还使用了 gettext-tools 包中的几个小工具。itstool 依赖 Python，而 Python 已是文档 Port（textproc/docproj）的必需依赖。Port gettext-tools（devel/gettext-tools）在文档作者或译者的系统上很可能已安装，因此这些工具的开销很小。
 
 ## 成果
 

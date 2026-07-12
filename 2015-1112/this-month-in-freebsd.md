@@ -43,7 +43,7 @@ root 重挂载支持已合入 11-CURRENT，并将合并到 **stable/10**。reroo
 
 **问**：你在 FreeBSD 项目中还做过哪些类型的开发工作？
 
-**答**：我先从 Ports 入手，既修复既有 port——当时因为 GCC 升级，数以百计的 port 需要修构建——也添加新的 port。之后我转向 src，实现了 rctl(8)、活动文件系统扩容、原生 iSCSI 协议栈、autofs(5)，最后是 root 重挂载。我也修过不少 bug，从 ZFS 到 iwn(4) WiFi 驱动。
+**答**：我先从 Ports 入手，既修复既有 Port——当时因为 GCC 升级，数以百计的 Port 需要修构建——也添加新的 Port。之后我转向 src，实现了 rctl(8)、活动文件系统扩容、原生 iSCSI 协议栈、autofs(5)，最后是 root 重挂载。我也修过不少 bug，从 ZFS 到 iwn(4) WiFi 驱动。
 
 **问**：除了曾是 Summer of Code 学生，你还作为 FreeBSD 导师参与过 Summer of Code 项目。你对 Summer of Code 项目在新开发者和开源项目中的作用怎么看？
 
