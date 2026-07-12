@@ -89,4 +89,4 @@ PO 翻译系统便是一例。FreeBSD 此前从未用过它，对其常见问题
 
 **作者简介**
 
-Dru Lavigne 是 FreeBSD 基金会 的董事，BSD Certification Group 主席。
+Dru Lavigne 是 FreeBSD 基金会的董事，BSD Certification Group 主席。

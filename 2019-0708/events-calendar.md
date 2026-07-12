@@ -1,16 +1,24 @@
 # 活动日历
 
-作者：**DRU LAVIGNE** 与 **ANNE DICKISON**
+- 作者：**DRU LAVIGNE** 与 **ANNE DICKISON**
 
 以下 BSD 活动将于 2019 年 9 月和 10 月举行。
 
-## vBSDCon • 9 月 5–7 日 • 弗吉尼亚州雷斯顿
+## vBSDCon
+
+9 月 5–7 日
+
+弗吉尼亚州雷斯顿
 
 <https://vbsdcon.com>
 
 vBSDCon 汇聚 BSD 社区成员，开展一系列圆桌讨论、教育会议、最佳实践交流、专属社交活动。会议讲座前一天将举办开发者峰会。
 
-## APNIC 48 • 9 月 5–12 日 • 泰国清迈
+## APNIC 48
+
+9 月 5–12 日
+
+泰国清迈
 
 <https://conference.apnic.net/48/>
 

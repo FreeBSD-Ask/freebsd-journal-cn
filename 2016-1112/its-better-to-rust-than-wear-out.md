@@ -126,3 +126,32 @@ curl -sSf https://static.rust-lang.org/rustup.sh | sh
 ```
 
 32 位 FreeBSD 处于 Rust 低下的第三层，既不保证能构建也不保证能用，状况相当不稳定。例如，Rust 1.13 在 ARM 平台上明明有严重的代码生成 bug（涉及硬件浮点）却照常发布。此处有龙，慎之！
+
+## 现状如何？
+
+Rust 于 2009 年作为 Mozilla 员工 Graydon Hoare 的个人项目起步。随后几年，Rust 转型为 Mozilla 赞助的社区项目，拥有超过 1200 名贡献者。自 2015 年 6 月发布的 1.0 版本以来，Rust 已用于多个实际部署。2016 年 6 月，Mozilla 在 Firefox 48 中为 Servo 渲染引擎交付了 Rust 代码，这是通向成熟的又一个重要里程碑。
+
+人们在用 Rust，但它是否真正兑现了提供 C++ 安全替代方案的愿景？我认为答案基本是肯定的，尽管差异并非那么巨大。例如，在 C++ 中，unique_ptr 拥有并管理一个对象，当 unique_ptr 超出作用域时销毁该对象。此外，所有权可通过 std::move 转移；作为额外好处，还有使用 auto 关键字的类型推断。尽管有这些相似之处，智能指针并不能提供 Rust 所有权系统的一切。在下面的例子 [3] 中，move 之后访问 orig 会导致运行时段错误——在 Rust 中道德等价的例子将无法编译。及早失败是好事。认真的、熟练的 C++ 程序员不会犯这样的错误，这种说法多少有些循环论证的意味，因为如果这类错误不普遍，试图阻止它们的语言根本不会存在。C++ 还缺乏模块系统，并有一些相当糟糕的特性，如头文件和文本包含。这些都是 Rust 的优势。
+
+```cpp
+#include <iostream>
+#include <memory>
+using namespace std;
+
+int main () {
+  unique_ptr<int> orig(new int(5));
+  cout << *orig << endl;
+  auto stolen = move(orig);
+  cout << *orig << endl;
+}
+```
+
+Rust 与 C++ 在性能上相比如何？比较惯用 C++ 和 Rust 性能的对照研究很难找到。Firefox 的 Servo 和 Gecko 渲染引擎（分别用 Rust 和 C++ 编写）之间的比较报告称，Servo 引擎的速度大约快一倍 [1]。虽然这些数字应持保留态度，但共识是 Rust 在性能上至少与 C++ 相当。原因之一是 Rust 的真正的不可变性等特性允许进行 C++ 中无法实现的优化。Rust 的语义还为进一步优化带来巨大潜力。
+
+尽管在生产环境中部署 Rust 取得了进展，问题仍然存在。Rust 的 ABI 不稳定；与 Glasgow Haskell 编译器一样，稳定的 ABI 可能永远不会实现，几乎可以肯定短期内不会。这个问题对 Rust 原生共享库影响最大，因为没有稳定的 ABI，它们在主要版本变更之间不兼容。ABI 不稳定并非致命问题。那么是否存在将 Rust 代码上游到 FreeBSD 的技术障碍？在我看来没有，但我有兴趣听听其他人对这样做在技术和政治层面的挑战的看法。
+
+我喜欢 Rust。它很有趣。而这不正是让我们早上来到办公室的真正原因吗？
+
+---
+
+**Graeme Jenkinson** 是剑桥大学计算机实验室的高级研究员，领导 Causal, Adaptive, Distributed, and Efficient Tracing System（CADETS）项目的分布式追踪开发。在从事 CADETS 之前，他在国防和汽车行业拥有 13 年的经验。

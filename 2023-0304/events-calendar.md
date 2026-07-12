@@ -3,9 +3,7 @@
 - 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2023/05/MarApril_events_calendar.pdf)
 - 作者：**Anne Dickison**
 
-## 截至 2023 年 7 月的 BSD 活动
-
-如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
+截至 2023 年 7 月的 BSD 活动。如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
 ## 2023 年 5 月 FreeBSD 开发者峰会
 

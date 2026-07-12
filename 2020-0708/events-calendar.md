@@ -2,9 +2,9 @@
 
 截至 2020 年 10 月的 BSD 活动
 
-作者：ANNE DICKISON
+- 作者：**ANNE DICKISON**
 
-FreeBSD Fridays：101 系列课程
+## FreeBSD Fridays：101 系列课程
 
 每两周一次，自 7 月 17 日开始，周五上午 10 点 PDT/17:00 UTC
 
@@ -86,20 +86,26 @@ FreeBSD 以稳定与安全著称。许多人知道它自带的防火墙，但 au
 
 本课程介绍在树莓派上运行 FreeBSD，并涵盖与 LED、开关等硬件的交互。
 
-FreeBSD Office Hours
+## FreeBSD Office Hours
+
 <https://wiki.freebsd.org/OfficeHours>
+
 下一场定于 2020 年 9 月 19 日，上午 7 点至下午 2 点 PDT/14:00 至 21:00 UTC
 主题：Bug 清剿。黑客松聚焦关闭 PR。
 主持人：Tom Jones 与 Allan Jude
 欢迎与 FreeBSD 社区成员一起参加 FreeBSD Office Hours。从综合问答到主题演示与教程，Office Hours 是解答 FreeBSD 相关问题的绝佳途径。过往节目可在 FreeBSD YouTube 频道找到（<https://www.youtube.com/c/FreeBSDProject>）。
 
-OpenZFS Developer Summit 2020 10 月 6–7 日
+## OpenZFS Developer Summit 2020
+
+10 月 6–7 日
 
 线上
 
 第八届 OpenZFS Developer Summit 将作为线上活动举办，时间为 2020 年 10 月 6–7 日。与往年一样：活动旨在推动跨社区的 OpenZFS 工作讨论，并在已提议的项目上取得进展。这场为期 2 天的活动包含一天的演讲和一天的黑客松。基金会荣幸担任铜牌赞助商。
 
-nerdear.la 2020 10 月 20–24 日
+## nerdear.la 2020
+
+10 月 20–24 日
 
 线上
 

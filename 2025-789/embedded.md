@@ -193,7 +193,7 @@ SUCCESS
 
 * 针对 Ibex 内核的逐周期精确（cycle-accurate）verilator 模拟器，带有最小化的外设集。
 * 针对 lowRISC Sonata 开发板的模拟器。
-* 来自 谷歌 的 MPact 模拟器，它提供了高性能模拟器，并带有集成调试器。
+* 来自谷歌的 MPact 模拟器，它提供了高性能模拟器，并带有集成调试器。
 
 MPact 模拟器与 Sail（简化）机器兼容。
 

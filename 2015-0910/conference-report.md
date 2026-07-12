@@ -7,7 +7,7 @@
 
 ## BSDCam 2015
 
-BSDCam 2015 是一年一度的 FreeBSD 开发者峰会，于 2015 年 8 月 17–19 日在英国剑桥大学计算机实验室举行。BSDCam 由剑桥大学主办与组织，并得到 FreeBSD 基金会 与 Xinuos 的资助。
+BSDCam 2015 是一年一度的 FreeBSD 开发者峰会，于 2015 年 8 月 17–19 日在英国剑桥大学计算机实验室举行。BSDCam 由剑桥大学主办与组织，并得到 FreeBSD 基金会与 Xinuos 的资助。
 
 超过 50 名 FreeBSD 开发者、剑桥当地的博士生与研究人员、使用（或关注）FreeBSD 的科技公司嘉宾出席了此次开发者峰会。
 
@@ -68,4 +68,4 @@ Ruslan Bukin 与 Ed Maste 主持了 FreeBSD RISC-V 移植的初步会议。RISC-
 
 **作者简介**
 
-Dr. Robert N. M. Watson 是剑桥大学计算机实验室系统、安全与架构方向的大学讲师；FreeBSD 开发者与 core team 成员；FreeBSD 基金会 董事会成员。他领导多个跨越计算机体系结构、编译器、程序分析、程序转换、操作系统、网络与安全的跨层研究项目。近期工作包括 Capsicum 安全模型、用于 Junos 与 Apple iOS 等系统沙箱的 MAC Framework、FreeBSD 网络协议栈的多线程。他是《FreeBSD 操作系统设计与实现》（第二版）的合著者。
+Dr. Robert N. M. Watson 是剑桥大学计算机实验室系统、安全与架构方向的大学讲师；FreeBSD 开发者与 core team 成员；FreeBSD 基金会董事会成员。他领导多个跨越计算机体系结构、编译器、程序分析、程序转换、操作系统、网络与安全的跨层研究项目。近期工作包括 Capsicum 安全模型、用于 Junos 与 Apple iOS 等系统沙箱的 MAC Framework、FreeBSD 网络协议栈的多线程。他是《FreeBSD 操作系统设计与实现》（第二版）的合著者。

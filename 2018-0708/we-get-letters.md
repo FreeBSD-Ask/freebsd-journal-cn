@@ -10,7 +10,7 @@
 
 **George V Neville-Neil**
 
-FreeBSD 基金会 主席
+FreeBSD 基金会主席
 
 嗨 George，
 

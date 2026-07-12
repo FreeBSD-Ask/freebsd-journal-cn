@@ -3,9 +3,7 @@
 - 原文：[Events Calendar](https://freebsdfoundation.org/wp-content/uploads/2022/07/events.pdf)
 - 作者：**Anne Dickison**
 
-## 截至 2022 年 11 月的 BSD 活动
-
-如发现此处未列出的 FreeBSD 相关活动或 FreeBSD 用户感兴趣的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
+截至 2022 年 11 月的 BSD 活动。如发现此处未列出的 FreeBSD 相关活动或 FreeBSD 用户感兴趣的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
 ![活动日历](../png/2022-0708/events-calendar-01.pdf)
 

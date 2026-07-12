@@ -1,37 +1,45 @@
 # 活动日历
 
-作者：**Dru Lavigne**
+- 作者：**Dru Lavigne**
 
 2018 年第二季度将举办以下与 BSD 相关的会议。
 
 ## ZFS 用户大会
 
-- **时间：** 4 月 19 日、20 日
-- **地点：** 美国康涅狄格州诺沃克
-- **网址：** <http://zfs.datto.com/>
+4 月 19 日、20 日
+
+美国康涅狄格州诺沃克
+
+<http://zfs.datto.com/>
 
 第二届年度会议聚焦 ZFS 文件系统的部署、管理和调优。会议为期两天，包含演讲与交流环节。本活动需付费注册。
 
-## LinuxFest Northwest
+## LinuxFestNorthwest
 
-- **时间：** 4 月 28 日、29 日
-- **地点：** 美国华盛顿州贝灵汉
-- **网址：** <https://www.linuxfestnorthwest.org/conferences/lfnw18>
+4 月 28 日、29 日
+
+美国华盛顿州贝灵汉
+
+<https://www.linuxfestnorthwest.org/conferences/lfnw18>
 
 这一年度开源活动提供从新手到专业人士都适用的演讲。Expo 区域将设 FreeBSD 展位。本活动免费参加。
 
 ## Rootconf 2018
 
-- **时间：** 5 月 11 日、12 日
-- **地点：** 印度班加罗尔
-- **网址：** <https://rootconf.in/2018/>
+5 月 11 日、12 日
+
+印度班加罗尔
+
+<https://rootconf.in/2018/>
 
 Rootconf 是印度主要的会议，系统与运维工程师在此分享构建可靠系统的实战经验。
 
 ## BSDCan
 
-- **时间：** 6 月 6 日至 9 日
-- **地点：** 加拿大渥太华
-- **网址：** <http://www.bsdcan.org/2018/>
+6 月 6 日至 9 日
+
+加拿大渥太华
+
+<http://www.bsdcan.org/2018/>
 
 第 15 届年度 BSDCan 提供 2 天教程、1 场开发者峰会和 2 天技术演讲，面向从入门新手到资深开发者的广泛人群。本活动需要注册。

@@ -212,7 +212,7 @@ Success! Enabled the file audit device at: file/
 
 ### 存储秘密
 
-Vault 有引擎的概念——包括简单的键值存储，还有用于 ssh 证书、AWS 和 谷歌 Cloud 集成、RabbitMQ、PostgreSQL 等的引擎。每个引擎都需要单独启用。
+Vault 有引擎的概念——包括简单的键值存储，还有用于 ssh 证书、AWS 和谷歌 Cloud 集成、RabbitMQ、PostgreSQL 等的引擎。每个引擎都需要单独启用。
 
 ```sh
 $ vault secrets enable -version=2 kv

@@ -7,7 +7,7 @@
 
 几个月前，我有幸参加今年的 BSDCan 并发表演讲。BSDCan 是三大年度 BSD 大会之一（另外两个是 AsiaBSDCon 和 EuroBSDCon），今年在渥太华举办。这是我第一次踏足北美——我来自比利时，那是华夫饼、啤酒以及组阁耗时 652 天的国度——所以我在从波士顿飞往渥太华参加 BSDCan 之前，先在东北走廊沿线转了两周。
 
-我预定演讲的内容是我在 谷歌 Summer of Code（GSoC）期间的工作：把 Linux 内核中的 BATMAN 实现（`batman-adv`）移植到 FreeBSD，更广泛地说，是它在 Freifunk 这类项目中的应用，以及 FreeBSD 上用于移植 Linux 内核驱动的 LinuxKPI 系统。
+我预定演讲的内容是我在谷歌 Summer of Code（GSoC）期间的工作：把 Linux 内核中的 BATMAN 实现（`batman-adv`）移植到 FreeBSD，更广泛地说，是它在 Freifunk 这类项目中的应用，以及 FreeBSD 上用于移植 Linux 内核驱动的 LinuxKPI 系统。
 
 抵达古朴的渥太华国际机场后，我坐巴士和渥太华轻轨到了会议举办地渥太华大学。我入住讲者住宿——90U 宿舍，条件相当不错。这里的学生显然过得挺舒服！我和 Kirk McKusick 同住一间，他还没到，于是我先去了 BSDCan 与会者的固定聚会点 Father & Sons 酒馆，想认识一些人。我到时恰逢 Goat BoF（Birds of a Feather）尾声，那里人头攒动。我喝了几品脱，吃了丰盛的肉汁奶酪薯条，然后回宿舍见 Kirk。自上次在葡萄牙科英布拉的 EuroBSDCon 之后，我们还没见过面。
 

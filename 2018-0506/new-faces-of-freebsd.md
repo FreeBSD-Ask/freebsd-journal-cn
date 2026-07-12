@@ -42,13 +42,13 @@
 
 **Sean**：在 Linux 的第一个版本不断因使用 telnet 而崩溃后，我切换到 386BSD 作为个人电脑，这导致了其他 BSD，最终在 FreeBSD 开始几个月后专注于 FreeBSD。当时可分发源代码的 BSD 仍然很新，有很多让我感兴趣的工作。像我一贯的做法，我做了大量库和工具工作，以及一些补充内核代码。在上 McKusick 的 BSD 内部课程时，我决定写一个 procfs 版本，在大量帮助下完成了模板。然后 procfs 工作后，我开始写 truss；这两个仍然是我最大的个人贡献。我还为 Dr Dobb’s Journal 写了一些相关文章。
 
-**Vincenzo**：我第一次接触 FreeBSD 是在大学学习 UNIX 系统管理的课程中。然而，我第一次真正与 FreeBSD 源代码互动只是几年前，当时我参加了 谷歌 Summer of Code 项目。在这个项目中，我玩内核比特和虚拟化工具，很开心。我还有机会在一次 FreeBSD 会议上展示我的工作。我对操作系统实现有浓厚兴趣，特别喜欢 FreeBSD，因为其干净的设计和出色的文档。
+**Vincenzo**：我第一次接触 FreeBSD 是在大学学习 UNIX 系统管理的课程中。然而，我第一次真正与 FreeBSD 源代码互动只是几年前，当时我参加了谷歌 Summer of Code 项目。在这个项目中，我玩内核比特和虚拟化工具，很开心。我还有机会在一次 FreeBSD 会议上展示我的工作。我对操作系统实现有浓厚兴趣，特别喜欢 FreeBSD，因为其干净的设计和出色的文档。
 
 **Fernando**：我第一次听说 FreeBSD 是在高中。我的一个朋友是早期 Linux 用户，他告诉我 FreeBSD。不久后，我买了一期西班牙版 PC World，其中附带了 FreeBSD 4.2。它在我的硬件上运行得不太好，但我能安装并玩一段时间。之后我升级到 5.0，但仍更常用 Linux。我想大约 7.0 时我成为主要的 FreeBSD 用户。我被其稳定性打动，这种感觉随时间增长。我仍有一台 12 年历史的笔记本，只有 1 GB 内存，运行 FreeBSD 11.0。
 
 **Tom**：我 2008 年 distro hopping 时在 G4 iBook 上运行 PowerPC FreeBSD，但我的冒险真正开始于 2018 年我加入阿伯丁大学研究组时。当时该组正在标准化一种称为 NewCWV（RFC7661）的 TCP 修改。我们有 Linux 的实现，IETF 标准化信条是“rough consensus and running code”，如果有尽可能多平台的实现会很有帮助。有人谈论移植到 BSD 操作系统，我要求参与。移植工作从我的桌面虚拟机开始，但很快我获得了一些二手服务器来构建和运行 FreeBSD。FreeBSD 因其著名的优秀 TCP 协议栈成为移植的首选操作系统。很快我开始怀念 FreeBSD 开发机器上可用的工具，决定必须把 FreeBSD 用作桌面。
 
-**Eric**：我那段旅程始于厌倦 Windows XP 上的病毒，想成为黑客。我切换到 PC Linux OS，搬到 Mandriva，然后到 Ubuntu，感觉有点像在家。在我成为臭名昭著的黑客的征途上，大约在同一时间我发现了 Eric Steven Raymond 的“How To Become A Hacker”，这是一个改变人生的事件，让我停止了成为黑客的旅程。“How To Become A Hacker”简要谈到 BSD Unix，这引起了我的注意。我开始 谷歌 BSD，这开始了我通向 FreeBSD 的道路。我安装了 FreeBSD 7.0，比 XP 更容易安装，但 shell 是我的克星。所以，我重装了 Ubuntu，做了更多研究，找到并尝试了 PC-BSD 1.4。我不喜欢 KDE，所以我在磁盘的一半重装了 Ubuntu，打印了整个 FreeBSD 手册和文档来安装和设置 Gnome，在另一半重装了 FreeBSD。这就是我对 FreeBSD 所有的爱开始的地方，我开始 GhostBSD 以拥有 PC-BSD 的 Gnome 等价物。
+**Eric**：我那段旅程始于厌倦 Windows XP 上的病毒，想成为黑客。我切换到 PC Linux OS，搬到 Mandriva，然后到 Ubuntu，感觉有点像在家。在我成为臭名昭著的黑客的征途上，大约在同一时间我发现了 Eric Steven Raymond 的“How To Become A Hacker”，这是一个改变人生的事件，让我停止了成为黑客的旅程。“How To Become A Hacker”简要谈到 BSD Unix，这引起了我的注意。我开始谷歌 BSD，这开始了我通向 FreeBSD 的道路。我安装了 FreeBSD 7.0，比 XP 更容易安装，但 shell 是我的克星。所以，我重装了 Ubuntu，做了更多研究，找到并尝试了 PC-BSD 1.4。我不喜欢 KDE，所以我在磁盘的一半重装了 Ubuntu，打印了整个 FreeBSD 手册和文档来安装和设置 Gnome，在另一半重装了 FreeBSD。这就是我对 FreeBSD 所有的爱开始的地方，我开始 GhostBSD 以拥有 PC-BSD 的 Gnome 等价物。
 
 今天我对 FreeBSD 的主要兴趣是 GhostBSD 以及我所有只运行 FreeBSD 的服务器和 VPS。我对 FreeBSD 桌面端比作为服务器的 FreeBSD 更感兴趣，这就是 GhostBSD 开始的原因。
 

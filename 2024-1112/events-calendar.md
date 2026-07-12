@@ -1,11 +1,9 @@
 # 活动日历
 
 - 原文链接：[2025 Events Calendar](https://freebsdfoundation.org/our-work/journal/browser-based-edition/virtualization-2/events-calendar/)
-- 作者：Anne Dickison
+- 作者：**Anne Dickison**
 
-## 截至 2025 年 3 月的 BSD 活动
-
-如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 [freebsd-doc@FreeBSD.org](mailto:freebsd-doc@FreeBSD.org)。
+截至 2025 年 3 月的 BSD 活动。如发现此处未列出的 FreeBSD 相关活动或对 FreeBSD 用户有益的活动，请将详情发送至 <freebsd-doc@FreeBSD.org>。
 
 ![FOSDEM](../png/2024-1112/events-calendar-1.png)
 

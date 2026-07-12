@@ -12,4 +12,4 @@
 
 **George Neville-Neil**
 
-FreeBSD 基金会 董事会主席
+FreeBSD 基金会董事会主席
