@@ -91,4 +91,4 @@ fd foo
 
 ---
 
-**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，同时也是文档工程团队的成员。他担任 FreeBSD 基金会董事会副主席，并曾在 FreeBSD 核心团队任职两届。他在德国达姆施塔特应用科技大学管理一个大数据集群，并教授本科课程“Unix for Developers”（面向开发者的 Unix）。此外，他还是 bsdnow.tv 播客的主持人之一。
+**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，也是文档工程团队的成员。他是 FreeBSD 基金会董事会的副主席。过去，他曾任两届 FreeBSD 核心团队成员。他在德国达姆施塔特应用科技大学管理一个大数据集群，还为本科生教授“Unix for Developers”课程。他是 bsdnow.tv 播客的主持人之一。

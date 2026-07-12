@@ -82,7 +82,7 @@ DTrace 提供者（provider）使得 DTrace 可以访问一组追踪点。一些
 
 **JONATHAN ANDERSON** 是纽芬兰纪念大学电气与计算机工程系的助理教授，研究横跨操作系统、安全和编译器等软件工具。他是 FreeBSD 提交者，并一直在寻找志趣相投的新研究生。
 
-**GEORGE V. NEVILLE-NEIL** 出于兴趣和生计从事网络与操作系统代码工作，也教授与编程相关的各类课程。他的兴趣领域包括代码探源、操作系统、网络和时间协议。他与 Marshall Kirk McKusick 和 Robert N. M. Watson 合著了《FreeBSD 操作系统设计与实现》。十余年来，他以 Kode Vicious 之名撰写专栏。他在马萨诸塞州波士顿的东北大学获得计算机科学学士学位，是 ACM、Usenix 协会和 IEEE 的会员。他热爱骑行和旅行，现居纽约市。
+**GEORGE V. NEVILLE-NEIL** 出于兴趣和生计从事网络与操作系统代码工作，也教授与编程相关的各类课程。他的兴趣领域包括代码探秘、操作系统、网络和时间协议。他与 Marshall Kirk McKusick 和 Robert N. M. Watson 合著了《FreeBSD 操作系统设计与实现》。十余年来，他以 Kode Vicious 之名撰写专栏。他在马萨诸塞州波士顿的东北大学获得计算机科学学士学位，是 ACM、USENIX 协会和 IEEE 的会员。他热爱骑行和旅行，现居纽约市。
 
 **ARUN THOMAS** 是 BAE Systems 研发部门的研究员，也是因果自适应分布式高效追踪系统（CADETS）项目的首席研究员。
 

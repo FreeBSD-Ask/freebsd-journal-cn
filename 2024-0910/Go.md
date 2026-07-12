@@ -132,4 +132,4 @@ Voila! 现在，你可以在浏览器中访问 `paperless.conf` 中定义的 web
 
 ---
 
-**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，也是文档工程团队的成员。过去，他曾担任 FreeBSD 核心团队成员两个任期。他在德国达姆施塔特应用科技大学管理大数据集群，并为本科生教授“Unix for Developers”课程。他是每周 [bsdnow.tv](https://bsdnow.tv/) 播客的主持人之一。
+**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，也是文档工程团队的成员。过去，他曾任两届 FreeBSD 核心团队成员。他在德国达姆施塔特应用科技大学管理一个大数据集群，还为本科生教授“Unix for Developers”课程。Benedict 也是每周 bsdnow.tv 播客的主持人之一。

@@ -47,4 +47,4 @@ pkg install bpytop
 
 ---
 
-**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者和文档工程团队成员。他还担任 FreeBSD 基金会董事会副主席。过去，他曾任两届 FreeBSD 核心团队成员。他在德国达姆施塔特应用科技大学管理大数据集群，并为本科生开设“Unix for Developers”课程。他与 Allan Jude 一起主持每周的 bsdnow.tv 播客。
+**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者，也是文档工程团队的成员。他是 FreeBSD 基金会董事会的副主席。过去，他曾任两届 FreeBSD 核心团队成员。他在德国达姆施塔特应用科技大学管理一个大数据集群，还为本科生教授“Unix for Developers”课程。与 Allan Jude 一起，他是每周 bsdnow.tv 播客的主持人。

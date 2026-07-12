@@ -9,32 +9,40 @@
 
 ## Fossetcon
 
-- 时间：2014 年 9 月 11–13 日
-- 地点：美国佛罗里达州奥兰多
-- 网站：<http://www.fossetcon.org>
+2014 年 9 月 11–13 日
+
+美国佛罗里达州奥兰多
+
+<http://www.fossetcon.org>
 
 Fossetcon 是自由和开源软件博览会暨技术会议。博览区将设有 FreeBSD 展位，并提供 BSDA 认证考试。
 
 ## EuroBSDCon
 
-- 时间：2014 年 9 月 25–28 日
-- 地点：保加利亚索菲亚
-- 网站：<http://2014eurobsdcon.org>
+2014 年 9 月 25–28 日
+
+保加利亚索菲亚
+
+<http://2014eurobsdcon.org>
 
 EuroBSDCon 是欧洲首屈一指的 BSD 操作系统会议。会议包含两天的开发者峰会和教程，随后是两天的技术演讲。
 
 ## Grace Hopper Celebration
 
-- 时间：2014 年 10 月 8–10 日
-- 地点：美国亚利桑那州凤凰城
-- 网站：<http://gracehopper.com>
+2014 年 10 月 8–10 日
+
+美国亚利桑那州凤凰城
+
+<http://gracehopper.com>
 
 FreeBSD 基金会将在 Grace Hopper 计算机领域女性庆祝大会的博览区设有展位。FreeBSD 还将参与开源日（Open Source Day），并介绍如何参与 FreeBSD 项目。
 
 ## Ohio LinuxFest
 
-- 时间：2014 年 10 月 24–26 日
-- 地点：美国俄亥俄州哥伦布
-- 网站：<https://ohiolinux.org/>
+2014 年 10 月 24–26 日
+
+美国俄亥俄州哥伦布
+
+<https://ohiolinux.org/>
 
 第 12 届 Ohio LinuxFest 将设有 FreeBSD 展位和多场 FreeBSD 相关演讲。BSDA 认证考试将于 10 月 26 日（星期日）提供。

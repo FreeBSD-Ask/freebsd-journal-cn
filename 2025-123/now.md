@@ -77,4 +77,4 @@ Jason 为节目注入了丰富的 OpenBSD/FreeBSD 实战经验，无论是系统
 
 ---
 
-作者 **BENEDICT REUSCHLING** 系 FreeBSD 文档提交者，曾任两届核心团队成员及 FreeBSD 基金会副主席，在德国达姆施塔特应用技术大学管理大数据集群八年余，现为本科生讲授《开发者 Unix 基础》课程，并担任 bsdnow.tv 每周播客主持人。
+**BENEDICT REUSCHLING** 是 FreeBSD 项目的文档提交者。过去，他曾任两届 FreeBSD 核心团队成员，并曾担任 FreeBSD 基金会副主席。他在德国达姆施塔特应用科技大学管理大数据集群八年多，还为本科生教授“Unix for Developers”课程。Benedict 也是每周 bsdnow.tv 播客的主持人之一。

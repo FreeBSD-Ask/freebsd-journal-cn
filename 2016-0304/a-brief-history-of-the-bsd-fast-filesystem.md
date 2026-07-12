@@ -65,4 +65,8 @@ union 文件系统是中间文件系统层的另一个例子。与 nullfs 一样
 
 1999 年，文件系统加入了快照功能。文件系统快照是文件系统在某一时刻的冻结映像。快照支持若干重要特性：能够在一天中的多个时刻为文件系统提供备份，以及对活动的文件系统进行可靠 dump 的能力。快照可在任何时刻拍摄。如果在白天每隔几小时拍一次，用户就可以找回几小时前写下、随后误删或被覆盖的文件。快照比 dump 磁带使用起来方便得多……
 
-<!-- 注：原 PDF 文章在此之后还有后续章节，涵盖多处理支持、访问控制列表、强制访问控制和元数据优化。PDF 文本提取被截断。完整文章请参阅原 PDF：https://freebsdfoundation.org/wp-content/uploads/2016/04/A-Brief-History-of-the-BSD-Fast-Filesystem.pdf -->
+> 注：本文为原文前半部分的翻译。原文后续还有多处理支持、访问控制列表、强制访问控制和元数据优化等章节，完整文章请参阅原 PDF：<https://freebsdfoundation.org/wp-content/uploads/2016/04/A-Brief-History-of-the-BSD-Fast-Filesystem.pdf>
+
+---
+
+**Marshall Kirk McKusick** 是 4.2BSD 快速文件系统的实现者，曾长期任职于加州大学伯克利分校计算机系统研究组（CSRG）。他撰写的《The Design and Implementation of the 4.4BSD Operating System》是 BSD 领域的经典著作。他是 FreeBSD 基金会的董事，长期致力于文件系统、操作系统和计算机系统架构的研究。
