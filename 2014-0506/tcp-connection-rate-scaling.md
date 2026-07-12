@@ -3,7 +3,7 @@
 - 原文：[TCP Connection Rate Scaling](https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking/tcp-connection-rate-scaling/)
 - 作者：**Michael Bentkofsky 与 Julien Charbon**
 
-当今的商品服务器，单块网卡（NIC）端口带宽达 10+ 吉比特、处理器核数达数十，其网络与处理能力足以在最小型服务器上承载最严苛的网络服务。
+当今的商品服务器，单块网卡（NIC）端口带宽达 10+ G、处理器核数达数十，其网络与处理能力足以在最小型服务器上承载最严苛的网络服务。
 
 随着基于 Web 的服务的流行，人们大量关注扩展这类服务，以应对上一个十年中诸如 C10K 问题（<http://en.wikipedia.org/wiki/C10k_problem>）的挑战——即在单台服务器上同时处理 10,000 条连接。使用非阻塞 I/O 和事件通知（如 `kqueue()`）实现的现代服务器软件可处理数万条并发连接。如今的新挑战瞄准在单台服务器上同时服务多达一百万条连接。当前的 NIC 硬件足以支持，但要把连接数继续推高，剩余的挑战之一便是扩展单台服务器可服务的 TCP 连接速率（<http://blog.whatsapp.com/index.php/2012/01/1-million-is-so-2011/>）。本文考察若干类型的基于 TCP 的服务，其中首要的扩展问题是处理现代服务器硬件上最高速率的 TCP 连接建立。这与向数百万条已建立的 TCP 连接提供内容是不同的挑战。此类服务包括：
 
