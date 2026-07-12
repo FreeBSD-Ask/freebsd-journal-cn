@@ -3,7 +3,7 @@
 - 原文：[Poudriere](https://freebsdfoundation.org/wp-content/uploads/2014/03/Poudriere.pdf)
 - 作者：**Bryan Drewery**
 
-停止在你的服务器上使用 portmaster、portupgrade 和 ports，转而使用软件包。用 Poudriere 搭建你自己的软件包构建只需几分钟，未来会为你节省大量时间。
+停止在你的服务器上使用 portmaster、portupgrade 和 Ports，转而使用软件包。用 Poudriere 搭建你自己的软件包构建只需几分钟，未来会为你节省大量时间。
 
 在 Pkg 可用之前，我从未真正考虑过使用软件包。旧式的 `pkg_install` 软件包用于初始系统安装尚可，但除了全部删除并安装新的一套之外，没有内置的升级途径。你不得不使用 portmaster 或 portupgrade 这样的工具，并检出一个 INDEX 或 Ports 树。这些工具看起来在软件包升级方面做得不错，但它们遗漏很多内容并制造额外工作。
 
