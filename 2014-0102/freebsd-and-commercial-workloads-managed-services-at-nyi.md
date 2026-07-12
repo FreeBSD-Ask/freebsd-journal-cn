@@ -104,8 +104,6 @@ NYI 还在内部使用 jails 来实现硬件高效的域名系统（DNS）服务
 
 NYI 成立于 1996 年，总部位于华尔街核心地带。其核心服务包括主机托管、独立服务器、Web 与邮件托管、托管服务、交钥匙灾难恢复、业务连续性方案。NYI 拥有并维护自己的数据中心，凭借其高带宽连接合作伙伴（Zayo、Verizon Business、Optimum Lightpath、AT&T、Level 3 和 GTT），NYI 专注于为金融、建筑、时尚、法律、生命科学、媒体和房地产行业提供关键任务数据服务。NYI 符合 SSAE 16 Type II 标准，同时符合 PCI 和 HIPAA 合规要求。关于 NYI 的更多信息，请访问 <https://www.nyi.net/>。
 
-**FreeBSD 基金会** 是 501(c)(3) 非营利组织，致力于支持 FreeBSD 项目。基金会接受个人和企业的捐款，表示感谢，将其用于资助推动 FreeBSD 操作系统发展的项目。此外，基金会可以代表 FreeBSD 项目执行合同、许可协议和其他需要法律实体的法律安排。FreeBSD 基金会完全依靠捐赠维持。关于基金会的更多信息，请访问 <https://www.freebsdfoundation.org/>。
-
 ---
 
 **Joseph Kong** 是自学的计算机爱好者，涉足漏洞利用开发、逆向代码工程、rootkit 开发和系统编程（FreeBSD、Linux 和 Windows）。他是广受好评的《Designing BSD Rootkits》和《FreeBSD 设备驱动程序开发》的作者。关于 Joseph Kong 的更多信息，请访问 <https://www.thestackframe.org/>，或在 Twitter 上关注他 `@JosephJKong`。
