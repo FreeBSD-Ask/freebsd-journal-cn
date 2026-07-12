@@ -36,7 +36,7 @@
 
 ## 我能如何参与？
 
-如果你喜爱 FreeBSD 并希望加入团队，不错的切入点是接手一个无人维护的 port 并提交更新。要查找未指定具体 committer 或团队的 port，可在线浏览 portsmon 的列表（<http://portsmon.freebsd.org/portsconcordanceformaintainer.py?maintainer=ports%40FreeBSD.org>），或执行以下命令：
+如果你喜爱 FreeBSD 并希望加入团队，不错的切入点是接手一个无人维护的 Port 并提交更新。要查找未指定具体 committer 或团队的 Port，可在线浏览 portsmon 的列表（<http://portsmon.freebsd.org/portsconcordanceformaintainer.py?maintainer=ports%40FreeBSD.org>），或执行以下命令：
 
 ```sh
 make -C /usr/ports quicksearch maint=ports@FreeBSD.org
