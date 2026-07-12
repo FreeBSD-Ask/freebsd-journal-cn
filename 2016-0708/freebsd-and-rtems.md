@@ -93,6 +93,148 @@ FreeBSD 是 RTEMS 及其历史的重要组成部分。RTEMS 中的 BSD 代码最
 
 ### 维护
 
-这次移植完成后的若干年里，开始暴露一些问题。第一个也是最明显的问题是驱动可用性。定制驱动支持要求为 RTEMS 编写定制驱动。代码可以从 FreeBSD 借鉴，但驱动往往需要当作全新代码来编写和测试。随着时间推移和 FreeBSD 演进，让 RTEMS 用户感到沮丧和困惑的是：FreeBSD 协议栈的移植却不支持较新 FreeBSD 版本的驱动。当初把代码移植到 RTEMS 时，它被复制到简化的目录结构中。FreeBSD 的目录树又大又宽，似乎没有必要再创建一个宽泛的
+这次移植完成后的若干年里，开始暴露一些问题。第一个也是最明显的问题是驱动可用性。定制驱动支持要求为 RTEMS 编写定制驱动。代码可以从 FreeBSD 借鉴，但驱动往往需要当作全新代码来编写和测试。随着时间推移和 FreeBSD 演进，让 RTEMS 用户感到沮丧和困惑的是：FreeBSD 协议栈的移植却不支持较新 FreeBSD 版本的驱动。当初把代码移植到 RTEMS 时，它被复制到简化的目录结构中。FreeBSD 的目录树又大又宽，似乎没有必要再创建一个宽泛的稀疏树来存放少量文件集合。这使得将文件与 FreeBSD 原始文件进行比较变得困难，因为永远不清楚 RTEMS 源码中的哪些文件应该与 FreeBSD 源码中的哪些文件对比。为了让代码能构建，做了修改，但没有任何明确的标记说明哪些是原始代码、哪些被改过。随着时间推移和 FreeBSD 改进协议栈（例如加入 IPv6），从 RTEMS 源码树中的快照升级变得几乎不可能。针对局部修复，会手工引入特定的 bug 修复，但这既耗时又范围狭窄。这导致维护问题随代码老化日益严重。
 
-> **注**：英文原版 PDF 文本提取在此处截断，后续内容请参阅原 PDF：<https://freebsdfoundation.org/wp-content/uploads/2016/08/FreeBSD-and-RTEMS-Unix-in-a-Real-Time-Operating-System.pdf>。
+在斯坦福 SLAC 国家加速器实验室工作的 Till Straumann 构建了一个名为 libbsdports 的附加库，允许 FreeBSD 的驱动以最小改动使用。这非常成功，引发了能否以最小改动使用 FreeBSD 代码的想法。他的工作仅限于网络驱动和特定架构范围，但这是首个公开证明此举可行的例子。
+
+这段时间还有其他 FreeBSD 相关工作。Chris Johns 拿来 USB 协议栈，在 NIOS-II 上的 RTEMS 上运行。然而，这些工作是孤立的、特定的，对 RTEMS 项目没有长期价值。这也凸显了将 FreeBSD 内核的特定部分分别移植的问题：如何把这些分离的部分整合到一个静态可执行文件中？RTEMS 需要一个统一、完整的 FreeBSD 内核代码移植，覆盖所有感兴趣的部分。因此，制定了一个计划来解决 RTEMS 中 FreeBSD 源码的使用问题。第一个决定是退一步，不分散精力。RTEMS 要使用的 FreeBSD 代码库的各个部分需要放在一起，作为单一实体维护。该项目命名为 RTEMS LibBSD。
+
+## RTEMS LibBSD
+
+RTEMS 中最近的 FreeBSD 移植项目名为 RTEMS LibBSD 或简称 LibBSD。该项目托管在 RTEMS 项目 Git 服务器上的独立 Git 仓库中，仓库地址为 <https://git.rtems.org/rtems-libbsd.git>。这是由 Joel Sherrill 和 Sebastian Huber 牵头的联合努力。
+
+该项目为 RTEMS 创建了单一的 FreeBSD 移植，提供 FreeBSD 中对 RTEMS 有用的诸多特性，如网络、USB、SATA 和 MMC 设备。
+
+随着工作推进，制定了一套广泛的规则来指导 RTEMS LibBSD 的开发者。这些规则随团队发现什么可行、什么不可行而逐渐成形。规则可概括为：
+
+1. RTEMS LibBSD 代码的目录结构必须与 FreeBSD 源码树一致。
+2. RTEMS 版本代码中的所有修改都必须限定在标准条件定义语法内。这样可以用 Python 脚本移除 RTEMS 修改，将源码与原始 FreeBSD 代码对比。
+3. 不要编辑 FreeBSD 代码，包括任何空白字符修改。所有编辑都放在预处理条件中。
+
+能够透明地使用原始 FreeBSD 源码是 LibBSD 工作的核心，"源码透明性"一词被用来描述这一方法。任何将 FreeBSD 代码与自己的系统和机器头文件嵌入的人，都希望能取一部分 FreeBSD 源文件直接构建而无需修改。目前这还不可能。从 RTEMS 项目的视角看，任何透明源码都没有修改，随着修改增多，原始 FreeBSD 代码变得越来越不清晰。
+
+嵌入 FreeBSD 内核代码时需要解决的主要问题有：
+
+1. 头文件和所需声明。RTEMS 目标的系统和机器头文件与 FreeBSD 内核代码使用的头文件不匹配。头文件标准化的改进对双方都有帮助，但仍有一系列内核类型和定义需要添加。
+2. 在内核中使用基于标准的用户空间函数名但签名不同，例如 `malloc`。RTEMS 是单地址空间、静态链接的可执行文件，这些名称冲突需要管理，通常是——用糟糕的 hack 管理。
+3. 支持 FreeBSD 使用的 SYSINIT 初始化。这需要链接器支持以实现正确的段管理。FreeBSD 的实现方式非常好，RTEMS 内核也采用了类似机制，效果显著。RTEMS 采用了 FreeBSD 通过 SYSINIT 使用的链接器初始化机制。此前，RTEMS 要求用户在构建系统中管理需要链接的 RTEMS 部分，对于不需要的部分，需要链接虚版本。有了链接器集合初始化，这一切都自动化了，包括初始化发生的顺序，使 RTEMS 更易使用。尽管一直关注可执行文件的小体积，但得益于改为 SYSINIT 风格初始化，RTEMS 最小参考应用的体积也有所减小。
+4. SMP 支持要求 FreeBSD 移植的某些部分在 RTEMS SMP 支持的上下文中管理。
+5. 在单一、静态链接的可执行文件中运行 FreeBSD 用户空间代码，需要一些有趣的 hack 来避免全局符号冲突并让已初始化变量正常工作。将 shell 命令移植到单地址空间时尤为明显。每个命令都有自己的 `main()`，调用 `exit()` 不会退出命令调用——而是退出整个 RTEMS 应用。
+
+## 源码管理
+
+源码树由四个主要目录组成：
+
+1. freebsd——RTEMS 的 FreeBSD 源码
+2. rtemsbsd——RTEMS 的 FreeBSD 支持源码
+3. testsuite——RTEMS LibBSD 的测试
+4. rtems_waf——RTEMS 针对 RTEMS BSP 构建的 waf 支持
+
+使用 LibBSD 时，必须初始化 `rtems_waf` 的 Git 子模块，将其支持文件带入克隆的仓库。该模块帮助为 BSP 配置和构建 LibBSD。还需要已构建并安装 RTEMS 工具链和合适的板级支持包（BSP）。
+
+LibBSD 的开发者还需要从快照点克隆 FreeBSD 源码树。这会创建一个名为 `freebsd-org` 的额外目录。
+
+RTEMS LibBSD 项目有约 850 个构建目标。为管理如此多的文件以及复杂的编译时定义、架构特定文件和头文件，定义被隔离到独立于构建系统的单一文件中。初始开发生成了 makefile，最近改为生成 waf 脚本（<https://www.waf.io>）。waf 构建脚本与 `rtems_waf` 支持集成，更易提取和使用 BSP 的各种机器特定编译标志。由于 RTEMS 是单地址空间，操作系统、用户代码和 LibBSD 等库必须使用相同 ABI 构建，这一点至关重要。
+
+LibBSD 的构建定义是名为 `libbsp.py` 的单一 Python 文件。该文件包含若干模块定义，这些模块被传递给源码管理工具，管理在原始 FreeBSD 源码树和 RTEMS FreeBSD 源码树之间移动源码。模块数据也传递给构建脚本生成器以创建 waf 构建脚本。
+
+支持多种不同类型的模块。模块可以是 RTEMS 头文件和源码、FreeBSD 内核空间头文件和源码，或 FreeBSD 用户空间头文件和源码。模块定义可以指定特定的编译器标志，也可以针对特定架构特化。大量源码对所有架构通用；但某些文件特定于某些架构，例如架构特定的 IP 校验和例程。
+
+要向 LibBSD 添加新源文件，首先初始化 FreeBSD Git 子模块，用 LibBSD 当前基于的特定版本填充 `freebsd-org` 源码树。反向运行 `freebsd-to-rtems.py` 脚本，将 RTEMS FreeBSD 中已修改的源码移回原始 FreeBSD 源码树。编辑源码定义添加新文件，正向运行同一脚本。源码将被复制到 LibBSD 树，构建脚本也会更新。然后即可构建 LibBSD 并编辑源码使其运行。
+
+用户空间符号冲突通过维护一个头文件来管理，该头文件将符号重定义到不同的命名空间。这并不理想，但可以工作。然而，冲突的符号引发了一个常见问题：需要在任何 FreeBSD 代码出现之前包含某些头文件。必须修改标准代码来包含头文件，这占据了对原始源码修改的相当比例。在正常的 FreeBSD 内核树中添加一个空头文件会有助于此类移植工作，因为它可以包含一个 RTEMS 特定版本，其中包含符号重定义。这是内核中一个简单的修改，但对 RTEMS 项目影响很大。
+
+## FreeBSD 核心 API 与 RTEMS 映射
+
+FreeBSD 内核支持基于 RTEMS 服务实现。以下描述这些映射：
+
+1. 共享/独占锁 **SX(9)** 映射为二进制信号量。这忽略了允许共享访问的能力。
+2. 互斥 **MUTEX(9)** 映射为二进制信号量。非递归互斥锁不受支持。
+3. 读写锁 **RWLOCK(9)** 映射为二进制信号量。这忽略了允许多个读取者访问的能力。
+4. 睡眠队列 **SLEEPQUEUE(9)** 使用 FreeBSD 实现，针对 RTEMS 做了调整。
+5. 条件变量 **CONDVAR(9)** 使用 FreeBSD 实现（不支持信号）。
+6. 定时器函数 **CALLOUT(9)** 主要使用 FreeBSD 实现。轮转驱动是 RTEMS 的定时器服务器例程。
+7. 任务 **KTHREAD(9)**、**KPROC(9)** 映射为 RTEMS 任务。
+8. 设备管理 **DEVCLASS(9)**、**DEVICE(9)**、**DRIVER(9)**、**MAKE_DEV(9)** 使用 FreeBSD 实现。
+9. 总线和 DMA 访问 **BUS_SPACE(9)**、**BUS_DMA(9)** 映射为板级支持包实现。提供了内存映射线性访问的默认实现，当前 RTEMS 堆实现支持 `bus_dma` 要求的所有属性。
+10. 通用内存分配器 **UMA(9)** 使用简单的页面分配器作为后端分配器来支持。
+
+从维护角度看，RTEMS 开发者希望这些 FreeBSD 内核 API 保持稳定。这降低了 FreeBSD 更新需要对 RTEMS 的核心内核 API 实现进行大量工作的风险。
+
+## 用户空间
+
+使用 FreeBSD 的重要部分是用户空间支持。`sysctl`、`ifconfig`、`netstat` 等命令提供了重要的用户界面。支持这些类型的命令不仅使 FreeBSD 软件可用，还让 RTEMS 能利用大量现有的 FreeBSD 文档。这是一个重要但常被忽视的复用来源。
+
+将独立的用户空间程序移植到单一可执行文件是一项复杂而精细的操作。由于 RTEMS 只有单一地址空间，**fork(2)** 和 **exec(3)** 都不可用于设置新的进程上下文。C 代码的许多常见假设不能依赖。RTEMS 必须模拟 **fork(2)** 和 **exec(3)** 语义的子集。这通过构建时、链接时和运行时技术的组合实现。LibBSD 以包装函数的形式提供了一些抽象来辅助。
+
+将这类代码引入 RTEMS 时，关键是没有全局变量。可以使用一系列预处理技巧，但没有一个是优雅的。任何全局数据都需要在命令每次运行时初始化。`getopts` 的使用需要替换为 Newlib 提供的非标准可重入版本。最后，`main()` 被替换为诸如 `main_dd()` 的函数名。`exit()`、`perror()` 等少数重要函数也被替换为对 LibBSD 命令支持代码的调用。
+
+LibBSD 中对命令的通用支持只允许一次运行一个命令。虽然这不够理想，但 RTEMS 的多用户访问通常不是问题。通用支持将特定 `main()` 的调用包装在 `setjmp()` 调用中。`exit()` 调用由 `longjmp()` 调用实现。由于 RTEMS 是单进程、多线程环境，在应用中执行原生 **exit(3)** 会关闭整个应用。
+
+生成的代码在某些地方不太美观；但结果相当可观。有一个工作的网络协议栈及相关的 FreeBSD 命令，包括 `ifconfig`、`netstat`、`ping` 和 `tcpdump`——在实时操作系统上运行这个命令挺有趣。在 ARM、PowerPC 和 x86 系统上，收发两个方向都实现了完整的千兆以太网性能。
+
+## 初始化
+
+随着 LibBSD 中的代码更趋稳定并支持更多 BSP，用户开始迁移到 LibBSD，RTEMS 开发者正在处理引导时初始化。为解决这个问题，决定采用 FreeBSD 使用的标准方法。
+
+最近 Chris Johns 向源码树添加了支持 **rc.conf(5)** 的代码。这是 C 实现，因为 RTEMS 没有 POSIX sh。支持 **rc.conf(5)** 来初始化代码的好处是互联网上有大量文档和解决方案可用。这对 RTEMS 项目在文档方面是巨大的精力节省。
+
+Chris Johns 还移植了 `sysctl(8)` 命令，正在添加对读取 **sysctl.conf(5)** 的支持。随着这项支持成熟，用于管理各种内存大小配置选项的 RTEMS 特定代码将被移除。这将既改善可移植性，又缩小使用和配置 LibBSD 与 FreeBSD 的差异。
+
+## 与 FreeBSD 的未来
+
+LibBSD 目前有多好？这个问题的答案取决于视角。任何需要使用 RTOS 的 FreeBSD 用户都会对 LibBSD 的工作感到满意。他们拥有功能完备、高性能、稳定的网络协议栈，支持 IPv6、包过滤、虚拟 LAN 等，性能达到世界级。用户可以访问广泛的驱动，设备驱动通常能快速移植，改动很少。
+
+RTEMS 开发者则挑剔得多。理想状态是能不加修改地使用 FreeBSD 代码。虽然这可能永远不会实现，但确保团队朝此努力至关重要，因为这能降低维护负担。
+
+LibBSD 目前停留在 FreeBSD 9.x 版本，因为升级需要的精力超过现有资源。这使 LibBSD 落后两个主要 FreeBSD 发行版（即 FreeBSD 10 和 11）。这是由多种问题共同造成的，包括 FreeBSD 的一些变更和一些未明确标记的代码。
+
+LibBSD 目前有 1,295 个源文件，其中 797 个（即 61%）没有修改。在有修改的 498 个文件中，平均不透明度为 1.6%。不透明度是一个简化计算，将插入和删除的数量作为总代码行数（含插入和删除）的百分比。不透明度超过 10% 的文件不到 50 个。可以说这是一个相当成功的结果。
+
+还有哪些工作要做？
+
+- 升级当前代码以更好地跟踪 FreeBSD。这方面始终需要投入精力。但 RTEMS 开发者希望，通过向 FreeBSD 内核维护者说明一些简单而有帮助的修改，LibBSD 的维护负担将可控。
+- LibBSD 支持的架构数量需要增加。LibBSD 目前已知可在三种架构上工作，而 RTEMS 本身支持 18 种架构。RTEMS 是在不常可访问的架构上进行构建的良好基础参考。
+- 虽然从功能角度看并不关键，但 LibBSD 中的编译时警告目前被忽略。RTEMS 构建环境与正常 FreeBSD 内核环境差异显著。但希望看到这些警告得到处理。一如既往，许多警告无害，但有些可能预示真实 bug。
+
+FreeBSD 代码库很重要，有许多用户以原作者从未想到的方式复用源码。RTEMS 项目公开且尽一切机会承认从 FreeBSD 获取的代码。这是一项不可思议的资源，RTEMS 项目感谢它能被使用。
+
+## 参考文献
+
+[1] VMEBus Industry Trade Association（VITA），Real-Time Executive Interface Definition（RTEID）2.1 标准。RTEID 2.1 归档于 <ftp://ftp.rtems.org/pub/rtems/people/joel/RTEID-ORKID/RTEID-2.1/>。
+
+[2] Newlib C 库。<https://sourceware.org/newlib>。
+
+[3] Cygwin。<https://www.cygwin.com>。
+
+[4] G. Gilliand、J. Sherrill。《A Unique Approach to FACE conformance》。美国陆军航空 FACE 技术交流会。<http://face.intrepidinc.com/wp-content/uploads/2016/01/DDC-I-OAR-A-Unique-Approach-to-FACE-Conformance.pdf>。（2016 年 2 月）
+
+[5]《Proceedings of Technology Showcase Held in Huntsville, Alabama on 7–9 August 1990》，包括位于阿拉巴马州红石兵工厂的陆军导弹研究开发与工程中心代表关于 RTEMS 的演讲。<http://www.dtic.mil/dtic/tr/fulltext/u2/a247043.pdf>。（1990 年 8 月）
+
+[6] KA9Q。<http://www.ka9q.net/code/ka9qnos/>。
+
+[7] A. Subbarao。《POSIX—25 Years of Open Standard APIs》。<http://www.rtcmagazine.com/articles/view/103514>。
+
+[8] FACE 联盟产品，包括技术标准、一致性测试套件及其他支持产物。<https://www.opengroup.org/face>。
+
+---
+
+**Chris Johns**
+
+Chris Johns 是 RTEMS 开发者和实时软件工程师，对底层工具和调试器感兴趣。他与家人和两只狗居住在澳大利亚悉尼。chrisj@rtems.org
+
+**Joel Sherrill**
+
+Joel Sherrill 是阿拉巴马州亨茨维尔 OAR 公司的研发总监，也是 RTEMS 最初的团队成员之一。joel@rtems.org
+
+**Sebastian Huber**
+
+Sebastian Huber 是 RTEMS 开发者，目前专注于 SMP 支持。他居住在德国慕尼黑。sebh@rtems.org
+
+**Ben Gras**
+
+Ben Gras 是荷兰阿姆斯特丹 VU 大学的系统安全研究员，也是 RTEMS 贡献者。他居住在阿姆斯特丹。beng@rtems.org
+
+**Gedare Bloom**
+
+Gedare Bloom 是华盛顿特区霍华德大学计算机科学助理教授，也是 RTEMS 的维护者。gedare@rtems.org
