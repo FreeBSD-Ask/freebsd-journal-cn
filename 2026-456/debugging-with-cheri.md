@@ -54,7 +54,7 @@ Capability tag fault.
 726	bundle.dev.fd = ID0open(bundle.dev.Name, O_RDWR);
 ```
 
-从图 2 列出的代码和函数名可以看出，该函数的用途是封装 [open.2](https://man.freebsd.org/open/2) 系统调用，以 root 身份执行 open.2。open.2 的文档说明：若传入 `O_CREAT` 标志，则接受可选的第三个参数。因此，针对 ppp.8 中该 bug 的 [修复](https://reviews.freebsd.org/D57137) 方案是：仅当指定 `O_CREAT` 时才获取可变参数。解决了这个问题之后，可以回到原始 bug 的调试。
+从图 2 列出的代码和函数名可以看出，该函数的用途是封装 [open.2](https://man.freebsd.org/open/2) 系统调用，以 root 身份执行 open.2。open.2 的文档说明：若传入标志 `O_CREAT`，则接受可选的第三个参数。因此，针对 ppp.8 中该 bug 的 [修复](https://reviews.freebsd.org/D57137) 方案是：仅当指定 `O_CREAT` 时才获取可变参数。解决了这个问题之后，可以回到原始 bug 的调试。
 
 用修复后的 ppp.8 二进制文件重新运行测试程序后，迎来了图 4 所示的内核崩溃。为便于调试，我改在 FreeBSD/amd64 桌面系统上用 QEMU 测试。我通过 `-s` 命令行参数在 QEMU 中启动 GDB 服务器，并用 `kgdb-native` cheribuild 目标构建的原生 CHERI GDB 二进制文件连接到 QEMU 客户机。
 

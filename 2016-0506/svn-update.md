@@ -73,7 +73,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/297597>
 
-为帮助第三方应用判断宿主是否支持 linux 仿真，为 linux 和 linux64 模块引入了新的 `kern.features` 标志。如果 `kern.features.linux` 等于 1，则支持 32 位 Linux 二进制文件；如果 `kern.features.linux64` 设为 1，则支持 64 位二进制文件。
+为帮助第三方应用判断宿主是否支持 linux 仿真，为 linux 和 linux64 模块引入了新的标志 `kern.features`。如果 `kern.features.linux` 等于 1，则支持 32 位 Linux 二进制文件；如果 `kern.features.linux64` 设为 1，则支持 64 位二进制文件。
 
 ## head/contrib 更新
 

@@ -119,7 +119,7 @@ ic->ic_caps =
 
 这段代码位于 `if_iwx` 的 attach 方法末尾。前面的 attach 代码则负责执行驱动的初始化工作，例如识别具体的 PCIe 设备，和确定该网卡的具体 Intel Wireless 型号。
 
-`if_iwx` 驱动支持 **station 模式**（`IEEE80211_C_STA`）和 **monitor 模式**（`IEEE80211_C_MONITOR`）；如果它支持 **host AP 模式**（像 rtwn 那样），那么在能力位掩码中就会额外包含 `IEEE80211_C_HOSTAP` 标志。
+`if_iwx` 驱动支持 **station 模式**（`IEEE80211_C_STA`）和 **monitor 模式**（`IEEE80211_C_MONITOR`）；如果它支持 **host AP 模式**（像 rtwn 那样），那么在能力位掩码中就会额外包含标志 `IEEE80211_C_HOSTAP`。
 
 除了模式以外，iwx 还支持：WPA 加密（`IEEE80211_C_WPA`）、差分服务的多媒体扩展（`IEEE80211_C_WME`）、电源管理（`IEEE80211_C_PMGT`）、短时隙（`IEEE80211_C_SHSLOT`）、短前导码（`IEEE80211_C_SHPREAMBLE`）和后台扫描（`IEEE80211_C_BGSCAN`）。
 

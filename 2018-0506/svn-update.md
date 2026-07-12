@@ -62,7 +62,7 @@ NFSv4.1 RFC 规定 `OPEN_SHARE_ACCESS_WANT` 位可以设置在 OpenDowngrade 的
 
 <https://svnweb.freebsd.org/changeset/base/332510>
 
-添加 `fprintlog_rfc5424()` 以发出 RFC 5424 格式的日志条目。添加 `-O` 命令行选项以启用 RFC 5424 格式。如果我们支持 `-o rfc5424` 就好了，就像 NetBSD 上那样。不幸的是，`-o` 标志在 FreeBSD 上已用于不同目的。对于有兴趣使用此功能的人，可以通过在 **/etc/rc.conf** 中添加以下行来启用：
+添加 `fprintlog_rfc5424()` 以发出 RFC 5424 格式的日志条目。添加 `-O` 命令行选项以启用 RFC 5424 格式。如果我们支持 `-o rfc5424` 就好了，就像 NetBSD 上那样。不幸的是，标志 `-o` 在 FreeBSD 上已用于不同目的。对于有兴趣使用此功能的人，可以通过在 **/etc/rc.conf** 中添加以下行来启用：
 
 ```sh
 syslogd_flags="-s -O rfc5424"

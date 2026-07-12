@@ -26,7 +26,7 @@
 
 Chacha20 不要求消息为块大小的整数倍，因此可以在非块大小的消息上使用该加密算法，无需 AES-CBC 所需的显式填充。因此允许与转储压缩同时使用。（继续禁止 AES-CBC EKCD 与压缩同时使用。）
 
-**dumpon(8)** 增加 `-C cipher` 标志，在 chacha 和 aes-cbc 之间选择。未提供选项 `-C` 时默认为 chacha。man 页面记录了该行为。
+**dumpon(8)** 增加标志 `-C cipher`，在 chacha 和 aes-cbc 之间选择。未提供选项 `-C` 时默认为 chacha。man 页面记录了该行为。
 
 ## 添加 RFC8086 定义的 GRE-in-UDP 封装支持
 

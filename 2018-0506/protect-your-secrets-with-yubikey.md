@@ -66,7 +66,7 @@ FreeBSD 最近开始支持全盘加密，这意味着连内核也是加密的—
 $ ykpersonalize -2 -o static-flag -o append-cr
 ```
 
-借助 `append-cr` 标志，我们不必在每次使用此槽后按 Enter。在 GELI 的情况下，我们先提供密码短语，然后用 YubiKey 提供第二个因素。默认情况下，在 GELI 中输入密码时没有输出。在我们的情况下，我们会看到密码短语已提交，因为 YubiKey 提供的因素会包含尾随的 ENTER。
+借助标志 `append-cr`，我们不必在每次使用此槽后按 Enter。在 GELI 的情况下，我们先提供密码短语，然后用 YubiKey 提供第二个因素。默认情况下，在 GELI 中输入密码时没有输出。在我们的情况下，我们会看到密码短语已提交，因为 YubiKey 提供的因素会包含尾随的 ENTER。
 
 ## 与 FreeBSD 登录集成
 

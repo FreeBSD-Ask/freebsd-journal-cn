@@ -113,7 +113,7 @@ gpio_22<OUT>, caps:<IN,OUT,PU,PD,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN>
 
 尽情欣赏我们辉煌的 LED 的光辉吧。
 
-进一步，可以用 `gpioctl` 的 `-t` 标志切换 LED 状态。当你只想让 LED 闪烁时这很有用：
+进一步，可以用 `gpioctl` 的标志 `-t` 切换 LED 状态。当你只想让 LED 闪烁时这很有用：
 
 ```sh
 # gpioctl -f /dev/gpioc1 -t 21

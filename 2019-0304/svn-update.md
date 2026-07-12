@@ -48,7 +48,7 @@ vmm 的 CPUID 仿真此前向客户机呈现 Intel 拓扑信息，却禁用了 A
 
 值得注意的缺失项（留作未来工作）：
 
-- 与 `hw.spec_store_bypass_disable` 和 `hw_ssb_active` 标志的集成，目前这些是 Intel 专用的
+- 与标志 `hw.spec_store_bypass_disable` 和 `hw_ssb_active` 的集成，目前这些是 Intel 专用的
 - 与 `hw_ibrs_active` 全局标志的集成，目前这些是 Intel 专用的
 - 在 `hw_ssb_recalculate()` 中集成 SSB_NO
 - Bhyve 集成（PR 235010）

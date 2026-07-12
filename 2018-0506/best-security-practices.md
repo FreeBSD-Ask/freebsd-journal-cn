@@ -56,7 +56,7 @@ root: flunkies@mwl.io
 
 你会被提示重启。根据打补丁的内容，freebsd-update 可能会告诉你重启并再次运行 `freebsd-update install`。遵循其指示。
 
-**freebsd-update(8)** 检查还会通知你 FreeBSD 版本是否过了生命周期终止日期。这使得升级到更新版本至关重要。**freebsd-update(8)** 使更新到新版本变得容易，但它不会为你执行下载。它不知道你想升级到哪个版本。你是要运行 FreeBSD 11.5，还是跳到 12.1？这是一个只有你能做的决定。选择一个版本并用 `-r` 标志指定它。
+**freebsd-update(8)** 检查还会通知你 FreeBSD 版本是否过了生命周期终止日期。这使得升级到更新版本至关重要。**freebsd-update(8)** 使更新到新版本变得容易，但它不会为你执行下载。它不知道你想升级到哪个版本。你是要运行 FreeBSD 11.5，还是跳到 12.1？这是一个只有你能做的决定。选择一个版本并用标志 `-r` 指定它。
 
 ```sh
 # freebsd-update upgrade -r 12.1-RELEASE

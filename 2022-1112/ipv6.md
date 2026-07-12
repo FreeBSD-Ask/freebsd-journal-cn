@@ -38,7 +38,7 @@ ifconfig_vlan100_alias1="inet6 fe80::ffff:2:35/64"
 
 请记住，当指定 `ifconfig_IF_ipv6` 时，会发生以下情况：
 
-- 移除 `IFDISABLED` 标志，且
+- 移除标志 `IFDISABLED`，且
 - 基于接口的 L2 地址自动配置 LLA。
 
 更准确地说，所有支持 IPv6 的接口在内核级别默认具有 `AUTO_LINKLOCAL` 标志，并且在接口变为“up”时会自动配置 LLA。**rc.d(8)** 脚本会在没有指定 `ifconfig_IF_ipv6` 时添加 `IFDISABLED` 标志，以防止接口配置 LLA。这是为了那些只想使用 IPv4 的用户。只要没有 `ifconfig_IF_ipv6` 这行，接口就不会获取 IPv6 地址。自动配置的 LLA 是 L33 地址，因此同一网络上的任何人都可以通过 IPv6 TCP/UDP 尝试访问你的主机。因此，LLA 不是无条件配置的。
