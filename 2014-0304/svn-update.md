@@ -33,7 +33,7 @@ stable/9 基本系统中的 BIND DNS 服务器已更新至 9.9.5 版本。此次
 
 stable/9@r263038（<http://svnweb.freebsd.org/base?view=revision&revision=r263038>）
 
-最初在 10.0-RELEASE 中提供的 **pkg(8)** 引导签名验证代码已合并到 stable/9。有了这一变更，当管理员发出 `pkg bootstrap` 命令时，下载的 **pkg(8)** 二进制发行版将对照基本系统中直接包含的可用密钥验证，这为那些不希望构建 `ports-mgmt/pkg` port 来安装 **pkg(8)** 软件包管理工具的管理员提供了巨大的安全益处。
+最初在 10.0-RELEASE 中提供的 **pkg(8)** 引导签名验证代码已合并到 stable/9。有了这一变更，当管理员发出 `pkg bootstrap` 命令时，下载的 **pkg(8)** 二进制发行版将对照基本系统中直接包含的可用密钥验证，这为那些不希望构建 `ports-mgmt/pkg` Port 来安装 **pkg(8)** 软件包管理工具的管理员提供了巨大的安全益处。
 
 ## Radeon KMS 驱动支持
 
