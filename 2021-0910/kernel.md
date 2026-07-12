@@ -187,7 +187,7 @@ dummy@entry=0x0 <nullfs_init>)
 # kyua -v test_suites.FreeBSD.allow_sysctl_side_effects=1 test
 ```
 
-`allow_sysctl_side_effects` 标志启用了一些依赖于修改全局 sysctl 值的测试，在专用虚拟机中这是完全可以接受的。如果某些测试依赖于第三方端口（如 Python），则它们会被跳过。运行完测试后，可以使用以下命令查看结果总结（包括跳过的测试）：
+标志 `allow_sysctl_side_effects` 启用了一些依赖于修改全局 sysctl 值的测试，在专用虚拟机中这是完全可以接受的。如果某些测试依赖于第三方端口（如 Python），则它们会被跳过。运行完测试后，可以使用以下命令查看结果总结（包括跳过的测试）：
 
 ```sh
 # kyua report

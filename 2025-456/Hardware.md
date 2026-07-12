@@ -156,7 +156,7 @@ axi_mm_ssd_proc0(SYSCTL_HANDLER_ARGS)
 }
 ```
 
-这段代码使用了我们在 `attach` 函数中创建的锁，并通过前面提到的 `RD4` 宏读取第一个数码管对应的设备寄存器。考虑到我这里只做单次读写操作，不确定是否真的需要加锁，但我用锁是为了确保多个竞争进程在设置寄存器时不会互相干扰。也许我应该把整个过程都包裹在锁中，但我是内核编程新手，不确定哪些函数在持锁状态下是安全调用的（如果你知道，欢迎告诉我）。`sysctl_handle_int` 会读取旧值、传回用户空间，并返回新的值写入寄存器，写操作由 `WR4` 完成。John Baldwin 写过一篇关于 sysctl 系统的优秀 [文章](https://freebsdfoundation.org/wp-content/uploads/2014/01/Implementing-System-Control-Nodes-sysctl.pdf)，如果你想了解 sysctl 的工作原理，推荐阅读。
+这段代码使用了我们在 `attach` 函数中创建的锁，并通过前面提到的宏 `RD4` 读取第一个数码管对应的设备寄存器。考虑到我这里只做单次读写操作，不确定是否真的需要加锁，但我用锁是为了确保多个竞争进程在设置寄存器时不会互相干扰。也许我应该把整个过程都包裹在锁中，但我是内核编程新手，不确定哪些函数在持锁状态下是安全调用的（如果你知道，欢迎告诉我）。`sysctl_handle_int` 会读取旧值、传回用户空间，并返回新的值写入寄存器，写操作由 `WR4` 完成。John Baldwin 写过一篇关于 sysctl 系统的优秀 [文章](https://freebsdfoundation.org/wp-content/uploads/2014/01/Implementing-System-Control-Nodes-sysctl.pdf)，如果你想了解 sysctl 的工作原理，推荐阅读。
 
 现在我们有了能探测、附加和设置两个硬件寄存器的驱动，只需构建包含该驱动的 KLD，构建 FDT overlay，安装到 **/boot/dtb/overlays**，并像上一篇文章中那样把它接入 `loader.rc` 脚本。重启系统，启动后先加载 FPGA 的 bitstream，再加载 KLD，`dmesg` 应该会显示探测成功的信息。
 

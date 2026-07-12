@@ -321,7 +321,7 @@ wpa_passphrase="superpassword"
 # ifconfig wlan1 inet 192.168.2.1/24 up
 ```
 
-动态地址分配需要安装 dhcpd Port 并创建配置文件。可以在 **dhcpd.conf(5)** 手册页中找到最简配置示例，示例如下：
+动态地址分配需要安装 Port dhcpd 并创建配置文件。可以在 **dhcpd.conf(5)** 手册页中找到最简配置示例，示例如下：
 
 ```ini
 /usr/local/etc/dhcpd.conf:

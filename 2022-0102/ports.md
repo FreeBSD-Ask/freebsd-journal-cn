@@ -64,7 +64,7 @@ $ find /usr/local/share/icons -name *xpdf*
 $ git clone https://git.FreeBSD.org/ports.git ~/ports
 ```
 
-下面查看 Xpdf 的 port。如何在所有 Ports 中找到它呢？有几种不同的方法。
+下面查看 Xpdf 的 Port。如何在所有 Ports 中找到它呢？有几种不同的方法。
 
 最简单的方法是使用 **pkg(8)** 来查询这个软件包的来源。
 
@@ -77,7 +77,7 @@ graphics/xpdf4                 Display PDF files and convert them to other forma
 print/xpdfopen                 Command line utility for PDF viewers
 ```
 
-**pkg-search(8)** 会在软件包仓库目录中搜索与“xpdf”匹配的软件包名称。选项 `-o` 告诉 **pkg-search(8)** 在输出中显示软件包的来源。来源是指 Ports 树中 port 目录的官方名称，这正是我们要找的内容。
+**pkg-search(8)** 会在软件包仓库目录中搜索与“xpdf”匹配的软件包名称。选项 `-o` 告诉 **pkg-search(8)** 在输出中显示软件包的来源。来源是指 Ports 树中 Port 目录的官方名称，这正是我们要找的内容。
 
 >**技巧**
 >
@@ -88,7 +88,7 @@ $ pkg which /usr/local/share/applications/xpdf.desktop
 /usr/local/share/applications/xpdf.desktop was installed by package xpdf-4.03,1
 ```
 
-好的，我们已经知道 Xpdf 包的来源是 `graphics/xpdf`。接下来，看看该 port 目录中有什么内容：
+好的，我们已经知道 Xpdf 包的来源是 `graphics/xpdf`。接下来，看看该 Port 目录中有什么内容：
 
 ```sh
 $ cd ~/ports/graphics/xpdf
@@ -96,7 +96,7 @@ $ ls
 Makefile
 ```
 
-啊哈！对于那些刚接触 Ports 的读者来说：我们这里看到的并不像一个典型的 port。通常，你会期望看到其他文件，比如 `distinfo`，其中包含源代码归档的校验和；`pkg-descr`，它包含 port 的详细描述；以及 `pkg-plist`，列出了这个 port 安装的所有文件。看看 `Makefile` 里面有什么内容：
+啊哈！对于那些刚接触 Ports 的读者来说：我们这里看到的并不像一个典型的 Port。通常，你会期望看到其他文件，比如 `distinfo`，其中包含源代码归档的校验和；`pkg-descr`，它包含 Port 的详细描述；以及 `pkg-plist`，列出了这个 Port 安装的所有文件。看看 `Makefile` 里面有什么内容：
 
 ```sh
 $ cat -n Makefile
@@ -108,7 +108,7 @@ $ cat -n Makefile
      6  .include "${MASTERDIR}/Makefile"
 ```
 
-看到第 4 行的变量 `MASTERDIR` 了吗？这意味着 `graphics/xpdf` 是一个主 port。当这个 port 被构建时，实际上是 `graphics/xpdf4` 在驱动整个过程。（顺便说一下，根据第 2 行，Xpdf 版本 4 显然是默认版本）。继续深入探索！
+看到第 4 行的变量 `MASTERDIR` 了吗？这意味着 `graphics/xpdf` 是一个主 Port。当这个 Port 被构建时，实际上是 `graphics/xpdf4` 在驱动整个过程。（顺便说一下，根据第 2 行，Xpdf 版本 4 显然是默认版本）。继续深入探索！
 
 ```sh
 $ cd ~/ports/graphics/xpdf4
@@ -122,7 +122,7 @@ distinfo    files       Makefile    pkg-descr   pkg-message pkg-plist
 make extract
 ```
 
-所有的源代码和构建产物都位于 port 目录中的 `./work` 目录下。例如，Xpdf 的源代码会被解压到 `work/xpdf-4.03` 目录中。
+所有的源代码和构建产物都位于 Port 目录中的 `./work` 目录下。例如，Xpdf 的源代码会被解压到 `work/xpdf-4.03` 目录中。
 
 >**技巧**
 >
@@ -157,7 +157,7 @@ work/xpdf-4.03/xpdf-qt/indicator-icon5.svg
 work/xpdf-4.03/xpdf-qt/indicator-icon2.svg
 ```
 
-太棒了！`xpdf-icon.ico` 和 `xpdf-icon.svg` 看起来很有希望。这些就是我们需要安装到 **/usr/local/share/icons** 的文件。为了实现这一点，我们需要编辑 port 的 Makefile，并扩展安装目标。这个 port 已经有了 `post-install` 目标，因此只需在其中再加四行。我们将使用 `${INSTALL_DATA}` 来安装图标文件，并使用 `${MKDIR}` 来创建目录。这些变量是 FreeBSD Ports 框架中定义的众多包装变量的例子。如果你想了解更多这些变量的信息，可以查看例如 `make -V INSTALL_DATA` 的输出。到目前为止，补丁应该如下所示：
+太棒了！`xpdf-icon.ico` 和 `xpdf-icon.svg` 看起来很有希望。这些就是我们需要安装到 **/usr/local/share/icons** 的文件。为了实现这一点，我们需要编辑 Port 的 Makefile，并扩展安装目标。这个 Port 已经有了 `post-install` 目标，因此只需在其中再加四行。我们将使用 `${INSTALL_DATA}` 来安装图标文件，并使用 `${MKDIR}` 来创建目录。这些变量是 FreeBSD Ports 框架中定义的众多包装变量的例子。如果你想了解更多这些变量的信息，可以查看例如 `make -V INSTALL_DATA` 的输出。到目前为止，补丁应该如下所示：
 
 ```c
 diff --git a/graphics/xpdf4/Makefile b/graphics/xpdf4/Makefile
@@ -195,7 +195,7 @@ index e6cd3e15dd75..7eee2ae85bc6 100644
 
 列表中的路径是相对于 `${PREFIX}`（默认情况下是 **/usr/local**）的。行首的 `%%GUI%%` 表示这些文件只有在启用 GUI 选项时才会被安装（显然，有些人喜欢将 Xpdf 软件设置为无头模式）。
 
-我们需要处理的最后一件事是增加 port 的修订号。一旦更改进入 Ports 树，port 构建者必须知道重新构建带有我们修改的包。增加修订号最简单的方法是使用 `portedit`（它是 `portfmt` 包的一部分）：
+我们需要处理的最后一件事是增加 Port 的修订号。一旦更改进入 Ports 树，Port 构建者必须知道重新构建带有我们修改的包。增加修订号最简单的方法是使用 `portedit`（它是 `portfmt` 包的一部分）：
 
 ```sh
 $ portedit bump-revision -i Makefile
@@ -239,7 +239,7 @@ Poudriere 的设置可以在 FreeBSD Porter’s Handbook 的“测试 Port”章
 
 ## 提交补丁
 
-FreeBSD Bugzilla 是贡献者上传补丁并建议更改的服务：[https://bugs.freebsd.org](https://bugs.freebsd.org)。整个过程相当简单。首先，创建账户并登录。然后通过点击顶部导航栏中的“New”来打开一个新的问题报告（PR）。记得在摘要前加上“graphics/xpdf4”作为前缀，这样 port 的维护者就会收到关于 PR 的通知（更多撰写好 PR 的建议可以参考这里：[https://wiki.freebsd.org/Bugzilla/DosAndDonts](https://wiki.freebsd.org/Bugzilla/DosAndDonts)）。有时候，除了在 Bugzilla 上打开 PR，人们还会将补丁提交到 Phabricator。这项服务有更好的界面用于代码审查。
+FreeBSD Bugzilla 是贡献者上传补丁并建议更改的服务：[https://bugs.freebsd.org](https://bugs.freebsd.org)。整个过程相当简单。首先，创建账户并登录。然后通过点击顶部导航栏中的“New”来打开一个新的问题报告（PR）。记得在摘要前加上“graphics/xpdf4”作为前缀，这样 Port 的维护者就会收到关于 PR 的通知（更多撰写好 PR 的建议可以参考这里：[https://wiki.freebsd.org/Bugzilla/DosAndDonts](https://wiki.freebsd.org/Bugzilla/DosAndDonts)）。有时候，除了在 Bugzilla 上打开 PR，人们还会将补丁提交到 Phabricator。这项服务有更好的界面用于代码审查。
 
 哦，顺便说一下，Xpdf 图标缺失的问题确实是基于真实的故事。我已经在 Bugzilla 上报告了这个 Xpdf 的问题（[https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=261376](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=261376)），并将我的补丁发布到 Phabricator（[https://reviews.freebsd.org/D33984](https://reviews.freebsd.org/D33984)）。Xpdf 的维护者审查了我的补丁并批准了提交更改。由于我是 Ports 提交者，我自己提交了这个更改。
 

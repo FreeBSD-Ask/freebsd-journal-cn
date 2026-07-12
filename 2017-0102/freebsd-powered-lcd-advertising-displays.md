@@ -89,7 +89,7 @@
 
 ### 使用 wxWidgets
 
-wxWidgets [14] 已被收录在 FreeBSD Ports 中，默认是基于 GTK 2 编译的，但 wxWidgets 也可以直接与 X11 配合工作。基于 X11 的 wxWidgets Port 称为 wxX11。尽管目前 wxX11 仍不完整且存在一些缺陷，但它已经能够很好地支持图片文件处理以及基本的子窗口管理，这些功能正是播放广告内容所必需的。
+wxWidgets [14] 已被收录在 FreeBSD Ports 中，默认是基于 GTK 2 编译的，但 wxWidgets 也可以直接与 X11 配合工作。基于 X11 的 Port wxWidgets 称为 wxX11。尽管目前 wxX11 仍不完整且存在一些缺陷，但它已经能够很好地支持图片文件处理以及基本的子窗口管理，这些功能正是播放广告内容所必需的。
 
 在我的产品中，wxWidgets 2.8.x 可以配置为：
 

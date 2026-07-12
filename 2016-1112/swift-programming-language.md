@@ -31,7 +31,7 @@ Swift 使用定制版的 llvm、clang、lldb、cmark、llbuild，因此构建要
 
 ## 缺什么？
 
-Swift 既可解释也可编译，但目前 FreeBSD 上只有解释器可用。撰文时，lang/swift Port 为 2.2.1 版，而 Swift 最新版本为 3.0.1。更新 Port 与启用编译器的工作正在进行。Swift 教程往往围绕编写 iOS 应用展开，但这些应用所需的库属于 iOS，目前只在 iOS 上可用。因此 FreeBSD 上只有 Swift 核心语言可用。
+Swift 既可解释也可编译，但目前 FreeBSD 上只有解释器可用。撰文时，Port lang/swift 为 2.2.1 版，而 Swift 最新版本为 3.0.1。更新 Port 与启用编译器的工作正在进行。Swift 教程往往围绕编写 iOS 应用展开，但这些应用所需的库属于 iOS，目前只在 iOS 上可用。因此 FreeBSD 上只有 Swift 核心语言可用。
 
 ## Hello, World!
 

@@ -209,7 +209,7 @@
 
 * [基金会来信](2023-0304/letter-from-the-foundation.md)
 * [活动日历](2023-0304/events-calendar.md)
-* [CheriBSD port 和软件包](2023-0304/CheriBSD.md)
+* [CheriBSD Port 和软件包](2023-0304/CheriBSD.md)
 * [让我们来试试 ChatGPT](2023-0304/GPT.md)
 * [GPU 直通](2023-0304/GPU.md)
 * [会议报告：SCaLE20X](2023-0304/conference-report.md)

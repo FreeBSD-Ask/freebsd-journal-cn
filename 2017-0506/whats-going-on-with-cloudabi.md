@@ -56,7 +56,7 @@ void program_main(const argdata_t *ad) {
 }
 ```
 
-你可能立即注意到，CloudABI 程序通过名为 `program_main()` 的函数启动，而非使用 C 的标准 `main()` 函数。`program_main()` 函数摒弃了 C 的字符串命令行参数，替换为类似 YAML/JSON 的树状结构，称为 Argdata。除了存储布尔值、整数和字符串等值外，Argdata 还可附加文件描述符。这是在启动时注入依赖项的机制。此 Web 服务器期望 Argdata 是一个映射（字典），同时包含用于接受传入请求的套接字（`http_socket`）和 HTML 响应字符串（`html_message`）。以下 shell 命令展示了如何构建和执行此 Web 服务器。Web 服务器可使用 `devel/cloudabi-toolchain` Port 提供的交叉编译器编译。构建完成后，可使用 `sysutils/cloudabi-utils` Port 提供的 `cloudabi-run` 启动。`cloudabi-run` 实用程序从标准输入读取 YAML 文件并将其转换为 Argdata 树，传递给 `program_main()`。YAML 文件可包含 `!fd`、`!file` 和 `!socket` 等标签。这些标签是 `cloudabi-run` 的指令，用于在 Argdata 树的相应位置插入文件描述符。只有 Argdata 引用的文件描述符最终会进入 CloudABI 进程。
+你可能立即注意到，CloudABI 程序通过名为 `program_main()` 的函数启动，而非使用 C 的标准 `main()` 函数。`program_main()` 函数摒弃了 C 的字符串命令行参数，替换为类似 YAML/JSON 的树状结构，称为 Argdata。除了存储布尔值、整数和字符串等值外，Argdata 还可附加文件描述符。这是在启动时注入依赖项的机制。此 Web 服务器期望 Argdata 是一个映射（字典），同时包含用于接受传入请求的套接字（`http_socket`）和 HTML 响应字符串（`html_message`）。以下 shell 命令展示了如何构建和执行此 Web 服务器。Web 服务器可使用 Port `devel/cloudabi-toolchain` 提供的交叉编译器编译。构建完成后，可使用 Port `sysutils/cloudabi-utils` 提供的 `cloudabi-run` 启动。`cloudabi-run` 实用程序从标准输入读取 YAML 文件并将其转换为 Argdata 树，传递给 `program_main()`。YAML 文件可包含 `!fd`、`!file` 和 `!socket` 等标签。这些标签是 `cloudabi-run` 的指令，用于在 Argdata 树的相应位置插入文件描述符。只有 Argdata 引用的文件描述符最终会进入 CloudABI 进程。
 
 ```sh
 $ x86_64-unknown-cloudabi-cc -o webserver webserver.c
@@ -78,9 +78,9 @@ $ curl http://localhost:8080/
 
 ## 硬件架构
 
-CloudABI 2015 年发布时，我们仅支持为 x86-64 创建可执行文件。由于我认为 CloudABI 也是在嵌入式系统和设备上进行软件沙箱化的有用工具，我们在上一篇 CloudABI 文章发表前后将 CloudABI 移植到 ARM64。2016 年 8 月，我们将 CloudABI 移植到这些架构的 32 位等价物（i686 和 ARMv6）。将 CloudABI 移植到这些系统的一个有趣方面是获取可用的工具链。当 CloudABI 仅支持 x86-64 时，我们已经使用 Clang 作为 C/C++ 编译器。Clang 的好处在于，单个安装可轻松用于针对多种架构。它可在启动时通过检查 `argv[0]` 自动推断要使用的架构。这意味着我们只需扩展现有的 `devel/cloudabi-toolchain` Port，为我们支持的每种架构安装指向 Clang 的额外符号链接。同时，我们仍使用 GNU Binutils 链接可执行文件。Binutils 的缺点是一个安装只能用于针对单一硬件架构。更糟的是，Binutils 代码库对每对操作系统和硬件架构都需要大量修改才能支持。大约在我们开始支持更多架构时，LLVM 项目在其自己的链接器 LLD 上取得了很大进展。LLD 的出色之处在于它基本上不含任何操作系统特定的代码。它只需使用在各种情况下都能良好工作的合理默认值，即可为许多基于 ELF 的操作系统生成二进制文件。与 GNU Binutils 相比，它还有更有利的许可证（MIT 对 GPLv3）。我们开始尝试 LLD 时，注意到仍有一些阻碍使我们无法立即使用它。链接过程中的一个重要步骤是链接器
+CloudABI 2015 年发布时，我们仅支持为 x86-64 创建可执行文件。由于我认为 CloudABI 也是在嵌入式系统和设备上进行软件沙箱化的有用工具，我们在上一篇 CloudABI 文章发表前后将 CloudABI 移植到 ARM64。2016 年 8 月，我们将 CloudABI 移植到这些架构的 32 位等价物（i686 和 ARMv6）。将 CloudABI 移植到这些系统的一个有趣方面是获取可用的工具链。当 CloudABI 仅支持 x86-64 时，我们已经使用 Clang 作为 C/C++ 编译器。Clang 的好处在于，单个安装可轻松用于针对多种架构。它可在启动时通过检查 `argv[0]` 自动推断要使用的架构。这意味着我们只需扩展现有的 Port `devel/cloudabi-toolchain`，为我们支持的每种架构安装指向 Clang 的额外符号链接。同时，我们仍使用 GNU Binutils 链接可执行文件。Binutils 的缺点是一个安装只能用于针对单一硬件架构。更糟的是，Binutils 代码库对每对操作系统和硬件架构都需要大量修改才能支持。大约在我们开始支持更多架构时，LLVM 项目在其自己的链接器 LLD 上取得了很大进展。LLD 的出色之处在于它基本上不含任何操作系统特定的代码。它只需使用在各种情况下都能良好工作的合理默认值，即可为许多基于 ELF 的操作系统生成二进制文件。与 GNU Binutils 相比，它还有更有利的许可证（MIT 对 GPLv3）。我们开始尝试 LLD 时，注意到仍有一些阻碍使我们无法立即使用它。链接过程中的一个重要步骤是链接器
 
-应用重定位：存储在目标文件中的一系列规则，描述机器代码在链接到程序或库时需要如何调整以指向正确的变量和函数地址。我们观察到 LLD 错误地应用了若干类型的重定位，导致生成的可执行文件几乎立即访问无效内存地址。这是因为 LLD 开发者主要专注于让动态链接的可执行文件工作，而 CloudABI 使用静态链接。在提交 bug 报告和向上游发送各种补丁后，我们设法让 LLD 至少在 x86-64、i686 和 ARM64 上可靠工作。要获得完整的 ARMv6 支持，我们不得不等待 LLD 4.0 发布，因为 ARMv6 使用 LLD 尚不支持的 C++ 异常元数据自定义格式（EHABI）。LLD 对我们来说工作得如此之好，以至于有一次我们决定完全停止使用 GNU Binutils。与谷歌的 Fuchsia 操作系统一起，CloudABI 现在是完全切换到 LLD 的系统之一。`devel/cloudabi-toolchain` Port 现在安装基于 LLVM 4.0 的工具链，设置 `*-unknown-cloudabi-ld` 指向 LLD 的符号链接。
+应用重定位：存储在目标文件中的一系列规则，描述机器代码在链接到程序或库时需要如何调整以指向正确的变量和函数地址。我们观察到 LLD 错误地应用了若干类型的重定位，导致生成的可执行文件几乎立即访问无效内存地址。这是因为 LLD 开发者主要专注于让动态链接的可执行文件工作，而 CloudABI 使用静态链接。在提交 bug 报告和向上游发送各种补丁后，我们设法让 LLD 至少在 x86-64、i686 和 ARM64 上可靠工作。要获得完整的 ARMv6 支持，我们不得不等待 LLD 4.0 发布，因为 ARMv6 使用 LLD 尚不支持的 C++ 异常元数据自定义格式（EHABI）。LLD 对我们来说工作得如此之好，以至于有一次我们决定完全停止使用 GNU Binutils。与谷歌的 Fuchsia 操作系统一起，CloudABI 现在是完全切换到 LLD 的系统之一。Port `devel/cloudabi-toolchain` 现在安装基于 LLVM 4.0 的工具链，设置 `*-unknown-cloudabi-ld` 指向 LLD 的符号链接。
 
 ## 操作系统和模拟器
 

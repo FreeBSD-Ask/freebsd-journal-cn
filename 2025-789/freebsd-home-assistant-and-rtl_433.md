@@ -275,7 +275,7 @@ output json:/var/log/rtl_433.log
 output log
 ```
 
-输出被发送到可供 Home Assistant 访问的 MQTT broker，在我的场景中，它运行在同一台虚拟机中。`retain` 标志被设为 `false`，因为我不希望用瞬时设备的数据弄乱 MQTT 主题，并且可以接受在 Home Assistant 中重新发现设备的速度慢一些。
+输出被发送到可供 Home Assistant 访问的 MQTT broker，在我的场景中，它运行在同一台虚拟机中。标志 `retain` 被设为 `false`，因为我不希望用瞬时设备的数据弄乱 MQTT 主题，并且可以接受在 Home Assistant 中重新发现设备的速度慢一些。
 
 JSON 输出也会写入 **/var/log** 中的 JSON 文件。
 

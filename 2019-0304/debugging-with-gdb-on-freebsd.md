@@ -4,7 +4,7 @@
 
 大多数调试器都支持一组基础功能，比如查看全局和局部变量的值、生成栈回溯、通过断点中断进程执行、通过单步执行控制进程或线程的执行。本文重点关注现代版本的 GNU 调试器（gdb）在 FreeBSD 上支持的其他一些功能。其中部分功能仅 gdb 的最新版本（撰写本文时为 8.3）支持，另一些功能在旧版本中也可用。
 
-要开始使用，先安装较新版本的 gdb。最简单的办法是运行 `pkg install gdb` 安装预编译软件包。也可以通过 devel/gdb port（<https://www.freshports.org/devel/gdb>）从源码构建 gdb。
+要开始使用，先安装较新版本的 gdb。最简单的办法是运行 `pkg install gdb` 安装预编译软件包。也可以通过 Port devel/gdb（<https://www.freshports.org/devel/gdb>）从源码构建 gdb。
 
 ## info proc 命令
 
@@ -290,7 +290,7 @@ pretty printer 会覆盖 `print` 命令对对象的默认显示。每个 pretty 
 
 xmethod 允许 Python 脚本模拟内联 C++ 类方法的效果。在求值表达式时，GDB 会在需要时调用被调试程序中定义的函数来求值，包括调用 C++ 运算符重载函数。然而，如果方法被内联（模板类中很常见），则没有供 GDB 调用的独立函数符号。结果是，在表达式中尝试使用这些函数或运算符会失败。xmethod 可以弥合这一差距。例如，xmethod 可以为 `std::vector` 对象提供 `operator[]`，让用户能以原始 C++ 源代码中相同的语法直接索引 vector。
 
-FreeBSD 使用的 LLVM C++ 库并未提供一组为常用 C++ STL 类提供 pretty printer 和 xmethod 的 Python 脚本。不过，在 <https://github.com/bsdjhb/libcxx-gdbpy> 可以找到一组初始脚本。撰写本文时，这些脚本对 `std::string`、`std::unique_ptr` 和 `std::vector` 提供了有限的支持。示例 9 和示例 10 对比了未安装和安装这些脚本时检查 `std::vector<int>` 的效果。这些 Python 脚本在 devel/gdb port 的 8.2.1_1 及更新版本中默认包含。
+FreeBSD 使用的 LLVM C++ 库并未提供一组为常用 C++ STL 类提供 pretty printer 和 xmethod 的 Python 脚本。不过，在 <https://github.com/bsdjhb/libcxx-gdbpy> 可以找到一组初始脚本。撰写本文时，这些脚本对 `std::string`、`std::unique_ptr` 和 `std::vector` 提供了有限的支持。示例 9 和示例 10 对比了未安装和安装这些脚本时检查 `std::vector<int>` 的效果。这些 Python 脚本在 Port devel/gdb 的 8.2.1_1 及更新版本中默认包含。
 
 示例 9：未使用 Python 脚本的 std::vector
 

@@ -112,7 +112,7 @@ test "$(comm -3 /tmp/usb.db /var/db/hw/usb.db)"
 exit 0
 ```
 
-如果产品上安装了 TPM 芯片或选择了 UEFI 安全启动，你的 BIOS 已经被检查过，因此无需再次检查。`sysutils/dmidecode` Port 提供了检查 BIOS 或主板供应商和版本的选项（如果存在 SMBIOS 或 DMI 入口点）。如果 **dmidecode(8)** 不适用，你应该找到一种读取此信息的方法，长远来看是值得的。机器的处理器也值得检查，**sysctl(8)** 足以胜任。通过检查 `hw.model` 节点，可以返回 CPU 型号，使产品能够检查自身的处理器，并在处理器未被更换时启动。
+如果产品上安装了 TPM 芯片或选择了 UEFI 安全启动，你的 BIOS 已经被检查过，因此无需再次检查。Port `sysutils/dmidecode` 提供了检查 BIOS 或主板供应商和版本的选项（如果存在 SMBIOS 或 DMI 入口点）。如果 **dmidecode(8)** 不适用，你应该找到一种读取此信息的方法，长远来看是值得的。机器的处理器也值得检查，**sysctl(8)** 足以胜任。通过检查 `hw.model` 节点，可以返回 CPU 型号，使产品能够检查自身的处理器，并在处理器未被更换时启动。
 
 ## 接口
 

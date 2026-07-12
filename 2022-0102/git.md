@@ -125,7 +125,7 @@ git config pull.ff only
 
 ## 创建本地分支
 
-现在我们可以保持本地仓库副本与 **git.freebsd.org/ports.git** 上的仓库同步了，开始修改。Git 使用本地分支时真正展现了它的优势，本地分支提供了干净且高效的方式来组织进行中的工作。首先，创建新的特性分支来处理新的 Nyxt port。
+现在我们可以保持本地仓库副本与 **git.freebsd.org/ports.git** 上的仓库同步了，开始修改。Git 使用本地分支时真正展现了它的优势，本地分支提供了干净且高效的方式来组织进行中的工作。首先，创建新的特性分支来处理新的 Port Nyxt。
 
 ```sh
 git branch nyxt

@@ -271,7 +271,7 @@ Content-Type : text/plain; charset=utf-8
 freebsd otutahi
 ```
 
-更复杂的示例可在 port 的 [webhook.yaml 示例](https://cgit.freebsd.org/ports/tree/www/webhook/files/webhook.yaml) 或 [详细文档](https://github.com/adnanh/webhook/tree/master/docs) 中找到。
+更复杂的示例可在 Port 的 [webhook.yaml 示例](https://cgit.freebsd.org/ports/tree/www/webhook/files/webhook.yaml) 或 [详细文档](https://github.com/adnanh/webhook/tree/master/docs) 中找到。
 
 ## 保护 Webhook 内容
 

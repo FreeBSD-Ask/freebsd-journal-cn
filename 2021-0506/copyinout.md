@@ -225,7 +225,7 @@ __uaddr_array(len) int * __capability array;
 
 **清单** 11. 类型 foo 在 copyinout 变更前后的定义。
 
-为了为不同的 ABI 提供单独的 copy 函数，copyinout 框架实现了 copyinout 表，该表包含特定类型的 copyin() 和 copyout() 函数指针（见 **清单** 12），作为 sysentvec 结构的一部分（见 **清单** 13，与 **清单** 2 对比）。每个 ABI 分配自己的 copyinout 表，并通过 SYSINIT 框架使用 Linker Set 技术动态填充条目 [10]。这些 ABI 的 SYSINIT() 和 SYSUNINIT() 宏调用与生成的 copy 函数一起由代码生成工具生成。这允许生成用于内核模块中的 copy 函数，并在模块加载和卸载时注册和注销。通过 copyinout 表，copyinout API 可以定义为内核中的宏，这些宏会强制转换指针并调用与当前正在运行的线程 ABI 对应的 copyinout 表中的函数（见 **清单** 14）。特定函数的 copyinout 表条目索引是一个全局变量，在 SYSINIT() 调用过程中初始化。例如，类型 foo 及其生成的函数具有关联变量 `copyinout_foo_idx`，该变量可以通过 `COPYIN_CALL()` 和 `COPYOUT_CALL()` 宏间接使用，以确定函数地址并进行函数调用（见 **清单** 15）。
+为了为不同的 ABI 提供单独的 copy 函数，copyinout 框架实现了 copyinout 表，该表包含特定类型的 copyin() 和 copyout() 函数指针（见 **清单** 12），作为 sysentvec 结构的一部分（见 **清单** 13，与 **清单** 2 对比）。每个 ABI 分配自己的 copyinout 表，并通过 SYSINIT 框架使用 Linker Set 技术动态填充条目 [10]。这些 ABI 的 SYSINIT() 和 SYSUNINIT() 宏调用与生成的 copy 函数一起由代码生成工具生成。这允许生成用于内核模块中的 copy 函数，并在模块加载和卸载时注册和注销。通过 copyinout 表，copyinout API 可以定义为内核中的宏，这些宏会强制转换指针并调用与当前正在运行的线程 ABI 对应的 copyinout 表中的函数（见 **清单** 14）。特定函数的 copyinout 表条目索引是一个全局变量，在 SYSINIT() 调用过程中初始化。例如，类型 foo 及其生成的函数具有关联变量 `copyinout_foo_idx`，该变量可以通过宏 `COPYIN_CALL()` 和 `COPYOUT_CALL()` 间接使用，以确定函数地址并进行函数调用（见 **清单** 15）。
 
 ```c
 typedef int copyin_t(const void * __capability uaddr, void * __capability kaddr);

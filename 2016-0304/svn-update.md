@@ -22,7 +22,7 @@ IBM POWER 架构通过 VMX 和 VSX 指令集提供向量和向量标量运算，
 
 ## HPN 已从 OpenSSH 中移除
 
-HPN 是来自匹兹堡超级计算中心的一组补丁，旨在移除 OpenSSH 中的若干瓶颈，以改进网络性能，尤其是在长距离和高带宽网络链路上。遗憾的是，这些补丁的实用性有限，而在树中维护它们又需要相当大的工作量。因此，它们连同 None 密码一起被移除。虽然大多数用户不会受此变更影响，但受影响的用户应改用 openssh-portable port，后者仍提供这两类补丁并默认启用 HPN。（<https://svnweb.freebsd.org/changeset/base/294325>）
+HPN 是来自匹兹堡超级计算中心的一组补丁，旨在移除 OpenSSH 中的若干瓶颈，以改进网络性能，尤其是在长距离和高带宽网络链路上。遗憾的是，这些补丁的实用性有限，而在树中维护它们又需要相当大的工作量。因此，它们连同 None 密码一起被移除。虽然大多数用户不会受此变更影响，但受影响的用户应改用 port openssh-portable，后者仍提供这两类补丁并默认启用 HPN。（<https://svnweb.freebsd.org/changeset/base/294325>）
 
 ## OpenSSL 已更新至 1.0.2f 版
 

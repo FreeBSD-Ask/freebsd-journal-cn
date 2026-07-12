@@ -118,7 +118,7 @@ Device(AHC0) {
 2. [ACPI](https://cgit.freebsd.org/src/tree/sys/dev/sdhci/sdhci_xenon_acpi.c) 适配代码
 3. [simplebus](https://cgit.freebsd.org/src/tree/sys/dev/sdhci/sdhci_xenon_fdt.c) 适配代码（适用于 **Device Tree**）
 
-除了 `DRIVER_MODULE`/`DEFINE_CLASS_1` 宏的不同使用方式，simplebus 适配代码还额外解析了稳压器（regulators）和卡检测 GPIO 引脚（card detect GPIO pins），而 **ACPI** 方式下这些信息则由固件预先设定。
+除了宏 `DRIVER_MODULE`/`DEFINE_CLASS_1` 的不同使用方式，simplebus 适配代码还额外解析了稳压器（regulators）和卡检测 GPIO 引脚（card detect GPIO pins），而 **ACPI** 方式下这些信息则由固件预先设定。
 
 ```c
 &ap_sdhci0 {

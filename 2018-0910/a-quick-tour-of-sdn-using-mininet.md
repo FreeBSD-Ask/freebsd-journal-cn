@@ -142,4 +142,4 @@ net.stop()
 
 ---
 
-**AYAKA KOSHIBE** 在大学时期协助部署 GENI OpenFlow 校园试验的基础设施而涉足 SDN 领域。她目前在 Big Switch Networks 工作，是 SDN 控制器平台团队的成员，同时也是 FreeBSD 和 OpenBSD 上 Mininet Port 的维护者和上游。
+**AYAKA KOSHIBE** 在大学时期协助部署 GENI OpenFlow 校园试验的基础设施而涉足 SDN 领域。她目前在 Big Switch Networks 工作，是 SDN 控制器平台团队的成员，同时也是 FreeBSD 和 OpenBSD 上 Port Mininet 的维护者和上游。

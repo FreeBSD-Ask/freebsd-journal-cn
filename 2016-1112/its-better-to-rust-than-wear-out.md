@@ -26,7 +26,7 @@ fn foo() {
 }
 ```
 
-所有权可通过赋值 `let x = y` 转移（移动语义）。但记住所有权互斥，所以下面示例中，变量 v 在所有权转移给 v2 之后被引用（在 `println` 宏中）时，借用检查器会大声抗议 `error: use of moved value: 'v'`。
+所有权可通过赋值 `let x = y` 转移（移动语义）。但记住所有权互斥，所以下面示例中，变量 v 在所有权转移给 v2 之后被引用（在宏 `println` 中）时，借用检查器会大声抗议 `error: use of moved value: 'v'`。
 
 ```rust
 let v = vec![1, 2, 3];

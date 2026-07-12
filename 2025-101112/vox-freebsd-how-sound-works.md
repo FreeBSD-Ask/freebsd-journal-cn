@@ -237,9 +237,9 @@ pcm3:mixer: <Realtek ALC295 (Analog 2.0+HP/2.0)> on hdaa1 (play/rec) (default)
 
 ### virtual_oss(8)
 
-**virtual_oss(8)** 是由已故 Hans Petter Selasky 编写的 OSS 强大音频服务器。多年来它一直作为 ports（audio/virtual_oss）提供，但自 FreeBSD 15.0 起已成为基本系统的一部分。它目前正在积极开发中，已有许多重要改进在推进和规划中。
+**virtual_oss(8)** 是由已故 Hans Petter Selasky 编写的 OSS 强大音频服务器。多年来它一直作为 Ports（audio/virtual_oss）提供，但自 FreeBSD 15.0 起已成为基本系统的一部分。它目前正在积极开发中，已有许多重要改进在推进和规划中。
 
-如 [15.0 发布说明](https://cgit.freebsd.org/src/commit/?id=c457acb4ee821cf015930a94f52c3870786468a7) 所述，FreeBSD 15.0 之前的 **virtual_oss(8)** 用户可以卸载 port audio/virtual_oss 并使用基本系统版本。唯一需要注意的是，某些依赖第三方库的功能已移至独立 port，包括：
+如 [15.0 发布说明](https://cgit.freebsd.org/src/commit/?id=c457acb4ee821cf015930a94f52c3870786468a7) 所述，FreeBSD 15.0 之前的 **virtual_oss(8)** 用户可以卸载 Port audio/virtual_oss 并使用基本系统版本。唯一需要注意的是，某些依赖第三方库的功能已移至独立 Port，包括：
 
 * sndio 后端支持：`audio/virtual_oss_sndio`
 * 蓝牙后端支持：`audio/virtual_oss_bluetooth`

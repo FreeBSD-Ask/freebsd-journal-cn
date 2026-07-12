@@ -12,7 +12,7 @@
 
 我们的 CEO 曾经运营 ftp2.freebsd.org，并向 Ports 树贡献过内容。他从 2.0-ALPHA 时代就开始使用 FreeBSD，至今仍持续在工作和个人生活中使用。我们的 CTO 资历更深，可以追溯到 386BSD 的起点，当时他维护补丁包，后来为 T1 驱动贡献了回环检测。再往前追溯，我们的一位开发者大量参与过 2BSD 和 4.1BSD 的开发，后来又协助了《FreeBSD Handbook》的编写。最后，我从 4.0 发布时开始使用 FreeBSD，贡献过若干补丁，以及软件看门狗子系统的最初实现。
 
-除 FreeBSD 外，我们大量使用 Tcl 编程语言。这包括我们的网站，它用 Tcl 编写，由 Apache 的 mod_rivet 扩展提供服务。我们 Tcl 包的若干 port 位于 Ports 树中，包括 speedtables、casstcl、yajl-tcl、tcllauncher、tclreadline 和 tclbsd。这些 port 由 tcltk@ 和 Pietro Cerruti 维护。Pietro 虽不是 FlightAware 员工，但他慷慨地同步更新 port 以配合我们的软件发布。我们之所以使用 FreeBSD，部分原因包括网络栈的稳定性与健壮性、社区的凝聚力、从内核到用户态对系统的整体把控，以及 ZFS。这一切结合在一起，为我们的服务器和服务创造了一个最优且可信赖的开源环境。
+除 FreeBSD 外，我们大量使用 Tcl 编程语言。这包括我们的网站，它用 Tcl 编写，由 Apache 的 mod_rivet 扩展提供服务。我们 Tcl 包的若干 Port 位于 Ports 树中，包括 speedtables、casstcl、yajl-tcl、tcllauncher、tclreadline 和 tclbsd。这些 Port 由 tcltk@ 和 Pietro Cerruti 维护。Pietro 虽不是 FlightAware 员工，但他慷慨地同步更新 Port 以配合我们的软件发布。我们之所以使用 FreeBSD，部分原因包括网络栈的稳定性与健壮性、社区的凝聚力、从内核到用户态对系统的整体把控，以及 ZFS。这一切结合在一起，为我们的服务器和服务创造了一个最优且可信赖的开源环境。
 
 ## 我们如何使用 FreeBSD
 
@@ -74,7 +74,7 @@ FreeBSD 的一大优点是，安装到系统上之后基本可以放心不管。
 
 ## 调试：因为东西会坏
 
-如果 zpool 命令崩溃了你怎么办？我会启动调试器，希望通过加载 core 文件看到它在哪里崩溃。可惜，安装 FreeBSD release 版本时基本系统不带调试符号。这是为什么？太大了吗，就像那些 100KB 的日志文件一样？如果基础二进制没有被 strip，或者至少有一个可选系统组件包含所有基础二进制和库的符号文件，那就太好了。同样，Ports 树默认构建软件时不带符号。多数 port 有 DEBUG 选项，启用后软件会带符号构建，但通常会禁用所有编译器优化。这对生产环境并不理想。我希望看到一个通用选项，可以构建带优化同时也带调试符号的 port，最好默认如此。我知道用 `-O` 或 `-O2` 构建的程序调试会更难，但总比没有强。最后，所有东西都应默认带 DTRACE。DTRACE 是一款出色的工具，FlightAware 不止一次用它来理解性能问题或系统故障。PostgreSQL 和 Tcl 都方便地具备全面的 DTRACE 支持。然而，Ports 默认不启用它。在我们看来，每个 port 都应默认带 DTRACE 构建。日常不一定用得上，但与调试符号一样，问题真正出现时它无价。
+如果 zpool 命令崩溃了你怎么办？我会启动调试器，希望通过加载 core 文件看到它在哪里崩溃。可惜，安装 FreeBSD release 版本时基本系统不带调试符号。这是为什么？太大了吗，就像那些 100KB 的日志文件一样？如果基础二进制没有被 strip，或者至少有一个可选系统组件包含所有基础二进制和库的符号文件，那就太好了。同样，Ports 树默认构建软件时不带符号。多数 Port 有 DEBUG 选项，启用后软件会带符号构建，但通常会禁用所有编译器优化。这对生产环境并不理想。我希望看到一个通用选项，可以构建带优化同时也带调试符号的 Port，最好默认如此。我知道用 `-O` 或 `-O2` 构建的程序调试会更难，但总比没有强。最后，所有东西都应默认带 DTRACE。DTRACE 是一款出色的工具，FlightAware 不止一次用它来理解性能问题或系统故障。PostgreSQL 和 Tcl 都方便地具备全面的 DTRACE 支持。然而，Ports 默认不启用它。在我们看来，每个 Port 都应默认带 DTRACE 构建。日常不一定用得上，但与调试符号一样，问题真正出现时它无价。
 
 ## 收尾
 

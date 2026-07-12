@@ -3,7 +3,7 @@
 - 原文链接：[FreeBSD Code Review with git-arc](https://freebsdfoundation.org/wp-content/uploads/2021/11/FreeBSD-Code-Review-with-git-arc.pdf)
 - 作者：**JOHN BALDWIN**
 
-FreeBSD 项目在 [https://reviews.freebsd.org](https://reviews.freebsd.org) 使用 Phabricator 的 Differential 应用作为代码审查工具。Phabricator 本身提供了多个应用来支持软件开发，但 FreeBSD 项目仅使用代码审查工具。用户和开发者可以通过直接在 Web 应用中粘贴 diff，或使用命令行工具 arc（可通过软件包或 port 安装 [devel/arcanist](https://www.freshports.org/devel/arcanist) ）来上传变更进行审查。arc 可以从命令行上传 git 分支中的提交，并且还能修改已审查提交的提交日志，以便将其推送到公共代码库。  
+FreeBSD 项目在 [https://reviews.freebsd.org](https://reviews.freebsd.org) 使用 Phabricator 的 Differential 应用作为代码审查工具。Phabricator 本身提供了多个应用来支持软件开发，但 FreeBSD 项目仅使用代码审查工具。用户和开发者可以通过直接在 Web 应用中粘贴 diff，或使用命令行工具 arc（可通过软件包或 Port 安装 [devel/arcanist](https://www.freshports.org/devel/arcanist) ）来上传变更进行审查。arc 可以从命令行上传 git 分支中的提交，并且还能修改已审查提交的提交日志，以便将其推送到公共代码库。  
 
 然而，arc 在 FreeBSD 开发中存在一些使用上的局限性，使其显得不太顺手：  
 
@@ -59,7 +59,7 @@ Writing ~/.arcrc...
 
 可以使用选项 `-r` 添加审查者。多个审查者可以用逗号分隔，或者通过多个选项 `-r` 指定。要添加一个审查组，可以在组名前加 `#` 符号，例如 `#bhyve` 以标记负责 **bhyve(8)** hypervisor 的开发者。  
 
-以下示例为 `gdb_11` 分支上的一个提交创建审查，该提交涉及 `devel/gdb` port，并将 port 维护者（<pizzamig@FreeBSD.org>）指定为审查者：
+以下示例为 `gdb_11` 分支上的一个提交创建审查，该提交涉及 `devel/gdb` Port，并将 Port 维护者（<pizzamig@FreeBSD.org>）指定为审查者：
 
 ```sh
 > git log --oneline main..gdb_11
@@ -84,7 +84,7 @@ Does this look OK? [y/N] y
 >
 >`update` 和 `stage` 子命令会使用提交日志的第一行来查找标题相同的审查。如果修改了提交日志消息的第一行，则必须在 Phabricator 中更新审查的标题，否则 `git-arc` 无法正确识别该提交对应的现有审查。  
 
-以下示例展示了在根据审查者反馈修改原始提交后，如何更新 `devel/gdb` Port 更新的审查：  
+以下示例展示了在根据审查者反馈修改原始提交后，如何更新 Port `devel/gdb` 更新的审查：  
 
 ```sh
 > git arc update gdb_11

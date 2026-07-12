@@ -30,7 +30,7 @@ Prometheus 的架构类似：中央 Prometheus 服务器负责转换、存储和
 # pkg install prometheus node_exporter
 ```
 
-为了从主机提取系统级别的指标，我们将在 Prometheus 主机和所有其他我们想要监控的机器上安装 node_exporter。Prometheus Port 会在 **/usr/local/etc** 路径下安装名为 **prometheus.yml** 的默认配置文件。我们将修改该文件以满足需求。配置文件的语法采用 YAML 格式，因此需要特别小心，避免使用制表符，并使用适当的空格缩进。
+为了从主机提取系统级别的指标，我们将在 Prometheus 主机和所有其他我们想要监控的机器上安装 node_exporter。Port Prometheus 会在 **/usr/local/etc** 路径下安装名为 **prometheus.yml** 的默认配置文件。我们将修改该文件以满足需求。配置文件的语法采用 YAML 格式，因此需要特别小心，避免使用制表符，并使用适当的空格缩进。
 
 ```yml
 prometheus.yml:

@@ -25,7 +25,7 @@ portsnap update
 
 查看 **/usr/ports** 目录，你能看到若干文件和大量目录。最先应注意到的是 Makefile 文件。FreeBSD Ports 树用 `make.1` 编写，这是一种在构建和安装软件时广泛使用的语言。当然，单个 200 行的 Makefile 远远不够，Ports 基础设施的大部分代码位于 **/usr/ports/Mk** 目录。其他大部分目录都是分类目录，里面装着实际的 Port。
 
-极简的 Port 由四个文件组成：Makefile、pkg-descr、pkg-plist 和 distinfo。Makefile 包含该 Port 的一些基本信息和如何抓取、构建和安装它的指令。pkg-descr（即 package 描述）包含该 Port 是什么、做什么的简短描述，还有该软件包官方项目网站的链接。pkg-plist（即打包清单）是该 Port 安装的文件列表；最后，distinfo 包含该 Port 需从互联网抓取的任何外部文件的校验和与大小。我下面以 **/usr/ports/shells/sash** 中的 Stand-Alone Shell（SASH）Port 为例。在示例 1 中你还能看到名为 files 的目录，里面可以放置对该 Port 有用的附加文件。
+极简的 Port 由四个文件组成：Makefile、pkg-descr、pkg-plist 和 distinfo。Makefile 包含该 Port 的一些基本信息和如何抓取、构建和安装它的指令。pkg-descr（即 package 描述）包含该 Port 是什么、做什么的简短描述，还有该软件包官方项目网站的链接。pkg-plist（即打包清单）是该 Port 安装的文件列表；最后，distinfo 包含该 Port 需从互联网抓取的任何外部文件的校验和与大小。我下面以 **/usr/ports/shells/sash** 中的 Port Stand-Alone Shell（SASH）为例。在示例 1 中你还能看到名为 files 的目录，里面可以放置对该 Port 有用的附加文件。
 
 看示例 2 中 SASH 的 Makefile，第一行是该 Port 最初加入 Ports 树时对原作者的署名。接下来是 subversion 标识串，会由 subversion 自动展开，对新 Port 而言只应是：
 
@@ -98,7 +98,7 @@ Shell includes: echo pwd cd mkdir mknod rmdir sync rm chmod chown chgrp touch mv
 Commands include: dd ed grep gzip ls tar file find mount chattr WWW: http://members.tip.net.au/~dbell/
 ```
 
-说到 pkg-descr 文件，示例 3 列出了 shells/sash 这个 port 的 pkg-descr 内容，写得相当详尽细致。常规的 pkg-descr 应当只用几段话简明描述该 port，让用户无需阅读文档或访问网站就能知道它做什么。软件项目的官方网站可放在最后一行，以 WWW 开头。
+说到 pkg-descr 文件，示例 3 列出了 shells/sash 这个 Port 的 pkg-descr 内容，写得相当详尽细致。常规的 pkg-descr 应当只用几段话简明描述该 Port，让用户无需阅读文档或访问网站就能知道它做什么。软件项目的官方网站可放在最后一行，以 WWW 开头。
 
 示例 4：
 
@@ -108,7 +108,7 @@ erwin@panda:/usr/ports/shells/sash % cat pkg-plist
 man/man1/sash.1.gz
 ```
 
-该 port 安装的文件列在 pkg-plist 中。这份清单在 port 生命周期的多个阶段都会用到。生成 package 的工具依据它知道要打包哪些文件；移除已安装 port 或 package 的工具也需要知道该删哪些文件。文件安装到 `${PREFIX}`（默认为 **/usr/local**），在 pkg-plist 中是隐含的，不应写出。如示例 4 所示，我们这个小 port 只安装一个可执行文件及其对应的 man page。Ports 系统的更多威力也在此体现：打包清单中可以使用关键字来处理更复杂的情形——比如仅把某个文件放到某个位置还不够，需要额外照顾，或者需要修改某个附加文件。我们示例中的 `@shell` 关键字不仅把 sash 可执行文件安装到 **/usr/local/bin**，还会把它加到 **/etc/shells** 中，使其成为系统认可的 shell。另一例子是 `@sample` 关键字，对于安装那些不应在日后升级时被默认版本覆盖的配置文件非常有用。使用 `@sample` 关键字时，port 或 package 会把默认版本安装为 `filename.conf.sample`，但在此之前会先检查 `filename.conf` 是否存在：若存在，再检查它是否与上一版的默认文件一致；若不一致或不存在，则同时把默认版本安装为 `filename.conf`。换言之，如果配置文件已存在且被用户修改过，这些修改不会被覆盖。更多关键字见 **/usr/ports/Keywords** 目录。
+该 Port 安装的文件列在 pkg-plist 中。这份清单在 Port 生命周期的多个阶段都会用到。生成 package 的工具依据它知道要打包哪些文件；移除已安装 Port 或 package 的工具也需要知道该删哪些文件。文件安装到 `${PREFIX}`（默认为 **/usr/local**），在 pkg-plist 中是隐含的，不应写出。如示例 4 所示，我们这个小 Port 只安装一个可执行文件及其对应的 man page。Ports 系统的更多威力也在此体现：打包清单中可以使用关键字来处理更复杂的情形——比如仅把某个文件放到某个位置还不够，需要额外照顾，或者需要修改某个附加文件。我们示例中的 `@shell` 关键字不仅把 sash 可执行文件安装到 **/usr/local/bin**，还会把它加到 **/etc/shells** 中，使其成为系统认可的 shell。另一例子是 `@sample` 关键字，对于安装那些不应在日后升级时被默认版本覆盖的配置文件非常有用。使用 `@sample` 关键字时，Port 或 package 会把默认版本安装为 `filename.conf.sample`，但在此之前会先检查 `filename.conf` 是否存在：若存在，再检查它是否与上一版的默认文件一致；若不一致或不存在，则同时把默认版本安装为 `filename.conf`。换言之，如果配置文件已存在且被用户修改过，这些修改不会被覆盖。更多关键字见 **/usr/ports/Keywords** 目录。
 
 最后是 distinfo 文件，这也是最容易创建的文件。如果 Makefile 中所有变量都填写正确（尤其是那些影响如何抓取原始源码的变量），只需运行：
 
@@ -118,9 +118,9 @@ make makesum
 
 它会抓取所需文件，生成包含 SHA256 校验和与文件大小的 distinfo 文件。见示例 5。
 
-port 中的 files 目录可存放 port 在构建、安装或打包时需要的任何文件。以 `patch-` 为前缀的文件名会在解压原始源码与编译之间自动应用，对于移植那些原本未考虑 FreeBSD 的软件非常有用。见示例 6。
+Port 中的 files 目录可存放 Port 在构建、安装或打包时需要的任何文件。以 `patch-` 为前缀的文件名会在解压原始源码与编译之间自动应用，对于移植那些原本未考虑 FreeBSD 的软件非常有用。见示例 6。
 
-对于新 port，还需要在所属分类的 Makefile 中添加条目。我们这个例子中，就是 **/usr/ports/shells/Makefile**：
+对于新 Port，还需要在所属分类的 Makefile 中添加条目。我们这个例子中，就是 **/usr/ports/shells/Makefile**：
 
 ```sh
 SUBDIR += sash
@@ -128,7 +128,7 @@ SUBDIR += sash
 
 ## 依赖
 
-我们这个示例 port 没有用到的重要且常用的特性，就是依赖。依赖是指当前 port 在其生命周期的某个阶段需要的另一 port，比如运行时需要的某个可执行文件或其他文件，或者构建时需要的某个库。库通过变量 `LIB_DEPENDS` 指定，是 `library:port` 组合的列表。
+我们这个示例 Port 没有用到的重要且常用的特性，就是依赖。依赖是指当前 Port 在其生命周期的某个阶段需要的另一 Port，比如运行时需要的某个可执行文件或其他文件，或者构建时需要的某个库。库通过变量 `LIB_DEPENDS` 指定，是 `library:Port` 组合的列表。
 
 示例 5：
 
@@ -162,13 +162,13 @@ sash-3.8|/usr/ports/shells/sash|/usr/local|Stand-Alone shell combining many comm
 LIB_DEPENDS= libsqlite3.so:${PORTSDIR}/databases/sqlite3
 ```
 
-运行时或构建时的依赖以类似方式分别在变量 `RUN_DEPENDS` 和 `BUILD_DEPENDS` 中指定，由 `file:port` 组合的列表构成。
+运行时或构建时的依赖以类似方式分别在变量 `RUN_DEPENDS` 和 `BUILD_DEPENDS` 中指定，由 `file:Port` 组合的列表构成。
 
 ```sh
 RUN_DEPENDS= ${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 ```
 
-变量 `${LOCALBASE}` 通常与我们前面看到的 `${PREFIX}` 相同，但二者有区别：`LOCALBASE` 表示已安装 port 的位置，`PREFIX` 表示当前 port 将要安装的位置。对于默认路径中的可执行文件，无需写完整路径，所以上面的例子可简写为：
+变量 `${LOCALBASE}` 通常与我们前面看到的 `${PREFIX}` 相同，但二者有区别：`LOCALBASE` 表示已安装 Port 的位置，`PREFIX` 表示当前 Port 将要安装的位置。对于默认路径中的可执行文件，无需写完整路径，所以上面的例子可简写为：
 
 ```sh
 RUN_DEPENDS= bash:${PORTSDIR}/shells/bash
@@ -184,9 +184,9 @@ RUN_DEPENDS= bash:${PORTSDIR}/shells/bash
 
 这会开启额外的质量检查并显示更多警告，比如使用了已弃用的特性。
 
-简单可行的初步测试是运行 `make describe`。它应输出由我们前面谈到的诸多元数据组成的字符串。这些信息供多个工具跟踪依赖关系、搜索 port 名称或描述。见示例 7。
+简单可行的初步测试是运行 `make describe`。它应输出由我们前面谈到的诸多元数据组成的字符串。这些信息供多个工具跟踪依赖关系、搜索 Port 名称或描述。见示例 7。
 
-`portlint` 工具位于 ports-mgmt/portlint，或者直接 `pkg install portlint` 即可获得，它评估 port 在语法上是否正确，并给出多年实践沉淀下来的一些最佳实践建议。对新 port 应运行 `portlint -A`；对现有 port 运行 `portlint -C` 即可。见示例 8。
+`portlint` 工具位于 ports-mgmt/portlint，或者直接 `pkg install portlint` 即可获得，它评估 Port 在语法上是否正确，并给出多年实践沉淀下来的一些最佳实践建议。对新 Port 应运行 `portlint -A`；对现有 Port 运行 `portlint -C` 即可。见示例 8。
 
 示例 8：
 
@@ -203,21 +203,21 @@ LICENSE= GPLv2
 LICENSE_FILE= ${WRKSRC}/COPYING
 ```
 
-这是一条有效的警告，因为我们的示例 port 没有设置变量 `${LICENSE}`。变量 `${LICENSE}` 可设为某个已知许可证缩写，列表见 **/usr/ports/Mk/bsd.licenses.db.mk**。如果软件项目带有许可证文件，也应通过变量 `${LICENSE_FILE}` 安装。见示例 9。
+这是一条有效的警告，因为我们的示例 Port 没有设置变量 `${LICENSE}`。变量 `${LICENSE}` 可设为某个已知许可证缩写，列表见 **/usr/ports/Mk/bsd.licenses.db.mk**。如果软件项目带有许可证文件，也应通过变量 `${LICENSE_FILE}` 安装。见示例 9。
 
 ## 测试 Port：使用 poudriere
 
-最简单的测试方式当然是把刚出炉的 port 装到本地系统上。我不推荐这么做，因为它很容易破坏现有系统——可能意外覆盖已有文件，或表现出其他意料之外的行为；而已安装的软件也会让检查新 port 到底新增了什么变得更难。比如在已安装了大量软件的系统上，很容易漏掉某个新安装的文件，从而在 pkg-plist 中遗漏。
+最简单的测试方式当然是把刚出炉的 Port 装到本地系统上。我不推荐这么做，因为它很容易破坏现有系统——可能意外覆盖已有文件，或表现出其他意料之外的行为；而已安装的软件也会让检查新 Port 到底新增了什么变得更难。比如在已安装了大量软件的系统上，很容易漏掉某个新安装的文件，从而在 pkg-plist 中遗漏。
 
-使用干净安装或 jail 可以规避大多数这类陷阱，但也有工具可以替你完成所有重活。poudriere 系统（<https://fossil.etoilebsd.net/poudriere/doc/trunk/doc/index.wiki>）不仅能用于构建自家的 package 仓库，也是出色的 port 测试框架。它可以测试整个 Ports 树、子集，甚至单个 port 及其依赖。借助 jail 和 ZFS 文件系统，它能保证自身独立、对宿主系统毫无影响。它会按 port 生成非常有用的日志文件，可用于查看 port 是如何构建的、package 如何安装和卸载，对于检查 pkg-plist 是否完整极有帮助。由于重度依赖 ZFS，它可能比较吃硬件，当然编译本身也消耗大量算力。
+使用干净安装或 jail 可以规避大多数这类陷阱，但也有工具可以替你完成所有重活。poudriere 系统（<https://fossil.etoilebsd.net/poudriere/doc/trunk/doc/index.wiki>）不仅能用于构建自家的 package 仓库，也是出色的 Port 测试框架。它可以测试整个 Ports 树、子集，甚至单个 Port 及其依赖。借助 jail 和 ZFS 文件系统，它能保证自身独立、对宿主系统毫无影响。它会按 Port 生成非常有用的日志文件，可用于查看 Port 是如何构建的、package 如何安装和卸载，对于检查 pkg-plist 是否完整极有帮助。由于重度依赖 ZFS，它可能比较吃硬件，当然编译本身也消耗大量算力。
 
-通过 package `pkg install poudriere` 或 ports-mgmt/poudriere 中的 port 安装 poudriere，然后检查 **/usr/local/etc/poudriere.conf** 中的设置，尤其是涉及 ZFS 文件系统的部分。接下来，用你想测试的 FreeBSD 版本创建 jail：
+通过 package `pkg install poudriere` 或 ports-mgmt/poudriere 中的 Port 安装 poudriere，然后检查 **/usr/local/etc/poudriere.conf** 中的设置，尤其是涉及 ZFS 文件系统的部分。接下来，用你想测试的 FreeBSD 版本创建 jail：
 
 ```sh
 # poudriere jail -c -j 93Ramd64 -v 9.3-RELEASE -a amd64
 ```
 
-如果你打算把 port 提交到 FreeBSD Ports 树，应在所有受支持的主要发行版上测试。Ports 团队支持的范围与 FreeBSD 安全官（<https://www.freebsd.org/security/>）相同，目前包括 FreeBSD 8、9、10 和 HEAD 中的开发版本 11。
+如果你打算把 Port 提交到 FreeBSD Ports 树，应在所有受支持的主要发行版上测试。Ports 团队支持的范围与 FreeBSD 安全官（<https://www.freebsd.org/security/>）相同，目前包括 FreeBSD 8、9、10 和 HEAD 中的开发版本 11。
 
 当然你也需要 Ports 树，可以这样创建：
 
@@ -225,7 +225,7 @@ LICENSE_FILE= ${WRKSRC}/COPYING
 # poudriere ports -c
 ```
 
-这会创建名为 default 的 Ports 树。现在可以测试你的 port 了：
+这会创建名为 default 的 Ports 树。现在可以测试你的 Port 了：
 
 ```sh
 # poudriere testport -j 93Ramd64 -p default -o shells/sash
@@ -235,7 +235,7 @@ LICENSE_FILE= ${WRKSRC}/COPYING
 
 ## 提交 Port
 
-当你确认 port 按你期望的方式工作后，就可以提交它进入 FreeBSD 官方 Ports 树，这也会让 package 可通过 `pkg` 轻松安装。提交前确保 port 目录干净，没有任何多余文件。用 `make clean` 命令即可轻松删除 work 目录。从 port 目录上一级的分类目录下，用 `shar.1` 工具把文件打包成 shar 归档：
+当你确认 Port 按你期望的方式工作后，就可以提交它进入 FreeBSD 官方 Ports 树，这也会让 package 可通过 `pkg` 轻松安装。提交前确保 Port 目录干净，没有任何多余文件。用 `make clean` 命令即可轻松删除 work 目录。从 Port 目录上一级的分类目录下，用 `shar.1` 工具把文件打包成 shar 归档：
 
 ```sh
 shar `find sash'> sash.shar
