@@ -16,7 +16,7 @@
 - Kenji Takefu，由 hrs@ 与 mat@ 担任导师；
 - Carlos Puga Medina，由 junovitch@、amdmi3@、feld@ 担任导师。
 
-两人都已为 FreeBSD 贡献不少：Kenji 自 2006 年以来提交了 300 多份问题报告，Carlos 维护着 30 多个 port。两份实至名归的 commit 权限——恭喜二位！
+两人都已为 FreeBSD 贡献不少：Kenji 自 2006 年以来提交了 300 多份问题报告，Carlos 维护着 30 多个 Port。两份实至名归的 commit 权限——恭喜二位！
 
 此外，部分 commit 权限因超过 18 个月未活跃而被代为保管（fluffy@、lioux@、lippe@、simon@）。
 
@@ -26,7 +26,7 @@
 
 ## 重要 Ports 更新
 
-一如既往，antoine@ 进行了大量 exp-run（共 22 次），以检查主要 port 的更新是否安全。这些重要更新中，以下亮点值得一提：
+一如既往，antoine@ 进行了大量 exp-run（共 22 次），以检查主要 Port 的更新是否安全。这些重要更新中，以下亮点值得一提：
 
 - CMake 更新至 3.3.1
 - ffmpeg 更新至 2.8

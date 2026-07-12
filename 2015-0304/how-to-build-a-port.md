@@ -72,7 +72,7 @@ COMMENT= Stand-Alone Shell combining many common utilities
 ${MASTER_SITE}/${PORTNAME}-${PORTVERSION}.tar.gz
 ```
 
-在 SASH 这个示例 port 中，就是：<http://members.tip.net.au/~dbell/programs/sash-3.8.tar.gz>
+在 SASH 这个示例 Port 中，就是：<http://members.tip.net.au/~dbell/programs/sash-3.8.tar.gz>
 
 许多软件项目使用各自的版本号或命名方案，于是有大量附加变量可影响最终 URL，例如设置 `USE_BZIP2` 会把默认后缀改为 `.tar.bz2`，`USE_XZ` 会改为 `.tar.xz`。对于 SourceForge、CPAN 这类拥有大量镜像的知名下载站点，也有现成的宏可用。另一有趣且广泛使用的站点是 github——它没有“正式发布文件”的概念，于是 port 需要依赖某个给定的 commit 和 tag，以确保下载到一致且经过测试的软件版本。这些都在 Porters Handbook 中有详细描述：<https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-distfiles.html>。
 
