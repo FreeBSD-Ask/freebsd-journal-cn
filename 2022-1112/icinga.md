@@ -226,7 +226,7 @@ enable_flapping = true
 check_command = "hostalive" //在主系统上执行检查
 }
 template Service "generic-service" {
-max_check_attempts = 5 //在 "HARD"状态前重新检查 5 次
+max_check_attempts = 5 //在 “HARD”状态前重新检查 5 次
 check_interval = 2m
 retry_interval = 1m
 enable_flapping = true

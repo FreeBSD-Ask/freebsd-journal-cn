@@ -60,7 +60,7 @@ Starting prometheus.
 
 ## PromQL：Prometheus 的查询语言
 
-让 Prometheus 收集几个小时指标后，我们可以进入图形页面来探索 Prometheus 的数据集。我们先绘制一条由 node exporter 生成的指标 `node_network_receive_packets`。顾名思义，这一指标对应系统网络接口接收到的网络数据包数量。这个表达式在我的系统上生成一个包含两条线的图：一条对应环回接口（device=”lo0”），另一条对应物理接口（device=”em0”）。
+让 Prometheus 收集几个小时指标后，我们可以进入图形页面来探索 Prometheus 的数据集。我们先绘制一条由 node exporter 生成的指标 `node_network_receive_packets`。顾名思义，这一指标对应系统网络接口接收到的网络数据包数量。这个表达式在我的系统上生成一个包含两条线的图：一条对应环回接口（`device="lo0"`），另一条对应物理接口（`device="em0"`）。
 
 如果我们只想绘制某些主机或网络接口的指标，可以在表达式末尾追加过滤器。例如，向查询追加 `{device!~"lo[0-9]+"}` 会通过负向正则匹配移除环回设备的指标。`{datacenter="frankfurt"}` 会只返回某个数据中心的系统结果（如果存在这样的标签）。
 
