@@ -29,4 +29,4 @@ Nick Principe 给我们讲述了做性能测量时要引以为戒的种种故事
 
 ---
 
-**BENEDICT REUSCHLING** 于 2009 年加入 FreeBSD 项目。2010 年获得完整的文档提交权限后，他积极开始指导他人成为 FreeBSD 提交者。他是 BSD 认证小组的考官，并于 2015 年加入 FreeBSD 基金会，目前担任副总裁。Benedict 拥有计算机科学硕士学位，在德国达姆施塔特应用技术大学讲授面向软件开发者的 UNIX 课程。
+**BENEDICT REUSCHLING** 于 2009 年加入 FreeBSD 项目。2010 年获得完整文档提交权限后，他积极指导他人成为 FreeBSD 提交者。他是 BSD 认证小组的监考人，并于 2015 年加入 FreeBSD 基金会，现任副总裁。Benedict 拥有计算机科学理学硕士学位，在德国达姆施塔特应用技术大学教授面向软件开发者的 UNIX 课程。
