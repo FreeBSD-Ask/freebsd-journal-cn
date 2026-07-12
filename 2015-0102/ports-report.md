@@ -19,7 +19,7 @@
 
 照例，如果更新特定 Ports 需要手动步骤，这些步骤会在 **/usr/ports/UPDATING** 文件中清楚说明。强烈建议在对 Ports 树执行任何更新前先检查此文件！
 
-另外请注意，存在多个版本的 Ports，其默认版本在 **/usr/ports/Mk/bsd.default-versions.mk** 文件中设置。如果出于某些原因某个 Port 的默认版本不符合你的需求，可以在 `make.conf` 中加入 `DEFAULT_VERSIONS` 变量来覆盖，如下所示：
+另外请注意，存在多个版本的 Ports，其默认版本在 **/usr/ports/Mk/bsd.default-versions.mk** 文件中设置。如果出于某些原因某个 Port 的默认版本不符合你的需求，可以在 `make.conf` 中加入变量 `DEFAULT_VERSIONS` 来覆盖，如下所示：
 
 - `DEFAULT_VERSIONS=       perl5=5.16 ruby=1.9`
 

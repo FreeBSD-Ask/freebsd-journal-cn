@@ -287,7 +287,7 @@ net.inet.tcp.maxtcptw = 47120
 ./http_load -proxy 172.16.2.1:8080 -rate 10 -jitter -seconds 600 urls
 ```
 
-第一条命令中的 `-parallel` 选项表示要建立并维持的并发连接数，第二条命令中的 `-rate` 选项控制每秒发出的请求数，`-jitter` 选项让速率变化约 10%，`-seconds` 选项表示测试运行的秒数。
+第一条命令中的选项 `-parallel` 表示要建立并维持的并发连接数，第二条命令中的选项 `-rate` 控制每秒发出的请求数，选项 `-jitter` 让速率变化约 10%，选项 `-seconds` 表示测试运行的秒数。
 
 基于上述结果，Shuultuur 有其优势与劣势。例如，由于 Shuultuur 仍在开发中，它比 Dansguardian 更频繁地返回 Internal Server Error (500)。另一方面，Shuultuur 返回的成功响应 (200) 多得多。Dansguardian 有一些限制，它返回了 341 次 Service Unavailable (503)，超时也更多。在性能方面，平均而言，两项测试中 Shuultuur 的性能在多数情况下都高于 Dansguardian。
 

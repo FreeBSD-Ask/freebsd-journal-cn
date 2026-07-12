@@ -84,7 +84,7 @@ Summary
 
 ## 使用 SaltState 文件管理 Minion
 
-SaltStack 配置指令存储在所谓 statefile 中，以 `.sls` 扩展名标识。每个 SaltStack 安装都有一个所谓的”top file”，定义整体结构以及 SaltState 与受管主机的关联。出于我们的目的，从一个非常简单的 top file 开始，它把两个状态关联到我们的节点：
+SaltStack 配置指令存储在所谓 statefile 中，以 `.sls` 扩展名标识。每个 SaltStack 安装都有一个所谓的“top file”，定义整体结构以及 SaltState 与受管主机的关联。出于我们的目的，从一个非常简单的 top file 开始，它把两个状态关联到我们的节点：
 
 ```yaml
 base:

@@ -7,7 +7,7 @@
 
 ## 原生 PCI Express 热插拔支持
 
-自 r299142（<https://svnweb.freebsd.org/base?view=revision&revision=299142>）起，可以把新的 PCI 热插拔适配器插入可用的 PCI 插槽，并让操作系统和应用程序访问该设备，而无需重启机器。PCI Express 热插拔支持通过下游端口 PCI Express capability 的插槽寄存器中的位以及插槽状态寄存器中的位发生变化时触发的中断实现。FreeBSD 中的实现是在附加到表示热插拔插槽下游端口的虚拟 PCI-PCI 桥的 PCI-PCI 桥驱动程序中加入热插拔支持。PCI-PCI 桥驱动程序注册中断处理程序以接收热插拔事件，并使用插槽寄存器确定当前热插拔状态，驱动内部热插拔状态机。为简化实现，当卡从插槽中移除时，PCI-PCI 桥设备会分离并删除子 PCI 设备；当卡插入插槽时，会创建并附加一个 PCI 子设备。PCI Express 热插拔支持取决于 `PCI_HP` 选项，该选项在 arm64、x86 和 powerpc 上默认启用。
+自 r299142（<https://svnweb.freebsd.org/base?view=revision&revision=299142>）起，可以把新的 PCI 热插拔适配器插入可用的 PCI 插槽，并让操作系统和应用程序访问该设备，而无需重启机器。PCI Express 热插拔支持通过下游端口 PCI Express capability 的插槽寄存器中的位以及插槽状态寄存器中的位发生变化时触发的中断实现。FreeBSD 中的实现是在附加到表示热插拔插槽下游端口的虚拟 PCI-PCI 桥的 PCI-PCI 桥驱动程序中加入热插拔支持。PCI-PCI 桥驱动程序注册中断处理程序以接收热插拔事件，并使用插槽寄存器确定当前热插拔状态，驱动内部热插拔状态机。为简化实现，当卡从插槽中移除时，PCI-PCI 桥设备会分离并删除子 PCI 设备；当卡插入插槽时，会创建并附加一个 PCI 子设备。PCI Express 热插拔支持取决于选项 `PCI_HP`，该选项在 arm64、x86 和 powerpc 上默认启用。
 
 ## bhyve 中的原生图形支持
 

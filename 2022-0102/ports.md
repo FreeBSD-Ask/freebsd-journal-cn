@@ -77,7 +77,7 @@ graphics/xpdf4                 Display PDF files and convert them to other forma
 print/xpdfopen                 Command line utility for PDF viewers
 ```
 
-**pkg-search(8)** 会在软件包仓库目录中搜索与“xpdf”匹配的软件包名称。`-o` 选项告诉 **pkg-search(8)** 在输出中显示软件包的来源。来源是指 Ports 树中 port 目录的官方名称，这正是我们要找的内容。
+**pkg-search(8)** 会在软件包仓库目录中搜索与“xpdf”匹配的软件包名称。选项 `-o` 告诉 **pkg-search(8)** 在输出中显示软件包的来源。来源是指 Ports 树中 port 目录的官方名称，这正是我们要找的内容。
 
 >**技巧**
 >

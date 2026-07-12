@@ -35,7 +35,7 @@ FreeBSD 自带的一些示例 **provider** 包括：
 
 **DTrace 探测点** 由 **provider:module:function:name** **四元组** 指定。其中的每个字段可以使用通配符匹配多个值，或留空表示“匹配所有”。  
 
-下面是一个简单的 DTrace **监视脚本（snooper script）**，用于检测 **用户正在运行的程序**。我们在执行时使用 `-x quiet` 选项，以避免 DTrace 输出额外的信息。
+下面是一个简单的 DTrace **监视脚本（snooper script）**，用于检测 **用户正在运行的程序**。我们在执行时使用选项 `-x quiet`，以避免 DTrace 输出额外的信息。
 
 ```sh
 # dtrace -x quiet -n 'proc:::exec { printf("user = %u, gid = %u: %s\n", uid, gid,

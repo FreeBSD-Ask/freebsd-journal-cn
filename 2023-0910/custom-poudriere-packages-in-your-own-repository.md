@@ -109,9 +109,9 @@ hash_dir = false
 EOF
 ```
 
-`max_size` 选项可以将缓存大小限制为一定数量，但设为 0 时，它可以使用所需的全部磁盘空间。我并不太担心，因为 ZFS 压缩在这里效果不错。如果磁盘空间不足，我甚至可以在数据集 **zroot/var/cache/ccache** 上设置配额。
+选项 `max_size` 可以将缓存大小限制为一定数量，但设为 0 时，它可以使用所需的全部磁盘空间。我并不太担心，因为 ZFS 压缩在这里效果不错。如果磁盘空间不足，我甚至可以在数据集 **zroot/var/cache/ccache** 上设置配额。
 
-`cache_dir` 和 `base_dir` 定义缓存的位置。这里它们指向我们的数据集。将 `hash_dir` 选项设为 `false` 可以增加缓存命中率，但启用它会增加调试难度。这是我为了更好性能愿意做的权衡。此选项及其他选项的详情请参阅 **ccache(1)**。FreeBSD 论坛的一个帖子也讨论了这个问题：<https://forums.freebsd.org/threads/howto-speeding-up-poudriere-build-times.69431/>
+`cache_dir` 和 `base_dir` 定义缓存的位置。这里它们指向我们的数据集。将选项 `hash_dir` 设为 `false` 可以增加缓存命中率，但启用它会增加调试难度。这是我为了更好性能愿意做的权衡。此选项及其他选项的详情请参阅 **ccache(1)**。FreeBSD 论坛的一个帖子也讨论了这个问题：<https://forums.freebsd.org/threads/howto-speeding-up-poudriere-build-times.69431/>
 
 在 ccache 期望找到它的位置为该配置文件创建符号链接。
 
@@ -138,7 +138,7 @@ poudriere# ccache -s
 poudriere# poudriere jail -c -j 132x64 -v 13.2-RELEASE
 ```
 
-使用 `-c` 选项，我们让 poudriere 为编译创建新的基本 Jail，并提供应该使用的架构和版本。你甚至可以通过添加 `-m ftp-archive` 选项为不受支持的 FreeBSD 版本（例如 FreeBSD 12.1）编译软件包。
+使用选项 `-c`，我们让 poudriere 为编译创建新的基本 Jail，并提供应该使用的架构和版本。你甚至可以通过添加选项 `-m ftp-archive` 为不受支持的 FreeBSD 版本（例如 FreeBSD 12.1）编译软件包。
 
 你可以使用以下命令列出可用的编译 Jail：
 
@@ -164,7 +164,7 @@ PORTSTREE   METHOD     TIMESTAMP             PATH
 default     git+https  2023-10-01 12:00:02   /usr/local/poudriere/ports/default
 ```
 
-我们也可以拥有多个可用的 Ports 树。也许我们想放慢更新节奏，只编译上个季度的 ports，而不是最新的。使用 poudriere 和 `-p` 选项即可做到。
+我们也可以拥有多个可用的 Ports 树。也许我们想放慢更新节奏，只编译上个季度的 ports，而不是最新的。使用 poudriere 和选项 `-p` 即可做到。
 
 现在我们需要一份供 poudriere 编译的软件包列表。“哦，我喜欢这个 port，而且我总是安装这个 shell，那个编辑器。还有 tmux…”这样很快就能列出清单，但它不包含依赖项（运行或编译所列软件包所需的其他软件包）。Poudriere 会替你解决这些依赖关系。
 

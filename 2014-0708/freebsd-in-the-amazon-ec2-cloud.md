@@ -294,7 +294,7 @@ $ aws ec2 run-instances --image-id ami-69dae900 --instance-type m3.medium \
   --output text --query 'Instances[*].InstanceId'
 ```
 
-注意，与启动标准 FreeBSD 镜像相比，唯一的差别是新增了 `--user-data file://drupal-conf.tar` 选项。和之前一样，笨拙的 `file://` 语法是 AWS CLI 以 URI 为中心的设计所要求的。
+注意，与启动标准 FreeBSD 镜像相比，唯一的差别是新增了选项 `--user-data file://drupal-conf.tar`。和之前一样，笨拙的 `file://` 语法是 AWS CLI 以 URI 为中心的设计所要求的。
 
 和之前一样，我们需要等 FreeBSD 启动，EC2 收集控制台输出。五分钟后运行：
 

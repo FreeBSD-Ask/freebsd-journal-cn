@@ -177,7 +177,7 @@ git config --add core.hooksPath .hooks
 git config core.editor "emacs -nw"
 ```
 
-如果你希望所有 Git 仓库都使用此编辑器，设置 `core.editor` 时添加 `--global` 选项：
+如果你希望所有 Git 仓库都使用此编辑器，设置 `core.editor` 时添加选项 `--global`：
 
 ```sh
 git config --global core.editor "emacs -nw"
@@ -252,7 +252,7 @@ portfmt -D Makefile
 poudriere ports -c -m null -M ~/freebsd/ports
 ```
 
-`-m` 选项告诉 poudriere 使用 null 方法，即使用 `-M` 参数指定位置的现有 Ports。使用 null 方法意味着我们将手动管理该树，包括保持其最新状态，测试时检出适当的分支。设置好 poudriere 后，你可以测试你的 Port。如果你创建了名为 `13amd64` 的 Jail，可以在该 Jail 中测试新 Port，方法是
+选项 `-m` 告诉 poudriere 使用 null 方法，即使用 `-M` 参数指定位置的现有 Ports。使用 null 方法意味着我们将手动管理该树，包括保持其最新状态，测试时检出适当的分支。设置好 poudriere 后，你可以测试你的 Port。如果你创建了名为 `13amd64` 的 Jail，可以在该 Jail 中测试新 Port，方法是
 
 ```sh
 poudriere testport -j 13amd64 www/nyxt

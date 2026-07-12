@@ -6,11 +6,11 @@
 
 - 添加 `WITH_REPRODUCIBLE_BUILD` **src.conf(5)** 旋钮以禁用内核元数据。<https://svnweb.freebsd.org/changeset/base/310128>
 - 在 `WITH_REPRODUCIBLE_BUILD` 时以可复现方式构建 loader。<https://svnweb.freebsd.org/changeset/base/310268>
-- 移除 `-vd` 选项以使 **iasl(8)** 可复现。<https://svnweb.freebsd.org/changeset/base/311529>
+- 移除选项 `-vd` 以使 **iasl(8)** 可复现。<https://svnweb.freebsd.org/changeset/base/311529>
 - 在 vchi 驱动中以硬编码字符串替换不可复现的 `__DATE__`/`__TIME__`。<https://svnweb.freebsd.org/changeset/base/310560>
 - 避免在 mlx 驱动中使用 `__DATE__` 以使构建可复现。<https://svnweb.freebsd.org/changeset/base/310425>
 - 移除 `srand()` 以确保 **bhnd(4)** 输出确定性。<https://svnweb.freebsd.org/changeset/base/310371>
-- 在 `newvers.sh` 中添加 `-R` 选项，仅对未修改的 src 树包含元数据。<https://svnweb.freebsd.org/changeset/base/310273>
+- 在 `newvers.sh` 中添加选项 `-R`，仅对未修改的 src 树包含元数据。<https://svnweb.freebsd.org/changeset/base/310273>
 - 在 `newvers.sh` 中添加选项以消除内核构建元数据。<https://svnweb.freebsd.org/changeset/base/310112>
 - 使 `makewhatis` 的输出可复现。<https://svnweb.freebsd.org/changeset/base/307003>
 - 在 man 手册页中使用 changelog 日期而非文件修改日期。<https://svnweb.freebsd.org/changeset/base/306740>

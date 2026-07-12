@@ -195,7 +195,7 @@ Template ready to use.
 
 很快就完成了。Bastille 拥有自己的模板语言，大写的命令（如 PKG、CP 等）就体现了这种语言。它们的功能与小写系统命令相同。借助这些命令，可以在 jail 中按正确的顺序设置服务。它们大多不言自明。最后的两个 RDR 命令将网络端口从主机系统重定向到 jail 中。所有其他端口仍受防火墙保护，因此只有端口 80 和 DNS 端口 53 在主机与 jail 之间连通。在 **/etc/pf.conf** 中检查 `rdr-anchor "rdr/*"` 这一行。这正是它灵活之处。不必为所有 jail 都打开端口，每个 jail 都可以打开所需的端口并保持其他端口关闭。
 
-是时候创建并启动第一个 Bastille jail 了。使用 VNET 时需要在 `bastille create` 命令中传入 `-V` 选项，以及 jail 的名称、要运行的发行版，随后是分配给 jail 的本地网络上的 IP 地址，以及用于桥接的主机网络接口。组合起来，命令如下：
+是时候创建并启动第一个 Bastille jail 了。使用 VNET 时需要在 `bastille create` 命令中传入选项 `-V`，以及 jail 的名称、要运行的发行版，随后是分配给 jail 的本地网络上的 IP 地址，以及用于桥接的主机网络接口。组合起来，命令如下：
 
 ```sh
 # bastille create -V adguard 13.2-RELEASE 192.168.2.55 ue0

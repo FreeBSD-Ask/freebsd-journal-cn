@@ -70,7 +70,7 @@ ezjail_jailzfs="dozer/jails"
 
 ### Jail 的进阶配置
 
-Jail 新手最常搜索的问题之一是“为什么我无法从 Jail 里 ping？”Ping 需要使用原始套接字，出于安全考虑默认是禁用的。我们通常应该保持禁用，但有时你需要它，不管是调试，还是像 Nagios 这样需要能 ping 的程序。Jail 有参数 `allow.raw_sockets`，默认设为 0。我们可以用 Jail 配置文件中名副其实的 `parameters` 选项，让 ezjail 为我们的 Jail 设置参数。
+Jail 新手最常搜索的问题之一是“为什么我无法从 Jail 里 ping？”Ping 需要使用原始套接字，出于安全考虑默认是禁用的。我们通常应该保持禁用，但有时你需要它，不管是调试，还是像 Nagios 这样需要能 ping 的程序。Jail 有参数 `allow.raw_sockets`，默认设为 0。我们可以用 Jail 配置文件中名副其实的选项 `parameters`，让 ezjail 为我们的 Jail 设置参数。
 
 Jail 的 ezjail 配置文件只是一个 shell 脚本，启动脚本在启动 Jail 时会包含它。所以，我们所有的 Jail 设置就是 **/usr/local/etc/ezjail/myjail.example.com** 里类似下面这样的行：
 

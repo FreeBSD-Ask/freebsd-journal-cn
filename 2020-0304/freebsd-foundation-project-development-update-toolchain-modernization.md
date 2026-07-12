@@ -47,7 +47,7 @@
 - 2010 年 5 月：BSD Toolchain Summit 与 BSDCan，演示 ClangBSD
 - 2011 年 4 月：在 x86 和 powerpc 上默认构建 Clang（Clang 可用，但 FreeBSD 仍用 GCC 构建）
 - 2012 年 1 月：FreeBSD 9 发布，Clang 可用
-- 2012 年 2 月：`WITH_CLANG_IS_CC` 选项
+- 2012 年 2 月：选项 `WITH_CLANG_IS_CC`
 - 2012 年 11 月：i386 和 amd64 默认使用 Clang
 - 2013 年 2 月：为 LE arm 构建 Clang
 - 2013 年 3 月：arm 默认使用 Clang

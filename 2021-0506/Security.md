@@ -90,7 +90,7 @@ sudo pw lock root
 # zfs send -R -c name_of_the_pool@name_of_the_snapshot > export_name
 ```
 
-上述命令将会创建池 `name_of_the_pool` 中所有数据集的递归快照，然后将它们导出到 `export_name` 文件中。`-c` 选项表示导出的数据将被压缩。导入时，只需确保系统支持所有使用的压缩算法。现在，备份可以被复制到外部磁盘、加密、发送到云端、任何其他服务器或用户想要保存备份的平台上。还可以通过 SSH 进行简单的远程备份：
+上述命令将会创建池 `name_of_the_pool` 中所有数据集的递归快照，然后将它们导出到 `export_name` 文件中。选项 `-c` 表示导出的数据将被压缩。导入时，只需确保系统支持所有使用的压缩算法。现在，备份可以被复制到外部磁盘、加密、发送到云端、任何其他服务器或用户想要保存备份的平台上。还可以通过 SSH 进行简单的远程备份：
 
 ```sh
 # zfs send -R -c name_of_the_pool@name_of_the_snapshot | ssh example.com

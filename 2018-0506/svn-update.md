@@ -14,7 +14,7 @@
 
 <https://svnweb.freebsd.org/changeset/base/329240>
 
-这与现有的 gzip 压缩支持类似，但 zstd 通常更快且压缩率更好。必须通过在内核配置文件中添加 `ZSTDIO` 来配置对此功能的支持。**dumpon(8)** 的新 `-Z` 选项用于配置内核转储的 zstd 压缩。**savecore(8)** 现在能识别并保存带 `.zst` 扩展名的 zstd 压缩内核转储。
+这与现有的 gzip 压缩支持类似，但 zstd 通常更快且压缩率更好。必须通过在内核配置文件中添加 `ZSTDIO` 来配置对此功能的支持。**dumpon(8)** 的新选项 `-Z` 用于配置内核转储的 zstd 压缩。**savecore(8)** 现在能识别并保存带 `.zst` 扩展名的 zstd 压缩内核转储。
 
 ## 为 zfs_getpages() 添加后读/预读支持
 
@@ -44,7 +44,7 @@ NFSv4.1 RFC 规定 `OPEN_SHARE_ACCESS_WANT` 位可以设置在 OpenDowngrade 的
 
 <https://svnweb.freebsd.org/changeset/base/332770>
 
-这是引入 Rack 和 BBR 的先驱/基础工作，两者都使用 hpts 来控制数据包发送节奏。此功能是可选的，需要先启用 `TCPHPTS` 选项才能激活。使用它的 TCP 模块必须确保基础组件已编译到加载它们的内核中。
+这是引入 Rack 和 BBR 的先驱/基础工作，两者都使用 hpts 来控制数据包发送节奏。此功能是可选的，需要先启用选项 `TCPHPTS` 才能激活。使用它的 TCP 模块必须确保基础组件已编译到加载它们的内核中。
 
 ## 从 **getlogin(2)** 中移除缓存
 

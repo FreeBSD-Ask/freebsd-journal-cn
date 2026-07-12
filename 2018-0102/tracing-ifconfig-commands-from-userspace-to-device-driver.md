@@ -42,7 +42,7 @@ DEF_CMD_ARG ("channel" set80211channel)
 
 注意第二个参数。我查找 `DEF_CMD_ARG`，发现它是一个预处理器宏，定义了用户向 **ifconfig(8)** 发送命令时运行的函数。快速搜索显示 `set80211channel` 定义在 **/usr/src/sbin/ifconfig/ifieee80211.c** 中。参数容易识别：`val` 是新的信道号（1 到 14），`s` 是我们之前打开的套接字。这执行 **ifconfig(8)** 的 `set80211` 函数，其唯一目的是干净地将执行转入 **lib80211(3)** 库。
 
-**lib80211(3)** 是一个 802.11 无线网络管理库，用于与内核正式通信。值得注意的是，OpenBSD 和 NetBSD 都没有这个库，而是选择直接与内核通信。如前所述，**ifconfig(8)** 的 `set80211` 函数调用位于 **/usr/src/lib/lib80211/lib80211_ioctl.c** 的 `lib80211_set80211`。`lib80211_set80211` 函数填充 `ieee80211reqdata` 结构，用于用户到内核的 ieee80211 通信。下例中是 `ireq` 变量，包含 WiFi 接口名和目标信道。
+**lib80211(3)** 是一个 802.11 无线网络管理库，用于与内核正式通信。值得注意的是，OpenBSD 和 NetBSD 都没有这个库，而是选择直接与内核通信。如前所述，**ifconfig(8)** 的 `set80211` 函数调用位于 **/usr/src/lib/lib80211/lib80211_ioctl.c** 的 `lib80211_set80211`。`lib80211_set80211` 函数填充 `ieee80211reqdata` 结构，用于用户到内核的 ieee80211 通信。下例中是变量 `ireq`，包含 WiFi 接口名和目标信道。
 
 该库随后调用 **ioctl(2)**，如下：
 
