@@ -182,6 +182,6 @@ brad@penelope:~> vagrant box destroy FreeBSD/FreeBSD-10.2-RELEASE
 
 本文介绍了 Vagrant，以及如何用它拉起虚拟机进行测试。希望这能为你简化工作流、让软件或基础设施的测试与开发更轻松提供一些思路。更多信息请访问 Vagrant 官网：<http://www.vagrantup.com>。HashiCorp 维护着一个名为 Atlas 的 Vagrant box 仓库，用于测试和运行各种操作系统与配置。官方 FreeBSD Vagrant box 列表可在 Atlas 的 FreeBSD 区块查看：<https://atlas.hashicorp.com/freebsd/>。
 
-**作者简介**
+---
 
 BRAD DAVIS 曾担任系统架构师、开发者和顾问。作为 FreeBSD committer 已逾 10 年，参与项目的许多不同领域。他从文档 committer 起步，并以此知识协助集群管理和 Postmaster 团队。从这些项目退休后，他涉猎过 pkg 和 poudriere 项目。目前 Brad 从事文档、Ports 以及 RaspBSD 项目的工作，该项目将为 FreeBSD 在 BeagleBone Black 和树莓派等 ARM 系统上提供额外工具。难得有空闲时，Brad 喜欢滑雪和骑摩托车。

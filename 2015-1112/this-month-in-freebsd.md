@@ -73,6 +73,4 @@ root 重挂载支持已合入 11-CURRENT，并将合并到 **stable/10**。reroo
 
 ---
 
-**作者简介**
-
-**Dru Lavigne** 是 FreeBSD 基金会董事，BSD Certification Group 主席。
+**Dru Lavigne** 是 FreeBSD 基金会董事，BSD 认证小组主席。

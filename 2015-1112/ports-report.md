@@ -46,6 +46,4 @@ make -C /usr/ports quicksearch maint=ports@FreeBSD.org
 
 ---
 
-**作者简介**
-
 **Frederic Culot** 在完成物理学计算机建模博士学位后，已在 IT 行业工作 10 年。业余时间他研习商业与管理，并刚取得 MBA 学位。Frederic 于 2010 年以 Ports committer 身份加入 FreeBSD，此后累计提交约 2,000 次 commit，指导过六位新 committer，现承担 portmgr-secretary 的职责。
