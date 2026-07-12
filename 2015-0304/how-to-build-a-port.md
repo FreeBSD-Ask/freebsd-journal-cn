@@ -27,7 +27,7 @@ portsnap update
 
 极简的 Port 由四个文件组成：Makefile、pkg-descr、pkg-plist 和 distinfo。Makefile 包含该 Port 的一些基本信息和如何抓取、构建和安装它的指令。pkg-descr（即 package 描述）包含该 Port 是什么、做什么的简短描述，还有该软件包官方项目网站的链接。pkg-plist（即打包清单）是该 Port 安装的文件列表；最后，distinfo 包含该 Port 需从互联网抓取的任何外部文件的校验和与大小。我下面以 **/usr/ports/shells/sash** 中的 Stand-Alone Shell（SASH）Port 为例。在示例 1 中你还能看到名为 files 的目录，里面可以放置对该 Port 有用的附加文件。
 
-看示例 2 中 SASH 的 Makefile，第一行是该 port 最初加入 Ports 树时对原作者的署名。接下来是 subversion 标识串，会由 subversion 自动展开，对新 Port 而言只应是：
+看示例 2 中 SASH 的 Makefile，第一行是该 Port 最初加入 Ports 树时对原作者的署名。接下来是 subversion 标识串，会由 subversion 自动展开，对新 Port 而言只应是：
 
 ```sh
 # $FreeBSD$
