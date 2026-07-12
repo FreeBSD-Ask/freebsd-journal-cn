@@ -20,7 +20,7 @@ $ sudo /usr/local/etc/rc.d/prometheus forcestart
 Starting prometheus.
 ```
 
-默认情况下，Prometheus 会在 9090 端口绑定一个 HTTP 服务器。如果我们用浏览器访问该服务器，会看到一个页面，可以浏览 Prometheus 中存储的数据。由于我们刚启动这个实例，能探索的数据当然不多。让我们暂时先把这个页面放一边，进入”targets”页面（见下方两张截图）。
+默认情况下，Prometheus 会在 9090 端口绑定一个 HTTP 服务器。如果我们用浏览器访问该服务器，会看到一个页面，可以浏览 Prometheus 中存储的数据。由于我们刚启动这个实例，能探索的数据当然不多。让我们暂时先把这个页面放一边，进入“targets”页面（见下方两张截图）。
 
 targets 页面向我们展示了 Prometheus 正在监控哪些端点，并且已经透露出一些有趣的信息。这个 Prometheus 实例被配置为监控自身。Prometheus 是一种白盒监控系统，这意味着它能存储由目标自身报告的指标，而不仅仅是测量外部可见的因素（例如 TCP 和 HTTP 健康检查）。通过点击最左侧列中的 HTTP 链接，我们可以查看 Prometheus 服务器生成的原始指标：与 Go 运行时的垃圾回收、线程、HTTP 处理以及指标存储相关的统计信息（见右图）。
 
@@ -117,7 +117,7 @@ ALERT TargetFailedToScrape
    }
 ```
 
-当名为 `up` 的指标至少 15 分钟保持为零时，这个告警会触发。`up` 指标由 Prometheus 隐式创建，用于表示它是否成功抓取了某个目标。告警表达式中使用的指标所附带的标签也会附加到告警本身。这些标签对于格式化用户友好的告警消息很有用，也可用于创建”静默”（silences）——即应当暂时抑制的告警模式（例如因计划维护）。Prometheus 会在其“Alerts”页面上显示所有已注册的告警规则及其状态。
+当名为 `up` 的指标至少 15 分钟保持为零时，这个告警会触发。`up` 指标由 Prometheus 隐式创建，用于表示它是否成功抓取了某个目标。告警表达式中使用的指标所附带的标签也会附加到告警本身。这些标签对于格式化用户友好的告警消息很有用，也可用于创建“静默”（silences）——即应当暂时抑制的告警模式（例如因计划维护）。Prometheus 会在其“Alerts”页面上显示所有已注册的告警规则及其状态。
 
 为了保持设计简洁，Prometheus 服务器只支持一种机制来通知活动告警，即向其他服务发送 REST 调用。Prometheus 项目提供了一个独立的守护进程 Alertmanager，可以处理这些 REST 调用，生成电子邮件、SMS 和 Slack 消息，并管理静默。Prometheus 用于执行 REST 调用的 URL 可以通过 `--alertmanager.url` 命令行标志配置。可能还需要将 `--web.external-url` 标志设置为 Prometheus 服务器的公共 URL，这样 Alertmanager 就能在其告警消息中添加指向 Prometheus 的可点击链接。
 
