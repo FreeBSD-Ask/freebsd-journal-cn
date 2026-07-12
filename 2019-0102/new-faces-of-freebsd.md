@@ -25,4 +25,4 @@
 
 ---
 
-**DRU LAVIGNE** 是 FreeBSD 文档提交者，著有多本图书，包括《BSD Hacks》与《The Best of FreeBSD Basics》。
+**DRU LAVIGNE** 是 FreeBSD 文档提交者，《BSD Hacks》和《The Best of FreeBSD Basics》的作者。

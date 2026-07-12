@@ -14,4 +14,4 @@
 
 ---
 
-**DRU LAVIGNE** 是 FreeBSD 项目的文档提交者，BSD Certification Group 主席。
+**DRU LAVIGNE** 是 FreeBSD 项目的文档提交者，BSD 认证小组主席。

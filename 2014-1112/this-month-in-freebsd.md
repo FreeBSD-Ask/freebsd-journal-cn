@@ -85,4 +85,4 @@ FreeBSD 安装器 **bsdinstall(8)** 已更新，在安装到 ZFS 文件系统时
 
 ---
 
-**Dru Lavigne** 是 FreeBSD 基金会的董事，BSD Certification Group 主席。
+**Dru Lavigne** 是 FreeBSD 基金会董事，BSD 认证小组主席。

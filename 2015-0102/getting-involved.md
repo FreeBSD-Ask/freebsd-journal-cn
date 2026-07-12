@@ -109,4 +109,4 @@ FreeBSD 项目确实有许多在各自领域造诣深厚、被誉为专家的贡
 
 ---
 
-**Dru Lavigne** 自 1997 年起将 FreeBSD 作为主力平台，是 FreeBSD 衍生项目 PC-BSD 和 FreeNAS 的首席文档撰写者。她著有《BSD Hacks》、《The Best of FreeBSD Basics》和《The Definitive Guide to PC-BSD》。她是 BSD 认证集团（BSD Certification Group Inc.）的创始人和现任主席，该非营利组织致力于建立 BSD 系统管理员认证标准；她同时担任 FreeBSD 基金会理事。
+**Dru Lavigne** 自 1997 年起将 FreeBSD 作为主要平台，是基于 FreeBSD 派生的 PC-BSD 和 FreeNAS 项目的首席文档撰写者。她是《BSD Hacks》《The Best of FreeBSD Basics》和《The Definitive Guide to PC-BSD》的作者。她是 BSD 认证小组（BSD Certification Group Inc.）的创始人兼现任主席，该非营利组织致力于制定 BSD 系统管理员认证标准，并担任 FreeBSD 基金会董事。

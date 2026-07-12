@@ -112,4 +112,4 @@ FreeBSD 新面孔  作者：Dru Lavigne
 
 ---
 
-> **DRU LAVIGNE** 是 FreeBSD 项目的文档提交者，BSD 认证小组主席。
+**DRU LAVIGNE** 是 FreeBSD 项目的文档提交者，BSD 认证小组主席。

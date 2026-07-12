@@ -51,4 +51,4 @@ base 与 Ports 的划分让我印象深刻。当时我主要用 Debian 和 CentO
 
 ---
 
-**Dru Lavigne** 是 FreeBSD 基金会董事、BSD 认证集团主席。
+**Dru Lavigne** 是 FreeBSD 基金会董事，BSD 认证小组主席。

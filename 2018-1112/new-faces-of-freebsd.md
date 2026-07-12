@@ -43,6 +43,6 @@
 
 ---
 
-**DRU LAVIGNE** 是 FreeBSD 文档 committer，《BSD Hacks》和《The Best of FreeBSD Basics》的作者。
+**DRU LAVIGNE** 是 FreeBSD 文档提交者，《BSD Hacks》和《The Best of FreeBSD Basics》的作者。
 
 > “祝贺发布工程团队和所有贡献者发布 12.0！我们还要感谢我们的捐赠者社区，他们的支持帮助我们资助一名全职工作人员，专门领导发布工程团队并监督发布流程。”

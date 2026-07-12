@@ -93,4 +93,4 @@
 
 ---
 
-**Dru Lavigne** 是 FreeBSD 基金会理事，BSD 认证小组主席。
+**Dru Lavigne** 是 FreeBSD 基金会董事，BSD 认证小组主席。

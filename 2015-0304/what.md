@@ -114,4 +114,4 @@ FreeNAS 持续加入创新特性，使配置这款开源操作系统、并将其
 
 本文未涵盖 FreeNAS 9.3 添加的全部特性和改进。新特性的更完整列表请参阅 9.3 发行说明和 FreeNAS 9.3 用户指南中的“What’s New in 9.3”章节。
 
-**Dru Lavigne** 自 1997 年起将 FreeBSD 作为主要平台，是基于 FreeBSD 派生的 PC-BSD 和 FreeNAS 项目的首席文档撰写者。她是《BSD Hacks》《The Best of FreeBSD Basics》和《The Definitive Guide to PC-BSD》的作者。她是 BSD Certification Group Inc.（一家以制定 BSD 系统管理员认证标准为使命的非营利组织）的创始人兼现任主席，并担任 FreeBSD 基金会董事会成员。
+**Dru Lavigne** 自 1997 年起将 FreeBSD 作为主要平台，是基于 FreeBSD 派生的 PC-BSD 和 FreeNAS 项目的首席文档撰写者。她是《BSD Hacks》《The Best of FreeBSD Basics》和《The Definitive Guide to PC-BSD》的作者。她是 BSD 认证小组（BSD Certification Group Inc.）的创始人兼现任主席，该非营利组织致力于制定 BSD 系统管理员认证标准，并担任 FreeBSD 基金会董事。

@@ -98,4 +98,4 @@ FreeBSD 和 Eric Steven Raymond 的文章开始了我成为程序员的道路，
 
 ---
 
-**DRU LAVIGNE** 是 FreeBSD 项目的 doc committer，BSD Certification Group 主席。
+**DRU LAVIGNE** 是 FreeBSD 项目的文档提交者，BSD 认证小组主席。
