@@ -13,7 +13,7 @@
 
 本文余下部分叙述启动过程，重点关注 BERI 需要定制的环节。为简洁起见，省略了启动的许多方面；其他不具平台或架构特性的方面也一并略去。某些平台特定的组件（如 MIPS pmap）不在本文讨论范围。目标是提供一份指南，帮助移植者在移植到一款新的、但相对常规的 MIPS CPU 时了解所需掌握的内容。对非常规 CPU 感兴趣的移植者，可参考 **mips/nlm** 和 **mips/rmi** 下的 NLM 和 RMI 移植，了解完整多核平台所需的更广泛修改实例。
 
-关于启动流程的更多高层信息，参见《The Design and Implementation of the FreeBSD Operating System, Second Edition》第 15 章 [7]。
+关于启动流程的更多高层信息，参见《FreeBSD 操作系统设计与实现》（第二版）第 15 章 [7]。
 
 ## BERIpad 平台
 

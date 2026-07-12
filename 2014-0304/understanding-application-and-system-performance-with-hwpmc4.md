@@ -239,4 +239,4 @@ hwpmc 最初只在少量 Intel 和 AMD 处理器上可用，现已扩展覆盖 A
 
 ---
 
-**George Neville-Neil** 出于兴趣和盈利目的从事网络和操作系统代码工作。他还讲授与计算机编程相关的各类课程。他的专业兴趣领域包括代码考古、操作系统、网络和安全。他与 Marshall Kirk McKusick 合著了《The Design and Implementation of the FreeBSD Operating System》，也是 ACM Queue 杂志 Kode Vicious 专栏的作者。Neville-Neil 在波士顿的东北大学获得计算机科学学士学位。他是 ACM、Usenix 协会和 IEEE 的会员。他热爱骑行和旅行，现居纽约。
+**George Neville-Neil** 出于兴趣和盈利目的从事网络和操作系统代码工作。他还讲授与计算机编程相关的各类课程。他的专业兴趣领域包括代码考古、操作系统、网络和安全。他与 Marshall Kirk McKusick 合著了《FreeBSD 操作系统设计与实现》，也是 ACM Queue 杂志 Kode Vicious 专栏的作者。Neville-Neil 在波士顿的东北大学获得计算机科学学士学位。他是 ACM、Usenix 协会和 IEEE 的会员。他热爱骑行和旅行，现居纽约。

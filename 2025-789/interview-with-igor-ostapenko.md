@@ -13,7 +13,7 @@
 
 **TJ:** 你最初是如何迈出修改 FreeBSD 的第一步的？最初又是怎么决定要做什么工作的？
 
-**IO:** 第一步是准备。我希望能完善自己已有的 FreeBSD 知识，填补空白，形成更系统的认知。一本非常著名的参考书是《The Design and Implementation of the FreeBSD Operating System》（《FreeBSD 操作系统设计与实现》），作者是 Marshall Kirk McKusick、George V. Neville-Neil 和 Robert N.M. Watson。
+**IO:** 第一步是准备。我希望能完善自己已有的 FreeBSD 知识，填补空白，形成更系统的认知。一本非常著名的参考书是《FreeBSD 操作系统设计与实现》，作者是 Marshall Kirk McKusick、George V. Neville-Neil 和 Robert N.M. Watson。
 
 FreeBSD 源码对我来说并不完全陌生，多年来我已经对其结构有了整体印象。但我想要专业的指导，避免错过关键概念、风格细节或结构要点。世界有幸拥有 Marshall Kirk McKusick 主讲的 FreeBSD Kernel Internals: An Intensive Code Walkthrough 课程，它帮我节省了很多时间，解答了我的问题，并以最佳方式提供了历史背景来回答“为什么”。另外，George V. Neville-Neil 的《FreeBSD Networking from the Bottom Up》（FreeBSD 网络体系结构自底向上）课程则进一步完善了我在网络栈方面的理解。
 

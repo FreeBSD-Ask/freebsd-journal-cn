@@ -17,7 +17,7 @@
 
 活动也不乏争议。在“男性盟友”专题讨论中，Microsoft 的 CEO Satya Nadella 建议女性不应主动要求加薪，而应相信 HR 团队的判断。这番话激怒了与会者和社交网络上的人，Nadella 随后通过邮件向 Microsoft 员工道歉，并在 Twitter 上公开致歉。Nadella 的失言被新闻广泛报道，你可能已经读到了。
 
-我们在 FreeBSD 基金会展位花了大量时间与人交谈。我带了一本第二版《The Design and Implementation of the FreeBSD Operating System》，把它推荐给那些希望更深入了解操作系统的学生。同样令人鼓舞的是，Netflix、NetApp、Juniper、Cisco 等使用 FreeBSD 的公司的人顺道来到展位说“嘿，我们用 FreeBSD”或“谢谢你们做 FreeBSD！”
+我们在 FreeBSD 基金会展位花了大量时间与人交谈。我带了一本第二版《FreeBSD 操作系统设计与实现》，把它推荐给那些希望更深入了解操作系统的学生。同样令人鼓舞的是，Netflix、NetApp、Juniper、Cisco 等使用 FreeBSD 的公司的人顺道来到展位说“嘿，我们用 FreeBSD”或“谢谢你们做 FreeBSD！”
 
 Grace Hopper 大会组织者今年尝试了一种新做法，叫“午餐桌面话题”。想法是：对某个话题感兴趣的人坐在一起，边吃午餐边与一位了解该话题、能引导对话的主持人非正式讨论该话题。像“如何参与开源”或“如何找导师”这样的话题桌最受关注。
 

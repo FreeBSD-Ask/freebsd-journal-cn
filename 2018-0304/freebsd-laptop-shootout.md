@@ -88,4 +88,4 @@ X270 与 T470 一样，在 FreeBSD 上运行良好，但更小更轻。如果你
 
 ---
 
-**GEORGE V. NEVILLE-NEIL** 出于兴趣和盈利而从事网络与操作系统代码工作。他还教授与编程相关的各类课程。他的兴趣领域包括代码考古、操作系统、网络和时间协议。他与 Marshall Kirk McKusick 和 Robert N. M. Watson 合著了 The Design and Implementation of the FreeBSD Operating System。十多年来，他以 Kode Vicious 之名撰写专栏。他在波士顿东北大学获得计算机科学学士学位，是 ACM、Usenix 协会和 IEEE 的会员。他热爱骑行与旅行，现居纽约市。
+**GEORGE V. NEVILLE-NEIL** 出于兴趣和盈利而从事网络与操作系统代码工作。他还教授与编程相关的各类课程。他的兴趣领域包括代码考古、操作系统、网络和时间协议。他与 Marshall Kirk McKusick 和 Robert N. M. Watson 合著了《FreeBSD 操作系统设计与实现》。十多年来，他以 Kode Vicious 之名撰写专栏。他在波士顿东北大学获得计算机科学学士学位，是 ACM、Usenix 协会和 IEEE 的会员。他热爱骑行与旅行，现居纽约市。
