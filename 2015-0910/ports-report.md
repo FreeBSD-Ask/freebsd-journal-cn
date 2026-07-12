@@ -16,7 +16,7 @@
 
 ## 重要 Ports 更新
 
-antoine@ 与 mat@ 进行了大量 exp-run（共 15 次），以验证主要 port 更新的安全性，包括：
+antoine@ 与 mat@ 进行了大量 exp-run（共 15 次），以验证主要 Port 更新的安全性，包括：
 
 - Gnome 升级至 3.16
 - gettext 升级至 0.19.5.1

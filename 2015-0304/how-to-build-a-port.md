@@ -37,7 +37,7 @@ portsnap update
 
 `PORTVERSION` 是该 Port 的版本，通常与原始软件包的版本一致。注意 Port 的版本号绝不能回退，因为升级已安装 package 的工具无法处理版本倒退的情况。
 
-`CATEGORIES` 是 Port 分类列表，以该 port 所属的主分类开头——这也是它在 Ports 树中所处的目录。port 可以属于多个分类，列在主分类之后，包括那些本身没有对应目录、但仍能帮助用户找到该 port 的虚拟分类。可用分类的完整列表见 Porters Handbook：<https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-categories.html#porting-categories>。
+`CATEGORIES` 是 Port 分类列表，以该 Port 所属的主分类开头——这也是它在 Ports 树中所处的目录。port 可以属于多个分类，列在主分类之后，包括那些本身没有对应目录、但仍能帮助用户找到该 port 的虚拟分类。可用分类的完整列表见 Porters Handbook：<https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-categories.html#porting-categories>。
 
 示例 1：
 
