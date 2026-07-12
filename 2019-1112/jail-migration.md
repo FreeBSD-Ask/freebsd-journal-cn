@@ -112,7 +112,7 @@ Jail 迁移没有听起来那么吓人。稍作准备、留出传输生成文件
 
 ---
 
-**Benedict Reuschling** 2009 年加入 FreeBSD 项目。2010 年获得完整文档提交权限后，他积极指导其他人成为 FreeBSD committer。2015 年加入 FreeBSD 基金会，现任副主席。Benedict 拥有计算机科学硕士学位，在德国达姆施塔特应用技术大学教授”面向软件开发者的 UNIX”课程。他与 Allan Jude 共同主持每周一期的 BSDNow.tv（`http://BSDNow.tv`）播客。
+**Benedict Reuschling** 2009 年加入 FreeBSD 项目。2010 年获得完整文档提交权限后，他积极指导其他人成为 FreeBSD committer。2015 年加入 FreeBSD 基金会，现任副主席。Benedict 拥有计算机科学硕士学位，在德国达姆施塔特应用技术大学教授“面向软件开发者的 UNIX”课程。他与 Allan Jude 共同主持每周一期的 BSDNow.tv（`http://BSDNow.tv`）播客。
 
 ---
 

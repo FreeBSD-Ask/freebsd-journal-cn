@@ -33,9 +33,9 @@ portsnap update
 # $FreeBSD$
 ```
 
-接下来是一段变量，包含该 port 将要安装的软件的一些关键信息。`PORTNAME` 中的 port 名字在整个 Ports 树中应当唯一，不过也有选项可以为名字加上前缀或后缀。
+接下来是一段变量，包含该 Port 将要安装的软件的一些关键信息。`PORTNAME` 中的 Port 名字在整个 Ports 树中应当唯一，不过也有选项可以为名字加上前缀或后缀。
 
-`PORTVERSION` 是该 port 的版本，通常与原始软件包的版本一致。注意 port 的版本号绝不能回退，因为升级已安装 package 的工具无法处理版本倒退的情况。
+`PORTVERSION` 是该 Port 的版本，通常与原始软件包的版本一致。注意 Port 的版本号绝不能回退，因为升级已安装 package 的工具无法处理版本倒退的情况。
 
 `CATEGORIES` 是 port 分类列表，以该 port 所属的主分类开头——这也是它在 Ports 树中所处的目录。port 可以属于多个分类，列在主分类之后，包括那些本身没有对应目录、但仍能帮助用户找到该 port 的虚拟分类。可用分类的完整列表见 Porters Handbook：<https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-categories.html#porting-categories>。
 
