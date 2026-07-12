@@ -3,7 +3,7 @@
 - 原文：[Ports Report](https://freebsdfoundation.org/our-work/journal/browser-based-edition/migrating-jail-management-from-warden-to-iocage/)
 - 作者：**Frederic Culot**
 
-9 月至 10 月期间，Ports 领域的活跃度与夏季基本持平，整体并不算高。话虽如此，我们很高兴看到几位新 committer 加入项目。此外，本期内一些主要的 port 也得到更新，升级时可能需要按后文所述谨慎处理。
+9 月至 10 月期间，Ports 领域的活跃度与夏季基本持平，整体并不算高。话虽如此，我们很高兴看到几位新 committer 加入项目。此外，本期内一些主要的 Port 也得到更新，升级时可能需要按后文所述谨慎处理。
 
 ## 新任 Ports Committer 与代为保管
 
