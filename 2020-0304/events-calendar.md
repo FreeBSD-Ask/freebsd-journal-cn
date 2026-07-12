@@ -1,7 +1,8 @@
 # 活动日历
 
-截至 2020 年 9 月的 BSD 活动
 - 作者：**ANNE DICKISON** 与 **DRU LAVIGNE**
+
+截至 2020 年 9 月的 BSD 活动。
 
 ## BSDCan
 
