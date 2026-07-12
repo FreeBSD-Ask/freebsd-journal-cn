@@ -7,7 +7,7 @@
 
 在广阔的网络协议领域，有一种协议脱颖而出，作为一个多功能且有韧性的竞争者：BATMAN，即 Better Approach to Mobile Ad-hoc Networks（随建即连网络优化方案）。在大城市的无线电波中，BATMAN 能让设备在网状网络中无缝通信，却无需让任何一台设备了解整个网络拓扑。
 
-今夏，我参加了谷歌编程之夏 (GSoC)，并将内核模块 `batman-adv`（提供了 Linux 对 BATMAN 协议的支持）移植到了 FreeBSD。谷歌编程之夏是个学生在暑期参与开源项目的计划，谷歌为学生提供津贴，并由导师监督。对我而言，我的导师是那位独一无二的 Mahdi（或 Mehdi，取决于你问他是星期几）Mokhtari，即 mmokhi@。他是位非常有风度的人，我非常感激在谷歌编程之夏的旅程中有他的指导！
+今夏，我参加了谷歌编程之夏（GSoC），并将内核模块 `batman-adv`（提供了 Linux 对 BATMAN 协议的支持）移植到了 FreeBSD。编程之夏是个学生在暑期参与开源项目的计划，谷歌为学生提供津贴，并由导师监督。对我而言，我的导师是那位独一无二的 Mahdi（或 Mehdi，取决于你问他是星期几）Mokhtari，即 mmokhi@。他是位非常有风度的人，我非常感激在编程之夏的旅程中有他的指导！
 
 现在，使用 `batman_adv`（FreeBSD 上等同于 `batman-adv`）可以创建、参与网状网络，通过以太网发送/接收数据包。所有这些都在 Linux 兼容层中正常工作。移植的工作主要集中在 LinuxKPI 上（特别是用 `struct ifnet` 支持 `struct net_device`，用 `sk_buff` 支持 `mbuf`），希望在未来，这将简化将其他与网络相关的驱动程序从 Linux 移植到 FreeBSD 的过程。
 

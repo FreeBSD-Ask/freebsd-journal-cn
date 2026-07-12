@@ -2,7 +2,7 @@
 
 作者：Lars Engels 和 Benedict Reuschling
 
-在网络监控的早期，有一种名为 Netsaint 的监控软件，后因法律原因改名为 Nagios。Nagios 在开源世界非常成功，但来自社区的补丁常常被拒绝或非常缓慢地被采纳。2009 年，Nagios 社区成员创建了一个分支，命名为 Icinga（祖鲁语意为”它审视”）。自 2014 年发布 Icinga 2.0 以来，它已不再是 Nagios 的分支，而是一次彻底重写，加入了分布式监控、HA 集群、REST API 等新功能。Icinga 可重用所有 Nagios 监控插件，同时提供现代 Web 界面和对其核心功能的强大扩展。
+在网络监控的早期，有一种名为 Netsaint 的监控软件，后因法律原因改名为 Nagios。Nagios 在开源世界非常成功，但来自社区的补丁常常被拒绝或非常缓慢地被采纳。2009 年，Nagios 社区成员创建了一个分支，命名为 Icinga（祖鲁语意为“它审视”）。自 2014 年发布 Icinga 2.0 以来，它已不再是 Nagios 的分支，而是一次彻底重写，加入了分布式监控、HA 集群、REST API 等新功能。Icinga 可重用所有 Nagios 监控插件，同时提供现代 Web 界面和对其核心功能的强大扩展。
 
 ## 在 FreeBSD/ZFS 上安装
 
@@ -228,7 +228,7 @@ object Host "Example" {
 
 Icinga 可通过更多功能扩展，超越对机器及其服务的监控。例如，在层级式监控大量对象的复杂环境中，业务流程模块能帮助可视化。这样，构成某服务基础的数千台云机器可从一个高层级仪表盘查看。一旦出现告警，该模块允许你下钻到触发告警的具体机器。[https://github.com/Icinga/icingaweb2-module-businessprocess]
 
-Icinga Director 让处理 Icinga 2 配置变得轻松。允许用户通过”指点和点击”灵活创建自己的对象，同时完全自动化其数据中心，系统管理员可以确信其监控解决方案会随着基础设施需求增长而扩展。[https://github.com/Icinga/icingaweb2-module-director]
+Icinga Director 让处理 Icinga 2 配置变得轻松。允许用户通过“指点和点击”灵活创建自己的对象，同时完全自动化其数据中心，系统管理员可以确信其监控解决方案会随着基础设施需求增长而扩展。[https://github.com/Icinga/icingaweb2-module-director]
 
 另一个模块为 Icinga 2 添加了通用工单系统（TTS）功能。它允许在 Icinga Web 2 中用工单系统（TTS）的链接替换工单模式。它定义了一个工单钩子，可被核心监控模块等用于确认、停机和评论。[https://github.com/Icinga/icingaweb2-module-generictts]
 
@@ -236,10 +236,10 @@ Icinga Director 让处理 Icinga 2 配置变得轻松。允许用户通过”指
 
 此外，还有一个模块将 Grafana 图形集成到 Icinga Web 2 中，让你能以美观的方式显示检查的性能数据。[https://github.com/Mikesch-mp/icingaweb2-module-grafana]
 
-所有这些附加模块都可作为 FreeBSD ports/软件包提供。务必研究 Icinga 2 文档，以有效方式监控你的主机和服务。•
+所有这些附加模块都可作为 FreeBSD Ports/软件包提供。务必研究 Icinga 2 文档，以有效方式监控你的主机和服务。•
 
 ---
 
-> **LARS ENGELS** 已是 FreeBSD ports 提交者 10 年，并松散地参与 Icinga 项目。
+> **LARS ENGELS** 已是 FreeBSD Ports 提交者 10 年，并松散地参与 Icinga 项目。
 >
 > **BENEDICT REUSCHLING** 于 2009 年加入 FreeBSD 项目。2010 年获得完整文档提交权限后，他开始指导他人成为 FreeBSD 提交者。他是 BSD 认证小组的监考人，现任 FreeBSD 基金会副总裁。
