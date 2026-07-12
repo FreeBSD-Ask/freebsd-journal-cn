@@ -15,7 +15,7 @@
 
 与一群 FreeBSD 开发者坐在会议午餐或晚宴上，提起 Linux 缺少 Control-T（即 SIGINFO）这件事，你会听到一片响亮的合唱：他们都对 Linux 上缺少这一功能感到非常恼火。看似只是一个小差异，但对实际编程的人来说，这真的重要。Benedict Reuschling 撰写了一篇精彩的短文，介绍这一重要功能。最后，Dave Cottlehuber 撰写了一篇关于微服务实践的文章，为本期主题文章收尾。微服务如今风头正劲，而在 FreeBSD 上实现起来也很容易。Dave 告诉我们如何去做。
 
-我们相信，当你读完本期后，如果同事再问”FreeBSD 不就是个 Linux 发行版吗？“，你将能给出明确的回答。
+我们相信，当你读完本期后，如果同事再问“FreeBSD 不就是个 Linux 发行版吗？”，你将能给出明确的回答。
 
 **George Neville-Neil**
 
