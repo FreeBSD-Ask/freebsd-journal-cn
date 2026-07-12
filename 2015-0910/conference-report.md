@@ -68,4 +68,4 @@ Ruslan Bukin 与 Ed Maste 主持了 FreeBSD RISC-V 移植的初步会议。RISC-
 
 **作者简介**
 
-Dr. Robert N. M. Watson 是剑桥大学计算机实验室系统、安全与架构方向的大学讲师；FreeBSD 开发者与 core team 成员；FreeBSD 基金会 董事会成员。他领导多个跨越计算机体系结构、编译器、程序分析、程序转换、操作系统、网络与安全的跨层研究项目。近期工作包括 Capsicum 安全模型、用于 Junos 与 Apple iOS 等系统沙箱的 MAC Framework、FreeBSD 网络协议栈的多线程。他是《The Design and Implementation of the FreeBSD Operating Systems》（第二版）的合著者。
+Dr. Robert N. M. Watson 是剑桥大学计算机实验室系统、安全与架构方向的大学讲师；FreeBSD 开发者与 core team 成员；FreeBSD 基金会 董事会成员。他领导多个跨越计算机体系结构、编译器、程序分析、程序转换、操作系统、网络与安全的跨层研究项目。近期工作包括 Capsicum 安全模型、用于 Junos 与 Apple iOS 等系统沙箱的 MAC Framework、FreeBSD 网络协议栈的多线程。他是《FreeBSD 操作系统设计与实现》（第二版）的合著者。
