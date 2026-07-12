@@ -15,7 +15,7 @@
 - kde 更新至 4.14.2
 - Linux 基础从 Fedora 10 切换为 CentOS 6
 
-照例，如果某些 port 更新需要手动步骤，这些步骤会在 **/usr/ports/UPDATING** 文件中明确说明。在 Ports 树上执行任何更新之前，强烈建议先查看该文件。
+照例，如果某些 Port 更新需要手动步骤，这些步骤会在 **/usr/ports/UPDATING** 文件中明确说明。在 Ports 树上执行任何更新之前，强烈建议先查看该文件。
 
 ## 新的 Ports 提交者与代管
 
