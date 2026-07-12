@@ -19,7 +19,7 @@ GNU 调试器 GDB 长期以来一直担任基本系统的调试器。1993 年，
 
 随后，在 2010 年的全球开发者大会（WWDC）上，Apple 宣布他们有自己的调试器项目 LLDB。该项目于同年 6 月开源，次年成为 Apple IDE Xcode 的默认调试器。LLDB 采用伊利诺伊大学/NCSA 许可证，这是一种宽松的、类似 BSD 的许可证，与 FreeBSD 项目的许可理念完美契合。
 
-此后，LLDB 已超越了 Apple 项目的范畴，来自 Intel 和 谷歌 等公司内部的开源团队，以及 FreeBSD、Debian 和其他独立开源项目都做出了重要贡献。多人参与了 LLDB 的 FreeBSD 移植，我们的计划是让它成为 FreeBSD 基本系统的标准调试器。
+此后，LLDB 已超越了 Apple 项目的范畴，来自 Intel 和谷歌等公司内部的开源团队，以及 FreeBSD、Debian 和其他独立开源项目都做出了重要贡献。多人参与了 LLDB 的 FreeBSD 移植，我们的计划是让它成为 FreeBSD 基本系统的标准调试器。
 
 ## LLDB 设计
 
@@ -166,7 +166,7 @@ LLDB 还可以在命中断点后调用脚本。然后脚本可以控制程序状
 
 ## FreeBSD 中的 LLDB 路线图
 
-LLDB FreeBSD 移植的持续开发工作直接在 LLDB 仓库中进行。它目前在 amd64 架构上运行良好，支持基于实时和核心转储文件的用户态调试。MIPS 架构也存在核心转储调试支持。结合 谷歌 正在进行的 CPU 支持工作和 FreeBSD 社区正在开展的工作，我们预计将支持 x86、ARM、MIPS 和 PowerPC CPU 架构的 64 位和 32 位版本。
+LLDB FreeBSD 移植的持续开发工作直接在 LLDB 仓库中进行。它目前在 amd64 架构上运行良好，支持基于实时和核心转储文件的用户态调试。MIPS 架构也存在核心转储调试支持。结合谷歌正在进行的 CPU 支持工作和 FreeBSD 社区正在开展的工作，我们预计将支持 x86、ARM、MIPS 和 PowerPC CPU 架构的 64 位和 32 位版本。
 
 2014 年谷歌编程之夏（GSoC）项目交付了 FreeBSD 内核调试支持的概念验证；在将其集成到 LLDB 之前，还需要进一步工作来完善。
 
