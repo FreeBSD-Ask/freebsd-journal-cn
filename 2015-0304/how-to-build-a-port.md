@@ -74,9 +74,9 @@ ${MASTER_SITE}/${PORTNAME}-${PORTVERSION}.tar.gz
 
 在 SASH 这个示例 Port 中，就是：<http://members.tip.net.au/~dbell/programs/sash-3.8.tar.gz>
 
-许多软件项目使用各自的版本号或命名方案，于是有大量附加变量可影响最终 URL，例如设置 `USE_BZIP2` 会把默认后缀改为 `.tar.bz2`，`USE_XZ` 会改为 `.tar.xz`。对于 SourceForge、CPAN 这类拥有大量镜像的知名下载站点，也有现成的宏可用。另一有趣且广泛使用的站点是 github——它没有“正式发布文件”的概念，于是 port 需要依赖某个给定的 commit 和 tag，以确保下载到一致且经过测试的软件版本。这些都在 Porters Handbook 中有详细描述：<https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-distfiles.html>。
+许多软件项目使用各自的版本号或命名方案，于是有大量附加变量可影响最终 URL，例如设置 `USE_BZIP2` 会把默认后缀改为 `.tar.bz2`，`USE_XZ` 会改为 `.tar.xz`。对于 SourceForge、CPAN 这类拥有大量镜像的知名下载站点，也有现成的宏可用。另一有趣且广泛使用的站点是 github——它没有“正式发布文件”的概念，于是 Port 需要依赖某个给定的 commit 和 tag，以确保下载到一致且经过测试的软件版本。这些都在 Porters Handbook 中有详细描述：<https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-distfiles.html>。
 
-下一段是该 port 的一些基本元数据。FreeBSD Ports 系统有“维护者”（maintainership）的概念：单人或某个邮件列表背后的多人作为该 port 的主要联系人。对该 port 提出修改请求（如升级到新版本）应获得维护者批准，在 FreeBSD bugzilla 中提交 bug 报告时会自动向 `MAINTAINER` 字段所列地址发送邮件。
+下一段是该 Port 的一些基本元数据。FreeBSD Ports 系统有“维护者”（maintainership）的概念：单人或某个邮件列表背后的多人作为该 port 的主要联系人。对该 port 提出修改请求（如升级到新版本）应获得维护者批准，在 FreeBSD bugzilla 中提交 bug 报告时会自动向 `MAINTAINER` 字段所列地址发送邮件。
 
 `COMMENT` 顾名思义，是该 port 一句话的简短描述。更长的描述放在 pkg-descr 文件中。
 

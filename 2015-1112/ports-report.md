@@ -32,7 +32,7 @@
 - ffmpeg 更新至 2.8
 - Qt4 更新至 4.8.7
 
-另一项值得关注的更新涉及 Firefox（41.0）和 SeaMonkey（2.38）：它们现在要求 **databases/sqlite3** 依赖在构建时启用 DBSTAT 选项——前提是你未使用二进制包，而是采用一组非默认的 port 选项。照例，更多信息见 **/usr/ports/UPDATING** 文件，升级主要 port 前应仔细阅读。
+另一项值得关注的更新涉及 Firefox（41.0）和 SeaMonkey（2.38）：它们现在要求 **databases/sqlite3** 依赖在构建时启用 DBSTAT 选项——前提是你未使用二进制包，而是采用一组非默认的 Port 选项。照例，更多信息见 **/usr/ports/UPDATING** 文件，升级主要 Port 前应仔细阅读。
 
 ## 我能如何参与？
 
