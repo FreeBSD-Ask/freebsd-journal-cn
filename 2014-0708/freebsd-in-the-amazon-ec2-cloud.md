@@ -282,7 +282,7 @@ mysql_enable="YES"
 
 第一行意思是“将本文件剩余部分追加到 **/etc/rc.conf**”，其余行是 rc.conf 设置，告诉 EC2 启动脚本为名为“drupal-user”的用户配置 SSH 登录；下载并安装 apache22、drupal7、mod_php5 和 mysql55-server 这些软件包；启动 Apache 2.2 和 MySQL。
 
-文件 `apache` 写入 **/usr/local/etc/apache22/Includes/local.conf**，配置 Apache 从 **/usr/local/www/drupal7**（Drupal port 安装数据的位置）提供文件服务，并启用 PHP（Drupal 使用 PHP）。
+文件 `apache` 写入 **/usr/local/etc/apache22/Includes/local.conf**，配置 Apache 从 **/usr/local/www/drupal7**（Drupal Port 安装数据的位置）提供文件服务，并启用 PHP（Drupal 使用 PHP）。
 
 文件 `drupalinit` 是 shell 脚本，执行让 Drupal 工作所需的步骤。它将所有者设置为“www”用户，以便 Drupal 代码（通过 Apache 和 mod_php5 运行）能正常运行，并为 Drupal 创建 MySQL 数据库和用户。但有个问题：因为 configinit 在启动过程中早早运行——必然早到能添加指定要安装哪些软件包的 rc.conf 设置——此时还没有 mysql 守护进程运行，Drupal 中需要更改所有权的文件也还不存在。为了规避这一限制，`drupalinit` 脚本创建新 rc.d 脚本，该脚本会在软件包安装完毕且 mysql 运行后执行——脚本在初始化 Drupal 数据后会自我删除，以防下次系统启动时再次运行。
 
