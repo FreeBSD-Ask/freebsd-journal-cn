@@ -1,5 +1,22 @@
 # 编辑日志
 
+- 2026.10.7
+  - 新增 2026-789 期（生产部署，Production Deployments）全部 8 篇文章翻译
+    - 《基金会来信》（letter-from-the-foundation.md，Anne Dickison）：完整翻译
+    - 《活动日历》（events-calendar.md，Florine Kamdem）：完整翻译；3 张图片离线至 `png/2026-789/`
+    - 《用 Sylve 整合家庭实验室》（consolidating-a-home-lab-with-sylve.md，Sven Rüdiger）：完整翻译；5 个代码块保留
+    - 《使用 FreeBSD 计算资源开展云运维》（cloud-operations-using-freebsd-compute.md，Jason Tubnor）：完整翻译；4 个代码块保留
+    - 《用户空间中的 USB》（usb-in-user-space.md，Rick Parrish）：完整翻译；29 个代码块逐一保留
+    - 《在 FreeBSD 上进行可审计的凭证泄露检查，无需发送完整密码》（Emre Çapan）：完整翻译；4 个代码块保留并补 `sh` 语言标记
+    - 《EuroBSDCon 参会报告》（eurobsdcon-trip-report.md，Federico Angelilli）：完整翻译；1 张图片离线至 `png/2026-789/`
+    - 《读者来信》（we-get-letters.md，Michael W Lucas）：完整翻译
+  - 补齐 2026-456 期（改进软件质量）遗漏的 2 篇文章
+    - 《FreeBSD WiFi 开发第三部分：调试》（wifi-development-part-3.md，Tom Jones）：完整翻译；20 个代码块保留
+    - 《打包、CloudInit，以及重温“好的、坏的和丑陋的”》（packaging-cloudinit.md，Tom Jones 采访 Baptiste Daroussin）：完整翻译
+  - SUMMARY.md 新增 `## 2026-070809 生产部署` 章节，并在 2026-456 期补入上述 2 篇条目
+  - 作者行统一为 2026 期新版格式：`- 原文：[英文标题](URL)` + `- 作者：**姓名**`
+  - 校验：markdownlint 0 错误；代码块与源文逐行比对一致（仅注释翻译）；URL、数字、技术标识符比对无缺失；SUMMARY 全部 691 个条目对应文件存在；H1 与 SUMMARY 标题一致
+
 - 2026.7.10
   - 新增 2026-456 期（改进软件质量）全部 6 篇文章翻译，英文源已归档至 `en/2026-456-improving-software-quality/`
     - 《基金会来信》（letter-from-the-foundation.md，Deb Goodkin）：完整翻译

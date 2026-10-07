@@ -7,6 +7,17 @@
 
 * [目录](mu-lu.md)
 
+## 2026-070809 生产部署
+
+* [基金会来信](2026-789/letter-from-the-foundation.md)
+* [活动日历](2026-789/events-calendar.md)
+* [用 Sylve 整合家庭实验室](2026-789/consolidating-a-home-lab-with-sylve.md)
+* [使用 FreeBSD 计算资源开展云运维](2026-789/cloud-operations-using-freebsd-compute.md)
+* [用户空间中的 USB](2026-789/usb-in-user-space.md)
+* [在 FreeBSD 上进行可审计的凭证泄露检查，无需发送完整密码](2026-789/auditable-credential-exposure-checks-on-freebsd-without-sending-full-passwords.md)
+* [EuroBSDCon 参会报告](2026-789/eurobsdcon-trip-report.md)
+* [读者来信](2026-789/we-get-letters.md)
+
 ## 2026-040506 改进软件质量
 
 * [基金会来信](2026-456/letter-from-the-foundation.md)
@@ -14,6 +25,8 @@
 * [使用 CHERI 调试](2026-456/debugging-with-cheri.md)
 * [FreeBSD 上的现代 Java](2026-456/modern-java-on-freebsd.md)
 * [来吧，友好的 SBOM](2026-456/come-friendly-sboms.md)
+* [FreeBSD WiFi 开发第三部分：调试](2026-456/wifi-development-part-3.md)
+* [打包、CloudInit，以及重温“好的、坏的和丑陋的”](2026-456/packaging-cloudinit.md)
 * [读者来信](2026-456/we-get-letters.md)
 
 ## 2026-010203 笔记本与桌面
